@@ -1,3 +1,6 @@
-## About Me
+---
+sidebar: false
+---
+# About Me
 
-LOVE LIFE 
+LOVE LIFE
