@@ -2,10 +2,10 @@
 home: true
 sidebar: false
 # heroImage: /hero.png
-heroText: Hero 标题
-tagline: Hero 副标题
-actionText: 快速上手 →
-actionLink: /zh/guide/
+heroText: JeacsonBlog-一个简单的博客
+tagline: 使用VuePress搭建的个人博客网站
+actionText: 学习笔记 →
+actionLink: /learningNote/
 features:
 - title: 简洁至上
   details: 以 Markdown 为中心的项目结构，以最少的配置帮助你专注于写作。
