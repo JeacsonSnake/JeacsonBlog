@@ -32,18 +32,33 @@ module.exports = {
                 link: 'https://Github.com'
             },
         ],
-        sidebar: {
-            '/learningNote/VUE3/': [
-                '',
-                'VUE3_Vs_VUE2_In_Reactive_Data',
-                'VUE3_Vs_VUE2_In_Watch',
-                'VUE3_Vs_VUE2_In_Render_Function'
-            ],
-            '/learningNote/JSNote/': [
-                '',
-                'Formal&Real_Para_When_Func_Get_Obj',
-            ],
-        },
+        sidebar: [{
+            title: '学习笔记',
+            path: '/learningnote/',
+            collapsable: false,
+            sidebarDepth: 1,
+            children: [{
+                    title: 'VUE3',
+                    path: '/learningnote/VUE3/',
+                    collapsable: false,
+                    sidebarDepth: 2,
+                    children: [
+                        'VUE3_Vs_VUE2_In_Reactive_Data',
+                        'VUE3_Vs_VUE2_In_Watch',
+                        'VUE3_Vs_VUE2_In_Render_Function'
+                    ]
+                },
+                {
+                    title: 'JavaScript',
+                    path: '/learningnote/JSNote/',
+                    collapsable: false,
+                    sidebarDepth: 2,
+                    children: [
+                        'Formal&Real_Para_When_Func_Get_Obj',
+                    ],
+                }
+            ]
+        }, ],
         locales: {
             // 键名是该语言所属的子路径
             // 作为特例，默认语言可以使用 '/' 作为其路径。
