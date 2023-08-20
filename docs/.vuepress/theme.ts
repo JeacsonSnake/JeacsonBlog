@@ -17,19 +17,19 @@ export default hopeTheme({
             text: '关于',
             link: '/about/'
         },
-        {
-            text: '语言',
-            ariaLabel: 'Language Menu',
-            children: [{
-                    text: '中文',
-                    link: '/'
-                },
-                {
-                    text: 'English',
-                    link: '/en/'
-                }
-            ]
-        },
+        // {
+        //     text: '语言',
+        //     ariaLabel: 'Language Menu',
+        //     children: [{
+        //             text: '中文',
+        //             link: '/'
+        //         },
+        //         {
+        //             text: 'English',
+        //             link: '/en/'
+        //         }
+        //     ]
+        // },
         {
             text: 'Github',
             link: 'https://Github.com'
