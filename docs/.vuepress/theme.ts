@@ -38,34 +38,20 @@ export default hopeTheme({
     sidebar: {
         "/learningNote/": "structure"
     },
-
-    // sidebar: [{
-    //     text: '学习笔记',
-    //     link: '/learningnote/',
-    //     collapsable: false,
-    //     // sidebarDepth: 1,
-    //     children: [{
-    //             text: 'VUE3',
-    //             prefix: '/learningnote/VUE3/',
-    //             collapsible: false,
-    //             sidebarDepth: 2,
-    //             children: [
-    //                 'VUE3_Vs_VUE2_In_Reactive_Data',
-    //                 'VUE3_Vs_VUE2_In_Watch',
-    //                 'VUE3_Vs_VUE2_In_Render_Function'
-    //             ]
-    //         },
-    //         {
-    //             text: 'JavaScript',
-    //             prefix: '/learningnote/JSNote/',
-    //             collapsable: false,
-    //             sidebarDepth: 2,
-    //             children: [
-    //                 'Formal&Real_Para_When_Func_Get_Obj',
-    //             ],
-    //         }
-    //     ],
-    // }],
+    plugins: {
+        // 启用博客功能
+        blog: true
+    },
+    blog: {
+        avatar: '/assets/img/avatar.jpg',
+        roundAvatar: true,
+        name: 'Jeacson She',
+        description: "Mind your step",
+        medias: {
+            'Email': 'https://Jeacson_Snake@outlook.com',
+            "GitHub": 'https://github.com/JeacsonSnake'
+        }
+    }
 
 
 })
