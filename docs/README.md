@@ -2,7 +2,7 @@
 home: true
 sidebar: false
 heroImage: /assets/img/logo.png
-title: 主页 | JeacsonBlog-一个简单的博客
+title: 主页
 heroText: JeacsonBlog
 tagline: 一个简单的博客
 layout: BlogHome

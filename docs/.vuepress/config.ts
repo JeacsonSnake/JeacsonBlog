@@ -2,6 +2,8 @@ import { defineUserConfig } from "vuepress";
 import theme from "./theme";
 
 export default defineUserConfig({
+    title: "JeacsonBlog",
+    description: "JeacsonBlog-一个简单的博客",
 
     theme,
 
