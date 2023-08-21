@@ -1,4 +1,6 @@
 import { hopeTheme } from "vuepress-theme-hope";
+import { zhNavbarConfig } from "./navbar/zhNavbar";
+import { zhSidebarConfig } from './sidebar/zhSidebar'
 
 /* Your themeConfig here */
 
@@ -6,39 +8,8 @@ export default hopeTheme({
     // 导航栏相关设置
     logo: '/assets/img/logo.png',
     favicon: "/assets/img/favicon.ico",
-    navbar: [{
-            text: '主页',
-            link: '/'
-        },
-        {
-            text: '学习笔记',
-            link: '/learningnote/'
-        },
-        {
-            text: '关于',
-            link: '/about/'
-        },
-        // {
-        //     text: '语言',
-        //     ariaLabel: 'Language Menu',
-        //     children: [{
-        //             text: '中文',
-        //             link: '/'
-        //         },
-        //         {
-        //             text: 'English',
-        //             link: '/en/'
-        //         }
-        //     ]
-        // },
-        {
-            text: 'Github',
-            link: 'https://Github.com'
-        },
-    ],
-    sidebar: {
-        "/learningNote/": "structure"
-    },
+    navbar: zhNavbarConfig,
+    sidebar: zhSidebarConfig,
     plugins: {
         // 启用博客功能
         blog: true
