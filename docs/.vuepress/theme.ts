@@ -5,6 +5,7 @@ import { hopeTheme } from "vuepress-theme-hope";
 export default hopeTheme({
     // 导航栏相关设置
     logo: '/assets/img/logo.png',
+    favicon: "/assets/img/favicon.ico",
     navbar: [{
             text: '主页',
             link: '/'
@@ -51,6 +52,9 @@ export default hopeTheme({
             'Email': 'https://Jeacson_Snake@outlook.com',
             "GitHub": 'https://github.com/JeacsonSnake'
         }
+    },
+    author: {
+        name: "Jeacson She"
     }
 
 
