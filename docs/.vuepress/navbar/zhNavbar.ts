@@ -2,15 +2,18 @@ import { navbar } from 'vuepress-theme-hope'
 
 export const zhNavbarConfig = navbar([{
             text: '主页',
-            link: '/'
+            link: '/',
+            icon: 'house'
         },
         {
             text: '学习笔记',
-            link: '/learningnote/'
+            link: '/learningnote/',
+            icon:"paper-pen"
         },
         {
             text: '关于',
-            link: '/about/'
+            link: '/about/',
+            icon: "circle-info"
         },
         // {
         //     text: '语言',
