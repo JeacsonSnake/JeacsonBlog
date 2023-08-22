@@ -85,5 +85,12 @@ new Proxy(object, {
   
 - 通过Reflect(反射)模块：对被代理对象，即源对象的属性进行操作。
 
-Proxy: <https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Proxy>
-Reflect: <https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Reflect>
+参考：
+
+Proxy:
+
+<https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Proxy>
+
+Reflect:
+
+<https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Reflect>

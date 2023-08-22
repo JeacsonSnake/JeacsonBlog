@@ -1,6 +1,7 @@
 ---
 sidebar: false
+sticky: true
 ---
-# About Me
+# 关于我
 
-LOVE LIFE
+热爱生活
