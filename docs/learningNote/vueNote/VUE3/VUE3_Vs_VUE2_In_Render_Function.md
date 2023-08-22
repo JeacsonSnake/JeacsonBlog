@@ -1,3 +1,11 @@
+---
+category:
+  - VUE
+  - Web
+tag:
+  - VUE3
+  - COMPARE
+---
 # Vue3 与 Vue2 在渲染函数上的区别
 
 在编写vue代码时，我们一般会首先在template标签中编写html代码。当我们进行代码编译时，VUE首先会<u>根据代码内的各个标签将代码转换为若干个虚拟DOM节点</u>，也就是VNode (VirtualDomNode)，然后它会将多个 Vnode 结合，将其转化为VirtalDOM，最后VDOM才会被渲染成真实的DOM。大部分的情况都会是如此。

@@ -1,3 +1,11 @@
+---
+category:
+  - VUE
+  - Web
+tag:
+  - VUE3
+  - COMPARE
+---
 # Vue3 与 Vue2 在watch上的区别
 
 在VUE2中，watch作为选项存在。我们可以通过使用 watch 选项在每次响应式属性发生变化时触发函数。

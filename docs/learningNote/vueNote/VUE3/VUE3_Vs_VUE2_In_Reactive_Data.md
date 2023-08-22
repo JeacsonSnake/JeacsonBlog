@@ -1,3 +1,11 @@
+---
+category:
+  - VUE
+  - Web
+tag:
+  - VUE3
+  - COMPARE
+---
 # Vue3 与 Vue2 在数据响应式上的区别
 
 在 vue2 中，所有数据在底层都是通过使用Object.defineProperty()进行劫持后实现数据响应的。这使得如果一个数据为对象时，vue 无法对这个对象里面的元素进行监听，导致对象里的值无法实现响应式。
