@@ -23,9 +23,10 @@ export const zhSidebarConfig = sidebar({
         },
     ],
     "/learningNote/": [{
-            text: "VUE相关",
+            text: "VUE",
             prefix: "vueNote/",
-            children: [
+        children: [
+                '',
                 "VUE2/",
                 "VUE3/"
             ],
