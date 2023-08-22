@@ -10,8 +10,8 @@ export default hopeTheme({
     favicon: "/assets/img/favicon.ico",
     iconAssets: ['//at.alicdn.com/t/c/font_4219909_u396hzcgwtq.css'],
     iconPrefix: 'iconfont icon-',
-    // navbar: zhNavbarConfig,
-    // sidebar: zhSidebarConfig,
+    lastUpdated: true,
+    hotReload:true,
     plugins: {
         // 启用博客功能
         blog: true
