@@ -1,6 +1,6 @@
 import { hopeTheme } from "vuepress-theme-hope";
-import { zhNavbarConfig } from "./navbar/zhNavbar";
-import { zhSidebarConfig } from './sidebar/zhSidebar'
+import { zhNavbarConfig, enNavbarConfig } from "./navbar";
+import { zhSidebarConfig, enSidebarConfig } from './sidebar'
 
 /* Your themeConfig here */
 
@@ -10,8 +10,8 @@ export default hopeTheme({
     favicon: "/assets/img/favicon.ico",
     iconAssets: ['//at.alicdn.com/t/c/font_4219909_u396hzcgwtq.css'],
     iconPrefix: 'iconfont icon-',
-    navbar: zhNavbarConfig,
-    sidebar: zhSidebarConfig,
+    // navbar: zhNavbarConfig,
+    // sidebar: zhSidebarConfig,
     plugins: {
         // 启用博客功能
         blog: true
@@ -28,6 +28,16 @@ export default hopeTheme({
     },
     author: {
         name: "Jeacson She"
+    },
+    locales: {
+        '/': {
+            navbar: zhNavbarConfig,
+            sidebar: zhSidebarConfig,
+        },
+        '/en/': {
+            navbar: enNavbarConfig,
+            sidebar: enSidebarConfig,
+        }
     }
 
 
