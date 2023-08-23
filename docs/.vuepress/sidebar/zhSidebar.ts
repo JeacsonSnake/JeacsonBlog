@@ -9,17 +9,27 @@ export const zhSidebarConfig = sidebar({
 
         },
         {
-        text: "学习笔记",
-        prefix: "learningNote/",
-        children: [
-            "vueNote/",
-            "JSNote/",
-            "Computer_Network/",
-        ],
+            text: "学习笔记",
+            prefix: "learningNote/",
+            icon:"paper-pen",
+            children: [
+                "vueNote/",
+                "JSNote/",
+                "Computer_Network/",
+            ],
         },
         {
-        text: "关于",
-                link: 'about/'
+            text: "踩坑心得",
+            prefix: "postMortem/",
+            icon: "diagram-next",
+            children: [
+                "deploy/"
+            ],
+        },
+        {
+            text: "关于",
+            link: 'about/',
+            icon: "circle-info"
         },
     ],
     "/learningNote/": [{
@@ -46,6 +56,14 @@ export const zhSidebarConfig = sidebar({
 
         },
     ], 
+    "/postMortem/": [
+        '',
+        {
+            text: "部署",
+            link: 'deploy/',
+            icon: "box-archive"
+        }
+    ],
 
     "/learningNote/vueNote/VUE2/": "structure",
     "/learningNote/vueNote/VUE3/": "structure",

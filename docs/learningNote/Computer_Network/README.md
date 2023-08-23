@@ -4,6 +4,7 @@ title: 计算机网络
 icon: 'ethernet'
 category:
   - Computer
+  - Network
   - basic
 ---
 

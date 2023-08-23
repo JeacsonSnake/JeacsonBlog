@@ -7,8 +7,13 @@ export const zhNavbarConfig = navbar([{
         },
         {
             text: '学习笔记',
-            link: '/learningnote/',
+            link: '/learningNote/',
             icon:"paper-pen"
+        },
+        {
+            text: '踩坑心得',
+            link: '/postMortem/',
+            icon: "diagram-next"
         },
         {
             text: '关于',
