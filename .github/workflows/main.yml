@@ -19,10 +19,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repo & fetch update
+        uses: actions/checkout@v3
         with:
           # “最近更新时间” 等 git 日志相关信息，需要拉取全部提交记录
           fetch-depth: 0
+          # actions/checkout 签出软件仓库的步骤中，Github 工作流程会自动使用可用的 GITHUB_TOKEN 密钥与 Github 进行身份验证
+          # 然后，尽管我在该步骤中注入了个人访问令牌作为环境变量，但它还是将该步骤中的凭据持久化，并在发布软件包的步骤中重复使用这些凭据。
+          # 因此将该配置项设为false，可以使Github 工作流程在最后一步才使用个人访问令牌与 GitHub 进行身份验证
+          persist-credentials: false
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
