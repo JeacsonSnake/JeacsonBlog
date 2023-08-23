@@ -13,8 +13,14 @@ export default hopeTheme({
     lastUpdated: true,
     hotReload:true,
     plugins: {
+        mdEnhance: {
+            // 使站点中的 Markdown 文件支持脚注
+            footnote: true,
+            // 开启可指定图像大小
+            imgSize:true
+        },
         // 启用博客功能
-        blog: true
+        blog: true,
     },
     blog: {
         avatar: '/assets/img/avatar.jpg',
