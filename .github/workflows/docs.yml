@@ -6,7 +6,7 @@ name: deploy-website
 on:
   # Triggers the workflow on push or pull request events but only for the main branches.
   push:
-    branches: [ main ]
+    branches: [ master ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -14,7 +14,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  build:
+  Build_and_Deploy:
     # the type of runner that the job will run on 
     runs-on: ubuntu-latest
 
@@ -52,6 +52,7 @@ jobs:
       # 查看 workflow 的文档来获取更多信息
       # @see https://github.com/crazy-max/ghaction-github-pages
       - name: Deploy to GitHub Pages
+        if: success()
         uses: crazy-max/ghaction-github-pages@v3
         with:
           # 部署到 gh-pages 分支
