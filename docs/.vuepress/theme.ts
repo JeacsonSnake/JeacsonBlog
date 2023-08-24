@@ -8,7 +8,7 @@ export default hopeTheme({
     // 导航栏相关设置
     logo: '/assets/img/logo.png',
     favicon: "/assets/img/favicon.ico",
-    iconAssets: ['//at.alicdn.com/t/c/font_4219909_u396hzcgwtq.css'],
+    iconAssets: ['//at.alicdn.com/t/c/font_4219909_fifo4ha6sn8.css'],
     iconPrefix: 'iconfont icon-',
     lastUpdated: true,
     hotReload:true,

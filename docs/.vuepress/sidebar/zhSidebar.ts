@@ -50,6 +50,11 @@ export const zhSidebarConfig = sidebar({
 
         },
         {
+            text: "TypeScript",
+            link: 'TypeScriptNote/',
+            icon: "typescript"
+        },
+        {
             text: "计算机网络",
             link: 'Computer_Network/',
             icon: "ethernet"
@@ -69,6 +74,29 @@ export const zhSidebarConfig = sidebar({
     "/learningNote/vueNote/VUE3/": "structure",
     "/learningNote/JSNote/": "structure",
     "/learningNote/Computer_Network/": "structure",
+    "/learningNote/TypeScriptNote/": [
+        '',
+        {
+            text: "第一天",
+            link: "第一天.md",
+        },
+        {
+            text: "第二天",
+            link: "第二天.md",
+        },
+        {
+            text: "第三天",
+            link: "第三天.md",
+        },
+        {
+            text: "第四天",
+            link: "第四天.md",
+        },
+        {
+            text: "第五天",
+            link: "第五天.md",
+        }
+    ],
     
     });
 
