@@ -21,6 +21,12 @@ export default hopeTheme({
         },
         // 启用博客功能
         blog: true,
+        // comment: {
+        //     provider: "Waline",
+
+        //     // waline 模式下
+        //     serverURL: "...", // your serverURL
+        // },
     },
     blog: {
         avatar: '/assets/img/avatar.jpg',
