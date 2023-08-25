@@ -11,5 +11,5 @@ icon: 'paper-pen'
 ## 目录
 
 - [VUE](./vueNote/README.md)
-- [JavaScript](./jsNote/README.md)
+- [JavaScript](./JSNote/README.md)
 - [计算机网络](./Computer_Network/README.md)

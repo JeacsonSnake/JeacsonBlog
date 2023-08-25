@@ -1,5 +1,6 @@
 ---
 article: false
+author: '尚硅谷'
 title: VUE3
 icon: 'vuejs'
 category:
