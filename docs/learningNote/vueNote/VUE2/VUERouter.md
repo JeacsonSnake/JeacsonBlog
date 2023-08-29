@@ -1,18 +1,18 @@
 ---
 title: VUERouter
 icon: 'server'
+date: 2022-05-19
 category:
 - VUE
 - Web
 tag:
 - VUE2
 - Router
-
 ---
 
 ## 简述
 
-这里是当时学习vue-router时产出的相关笔记。目前还没完全整理，只有手写的图片版本。
+这里是当时学习vue-router时产出的相关笔记。目前已经从图片版本完全整理为可供阅览的电子格式。
 
 ## 零、简述
 
