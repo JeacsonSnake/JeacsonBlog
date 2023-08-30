@@ -2,6 +2,9 @@
 category:
   - JavaScript
   - Web
+tag:
+- JavaScript
+- problem
 ---
 # 有关JS函数读取传入对象属性值时，形参与实参所带来的问题
 

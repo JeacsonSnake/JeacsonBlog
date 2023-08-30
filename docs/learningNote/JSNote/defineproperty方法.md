@@ -3,13 +3,16 @@ title: Object.defineproperty 方法
 category:
   - JavaScript
   - Web
+tag:
+- JavaScript
+- advanced
 ---
 
 ## 简述
 
-Object.defineProperty 是 JavaScript 中 Object 类下的一个高级函数
+Object.defineProperty 是 JavaScript 中 Object 类下的一个高级函数, 它可以用其内置的 *getter* 与 *setter* 对传入的数据进行修改操作。一般用于旧时各种JS框架作响应式数据用。由于该方法本质较为臃肿且已经有相应方法做替代，现在大部分框架已经采用 ES6 中的 Proxy/Reflect 新方法作为优先选择。
 
-## 样例
+## 简单样例
 
 ```javascript
         let number = 18;
