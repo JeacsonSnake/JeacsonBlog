@@ -17,7 +17,11 @@ export default hopeTheme({
             // 使站点中的 Markdown 文件支持脚注
             footnote: true,
             // 开启可指定图像大小
-            imgSize:true
+            imgSize:true,
+            // 启用下角标功能
+            sub: true,
+            // 启用上角标功能
+            sup: true,
         },
         // 启用博客功能
         blog: true,
