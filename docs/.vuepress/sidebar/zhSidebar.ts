@@ -60,6 +60,11 @@ export const zhSidebarConfig = sidebar({
             icon: "ethernet"
 
         },
+        {
+            text: "计算机组成原理",
+            link: 'Principles_of_Computer_Composition/',
+            icon: 'aptop-code'
+        }
     ], 
     "/postMortem/": [
         '',
