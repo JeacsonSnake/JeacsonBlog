@@ -63,7 +63,7 @@ export const zhSidebarConfig = sidebar({
         {
             text: "计算机组成原理",
             link: 'Principles_of_Computer_Composition/',
-            icon: 'aptop-code'
+            icon: 'laptop-code'
         }
     ], 
     "/postMortem/": [
