@@ -6,6 +6,7 @@ category:
 tag:
 - VUE3
 - advanced
+order: 1
 ---
 
 ## 简述
@@ -251,17 +252,17 @@ function trigger(key) {
 那么我们原来的代码就需要被修改为这样：
 
 :::info
-因为`track()`函数与`trigger()`函数开始变长，因此我们将他们拆出，与depMap放入同一个文件(deepMap.js之类的)。只要知道调用的是同一个函数就行。
+因为`track()`函数与`trigger()`函数开始变长，因此我们将他们与 depMap 一起省略(用 ... 表示的代码)。只要知道调用的是同一个函数就行。
 :::
 
 ```javascript
-import {track, trigger} from './deepMap.js'
 
 let product = {price = 5, quantity = 2}
 let total = 0
 
 let effect = () => { total = product.price * product.quantity }// 缩减为箭头函数
 
+...
 // 首先声明要对属性进行跟踪，这里以 price 为例
 track("price")
 // 其次执行一次更新用函数，以获取首次的 total 值
@@ -346,16 +347,19 @@ function trigger(target, key) {
 那么我们原来的代码就需要被修改为这样：
 
 :::info
-因为`track()`函数与`trigger()`函数已经被拆出，与 targetMap 放入同一个文件(targetMap.js之类的)。因此只要知道调用的是同一个函数就行。
+因为`track()`函数与`trigger()`函数过长，因此与 targetMap 一起被省略(用 ... 表示的代码)。只要知道调用的是同一个函数就行。
 :::
 
 ```javascript
-import {track, trigger} from './targetMap.js'
 
 let product = {price = 5, quantity = 2}
 let total = 0
 
+...
+
 let effect = () => { total = product.price * product.quantity }// 缩减为箭头函数
+
+...
 
 // 首先声明要对属性进行跟踪，这里以 price 为例
 track(product, "price")

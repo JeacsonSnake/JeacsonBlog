@@ -6,6 +6,7 @@ category:
 tag:
 - VUE3
 - advanced
+order: 2
 ---
 
 ## 简述
@@ -203,7 +204,7 @@ let product = reactive({price = 5, quantity = 2})
 让我们把原来的代码拷贝过来：
 
 ```javascript
-// targetMap.js
+// targetMap 相关
 
 const targetMap = new WeakMap()
 
@@ -248,12 +249,17 @@ function trigger(target, key) {
 ```
 
 ```javascript
-// main.js
-import { track, trigger } from './targetMap.js'
+// 主要程序
+
 
 let product = {price = 5, quantity = 2}
 let total = 0
+
+...
+
 let effect = () => { total = product.price * product.quantity }// 缩减为箭头函数
+
+...
 
 // 首先声明要对属性进行跟踪，这里以 price 为例
 track(product, "price")
@@ -261,17 +267,17 @@ track(product, "price")
 effect()
 console.log('total = ' + total)
 
-price = 10
+product.price = 10
 // 在更新`price`之后调用`trigger(product, "price")`方法
 trigger(product, "price")
 console.log('total = ' + total)
 ```
 
-根据[前文](./VUE3的数据响应式_下.md#js数据是怎么读取和修改的-getter-与-setter)所述，我们要将这三个函数塞入[上一节](./VUE3的数据响应式_下.md#js数据是怎么读取和修改的-getter-与-setter)我们所创建的 `reactive` 函数中，以实现响应式数据。
+根据[前文](./VUE3的数据响应式_中.md#js数据是怎么读取和修改的-getter-与-setter)所述，我们要将这三个函数塞入[上一节](./VUE3的数据响应式_中.md#把-handler-封装起来)我们所创建的 `reactive` 函数中，以实现响应式数据。
 
 ```javascript
-// reactiveFunction.js
-import {track, trigger} from './targetMap.js'
+// reactiveFunction相关
+...
 
 function reactive(target) {
     const handler = {
@@ -300,25 +306,28 @@ function reactive(target) {
     return new Proxy(target, handler)
 }
 
+...
 ```
 
 搞定！现在原来的代码就可以被修改为：
 
 ```javascript
-// main.js
-import { reactive } from './reactiveFunction.js'
+// 主要代码
 
 let product = {price = 5, quantity = 2}
 let total = 0
+...
+
 let effect = () => { total = product.price * product.quantity }// 缩减为箭头函数
 
+...
 // 首先声明要对属性进行跟踪，这里已经在effect生效的时候触发track函数，因此删除
 
 // 其次执行一次更新用函数，以获取首次的 total 值
 effect()
 console.log('total = ' + total)
 
-price = 10
+product.price = 10
 // 在更新`price`之后，原则上已经调用了`trigger()`方法，因此删除
 
 console.log('total = ' + total)
