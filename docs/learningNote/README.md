@@ -14,3 +14,4 @@ icon: 'paper-pen'
 - [JavaScript](./JSNote/README.md)
 - [TypeScript](./TypeScriptNote/README.md)
 - [计算机网络](./Computer_Network/README.md)
+- [计算机组成原理](./Principles_of_Computer_Composition/README.md)

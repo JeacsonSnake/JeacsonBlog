@@ -22,6 +22,8 @@ export default hopeTheme({
             sub: true,
             // 启用上角标功能
             sup: true,
+            // 添加选项卡支持
+            tabs: true,
         },
         // 启用博客功能
         blog: true,
