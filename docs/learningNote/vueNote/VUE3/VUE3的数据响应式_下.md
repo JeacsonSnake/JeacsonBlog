@@ -137,7 +137,7 @@ console.log('total = ' + total)
 // 主要程序
 import { reactive } from './reactiveFunction.js'
 
-let product = {price = 5, quantity = 2}
+let product = reactive({price = 5, quantity = 2})
 let total = 0
 let effect = () => { total = product.price * product.quantity }// 缩减为箭头函数
 ...
@@ -217,7 +217,7 @@ effect(() => {
 ```javascript
 // 主要程序
 
-let product = {price = 5, quantity = 2}
+let product = reactive({price = 5, quantity = 2})
 let total = 0
 ...
 
@@ -367,7 +367,7 @@ function track(target, key) {
 ```javascript
 // 主要程序
 
-let product = {price = 5, quantity = 2}
+let product = reactive({price = 5, quantity = 2})
 let total = 0
 
 let salePrice = 0 //  ← NEW
@@ -396,8 +396,164 @@ console. log( '二次更新后， total 值为 ${total} (应为 30)，salePrice 
 你可能会想着：
 > 如果我在effect-total当中调用salePrice进行计算，会发生什么呢？
 
-回答：会有BUG。因为很明显：salePrice还不是一个响应式的数据。
+会有BUG。🤯
 
 ## 原来的代码还有问题存在
 
-Maybe later about ref()
+当我们将计算方式改为:
+
+```javascript
+effect(() => {
+    total = salePrice * product.quantity
+})
+
+effect(() => { 
+    salePrice = product.price * 1.2
+}) //  ← NEW
+```
+
+的时候。一旦我们修改了 product.price，那么total会发生什么？
+
+total无法改变。因为很明显: salePrice 还不是一个响应式的数据。即使你使 salePrice 发生了数据上的更新，也无法使 total 对其提出响应。
+
+那么我们应该如何实现它？
+
+在VUE3 的 compositions API中，我们使用ref() 函数进行实现。
+
+## ref() 函数
+
+:::info
+`ref()` 函数接受一个值，并返回一个可响应、可变的 Ref 对象。在该对象中，拥有一个单独的属性 `.value` 来指向对应的值。
+:::
+
+对于上述的代码，当我们使用`ref()`函数时，它们应该被改写为：
+
+```javascript
+let product = reactive({price = 5, quantity = 2})
+let total = 0
+
+let salePrice = ref(0) //  ← NEW
+...
+
+effect(() => { 
+    salePrice.value = product.price * 1.2 //  ← NEW
+})
+
+effect(() => { 
+    total = salePrice.value * product.quantity //  ← NEW
+})
+
+```
+
+这里为了之后代码运行的准确性，将两个 `effect` 的位置进行了调换，并在`salePrice`后调用`.value`。
+
+那么对于我们当前自己写的响应式引擎，我们应该要怎么定义`ref()`函数呢？
+
+这里有两种方法：
+
+### 依然使用reactive()函数实现🤯
+
+简单的调用 `reactive()` 函数，将ref接收到的传参传入reactive函数中：
+
+```javascript
+function ref(initialValue) {
+    return reactive({ value: initialValue })
+}
+```
+
+在这个例子中，可以。但是在 VUE3 中，并不是直接调用该函数进行实现的。所以我们不妨来看看VUE3是怎么做的：
+
+### 返璞归真——使用对象访问器(Javascript 自身的 计算属性)Object Accessor
+
+对象访问器是用于获取/设定值的函数。你可以简单理解为 JS 自带的 getter 与 setter (不是 Object.defineproporty 的那个)。
+让我们先看一个例子：
+
+```javascript
+let user = {
+    firstName = 'Word',
+    lastName = 'Press',
+
+}
+```
+
+让我们在里面声明两个函数：
+
+```javascript
+let user = {
+    firstName = 'Word',
+    lastName = 'Press',
+    get fullName() { 
+        return `${this.firstName} ${this.lastName}`
+    },
+
+    set fullName(value) {
+        [this.firstName, this.lastName] = value.split(' ')  
+    }
+
+}
+```
+
+当我们需要获取 fullName 时:
+
+```javascript
+console.log("全名为 " + `${user.fullName}` )
+```
+
+当我们需要修改 fullName 时:
+
+```javascript
+user.fullName = 'Vue Press'
+```
+
+这便是在 fullName 中使用 getter 和 setter 的正确方法。
+
+那么在VUE3中是如何使用这类函数定义ref()的呢？它的核心思想是这样的：
+
+```javascript
+function ref(raw) {
+    const r = {
+        get value() {
+            track(r, 'value')
+            return raw
+        },
+        set value(newVal) {
+            raw = newVal
+            trigger(r, 'value')
+        }
+    }
+    return r
+}
+```
+
+虽然VUE3源码中对于`ref()`函数的定义会更复杂一点点，但是它的核心思想差不多是这样的。
+
+由此，主要程序变为：
+
+```javascript
+// 主要程序
+
+let product = reactive({price = 5, quantity = 2})
+let total = 0
+
+let salePrice = ref(0) //  ← NEW
+...
+
+effect(() => { 
+    salePrice.value = product.price * 1.2 //  ← NEW
+})
+
+effect(() => { 
+    total = salePrice.value * product.quantity //  ← NEW
+})
+
+...
+
+console. log( '更新前， total 值为 ${total} (应为 12)， salePrice 值为 ${salePrice} (应为 6)')  //  ← NEW
+
+product.quantity = 3 
+console. log( '更新后， total 值为 ${total} (应为 18)，salePrice 值为 ${salePrice} (应为 6)')  //  ← NEW
+
+product.price = 10  //  ← NEW
+console. log( '二次更新后， total 值为 ${total} (应为 36)，salePrice 值为 ${salePrice} (应为 12)')  //  ← NEW
+
+```
