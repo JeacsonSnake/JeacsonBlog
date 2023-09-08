@@ -1,5 +1,5 @@
 ---
-title: VUE3的数据响应式是如何实现的？（中）
+title: VUE3的数据响应式是如何实现的？（二）
 category:
 - VUE
 - Web
