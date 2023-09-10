@@ -11,7 +11,7 @@ export default hopeTheme({
     iconAssets: ['//at.alicdn.com/t/c/font_4219909_fifo4ha6sn8.css'],
     iconPrefix: 'iconfont icon-',
     lastUpdated: true,
-    hotReload:true,
+    // hotReload:true,
     plugins: {
         mdEnhance: {
             // 使站点中的 Markdown 文件支持脚注
