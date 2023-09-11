@@ -575,6 +575,53 @@ console. log( '二次更新后， total 值为 ${total} (应为 36)，salePrice 
 
 ```
 
+:::tip
+如果你查阅了vue3的源码，你可能会发现，ref也是可以传入一个对象的。虽然这并不是vue所推荐的创建响应式对象的选项，但是为了防止你执意使用它，vue添加了一个判断语句。
+
+以下是vue针对ref的源码(这些是你在源码上执行build之后可以看到的代码，具体操作可以看之后的[这一篇](./VUE3的数据响应式_补.md#引入vue3源码))：
+
+```javascript
+class RefImpl {
+  constructor(value, __v_isShallow) {
+    this.__v_isShallow = __v_isShallow;
+    this.dep = void 0;
+    this.__v_isRef = true;
+    this._rawValue = __v_isShallow ? value : toRaw(value);
+    this._value = __v_isShallow ? value : toReactive(value);
+  }
+  get value() {
+    trackRefValue(this);
+    return this._value;
+  }
+  set value(newVal) {
+    const useDirectValue = this.__v_isShallow || isShallow(newVal) || isReadonly(newVal);
+    newVal = useDirectValue ? newVal : toRaw(newVal);
+    if (shared.hasChanged(newVal, this._rawValue)) {
+      this._rawValue = newVal;
+      this._value = useDirectValue ? newVal : toReactive(newVal);
+      triggerRefValue(this, newVal);
+    }
+  }
+}
+```
+
+你会发现：VUE在设置`.value`的时候使用了`this._value = __v_isShallow ? value : toReactive(value)`语句。
+
+而同样在源码中， `toReactive()` 函数是这样的：
+
+```javascript
+const toReactive = (value) => shared.isObject(value) ? reactive(value) : value;
+
+```
+
+你可以先不了解`shared`是什么，毕竟他不在我们的文章范围内，但是你应该可以通过这个函数的命名发现，它是用于**判断传入的值是不是一个对象**的。因此你可以通过这个三元表达式发现：
+
+$\text{当VUE通过该函数判断到ref()函数传入了一个对象之后，依然会调用reactive()函数进行}$
+$\text{响应式对象的创建。而通常情况下，他只是简单地将这个值进行返回。}$
+
+所以为了让整个代码编译的时间稍微短那么一点点，还是老老实实用`reactive()`函数创建响应式对象吧！
+:::
+
 ## 小总结
 
 在这篇文章中，我们修复了代码遗留的两个BUG，分别是：

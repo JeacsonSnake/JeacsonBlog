@@ -287,6 +287,8 @@ function computed(getter) {
 
 在reactivity文件夹同级下的dist目录中会出现许多文件。我们需要将'packages/reactivity/dist/reactivity.cjs.js'提出，并将其移动到我们自己的代码目录中。
 
+![packages/reactivity/dist/reactivity.cjs.js](./assets/img/vue3_Reactive_build_locate.jpg)
+
 最后只要进行引用就可以了。
 
 ```javascript
@@ -319,7 +321,7 @@ console. log( '二次更新后， total 值为 ${total} (应为 36)，salePrice 
 
 在以上四篇文章中，我们从最简单的JS代码开始，通过构建 `effect`/`track`/`trigger` 三板斧、使用proxy/reflect方法封装 `reactive()`函数，并以`activeEffect`、`ref()`函数与`computed()`函数等等相关的函数作为补足，一步步的搭建了我们自己的响应式引擎。
 
-当然，这里并不是终点。如果你继续深入源码，你可能会发现更多有关响应式数据细节上的东西，包括判断数据是否是只读的、是否为浅引用等等。我们只共同讨论了有关VUE3响应式引擎中最最核心的部分。
+当然，这里并不是终点。如果你继续深入源码，你可能会发现更多有关响应式数据细节上的东西，包括判断数据是否是只读的、是否为浅引用等等。在这里我们只共同讨论了有关VUE3响应式引擎中最最核心的部分。
 
 所以继续潜入源码吧！我们将会在不远处相见。
 
