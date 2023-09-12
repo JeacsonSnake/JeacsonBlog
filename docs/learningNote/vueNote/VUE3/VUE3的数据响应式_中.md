@@ -145,7 +145,31 @@ let proxiedProduct = new Proxy(product, {
 console.log(proxiedProduct.quantity)
 ```
 
-你可能会发现，传入的参数多了一个 `receiver`。而这就是Reflect的其中一个与众不同的能力。对于 **getter** 而言，这个 `receiver` 参数可以保证，当我们的对象从其他的对象中继承了 *同名的值或者对象* 时，this指针可以正确指向子对象而不是父对象。从而避免了Vue2中的一些响应式警告。
+你可能会发现，传入的参数多了一个 `receiver`，在ES6源码中，针对get这个trap函数，它是这么解释的：
+
+```typescript
+/**
+ * A trap for getting a property value.
+ * @param target The original object which is being proxied.
+ * @param p The name or `Symbol` of the property to get.
+ * @param receiver The proxy or an object that inherits from the proxy.
+ */
+
+```
+
+译为中文就是：
+
+```typescript
+/**
+ * 一个用于获取属性值的trap函数
+ * @param target 被代理的原始对象。
+ * @param p 希望获取的属性的名字或“符号”
+ * @param receiver 一个Proxy或继承自Proxy的对象。
+ */
+
+```
+
+而这就是Reflect的其中一个与众不同的能力。对于 **getter** 而言，这个 `receiver` 参数可以保证，当我们的对象从其他的对象中继承了 *同名的值或者对象* 时，this指针可以正确指向子对象而不是父对象。从而避免了Vue2中的一些响应式警告。
 
 :::tip
 想知道更深层次的答案，可以参考[javascript.info - 代理一个 getter](https://zh.javascript.info/proxy#dai-li-yi-ge-getter), 希望看英文的话也可以看→[javascript.info 中有关 Proxying a getter 的内容](https://javascript.info/proxy?tdsourcetag=s_pctim_aiomsg#proxying-a-getter)
