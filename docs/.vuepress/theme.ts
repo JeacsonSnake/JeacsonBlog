@@ -29,12 +29,12 @@ export default hopeTheme({
         },
         // 启用博客功能
         blog: true,
-        // comment: {
-        //     provider: "Waline",
+        comment: {
+            provider: "Waline",
 
-        //     // waline 模式下
-        //     serverURL: "https://jeacson-blog-comment-api-repo-vflcp10w5-jeacsonsnake.vercel.app/", // your serverURL
-        // },
+            // waline 模式下
+            serverURL: "https://blogcomment.jeacsonsnake.com/", // your serverURL
+        },
     },
     blog: { 
         avatar: '/assets/img/avatar.jpg',
