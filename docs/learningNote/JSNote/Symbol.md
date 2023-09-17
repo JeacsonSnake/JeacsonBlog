@@ -46,7 +46,20 @@ let Sym = Symbol('Diff description')
     let Sym2 = Symbol('b')  // 合法
     ```
 
-- Symbol值无法参与运算，无法隐式转成字符串，会报TypeError
+- Symbol值无法参与数值运算，无法通过隐式转换转为字符串
+
+    ```javascript
+    let Sym = new Symbol('calculate')
+    let Num = Sym + 5 // Type Error
+    ```
+
+    但是可以用`toString()`方法将Symbol转为字符串，该字符串格式为`"Symbol(description)"`
+
+    ```javascript
+    let Sym = new Symbol('calculate')
+    let StrSym = toString(Sym) // string: "Symbol('calculate')"
+    ```
+
 - 作为对象属性键无法用`.`运算符，但是可以使用方括号`[]`
 
     ```javascript
@@ -90,4 +103,28 @@ console.log(JSON.stringify(obj)); // 输出 "{}"
 ```
 
 - Object.getOwnPropertySymbols方法，可以获取对象的所有 Symbol 属性名
+
+    ```javascript
+    let obj = {
+        'name': 'Paul',
+        [Symbol('Obj Symbol1')]: 'Im a symbol'
+        [Symbol('Obj Symbol2')]: 'Im a symbol two'
+    }
+    targetObjSymbolArr = Object.getOwnPropertySymbols(obj) //targetObjSymbolArr = [Symbol('Obj Symbol1'), Symbol('Obj Symbol2')]
+
+    ```
+
 - Reflect.ownKeys可以返回所有类型的键名，包括常规键名和 Symbol 键名
+
+```javascript
+let obj = {
+  prop1: 'value1',
+  prop2: 'value2',
+  [Symbol('symbolKey')]: 'symbolValue'
+};
+
+let keys = Reflect.ownKeys(obj);
+
+console.log(keys);
+// 输出：[ 'prop1', 'prop2', Symbol(symbolKey) ]
+```
