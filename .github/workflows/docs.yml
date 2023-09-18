@@ -50,8 +50,8 @@ jobs:
         run: pnpm docs:build
 
       # 写入自定义域名
-      - name: Configure custom domain
-        run: echo blog.jeacsonsnake.com >> docs/.vuepress/dist/CNAME        
+    #   - name: Configure custom domain
+    #     run: echo blog.jeacsonsnake.com >> docs/.vuepress/dist/CNAME        
 
       # 查看 workflow 的文档来获取更多信息
       # @see https://github.com/crazy-max/ghaction-github-pages
