@@ -79,6 +79,7 @@ export const zhSidebarConfig = sidebar({
     "/learningNote/vueNote/VUE3/": "structure",
     "/learningNote/JSNote/": "structure",
     "/learningNote/Computer_Network/": "structure",
+    "/learningNote/Principles_of_Computer_Composition/": "structure",
     "/learningNote/TypeScriptNote/": [
         '',
         {
