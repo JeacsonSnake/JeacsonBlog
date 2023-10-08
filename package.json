@@ -21,6 +21,7 @@
     "@commitlint/config-conventional": "^17.7.0",
     "@vuepress/client": "2.0.0-beta.66",
     "cz-git": "^1.7.1",
+    "markdown-it-multimd-table": "^4.2.3",
     "vue": "^3.3.4",
     "vuepress": "2.0.0-beta.66",
     "vuepress-theme-hope": "2.0.0-beta.235"
