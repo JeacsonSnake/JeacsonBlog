@@ -64,6 +64,11 @@ export const zhSidebarConfig = sidebar({
             text: "计算机组成原理",
             link: 'Principles_of_Computer_Composition/',
             icon: 'laptop-code'
+        },
+        {
+            text: "自动控制原理",
+            link: 'Principles_of_Automatic_Control_Related/',
+            icon: 'gears'
         }
     ], 
     "/postMortem/": [
@@ -72,6 +77,11 @@ export const zhSidebarConfig = sidebar({
             text: "部署",
             link: 'deploy/',
             icon: "box-archive"
+        },
+        {
+            text: "markdown-it渲染器",
+            link: 'markdown_render/',
+            icon: "markdown"
         }
     ],
 
@@ -80,6 +90,7 @@ export const zhSidebarConfig = sidebar({
     "/learningNote/JSNote/": "structure",
     "/learningNote/Computer_Network/": "structure",
     "/learningNote/Principles_of_Computer_Composition/": "structure",
+    "/learningNote/Principles_of_Automatic_Control_Related/":"structure",
     "/learningNote/TypeScriptNote/": [
         '',
         {
