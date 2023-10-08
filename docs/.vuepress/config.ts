@@ -1,5 +1,6 @@
 import { defineUserConfig } from "vuepress";
 import theme from "./theme";
+import Multimd_table from 'markdown-it-multimd-table'
 
 export default defineUserConfig({
     title: "JeacsonBlog",
@@ -23,4 +24,8 @@ export default defineUserConfig({
             // description: 'A personal blog website powered by Vuepress'
         }
     },
+    
+    extendsMarkdown: (md) => {
+            md.use(Multimd_table)
+    }
 });
