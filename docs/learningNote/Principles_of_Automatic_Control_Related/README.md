@@ -41,3 +41,43 @@ category:
 - 对于$t<0$的函数$f(t)=0$
 - 对于$k<0$的函数$f(kT) = f(k) = 0$
 - $k = 0, 1, 2,\dots$
+
+## Z变换法
+
+### 一、差分方程法
+
+### 二、幂级数法
+
+### 三、部分分式法
+
+### 四、残差法
+
+## Z逆变换法
+
+### 一、差分方程法
+
+例子：已知 $m(k) = \begin{cases} 1, &\text{k为偶数} \\ 0, &\text{k为奇数}\end{cases}$ ，当 $k = 0, 1, \dots , 4$ 时，
+
+求函数 $y(k) = m(k) - m(k-1) - y(k - 1)$ 的值。
+
+解：
+
+$$y(k) = m(k) - m(k-1) - y(k - 1) \Rightarrow Y(z) = M(z) - z^{-1}M(z) - z^{-1}Y(z)$$
+
+$$\Rightarrow \frac{Y(z)}{M(z)} = \frac{1 - z^{-1}}{1 + z^{-1}} = \frac{z-1}{z+1}$$
+
+$\because m(k) = \begin{cases} 1, &\text{k为偶数} \\ 0, &\text{k为奇数}\end{cases}$
+
+$$\Rightarrow M(z) = 1 + 0 + z^{-2} + 0 + z^{-4} + \dots = \frac{1}{1 - z^{-2}} = \frac{z^2}{z^2 - 1} $$
+
+$$\therefore Y(z)= \frac{Y(z)}{M(z)} \times M(z) = \frac{z-1}{z+1} \times \frac{z^2}{z^2 - 1} = \frac{(z-1)z^2}{(z-1)(z+1)^2} = \frac{z^2}{(z+1)^2}$$
+
+$\because Z[y(k)] = Y(z) \Rightarrow y(k) = Z^{-1}[Y(z)]$
+
+$$\therefore y(k) = Z^{-1}[\frac{z^2}{(z+1)^2}]$$
+
+### 二、幂级数法
+
+### 三、部分分式法
+
+### 四、残差法
