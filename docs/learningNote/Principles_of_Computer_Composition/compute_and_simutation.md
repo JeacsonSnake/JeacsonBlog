@@ -12,7 +12,9 @@ category:
 
 ## 机器数(Machine Number)
 
-见[这里](./README.md#机器数machine-number)
+请参考[这里](./README.md#机器数machine-number)
+
+在该章节中包含了有关**IEEE-754单、双精度**、**十进制与机器数相互转换**、**机器精度(machine epsilon)**、**真误差(true error)/真实相对误差(true relative error)**、**舍入规则(Rounding Rule)**等问题的相关计算。
 
 ## 缩小舍入误差
 
@@ -103,7 +105,7 @@ $$f(x) = \sum_{k=0}^{n}{f^{(k)}(a) \over k!}(x - a)^{k} + R_n$$
 
 而余项我们一般称其为 **截断误差(truncation error)**。用公式表示为：
 
-$$R_n = {f^{(n + 1)}(c) \over (n + 1)!}(x - a)^{n + 1} \space \text{其中 {\it c} \in 包含 a 和 x 的区间}$$
+$$R_n = {f^{(n + 1)}(c) \over (n + 1)!}(x - a)^{n + 1} \space \text{其中 {\it c}} \in \text{包含 a 和 x 的区间}$$
 
 ### 中值定理
 
