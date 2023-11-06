@@ -26,6 +26,12 @@ export default defineUserConfig({
     },
     
     extendsMarkdown: (md) => {
-            md.use(Multimd_table)
+        md.use(Multimd_table, {
+                multiline:  false,
+                rowspan:    false,
+                headerless: true,
+                multibody:  true,
+                autolabel:  true,
+            })
     }
 });
