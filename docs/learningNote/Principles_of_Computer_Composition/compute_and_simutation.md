@@ -14,7 +14,7 @@ category:
 
 请参考[这里](./README.md#机器数machine-number)
 
-在该章节中包含了有关**IEEE-754单、双精度**、**十进制与机器数相互转换**、**机器精度(machine epsilon)**、**真误差(true error)/真实相对误差(true relative error)**、**舍入规则(Rounding Rule)**等问题的相关计算。
+在该章节中包含了有关**IEEE-754单、双精度**、**十进制与机器数相互转换**、**机器精度(machine epsilon)**、**真误差(true error)/真实相对误差(true relative error)**、**舍入规则(Rounding Rule)** 等问题的相关计算。
 
 ## 缩小舍入误差
 
