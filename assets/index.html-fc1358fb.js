@@ -1,0 +1,1 @@
+import{_ as e}from"./plugin-vue_export-helper-c27b6911.js";import{o as t,c as o,a as c}from"./app-4b3f8a62.js";const n={},_=c("p",null,"这里存放了一些编码相关的通用技能，包括但不限于设计模式，API文档的撰写与阅读，通用编码思维逻辑等内容。",-1),s=[_];function r(a,l){return t(),o("div",null,s)}const f=e(n,[["render",r],["__file","index.html.vue"]]);export{f as default};
