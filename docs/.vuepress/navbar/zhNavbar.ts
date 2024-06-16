@@ -16,6 +16,11 @@ export const zhNavbarConfig = navbar([{
             icon: "diagram-next"
         },
         {
+            text: '记录随笔',
+            link: '/complain_diary/',
+            icon: "signature"
+        },
+        {
             text: '关于',
             link: '/about/',
             icon: "circle-info"

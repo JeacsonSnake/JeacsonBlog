@@ -27,6 +27,11 @@ export const zhSidebarConfig = sidebar({
             ],
         },
         {
+            text: "记录随笔",
+            link: "complain_diary/",
+            icon: "signature"
+        },
+        {
             text: "关于",
             link: 'about/',
             icon: "circle-info"
@@ -84,7 +89,7 @@ export const zhSidebarConfig = sidebar({
             icon: "markdown"
         }
     ],
-
+    "/complain_diary/": "structure",
     "/learningNote/vueNote/VUE2/": "structure",
     "/learningNote/vueNote/VUE3/": "structure",
     "/learningNote/JSNote/": "structure",
