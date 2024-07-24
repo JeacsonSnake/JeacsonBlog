@@ -11,4 +11,5 @@ bgImage: https://images.unsplash.com/photo-1692545115562-7353d6047b41?ixlib=rb-4
 heroFullScreen: true
 
 footer: MIT Licensed | Copyright © 2023-present She Zixiang
+copyright: false
 ---
