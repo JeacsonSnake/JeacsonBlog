@@ -7,7 +7,7 @@ icon: 'house'
 heroText: JeacsonBlog
 tagline: 一个简单的博客
 layout: BlogHome
-bgImage: https://images.unsplash.com/photo-1692545115562-7353d6047b41?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80
+bgImage: /assets/img/HomepageFrontImg.jpg
 heroFullScreen: true
 
 footer: MIT Licensed | Copyright © 2023-present She Zixiang
