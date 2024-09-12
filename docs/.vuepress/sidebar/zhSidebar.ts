@@ -20,6 +20,7 @@ export const zhSidebarConfig = sidebar({
                 "Principles_of_Automatic_Control_Related/",
                 "coding_skill/",
                 "Computer_Network/",
+                "Ros2_Note/",
             ],
         },
         {
@@ -81,10 +82,15 @@ export const zhSidebarConfig = sidebar({
             link: 'Principles_of_Automatic_Control_Related/',
             icon: 'gears'
         },
-                {
+        {
             text: "编码技术",
             link: 'coding_skill/',
-            icon: 'gears'
+            icon: 'dev'
+        },
+        {
+            text: "ROS2学习笔记集",
+            link: 'Ros2_Note/',
+            icon: 'smartrobot-fill'
         },
     ], 
     "/postMortem/": [
@@ -108,6 +114,7 @@ export const zhSidebarConfig = sidebar({
     "/learningNote/Computer_Network/": "structure",
     "/learningNote/Principles_of_Computer_Composition/": "structure",
     "/learningNote/Principles_of_Automatic_Control_Related/":"structure",
+    "/learningNote/Ros2_Note/":"structure",
     "/learningNote/TypeScriptNote/": [
         '',
         {
