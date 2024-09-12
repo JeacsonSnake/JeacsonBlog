@@ -8,7 +8,7 @@ export default hopeTheme({
     // 导航栏相关设置
     logo: '/assets/img/logo.png',
     favicon: "/assets/img/favicon.ico",
-    iconAssets: ['//at.alicdn.com/t/c/font_4219909_fifo4ha6sn8.css'],
+    iconAssets: ['//at.alicdn.com/t/c/font_4219909_64bpqxxnfhg.css'],
     iconPrefix: 'iconfont icon-',
     lastUpdated: true,
     // hotReload:true,
@@ -38,7 +38,6 @@ export default hopeTheme({
     },
     blog: { 
         avatar: '/assets/img/avatar.jpg',
-        roundAvatar: true,
         name: 'Jeacson She',
         description: "Mind your step",
         medias: {

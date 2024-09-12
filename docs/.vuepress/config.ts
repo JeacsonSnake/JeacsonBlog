@@ -1,3 +1,4 @@
+import { viteBundler } from '@vuepress/bundler-vite'
 import { defineUserConfig } from "vuepress";
 import theme from "./theme";
 import Multimd_table from 'markdown-it-multimd-table'
@@ -9,6 +10,11 @@ export default defineUserConfig({
     base:'/',
 
     theme,
+
+    bundler: viteBundler({
+        viteOptions: {},
+        vuePluginOptions: {},
+    }),
 
     locales: {
         // 键名是该语言所属的子路径
