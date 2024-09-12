@@ -15,6 +15,10 @@ export const zhSidebarConfig = sidebar({
             children: [
                 "vueNote/",
                 "JSNote/",
+                "TypeScriptNote/",
+                "Principles_of_Computer_Composition/",
+                "Principles_of_Automatic_Control_Related/",
+                "coding_skill/",
                 "Computer_Network/",
             ],
         },
@@ -23,7 +27,8 @@ export const zhSidebarConfig = sidebar({
             prefix: "postMortem/",
             icon: "diagram-next",
             children: [
-                "deploy/"
+                "deploy/",
+                "markdown_render/",
             ],
         },
         {
@@ -37,7 +42,8 @@ export const zhSidebarConfig = sidebar({
             icon: "circle-info"
         },
     ],
-    "/learningNote/": [{
+    "/learningNote/": [
+        {
             text: "VUE",
             prefix: "vueNote/",
         children: [
@@ -74,7 +80,12 @@ export const zhSidebarConfig = sidebar({
             text: "自动控制原理",
             link: 'Principles_of_Automatic_Control_Related/',
             icon: 'gears'
-        }
+        },
+                {
+            text: "编码技术",
+            link: 'coding_skill/',
+            icon: 'gears'
+        },
     ], 
     "/postMortem/": [
         '',
@@ -91,6 +102,7 @@ export const zhSidebarConfig = sidebar({
     ],
     "/complain_diary/": "structure",
     "/learningNote/vueNote/VUE2/": "structure",
+    "/learningNote/coding_skill/": "structure",
     "/learningNote/vueNote/VUE3/": "structure",
     "/learningNote/JSNote/": "structure",
     "/learningNote/Computer_Network/": "structure",
