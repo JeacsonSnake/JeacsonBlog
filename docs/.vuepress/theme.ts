@@ -57,7 +57,8 @@ export default hopeTheme({
             navbar: enNavbarConfig,
             sidebar: enSidebarConfig,
         }
-    }
+    },
+    sidebarSorter:["readme", "order", "date", "title", "filename"]
 
 
 })

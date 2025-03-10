@@ -45,6 +45,13 @@ export const zhSidebarConfig = sidebar({
     ],
     "/learningNote/": [
         {
+            text: "ROS2学习笔记集",
+            prefix: "Ros2_Note/",
+            children: "structure",
+            collapsible: true,
+            icon: 'smartrobot-fill',
+        },
+        {
             text: "VUE",
             prefix: "vueNote/",
         children: [
@@ -87,11 +94,6 @@ export const zhSidebarConfig = sidebar({
             link: 'coding_skill/',
             icon: 'dev'
         },
-        {
-            text: "ROS2学习笔记集",
-            link: 'Ros2_Note/',
-            icon: 'smartrobot-fill'
-        },
     ], 
     "/postMortem/": [
         '',
@@ -114,7 +116,6 @@ export const zhSidebarConfig = sidebar({
     "/learningNote/Computer_Network/": "structure",
     "/learningNote/Principles_of_Computer_Composition/": "structure",
     "/learningNote/Principles_of_Automatic_Control_Related/":"structure",
-    "/learningNote/Ros2_Note/":"structure",
     "/learningNote/TypeScriptNote/": [
         '',
         {
