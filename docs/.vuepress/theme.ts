@@ -8,25 +8,9 @@ export default hopeTheme({
     // 导航栏相关设置
     logo: '/assets/img/logo.png',
     favicon: "/assets/img/favicon.ico",
-    iconAssets: ['//at.alicdn.com/t/c/font_4219909_64bpqxxnfhg.css'],
-    iconPrefix: 'iconfont icon-',
     lastUpdated: true,
     // hotReload:true,
     plugins: {
-        mdEnhance: {
-            // 使站点中的 Markdown 文件支持脚注
-            footnote: true,
-            // 开启可指定图像大小
-            imgSize:true,
-            // 启用下角标功能
-            sub: true,
-            // 启用上角标功能
-            sup: true,
-            // 添加选项卡支持
-            tabs: true,
-            // 使用 KaTeX 启用 TeX 支持
-            katex: true,
-        },
         // 启用博客功能
         blog: true,
         comment: {
@@ -35,6 +19,25 @@ export default hopeTheme({
             // waline 模式下
             serverURL: "https://blogcomment.jeacsonsnake.com/", // your serverURL
         },
+        icon: {
+            assets: ['//at.alicdn.com/t/c/font_4219909_64bpqxxnfhg.css'],
+            prefix: 'iconfont icon-',
+        }
+
+    },
+    markdown: {
+        // 开启可指定图像大小
+        imgSize: true,
+        // 使用 KaTeX 启用 TeX 支持
+        math: true,
+        // 添加选项卡支持
+        tabs: true,
+        // 使站点中的 Markdown 文件支持脚注
+        footnote: true,
+        // 启用下角标功能
+        sub: true,
+        // 启用上角标功能
+        sup: true,
     },
     blog: { 
         avatar: '/assets/img/avatar.jpg',
