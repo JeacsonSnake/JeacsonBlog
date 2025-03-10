@@ -22,14 +22,16 @@ export default hopeTheme({
         icon: {
             assets: ['//at.alicdn.com/t/c/font_4219909_64bpqxxnfhg.css'],
             prefix: 'iconfont icon-',
-        }
+        },
 
     },
     markdown: {
         // 开启可指定图像大小
         imgSize: true,
         // 使用 KaTeX 启用 TeX 支持
-        math: true,
+        math: {
+            type: "katex",
+        },
         // 添加选项卡支持
         tabs: true,
         // 使站点中的 Markdown 文件支持脚注
