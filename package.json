@@ -17,10 +17,10 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@commitlint/cli": "^17.8.1",
-    "@commitlint/config-conventional": "^17.8.1",
+    "@commitlint/cli": "^19.8.0",
+    "@commitlint/config-conventional": "^19.8.0",
     "@vuepress/bundler-vite": "2.0.0-rc.20",
-    "@waline/client": "3.5.5",
+    "@waline/client": "3.5.6",
     "cz-git": "^1.11.1",
     "katex": "^0.16.21",
     "markdown-it-multimd-table": "^4.2.3",
