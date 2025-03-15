@@ -1,6 +1,9 @@
 ---
 sidebar: false
 sticky: true
+icon: masks-theater
+star: true
+timeline: false
 ---
 # 关于我
 
@@ -19,7 +22,7 @@ sticky: true
 
 🤪 我的毕业设计是通过使用轻量神经网络MobilenetV3实现一个基于树莓派的钢琴键盘演奏机器人，你可以在我的博客上看到我对它的描述（如果我没有偷懒或者没有忘了写的话应该能看到）。
 
-📫 如有需要，您可以通过 Jeacson_Snake@outlook.com 与我联系。
+📫 如有需要，您可以通过 <Jeacson_Snake@outlook.com> 与我联系。
 
 ---
 
