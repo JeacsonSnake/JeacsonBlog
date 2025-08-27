@@ -6,7 +6,7 @@ title: 主页
 icon: 'house'
 heroText: JeacsonBlog
 tagline: 一个简单的博客
-layout: BlogHome
+layout: Blog
 bgImage: /assets/img/HomepageFrontImg.jpg
 heroFullScreen: true
 
