@@ -47,7 +47,7 @@ order: 2
 
 简单来说，它可以用其内置的 `getter` 与 `setter` 两个函数对传入的数据进行修改操作。因为在JavaScript设定中，当它希望读取某个数据时，它会优先调用 **Object.defiineProperty** 身上的 `getter` 方法进行读取；而如果它希望修改某个数据时，它会优先调用 **Object.defiineProperty** 身上的 `setter` 方法进行设置。在这时，我们就可以通过自定义这两个方法，来实现响应式的数据了。
 
-:::tip
+::: tip
 想了解更多有关 **Object.defiineProperty** 如何配置的内容，可以看看同样在博客内的[这篇文章](../../JSNote/defineproperty方法.md)。
 :::
 
@@ -171,7 +171,7 @@ console.log(proxiedProduct.quantity)
 
 而这就是Reflect的其中一个与众不同的能力。对于 **getter** 而言，这个 `receiver` 参数可以保证，当我们的对象从其他的对象中继承了 *同名的值或者对象* 时，this指针可以正确指向子对象而不是父对象。从而避免了Vue2中的一些响应式警告。
 
-:::tip
+::: tip
 想知道更深层次的答案，可以参考[javascript.info - 代理一个 getter](https://zh.javascript.info/proxy#dai-li-yi-ge-getter), 希望看英文的话也可以看→[javascript.info 中有关 Proxying a getter 的内容](https://javascript.info/proxy?tdsourcetag=s_pctim_aiomsg#proxying-a-getter)
 :::
 

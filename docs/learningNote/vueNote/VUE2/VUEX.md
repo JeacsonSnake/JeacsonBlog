@@ -226,8 +226,9 @@ VueX是专门在vue中实现集中式状态(数据)管理的vue插件。它可�
 用于提交数据，**但是 action 提交数据时使用 mutation 作为中介，而不是直接变更状态。** 因此该属性一般用于包含任意异步操作。
 Action 函数接受一个与 store 实例具有相同方法和属性的 context 对象，因此你可以调用 context.commit 提交一个 mutation，或者通过 context.state 和 context.getters 来获取 state 和 getters。
 
-:::tip
-    因为模块分割的原因，这里的context和store有一些地方不一致，即`context !== store`。具体可以参考[官方文档 Vuex 3.x Module](https://v3.vuex.vuejs.org/zh/guide/modules.html)。
+::: tip
+    因为模块分割的原因，这里的context和store有一些地方不一致，即`context !== store`。
+    具体可以参考[官方文档 Vuex 3.x Module](https://v3.vuex.vuejs.org/zh/guide/modules.html)。
 :::
 
 ```javascript
@@ -471,7 +472,7 @@ export default {
     store.state.b // -> moduleB 的状态
 ```
 
-:::tip
+::: tip
 默认情况下，模块内部的 action、mutation 和 getter 是注册在全局命名空间的——这样使得多个模块能够对同一 mutation 或 action 作出响应。如果希望你的模块具有更高的封装度和复用性，你可以通过添加 `namespaced: true` 的方式使其成为带命名空间的模块:
 
 ```javascript

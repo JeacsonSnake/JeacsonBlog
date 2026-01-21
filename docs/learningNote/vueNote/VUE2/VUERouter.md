@@ -258,45 +258,45 @@ export default new VueRouter({
 
 1. 字符串写法
 
-```vue
-<template>
-    <div>
-        <h2>Here is Message component</h2>
-        <div class = 'navbar'>
-            <ul>
-                <li v-for = 'm in messagelist' :key="m.id">
-                    // 借助 router 实现路由切换
-                    <router-link class = 'detail' active-class = 'active' to ="`/home/message/detail?id:${m.id}&title=${m.title}`">{{m.title}}</router-link>
-                </li>
-            </ul>
-        </div>
+    ```vue
+    <template>
+        <div>
+            <h2>Here is Message component</h2>
+            <div class = 'navbar'>
+                <ul>
+                    <li v-for = 'm in messagelist' :key="m.id">
+                        // 借助 router 实现路由切换
+                        <router-link class = 'detail' active-class = 'active' to ="`/home/message/detail?id:${m.id}&title=${m.title}`">{{m.title}}</router-link>
+                    </li>
+                </ul>
+            </div>
 
-        <div class = 'display'>
-            // 声明组件的呈现位置
-            <router-view></router-view>
-        </div>
+            <div class = 'display'>
+                // 声明组件的呈现位置
+                <router-view></router-view>
+            </div>
 
-    </div>
-</template>
+        </div>
+    </template>
 
-...
+    ...
 
-<script>
-    export default {
-        name: 'Message',
-        data(){
-            return {
-                messagelist:[
-                    {id:'001', title:'message 001'},
-                    {id:'002', title:'message 002'},
-                    {id:'003', title:'message 003'},
-                ]
-            }
-        }
-    }
+    <script>
+        export default {
+            name: 'Message',
+            data(){
+                return {
+                    messagelist:[
+                        {id:'001', title:'message 001'},
+                        {id:'002', title:'message 002'},
+                        {id:'003', title:'message 003'},
+                    ]
+                }
+            }
+        }
 
-</script>
-```
+    </script>
+    ```
 
 2. 对象写法(一般**较为推荐**该写法)
 
@@ -460,45 +460,45 @@ export default new VueRouter({
 
 1. 字符串写法
 
-```vue
-<template>
-    <div>
-        <h2>Here is Message component</h2>
-        <div class = 'navbar'>
-            <ul>
-                <li v-for = 'm in messagelist' :key="m.id">
-                    // 借助 router 实现路由切换
-                    <router-link class = 'detail' active-class = 'active' to ="`/home/message/detail/${m.id}/${m.title}`">{{m.title}}</router-link>
-                </li>
-            </ul>
-        </div>
+    ```vue
+    <template>
+        <div>
+            <h2>Here is Message component</h2>
+            <div class = 'navbar'>
+                <ul>
+                    <li v-for = 'm in messagelist' :key="m.id">
+                        // 借助 router 实现路由切换
+                        <router-link class = 'detail' active-class = 'active' to ="`/home/message/detail/${m.id}/${m.title}`">{{m.title}}</router-link>
+                    </li>
+                </ul>
+            </div>
 
-        <div class = 'display'>
-            // 声明组件的呈现位置
-            <router-view></router-view>
-        </div>
+            <div class = 'display'>
+                // 声明组件的呈现位置
+                <router-view></router-view>
+            </div>
 
-    </div>
-</template>
+        </div>
+    </template>
 
-...
+    ...
 
-<script>
-    export default {
-        name: 'Message',
-        data(){
-            return {
-                messagelist:[
-                    {id:'001', title:'message 001'},
-                    {id:'002', title:'message 002'},
-                    {id:'003', title:'message 003'},
-                ]
-            }
-        }
-    }
+    <script>
+        export default {
+            name: 'Message',
+            data(){
+                return {
+                    messagelist:[
+                        {id:'001', title:'message 001'},
+                        {id:'002', title:'message 002'},
+                        {id:'003', title:'message 003'},
+                    ]
+                }
+            }
+        }
 
-</script>
-```
+    </script>
+    ```
 
 2. 对象写法(一般**较为推荐**该写法)
 
@@ -799,7 +799,7 @@ export default {
 
 只要在`<button>`标签中使用`@click = "pushShow(m)"`或`@click = "replaceShow(m)"`
 
-:::tips
+::: tip
 
 如果你对比下，你可能会发现，在这两个函数下的配置，与to标签下的配置是相同的。
 
@@ -839,7 +839,7 @@ export default {
 ...
 ```
 
-:::tip
+::: tip
 
 1. 如果希望包含多个，可以使用 `:include = "["nameA", "nameB"]"`进行包含。
 
@@ -998,13 +998,13 @@ export default router
 
 ## 十二、路由器的两种工作模式
 
-路由器存在两种工作模式：hash模式和history模式。而路由器的缺省工作模式为hash模式。
+路由器存在两种工作模式：hash 模式和 history 模式。而路由器的缺省工作模式为 hash 模式。
 
 ::: tip
 
 在任意一个网址中，跟在原网址的`#`符号后传输的各种参数等被成为hash值
 
-例： 在`https://jeacsonsnake.github.io/JeacsonBlog/learningNote/vueNote/VUE2/VUERouter.html#%E4%BA%8C%E3%80%81%E5%B5%8C%E5%A5%97%E8%B7%AF%E7%94%B1-%E5%A4%9A%E7%BA%A7%E8%B7%AF%E7%94%B1`中，`#%E4%BA%8C%E3%80%81%E5%B5%8C%E5%A5%97%E8%B7%AF%E7%94%B1-%E5%A4%9A%E7%BA%A7%E8%B7%AF%E7%94%B1``一般会被称为hash值
+例： 在 `https://jeacsonsnake.github.io/JeacsonBlog/learningNote/vueNote/VUE2/VUERouter.html#%E4%BA%8C%E3%80%81%E5%B5%8C%E5%A5%97%E8%B7%AF%E7%94%B1-%E5%A4%9A%E7%BA%A7%E8%B7%AF%E7%94%B1` 中， `#%E4%BA%8C%E3%80%81%E5%B5%8C%E5%A5%97%E8%B7%AF%E7%94%B1-%E5%A4%9A%E7%BA%A7%E8%B7%AF%E7%94%B1` 一般会被称为hash值
 
 hash值不会作为网址路径的一部分发送给服务器，即不会被包含在http请求中。
 
@@ -1012,13 +1012,13 @@ hash值不会作为网址路径的一部分发送给服务器，即不会被包�
 
 如果路由器工作模式为hash模式：
 
-- 地址会带上`#`
+- 地址会带上 `#`
 
 - 如果通过第三方手机APP分享该内容时，由于App校验较为严格，该地址会被标记为不合法
 
 - 但是这种工作模式的兼容性好
 
-如果路由器工作模式为history模式：
+如果路由器工作模式为 history 模式：
 
 - 地址不变
 

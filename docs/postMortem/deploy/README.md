@@ -68,7 +68,7 @@ icon: 'box-archive'
 
 ### 2.无法正常加载评论的问题
 
-:::info
+::: info
 由于写作习惯，这里所有有关域名的网址都做了化名(xxxxx.com)。
 :::
 
@@ -142,7 +142,7 @@ icon: 'box-archive'
 
 **解决方案**：将原先操作重置后，以如下方法进行：
 
-:::info 相关定义
+::: info 相关定义
 这里将原网址定义为：“youraccount.github.io/blog/”,
 
 希望添加的自定义域名设置为：“blog.yourdomain.com”
@@ -184,7 +184,7 @@ icon: 'box-archive'
 
 **解决方案**：因为该项目部署时所在的网址是有类似于baseURL的访问路径，因此所有CSS/JS相关样式都在“baseURL/css”或者“baseURL/js”下，因此需要进行设置，将该类静态资源文件在服务器上的基本路径设置为“\baseURL\”才能够实现正确的读取。
 
-:::tip 具体方法
+::: tip 具体方法
 该项目是使用VUE2作为项目架构的，因此假设项目部署在域名为 `https://www.example.com/my-app/` 的服务器上，那么可以在项目的 **vue.config.js** 中将publicPath设置为 `/my-app/` ，以确保静态资源的访问路径正确。
 
 示例代码如下：

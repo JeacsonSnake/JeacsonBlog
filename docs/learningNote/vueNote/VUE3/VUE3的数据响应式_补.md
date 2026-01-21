@@ -243,7 +243,7 @@ function computed(getter) {
 
 像这样定义完`computed`函数后，当我们调用该函数进行计算属性的定义时，就可以实现响应式数据的效果。
 
-:::tip 在ref()的基础上定义computed()
+::: tip 在ref()的基础上定义computed()
 
 `ref`可以被认为是`computed`函数的基础版本，因为`computed`函数在核心上就是将`ref`函数与`effect`函数进行封装之后得到的。所以我们会先定义`ref`函数，之后再以此为基础，定义`computed`函数。如果想回忆下`ref`函数如何被定义的，可以看看[上一篇](./VUE3的数据响应式_下.md#ref-函数).
 
@@ -261,7 +261,7 @@ function computed(getter) {
 
 首先，查看(下载)最新的 VUE-NEXT 代码：
 
-:::info 你需要知道的
+::: info 你需要知道的
 
 在参考视频中，最新的 vue-next 代码版本为alpha5；
 但是在笔者撰写时，最新的 vue-next 代码版本为v3.3.4。
@@ -271,7 +271,7 @@ function computed(getter) {
 
 其次，为其安装相关依赖：
 
-:::info 你需要知道的
+::: info 你需要知道的
 
 在参考视频中所使用的包管理器为 yarn；
 但是笔者撰写时所使用的包管理器为 pnpm。
