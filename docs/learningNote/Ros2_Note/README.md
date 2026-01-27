@@ -72,7 +72,8 @@ category:
 ::: note 可以使用的代码片段
 以下为一些可以使用的代码片段，包括 `node` 和 `launch`：
 
-``` cpp.json
+```json
+// cpp.json
 {
  "ros2_node_cpp":{
   "prefix": "ros2_node_cpp",
@@ -116,8 +117,10 @@ category:
 }
 ```
 
-``` python.json
-"ros2 node": {
+```json
+// python.json
+{
+    "ros2 node": {
         "prefix": "ros2_node_py",
         "body": [
             "\"\"\"  ",
@@ -183,6 +186,7 @@ category:
         ],
         "description": "ros2 launch"
     }
+}
 ```
 
 :::
