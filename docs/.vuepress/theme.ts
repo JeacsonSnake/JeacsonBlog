@@ -40,8 +40,10 @@ export default hopeTheme({
         sub: true,
         // 启用上角标功能
         sup: true,
+        // 启用自定义属性
+        attrs: true,
     },
-    blog: { 
+    blog: {
         avatar: '/assets/img/avatar.jpg',
         name: 'Jeacson She',
         description: "Mind your step",
@@ -63,7 +65,7 @@ export default hopeTheme({
             sidebar: enSidebarConfig,
         }
     },
-    sidebarSorter:["readme", "order", "date", "title", "filename"]
+    sidebarSorter: ["readme", "order", "date", "title", "filename"]
 
 
 })
