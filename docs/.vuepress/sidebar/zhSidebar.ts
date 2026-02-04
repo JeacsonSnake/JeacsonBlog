@@ -11,7 +11,7 @@ export const zhSidebarConfig = sidebar({
         {
             text: "学习笔记",
             prefix: "learningNote/",
-            icon:"paper-pen",
+            icon: "paper-pen",
             children: [
                 "vueNote/",
                 "JSNote/",
@@ -54,13 +54,13 @@ export const zhSidebarConfig = sidebar({
         {
             text: "VUE",
             prefix: "vueNote/",
-        children: [
+            children: [
                 '',
                 "VUE2/",
                 "VUE3/"
             ],
             collapsible: true,
-            icon:'vuejs'
+            icon: 'vuejs'
         },
         {
             text: "JavaScript",
@@ -94,7 +94,7 @@ export const zhSidebarConfig = sidebar({
             link: 'coding_skill/',
             icon: 'dev'
         },
-    ], 
+    ],
     "/postMortem/": [
         '',
         {
@@ -114,11 +114,12 @@ export const zhSidebarConfig = sidebar({
     "/learningNote/Ros2_Note/co_me/": "structure",
     "/learningNote/Ros2_Note/co_me_2/": "structure",
     "/learningNote/Ros2_Note/launch_rosbag2/": "structure",
+    "/learningNote/Ros2_Note/coor_trans/": "structure",
     "/learningNote/vueNote/VUE3/": "structure",
     "/learningNote/JSNote/": "structure",
     "/learningNote/Computer_Network/": "structure",
     "/learningNote/Principles_of_Computer_Composition/": "structure",
-    "/learningNote/Principles_of_Automatic_Control_Related/":"structure",
+    "/learningNote/Principles_of_Automatic_Control_Related/": "structure",
     "/learningNote/TypeScriptNote/": [
         '',
         {
@@ -142,6 +143,6 @@ export const zhSidebarConfig = sidebar({
             link: "第五天.md",
         }
     ],
-    
-    });
+
+});
 
