@@ -1,5 +1,7 @@
 import { navbar } from 'vuepress-theme-hope'
 
+const hostname = 'https://blog.jeacsonsnake.com';
+
 export const enNavbarConfig = navbar([{
     text: 'Home',
     link: '/en/',
@@ -14,6 +16,11 @@ export const enNavbarConfig = navbar([{
     text: 'About',
     link: '/en/about/',
     icon: "circle-info"
+},
+{
+    text: "RSS",
+    link: `${hostname}/rss.xml`,
+    icon: "rss",
 },
 {
     text: 'Github',
