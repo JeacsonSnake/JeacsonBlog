@@ -1,6 +1,6 @@
 ---
 title: 计算机网络知识域摘要
-description: 计算机网络原理与协议学习笔记，参考《Computer Networking: A Top-Down Approach》
+description: "计算机网络原理与协议学习笔记，参考《Computer Networking: A Top-Down Approach》"
 type: source
 tags: [Computer, Network, TCP, UDP, HTTP, DNS]
 lastUpdated: 2026-04-17
