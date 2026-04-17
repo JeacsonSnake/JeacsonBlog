@@ -1,6 +1,6 @@
 ---
 title: TCP 与 UDP 对比
-description: 传输层两大协议的区别：可靠连接 vs 实时性
+description: "传输层两大协议的区别：可靠连接 vs 实时性"
 type: concept
 tags: [Network, TCP, UDP, Transport-Layer]
 sources: [../../learningNote/Computer_Network/TCP与UDP与他们的关系.md]
