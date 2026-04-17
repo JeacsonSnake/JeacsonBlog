@@ -8,6 +8,11 @@ export const zhNavbarConfig = navbar([{
     icon: 'house'
 },
 {
+    text: 'Wiki',
+    link: '/wiki/',
+    icon: 'book'
+},
+{
     text: '学习笔记',
     link: '/learningNote/',
     icon: "paper-pen"

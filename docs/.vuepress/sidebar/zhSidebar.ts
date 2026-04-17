@@ -9,6 +9,18 @@ export const zhSidebarConfig = sidebar({
 
         },
         {
+            text: "Wiki 知识库",
+            prefix: "wiki/",
+            icon: "book",
+            children: [
+                "",
+                "sources/",
+                "entities/",
+                "concepts/",
+            ],
+            collapsible: true,
+        },
+        {
             text: "学习笔记",
             prefix: "learningNote/",
             icon: "paper-pen",

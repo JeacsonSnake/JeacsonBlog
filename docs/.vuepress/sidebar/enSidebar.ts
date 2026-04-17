@@ -1,11 +1,16 @@
 import { sidebar } from "vuepress-theme-hope";
 
 export const enSidebarConfig = sidebar({
-    "/en/learningNote/": [{
+    "/en/": [{
             text: "Home",
             link: '/en/',
             icon: 'house'
-
+        },
+        {
+            text: "Wiki",
+            link: '/en/wiki/',
+            icon: 'book',
+            collapsible: true,
         },
         {
             text: "LearningNote",
@@ -17,7 +22,7 @@ export const enSidebarConfig = sidebar({
             link: '/en/about/',
             icon: "circle-info"
         },
-    ], 
-    
+    ],
+
     });
 
