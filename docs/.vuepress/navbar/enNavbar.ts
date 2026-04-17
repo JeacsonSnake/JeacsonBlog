@@ -8,6 +8,11 @@ export const enNavbarConfig = navbar([{
     icon: 'house'
 },
 {
+    text: 'Wiki',
+    link: '/wiki/',
+    icon: 'book'
+},
+{
     text: 'LearningNote',
     link: '/en/learningNote/',
     icon: "paper-pen"
