@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="https://blog.jeacsonsnake.com/en/atom.xsl"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-US">
+  <id>https://blog.jeacsonsnake.com/en/</id>
+  <title>JeacsonBlog</title>
+  <subtitle>JeacsonBlog-一个简单的博客</subtitle>
+  <icon>https://blog.jeacsonsnake.com/assets/img/favicon.ico</icon>
+  <logo>https://blog.jeacsonsnake.com/assets/img/logo.png</logo>
+  <updated>2026-04-18T03:26:48.951Z</updated>
+  <generator>@vuepress/plugin-feed</generator>
+  <link rel="self" href="https://blog.jeacsonsnake.com/en/atom.xml"/>
+  <link rel="alternate" href="https://blog.jeacsonsnake.com/en/"/>
+  <contributor>
+    <name>xxx</name>
+  </contributor>
+  <entry>
+    <title type="text">About Me</title>
+    <id>/en/about/</id>
+    <link href="/en/about/"/>
+    <updated>2025-08-27T03:10:42.000Z</updated>
+    <summary type="html"><![CDATA[
+<p>👋 Hey there, This is Jeacson who has undergraduated with a Bachelor of Engineering and a Bachelor of Science.</p>
+<p>🌱 I'm motivated to become an engineer who knows a bit of everything whether it's hardware or software, front-end or back-end, mechanical assembly to board design, etc., I'm now doing my further education in Hongkong.</p>]]></summary>
+    <content type="html"><![CDATA[About Me 👋 Hey there, This is Jeacson who has undergraduated with a Bachelor of Engineering and a Bachelor of Science. 🌱 I'm motivated to become an engineer who knows a bit of...]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-04-18T03:26:49.237Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+</feed>

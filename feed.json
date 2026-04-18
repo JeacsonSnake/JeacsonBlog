@@ -1,0 +1,861 @@
+{
+  "version": "https://jsonfeed.org/version/1.1",
+  "title": "JeacsonBlog",
+  "home_page_url": "https://blog.jeacsonsnake.com/",
+  "feed_url": "https://blog.jeacsonsnake.com/feed.json",
+  "description": "JeacsonBlog-一个简单的博客",
+  "icon": "https://blog.jeacsonsnake.com/assets/img/logo.png",
+  "favicon": "https://blog.jeacsonsnake.com/assets/img/favicon.ico",
+  "items": [
+    {
+      "title": "JeacsonBlog Wiki",
+      "url": "/wiki/",
+      "id": "/wiki/",
+      "summary": "JeacsonBlog Wiki 基于 Karpathy LLM Wiki 模式构建的个人知识库。以博客原始笔记为 source of truth，由 LLM Agent 增量维护。 Sources（知识域摘要） 按博客分类聚合的源笔记摘要，由 LLM 阅读对应 docs/learningNote/ 下的笔记后生成/更新。 [[./sources/Ja...",
+      "content_html": "JeacsonBlog Wiki 基于 Karpathy LLM Wiki 模式构建的个人知识库。以博客原始笔记为 source of truth，由 LLM Agent 增量维护。 Sources（知识域摘要） 按博客分类聚合的源笔记摘要，由 LLM 阅读对应 docs/learningNote/ 下的笔记后生成/更新。 [[./sources/Ja...",
+      "date_published": "2026-04-18T03:26:49.233Z",
+      "date_modified": "2026-04-17T09:02:02.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "Wiki Log",
+      "url": "/wiki/log.html",
+      "id": "/wiki/log.html",
+      "summary": "[2026-04-17] init | 初始化 Wiki 层 [2026-04-17] ingest | docs/learningNote/JSNote/ — JavaScript 核心笔记 [2026-04-17] ingest | docs/learningNote/Ros2_Note/ — ROS2 通信机制与工具 [2026-04-17] i...",
+      "content_html": "[2026-04-17] init | 初始化 Wiki 层 [2026-04-17] ingest | docs/learningNote/JSNote/ — JavaScript 核心笔记 [2026-04-17] ingest | docs/learningNote/Ros2_Note/ — ROS2 通信机制与工具 [2026-04-17] i...",
+      "date_published": "2026-04-18T03:26:49.233Z",
+      "date_modified": "2026-04-17T09:02:02.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "计算机网络",
+      "url": "/wiki/entities/Computer_Network.html",
+      "id": "/wiki/entities/Computer_Network.html",
+      "summary": "计算机网络协议与原理，TCP/IP 五层模型，Kurose & Ross 教材",
+      "content_html": "计算机网络协议与原理，TCP/IP 五层模型，Kurose & Ross 教材",
+      "date_published": "2026-04-18T03:26:49.233Z",
+      "date_modified": "2026-04-17T09:02:02.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "JavaScript",
+      "url": "/wiki/entities/JavaScript.html",
+      "id": "/wiki/entities/JavaScript.html",
+      "summary": "JavaScript 编程语言，Web 开发核心语言，ES6+ 现代特性",
+      "content_html": "JavaScript 编程语言，Web 开发核心语言，ES6+ 现代特性",
+      "date_published": "2026-04-18T03:26:49.233Z",
+      "date_modified": "2026-04-17T09:02:02.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "ROS2",
+      "url": "/wiki/entities/ROS2.html",
+      "id": "/wiki/entities/ROS2.html",
+      "summary": "Robot Operating System 2，机器人操作系统，支持分布式通信",
+      "content_html": "Robot Operating System 2，机器人操作系统，支持分布式通信",
+      "date_published": "2026-04-18T03:26:49.233Z",
+      "date_modified": "2026-04-17T09:02:02.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "TypeScript",
+      "url": "/wiki/entities/TypeScript.html",
+      "id": "/wiki/entities/TypeScript.html",
+      "summary": "JavaScript 的超集，提供静态类型系统",
+      "content_html": "JavaScript 的超集，提供静态类型系统",
+      "date_published": "2026-04-18T03:26:49.233Z",
+      "date_modified": "2026-04-17T09:02:02.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "Vue",
+      "url": "/wiki/entities/Vue.html",
+      "id": "/wiki/entities/Vue.html",
+      "summary": "渐进式 JavaScript 框架，用于构建 Web 用户界面，Vue2 与 Vue3 并存",
+      "content_html": "渐进式 JavaScript 框架，用于构建 Web 用户界面，Vue2 与 Vue3 并存",
+      "date_published": "2026-04-18T03:26:49.233Z",
+      "date_modified": "2026-04-17T09:02:02.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "Web 开发",
+      "url": "/wiki/entities/Web.html",
+      "id": "/wiki/entities/Web.html",
+      "summary": "Web 前端与后端技术栈，包括 HTML/CSS/JavaScript、HTTP 协议、DNS 等",
+      "content_html": "Web 前端与后端技术栈，包括 HTML/CSS/JavaScript、HTTP 协议、DNS 等",
+      "date_published": "2026-04-18T03:26:49.233Z",
+      "date_modified": "2026-04-17T09:02:02.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "Array.reduce() 方法",
+      "url": "/wiki/concepts/Reduce%E6%96%B9%E6%B3%95.html",
+      "id": "/wiki/concepts/Reduce%E6%96%B9%E6%B3%95.html",
+      "summary": "JavaScript 数组方法，将数组元素按顺序累加为单个值",
+      "content_html": "JavaScript 数组方法，将数组元素按顺序累加为单个值",
+      "date_published": "2026-04-18T03:26:49.233Z",
+      "date_modified": "2026-04-17T09:02:02.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "Symbol 类型",
+      "url": "/wiki/concepts/Symbol.html",
+      "id": "/wiki/concepts/Symbol.html",
+      "summary": "ES6 引入的第七种原始数据类型，表示独一无二的值",
+      "content_html": "ES6 引入的第七种原始数据类型，表示独一无二的值",
+      "date_published": "2026-04-18T03:26:49.233Z",
+      "date_modified": "2026-04-17T09:02:02.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "TCP 与 UDP 对比",
+      "url": "/wiki/concepts/TCP%E4%B8%8EUDP.html",
+      "id": "/wiki/concepts/TCP%E4%B8%8EUDP.html",
+      "summary": "传输层两大协议的区别：可靠连接 vs 实时性",
+      "content_html": "传输层两大协议的区别：可靠连接 vs 实时性",
+      "date_published": "2026-04-18T03:26:49.234Z",
+      "date_modified": "2026-04-17T11:35:40.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "从输入 URL 到页面显示的完整流程",
+      "url": "/wiki/concepts/URL%E5%88%B0%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BA.html",
+      "id": "/wiki/concepts/URL%E5%88%B0%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BA.html",
+      "summary": "DNS → TCP → HTTP → 渲染的完整网络流程",
+      "content_html": "DNS → TCP → HTTP → 渲染的完整网络流程",
+      "date_published": "2026-04-18T03:26:49.234Z",
+      "date_modified": "2026-04-17T09:02:02.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "函数柯里化",
+      "url": "/wiki/concepts/%E5%87%BD%E6%95%B0%E6%9F%AF%E9%87%8C%E5%8C%96.html",
+      "id": "/wiki/concepts/%E5%87%BD%E6%95%B0%E6%9F%AF%E9%87%8C%E5%8C%96.html",
+      "summary": "将多参数函数改造为链式单参数调用的编程技巧",
+      "content_html": "将多参数函数改造为链式单参数调用的编程技巧",
+      "date_published": "2026-04-18T03:26:49.234Z",
+      "date_modified": "2026-04-17T09:02:02.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "ROS2 分布式通信",
+      "url": "/wiki/concepts/%E5%88%86%E5%B8%83%E5%BC%8F%E9%80%9A%E4%BF%A1.html",
+      "id": "/wiki/concepts/%E5%88%86%E5%B8%83%E5%BC%8F%E9%80%9A%E4%BF%A1.html",
+      "summary": "通过 DDS 域ID机制实现跨设备 ROS2 节点通信",
+      "content_html": "通过 DDS 域ID机制实现跨设备 ROS2 节点通信",
+      "date_published": "2026-04-18T03:26:49.234Z",
+      "date_modified": "2026-04-17T09:02:02.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "ROS2 坐标变换",
+      "url": "/wiki/concepts/%E5%9D%90%E6%A0%87%E5%8F%98%E6%8D%A2.html",
+      "id": "/wiki/concepts/%E5%9D%90%E6%A0%87%E5%8F%98%E6%8D%A2.html",
+      "summary": "tf2 系统实现机器人坐标系变换，TransformStamped 与 PointStamped 消息",
+      "content_html": "tf2 系统实现机器人坐标系变换，TransformStamped 与 PointStamped 消息",
+      "date_published": "2026-04-18T03:26:49.234Z",
+      "date_modified": "2026-04-17T09:02:02.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "ROS2 话题通信",
+      "url": "/wiki/concepts/%E8%AF%9D%E9%A2%98%E9%80%9A%E4%BF%A1.html",
+      "id": "/wiki/concepts/%E8%AF%9D%E9%A2%98%E9%80%9A%E4%BF%A1.html",
+      "summary": "Topic-based publish/subscribe 通信模式，单向多对多数据流",
+      "content_html": "Topic-based publish/subscribe 通信模式，单向多对多数据流",
+      "date_published": "2026-04-18T03:26:49.234Z",
+      "date_modified": "2026-04-17T09:02:02.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "编码技术知识域摘要",
+      "url": "/wiki/sources/Coding_Skill.html",
+      "id": "/wiki/sources/Coding_Skill.html",
+      "summary": "通用编程技能，包括设计模式、API文档撰写、VSCode 技巧、代码片段",
+      "content_html": "通用编程技能，包括设计模式、API文档撰写、VSCode 技巧、代码片段",
+      "date_published": "2026-04-18T03:26:49.234Z",
+      "date_modified": "2026-04-17T09:02:02.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "计算机组成原理知识域摘要",
+      "url": "/wiki/sources/Computer_Composition.html",
+      "id": "/wiki/sources/Computer_Composition.html",
+      "summary": "计算机底层原理，包括机器数、IEEE-754 浮点数标准",
+      "content_html": "计算机底层原理，包括机器数、IEEE-754 浮点数标准",
+      "date_published": "2026-04-18T03:26:49.234Z",
+      "date_modified": "2026-04-17T09:02:02.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "计算机网络知识域摘要",
+      "url": "/wiki/sources/Computer_Network.html",
+      "id": "/wiki/sources/Computer_Network.html",
+      "summary": "计算机网络原理与协议学习笔记，参考《Computer Networking: A Top-Down Approach》",
+      "content_html": "计算机网络原理与协议学习笔记，参考《Computer Networking: A Top-Down Approach》",
+      "date_published": "2026-04-18T03:26:49.234Z",
+      "date_modified": "2026-04-17T11:35:48.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "自动控制原理知识域摘要",
+      "url": "/wiki/sources/Control_Theory.html",
+      "id": "/wiki/sources/Control_Theory.html",
+      "summary": "经典控制理论笔记，包含 S-Z 变换表、连续与离散系统分析",
+      "content_html": "经典控制理论笔记，包含 S-Z 变换表、连续与离散系统分析",
+      "date_published": "2026-04-18T03:26:49.234Z",
+      "date_modified": "2026-04-17T09:02:02.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "JavaScript 知识域摘要",
+      "url": "/wiki/sources/JavaScript.html",
+      "id": "/wiki/sources/JavaScript.html",
+      "summary": "JavaScript 语言核心概念与 Web 开发相关笔记",
+      "content_html": "JavaScript 语言核心概念与 Web 开发相关笔记",
+      "date_published": "2026-04-18T03:26:49.234Z",
+      "date_modified": "2026-04-17T09:02:02.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "踩坑心得知识域摘要",
+      "url": "/wiki/sources/PostMortem.html",
+      "id": "/wiki/sources/PostMortem.html",
+      "summary": "部署与开发中的实际问题记录与解决方案",
+      "content_html": "部署与开发中的实际问题记录与解决方案",
+      "date_published": "2026-04-18T03:26:49.234Z",
+      "date_modified": "2026-04-17T09:02:02.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "ROS2 知识域摘要",
+      "url": "/wiki/sources/ROS2.html",
+      "id": "/wiki/sources/ROS2.html",
+      "summary": "ROS2 机器人操作系统学习笔记，涵盖通信机制、坐标变换、工具使用",
+      "content_html": "ROS2 机器人操作系统学习笔记，涵盖通信机制、坐标变换、工具使用",
+      "date_published": "2026-04-18T03:26:49.234Z",
+      "date_modified": "2026-04-17T09:02:02.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "TypeScript 知识域摘要",
+      "url": "/wiki/sources/TypeScript.html",
+      "id": "/wiki/sources/TypeScript.html",
+      "summary": "TypeScript 类型系统学习笔记，按学习日期分为五天",
+      "content_html": "TypeScript 类型系统学习笔记，按学习日期分为五天",
+      "date_published": "2026-04-18T03:26:49.234Z",
+      "date_modified": "2026-04-17T09:02:02.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "Vue 知识域摘要",
+      "url": "/wiki/sources/Vue.html",
+      "id": "/wiki/sources/Vue.html",
+      "summary": "Vue2 与 Vue3 框架学习笔记，涵盖数据响应式、组件系统、路由、状态管理",
+      "content_html": "Vue2 与 Vue3 框架学习笔记，涵盖数据响应式、组件系统、路由、状态管理",
+      "date_published": "2026-04-18T03:26:49.234Z",
+      "date_modified": "2026-04-17T09:02:02.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "ROS2-Z02-ROS2工具：坐标变换（EXEC2）乌龟护航案例实战",
+      "url": "/learningNote/Ros2_Note/coor_trans/2026_02_13.html",
+      "id": "/learningNote/Ros2_Note/coor_trans/2026_02_13.html",
+      "summary": "简介 本章节主要介绍如何实现 “乌龟护航” 案例。里面的大部分代码会沿用内的相关代码内容。因此建议先尝试实现上一章节的效果，再来进行本章节的实战。 案例需求&分析 需求： 基于上一章节要求编写程序实现，以 turtlesim_node 节点的原生乌龟（turtle1）为几何中心，生成多只新的乌龟（以三只为例，即turtle2、turtle3、turtl...",
+      "content_html": "简介 本章节主要介绍如何实现 “乌龟护航” 案例。里面的大部分代码会沿用内的相关代码内容。因此建议先尝试实现上一章节的效果，再来进行本章节的实战。 案例需求&分析 需求： 基于上一章节要求编写程序实现，以 turtlesim_node 节点的原生乌龟（turtle1）为几何中心，生成多只新的乌龟（以三只为例，即turtle2、turtle3、turtl...",
+      "date_published": "2026-02-13T00:00:00.000Z",
+      "date_modified": "2026-02-13T03:00:43.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "Computer",
+        "robot",
+        "ROS"
+      ]
+    },
+    {
+      "title": "ROS2-Z01-ROS2工具：坐标变换（EXEC1）乌龟跟随案例实战",
+      "url": "/learningNote/Ros2_Note/coor_trans/2026_02_09.html",
+      "id": "/learningNote/Ros2_Note/coor_trans/2026_02_09.html",
+      "summary": "简介 本章节主要介绍如何实现 “乌龟跟随” 案例。 案例需求&分析 需求： 编写程序实现，程序运行后会启动 turtlesim_node 节点，该节点会生成一个窗口，窗口中有一只原生乌龟（turtle1），紧接着再生成一只新的乌龟（turtle2）。要求在 turtle1 无论是静止或是被键盘控制运动时，turtle2 都会以 turtle1 为目标并...",
+      "content_html": "简介 本章节主要介绍如何实现 “乌龟跟随” 案例。 案例需求&分析 需求： 编写程序实现，程序运行后会启动 turtlesim_node 节点，该节点会生成一个窗口，窗口中有一只原生乌龟（turtle1），紧接着再生成一只新的乌龟（turtle2）。要求在 turtle1 无论是静止或是被键盘控制运动时，turtle2 都会以 turtle1 为目标并...",
+      "date_published": "2026-02-09T00:00:00.000Z",
+      "date_modified": "2026-02-11T08:08:26.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "Computer",
+        "robot",
+        "ROS"
+      ]
+    },
+    {
+      "title": "ROS2-026-ROS2工具：坐标变换（七）坐标变换工具",
+      "url": "/learningNote/Ros2_Note/coor_trans/2026_02_05.html",
+      "id": "/learningNote/Ros2_Note/coor_trans/2026_02_05.html",
+      "summary": "简介 在 TF 框架中，ROS2 除了封装了 坐标广播与监听 功能外，还提供了一些可以帮助我们提高开发、调试效率的工具。本章节主要介绍这些工具的使用。 这些工具主要涉及到两个功能包：tf2_ros 和 tf2_tools。 功能包介绍 tf2_ros 包中提供的常用节点如下： static_transform_publisher：该节点用于广播静态坐标...",
+      "content_html": "简介 在 TF 框架中，ROS2 除了封装了 坐标广播与监听 功能外，还提供了一些可以帮助我们提高开发、调试效率的工具。本章节主要介绍这些工具的使用。 这些工具主要涉及到两个功能包：tf2_ros 和 tf2_tools。 功能包介绍 tf2_ros 包中提供的常用节点如下： static_transform_publisher：该节点用于广播静态坐标...",
+      "date_published": "2026-02-05T00:00:00.000Z",
+      "date_modified": "2026-02-05T09:24:04.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "Computer",
+        "robot",
+        "ROS"
+      ]
+    },
+    {
+      "title": "ROS2-025-ROS2工具：坐标变换（六）监听坐标点消息",
+      "url": "/learningNote/Ros2_Note/coor_trans/2026_02_04.html",
+      "id": "/learningNote/Ros2_Note/coor_trans/2026_02_04.html",
+      "summary": "简介 坐标变换监听 可以实现坐标点在不同坐标系之间的变换，或者不同的多个坐标系之间的变换。 针对坐标变换进行监听的前提，是必须已有不同的多个坐标系相对关系的广播，而至于是静态广播或动态广播则无要求。因为监听获取的坐标系相对关系皆为某一时刻或某一时间点。 在中，我们经由案例一实现了多坐标系的场景下实现不同坐标系之间的变换。在这一章节中，我们会实现案例二，...",
+      "content_html": "简介 坐标变换监听 可以实现坐标点在不同坐标系之间的变换，或者不同的多个坐标系之间的变换。 针对坐标变换进行监听的前提，是必须已有不同的多个坐标系相对关系的广播，而至于是静态广播或动态广播则无要求。因为监听获取的坐标系相对关系皆为某一时刻或某一时间点。 在中，我们经由案例一实现了多坐标系的场景下实现不同坐标系之间的变换。在这一章节中，我们会实现案例二，...",
+      "date_published": "2026-02-04T00:00:00.000Z",
+      "date_modified": "2026-02-05T09:23:17.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "Computer",
+        "robot",
+        "ROS"
+      ]
+    },
+    {
+      "title": "ROS2-024-ROS2工具：坐标变换（五）坐标变换监听",
+      "url": "/learningNote/Ros2_Note/coor_trans/2026_02_03.html",
+      "id": "/learningNote/Ros2_Note/coor_trans/2026_02_03.html",
+      "summary": "简介 坐标变换监听 可以实现坐标点在不同坐标系之间的变换，或者不同的多个坐标系之间的变换。 针对坐标变换进行监听的前提，是必须已有不同的多个坐标系相对关系的广播，而至于是静态广播或动态广播则无要求。因为监听获取的坐标系相对关系皆为某一时刻或某一时间点。 案例梳理 以下有两个案例： 在中，我们发布了 laser 相对于 base_link，和 camra...",
+      "content_html": "简介 坐标变换监听 可以实现坐标点在不同坐标系之间的变换，或者不同的多个坐标系之间的变换。 针对坐标变换进行监听的前提，是必须已有不同的多个坐标系相对关系的广播，而至于是静态广播或动态广播则无要求。因为监听获取的坐标系相对关系皆为某一时刻或某一时间点。 案例梳理 以下有两个案例： 在中，我们发布了 laser 相对于 base_link，和 camra...",
+      "date_published": "2026-02-03T00:00:00.000Z",
+      "date_modified": "2026-02-04T08:07:13.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "Computer",
+        "robot",
+        "ROS"
+      ]
+    },
+    {
+      "title": "ROS2-023-ROS2工具：坐标变换（四）发布坐标点消息",
+      "url": "/learningNote/Ros2_Note/coor_trans/2026_02_02.html",
+      "id": "/learningNote/Ros2_Note/coor_trans/2026_02_02.html",
+      "summary": "简介 在 里，我们介绍了静态广播 和 动态广播。本章会主要介绍如何发布坐标点消息。 案例梳理 以下有一案例需求： 有一无人车，在无人车底盘上装有 固定式 的激光雷达。车辆底盘、雷达各对应一坐标系，且各坐标系的原点取其几何中心。现该激光雷达扫描到一 点状障碍物 且可以定位到障碍物的坐标，请在 雷达坐标系下 发布障碍坐标点数据，并在Rviz2 中查看结果。...",
+      "content_html": "简介 在 里，我们介绍了静态广播 和 动态广播。本章会主要介绍如何发布坐标点消息。 案例梳理 以下有一案例需求： 有一无人车，在无人车底盘上装有 固定式 的激光雷达。车辆底盘、雷达各对应一坐标系，且各坐标系的原点取其几何中心。现该激光雷达扫描到一 点状障碍物 且可以定位到障碍物的坐标，请在 雷达坐标系下 发布障碍坐标点数据，并在Rviz2 中查看结果。...",
+      "date_published": "2026-02-02T00:00:00.000Z",
+      "date_modified": "2026-02-02T14:43:39.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "Computer",
+        "robot",
+        "ROS"
+      ]
+    },
+    {
+      "title": "ROS2-022-ROS2工具：坐标变换（三）坐标变换广播",
+      "url": "/learningNote/Ros2_Note/coor_trans/2026_01_29.html",
+      "id": "/learningNote/Ros2_Note/coor_trans/2026_01_29.html",
+      "summary": "简介 坐标系相对关系主要有两种：静态坐标系相对关系与动态坐标系相对关系： 静态坐标系相对关系 是指两个坐标系之间的相对位置是 固定不变 的，比如：车辆上的雷达、摄像头等组件一般是固定式的，那么雷达坐标系相对于车辆底盘坐标系或摄像头坐标系相对于车辆底盘坐标系就是一种静态关系。 动态坐标系相对关系 是指两个坐标系之间的相对位置关系是 动态改变 的，比如：车...",
+      "content_html": "简介 坐标系相对关系主要有两种：静态坐标系相对关系与动态坐标系相对关系： 静态坐标系相对关系 是指两个坐标系之间的相对位置是 固定不变 的，比如：车辆上的雷达、摄像头等组件一般是固定式的，那么雷达坐标系相对于车辆底盘坐标系或摄像头坐标系相对于车辆底盘坐标系就是一种静态关系。 动态坐标系相对关系 是指两个坐标系之间的相对位置关系是 动态改变 的，比如：车...",
+      "date_published": "2026-01-29T00:00:00.000Z",
+      "date_modified": "2026-02-05T09:23:17.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "Computer",
+        "robot",
+        "ROS"
+      ]
+    },
+    {
+      "title": "ROS2-020-ROS2工具：坐标变换（一）简介",
+      "url": "/learningNote/Ros2_Note/coor_trans/2026_01_28.html",
+      "id": "/learningNote/Ros2_Note/coor_trans/2026_01_28.html",
+      "summary": "简介 我们在操作机器人时，通常会使用各种传感器感知机器人周围的物体与机器人的相对位置。不过在未针对传感器进行配置的情况下，传感器只能够返回其自身与物体的相对位置。因此我们需要通过某些特定的转换工程，才可以将该传感器的方位信息，变换物体相对于机器人系统或机器人其它组件的方位信息。在 ROS 中直接封装了相关的模块，其名称为 tf(TransForm Fr...",
+      "content_html": "简介 我们在操作机器人时，通常会使用各种传感器感知机器人周围的物体与机器人的相对位置。不过在未针对传感器进行配置的情况下，传感器只能够返回其自身与物体的相对位置。因此我们需要通过某些特定的转换工程，才可以将该传感器的方位信息，变换物体相对于机器人系统或机器人其它组件的方位信息。在 ROS 中直接封装了相关的模块，其名称为 tf(TransForm Fr...",
+      "date_published": "2026-01-28T00:00:00.000Z",
+      "date_modified": "2026-02-02T14:43:18.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "Computer",
+        "robot",
+        "ROS"
+      ]
+    },
+    {
+      "title": "ROS2-021-ROS2工具：坐标变换（二）内部常用接口消息",
+      "url": "/learningNote/Ros2_Note/coor_trans/2026_01_28_002.html",
+      "id": "/learningNote/Ros2_Note/coor_trans/2026_01_28_002.html",
+      "summary": "简介 由来看，我们不难发现对于坐标变换的实现，其本质是基于话题通信的发布订阅模型。发布方可以发布坐标系之间的相对关系，订阅方则可以监听这些消息，并实现不同坐标系之间的变换。根据，在话题通信中，接口消息 作为数据载体在整个通信模型中是比较重要的一部分。 本章将会介绍坐标变换中常用的两种接口消息：geometry_msgs/msg/TransformSta...",
+      "content_html": "简介 由来看，我们不难发现对于坐标变换的实现，其本质是基于话题通信的发布订阅模型。发布方可以发布坐标系之间的相对关系，订阅方则可以监听这些消息，并实现不同坐标系之间的变换。根据，在话题通信中，接口消息 作为数据载体在整个通信模型中是比较重要的一部分。 本章将会介绍坐标变换中常用的两种接口消息：geometry_msgs/msg/TransformSta...",
+      "date_published": "2026-01-28T00:00:00.000Z",
+      "date_modified": "2026-02-02T14:43:18.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "Computer",
+        "robot",
+        "ROS"
+      ]
+    },
+    {
+      "title": "ROS2工具——坐标变换",
+      "url": "/learningNote/Ros2_Note/coor_trans/",
+      "id": "/learningNote/Ros2_Note/coor_trans/",
+      "summary": "简述 这里是我有关ROS2工具 - 坐标变换 的相关笔记，包括的内容有： 坐标变换的概念与应用场景 坐标变换的两种重要消息载体: TransformStamped & PointStamped 的定义格式（基于 话题通信 ） 坐标变换的通信双方（广播方与监听方） 坐标变换工具 （相关指令的进一步说明以及调试工具等） 具体软硬件以及技术背景等细节请参考",
+      "content_html": "简述 这里是我有关ROS2工具 - 坐标变换 的相关笔记，包括的内容有： 坐标变换的概念与应用场景 坐标变换的两种重要消息载体: TransformStamped & PointStamped 的定义格式（基于 话题通信 ） 坐标变换的通信双方（广播方与监听方） 坐标变换工具 （相关指令的进一步说明以及调试工具等） 具体软硬件以及技术背景等细节请参考",
+      "date_published": "2026-04-18T03:26:49.234Z",
+      "date_modified": "2026-02-02T14:43:18.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "Computer",
+        "robot",
+        "ROS"
+      ]
+    },
+    {
+      "title": "ROS2-019-ROS2工具：rosbag2",
+      "url": "/learningNote/Ros2_Note/launch_rosbag2/2026_01_24.html",
+      "id": "/learningNote/Ros2_Note/launch_rosbag2/2026_01_24.html",
+      "summary": "简介 假设你有一个机器人： 它在日常运行时没有问题，但是在某一次运行时突然报错了。你希望即刻对此进行排查，但是这个报错只出现了一次，再次运行又没有报错了。 你给他重新设计了一个运动控制节点，但是调不准它的一些特定参数。如果在真实环境中直接运行可能会出现意想不到的情况。 你在某一次运动导航实验中意外的获得了一条导航路径，希望有什么工具把它保存下来，以便之...",
+      "content_html": "简介 假设你有一个机器人： 它在日常运行时没有问题，但是在某一次运行时突然报错了。你希望即刻对此进行排查，但是这个报错只出现了一次，再次运行又没有报错了。 你给他重新设计了一个运动控制节点，但是调不准它的一些特定参数。如果在真实环境中直接运行可能会出现意想不到的情况。 你在某一次运动导航实验中意外的获得了一条导航路径，希望有什么工具把它保存下来，以便之...",
+      "date_published": "2026-01-24T00:00:00.000Z",
+      "date_modified": "2026-01-26T14:44:42.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "Computer",
+        "robot",
+        "ROS"
+      ]
+    },
+    {
+      "title": "ROS2-018-ROS2工具：启动文件 launch 的XML/YAML实现",
+      "url": "/learningNote/Ros2_Note/launch_rosbag2/2026_01_22.html",
+      "id": "/learningNote/Ros2_Note/launch_rosbag2/2026_01_22.html",
+      "summary": "简介 有关 launch 文件的介绍，可以参考 除非你希望仅使用 C++ 进行编写，否则由于 XML & YAML 语言自身并无事件触发函数能进行适配，我个人并不推荐使用 XML/YAML 语言作为编写 launch 的首要语言（虽然他编写起来确实较为简便 = =）。若有实际需要，请结合官方文档进行代码的书写。 因为代码格式相似，在下文中我们会将 XM...",
+      "content_html": "简介 有关 launch 文件的介绍，可以参考 除非你希望仅使用 C++ 进行编写，否则由于 XML & YAML 语言自身并无事件触发函数能进行适配，我个人并不推荐使用 XML/YAML 语言作为编写 launch 的首要语言（虽然他编写起来确实较为简便 = =）。若有实际需要，请结合官方文档进行代码的书写。 因为代码格式相似，在下文中我们会将 XM...",
+      "date_published": "2026-01-22T00:00:00.000Z",
+      "date_modified": "2026-01-22T10:32:15.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "Computer",
+        "robot",
+        "ROS"
+      ]
+    },
+    {
+      "title": "ROS2-017-ROS2工具：启动文件 launch 的 python 实现",
+      "url": "/learningNote/Ros2_Note/launch_rosbag2/2025_04_29.html",
+      "id": "/learningNote/Ros2_Note/launch_rosbag2/2025_04_29.html",
+      "summary": "简介 有关 launch 文件的介绍，可以参考 Python 实现语法 以下介绍在 Python 中 launch 文件 的相关语法： 1. 节点设置-Node 在 使用 Python 实现的 launch 文件 中，被执行的节点需要统一封装为 launch_ros.actions.Node 对象，并通过 LaunchDescription() 函数创...",
+      "content_html": "简介 有关 launch 文件的介绍，可以参考 Python 实现语法 以下介绍在 Python 中 launch 文件 的相关语法： 1. 节点设置-Node 在 使用 Python 实现的 launch 文件 中，被执行的节点需要统一封装为 launch_ros.actions.Node 对象，并通过 LaunchDescription() 函数创...",
+      "date_published": "2026-01-21T00:00:00.000Z",
+      "date_modified": "2026-01-22T10:31:54.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "Computer",
+        "robot",
+        "ROS"
+      ]
+    },
+    {
+      "title": "ROS2-016-ROS2工具：启动文件 launch 的介绍及其简单使用",
+      "url": "/learningNote/Ros2_Note/launch_rosbag2/2025_04_28.html",
+      "id": "/learningNote/Ros2_Note/launch_rosbag2/2025_04_28.html",
+      "summary": "简介 在机器人操作系统中，节点是程序的基本构成单元。一个完整的、系统性的功能模块由多个节点构成，在启动某个功能模块时可能需要依次启动这些节点。 以机器人的导航功能为例，其涉及的节点主要有以下几种： 底盘驱动； 雷达驱动； 摄像头驱动； imu 驱动； 地图服务； 路径规划； 运动控制； 环境感知； 定位； etc. 且不同的节点启动时，可能还会涉及到各...",
+      "content_html": "简介 在机器人操作系统中，节点是程序的基本构成单元。一个完整的、系统性的功能模块由多个节点构成，在启动某个功能模块时可能需要依次启动这些节点。 以机器人的导航功能为例，其涉及的节点主要有以下几种： 底盘驱动； 雷达驱动； 摄像头驱动； imu 驱动； 地图服务； 路径规划； 运动控制； 环境感知； 定位； etc. 且不同的节点启动时，可能还会涉及到各...",
+      "date_published": "2025-04-28T00:00:00.000Z",
+      "date_modified": "2026-01-22T10:31:54.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "Computer",
+        "robot",
+        "ROS"
+      ]
+    },
+    {
+      "title": "ROS2工具——launch & rosbag2",
+      "url": "/learningNote/Ros2_Note/launch_rosbag2/",
+      "id": "/learningNote/Ros2_Note/launch_rosbag2/",
+      "summary": "简述 这里是我有关 ROS2工具 - launch & rosbag2 内容的相关笔记，这里所包括的内容有： launch 文件及其实现 rosbag2 工具的介绍与使用（序列化存储数据，实现话题消息的录制与回放） 具体软硬件以及技术背景等细节请参考",
+      "content_html": "简述 这里是我有关 ROS2工具 - launch & rosbag2 内容的相关笔记，这里所包括的内容有： launch 文件及其实现 rosbag2 工具的介绍与使用（序列化存储数据，实现话题消息的录制与回放） 具体软硬件以及技术背景等细节请参考",
+      "date_published": "2026-04-18T03:26:49.234Z",
+      "date_modified": "2026-01-27T09:54:13.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "Computer",
+        "robot",
+        "ROS"
+      ]
+    },
+    {
+      "title": "ROS2-015-通信机制补完：通信机制工具（二）图形化工具（RQt）与总结",
+      "url": "/learningNote/Ros2_Note/co_me_2/2025_04_13.html",
+      "id": "/learningNote/Ros2_Note/co_me_2/2025_04_13.html",
+      "summary": "上半部分见 二、图形化工具（RQt） 简述 RQt 是一个基于 Qt 框架 开发的 GUI 框架。它通过应用各种 “以插件形式存在的工具与接口” 实现在单个页面开发、调试与监控机器人系统，其允许用户通过配置插件灵活地与 ROS2 系统进行交互。作为通信机制工具只是其中的一种功能，在这里仅会做一些简要的入门介绍。 拓展信息 | In case you w...",
+      "content_html": "上半部分见 二、图形化工具（RQt） 简述 RQt 是一个基于 Qt 框架 开发的 GUI 框架。它通过应用各种 “以插件形式存在的工具与接口” 实现在单个页面开发、调试与监控机器人系统，其允许用户通过配置插件灵活地与 ROS2 系统进行交互。作为通信机制工具只是其中的一种功能，在这里仅会做一些简要的入门介绍。 拓展信息 | In case you w...",
+      "date_published": "2025-04-13T00:00:00.000Z",
+      "date_modified": "2025-04-13T09:39:55.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "Computer",
+        "robot",
+        "ROS"
+      ]
+    },
+    {
+      "title": "ROS2-014-通信机制补完：通信机制工具（一）综述与命令行工具",
+      "url": "/learningNote/Ros2_Note/co_me_2/2025_04_12.html",
+      "id": "/learningNote/Ros2_Note/co_me_2/2025_04_12.html",
+      "summary": "简介 上一章内容，我们学习了ROS2中的多种通信机制，了解了不同通信模型的实现流程、相关API以及各自的特点。在实际开发当中，我们可能会遇到一些问题： 一个完整的机器人系统启动之后，其组成是比较复杂的，可能包含十几个、几十个甚至上百个节点，不同的节点可能又包含一个或多个通信对象(话题发布方、话题订阅方、服务端、客户端、动作服务端、动作客户端、参数服务端...",
+      "content_html": "简介 上一章内容，我们学习了ROS2中的多种通信机制，了解了不同通信模型的实现流程、相关API以及各自的特点。在实际开发当中，我们可能会遇到一些问题： 一个完整的机器人系统启动之后，其组成是比较复杂的，可能包含十几个、几十个甚至上百个节点，不同的节点可能又包含一个或多个通信对象(话题发布方、话题订阅方、服务端、客户端、动作服务端、动作客户端、参数服务端...",
+      "date_published": "2025-04-12T00:00:00.000Z",
+      "date_modified": "2025-04-12T08:07:58.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "Computer",
+        "robot",
+        "ROS"
+      ]
+    },
+    {
+      "title": "ROS2-013-通信机制补完：时间类 API",
+      "url": "/learningNote/Ros2_Note/co_me_2/2025_03_16.html",
+      "id": "/learningNote/Ros2_Note/co_me_2/2025_03_16.html",
+      "summary": "简介 假设有一个机器人，在机器人上有一个雷达。该雷达有一相关节点会发布雷达探测到的各种信息，且会被机器人内部一导航模块所属节点订阅并接收。为了减少机器人移动过程中由于通信延迟在路径规划上产生相关误差，当二者进行数据交互时，必然需要保证信息的实时性。 因此我们需要使用 时间类 API，在传输数据时提供相关数据产生时的时间戳使接收方能够进行相关数据时效性的...",
+      "content_html": "简介 假设有一个机器人，在机器人上有一个雷达。该雷达有一相关节点会发布雷达探测到的各种信息，且会被机器人内部一导航模块所属节点订阅并接收。为了减少机器人移动过程中由于通信延迟在路径规划上产生相关误差，当二者进行数据交互时，必然需要保证信息的实时性。 因此我们需要使用 时间类 API，在传输数据时提供相关数据产生时的时间戳使接收方能够进行相关数据时效性的...",
+      "date_published": "2025-03-16T00:00:00.000Z",
+      "date_modified": "2025-03-16T07:14:43.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "Computer",
+        "robot",
+        "ROS"
+      ]
+    },
+    {
+      "title": "ROS2-012-通信机制补完：话题重名",
+      "url": "/learningNote/Ros2_Note/co_me_2/2025_03_15.html",
+      "id": "/learningNote/Ros2_Note/co_me_2/2025_03_15.html",
+      "summary": "简介 咱在之前聊到，那么有话题重名吗？ 有的，dude，有的☝🤓 与节点重名相同，在 ROS2 中，话题名称也可能重名。在不同的节点之间，通信都依赖于话题，当话题重名时，系统虽然不会抛出异常，但是通过 相同话题名称 关联到一起的节点可能 并不属于 同一通信逻辑，从而导致通信错乱，甚至出现异常。这种情况下可能就需要将相同的话题名称设置为不同。 不过与节...",
+      "content_html": "简介 咱在之前聊到，那么有话题重名吗？ 有的，dude，有的☝🤓 与节点重名相同，在 ROS2 中，话题名称也可能重名。在不同的节点之间，通信都依赖于话题，当话题重名时，系统虽然不会抛出异常，但是通过 相同话题名称 关联到一起的节点可能 并不属于 同一通信逻辑，从而导致通信错乱，甚至出现异常。这种情况下可能就需要将相同的话题名称设置为不同。 不过与节...",
+      "date_published": "2025-03-15T00:00:00.000Z",
+      "date_modified": "2025-03-15T07:21:05.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "Computer",
+        "robot",
+        "ROS"
+      ]
+    },
+    {
+      "title": "ROS2-011-通信机制补完：节点重名",
+      "url": "/learningNote/Ros2_Note/co_me_2/2025_03_14.html",
+      "id": "/learningNote/Ros2_Note/co_me_2/2025_03_14.html",
+      "summary": "简介 在 ROS2 中，不同的节点可以有相同的节点名称，比如你可以启动多个节点的名称都是 turtlesim 的 turtlesim_node 节点。 虽然节点重名是被 允许 的，但是开发者应该 主动避免 这种情况，因为节点重名可能会导致操作上的混淆。 仍以启动了多个 turtlesim_node 节点为例，当使用 计算图（rqt_graph） 查看节...",
+      "content_html": "简介 在 ROS2 中，不同的节点可以有相同的节点名称，比如你可以启动多个节点的名称都是 turtlesim 的 turtlesim_node 节点。 虽然节点重名是被 允许 的，但是开发者应该 主动避免 这种情况，因为节点重名可能会导致操作上的混淆。 仍以启动了多个 turtlesim_node 节点为例，当使用 计算图（rqt_graph） 查看节...",
+      "date_published": "2025-03-14T00:00:00.000Z",
+      "date_modified": "2025-03-14T06:52:24.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "Computer",
+        "robot",
+        "ROS"
+      ]
+    },
+    {
+      "title": "ROS2-010-通信机制补完：功能包重名和工作空间覆盖机制",
+      "url": "/learningNote/Ros2_Note/co_me_2/2025_03_13.html",
+      "id": "/learningNote/Ros2_Note/co_me_2/2025_03_13.html",
+      "summary": "简介 在 ROS2 中编写功能包时，一般会在单个空间内进行编写与编译。但是当程序员需要经由多个工作空间进行不同的功能包的编写式，很可能会出现在不同的工作空间下将不同的功能包命名为同一个名字的情况。例如在 工作空间A 和 工作空间B 中都创建了一个名字叫 “C” 的功能包，假设该功能包里都有一个 “C_node” 节点，那么当我们新建终端并直接执行 时，...",
+      "content_html": "简介 在 ROS2 中编写功能包时，一般会在单个空间内进行编写与编译。但是当程序员需要经由多个工作空间进行不同的功能包的编写式，很可能会出现在不同的工作空间下将不同的功能包命名为同一个名字的情况。例如在 工作空间A 和 工作空间B 中都创建了一个名字叫 “C” 的功能包，假设该功能包里都有一个 “C_node” 节点，那么当我们新建终端并直接执行 时，...",
+      "date_published": "2025-03-13T00:00:00.000Z",
+      "date_modified": "2025-03-13T03:44:02.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "Computer",
+        "robot",
+        "ROS"
+      ]
+    },
+    {
+      "title": "ROS2-009-通信机制补完：元功能包 MetaPackage",
+      "url": "/learningNote/Ros2_Note/co_me_2/2025_03_12.html",
+      "id": "/learningNote/Ros2_Note/co_me_2/2025_03_12.html",
+      "summary": "简介 在 ROS2 中编写一个大的模块时，一般需要依照不同的功能分成多个子包。例如对于一个机器人导航模块，该模块可能被分为定位、路径规划、离线地图等多个子包进行分别编写。那么当我们需要安装该模块时，需要一个个安装这些子包才可以应用全部功能吗？ 元功能包(MetaPackage) 在 ROS2 中，其提供了一种可以将多个不同的功能子包打包成一个大的功能包...",
+      "content_html": "简介 在 ROS2 中编写一个大的模块时，一般需要依照不同的功能分成多个子包。例如对于一个机器人导航模块，该模块可能被分为定位、路径规划、离线地图等多个子包进行分别编写。那么当我们需要安装该模块时，需要一个个安装这些子包才可以应用全部功能吗？ 元功能包(MetaPackage) 在 ROS2 中，其提供了一种可以将多个不同的功能子包打包成一个大的功能包...",
+      "date_published": "2025-03-12T00:00:00.000Z",
+      "date_modified": "2025-03-12T07:48:27.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "Computer",
+        "robot",
+        "ROS"
+      ]
+    },
+    {
+      "title": "ROS2通信机制02-补充内容",
+      "url": "/learningNote/Ros2_Note/co_me_2/",
+      "id": "/learningNote/Ros2_Note/co_me_2/",
+      "summary": "简述 这里是我有关ROS2通信机制补充内容的相关笔记，这里的内容比起而言知识密度比较松散，包括的内容有： 分布式框架的搭建（实现不同的 ROS2 设备间通信） 重名问题的处理（自定义功能包、节点、节点内话题重名的处理） 常用 API （定时器等时间类 API） 通信机制工具 （相关指令的进一步说明以及 rqt 工具箱等） 具体软硬件以及技术背景等细节请参考",
+      "content_html": "简述 这里是我有关ROS2通信机制补充内容的相关笔记，这里的内容比起而言知识密度比较松散，包括的内容有： 分布式框架的搭建（实现不同的 ROS2 设备间通信） 重名问题的处理（自定义功能包、节点、节点内话题重名的处理） 常用 API （定时器等时间类 API） 通信机制工具 （相关指令的进一步说明以及 rqt 工具箱等） 具体软硬件以及技术背景等细节请参考",
+      "date_published": "2026-04-18T03:26:49.234Z",
+      "date_modified": "2025-04-16T06:27:29.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "Computer",
+        "robot",
+        "ROS"
+      ]
+    },
+    {
+      "title": "ROS2-008-通信机制补完：分布式通信和 ROS_DOMAIN_ID",
+      "url": "/learningNote/Ros2_Note/co_me_2/2025_03_11.html",
+      "id": "/learningNote/Ros2_Note/co_me_2/2025_03_11.html",
+      "summary": "简介 在之前的中，我们系统地学习了四种通信机制。这四种通信机制在当时的应用场景都为单个ROS设备内相关节点、话题之间的相互沟通。那么当我们涉及到多台 ROS2 设备之间的相互通信时，我们应该如何实现？ 分布式通信 分布式通信就是这样一种 通过网络 在不同主机之间实现 数据交互 的通信策略。 首先我们应该了解， ROS2 本身就是一个分布式通信框架，它可...",
+      "content_html": "简介 在之前的中，我们系统地学习了四种通信机制。这四种通信机制在当时的应用场景都为单个ROS设备内相关节点、话题之间的相互沟通。那么当我们涉及到多台 ROS2 设备之间的相互通信时，我们应该如何实现？ 分布式通信 分布式通信就是这样一种 通过网络 在不同主机之间实现 数据交互 的通信策略。 首先我们应该了解， ROS2 本身就是一个分布式通信框架，它可...",
+      "date_published": "2025-03-11T00:00:00.000Z",
+      "date_modified": "2025-03-11T07:29:06.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "Computer",
+        "robot",
+        "ROS"
+      ]
+    },
+    {
+      "title": "ROS2通信机制01-核心内容",
+      "url": "/learningNote/Ros2_Note/co_me/",
+      "id": "/learningNote/Ros2_Note/co_me/",
+      "summary": "简述 这里是有关ROS2通信机制核心内容的相关笔记,其包括了ROS2内常用的四种通信方式： Topics (话题通信) Services (服务通信) Actions (动作通信) Parameters (参数服务) 具体软硬件以及技术背景等细节请参考",
+      "content_html": "简述 这里是有关ROS2通信机制核心内容的相关笔记,其包括了ROS2内常用的四种通信方式： Topics (话题通信) Services (服务通信) Actions (动作通信) Parameters (参数服务) 具体软硬件以及技术背景等细节请参考",
+      "date_published": "2026-04-18T03:26:49.234Z",
+      "date_modified": "2025-04-16T06:27:29.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "Computer",
+        "robot",
+        "ROS"
+      ]
+    }
+  ]
+}
