@@ -1,0 +1,1469 @@
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="https://blog.jeacsonsnake.com/atom.xsl"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
+  <id>https://blog.jeacsonsnake.com/</id>
+  <title>JeacsonBlog</title>
+  <subtitle>JeacsonBlog-一个简单的博客</subtitle>
+  <icon>https://blog.jeacsonsnake.com/assets/img/favicon.ico</icon>
+  <logo>https://blog.jeacsonsnake.com/assets/img/logo.png</logo>
+  <updated>2026-04-20T02:07:57.148Z</updated>
+  <generator>@vuepress/plugin-feed</generator>
+  <link rel="self" href="https://blog.jeacsonsnake.com/atom.xml"/>
+  <link rel="alternate" href="https://blog.jeacsonsnake.com/"/>
+  <category term="Computer"/>
+  <category term="robot"/>
+  <category term="ROS"/>
+  <contributor>
+    <name>xxx</name>
+  </contributor>
+  <entry>
+    <title type="text">JeacsonBlog Wiki</title>
+    <id>/wiki/</id>
+    <link href="/wiki/"/>
+    <updated>2026-04-17T09:02:02.000Z</updated>
+    <summary type="html"><![CDATA[
+<blockquote>
+<p>基于 Karpathy LLM Wiki 模式构建的个人知识库。以博客原始笔记为 source of truth，由 LLM Agent 增量维护。</p>
+</blockquote>
+<h2>Sources（知识域摘要）</h2>
+<p>按博客分类聚合的源笔记摘要，由 LLM 阅读对应 <code>docs/learningNote/</code> 下的笔记后生成/更新。</p>
+<ul>
+<li>[[./sources/JavaScript.md]] — JavaScript 语言核心与 Web API 笔记</li>
+<li>[[./sources/ROS2.md]] — ROS2 机器人操作系统，通信机制与工具</li>
+<li>[[./sources/Computer_Network.md]] — 计算机网络协议与原理</li>
+<li>[[./sources/Vue.md]] — Vue2 与 Vue3 框架笔记</li>
+<li>[[./sources/TypeScript.md]] — TypeScript 类型系统</li>
+<li>[[./sources/Coding_Skill.md]] — 通用编码技术与 VSCode 技巧</li>
+<li>[[./sources/Computer_Composition.md]] — 计算机组成原理</li>
+<li>[[./sources/Control_Theory.md]] — 自动控制原理与 S-Z 变换</li>
+<li>[[./sources/PostMortem.md]] — 踩坑心得与部署记录</li>
+</ul>]]></summary>
+    <content type="html"><![CDATA[JeacsonBlog Wiki 基于 Karpathy LLM Wiki 模式构建的个人知识库。以博客原始笔记为 source of truth，由 LLM Agent 增量维护。 Sources（知识域摘要） 按博客分类聚合的源笔记摘要，由 LLM 阅读对应 docs/learningNote/ 下的笔记后生成/更新。 [[./sources/Ja...]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-04-20T02:07:57.155Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">Wiki Log</title>
+    <id>/wiki/log.html</id>
+    <link href="/wiki/log.html"/>
+    <updated>2026-04-20T00:46:21.000Z</updated>
+    <summary type="html"><![CDATA[<h2>[2026-04-17] init | 初始化 Wiki 层</h2>
+<h2>[2026-04-17] ingest | docs/learningNote/JSNote/ — JavaScript 核心笔记</h2>
+<h2>[2026-04-17] ingest | docs/learningNote/Ros2_Note/ — ROS2 通信机制与工具</h2>
+<h2>[2026-04-17] ingest | docs/learningNote/Computer_Network/ — 计算机网络</h2>
+<h2>[2026-04-17] ingest | docs/learningNote/vueNote/ — Vue 框架</h2>]]></summary>
+    <content type="html"><![CDATA[[2026-04-17] init | 初始化 Wiki 层 [2026-04-17] ingest | docs/learningNote/JSNote/ — JavaScript 核心笔记 [2026-04-17] ingest | docs/learningNote/Ros2_Note/ — ROS2 通信机制与工具 [2026-04-17] i...]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-04-20T02:07:57.156Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">Array.reduce() 方法</title>
+    <id>/wiki/concepts/Reduce%E6%96%B9%E6%B3%95.html</id>
+    <link href="/wiki/concepts/Reduce%E6%96%B9%E6%B3%95.html"/>
+    <updated>2026-04-17T09:02:02.000Z</updated>
+    <summary type="html"><![CDATA[
+<p><code>reduce()</code> 是 JavaScript 内置的数组方法，用于将数组中的所有元素按顺序"压缩"为一个值。</p>
+<h2>基本语法</h2>
+<div class="language-javascript line-numbers-mode" data-highlighter="shiki" data-ext="javascript" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-javascript"><span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">const</span><span style="--shiki-light:#986801;--shiki-dark:#E5C07B"> result</span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2"> =</span><span style="--shiki-light:#383A42;--shiki-dark:#E5C07B"> arr</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">reduce</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">((</span><span style="--shiki-light:#383A42;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">prev</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">, </span><span style="--shiki-light:#383A42;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">cur</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">, </span><span style="--shiki-light:#383A42;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">index</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">, </span><span style="--shiki-light:#383A42;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">arr</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">) </span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">=&gt;</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    // 返回值会作为下一次调用的 prev</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">}, </span><span style="--shiki-light:#383A42;--shiki-dark:#E06C75">initialValue</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></summary>
+    <content type="html"><![CDATA[JavaScript 数组方法，将数组元素按顺序累加为单个值]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-04-20T02:07:57.158Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">Symbol 类型</title>
+    <id>/wiki/concepts/Symbol.html</id>
+    <link href="/wiki/concepts/Symbol.html"/>
+    <updated>2026-04-17T09:02:02.000Z</updated>
+    <summary type="html"><![CDATA[
+<p><code>Symbol</code> 是 ES6 引入的新原始数据类型，表示独一无二的值，是 JavaScript 的第七种数据类型。</p>
+<h2>基本特性</h2>
+<ol>
+<li><strong>独一无二</strong>：<code>Symbol('a') === Symbol('a')</code> 返回 <code>false</code></li>
+<li><strong>不能用 new 创建</strong>：不是包装对象，直接 <code>Symbol()</code> 调用</li>
+<li><strong>可带描述</strong>：可选参数 <code>description</code> 用于调试输出</li>
+<li><strong>不可枚举</strong>：不会出现在 <code>for...in</code> 循环中</li>
+</ol>]]></summary>
+    <content type="html"><![CDATA[ES6 引入的第七种原始数据类型，表示独一无二的值]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-04-20T02:07:57.159Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">TCP 与 UDP 对比</title>
+    <id>/wiki/concepts/TCP%E4%B8%8EUDP.html</id>
+    <link href="/wiki/concepts/TCP%E4%B8%8EUDP.html"/>
+    <updated>2026-04-17T11:35:40.000Z</updated>
+    <summary type="html"><![CDATA[
+<p>TCP 和 UDP 是传输层的两大核心协议。</p>
+<h2>对比</h2>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>TCP</th>
+<th>UDP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>连接性</td>
+<td>面向连接</td>
+<td>无连接</td>
+</tr>
+<tr>
+<td>可靠性</td>
+<td>可靠（重传、确认）</td>
+<td>不可靠</td>
+</tr>
+<tr>
+<td>有序性</td>
+<td>保证顺序</td>
+<td>不保证</td>
+</tr>
+<tr>
+<td>拥塞控制</td>
+<td>有</td>
+<td>无</td>
+</tr>
+<tr>
+<td>头部大小</td>
+<td>20~60 字节</td>
+<td>8 字节</td>
+</tr>
+<tr>
+<td>速度</td>
+<td>较慢</td>
+<td>快</td>
+</tr>
+<tr>
+<td>使用场景</td>
+<td>HTTP, SMTP, SSH</td>
+<td>DNS, DHCP, 视频流</td>
+</tr>
+</tbody>
+</table>]]></summary>
+    <content type="html"><![CDATA[传输层两大协议的区别：可靠连接 vs 实时性]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-04-20T02:07:57.161Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">从输入 URL 到页面显示的完整流程</title>
+    <id>/wiki/concepts/URL%E5%88%B0%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BA.html</id>
+    <link href="/wiki/concepts/URL%E5%88%B0%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BA.html"/>
+    <updated>2026-04-17T09:02:02.000Z</updated>
+    <summary type="html"><![CDATA[
+<p>这是计算机网络最经典的综合问题之一，考察对各层协议的理解。</p>
+<h2>完整流程</h2>
+<ol>
+<li>
+<p><strong>DNS 解析</strong></p>
+<ul>
+<li>浏览器缓存 → 系统缓存 → DNS 服务器查询</li>
+<li>域名 → IP 地址</li>
+</ul>
+</li>
+<li>
+<p><strong>TCP 三次握手</strong></p>
+<ul>
+<li>SYN → SYN-ACK → ACK</li>
+<li>建立可靠连接</li>
+</ul>
+</li>
+<li>
+<p><strong>HTTP 请求/响应</strong></p>
+<ul>
+<li>浏览器发送 GET 请求</li>
+<li>服务器返回 HTML</li>
+</ul>
+</li>
+<li>
+<p><strong>浏览器渲染</strong></p>
+<ul>
+<li>HTML 解析 → DOM 树构建</li>
+<li>CSS 解析 → CSSOM</li>
+<li>JS 执行 → DOM 更新</li>
+<li>渲染树 → 布局 → 绘制</li>
+</ul>
+</li>
+</ol>]]></summary>
+    <content type="html"><![CDATA[DNS → TCP → HTTP → 渲染的完整网络流程]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-04-20T02:07:57.162Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">函数柯里化</title>
+    <id>/wiki/concepts/%E5%87%BD%E6%95%B0%E6%9F%AF%E9%87%8C%E5%8C%96.html</id>
+    <link href="/wiki/concepts/%E5%87%BD%E6%95%B0%E6%9F%AF%E9%87%8C%E5%8C%96.html"/>
+    <updated>2026-04-17T09:02:02.000Z</updated>
+    <summary type="html"><![CDATA[
+<p>将接受多个参数的函数改造为接受单个参数、返回接受下一个参数的函数，直至返回最终结果。</p>
+<h2>示例</h2>
+<div class="language-javascript line-numbers-mode" data-highlighter="shiki" data-ext="javascript" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-javascript"><span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// 普通函数</span></span>
+<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">function</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> add</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#383A42;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">a</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">, </span><span style="--shiki-light:#383A42;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">b</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">, </span><span style="--shiki-light:#383A42;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">c</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">) { </span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">return</span><span style="--shiki-light:#383A42;--shiki-dark:#E06C75"> a</span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2"> +</span><span style="--shiki-light:#383A42;--shiki-dark:#E06C75"> b</span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2"> +</span><span style="--shiki-light:#383A42;--shiki-dark:#E06C75"> c</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> }</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// 柯里化后</span></span>
+<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">function</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> addCurry</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#383A42;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">a</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">) {</span></span>
+<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">    return</span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD"> function</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#383A42;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">b</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">) {</span></span>
+<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">        return</span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD"> function</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#383A42;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">c</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">) {</span></span>
+<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">            return</span><span style="--shiki-light:#383A42;--shiki-dark:#E06C75"> a</span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2"> +</span><span style="--shiki-light:#383A42;--shiki-dark:#E06C75"> b</span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2"> +</span><span style="--shiki-light:#383A42;--shiki-dark:#E06C75"> c</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">        }</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">    }</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">addCurry</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">1</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)(</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">2</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)(</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">3</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">) </span><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// 6</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></summary>
+    <content type="html"><![CDATA[将多参数函数改造为链式单参数调用的编程技巧]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-04-20T02:07:57.164Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">ROS2 分布式通信</title>
+    <id>/wiki/concepts/%E5%88%86%E5%B8%83%E5%BC%8F%E9%80%9A%E4%BF%A1.html</id>
+    <link href="/wiki/concepts/%E5%88%86%E5%B8%83%E5%BC%8F%E9%80%9A%E4%BF%A1.html"/>
+    <updated>2026-04-17T09:02:02.000Z</updated>
+    <summary type="html"><![CDATA[
+<p>ROS2 基于 DDS（Data Distribution Service）实现分布式通信，同一局域网内的不同主机可以通过配置 ROS_DOMAIN_ID 实现节点发现和数据交互。</p>
+<h2>域ID机制</h2>
+<ul>
+<li>默认域ID = 0</li>
+<li>不同域ID 的节点互相不可见</li>
+<li>通过设置环境变量 <code>ROS_DOMAIN_ID</code> 改变域</li>
+</ul>
+<h2>与话题通信的关系</h2>
+<p>分布式通信本质上是将话题通信扩展到网络层面，仍然遵循发布/订阅模式。</p>
+<h2>相关</h2>
+<ul>
+<li>[[../entities/ROS2.md]]</li>
+<li>[[../concepts/话题通信.md]]</li>
+</ul>]]></summary>
+    <content type="html"><![CDATA[通过 DDS 域ID机制实现跨设备 ROS2 节点通信]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-04-20T02:07:57.165Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">ROS2 坐标变换</title>
+    <id>/wiki/concepts/%E5%9D%90%E6%A0%87%E5%8F%98%E6%8D%A2.html</id>
+    <link href="/wiki/concepts/%E5%9D%90%E6%A0%87%E5%8F%98%E6%8D%A2.html"/>
+    <updated>2026-04-17T09:02:02.000Z</updated>
+    <summary type="html"><![CDATA[
+<p>坐标变换是机器人学中的核心概念，ROS2 通过 tf2 库实现。</p>
+<h2>核心消息类型</h2>
+<ul>
+<li><strong>TransformStamped</strong> — 描述两个坐标系之间的变换关系（平移+旋转）</li>
+<li><strong>PointStamped</strong> — 带时间戳的点坐标</li>
+</ul>
+<h2>通信双方</h2>
+<ul>
+<li><strong>广播方 (Broadcaster)</strong> — 发布坐标变换关系</li>
+<li><strong>监听方 (Listener)</strong> — 订阅并使用坐标变换</li>
+</ul>]]></summary>
+    <content type="html"><![CDATA[tf2 系统实现机器人坐标系变换，TransformStamped 与 PointStamped 消息]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-04-20T02:07:57.166Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">ROS2 话题通信</title>
+    <id>/wiki/concepts/%E8%AF%9D%E9%A2%98%E9%80%9A%E4%BF%A1.html</id>
+    <link href="/wiki/concepts/%E8%AF%9D%E9%A2%98%E9%80%9A%E4%BF%A1.html"/>
+    <updated>2026-04-17T09:02:02.000Z</updated>
+    <summary type="html"><![CDATA[
+<p>话题通信是 ROS2 中最常用的通信方式，采用发布/订阅（Publish-Subscribe）模式。</p>
+<h2>工作原理</h2>
+<div class="language- line-numbers-mode" data-highlighter="shiki" data-ext="" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-"><span class="line"><span>发布方(Publisher) --&gt; 话题(Topic) --&gt; 订阅方(Subscriber)</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div>]]></summary>
+    <content type="html"><![CDATA[Topic-based publish/subscribe 通信模式，单向多对多数据流]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-04-20T02:07:57.167Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">计算机网络</title>
+    <id>/wiki/entities/Computer_Network.html</id>
+    <link href="/wiki/entities/Computer_Network.html"/>
+    <updated>2026-04-17T09:02:02.000Z</updated>
+    <summary type="html"><![CDATA[
+<p>计算机网络是计算机科学的基础领域之一，博客以 <em>Computer Networking: A Top-Down Approach</em> 教材为主参考。</p>
+<h2>五层模型</h2>
+<table>
+<thead>
+<tr>
+<th>层次</th>
+<th>主要协议</th>
+<th>主要设备</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>应用层</td>
+<td>HTTP, DNS, SMTP</td>
+<td>—</td>
+</tr>
+<tr>
+<td>传输层</td>
+<td>TCP, UDP</td>
+<td>—</td>
+</tr>
+<tr>
+<td>网络层</td>
+<td>IP, ICMP, OSPF</td>
+<td>路由器</td>
+</tr>
+<tr>
+<td>链路层</td>
+<td>Ethernet, PPP</td>
+<td>交换机</td>
+</tr>
+<tr>
+<td>物理层</td>
+<td>光/电信号</td>
+<td>集线器</td>
+</tr>
+</tbody>
+</table>]]></summary>
+    <content type="html"><![CDATA[计算机网络协议与原理，TCP/IP 五层模型，Kurose & Ross 教材]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-04-20T02:07:57.169Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">JavaScript</title>
+    <id>/wiki/entities/JavaScript.html</id>
+    <link href="/wiki/entities/JavaScript.html"/>
+    <updated>2026-04-17T09:02:02.000Z</updated>
+    <summary type="html"><![CDATA[
+<p>JavaScript 是一门多范式编程语言，是 Web 开发的三大核心技术之一（HTML + CSS + JavaScript）。</p>
+<h2>基本信息</h2>
+<ul>
+<li><strong>类型</strong>：高级、动态、解释型语言</li>
+<li><strong>数据类型</strong>：7 种原始类型（undefined, null, boolean, string, number, symbol, bigint）+ object</li>
+<li><strong>运行时</strong>：浏览器、V8 引擎、Node.js</li>
+</ul>
+<h2>核心知识点</h2>]]></summary>
+    <content type="html"><![CDATA[JavaScript 编程语言，Web 开发核心语言，ES6+ 现代特性]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-04-20T02:07:57.171Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">ROS2</title>
+    <id>/wiki/entities/ROS2.html</id>
+    <link href="/wiki/entities/ROS2.html"/>
+    <updated>2026-04-17T09:02:02.000Z</updated>
+    <summary type="html"><![CDATA[
+<p>ROS2 (Robot Operating System 2) 是一个用于机器人软件开发的开源中间件框架，基于 DDS（Data Distribution Service）实现分布式通信。</p>
+<h2>基本信息</h2>
+<ul>
+<li><strong>当前 LTS 版本</strong>：Jazzy Jalisco</li>
+<li><strong>依赖系统</strong>：Ubuntu 24.04 (ROS2 Jazzy)</li>
+<li><strong>硬件</strong>：Raspberry Pi 5B (4GB) 作为主要测试平台</li>
+</ul>
+<h2>四大通信机制</h2>]]></summary>
+    <content type="html"><![CDATA[Robot Operating System 2，机器人操作系统，支持分布式通信]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-04-20T02:07:57.173Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">TypeScript</title>
+    <id>/wiki/entities/TypeScript.html</id>
+    <link href="/wiki/entities/TypeScript.html"/>
+    <updated>2026-04-17T09:02:02.000Z</updated>
+    <summary type="html"><![CDATA[
+<p>TypeScript 是 JavaScript 的超集，添加了静态类型系统和面向对象特性，广泛用于大型前端项目。</p>
+<h2>与 JavaScript 的关系</h2>
+<ul>
+<li>TypeScript 代码需编译为 JavaScript 运行</li>
+<li>所有 JavaScript 代码都是合法的 TypeScript 代码（可选类型标注）</li>
+<li>Vue3 全面采用 TypeScript 重写</li>
+</ul>
+<h2>核心特性</h2>
+<ul>
+<li>静态类型（编译时检查）</li>
+<li>接口（Interface）与类型别名（Type Alias）</li>
+<li>泛型（Generics）</li>
+<li>装饰器（Decorators）</li>
+</ul>]]></summary>
+    <content type="html"><![CDATA[JavaScript 的超集，提供静态类型系统]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-04-20T02:07:57.174Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">Vue</title>
+    <id>/wiki/entities/Vue.html</id>
+    <link href="/wiki/entities/Vue.html"/>
+    <updated>2026-04-17T09:02:02.000Z</updated>
+    <summary type="html"><![CDATA[
+<p>Vue.js 是一款渐进式 JavaScript 框架，用于构建单页应用（SPA）和 Web 界面。博客同时记录了 Vue2 和 Vue3 的学习内容。</p>
+<h2>Vue2 vs Vue3</h2>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>Vue2</th>
+<th>Vue3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>响应式原理</td>
+<td>Object.defineProperty</td>
+<td>Proxy</td>
+</tr>
+<tr>
+<td>API 风格</td>
+<td>Options API</td>
+<td>Composition API</td>
+</tr>
+<tr>
+<td>打包大小</td>
+<td>基准</td>
+<td>减少 41%</td>
+</tr>
+<tr>
+<td>初始渲染速度</td>
+<td>基准</td>
+<td>快 55%</td>
+</tr>
+<tr>
+<td>多根节点</td>
+<td>不支持</td>
+<td>支持 (Fragment)</td>
+</tr>
+<tr>
+<td>状态管理</td>
+<td>Vuex</td>
+<td>Pinia（推荐）</td>
+</tr>
+</tbody>
+</table>]]></summary>
+    <content type="html"><![CDATA[渐进式 JavaScript 框架，用于构建 Web 用户界面，Vue2 与 Vue3 并存]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-04-20T02:07:57.175Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">Web 开发</title>
+    <id>/wiki/entities/Web.html</id>
+    <link href="/wiki/entities/Web.html"/>
+    <updated>2026-04-17T09:02:02.000Z</updated>
+    <summary type="html"><![CDATA[
+<p>Web 开发是互联网应用构建的实践领域，涵盖前端、后端、网络协议等多个方面。</p>
+<h2>技术栈</h2>
+<h3>前端</h3>
+<ul>
+<li>HTML / CSS / JavaScript</li>
+<li>框架：[[../entities/Vue.md]]、React、Angular</li>
+<li>构建工具：Vite、Webpack</li>
+</ul>
+<h3>通信协议</h3>
+<ul>
+<li><strong>HTTP/HTTPS</strong> — Web 基础协议</li>
+<li><strong>DNS</strong> — 域名解析</li>
+<li><strong>TCP/IP</strong> — 传输控制协议</li>
+<li>参考：[[../entities/Computer_Network.md]]</li>
+</ul>]]></summary>
+    <content type="html"><![CDATA[Web 前端与后端技术栈，包括 HTML/CSS/JavaScript、HTTP 协议、DNS 等]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-04-20T02:07:57.176Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">编码技术知识域摘要</title>
+    <id>/wiki/sources/Coding_Skill.html</id>
+    <link href="/wiki/sources/Coding_Skill.html"/>
+    <updated>2026-04-20T00:45:41.000Z</updated>
+    <summary type="html"><![CDATA[
+<p>本目录对应 <code>docs/learningNote/coding_skill/</code>，收集通用编码技能，非特定语言或框架。</p>
+<h2>主要内容</h2>
+<ul>
+<li><strong>VSCode 代码片段设置</strong> — 自定义 Snippet，减少重复代码</li>
+<li>设计模式基础</li>
+<li>API 文档的撰写与阅读</li>
+<li>通用编码思维</li>
+</ul>
+<h2>相关笔记</h2>
+<ul>
+<li><code>2024_09_23.md</code> — VSCode 自定义代码片段（以 ROS2 C++ 代码为例）</li>
+</ul>]]></summary>
+    <content type="html"><![CDATA[通用编程技能，包括设计模式、API文档撰写、VSCode 技巧、代码片段]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-04-20T02:07:57.177Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">计算机组成原理知识域摘要</title>
+    <id>/wiki/sources/Computer_Composition.html</id>
+    <link href="/wiki/sources/Computer_Composition.html"/>
+    <updated>2026-04-17T09:02:02.000Z</updated>
+    <summary type="html"><![CDATA[
+<p>本目录对应 <code>docs/learningNote/Principles_of_Computer_Composition/</code>。</p>
+<h2>主要内容</h2>
+<h3>机器数 (Machine Number)</h3>
+<ul>
+<li>二进制数在计算机中的表示</li>
+<li>无精度损失的表示形式</li>
+</ul>
+<h3>IEEE-754 浮点数标准</h3>
+<ul>
+<li>单精度（32位）：偏移量 bias = 127</li>
+<li>双精度（64位）：偏移量 bias = 1023</li>
+<li>特殊值：+0/-0，正负无穷，NaN</li>
+<li>在线转换器：https://www.h-schmidt.net/FloatConverter/IEEE754</li>
+</ul>]]></summary>
+    <content type="html"><![CDATA[计算机底层原理，包括机器数、IEEE-754 浮点数标准]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-04-20T02:07:57.178Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">计算机网络知识域摘要</title>
+    <id>/wiki/sources/Computer_Network.html</id>
+    <link href="/wiki/sources/Computer_Network.html"/>
+    <updated>2026-04-20T00:46:04.000Z</updated>
+    <summary type="html"><![CDATA[
+<p>本目录对应 <code>docs/learningNote/Computer_Network/</code>，以教材 <em>Computer Networking: A Top-Down Approach</em> (Kurose &amp; Ross, 7th Ed.) 为主参考。</p>
+<h2>核心主题</h2>
+<h3>协议与层次模型</h3>
+<ul>
+<li><strong>TCP/IP 五层模型</strong> — 应用层 → 传输层 → 网络层 → 链路层 → 物理层</li>
+<li><strong>TCP vs UDP</strong> — 可靠 vs 不可靠，面向连接 vs 无连接，拥塞控制 vs 无控制</li>
+<li><strong>HTTP/SMTP/DNS</strong> — 应用层主要协议</li>
+</ul>]]></summary>
+    <content type="html"><![CDATA[计算机网络原理与协议学习笔记，参考《Computer Networking: A Top-Down Approach》]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-04-20T02:07:57.179Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">自动控制原理知识域摘要</title>
+    <id>/wiki/sources/Control_Theory.html</id>
+    <link href="/wiki/sources/Control_Theory.html"/>
+    <updated>2026-04-17T09:02:02.000Z</updated>
+    <summary type="html"><![CDATA[
+<p>本目录对应 <code>docs/learningNote/Principles_of_Automatic_Control_Related/</code>。</p>
+<h2>主要内容</h2>
+<h3>S-Z 变换表</h3>
+<p>连续时间拉普拉斯变换（F(s)）与离散时间 Z 变换（F(z)）的对照表，包括：</p>
+<ul>
+<li>单位冲激 δ(t)</li>
+<li>单位阶跃 u(t)</li>
+<li>斜坡函数 t</li>
+<li -at="">指数函数 e^</li>
+<li>几何序列 a^k</li>
+</ul>
+<h3>常用变换公式</h3>
+<table>
+<thead>
+<tr>
+<th>时域 f(t)</th>
+<th>拉普拉斯 F(s)</th>
+<th>Z域 F(z)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>δ(t)</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>u(t)</td>
+<td>1/s</td>
+<td>z/(z-1)</td>
+</tr>
+<tr>
+<td -at="">e^</td>
+<td>1/(s+a)</td>
+<td>z/(z-e^{-aT})</td>
+</tr>
+</tbody>
+</table>]]></summary>
+    <content type="html"><![CDATA[经典控制理论笔记，包含 S-Z 变换表、连续与离散系统分析]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-04-20T02:07:57.187Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">JavaScript 知识域摘要</title>
+    <id>/wiki/sources/JavaScript.html</id>
+    <link href="/wiki/sources/JavaScript.html"/>
+    <updated>2026-04-17T09:02:02.000Z</updated>
+    <summary type="html"><![CDATA[
+<p>本目录对应 <code>docs/learningNote/JSNote/</code>，收录 JavaScript/ES6+ 语言核心知识点笔记。</p>
+<h2>涵盖主题</h2>
+<h3>数据类型与 API</h3>
+<ul>
+<li><strong>Symbol</strong> — ES6 引入的第七种原始数据类型，表示独一无二的值，不可使用 new 关键字创建</li>
+<li><strong>Array.reduce()</strong> — 数组内置方法，用于将数组元素按顺序累加为单个值，支持 InitialValue</li>
+</ul>
+<h3>函数与高级概念</h3>]]></summary>
+    <content type="html"><![CDATA[JavaScript 语言核心概念与 Web 开发相关笔记]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-04-20T02:07:57.189Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">踩坑心得知识域摘要</title>
+    <id>/wiki/sources/PostMortem.html</id>
+    <link href="/wiki/sources/PostMortem.html"/>
+    <updated>2026-04-20T00:45:44.000Z</updated>
+    <summary type="html"><![CDATA[
+<p>本目录对应 <code>docs/postMortem/</code>，记录实际开发和部署中遇到的问题及解决方案。</p>
+<h2>主要内容</h2>
+<h3>部署 (deploy)</h3>
+<ul>
+<li>VuePress 博客部署流程</li>
+<li>GitHub Pages / VPS 部署</li>
+<li>环境配置问题</li>
+</ul>
+<h3>Markdown 渲染 (markdown_render)</h3>
+<ul>
+<li>markdown-it 渲染器配置</li>
+<li>自定义插件</li>
+<li>VuePress 中的 Markdown 扩展</li>
+</ul>]]></summary>
+    <content type="html"><![CDATA[部署与开发中的实际问题记录与解决方案]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-04-20T02:07:57.190Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">ROS2 知识域摘要</title>
+    <id>/wiki/sources/ROS2.html</id>
+    <link href="/wiki/sources/ROS2.html"/>
+    <updated>2026-04-20T00:45:38.000Z</updated>
+    <summary type="html"><![CDATA[
+<p>本目录对应 <code>docs/learningNote/Ros2_Note/</code>，以 ROS2 Jazzy + Ubuntu 24.04 为环境，记录机器人操作系统学习笔记。</p>
+<h2>硬件环境</h2>
+<ul>
+<li>Raspberry Pi 5B (4GB)</li>
+<li>ROS2 Jazzy Jalisco LTS</li>
+<li>Ubuntu 24.04.3 LTS</li>
+</ul>
+<h2>涵盖内容</h2>
+<h3>通信机制（核心）</h3>
+<ul>
+<li><strong>话题通信 (Topics)</strong> — 发布/订阅模式，单向数据流，支持多对多关系，用于持续更新的数据</li>
+<li><strong>服务通信 (Services)</strong> — 请求/应答模式，一对一同步通信</li>
+<li><strong>动作通信 (Actions)</strong> — 长期任务，支持中途取消和反馈</li>
+<li><strong>参数服务 (Parameters)</strong> — 节点配置参数的管理与读写</li>
+</ul>]]></summary>
+    <content type="html"><![CDATA[ROS2 机器人操作系统学习笔记，涵盖通信机制、坐标变换、工具使用]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-04-20T02:07:57.191Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">TypeScript 知识域摘要</title>
+    <id>/wiki/sources/TypeScript.html</id>
+    <link href="/wiki/sources/TypeScript.html"/>
+    <updated>2026-04-17T09:02:02.000Z</updated>
+    <summary type="html"><![CDATA[
+<p>本目录对应 <code>docs/learningNote/TypeScriptNote/</code>，以学习日期分章节（第一天～第五天），涵盖 TypeScript 入门与进阶内容。</p>
+<h2>主要内容</h2>
+<ul>
+<li>TypeScript 类型基础（静态类型、类型注解、类型推断）</li>
+<li>接口（Interface）与类型别名（Type Alias）</li>
+<li>泛型（Generics）</li>
+<li>高级类型（联合类型、交叉类型、映射类型）</li>
+<li>装饰器（Decorators）</li>
+<li>TypeScript 在 Vue3 中的应用</li>
+</ul>]]></summary>
+    <content type="html"><![CDATA[TypeScript 类型系统学习笔记，按学习日期分为五天]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-04-20T02:07:57.192Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">Vue 知识域摘要</title>
+    <id>/wiki/sources/Vue.html</id>
+    <link href="/wiki/sources/Vue.html"/>
+    <updated>2026-04-17T09:02:02.000Z</updated>
+    <summary type="html"><![CDATA[
+<p>本目录对应 <code>docs/learningNote/vueNote/</code>，包含 Vue2 和 Vue3 的学习笔记。</p>
+<h2>Vue3 新特性</h2>
+<ul>
+<li><strong>性能提升</strong> — 打包体积减少 41%，初次渲染快 55%</li>
+<li><strong>Composition API</strong> — 组合式 API，逻辑复用更强</li>
+<li><strong>数据响应式重写</strong> — Proxy 替代 Object.defineProperty，支持嵌套对象和数组</li>
+<li><strong>新组件</strong> — Fragment、Teleport、Suspense</li>
+<li><strong>更好的 TypeScript 支持</strong></li>
+<li><strong>Vite</strong> — 新一代构建工具</li>
+</ul>]]></summary>
+    <content type="html"><![CDATA[Vue2 与 Vue3 框架学习笔记，涵盖数据响应式、组件系统、路由、状态管理]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-04-20T02:07:57.193Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">ROS2-Z02-ROS2工具：坐标变换（EXEC2）乌龟护航案例实战</title>
+    <id>/learningNote/Ros2_Note/coor_trans/2026_02_13.html</id>
+    <link href="/learningNote/Ros2_Note/coor_trans/2026_02_13.html"/>
+    <updated>2026-02-13T03:00:43.000Z</updated>
+    <summary type="html"><![CDATA[<h2>简介</h2>
+<p>本章节主要介绍如何实现 “乌龟护航” 案例。里面的大部分代码会沿用内的相关代码内容。因此建议先尝试实现上一章节的效果，再来进行本章节的实战。</p>
+<h2>案例需求&amp;分析</h2>
+<p><strong>需求：</strong> 基于上一章节要求编写程序实现，以 <code>turtlesim_node</code> 节点的原生乌龟（<code>turtle1</code>）为几何中心，生成多只新的乌龟（以三只为例，即<code>turtle2</code>、<code>turtle3</code>、<code>turtle4</code>）。要求在 <code>turtle1</code> 无论是静止或是被键盘控制运动时，<code>turtle2</code> 都会以 <code>turtle1</code> 的几何中心为目标并以某种队形对其进行护航。</p>]]></summary>
+    <content type="html"><![CDATA[简介 本章节主要介绍如何实现 “乌龟护航” 案例。里面的大部分代码会沿用内的相关代码内容。因此建议先尝试实现上一章节的效果，再来进行本章节的实战。 案例需求&分析 需求： 基于上一章节要求编写程序实现，以 turtlesim_node 节点的原生乌龟（turtle1）为几何中心，生成多只新的乌龟（以三只为例，即turtle2、turtle3、turtl...]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <category term="Computer"/>
+    <category term="robot"/>
+    <category term="ROS"/>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-02-13T00:00:00.000Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">ROS2-Z01-ROS2工具：坐标变换（EXEC1）乌龟跟随案例实战</title>
+    <id>/learningNote/Ros2_Note/coor_trans/2026_02_09.html</id>
+    <link href="/learningNote/Ros2_Note/coor_trans/2026_02_09.html"/>
+    <updated>2026-02-11T08:08:26.000Z</updated>
+    <summary type="html"><![CDATA[<h2>简介</h2>
+<p>本章节主要介绍如何实现 “乌龟跟随” 案例。</p>
+<h2>案例需求&amp;分析</h2>
+<p><strong>需求：</strong> 编写程序实现，程序运行后会启动 <code>turtlesim_node</code> 节点，该节点会生成一个窗口，窗口中有一只原生乌龟（<code>turtle1</code>），紧接着再生成一只新的乌龟（<code>turtle2</code>）。要求在 <code>turtle1</code> 无论是静止或是被键盘控制运动时，<code>turtle2</code> 都会以 <code>turtle1</code> 为目标并向其几何中心运动。</p>]]></summary>
+    <content type="html"><![CDATA[简介 本章节主要介绍如何实现 “乌龟跟随” 案例。 案例需求&分析 需求： 编写程序实现，程序运行后会启动 turtlesim_node 节点，该节点会生成一个窗口，窗口中有一只原生乌龟（turtle1），紧接着再生成一只新的乌龟（turtle2）。要求在 turtle1 无论是静止或是被键盘控制运动时，turtle2 都会以 turtle1 为目标并...]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <category term="Computer"/>
+    <category term="robot"/>
+    <category term="ROS"/>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-02-09T00:00:00.000Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">ROS2-026-ROS2工具：坐标变换（七）坐标变换工具</title>
+    <id>/learningNote/Ros2_Note/coor_trans/2026_02_05.html</id>
+    <link href="/learningNote/Ros2_Note/coor_trans/2026_02_05.html"/>
+    <updated>2026-02-05T09:24:04.000Z</updated>
+    <summary type="html"><![CDATA[<h2>简介</h2>
+<p>在 <code>TF</code> 框架中，<code>ROS2</code> 除了封装了 <strong>坐标广播与监听</strong> 功能外，还提供了一些可以帮助我们提高开发、调试效率的工具。本章节主要介绍这些工具的使用。</p>
+<p>这些工具主要涉及到两个功能包：<code>tf2_ros</code> 和 <code>tf2_tools</code>。</p>
+<h2>功能包介绍</h2>
+<p><code>tf2_ros</code> 包中提供的常用节点如下：</p>
+<ul>
+<li>
+<p><code>static_transform_publisher</code>：该节点用于广播静态坐标变换，在 <strong></strong> 章节中已有详细说明，不再介绍；</p>
+</li>
+<li>
+<p><code>tf2_monitor</code>：该节点用于打印所有或特定坐标系的发布频率与网络延迟；</p>
+</li>
+<li>
+<p><code>tf2_echo</code>：该节点用于打印特定坐标系的平移旋转关系。</p>
+</li>
+</ul>]]></summary>
+    <content type="html"><![CDATA[简介 在 TF 框架中，ROS2 除了封装了 坐标广播与监听 功能外，还提供了一些可以帮助我们提高开发、调试效率的工具。本章节主要介绍这些工具的使用。 这些工具主要涉及到两个功能包：tf2_ros 和 tf2_tools。 功能包介绍 tf2_ros 包中提供的常用节点如下： static_transform_publisher：该节点用于广播静态坐标...]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <category term="Computer"/>
+    <category term="robot"/>
+    <category term="ROS"/>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-02-05T00:00:00.000Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">ROS2-025-ROS2工具：坐标变换（六）监听坐标点消息</title>
+    <id>/learningNote/Ros2_Note/coor_trans/2026_02_04.html</id>
+    <link href="/learningNote/Ros2_Note/coor_trans/2026_02_04.html"/>
+    <updated>2026-02-05T09:23:17.000Z</updated>
+    <summary type="html"><![CDATA[<h2>简介</h2>
+<p><strong>坐标变换监听</strong> 可以实现坐标点在不同坐标系之间的变换，或者不同的多个坐标系之间的变换。
+针对坐标变换进行监听的前提，是必须<strong>已有不同的多个坐标系相对关系</strong>的广播，而至于是静态广播或动态广播则无要求。因为监听获取的坐标系相对关系皆为某一时刻或某一时间点。</p>
+<p>在中，我们经由案例一实现了<strong>多坐标系</strong>的场景下实现<strong>不同坐标系</strong>之间的变换。在这一章节中，我们会实现案例二，即<strong>同一坐标点</strong>在<strong>不同坐标系</strong>下的变换。虽然两个案例的需求不同，但是相关算法都被封装好了，我们只需要调用相关 API 即可。</p>]]></summary>
+    <content type="html"><![CDATA[简介 坐标变换监听 可以实现坐标点在不同坐标系之间的变换，或者不同的多个坐标系之间的变换。 针对坐标变换进行监听的前提，是必须已有不同的多个坐标系相对关系的广播，而至于是静态广播或动态广播则无要求。因为监听获取的坐标系相对关系皆为某一时刻或某一时间点。 在中，我们经由案例一实现了多坐标系的场景下实现不同坐标系之间的变换。在这一章节中，我们会实现案例二，...]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <category term="Computer"/>
+    <category term="robot"/>
+    <category term="ROS"/>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-02-04T00:00:00.000Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">ROS2-024-ROS2工具：坐标变换（五）坐标变换监听</title>
+    <id>/learningNote/Ros2_Note/coor_trans/2026_02_03.html</id>
+    <link href="/learningNote/Ros2_Note/coor_trans/2026_02_03.html"/>
+    <updated>2026-02-04T08:07:13.000Z</updated>
+    <summary type="html"><![CDATA[<h2>简介</h2>
+<p><strong>坐标变换监听</strong> 可以实现坐标点在不同坐标系之间的变换，或者不同的多个坐标系之间的变换。
+针对坐标变换进行监听的前提，是必须<strong>已有不同的多个坐标系相对关系</strong>的广播，而至于是静态广播或动态广播则无要求。因为监听获取的坐标系相对关系皆为某一时刻或某一时间点。</p>
+<h2>案例梳理</h2>
+<p>以下有两个案例：</p>
+<ol>
+<li>在中，我们发布了 <code>laser</code> 相对于 <code>base_link</code>，和 <code>camra</code> 相对于 <code>base_link</code> 的坐标系关系，请基于此求解 <strong><code>laser</code> 相对于 <code>camera</code></strong> 的坐标系关系。</li>
+<li>在中，我们发布了 <code>laser</code> 相对于 <code>base_link</code>的坐标系关系 和 <code>laser</code> 坐标系下一 <em>点状障碍物</em> 的坐标点数据，请基于此求解在 <code>base_link</code> 坐标系下 <strong>该点状障碍物</strong> 的坐标。</li>
+</ol>]]></summary>
+    <content type="html"><![CDATA[简介 坐标变换监听 可以实现坐标点在不同坐标系之间的变换，或者不同的多个坐标系之间的变换。 针对坐标变换进行监听的前提，是必须已有不同的多个坐标系相对关系的广播，而至于是静态广播或动态广播则无要求。因为监听获取的坐标系相对关系皆为某一时刻或某一时间点。 案例梳理 以下有两个案例： 在中，我们发布了 laser 相对于 base_link，和 camra...]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <category term="Computer"/>
+    <category term="robot"/>
+    <category term="ROS"/>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-02-03T00:00:00.000Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">ROS2-023-ROS2工具：坐标变换（四）发布坐标点消息</title>
+    <id>/learningNote/Ros2_Note/coor_trans/2026_02_02.html</id>
+    <link href="/learningNote/Ros2_Note/coor_trans/2026_02_02.html"/>
+    <updated>2026-02-02T14:43:39.000Z</updated>
+    <summary type="html"><![CDATA[<h2>简介</h2>
+<p>在 里，我们介绍了<strong>静态广播</strong> 和 <strong>动态广播</strong>。本章会主要介绍如何发布坐标点消息。</p>
+<h2>案例梳理</h2>
+<p>以下有一案例需求：</p>
+<p>有一无人车，在无人车底盘上装有 <strong>固定式</strong> 的激光雷达。车辆底盘、雷达各对应一坐标系，且各坐标系的原点取其几何中心。现该激光雷达扫描到一 <em>点状障碍物</em> 且可以定位到障碍物的坐标，请在 <strong>雷达坐标系下</strong> 发布障碍坐标点数据，并在Rviz2 中查看结果。</p>
+<p>上述案例是一个简单的 <code>话题发布程序</code>，在了解用于发布坐标点信息的 <code>geometry_msgs/msg/PointStamped</code> 接口消息之后，直接通过 <strong>话题发布方</strong> 按照一定逻辑发布消息即可。</p>]]></summary>
+    <content type="html"><![CDATA[简介 在 里，我们介绍了静态广播 和 动态广播。本章会主要介绍如何发布坐标点消息。 案例梳理 以下有一案例需求： 有一无人车，在无人车底盘上装有 固定式 的激光雷达。车辆底盘、雷达各对应一坐标系，且各坐标系的原点取其几何中心。现该激光雷达扫描到一 点状障碍物 且可以定位到障碍物的坐标，请在 雷达坐标系下 发布障碍坐标点数据，并在Rviz2 中查看结果。...]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <category term="Computer"/>
+    <category term="robot"/>
+    <category term="ROS"/>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-02-02T00:00:00.000Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">ROS2-022-ROS2工具：坐标变换（三）坐标变换广播</title>
+    <id>/learningNote/Ros2_Note/coor_trans/2026_01_29.html</id>
+    <link href="/learningNote/Ros2_Note/coor_trans/2026_01_29.html"/>
+    <updated>2026-02-05T09:23:17.000Z</updated>
+    <summary type="html"><![CDATA[<h2>简介</h2>
+<p>坐标系相对关系主要有两种：静态坐标系相对关系与动态坐标系相对关系：</p>
+<ul>
+<li>
+<p><code>静态坐标系相对关系</code> 是指两个坐标系之间的相对位置是 <strong>固定不变</strong> 的，比如：车辆上的雷达、摄像头等组件一般是固定式的，那么雷达坐标系相对于车辆底盘坐标系或摄像头坐标系相对于车辆底盘坐标系就是一种静态关系。</p>
+</li>
+<li>
+<p><code>动态坐标系相对关系</code> 是指两个坐标系之间的相对位置关系是 <strong>动态改变</strong> 的，比如：车辆上机械臂的关节或夹爪、多车编队中不同车辆等都是可以运动的，那么机械臂的关节或夹爪坐标系相对车辆底盘坐标系或不同车辆坐标系的相对关系就是一种动态关系。</p>
+</li>
+</ul>]]></summary>
+    <content type="html"><![CDATA[简介 坐标系相对关系主要有两种：静态坐标系相对关系与动态坐标系相对关系： 静态坐标系相对关系 是指两个坐标系之间的相对位置是 固定不变 的，比如：车辆上的雷达、摄像头等组件一般是固定式的，那么雷达坐标系相对于车辆底盘坐标系或摄像头坐标系相对于车辆底盘坐标系就是一种静态关系。 动态坐标系相对关系 是指两个坐标系之间的相对位置关系是 动态改变 的，比如：车...]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <category term="Computer"/>
+    <category term="robot"/>
+    <category term="ROS"/>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-01-29T00:00:00.000Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">ROS2-020-ROS2工具：坐标变换（一）简介</title>
+    <id>/learningNote/Ros2_Note/coor_trans/2026_01_28.html</id>
+    <link href="/learningNote/Ros2_Note/coor_trans/2026_01_28.html"/>
+    <updated>2026-02-02T14:43:18.000Z</updated>
+    <summary type="html"><![CDATA[<h2>简介</h2>
+<p>我们在操作机器人时，通常会使用各种传感器感知机器人周围的物体与机器人的相对位置。不过在未针对传感器进行配置的情况下，传感器只能够返回其自身与物体的相对位置。因此我们需要通过某些特定的转换工程，才可以将该传感器的方位信息，变换物体相对于机器人系统或机器人其它组件的方位信息。在 ROS 中直接封装了相关的模块，其名称为 <code>tf(TransForm Frame)</code></p>
+<h2>概念</h2>
+<p>该模块允许用户随时间跟踪多个坐标系。它在拥有 <strong>时间缓冲</strong> 的 <em>树状结构</em> 中维护坐标帧之间的关系，并让用户在 <em>任何</em> 所需的时间点在 <em>任意</em> 两个坐标帧之间变换点、向量等。在ROS中已经提供了同名的库实现，并且随着ROS的迭代，该库升级为了tf2，也即第二代坐标变换库。</p>]]></summary>
+    <content type="html"><![CDATA[简介 我们在操作机器人时，通常会使用各种传感器感知机器人周围的物体与机器人的相对位置。不过在未针对传感器进行配置的情况下，传感器只能够返回其自身与物体的相对位置。因此我们需要通过某些特定的转换工程，才可以将该传感器的方位信息，变换物体相对于机器人系统或机器人其它组件的方位信息。在 ROS 中直接封装了相关的模块，其名称为 tf(TransForm Fr...]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <category term="Computer"/>
+    <category term="robot"/>
+    <category term="ROS"/>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-01-28T00:00:00.000Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">ROS2-021-ROS2工具：坐标变换（二）内部常用接口消息</title>
+    <id>/learningNote/Ros2_Note/coor_trans/2026_01_28_002.html</id>
+    <link href="/learningNote/Ros2_Note/coor_trans/2026_01_28_002.html"/>
+    <updated>2026-02-02T14:43:18.000Z</updated>
+    <summary type="html"><![CDATA[<h2>简介</h2>
+<p>由来看，我们不难发现对于坐标变换的实现，其本质是基于话题通信的发布订阅模型。发布方可以发布坐标系之间的相对关系，订阅方则可以监听这些消息，并实现不同坐标系之间的变换。根据，在话题通信中，<strong>接口消息</strong> 作为数据载体在整个通信模型中是比较重要的一部分。</p>
+<p>本章将会介绍坐标变换中常用的两种接口消息：<code>geometry_msgs/msg/TransformStamped</code> 和 <code>geometry_msgs/msg/PointStamped</code>。</p>
+<p>前者用于描述某一时刻<strong>两个坐标系</strong>之间相对关系的接口，后者用于描述某一时刻<strong>坐标系内某个坐标点</strong>的位置的接口。在之后的坐标变换中，我们会经常性的使用到坐标系相对关系以及坐标点相关信息。</p>]]></summary>
+    <content type="html"><![CDATA[简介 由来看，我们不难发现对于坐标变换的实现，其本质是基于话题通信的发布订阅模型。发布方可以发布坐标系之间的相对关系，订阅方则可以监听这些消息，并实现不同坐标系之间的变换。根据，在话题通信中，接口消息 作为数据载体在整个通信模型中是比较重要的一部分。 本章将会介绍坐标变换中常用的两种接口消息：geometry_msgs/msg/TransformSta...]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <category term="Computer"/>
+    <category term="robot"/>
+    <category term="ROS"/>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-01-28T00:00:00.000Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">ROS2工具——坐标变换</title>
+    <id>/learningNote/Ros2_Note/coor_trans/</id>
+    <link href="/learningNote/Ros2_Note/coor_trans/"/>
+    <updated>2026-02-02T14:43:18.000Z</updated>
+    <summary type="html"><![CDATA[<h2>简述</h2>
+<p>这里是我有关ROS2工具 - <strong>坐标变换</strong> 的相关笔记，包括的内容有：</p>
+<ul>
+<li>坐标变换的概念与应用场景</li>
+<li>坐标变换的两种重要消息载体: <code>TransformStamped</code> &amp; <code>PointStamped</code> 的定义格式（基于 <em>话题通信</em> ）</li>
+<li>坐标变换的通信双方（广播方与监听方）</li>
+<li>坐标变换工具 （相关指令的进一步说明以及调试工具等）</li>
+</ul>
+<p>具体软硬件以及技术背景等细节请参考</p>]]></summary>
+    <content type="html"><![CDATA[简述 这里是我有关ROS2工具 - 坐标变换 的相关笔记，包括的内容有： 坐标变换的概念与应用场景 坐标变换的两种重要消息载体: TransformStamped & PointStamped 的定义格式（基于 话题通信 ） 坐标变换的通信双方（广播方与监听方） 坐标变换工具 （相关指令的进一步说明以及调试工具等） 具体软硬件以及技术背景等细节请参考]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <category term="Computer"/>
+    <category term="robot"/>
+    <category term="ROS"/>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-04-20T02:07:57.365Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">ROS2-019-ROS2工具：rosbag2</title>
+    <id>/learningNote/Ros2_Note/launch_rosbag2/2026_01_24.html</id>
+    <link href="/learningNote/Ros2_Note/launch_rosbag2/2026_01_24.html"/>
+    <updated>2026-01-26T14:44:42.000Z</updated>
+    <summary type="html"><![CDATA[<h2>简介</h2>
+<p>假设你有一个机器人：</p>
+<blockquote>
+<ul>
+<li>它在日常运行时没有问题，但是在某一次运行时突然报错了。你希望即刻对此进行排查，但是这个报错只出现了一次，再次运行又没有报错了。</li>
+<li>你给他重新设计了一个运动控制节点，但是调不准它的一些特定参数。如果在真实环境中直接运行可能会出现意想不到的情况。</li>
+<li>你在某一次运动导航实验中意外的获得了一条导航路径，希望有什么工具把它保存下来，以便之后复现该结果。</li>
+</ul>
+</blockquote>
+<p>针对数据的留存及其读取实现，<code>ROS2</code> 提供了专门的工具 —— <code>rosbag2</code></p>]]></summary>
+    <content type="html"><![CDATA[简介 假设你有一个机器人： 它在日常运行时没有问题，但是在某一次运行时突然报错了。你希望即刻对此进行排查，但是这个报错只出现了一次，再次运行又没有报错了。 你给他重新设计了一个运动控制节点，但是调不准它的一些特定参数。如果在真实环境中直接运行可能会出现意想不到的情况。 你在某一次运动导航实验中意外的获得了一条导航路径，希望有什么工具把它保存下来，以便之...]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <category term="Computer"/>
+    <category term="robot"/>
+    <category term="ROS"/>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-01-24T00:00:00.000Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">ROS2-018-ROS2工具：启动文件 launch 的XML/YAML实现</title>
+    <id>/learningNote/Ros2_Note/launch_rosbag2/2026_01_22.html</id>
+    <link href="/learningNote/Ros2_Note/launch_rosbag2/2026_01_22.html"/>
+    <updated>2026-01-22T10:32:15.000Z</updated>
+    <summary type="html"><![CDATA[<h2>简介</h2>
+<p>有关 launch 文件的介绍，可以参考</p>
+<p>除非你希望<strong>仅</strong>使用 <code>C++</code> 进行编写，否则由于 <code>XML</code> &amp; <code>YAML</code> 语言自身<strong>并无事件触发函数</strong>能进行适配，我个人并不推荐使用 <code>XML</code>/<code>YAML</code> 语言作为编写 launch 的首要语言（虽然他编写起来确实较为简便 = =）。若有实际需要，请结合<a href="https://docs.ros.org/en/jazzy/Tutorials/Intermediate/Launch/Creating-Launch-Files.html" target="_blank" rel="noopener noreferrer">官方文档</a>进行代码的书写。</p>]]></summary>
+    <content type="html"><![CDATA[简介 有关 launch 文件的介绍，可以参考 除非你希望仅使用 C++ 进行编写，否则由于 XML & YAML 语言自身并无事件触发函数能进行适配，我个人并不推荐使用 XML/YAML 语言作为编写 launch 的首要语言（虽然他编写起来确实较为简便 = =）。若有实际需要，请结合官方文档进行代码的书写。 因为代码格式相似，在下文中我们会将 XM...]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <category term="Computer"/>
+    <category term="robot"/>
+    <category term="ROS"/>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-01-22T00:00:00.000Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">ROS2-017-ROS2工具：启动文件 launch 的 python 实现</title>
+    <id>/learningNote/Ros2_Note/launch_rosbag2/2025_04_29.html</id>
+    <link href="/learningNote/Ros2_Note/launch_rosbag2/2025_04_29.html"/>
+    <updated>2026-01-22T10:31:54.000Z</updated>
+    <summary type="html"><![CDATA[<h2>简介</h2>
+<p>有关 launch 文件的介绍，可以参考</p>
+<h2>Python 实现语法</h2>
+<p>以下介绍在 Python 中 <strong>launch 文件</strong> 的相关语法：</p>
+<h3>1. 节点设置-Node</h3>
+<p>在 <strong>使用 Python 实现的 launch 文件</strong> 中，被执行的节点需要统一封装为 <code>launch_ros.actions.Node</code> 对象，并通过 <code>LaunchDescription()</code> 函数创建特定包装对象以进行返回。以下将会针对统一封装的 <code>Node</code> 对象内的参数进行说明。</p>]]></summary>
+    <content type="html"><![CDATA[简介 有关 launch 文件的介绍，可以参考 Python 实现语法 以下介绍在 Python 中 launch 文件 的相关语法： 1. 节点设置-Node 在 使用 Python 实现的 launch 文件 中，被执行的节点需要统一封装为 launch_ros.actions.Node 对象，并通过 LaunchDescription() 函数创...]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <category term="Computer"/>
+    <category term="robot"/>
+    <category term="ROS"/>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-01-21T00:00:00.000Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">ROS2-016-ROS2工具：启动文件 launch 的介绍及其简单使用</title>
+    <id>/learningNote/Ros2_Note/launch_rosbag2/2025_04_28.html</id>
+    <link href="/learningNote/Ros2_Note/launch_rosbag2/2025_04_28.html"/>
+    <updated>2026-01-22T10:31:54.000Z</updated>
+    <summary type="html"><![CDATA[<h2>简介</h2>
+<p>在机器人操作系统中，节点是程序的基本构成单元。一个完整的、系统性的功能模块由多个节点构成，在启动某个功能模块时可能需要依次启动这些节点。</p>
+<p>以机器人的导航功能为例，其涉及的节点主要有以下几种：</p>
+<ul>
+<li>底盘驱动；</li>
+<li>雷达驱动；</li>
+<li>摄像头驱动；</li>
+<li>imu 驱动；</li>
+<li>地图服务；</li>
+<li>路径规划；</li>
+<li>运动控制；</li>
+<li>环境感知；</li>
+<li>定位；</li>
+<li>etc.</li>
+</ul>
+<p>且不同的节点启动时，可能还会涉及到各种参数的导入、节点间执行逻辑的处理等。</p>]]></summary>
+    <content type="html"><![CDATA[简介 在机器人操作系统中，节点是程序的基本构成单元。一个完整的、系统性的功能模块由多个节点构成，在启动某个功能模块时可能需要依次启动这些节点。 以机器人的导航功能为例，其涉及的节点主要有以下几种： 底盘驱动； 雷达驱动； 摄像头驱动； imu 驱动； 地图服务； 路径规划； 运动控制； 环境感知； 定位； etc. 且不同的节点启动时，可能还会涉及到各...]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <category term="Computer"/>
+    <category term="robot"/>
+    <category term="ROS"/>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2025-04-28T00:00:00.000Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">ROS2工具——launch &amp; rosbag2</title>
+    <id>/learningNote/Ros2_Note/launch_rosbag2/</id>
+    <link href="/learningNote/Ros2_Note/launch_rosbag2/"/>
+    <updated>2026-01-27T09:54:13.000Z</updated>
+    <summary type="html"><![CDATA[<h2>简述</h2>
+<p>这里是我有关 ROS2工具 - <strong>launch</strong> &amp; <strong>rosbag2</strong> 内容的相关笔记，这里所包括的内容有：</p>
+<ul>
+<li>launch 文件及其实现</li>
+<li>rosbag2 工具的介绍与使用（序列化存储数据，实现话题消息的录制与回放）</li>
+</ul>
+<p>具体软硬件以及技术背景等细节请参考</p>
+]]></summary>
+    <content type="html"><![CDATA[简述 这里是我有关 ROS2工具 - launch & rosbag2 内容的相关笔记，这里所包括的内容有： launch 文件及其实现 rosbag2 工具的介绍与使用（序列化存储数据，实现话题消息的录制与回放） 具体软硬件以及技术背景等细节请参考]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <category term="Computer"/>
+    <category term="robot"/>
+    <category term="ROS"/>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-04-20T02:07:57.435Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">ROS2-015-通信机制补完：通信机制工具（二）图形化工具（RQt）与总结</title>
+    <id>/learningNote/Ros2_Note/co_me_2/2025_04_13.html</id>
+    <link href="/learningNote/Ros2_Note/co_me_2/2025_04_13.html"/>
+    <updated>2025-04-13T09:39:55.000Z</updated>
+    <summary type="html"><![CDATA[<p>上半部分见</p>
+<hr>
+<h2>二、图形化工具（RQt）</h2>
+<h3>简述</h3>
+<p><strong>RQt</strong> 是一个基于 <strong>Qt 框架</strong> 开发的 GUI 框架。它通过应用各种 “以插件形式存在的工具与接口” 实现在单个页面开发、调试与监控机器人系统，其允许用户通过配置插件灵活地与 ROS2 系统进行交互。作为通信机制工具只是其中的一种功能，在这里仅会做一些简要的入门介绍。</p>
+<div class="hint-container info">
+<p class="hint-container-title">拓展信息 | In case you want to know</p>
+<p><strong>Qt 框架</strong> 是1991年由 <em>Qt Company</em> 开发的跨平台 C++ 图形用户界面应用程序开发框架，可构建高性能的桌面、移动及Web应用程序。</p>
+<p>如果你希望更加了解其信息，你可以通过其官网进行深入了解与学习。在他官网上有专门针对初学者所设立的 <a href="https://www.qt.io/academy" target="_blank" rel="noopener noreferrer">Qt Academy</a> 可供免费在线学习。</p>
+</div>]]></summary>
+    <content type="html"><![CDATA[上半部分见 二、图形化工具（RQt） 简述 RQt 是一个基于 Qt 框架 开发的 GUI 框架。它通过应用各种 “以插件形式存在的工具与接口” 实现在单个页面开发、调试与监控机器人系统，其允许用户通过配置插件灵活地与 ROS2 系统进行交互。作为通信机制工具只是其中的一种功能，在这里仅会做一些简要的入门介绍。 拓展信息 | In case you w...]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <category term="Computer"/>
+    <category term="robot"/>
+    <category term="ROS"/>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2025-04-13T00:00:00.000Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">ROS2-014-通信机制补完：通信机制工具（一）综述与命令行工具</title>
+    <id>/learningNote/Ros2_Note/co_me_2/2025_04_12.html</id>
+    <link href="/learningNote/Ros2_Note/co_me_2/2025_04_12.html"/>
+    <updated>2025-04-12T08:07:58.000Z</updated>
+    <summary type="html"><![CDATA[<h2>简介</h2>
+<p>上一章内容，我们学习了ROS2中的多种通信机制，了解了不同通信模型的实现流程、相关API以及各自的特点。在实际开发当中，我们可能会遇到一些问题：</p>
+<ol>
+<li>一个完整的机器人系统启动之后，其组成是比较复杂的，可能包含十几个、几十个甚至上百个节点，不同的节点可能又包含一个或多个通信对象(话题发布方、话题订阅方、服务端、客户端、动作服务端、动作客户端、参数服务端、参数客户端)，通信时还需要使用到各种各样的msg、srv或action接口消息，那么在开发过程中，如何才能方便的获取这些节点、话题、服务、动作、参数以及接口相关的信息呢？</li>
+<li>编写通信实现，通信至少涉及到双方，一方编写完毕后，如何验证程序是否可以正常运行呢？</li>
+<li>话题通信过程中，发布方程序中设置了消息的发布频率，如何判断实际运行中的发布频率是否和设置的频率一致呢？</li>
+<li>......</li>
+</ol>]]></summary>
+    <content type="html"><![CDATA[简介 上一章内容，我们学习了ROS2中的多种通信机制，了解了不同通信模型的实现流程、相关API以及各自的特点。在实际开发当中，我们可能会遇到一些问题： 一个完整的机器人系统启动之后，其组成是比较复杂的，可能包含十几个、几十个甚至上百个节点，不同的节点可能又包含一个或多个通信对象(话题发布方、话题订阅方、服务端、客户端、动作服务端、动作客户端、参数服务端...]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <category term="Computer"/>
+    <category term="robot"/>
+    <category term="ROS"/>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2025-04-12T00:00:00.000Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">ROS2-013-通信机制补完：时间类 API</title>
+    <id>/learningNote/Ros2_Note/co_me_2/2025_03_16.html</id>
+    <link href="/learningNote/Ros2_Note/co_me_2/2025_03_16.html"/>
+    <updated>2025-03-16T07:14:43.000Z</updated>
+    <summary type="html"><![CDATA[<h2>简介</h2>
+<p>假设有一个机器人，在机器人上有一个雷达。该雷达有一相关节点会发布雷达探测到的各种信息，且会被机器人内部一导航模块所属节点订阅并接收。为了减少机器人移动过程中由于通信延迟在路径规划上产生相关误差，当二者进行数据交互时，必然需要保证信息的实时性。</p>
+<p>因此我们需要使用 <strong>时间类 API</strong>，在传输数据时提供相关数据产生时的时间戳使接收方能够进行相关数据时效性的判断。除此之外，雷达坐标变换或多消息融合等也需要该类 API。</p>
+<h2>类型</h2>
+<p>时间类 API 一共有以下几种：</p>
+<ul>
+<li>Rate 类</li>
+<li>Time 类</li>
+<li>Duration 类</li>
+</ul>]]></summary>
+    <content type="html"><![CDATA[简介 假设有一个机器人，在机器人上有一个雷达。该雷达有一相关节点会发布雷达探测到的各种信息，且会被机器人内部一导航模块所属节点订阅并接收。为了减少机器人移动过程中由于通信延迟在路径规划上产生相关误差，当二者进行数据交互时，必然需要保证信息的实时性。 因此我们需要使用 时间类 API，在传输数据时提供相关数据产生时的时间戳使接收方能够进行相关数据时效性的...]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <category term="Computer"/>
+    <category term="robot"/>
+    <category term="ROS"/>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2025-03-16T00:00:00.000Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">ROS2-012-通信机制补完：话题重名</title>
+    <id>/learningNote/Ros2_Note/co_me_2/2025_03_15.html</id>
+    <link href="/learningNote/Ros2_Note/co_me_2/2025_03_15.html"/>
+    <updated>2025-03-15T07:21:05.000Z</updated>
+    <summary type="html"><![CDATA[<h2>简介</h2>
+<p>咱在之前聊到，那么有话题重名吗？</p>
+<p>有的，dude，有的☝🤓</p>
+<hr>
+<p>与节点重名相同，在 ROS2 中，话题名称也可能重名。在不同的节点之间，通信都依赖于话题，当话题重名时，系统虽然不会抛出异常，但是通过 <strong>相同话题名称</strong> 关联到一起的节点可能 <strong>并不属于</strong> 同一通信逻辑，从而导致通信错乱，甚至出现异常。这种情况下可能就需要将相同的话题名称设置为不同。</p>
+<p>不过与节点重名不同的是，有些场景下需要避免话题重名的情况，在有些场景下又需要将不同的话题名称修改为相同以实现某些功能。因此话题重名在某些情况下是被 <strong>允许</strong> 的。</p>]]></summary>
+    <content type="html"><![CDATA[简介 咱在之前聊到，那么有话题重名吗？ 有的，dude，有的☝🤓 与节点重名相同，在 ROS2 中，话题名称也可能重名。在不同的节点之间，通信都依赖于话题，当话题重名时，系统虽然不会抛出异常，但是通过 相同话题名称 关联到一起的节点可能 并不属于 同一通信逻辑，从而导致通信错乱，甚至出现异常。这种情况下可能就需要将相同的话题名称设置为不同。 不过与节...]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <category term="Computer"/>
+    <category term="robot"/>
+    <category term="ROS"/>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2025-03-15T00:00:00.000Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">ROS2-011-通信机制补完：节点重名</title>
+    <id>/learningNote/Ros2_Note/co_me_2/2025_03_14.html</id>
+    <link href="/learningNote/Ros2_Note/co_me_2/2025_03_14.html"/>
+    <updated>2025-03-14T06:52:24.000Z</updated>
+    <summary type="html"><![CDATA[<h2>简介</h2>
+<p>在 ROS2 中，不同的节点可以有相同的节点名称，比如你可以启动多个节点的名称都是 turtlesim 的 turtlesim_node 节点。</p>
+<p>虽然节点重名是被 <strong>允许</strong> 的，但是开发者应该 <strong>主动避免</strong> 这种情况，因为节点重名可能会导致操作上的混淆。</p>
+<p>仍以启动了多个 turtlesim_node 节点为例，当使用 <strong>计算图（rqt_graph）</strong> 查看节点运行状态时，由于这些节点的名称一致，它们在计算图上会被显示为同一个节点，而实际上是有多个节点。并且节点名称也会和话题名称、服务名称、动作名称、参数等多种变量产生关联，届时也可能会导致通信逻辑上的混乱。</p>]]></summary>
+    <content type="html"><![CDATA[简介 在 ROS2 中，不同的节点可以有相同的节点名称，比如你可以启动多个节点的名称都是 turtlesim 的 turtlesim_node 节点。 虽然节点重名是被 允许 的，但是开发者应该 主动避免 这种情况，因为节点重名可能会导致操作上的混淆。 仍以启动了多个 turtlesim_node 节点为例，当使用 计算图（rqt_graph） 查看节...]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <category term="Computer"/>
+    <category term="robot"/>
+    <category term="ROS"/>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2025-03-14T00:00:00.000Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">ROS2-010-通信机制补完：功能包重名和工作空间覆盖机制</title>
+    <id>/learningNote/Ros2_Note/co_me_2/2025_03_13.html</id>
+    <link href="/learningNote/Ros2_Note/co_me_2/2025_03_13.html"/>
+    <updated>2025-03-13T03:44:02.000Z</updated>
+    <summary type="html"><![CDATA[<h2>简介</h2>
+<p>在 ROS2 中编写功能包时，一般会在单个空间内进行编写与编译。但是当程序员需要经由多个工作空间进行不同的功能包的编写式，很可能会出现在不同的工作空间下将不同的功能包命名为同一个名字的情况。例如在 工作空间A 和 工作空间B 中都创建了一个名字叫 “C” 的功能包，假设该功能包里都有一个 “C_node” 节点，那么当我们新建终端并直接执行</p>
+<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">ros2</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> run</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> C</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> C_node</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div>]]></summary>
+    <content type="html"><![CDATA[简介 在 ROS2 中编写功能包时，一般会在单个空间内进行编写与编译。但是当程序员需要经由多个工作空间进行不同的功能包的编写式，很可能会出现在不同的工作空间下将不同的功能包命名为同一个名字的情况。例如在 工作空间A 和 工作空间B 中都创建了一个名字叫 “C” 的功能包，假设该功能包里都有一个 “C_node” 节点，那么当我们新建终端并直接执行 时，...]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <category term="Computer"/>
+    <category term="robot"/>
+    <category term="ROS"/>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2025-03-13T00:00:00.000Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">ROS2-009-通信机制补完：元功能包 MetaPackage</title>
+    <id>/learningNote/Ros2_Note/co_me_2/2025_03_12.html</id>
+    <link href="/learningNote/Ros2_Note/co_me_2/2025_03_12.html"/>
+    <updated>2025-03-12T07:48:27.000Z</updated>
+    <summary type="html"><![CDATA[<h2>简介</h2>
+<p>在 ROS2 中编写一个大的模块时，一般需要依照不同的功能分成多个子包。例如对于一个机器人导航模块，该模块可能被分为定位、路径规划、离线地图等多个子包进行分别编写。那么当我们需要安装该模块时，需要一个个安装这些子包才可以应用全部功能吗？</p>
+<h2>元功能包(MetaPackage)</h2>
+<p>在 ROS2 中，其提供了一种可以将多个不同的功能子包打包成一个大的功能包的方式，当我们需要安装某个功能模块时，只需要直接调用安装这个大的功能包即可。该包又被称为 <strong>元功能包</strong> ，即 <strong>MetaPackage</strong>。</p>]]></summary>
+    <content type="html"><![CDATA[简介 在 ROS2 中编写一个大的模块时，一般需要依照不同的功能分成多个子包。例如对于一个机器人导航模块，该模块可能被分为定位、路径规划、离线地图等多个子包进行分别编写。那么当我们需要安装该模块时，需要一个个安装这些子包才可以应用全部功能吗？ 元功能包(MetaPackage) 在 ROS2 中，其提供了一种可以将多个不同的功能子包打包成一个大的功能包...]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <category term="Computer"/>
+    <category term="robot"/>
+    <category term="ROS"/>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2025-03-12T00:00:00.000Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">ROS2通信机制02-补充内容</title>
+    <id>/learningNote/Ros2_Note/co_me_2/</id>
+    <link href="/learningNote/Ros2_Note/co_me_2/"/>
+    <updated>2025-04-16T06:27:29.000Z</updated>
+    <summary type="html"><![CDATA[<h2>简述</h2>
+<p>这里是我有关ROS2通信机制补充内容的相关笔记，这里的内容比起而言知识密度比较松散，包括的内容有：</p>
+<ul>
+<li>分布式框架的搭建（实现不同的 ROS2 设备间通信）</li>
+<li>重名问题的处理（自定义功能包、节点、节点内话题重名的处理）</li>
+<li>常用 API （定时器等时间类 API）</li>
+<li>通信机制工具 （相关指令的进一步说明以及 rqt 工具箱等）</li>
+</ul>
+<p>具体软硬件以及技术背景等细节请参考</p>
+]]></summary>
+    <content type="html"><![CDATA[简述 这里是我有关ROS2通信机制补充内容的相关笔记，这里的内容比起而言知识密度比较松散，包括的内容有： 分布式框架的搭建（实现不同的 ROS2 设备间通信） 重名问题的处理（自定义功能包、节点、节点内话题重名的处理） 常用 API （定时器等时间类 API） 通信机制工具 （相关指令的进一步说明以及 rqt 工具箱等） 具体软硬件以及技术背景等细节请参考]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <category term="Computer"/>
+    <category term="robot"/>
+    <category term="ROS"/>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-04-20T02:07:57.482Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">ROS2-008-通信机制补完：分布式通信和 ROS_DOMAIN_ID</title>
+    <id>/learningNote/Ros2_Note/co_me_2/2025_03_11.html</id>
+    <link href="/learningNote/Ros2_Note/co_me_2/2025_03_11.html"/>
+    <updated>2025-03-11T07:29:06.000Z</updated>
+    <summary type="html"><![CDATA[<h2>简介</h2>
+<p>在之前的中，我们系统地学习了四种通信机制。这四种通信机制在当时的应用场景都为单个ROS设备内相关节点、话题之间的相互沟通。那么当我们涉及到多台 ROS2 设备之间的相互通信时，我们应该如何实现？</p>
+<h2>分布式通信</h2>
+<p>分布式通信就是这样一种 <strong>通过网络</strong> 在不同主机之间实现 <strong>数据交互</strong> 的通信策略。</p>
+<p>首先我们应该了解， ROS2 本身就是一个分布式通信框架，它可以通过中间件很方便的实现不同设备之间的通信。</p>
+<p>ROS2 所基于的中间件为<strong>数据分发服务（Data Distribution Service, 简称DDS）</strong>，当多台 ROS2 设备处于同一网络时，通过 DDS 的 <strong>域ID机制(ROS_DOMAIN_ID)</strong> 便可以实现分布式通信。其大致流程为：</p>]]></summary>
+    <content type="html"><![CDATA[简介 在之前的中，我们系统地学习了四种通信机制。这四种通信机制在当时的应用场景都为单个ROS设备内相关节点、话题之间的相互沟通。那么当我们涉及到多台 ROS2 设备之间的相互通信时，我们应该如何实现？ 分布式通信 分布式通信就是这样一种 通过网络 在不同主机之间实现 数据交互 的通信策略。 首先我们应该了解， ROS2 本身就是一个分布式通信框架，它可...]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <category term="Computer"/>
+    <category term="robot"/>
+    <category term="ROS"/>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2025-03-11T00:00:00.000Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">ROS2通信机制01-核心内容</title>
+    <id>/learningNote/Ros2_Note/co_me/</id>
+    <link href="/learningNote/Ros2_Note/co_me/"/>
+    <updated>2025-04-16T06:27:29.000Z</updated>
+    <summary type="html"><![CDATA[<h2>简述</h2>
+<p>这里是有关ROS2通信机制核心内容的相关笔记,其包括了ROS2内常用的四种通信方式：</p>
+<ul>
+<li>Topics (话题通信)</li>
+<li>Services (服务通信)</li>
+<li>Actions (动作通信)</li>
+<li>Parameters (参数服务)</li>
+</ul>
+<p>具体软硬件以及技术背景等细节请参考</p>
+]]></summary>
+    <content type="html"><![CDATA[简述 这里是有关ROS2通信机制核心内容的相关笔记,其包括了ROS2内常用的四种通信方式： Topics (话题通信) Services (服务通信) Actions (动作通信) Parameters (参数服务) 具体软硬件以及技术背景等细节请参考]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <category term="Computer"/>
+    <category term="robot"/>
+    <category term="ROS"/>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-04-20T02:07:57.485Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+</feed>
