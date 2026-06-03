@@ -17,19 +17,17 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@commitlint/cli": "^20.5.0",
-    "@commitlint/config-conventional": "^20.5.0",
-    "@vuepress/bundler-vite": "2.0.0-rc.26",
-    "@waline/client": "3.8.0",
-    "cz-git": "^1.12.0",
-    "katex": "^0.16.45",
+    "@commitlint/cli": "^21.0.2",
+    "@commitlint/config-conventional": "^21.0.2",
+    "@vuepress/bundler-vite": "2.0.0-rc.30",
+    "@vuepress/plugin-feed": "2.0.0-rc.130",
+    "@waline/client": "3.15.0",
+    "cz-git": "^1.13.1",
+    "katex": "^0.16.47",
     "markdown-it-multimd-table": "^4.2.3",
-    "sass-embedded": "^1.99.0",
-    "vue": "^3.5.32",
-    "vuepress": "2.0.0-rc.26",
-    "vuepress-theme-hope": "2.0.0-rc.102"
-  },
-  "dependencies": {
-    "@vuepress/plugin-feed": "2.0.0-rc.3"
+    "sass-embedded": "^1.100.0",
+    "vue": "^3.5.35",
+    "vuepress": "2.0.0-rc.30",
+    "vuepress-theme-hope": "2.0.0-rc.107"
   }
 }
