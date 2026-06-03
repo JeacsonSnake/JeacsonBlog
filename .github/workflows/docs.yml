@@ -50,6 +50,7 @@ jobs:
         run: pnpm docs:build
         env:
           NODE_OPTIONS: --max-old-space-size=4096
+          LOCK_ON_PASSWORD: ${{ secrets.LOCK_ON_PASSWORD }}
 
       # 写入自定义域名
       - name: Configure custom domain

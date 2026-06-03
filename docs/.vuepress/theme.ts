@@ -2,6 +2,7 @@ import { hopeTheme } from "vuepress-theme-hope";
 import { zhNavbarConfig, enNavbarConfig } from "./navbar";
 import { zhSidebarConfig, enSidebarConfig } from './sidebar'
 
+import "dotenv/config"
 /* Your themeConfig here */
 
 export default hopeTheme({
@@ -189,7 +190,14 @@ export default hopeTheme({
             sidebar: enSidebarConfig,
         }
     },
-    sidebarSorter: ["readme", "order", "date", "title", "filename"]
-
+    sidebarSorter: ["readme", "order", "date", "title", "filename"],
+    encrypt: {
+        config: {
+            "/complain_diary/lock_on/": {
+                password: process.env.LOCK_ON_PASSWORD || "",
+                hint: "一些不足为人道的东西被锁在了这里",
+            },
+        },
+    },
 
 })
