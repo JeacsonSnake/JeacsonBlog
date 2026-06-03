@@ -132,6 +132,3 @@ dist
 
 # hot update
 .temp
-
-# Agent file
-AGENTS.md
