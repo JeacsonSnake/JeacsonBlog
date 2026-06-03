@@ -131,8 +131,14 @@ export const zhSidebarConfig = sidebar({
             text: "markdown-it渲染器",
             link: 'markdown_render/',
             icon: "markdown"
-        }
+        },
+        {
+            text: "LLM Q&A 与 prompt&skill",
+            link: 'sp_for_LLM/',
+            icon: "paper-pen"
+        },
     ],
+    "/postMortem/sp_for_LLM/": "structure",
     "/complain_diary/": "structure",
     "/learningNote/vueNote/VUE2/": "structure",
     "/learningNote/coding_skill/": "structure",

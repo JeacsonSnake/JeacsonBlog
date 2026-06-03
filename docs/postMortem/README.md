@@ -12,3 +12,4 @@ icon: 'diagram-next'
 
 - [部署相关](./deploy/README.md)
 - [markdown-it渲染器相关](./markdown_render/README.md)
+- [与LLM进行的多轮对话, 或可供大语言模型使用的skill/prompt相关](./sp_for_LLM/README.md)
