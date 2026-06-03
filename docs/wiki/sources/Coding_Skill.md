@@ -1,9 +1,9 @@
 ---
 title: 编码技术知识域摘要
-description: 通用编程技能，包括设计模式、API文档撰写、VSCode 技巧、代码片段
+description: "通用编程技能，包括设计模式、API文档撰写、VSCode 技巧、代码片段"
 type: source
 tags: [Skill, Coding, Tool]
-lastUpdated: 2026-04-17
+lastUpdated: 2026-04-20
 ---
 
 # 编码技术知识域
