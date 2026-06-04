@@ -30,6 +30,8 @@ title: JeacsonBlog Wiki
 - [[./entities/Web.md]] — Web 开发技术栈
 - [[./entities/Computer_Network.md]] — 计算机网络
 - [[./entities/TypeScript.md]] — TypeScript 类型系统
+- [[./entities/LLM-Prompt-Skill.md]] — LLM Prompt & Skill 工作流
+- [[./entities/Phonon-Hydrodynamics.md]] — 声子流体动力学
 
 ## Concepts（具体概念）
 
@@ -49,6 +51,9 @@ title: JeacsonBlog Wiki
 - [[./concepts/URL到页面显示.md]] — DNS→TCP→HTTP→渲染全流程
 - [[./concepts/TCP与UDP.md]] — TCP vs UDP 传输层协议对比
 
-## 最近更新
+### LLM Prompt & Skill
+- [[./concepts/VuePress-Theme-Hope-Markdown-Converter.md]] — Kimi META Prompt：VuePress 格式转换器
+- [[./concepts/Heat-Transfer-Literature-Report.md]] — 热质传递文献报告批判框架
 
+## 最近更新
 详见 [[./log.md]]
