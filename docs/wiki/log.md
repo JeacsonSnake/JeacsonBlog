@@ -27,3 +27,12 @@ title: Wiki Log
   - `entities/LLM-Prompt-Skill.md` — LLM Prompt & Skill 实体
   - `entities/Phonon-Hydrodynamics.md` — 声子流体动力学实体
 - Entities added to wiki/index.md: LLM-Prompt-Skill, Phonon-Hydrodynamics
+## [2026-06-05] ingest | docs/postMortem/sp_for_LLM/002_QA-inverse-prompt-engineering-report.md — Reverse Prompt Engineering
+- New article: 002-反向提示词工程与 Prompt 编译管道（709 行，4 轮 Kimi 对话）
+- Topics: Image-to-Prompt 反推 / 风格-结构-内容三层解耦 / 三 Session 编译管道 (META → justified → final_render)
+- Wiki pages created:
+  - `concepts/Reverse-Prompt-Engineering.md` — 方法论 + 三 Session 管道详细说明
+- Wiki pages updated:
+  - `entities/LLM-Prompt-Skill.md` — 新增「反向提示词工程与 Prompt 编译管道」工作流小节
+  - `sources/PostMortem.md` — lastUpdated → 2026-06-05，新增 sp_for_LLM 文章列表（含 002）
+  - `index.md` — 在 LLM Prompt & Skill 概念小节下新增 Reverse-Prompt-Engineering 链接
