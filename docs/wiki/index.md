@@ -18,7 +18,7 @@ title: JeacsonBlog Wiki
 - [[./sources/Coding_Skill.md]] — 通用编码技术与 VSCode 技巧
 - [[./sources/Computer_Composition.md]] — 计算机组成原理
 - [[./sources/Control_Theory.md]] — 自动控制原理与 S-Z 变换
-- [[./sources/PostMortem.md]] — 踩坑心得与部署记录
+- [[./sources/PostMortem.md]] — 踩坑心得与部署记录（含 sp_for_LLM/ 反向提示词工程）
 
 ## Entities（实体/主题）
 
@@ -54,6 +54,7 @@ title: JeacsonBlog Wiki
 ### LLM Prompt & Skill
 - [[./concepts/VuePress-Theme-Hope-Markdown-Converter.md]] — Kimi META Prompt：VuePress 格式转换器
 - [[./concepts/Heat-Transfer-Literature-Report.md]] — 热质传递文献报告批判框架
+- [[./concepts/Reverse-Prompt-Engineering.md]] — 反向提示词工程与三 Session Prompt 编译管道
 
 ## 最近更新
 详见 [[./log.md]]
