@@ -1,6 +1,7 @@
 ---
 title: 000-可被 Kimi Agent 复用的 "VuePress Theme Hope Markdown Converter" META Prompt
 date: 2026-06-03
+icon: 'markdown'
 category: LLM Prompt & Skill
 tag:
   - LLM prompt
@@ -40,6 +41,7 @@ tag:
     ---
     title: {文档主题 —— LLM 协助生成与多轮对话记录}
     date: {YYYY-MM-DD}
+    icon: "strategy"
     category: {LLM Prompt & Skill / Academic Notes / Technical document}
     tag:
     - {LLM Q&A}
@@ -72,7 +74,7 @@ tag:
 
     如果文档内容不涉及课程/教材，则根据实际主题替换为对应的元信息（如 适用项目、核心参考、生成模型 等）。
 
-3. **保留原始对话形式**: 保留文档中的多轮 Q&A 结构，使用 `**User:**` 和 `**LLM:**` 格式清晰标识，在**同一轮对话内**的 `用户` 与 `LLM` 之间的信息使用 `___` 分隔。
+3. **保留原始对话形式**: 保留文档中的多轮 Q&A 结构，使用 `**User:**` 和 `**LLM:**` 格式清晰标识，在**同一轮对话内**的 `用户` 与 `LLM` 之间的信息使用 `---` 分隔。
 
 4. **目录与导航**: 在文章开头添加手动目录（TOC），使用锚点链接指向各章节并进行简单内容描述。例：
 
@@ -113,6 +115,7 @@ tag:
 ---
 title: 宏微热传递文献报告 —— LLM 协助生成与多轮对话记录
 date: 2026-06-03
+icon: "strategy"
 category: LLM Prompt & Skill
 tag:
   - LLM Q&A

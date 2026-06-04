@@ -1,6 +1,6 @@
 ---
 title: 可供大语言模型使用的skill/prompt
-icon: 'markdown'
+icon: 'paper-pen'
 ---
 
 ## 简述

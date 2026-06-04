@@ -1,6 +1,7 @@
 ---
 title: 001-宏微热传递文献报告 —— LLM 协助生成与多轮对话记录
 date: 2026-06-03
+icon: "strategy"
 category: LLM Prompt & Skill
 tag:
   - LLM Q&A

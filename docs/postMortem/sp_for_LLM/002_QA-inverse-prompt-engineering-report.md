@@ -1,6 +1,7 @@
 ---
 title: 002-反向提示词工程与 Prompt 编译管道 —— LLM 协助生成与多轮对话记录
 date: 2026-06-04
+icon: "strategy"
 category: LLM Prompt & Skill
 tag:
   - LLM Q&A
