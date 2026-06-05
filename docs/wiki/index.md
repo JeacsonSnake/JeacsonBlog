@@ -54,6 +54,7 @@ title: JeacsonBlog Wiki
 ### LLM Prompt & Skill
 - [[./concepts/VuePress-Theme-Hope-Markdown-Converter.md]] — Kimi META Prompt：VuePress 格式转换器
 - [[./concepts/Heat-Transfer-Literature-Report.md]] — 热质传递文献报告批判框架
+- [[./concepts/Reverse-Prompt-Engineering.md]] — 反向提示词工程与三 Session Prompt 编译管道
 
 ## 最近更新
 详见 [[./log.md]]
