@@ -2,11 +2,20 @@
 title: LLM Prompt & Skill
 description: "可供大语言模型使用的 prompt 模板与 skill 工作流"
 type: entity
-tags: [LLM, Prompt Engineering, Kimi, VuePress]
+tags: [LLM, Prompt Engineering, Kimi, VuePress, AI Agent]
 related:
   - docs/wiki/concepts/VuePress-Theme-Hope-Markdown-Converter.md
   - docs/wiki/concepts/Heat-Transfer-Literature-Report.md
   - docs/wiki/concepts/Reverse-Prompt-Engineering.md
+  - docs/wiki/concepts/Hermes-Agent-Cronjob-Setup.md
+  - docs/wiki/entities/Hermes-Agent.md
+created: 2026-06-04
+updated: 2026-06-08
+sources:
+  - docs/postMortem/sp_for_LLM/000_prompt-VuePress-Theme-Hope-Markdown-Converter.md
+  - docs/postMortem/sp_for_LLM/001_QA-intermediate-heat-transfer-literature-report.md
+  - docs/postMortem/sp_for_LLM/002_QA-inverse-prompt-engineering-report.md
+  - docs/postMortem/sp_for_LLM/003_think-Initial-notes-on-using-Hermes_Agent.md
 ---
 
 # LLM Prompt & Skill
@@ -42,9 +51,19 @@ related:
 相关文档：
 - [[../concepts/Reverse-Prompt-Engineering.md]] — 四阶段方法论 + 三 Session 管道详细说明
 
+### Hermes Agent 部署与 RSS 每日简报 cronjob（sp_for_LLM/003）
+
+在腾讯云入门型 VPS（2 CPU / 2 GB RAM / Ubuntu 24.04 LTS）上部署 Hermes Agent，配置每日 7:00 cronjob，通过 FOLO + Agent-Reach 聚合 RSS / GitHub / 微博 / arXiv 信源并推送到多 gateway 互备通道。包含模型选型（MiniMax-M3 主，kimi-k2.6 / Deepseek-V4-flash fallback）、gateway 多路互备方案、衔尾蛇问题规避等。
+
+相关文档：
+- [[../concepts/Hermes-Agent-Cronjob-Setup.md]] — 完整部署流程与陷阱清单
+- [[../entities/Hermes-Agent.md]] — Hermes Agent 实体聚合页
+
 ## 核心工具
 
-- **LLM 模型**: Kimi K2.6、GPT-4o、Claude 3.5 Sonnet
+- **LLM 模型**: Kimi K2.6、GPT-4o、Claude 3.5 Sonnet、MiniMax-M3（Hermes Agent 主）
+- **AI Agent 框架**: Hermes Agent (Nous Research)
+- **信息聚合工具**: Agent-Reach (Panniantong/Agent-Reach，17 平台)
 - **博客框架**: VuePress Theme Hope v2.0.0-rc.107
 - **数学渲染**: KaTeX 0.16.47
 - **图像生成（002 新增）**: DALL-E 3、Midjourney v6、Stable Diffusion / FLUX
