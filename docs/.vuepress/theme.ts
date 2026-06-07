@@ -167,6 +167,10 @@ export default hopeTheme({
         sup: true,
         // 启用自定义属性
         attrs: true,
+        // 启用图片懒加载
+        imgLazyload: true,
+        // 自定义内容对齐方式
+        align: true,
     },
     blog: {
         avatar: '/assets/img/avatar.jpg',
