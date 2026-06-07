@@ -6,13 +6,14 @@ tags: [LLM, Prompt Engineering, Kimi, VuePress]
 related:
   - docs/wiki/concepts/VuePress-Theme-Hope-Markdown-Converter.md
   - docs/wiki/concepts/Heat-Transfer-Literature-Report.md
+  - docs/wiki/concepts/Reverse-Prompt-Engineering.md
 ---
 
 # LLM Prompt & Skill
 
 ## 概述
 
-本实体汇总与 LLM（Kimi、ChatGPT 等）协作生成的工作流、Prompt 模板与 skill 方法论。核心场景是将 LLM 多轮对话的 `.docx` 记录转换为 VuePress 博客兼容的 Markdown 格式，并生成可直接复用的 META Prompt。
+本实体汇总与 LLM（Kimi、ChatGPT、GPT-4o、Claude 等）协作生成的工作流、Prompt 模板与 skill 方法论。核心场景是将 LLM 多轮对话的 `.docx`/`.md` 记录转换为 VuePress 博客兼容的 Markdown 格式，并生成可直接复用的 META Prompt / 反向提示词工程编译产物。
 
 ## 主要工作流
 
@@ -32,10 +33,20 @@ related:
 - [[../concepts/Heat-Transfer-Literature-Report.md]] — 批判框架概念页
 - [[../entities/Phonon-Hydrodynamics.md]] — 声子流体动力学实体（关联）
 
+### 反向提示词工程与 Prompt 编译管道（sp_for_LLM/002）
+
+针对参考图片（手绘技术架构图等）反推生成可喂给 DALL-E 3 / Midjourney 的图像 Prompt，再通过**三 Session 编译管道**（风格模板提取 → 内容编译 → Prompt 优化）输出最终渲染 Prompt。
+
+核心特征：风格/结构/内容三层解耦；META Prompt + justified_prompt + final_render_prompt 三阶段产物；MVC 视角（META = View，文献 = Model，justified_prompt = Controller）。
+
+相关文档：
+- [[../concepts/Reverse-Prompt-Engineering.md]] — 四阶段方法论 + 三 Session 管道详细说明
+
 ## 核心工具
 
-- **LLM 模型**: Kimi K2.6
+- **LLM 模型**: Kimi K2.6、GPT-4o、Claude 3.5 Sonnet
 - **博客框架**: VuePress Theme Hope v2.0.0-rc.107
 - **数学渲染**: KaTeX 0.16.47
+- **图像生成（002 新增）**: DALL-E 3、Midjourney v6、Stable Diffusion / FLUX
 - **部署方式**: GitHub Actions → GitHub Pages
 - **目录规范**: `docs/postMortem/sp_for_LLM/` 存放 skill/prompt 文档

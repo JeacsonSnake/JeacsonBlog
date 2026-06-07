@@ -27,3 +27,16 @@ title: Wiki Log
   - `entities/LLM-Prompt-Skill.md` — LLM Prompt & Skill 实体
   - `entities/Phonon-Hydrodynamics.md` — 声子流体动力学实体
 - Entities added to wiki/index.md: LLM-Prompt-Skill, Phonon-Hydrodynamics
+## [2026-06-05] ingest | docs/postMortem/sp_for_LLM/002 — 反向提示词工程与 Prompt 编译管道
+- Source article: `002_QA-inverse-prompt-engineering-report.md`（709 行，4 轮 Kimi 对话）
+- Wiki pages updated:
+  - **CREATE** `concepts/Reverse-Prompt-Engineering.md` — 四阶段方法论 + 三 Session 编译管道 + MVC 视角 + 关键陷阱 + 工具链
+  - **MODIFY** `entities/LLM-Prompt-Skill.md` — frontmatter `related:` 加新链接；追加「工作流 3：反向提示词工程」摘要（1 段 + 1 wikilink，不复制概念内容）；核心工具表加 DALL-E 3 / Midjourney v6 / FLUX
+  - **MODIFY** `sources/PostMortem.md` — `lastUpdated` → 2026-06-05；LLM Prompt & Skill 节加 002 mention
+  - **MODIFY** `index.md` — Concepts/LLM Prompt & Skill 小节加 `Reverse-Prompt-Engineering` 链接
+- 纪律遵循（per `vuepress-wiki-integration` skill "Ingest — mandatory workflow"）：
+  - ✅ Pre-flight sync：upstream + fork wiki 树列举；目标文件 2 个判断为 CREATE/MODIFY，nav 文件 3 个判断为 SYNC（需 MODIFY）
+  - ✅ entities vs concepts 分工：002 方法论 → concepts（新页）；实体页只加摘要 + wikilink，不复制
+  - ✅ PUT 使用 fork 当前 SHA 而非 upstream SHA，避免 409
+  - ✅ 仅写入真修改的 5 个文件，不重写 SHA 一致的 no-op 文件
+  - ✅ PR 完成后跑 `verify-pr-noops.sh` 自检
