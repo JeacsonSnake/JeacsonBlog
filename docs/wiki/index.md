@@ -5,6 +5,7 @@ title: JeacsonBlog Wiki
 # JeacsonBlog Wiki
 
 > 基于 Karpathy LLM Wiki 模式构建的个人知识库。以博客原始笔记为 source of truth，由 LLM Agent 增量维护。
+> Last updated: 2026-06-08
 
 ## Sources（知识域摘要）
 
@@ -31,6 +32,7 @@ title: JeacsonBlog Wiki
 - [[./entities/Computer_Network.md]] — 计算机网络
 - [[./entities/TypeScript.md]] — TypeScript 类型系统
 - [[./entities/LLM-Prompt-Skill.md]] — LLM Prompt & Skill 工作流
+- [[./entities/Hermes-Agent.md]] — Hermes Agent（Nous Research）AI Agent 框架
 - [[./entities/Phonon-Hydrodynamics.md]] — 声子流体动力学
 
 ## Concepts（具体概念）
@@ -55,6 +57,10 @@ title: JeacsonBlog Wiki
 - [[./concepts/VuePress-Theme-Hope-Markdown-Converter.md]] — Kimi META Prompt：VuePress 格式转换器
 - [[./concepts/Heat-Transfer-Literature-Report.md]] — 热质传递文献报告批判框架
 - [[./concepts/Reverse-Prompt-Engineering.md]] — 反向提示词工程与三 Session Prompt 编译管道
+- [[./concepts/Hermes-Agent-Cronjob-Setup.md]] — Hermes Agent 部署与 RSS 每日简报 cronjob 配置
+
+### AI Agent
+- [[./concepts/Hermes-Agent-Cronjob-Setup.md]] — Hermes Agent 部署与 RSS 每日简报 cronjob 配置
 
 ## 最近更新
 详见 [[./log.md]]
