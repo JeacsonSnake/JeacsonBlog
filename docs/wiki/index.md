@@ -5,7 +5,7 @@ title: JeacsonBlog Wiki
 # JeacsonBlog Wiki
 
 > 基于 Karpathy LLM Wiki 模式构建的个人知识库。以博客原始笔记为 source of truth，由 LLM Agent 增量维护。
-> Last updated: 2026-06-08
+> Last updated: 2026-06-09
 
 ## Sources（知识域摘要）
 
@@ -54,7 +54,8 @@ title: JeacsonBlog Wiki
 - [[./concepts/TCP与UDP.md]] — TCP vs UDP 传输层协议对比
 
 ### LLM Prompt & Skill
-- [[./concepts/VuePress-Theme-Hope-Markdown-Converter.md]] — Kimi META Prompt：VuePress 格式转换器
+- [[./concepts/VuePress-Theme-Hope-Markdown-Converter.md]] — Kimi META Prompt：VuePress 格式转换器（.docx 输入）
+- [[./concepts/VuePress-Theme-Hope-Hermes-JSON-Converter.md]] — Kimi META Prompt：VuePress 格式转换器（Hermes .json 输入）
 - [[./concepts/Heat-Transfer-Literature-Report.md]] — 热质传递文献报告批判框架
 - [[./concepts/Reverse-Prompt-Engineering.md]] — 反向提示词工程与三 Session Prompt 编译管道
 - [[./concepts/Hermes-Agent-Cronjob-Setup.md]] — Hermes Agent 部署与 RSS 每日简报 cronjob 配置

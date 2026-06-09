@@ -5,34 +5,44 @@ type: entity
 tags: [LLM, Prompt Engineering, Kimi, VuePress, AI Agent]
 related:
   - docs/wiki/concepts/VuePress-Theme-Hope-Markdown-Converter.md
+  - docs/wiki/concepts/VuePress-Theme-Hope-Hermes-JSON-Converter.md
   - docs/wiki/concepts/Heat-Transfer-Literature-Report.md
   - docs/wiki/concepts/Reverse-Prompt-Engineering.md
   - docs/wiki/concepts/Hermes-Agent-Cronjob-Setup.md
   - docs/wiki/entities/Hermes-Agent.md
 created: 2026-06-04
-updated: 2026-06-08
+updated: 2026-06-09
 sources:
   - docs/postMortem/sp_for_LLM/000_prompt-VuePress-Theme-Hope-Markdown-Converter.md
+  - docs/postMortem/sp_for_LLM/000X_prompt-VuePress-Theme-Hope-Hermes-JSON-Converter.md
   - docs/postMortem/sp_for_LLM/001_QA-intermediate-heat-transfer-literature-report.md
   - docs/postMortem/sp_for_LLM/002_QA-inverse-prompt-engineering-report.md
   - docs/postMortem/sp_for_LLM/003_think-Initial-notes-on-using-Hermes_Agent.md
+  - docs/postMortem/sp_for_LLM/004_Hermes-report.md
 ---
 
 # LLM Prompt & Skill
 
 ## 概述
 
-本实体汇总与 LLM（Kimi、ChatGPT、GPT-4o、Claude 等）协作生成的工作流、Prompt 模板与 skill 方法论。核心场景是将 LLM 多轮对话的 `.docx`/`.md` 记录转换为 VuePress 博客兼容的 Markdown 格式，并生成可直接复用的 META Prompt / 反向提示词工程编译产物。
+本实体汇总与 LLM（Kimi、ChatGPT、GPT-4o、Claude 等）协作生成的工作流、Prompt 模板与 skill 方法论。核心场景是将 LLM 多轮对话的 `.docx` / `.json` 记录转换为 VuePress 博客兼容的 Markdown 格式，并生成可直接复用的 META Prompt / 反向提示词工程编译产物。
 
 ## 主要工作流
 
-### VuePress Markdown 转换工作流
+### VuePress Markdown 转换工作流（.docx → .md）
 
 将 LLM 对话导出的 `.docx` 文件，通过 Kimi K2.6 生成的 META Prompt，转换为 VuePress Theme Hope v2.0.0-rc.107 兼容的 Markdown。
 
 相关文档：
-- [[../concepts/VuePress-Theme-Hope-Markdown-Converter.md]] — META Prompt 模板说明
+- [[../concepts/VuePress-Theme-Hope-Markdown-Converter.md]] — META Prompt 模板说明（.docx 输入）
 - [[../sources/PostMortem.md]] — sp_for_LLM 目录知识域摘要
+
+### Hermes JSON 转换工作流（.json → .md，sp_for_LLM/000X 新增）
+
+将 Hermes Agent 通过 `hermes sessions export --session-id xxx /home/ubuntu/output.json` 导出的会话 JSON，转换为 VuePress 兼容 Markdown。与 .docx 转换器形成姊妹方案，专门处理 Hermes 导出格式（`tool_calls` 数组、`tool` 消息、`reasoning_content` 字段、用户名前缀剥离、`::: details` 折叠等）。
+
+相关文档：
+- [[../concepts/VuePress-Theme-Hope-Hermes-JSON-Converter.md]] — META Prompt 模板说明（Hermes JSON 输入）
 
 ### 文献报告写作工作流
 
@@ -59,6 +69,13 @@ sources:
 - [[../concepts/Hermes-Agent-Cronjob-Setup.md]] — 完整部署流程与陷阱清单
 - [[../entities/Hermes-Agent.md]] — Hermes Agent 实体聚合页
 
+### LangChain Interpreter Skills vs Hermes Skills 调研（sp_for_LLM/004 新增）
+
+通过 Hermes Agent 多轮对话调研 LangChain 实验性功能 *Interpreter Skills* 与 Hermes 自有 Skills 体系的异同。对话共 131 条消息、66 次工具调用，涉及 Skills 加载/执行机制源码分析、Programmatic Tool 机能对比、Memory 管理（built-in vs Holographic）三层架构、disk-level 验证纪律与冲突指令处理规范。
+
+相关文档：
+- [[../entities/Hermes-Agent.md]] — Hermes Skills 体系分析与 Memory 三层架构（workflow section）
+
 ## 核心工具
 
 - **LLM 模型**: Kimi K2.6、GPT-4o、Claude 3.5 Sonnet、MiniMax-M3（Hermes Agent 主）
@@ -69,3 +86,4 @@ sources:
 - **图像生成（002 新增）**: DALL-E 3、Midjourney v6、Stable Diffusion / FLUX
 - **部署方式**: GitHub Actions → GitHub Pages
 - **目录规范**: `docs/postMortem/sp_for_LLM/` 存放 skill/prompt 文档
+- **会话导出（000X 新增）**: `hermes sessions export --session-id xxx /home/ubuntu/output.json` → `.json` → META Prompt → Markdown

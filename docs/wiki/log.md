@@ -62,3 +62,24 @@ title: Wiki Log
   - ✅ PUT 使用 fork 当前 SHA（force-sync 后 fork SHA = upstream SHA）
   - ✅ 仅写入真修改的 6 个文件，不重写 no-op 文件
   - ✅ PR 完成后跑 `verify-pr-noops.sh` 自检
+
+## [2026-06-09] ingest | docs/postMortem/sp_for_LLM/000X + 004 — Hermes JSON Converter & LangChain Interpreter Skills 调研
+- Source articles:
+  - `000X_prompt-VuePress-Theme-Hope-Hermes-JSON-Converter.md`（282 行，2026-06-08）— Kimi 生成的 META Prompt，用于将 Hermes `sessions export` 导出的 `.json` 转换为 VuePress Markdown
+  - `004_Hermes-report.md`（1646 行，2026-06-08）— Hermes Agent 多轮对话调研 LangChain Interpreter Skills vs Hermes Skills，含 Skills 加载机制代码分析、Memory 三层架构、disk-level 验证纪律与冲突指令处理规范
+- Pre-flight sync:
+  - ✅ Step 0: Fork master 落后 upstream 2 commits → PATCH force=true 同步至 upstream HEAD `996f09b388...`
+  - ✅ Post-sync: `compare {up}...{up}` 状态 `identical, total_commits: 0`
+- Wiki pages created/updated:
+  - **CREATE** `concepts/VuePress-Theme-Hope-Hermes-JSON-Converter.md` — Kimi META Prompt 完整说明（Hermes JSON 输入，含 `tool_calls` 折叠、`reasoning_content` 丢弃、用户名前缀剥离；与 .docx 转换器对比表）；related → entities/Hermes-Agent.md, entities/LLM-Prompt-Skill.md, concepts/VuePress-Theme-Hope-Markdown-Converter.md, source postMortem/000X
+  - **MODIFY** `entities/LLM-Prompt-Skill.md` — frontmatter 加 `VuePress-Theme-Hope-Hermes-JSON-Converter` related；sources 加 000X/004；主工作流加"Hermes JSON 转换工作流"摘要段（1 段 + 1 wikilink）+ "LangChain Interpreter Skills vs Hermes Skills 调研"摘要段（1 段 + 1 wikilink）；核心工具表加 `hermes sessions export` 命令
+  - **MODIFY** `entities/Hermes-Agent.md` — frontmatter 加 `VuePress-Theme-Hope-Hermes-JSON-Converter` related；sources 加 004；主工作流加"Skills 体系分析与 LangChain Interpreter Skills 对比"段（含 131 条消息 / 66 次工具调用、Memory 三层架构、Programmatic Tool 机能对比、冲突指令处理）+ "会话 JSON 导出与 VuePress Markdown 转换"段；核心配置加 Skills 模式说明；关键陷阱加"写入 ≠ 落盘"+"冲突指令"+"commit-graph divergence"三条
+  - **MODIFY** `sources/PostMortem.md` — `lastUpdated` → 2026-06-09；sources 加 000X/004；LLM Prompt & Skill 节加 000X/004 mention；关联加 Hermes-JSON-Converter 概念
+  - **MODIFY** `index.md` — Concepts/LLM Prompt & Skill 小节加 `VuePress-Theme-Hope-Hermes-JSON-Converter` 链接；header 加 `Last updated: 2026-06-09`
+  - **MODIFY** `log.md` — 本条目
+- 纪律遵循（per `vuepress-wiki-integration` skill "Ingest — mandatory workflow"）：
+  - ✅ Step 0 已完成（fork master force-sync）
+  - ✅ entities vs concepts 分工：000X META Prompt 方法论 → concepts（新页）；004 调研 → entity 工作流段（不复制到 concept，避免重复）
+  - ✅ 实体页只引用概念页（不复制内容）
+  - ✅ YAML description 字段全部加引号（含中文冒号）
+  - ✅ 6 个目标文件均通过 fork SHA-first PUT 写入
