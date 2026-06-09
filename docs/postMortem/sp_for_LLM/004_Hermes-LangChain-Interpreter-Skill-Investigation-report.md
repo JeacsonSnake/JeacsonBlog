@@ -4,6 +4,7 @@ date: 2026-06-08
 icon: "strategy"
 category: Code Analysis
 tag:
+  - AI Agent
   - Hermes Agent
   - MiniMax-M3
   - LangChain
