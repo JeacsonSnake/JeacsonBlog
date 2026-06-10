@@ -83,3 +83,32 @@ title: Wiki Log
   - ✅ 实体页只引用概念页（不复制内容）
   - ✅ YAML description 字段全部加引号（含中文冒号）
   - ✅ 6 个目标文件均通过 fork SHA-first PUT 写入
+
+## [2026-06-09] ingest | docs/postMortem/sp_for_LLM/000Y + 004 + 005 — Hermes Multi-Session Merger & Brotli 流截断故障排查
+- Source articles:
+  - `000Y_prompt-VuePress-Theme-Hope-Hermes-Multi-Session-Merger.md`（345 行，15229 bytes，2026-06-09）— Kimi K2.6 生成的 META Prompt，用于将**多个** Hermes Agent 导出的会话 JSON（`output_0.json`、`output_1.json` ...）融合为单一按主题/阶段组织的连贯报告。与 000X 单文件 converter 形成姊妹方案
+  - `004_Hermes-LangChain-Interpreter-Skill-Investigation-report.md`（1647 行，204542 bytes，2026-06-08，原文件已从 `004_Hermes-report.md` 重命名）— Hermes Agent 多轮对话调研 LangChain Interpreter Skills 与 Hermes Skills 体系对比
+  - `005_HermesMerged-AI-Daily-Briefing-Brotli-Truncation-Fix_-report.md`（466 行，21897 bytes，2026-06-09）— AI Daily Briefing Cron Job 从 2026-06-05 起连续失败的多会话融合排查报告（MiniMax-M3 调查 + deepseek-v4-flash 修复验证 + 根因源码分析）
+- Pre-flight sync:
+  - ✅ Step 0: Fork master 落后 upstream 6 commits / ahead 5 commits (diverged, total_commits=6) → PATCH force=true 同步至 upstream HEAD `8756be958e...`
+  - ✅ Post-sync: `compare {up}...{up}` 状态 `identical, total_commits: 0`
+- Wiki pages created/updated (9 files total):
+  - **CREATE** `concepts/VuePress-Theme-Hope-Hermes-Multi-Session-Merger.md` — Kimi META Prompt 多会话融合完整说明（含与 000X 单文件 converter 对比表、Merged Meta Info Block 模板、按主题/阶段重新组织的内容融合规则）；related → entities/Hermes-Agent.md, entities/LLM-Prompt-Skill.md, concepts/VuePress-Theme-Hope-Hermes-JSON-Converter.md, concepts/VuePress-Theme-Hope-Markdown-Converter.md, source postMortem/000Y
+  - **CREATE** `concepts/AI-Daily-Briefing-Brotli-Fix-Investigation.md` — 完整故障排查方法论（5 层技术栈叠加 bug 根因：`brotlicffi==1.2.0.1` + `httpx==0.28.1` + MiniMax API 启 brotli）、修复对比（MiniMax-M3 vs deepseek-v4-flash：延迟 5-10x 提升、Brotli 错误 3 次→0 次、简报从空 placeholder→完整 ~64KB）、后续建议（Hermes Provider 层统一禁用 brotli / 跟踪上游修复 / Provider 选择参考）；related → entities/Hermes-Agent.md, concepts/Hermes-Agent-Cronjob-Setup.md, concepts/VuePress-Theme-Hope-Hermes-Multi-Session-Merger.md
+  - **MODIFY** `entities/Hermes-Agent.md` — frontmatter 加 `VuePress-Theme-Hope-Hermes-Multi-Session-Merger` + `AI-Daily-Briefing-Brotli-Fix-Investigation` related；sources 路径 `004_Hermes-report.md` → `004_Hermes-LangChain-Interpreter-Skill-Investigation-report.md`（原文件已重命名）+ 加 000Y/005；主工作流加"AI Daily Briefing Cron Job 故障排查与模型切换"段；核心配置加 2026-06-09 deepseek-v4-flash 切换注释；关键陷阱加"Brotli 流截断 bug"+"模型切换副作用"两条
+  - **MODIFY** `entities/LLM-Prompt-Skill.md` — frontmatter 加 `VuePress-Theme-Hope-Hermes-Multi-Session-Merger` + `AI-Daily-Briefing-Brotli-Fix-Investigation` related；sources 加 000Y/005（004 路径同步重命名）；主工作流加"Hermes 多会话融合工作流（sp_for_LLM/000Y）"段（含 000X vs 000Y 决策树）+ "AI Daily Briefing Cron Job 故障排查与模型切换（sp_for_LLM/005）"段；核心工具表加 deepseek-v4-flash + 故障排查方法条目
+  - **MODIFY** `concepts/Hermes-Agent-Cronjob-Setup.md` — frontmatter 加 `AI-Daily-Briefing-Brotli-Fix-Investigation` related；sources 加 005；`updated` → 2026-06-09；模型选型段加 2026-06-09 切换注释；关键陷阱加"Brotli 流截断 bug"小节
+  - **MODIFY** `concepts/VuePress-Theme-Hope-Hermes-JSON-Converter.md` — frontmatter 加 `VuePress-Theme-Hope-Hermes-Multi-Session-Merger` related；概述加 000Y 多会话融合姊妹方案引用；新增"与多会话融合 Merger 的关系"对比表 + 决策树
+  - **MODIFY** `sources/PostMortem.md` — sources 加 000Y/005（004 路径同步重命名）；`lastUpdated` → 2026-06-09；LLM Prompt & Skill 节加 000Y mention + 005 mention；关联加 Multi-Session-Merger + Brotli-Fix 概念
+  - **MODIFY** `index.md` — Concepts/LLM Prompt & Skill 小节加 `VuePress-Theme-Hope-Hermes-Multi-Session-Merger` + `AI-Daily-Briefing-Brotli-Fix-Investigation` 链接；Concepts/AI Agent 小节加 Brotli-Fix 链接；header `Last updated: 2026-06-09`
+  - **MODIFY** `log.md` — 本条目
+- 纪律遵循（per `vuepress-wiki-integration` skill "Ingest — mandatory workflow"）：
+  - ✅ Step 0 已完成（fork master force-sync from diverged to identical）
+  - ✅ entities vs concepts 分工：000Y META Prompt 方法论 → concepts（新页）；005 故障排查方法论 → concepts（新页）；实体页只加工作流段摘要 + wikilink，不复制概念页内容
+  - ✅ 实体页只引用概念页（不复制内容）；概念页通过 `related:` back-link 到实体页
+  - ✅ YAML description 字段全部加引号（含中文冒号 / 中文括号）
+  - ✅ 9 个目标文件均通过 fork SHA-first PUT 写入（2 CREATE 不带 sha 字段；7 MODIFY 用 fork SHA）
+  - ✅ 路径变更：004_Hermes-report.md → 004_Hermes-LangChain-Interpreter-Skill-Investigation-report.md（上游已重命名，wiki 引用同步更新）
+- Self-check（待 PR 创建后跑 `verify-pr-noops.sh`）：
+  - 待验证：所有 wiki 文件 PR_SHA 与 UP_SHA 对比，确保无 no-op 误标 added
+

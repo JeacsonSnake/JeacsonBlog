@@ -7,6 +7,7 @@ date: 2026-06-09
 related:
   - docs/postMortem/sp_for_LLM/000X_prompt-VuePress-Theme-Hope-Hermes-JSON-Converter.md
   - docs/wiki/concepts/VuePress-Theme-Hope-Markdown-Converter.md
+  - docs/wiki/concepts/VuePress-Theme-Hope-Hermes-Multi-Session-Merger.md
   - docs/wiki/entities/Hermes-Agent.md
   - docs/wiki/entities/LLM-Prompt-Skill.md
 ---
@@ -16,6 +17,8 @@ related:
 ## 概述
 
 Kimi K2.6 生成的 META Prompt，用于将 Hermes Agent 通过 `hermes sessions export --session-id xxx /home/ubuntu/output.json` 导出的会话 JSON 文件，转换为 VuePress Theme Hope v2.0.0-rc.107 兼容的 Markdown 格式。与 [[./VuePress-Theme-Hope-Markdown-Converter.md]]（`.docx` 输入）形成姊妹方案，专门处理 Hermes 导出格式。
+
+**2026-06-09 更新**：新增 [[./VuePress-Theme-Hope-Hermes-Multi-Session-Merger.md]] 作为多会话融合姊妹方案（sp_for_LLM/000Y）。当需要将多个 session export 融合为单一报告（按主题/阶段组织）时，使用 000Y 而非本 META Prompt。
 
 ## 输入输出
 
@@ -82,6 +85,23 @@ Hermes 导出的 JSON 具有以下结构：
 | 元信息 | 手动填写 | 从 JSON `source` / `id` / `model` / `started_at` 动态提取 |
 
 两者配合使用：日常 Q&A 用 `.docx` 转换器；Hermes Agent 多轮对话记录用 JSON 转换器。
+
+## 与多会话融合 Merger 的关系（sp_for_LLM/000Y，2026-06-09 新增）
+
+| 维度 | JSON Converter（000X，本页） | Multi-Session Merger（000Y） |
+|---|---|---|
+| 输入文件数 | **单文件** `output.json` | **多文件** `output_0.json`, `output_1.json`, ... |
+| 输出结构 | 逐 Round 保留原始 Q&A | **按主题/阶段重新组织**，不按 Round 展开 |
+| 多模型支持 | 单一模型 | **可混合**（如 MiniMax-M3 + deepseek-v4-flash） |
+| 多方向处理 | 单一方向 | 可包含调查/修改/验证等多方向 |
+| 章节命名 | 用户消息标题 | **根据所有会话内容动态提炼** |
+| 元信息 | 单 session Meta Info Block | **Merged Meta Info Block**（汇总表格） |
+| 适用场景 | 单会话多轮对话记录 | 跨会话、跨模型、多方向复合任务报告 |
+
+**决策树**：
+- 只有 1 个 session export → 用本 META Prompt（000X）
+- 有 2+ 个 session export（同一主题） → 用 Multi-Session Merger（000Y）
+- 单会话但希望重新组织为非 Round 顺序 → 仍用本 META Prompt（000X），不强制重组
 
 ## 适用场景
 
