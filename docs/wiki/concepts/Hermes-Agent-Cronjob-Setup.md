@@ -5,10 +5,12 @@ type: concept
 tags: [AI Agent, Hermes, Cronjob, RSS, VPS, Agent-Reach]
 related:
   - docs/wiki/entities/Hermes-Agent.md
+  - docs/wiki/concepts/AI-Daily-Briefing-Brotli-Fix-Investigation.md
 created: 2026-06-08
-updated: 2026-06-08
+updated: 2026-06-09
 sources:
   - docs/postMortem/sp_for_LLM/003_think-Initial-notes-on-using-Hermes_Agent.md
+  - docs/postMortem/sp_for_LLM/005_HermesMerged-AI-Daily-Briefing-Brotli-Truncation-Fix_-report.md
 ---
 
 # Hermes Agent 部署与 RSS 每日简报 cronjob
@@ -16,6 +18,8 @@ sources:
 ## 概述
 
 本文档整理在 VPS 上部署 Hermes Agent 并通过 cronjob 接入 RSS/Agent-Reach 实现每日简报推送的完整流程。基于 [sp_for_LLM/003 — Hermes Agent 初步食用记录](../../postMortem/sp_for_LLM/003_think-Initial-notes-on-using-Hermes_Agent.md) 的实测经验，覆盖安装、模型选择、gateway 多路互备、避免「衔尾蛇」问题等关键决策。
+
+**2026-06-09 更新**：执行模型从 MiniMax-M3 切换至 deepseek-v4-flash（详见 [[./AI-Daily-Briefing-Brotli-Fix-Investigation.md]] sp_for_LLM/005 多会话融合报告）。切换根因是 MiniMax-M3 触发的 brotli 流截断 bug 导致简报连续 4 天生成失败。
 
 ## 适用场景
 
@@ -48,6 +52,7 @@ sources:
 ### 3. 模型选型
 
 - **主模型**: MiniMax-2.6 → MiniMax-2.7 → MiniMax-M3（持续跟随官方升级）
+- **2026-06-09 变更**: Cron Job 执行模型切换至 **deepseek-v4-flash**（消除 brotli 流截断 bug）— 详见 [[./AI-Daily-Briefing-Brotli-Fix-Investigation.md]]
 - **Fallback**: kimi-k2.6、Deepseek-V4-flash
 - **避免冲突**: 如果实验室也在用某模型（如 kimi-k2.5），把 Agent 模型换成另一家的，避免 token 额度互相抢占
 
@@ -108,9 +113,23 @@ sources:
 
 作者实测：把"字符串写成数组时未改数值类型"导致第二天两边都收不到简报。务必写完后跑一次手工触发确认。
 
+### 4. Brotli 流截断 bug（sp_for_LLM/005 新增）
+
+**症状**: Cron Job 从某天起连续失败，错误信息 `RuntimeError: Response remained truncated after 3 continuation attempts`，输出文件中 `## Response` 段为空 `[RESPONSE_PLACEHOLDER]`。
+
+**根因**: `brotlicffi==1.2.0.1` + `httpx==0.28.1` + 启用 brotli 压缩的 API Provider（如 MiniMax）在大型 SSE 流式响应（>500KB 压缩后）下必抛 `decoder process called with data when 'can_accept_more_data() is False`。
+
+**短期解决**: 切换到不启用 brotli 的 Provider（如 deepseek-v4-flash 返回 identity 编码）。
+
+**长期修复**: 在 Hermes Provider 配置层统一禁用 brotli（类似 `skills_hub.py:1410-1415` 的做法）。
+
+详细排查过程、源码级根因分析（5 层技术栈）、修复对比详见 [[./AI-Daily-Briefing-Brotli-Fix-Investigation.md]]。
+
 ## 关联文档
 
-- [[../entities/Hermes-Agent.md]] — Hermes Agent 实体聚合页
+- [[../entities/Hermes-Agent.md]] — Hermes Agent 实体聚合页（含 sp_for_LLM/005 workflow section）
+- [[./AI-Daily-Briefing-Brotli-Fix-Investigation.md]] — Cron Job 故障排查与模型切换修复
 - [[../sources/PostMortem.md]] — 踩坑心得知识域摘要
 - [[../entities/LLM-Prompt-Skill.md]] — LLM Prompt & Skill 实体（含 wiki ingest 流程）
 - 原文：[[../../postMortem/sp_for_LLM/003_think-Initial-notes-on-using-Hermes_Agent.md]]
+- 故障原文：[[../../postMortem/sp_for_LLM/005_HermesMerged-AI-Daily-Briefing-Brotli-Truncation-Fix_-report.html]]

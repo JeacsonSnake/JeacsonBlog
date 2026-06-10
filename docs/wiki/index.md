@@ -55,13 +55,16 @@ title: JeacsonBlog Wiki
 
 ### LLM Prompt & Skill
 - [[./concepts/VuePress-Theme-Hope-Markdown-Converter.md]] — Kimi META Prompt：VuePress 格式转换器（.docx 输入）
-- [[./concepts/VuePress-Theme-Hope-Hermes-JSON-Converter.md]] — Kimi META Prompt：VuePress 格式转换器（Hermes .json 输入）
+- [[./concepts/VuePress-Theme-Hope-Hermes-JSON-Converter.md]] — Kimi META Prompt：VuePress 格式转换器（Hermes .json 输入，单文件）
+- [[./concepts/VuePress-Theme-Hope-Hermes-Multi-Session-Merger.md]] — Kimi META Prompt：Hermes 多会话 JSON 融合（多文件，按主题/阶段重组）
 - [[./concepts/Heat-Transfer-Literature-Report.md]] — 热质传递文献报告批判框架
 - [[./concepts/Reverse-Prompt-Engineering.md]] — 反向提示词工程与三 Session Prompt 编译管道
 - [[./concepts/Hermes-Agent-Cronjob-Setup.md]] — Hermes Agent 部署与 RSS 每日简报 cronjob 配置
+- [[./concepts/AI-Daily-Briefing-Brotli-Fix-Investigation.md]] — AI Daily Briefing Cron Job Brotli 流截断故障排查与模型切换修复
 
 ### AI Agent
 - [[./concepts/Hermes-Agent-Cronjob-Setup.md]] — Hermes Agent 部署与 RSS 每日简报 cronjob 配置
+- [[./concepts/AI-Daily-Briefing-Brotli-Fix-Investigation.md]] — AI Daily Briefing Cron Job Brotli 流截断故障排查与模型切换修复
 
 ## 最近更新
 详见 [[./log.md]]
