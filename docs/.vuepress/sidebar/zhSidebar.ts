@@ -138,6 +138,8 @@ export const zhSidebarConfig = sidebar({
             icon: "paper-pen"
         },
     ],
+    "/postMortem/deploy/": "structure",
+    "/postMortem/markdown_render/": "structure",
     "/postMortem/sp_for_LLM/": "structure",
     "/complain_diary/": "structure",
     "/learningNote/vueNote/VUE2/": "structure",
