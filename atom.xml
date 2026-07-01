@@ -1,0 +1,1386 @@
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="https://blog.jeacsonsnake.com/atom.xsl"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
+  <id>https://blog.jeacsonsnake.com/</id>
+  <title>JeacsonBlog</title>
+  <subtitle>JeacsonBlog-一个简单的博客</subtitle>
+  <icon>https://blog.jeacsonsnake.com/assets/img/favicon.ico</icon>
+  <logo>https://blog.jeacsonsnake.com/assets/img/logo.png</logo>
+  <updated>2026-07-01T00:44:34.772Z</updated>
+  <generator>@vuepress/plugin-feed</generator>
+  <link rel="self" href="https://blog.jeacsonsnake.com/atom.xml"/>
+  <link rel="alternate" href="https://blog.jeacsonsnake.com/"/>
+  <category term="deploy"/>
+  <category term="LLM Prompt &amp; Skill"/>
+  <category term="Technical Investigation"/>
+  <category term="Code Analysis"/>
+  <category term="AI Agent"/>
+  <category term="Computer"/>
+  <category term="robot"/>
+  <category term="ROS"/>
+  <contributor>
+    <name>xxx</name>
+  </contributor>
+  <entry>
+    <title type="text">Edge 浏览器「使用安全的 DNS」选项的副作用与排查</title>
+    <id>/wiki/concepts/Edge-Secure-DNS-Gotcha.html</id>
+    <link href="/wiki/concepts/Edge-Secure-DNS-Gotcha.html"/>
+    <updated>2026-07-01T00:43:49.000Z</updated>
+    <summary type="html"><![CDATA[
+<h2>核心结论</h2>
+<blockquote>
+<p><strong>永远不要随意修改 Edge 浏览器里的「使用安全的 DNS」选项。</strong></p>
+</blockquote>
+<p>这个选项一旦切到非默认的 DoH（DNS over HTTPS）服务（如 Cloudflare），会同时污染 <code>curl</code> 的 DNS 缓存，导致看似毫无关联的命令行工具出现诡异断网。</p>
+<h2>现象</h2>
+<p>跨网络环境（香港 → 内地）切换后，特定网址在某台电脑上打不开，但其他设备正常。</p>
+<h2>根因</h2>
+<p>Edge 浏览器里「使用安全的 DNS」选项选择了 Cloudflare DoH（如 <code>https://cloudflare-dns.com/dns-query</code>）作为 DNS 解析器。问题链条：</p>]]></summary>
+    <content type="html"><![CDATA[不要随意修改 Microsoft Edge 的「使用安全的 DNS」选项：会导致 curl 缓存错误 IP、TCP 三次握手成功但 ClientHello 后 RST 的诡异断网现象]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-07-01T00:44:34.776Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">LeanCloud 迁移至 Neon PostgreSQL（Waline 评论数据）</title>
+    <id>/wiki/concepts/LeanCloud-to-Neon-Migration.html</id>
+    <link href="/wiki/concepts/LeanCloud-to-Neon-Migration.html"/>
+    <updated>2026-07-01T00:43:49.000Z</updated>
+    <summary type="html"><![CDATA[
+<h2>背景</h2>
+<p>LeanCloud 于 <code>2026 年 1 月 12 日</code> 发布公告，宣布将于 <code>2027 年 1 月 12 日</code> 正式停止对外服务。
+本站 Waline 评论系统原本使用 LeanCloud 作为数据存储后端，因此必须在此之前完成数据迁移。</p>
+<p><strong>目标</strong>：将 Waline 评论数据从 LeanCloud 迁移到 Vercel 集成的 Neon PostgreSQL。</p>
+<h2>完整迁移流程（4 步，顺序不可颠倒）</h2>
+<h3>1. 从 LeanCloud 导出 Waline 数据</h3>]]></summary>
+    <content type="html"><![CDATA[LeanCloud 2027 年停止对外服务后，Waline 评论数据从 LeanCloud 导出 → 格式转换 → 导入 Neon PostgreSQL 的完整迁移流程（Vercel 集成）]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-07-01T00:44:34.781Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">005_博客评论区专用数据库从 leancloud 迁移至 Neon PostgreSQL 相关问题</title>
+    <id>/postMortem/deploy/005_leancloud_migrate_neon_relate.html</id>
+    <link href="/postMortem/deploy/005_leancloud_migrate_neon_relate.html"/>
+    <updated>2026-06-30T02:11:44.000Z</updated>
+    <summary type="html"><![CDATA[<p>LeanCloud 于 <code>2026 年 1 月 12 日</code> 发布公告，说明其将于 <code>2027 年 1 月 12 日</code> 正式停止对外服务。因此本博客在 <code>2026 年 6 月 29 日</code> 将 <code>LeanCloud</code> 中的相关评论数据导出和切换到了 <code>Neon PostgreSQL</code> 以进行后续使用。在参考 <strong>更新后</strong> 的<a href="https://waline.js.org/guide/get-started/" target="_blank" rel="noopener noreferrer">官方文档</a>后，做出以下完整迁移步骤（注：必须按照顺序进行操作）：</p>]]></summary>
+    <content type="html"><![CDATA[LeanCloud 于 2026 年 1 月 12 日 发布公告，说明其将于 2027 年 1 月 12 日 正式停止对外服务。因此本博客在 2026 年 6 月 29 日 将 LeanCloud 中的相关评论数据导出和切换到了 Neon PostgreSQL 以进行后续使用。在参考 更新后 的官方文档后，做出以下完整迁移步骤（注：必须按照顺序进行操作...]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <category term="deploy"/>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-06-29T00:00:00.000Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">不要随意修改 edge 浏览器里的 “使用安全的 DNS” 选项</title>
+    <id>/postMortem/sp_for_LLM/2026_06_29.html</id>
+    <link href="/postMortem/sp_for_LLM/2026_06_29.html"/>
+    <updated>2026-06-30T02:11:44.000Z</updated>
+    <summary type="html"><![CDATA[<p>永远不要随意修改 edge 浏览器里的 “使用安全的 DNS” 选项。（扶额）</p>
+<p>从香港回内地之后，发现有自己的电脑有特定的网址打不开，但是其他设备是可以打开该特定的网址的。于是就在猜可能是电脑又出现了各种网络问题，之前刚来香港的时候也有出现类似的问题，但是当时搞了半天最后做出的修复步骤是重装系统（</p>
+<p>我想着要是这一次还是得重装系统就太麻烦了。然后和 GPT 对了半天的轴。发现是 edge 浏览器里的 “使用安全的 DNS” 选项选择了 cloudflare 的特定 DNS 作为 IP 解析，而刚好我在的内地网络阻挡了该类型的 IP。使电脑在尝试连接该网址的时候出现：</p>]]></summary>
+    <content type="html"><![CDATA[永远不要随意修改 edge 浏览器里的 “使用安全的 DNS” 选项。（扶额） 从香港回内地之后，发现有自己的电脑有特定的网址打不开，但是其他设备是可以打开该特定的网址的。于是就在猜可能是电脑又出现了各种网络问题，之前刚来香港的时候也有出现类似的问题，但是当时搞了半天最后做出的修复步骤是重装系统（ 我想着要是这一次还是得重装系统就太麻烦了。然后和 GP...]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-06-23T00:00:00.000Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">AI Daily Briefing Cron Job Brotli 流截断故障排查与模型切换修复</title>
+    <id>/wiki/concepts/AI-Daily-Briefing-Brotli-Fix-Investigation.html</id>
+    <link href="/wiki/concepts/AI-Daily-Briefing-Brotli-Fix-Investigation.html"/>
+    <updated>2026-06-10T00:04:32.000Z</updated>
+    <summary type="html"><![CDATA[
+<h2>概述</h2>
+<p>AI Daily Briefing 定时任务（Job ID <code>7cb8f95c3d6b</code>，每日 08:15 CST 执行）从 <strong>2026-06-05</strong> 起持续失败，错误信息为 <code>RuntimeError: Response remained truncated after 3 continuation attempts</code>。本文档整理 2026-06-09 的多会话融合排查与修复过程：先用 MiniMax-M3 定位根因，再切换至 deepseek-v4-flash 验证修复，最后深入源码层做技术分析。</p>]]></summary>
+    <content type="html"><![CDATA[AI Daily Briefing 定时任务从 2026-06-05 起持续失败的根因分析与模型切换修复完整记录]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-06-09T00:00:00.000Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">Kimi META Prompt — VuePress Theme Hope Hermes JSON Converter</title>
+    <id>/wiki/concepts/VuePress-Theme-Hope-Hermes-JSON-Converter.html</id>
+    <link href="/wiki/concepts/VuePress-Theme-Hope-Hermes-JSON-Converter.html"/>
+    <updated>2026-06-10T00:04:32.000Z</updated>
+    <summary type="html"><![CDATA[
+<h2>概述</h2>
+<p>Kimi K2.6 生成的 META Prompt，用于将 Hermes Agent 通过 <code>hermes sessions export --session-id xxx /home/ubuntu/output.json</code> 导出的会话 JSON 文件，转换为 VuePress Theme Hope v2.0.0-rc.107 兼容的 Markdown 格式。与 [[./VuePress-Theme-Hope-Markdown-Converter.md]]（<code>.docx</code> 输入）形成姊妹方案，专门处理 Hermes 导出格式。</p>]]></summary>
+    <content type="html"><![CDATA[将 Hermes Agent 导出的会话 JSON（output.json）转换为 VuePress Theme Hope 兼容 Markdown 的 META Prompt 模板]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-06-09T00:00:00.000Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">Kimi META Prompt — VuePress Theme Hope Hermes Multi-Session Merger</title>
+    <id>/wiki/concepts/VuePress-Theme-Hope-Hermes-Multi-Session-Merger.html</id>
+    <link href="/wiki/concepts/VuePress-Theme-Hope-Hermes-Multi-Session-Merger.html"/>
+    <updated>2026-06-10T00:04:32.000Z</updated>
+    <summary type="html"><![CDATA[
+<h2>概述</h2>
+<p>Kimi K2.6 生成的 META Prompt，用于将<strong>多个</strong> Hermes Agent 通过 <code>hermes sessions export --session-id xxx /home/ubuntu/output_{n}.json</code> 导出的会话 JSON 文件（<code>output_0.json</code>、<code>output_1.json</code> 等）<strong>总结融合</strong>为<strong>一篇连贯的、按主题/阶段组织</strong>的 VuePress Theme Hope v2.0.0-rc.107 兼容 Markdown 报告。与 [[./VuePress-Theme-Hope-Hermes-JSON-Converter.md]]（单文件 converter）形成姊妹方案，专门处理&quot;同一主题、多方向处理、可能跨模型&quot;的会话合并场景。</p>]]></summary>
+    <content type="html"><![CDATA[将多个 Hermes Agent 导出的会话 JSON（output_0.json, output_1.json, ...）融合为单一连贯报告的 META Prompt 模板]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-06-09T00:00:00.000Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">000Y-可被 Kimi Agent 复用的 &amp;quot;VuePress Theme Hope Hermes Multi-Session Merger&amp;quot; META Prompt</title>
+    <id>/postMortem/sp_for_LLM/000Y_prompt-VuePress-Theme-Hope-Hermes-Multi-Session-Merger.html</id>
+    <link href="/postMortem/sp_for_LLM/000Y_prompt-VuePress-Theme-Hope-Hermes-Multi-Session-Merger.html"/>
+    <updated>2026-06-09T04:21:53.000Z</updated>
+    <summary type="html"><![CDATA[<blockquote>
+<p>本文档为使用 Kimi 生成的 META Prompt，用于辅助将 <em>多个 Hermes Agent 导出的对话 JSON</em>（此处为使用 <code>hermes sessions export --session-id xxx /home/ubuntu/output_{n}.json</code> 指令导出的 <code>output_0.json</code>、<code>output_1.json</code> 等文件）<strong>总结融合</strong>为 <em>一篇连贯的、可以与本博客的其他内容兼容</em> 的 Report。需要针对不同的上传文件进行调整，调整范围包括但不限于 <strong>传入文件名</strong>、<strong>输出文件名</strong>等。</p>
+<p><strong>核心差异</strong>: 与单文件转换 prompt 不同，本 prompt 要求将<strong>同一主题的多个对话</strong>（可能使用不同 LLM 模型、不同处理方向）融合为一篇按主题/阶段组织的连贯报告，而非逐轮保留原始 Q&amp;A 结构。</p>
+<p><strong>LLM生成模型</strong>: Kimi K2.6</p>
+</blockquote>]]></summary>
+    <content type="html"><![CDATA[本文档为使用 Kimi 生成的 META Prompt，用于辅助将 多个 Hermes Agent 导出的对话 JSON（此处为使用 hermes sessions export --session-id xxx /home/ubuntu/output_{n}.json 指令导出的 output_0.json、output_1.json 等文件）总结融...]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <category term="LLM Prompt &amp; Skill"/>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-06-09T00:00:00.000Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">005-AI Daily Briefing Cron Job Brotli 流截断故障排查与模型切换修复 —— 多会话融合报告</title>
+    <id>/postMortem/sp_for_LLM/005_HermesMerged-AI-Daily-Briefing-Brotli-Truncation-Fix_-report.html</id>
+    <link href="/postMortem/sp_for_LLM/005_HermesMerged-AI-Daily-Briefing-Brotli-Truncation-Fix_-report.html"/>
+    <updated>2026-06-09T04:21:53.000Z</updated>
+    <summary type="html"><![CDATA[<blockquote>
+<p>本文档为对 2 个 Hermes Agent 会话的融合总结报告，涉及模型包括 MiniMax-M3、deepseek-v4-flash。各会话围绕 &quot;AI Daily Briefing Cron Job Brotli 流截断故障&quot; 同一主题展开：首个会话使用 MiniMax-M3 进行问题现象确认、根因调查与手动复现；后续会话在将执行模型切换为 deepseek-v4-flash 后，完成修复验证、成功触发 Cron Job，并深入分析了 Brotli 解码错误的完整技术链路。</p>
+<p><strong>融合会话概览</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>会话ID</th>
+<th>使用模型</th>
+<th>消息数</th>
+<th>工具调用</th>
+<th>会话时间</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>20260609_091940_49a883a3</td>
+<td>MiniMax-M3</td>
+<td>86</td>
+<td>47</td>
+<td>2026-06-09 09:19:40</td>
+</tr>
+<tr>
+<td>20260609_095454_5648b63a</td>
+<td>deepseek-v4-flash</td>
+<td>123</td>
+<td>67</td>
+<td>2026-06-09 09:54:54</td>
+</tr>
+</tbody>
+</table>
+<p><strong>原始会话来源</strong>: feishu<br>
+<strong>主题关键词</strong>: AI Daily Briefing, Brotli, 流截断, 模型切换, SSE, Cron Job</p>
+</blockquote>]]></summary>
+    <content type="html"><![CDATA[本文档为对 2 个 Hermes Agent 会话的融合总结报告，涉及模型包括 MiniMax-M3、deepseek-v4-flash。各会话围绕 &quot;AI Daily Briefing Cron Job Brotli 流截断故障&quot; 同一主题展开：首个会话使用 MiniMax-M3 进行问题现象确认、根因调查与手动复现；后续会话在将...]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <category term="Technical Investigation"/>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-06-09T00:00:00.000Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">Hermes Agent 部署与 RSS 每日简报 cronjob</title>
+    <id>/wiki/concepts/Hermes-Agent-Cronjob-Setup.html</id>
+    <link href="/wiki/concepts/Hermes-Agent-Cronjob-Setup.html"/>
+    <updated>2026-06-10T00:04:32.000Z</updated>
+    <summary type="html"><![CDATA[
+<h2>概述</h2>
+<p>本文档整理在 VPS 上部署 Hermes Agent 并通过 cronjob 接入 RSS/Agent-Reach 实现每日简报推送的完整流程。基于 <a href="/postMortem/sp_for_LLM/003_think-Initial-notes-on-using-Hermes_Agent.html" target="_blank">sp_for_LLM/003 — Hermes Agent 初步食用记录</a> 的实测经验，覆盖安装、模型选择、gateway 多路互备、避免「衔尾蛇」问题等关键决策。</p>
+<p><strong>2026-06-09 更新</strong>：执行模型从 MiniMax-M3 切换至 deepseek-v4-flash（详见 [[./AI-Daily-Briefing-Brotli-Fix-Investigation.md]] sp_for_LLM/005 多会话融合报告）。切换根因是 MiniMax-M3 触发的 brotli 流截断 bug 导致简报连续 4 天生成失败。</p>]]></summary>
+    <content type="html"><![CDATA[在入门型 VPS 上部署 Hermes Agent 并接入 FOLO/Agent-Reach 做每日 7:00 简报推送的完整方法论]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-07-01T00:44:34.809Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">Hermes Agent</title>
+    <id>/wiki/entities/Hermes-Agent.html</id>
+    <link href="/wiki/entities/Hermes-Agent.html"/>
+    <updated>2026-06-10T00:04:32.000Z</updated>
+    <summary type="html"><![CDATA[
+<h2>概述</h2>
+<p>Hermes Agent 是 Nous Research 开发的 AI Agent 框架，核心特性是<strong>可自我调整各个 skill 以及它们之间的联系</strong>。本博客的 LLM Wiki 架构、RSS 简报推送、LLM 对话记录转 Markdown 等工作流均基于此 Agent。本实体汇总与 Hermes Agent 相关的部署配置、工作流和踩坑记录。</p>
+<h2>主要工作流</h2>
+<h3>VPS 部署 + RSS/Agent-Reach 每日简报 cronjob</h3>
+<p>在腾讯云入门型 VPS（2 CPU / 2 GB RAM / Ubuntu 24.04 LTS）上部署 Hermes Agent，配置每日 7:00 触发的 cronjob，通过 FOLO + Agent-Reach 聚合 RSS、GitHub、微博、arXiv 信源并推送日报。</p>]]></summary>
+    <content type="html"><![CDATA[Hermes Agent — Nous Research 开发的可自我调整 skills 的 AI Agent，本博客核心使用对象]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-07-01T00:44:34.810Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">000X-可被 Kimi Agent 复用的 &amp;quot;VuePress Theme Hope Hermes JSON Converter&amp;quot; META Prompt</title>
+    <id>/postMortem/sp_for_LLM/000X_prompt-VuePress-Theme-Hope-Hermes-JSON-Converter.html</id>
+    <link href="/postMortem/sp_for_LLM/000X_prompt-VuePress-Theme-Hope-Hermes-JSON-Converter.html"/>
+    <updated>2026-06-08T15:42:43.000Z</updated>
+    <summary type="html"><![CDATA[<blockquote>
+<p>本文档为使用 Kimi 生成的 META Prompt，用于辅助将 <em>Hermes Agent 导出的对话 JSON</em>（此处为使用 <code>hermes sessions export --session-id xxx /home/ubuntu/output.json</code> 指令导出的 <code>output.json</code> 文件）转换为 <em>可以与本博客的其他内容兼容</em> 的 Report。需要针对不同的上传文件进行调整，调整范围包括但不限于 <strong>传入文件名</strong>、<strong>输出文件名</strong>等。</p>
+<p><strong>LLM生成模型</strong>: Kimi K2.6</p>
+</blockquote>]]></summary>
+    <content type="html"><![CDATA[本文档为使用 Kimi 生成的 META Prompt，用于辅助将 Hermes Agent 导出的对话 JSON（此处为使用 hermes sessions export --session-id xxx /home/ubuntu/output.json 指令导出的 output.json 文件）转换为 可以与本博客的其他内容兼容 的 Report。...]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <category term="LLM Prompt &amp; Skill"/>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-06-08T00:00:00.000Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">004-LangChain Interpreter Skills 调研 —— Hermes Agent 多轮对话记录</title>
+    <id>/postMortem/sp_for_LLM/004_Hermes-LangChain-Interpreter-Skill-Investigation-report.html</id>
+    <link href="/postMortem/sp_for_LLM/004_Hermes-LangChain-Interpreter-Skill-Investigation-report.html"/>
+    <updated>2026-06-09T04:20:33.000Z</updated>
+    <summary type="html"><![CDATA[<blockquote>
+<p>本文档为与 MiniMax-M3（Hermes Agent）的多轮对话记录，用于辅助调研 LangChain 的 Interpreter Skills 特性及 Hermes 的 skills 体系对比分析。会话共 131 条消息，含 66 次工具调用。</p>
+<p><strong>会话来源</strong>: discord<br>
+<strong>会话ID</strong>: 20260608_143656_8845fe43<br>
+<strong>使用模型</strong>: MiniMax-M3<br>
+<strong>会话时间</strong>: 2026-06-08</p>
+</blockquote>]]></summary>
+    <content type="html"><![CDATA[本文档为与 MiniMax-M3（Hermes Agent）的多轮对话记录，用于辅助调研 LangChain 的 Interpreter Skills 特性及 Hermes 的 skills 体系对比分析。会话共 131 条消息，含 66 次工具调用。 会话来源: discord 会话ID: 20260608_143656_8845fe43 使用模型:...]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <category term="Code Analysis"/>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-06-08T00:00:00.000Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">003-一点思索 —— Hermes Agent 初步食用记录</title>
+    <id>/postMortem/sp_for_LLM/003_think-Initial-notes-on-using-Hermes_Agent.html</id>
+    <link href="/postMortem/sp_for_LLM/003_think-Initial-notes-on-using-Hermes_Agent.html"/>
+    <updated>2026-06-07T10:43:45.000Z</updated>
+    <summary type="html"><![CDATA[<blockquote>
+<p>本文档为编博客作者从 “2026年4月中旬开始至6月上旬” 这一段时间内使用 <code>Hermes Agent</code> 的初步记录。包括但不限于一些配置的踩坑记录、由 <code>Hermes Agent</code> / <code>LLM</code> 的不断推陈出新所获得的一些迷思等</p>
+<p><strong>适用项目</strong>: AI Agent (此处指 Hermes Agent，但一些方法论应该可以适用于其他的 AI Agent)<br>
+<strong>使用时间段</strong>: 2026.4.13~2026.6.7<br>
+<strong>LLM 模型</strong>:
+<em>主使用模型</em>：Minimax-2.6/Minimax-2.7/Minimax-3<br>
+<em>fallback模型</em>：kimi-k2.5/kimi-k2.6/Deepseek-v4-flash<br>
+<strong>主要环境</strong>: 腾讯云服务器入门型实例：<br>
+<em>CPU</em> 2核，<em>内存</em> 2GB，<em>系统盘</em> SSD云硬盘40gb，<em>流量包</em> 200GB/月 (带宽3Mbps)<br>
+<strong>操作系统</strong>: Ubuntu Server 24.04 LTS 64bit</p>
+</blockquote>]]></summary>
+    <content type="html"><![CDATA[本文档为编博客作者从 “2026年4月中旬开始至6月上旬” 这一段时间内使用 Hermes Agent 的初步记录。包括但不限于一些配置的踩坑记录、由 Hermes Agent / LLM 的不断推陈出新所获得的一些迷思等 适用项目: AI Agent (此处指 Hermes Agent，但一些方法论应该可以适用于其他的 AI Agent) 使用时间段...]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <category term="AI Agent"/>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-06-07T00:00:00.000Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">Reverse Prompt Engineering &amp; Prompt Compilation Pipeline</title>
+    <id>/wiki/concepts/Reverse-Prompt-Engineering.html</id>
+    <link href="/wiki/concepts/Reverse-Prompt-Engineering.html"/>
+    <updated>2026-06-05T02:43:41.000Z</updated>
+    <summary type="html"><![CDATA[
+<h2>概述</h2>
+<p>本概念页汇总 LLM 协助下的<strong>反向提示词工程</strong>（Reverse Prompt Engineering, RPE）方法论，以及将其工程化为<strong>三 Session Prompt 编译管道</strong>（Prompt Compilation Pipeline）的完整方案。核心问题：给定一张参考技术架构图，如何从中提取<strong>风格不变量</strong>，再与任意文献的方法论内容嫁接，生成同风格但内容可换的最终图像生成 Prompt？</p>
+<p><strong>适用场景</strong>：博客插图、研究步骤可视化、技术架构图复用。</p>]]></summary>
+    <content type="html"><![CDATA[反向提示词工程方法论与三 Session Prompt 编译管道 —— 从参考图片反推到风格可复用的最终图像 Prompt]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-07-01T00:44:34.872Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">LLM Prompt &amp; Skill</title>
+    <id>/wiki/entities/LLM-Prompt-Skill.html</id>
+    <link href="/wiki/entities/LLM-Prompt-Skill.html"/>
+    <updated>2026-06-10T00:04:32.000Z</updated>
+    <summary type="html"><![CDATA[
+<h2>概述</h2>
+<p>本实体汇总与 LLM（Kimi、ChatGPT、GPT-4o、Claude 等）协作生成的工作流、Prompt 模板与 skill 方法论。核心场景是将 LLM 多轮对话的 <code>.docx</code> / <code>.json</code> 记录转换为 VuePress 博客兼容的 Markdown 格式，并生成可直接复用的 META Prompt / 反向提示词工程编译产物。</p>
+<h2>主要工作流</h2>
+<h3>VuePress Markdown 转换工作流（.docx → .md）</h3>
+<p>将 LLM 对话导出的 <code>.docx</code> 文件，通过 Kimi K2.6 生成的 META Prompt，转换为 VuePress Theme Hope v2.0.0-rc.107 兼容的 Markdown。</p>]]></summary>
+    <content type="html"><![CDATA[可供大语言模型使用的 prompt 模板与 skill 工作流]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-07-01T00:44:34.873Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">声子流体动力学</title>
+    <id>/wiki/entities/Phonon-Hydrodynamics.html</id>
+    <link href="/wiki/entities/Phonon-Hydrodynamics.html"/>
+    <updated>2026-06-04T03:27:07.000Z</updated>
+    <summary type="html"><![CDATA[
+<h2>概述</h2>
+<p>声子流体动力学（Phonon Hydrodynamics）是声子气体在特定尺度下展现的类流体集体输运行为，源于动量守恒的正常散射（N 散射）过程。当系统特征尺寸 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi></mrow><annotation encoding="application/x-tex">L</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal">L</span></span></span></span> 满足<strong>流体动力学窗口</strong>（<span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi mathvariant="normal">Λ</mi><mi>N</mi></msub><mo>≪</mo><mi>L</mi><mo>≪</mo><msub><mi mathvariant="normal">Λ</mi><mi>R</mi></msub></mrow><annotation encoding="application/x-tex">\Lambda_N \ll L \ll \Lambda_R</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord">Λ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.109em;">N</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≪</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7224em;vertical-align:-0.0391em;"></span><span class="mord mathnormal">L</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≪</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord">Λ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.0077em;">R</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>）时，声子能够建立集体漂移速度 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="bold">u</mi></mrow><annotation encoding="application/x-tex">\mathbf{u}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4444em;"></span><span class="mord mathbf">u</span></span></span></span>，表现出黏性流体的特征行为。</p>]]></summary>
+    <content type="html"><![CDATA[声子输运在流体动力学极限下的涌现行为：泊肃叶流、第二声、热整流]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-07-01T00:44:34.877Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">002-反向提示词工程与 Prompt 编译管道 —— LLM 协助生成与多轮对话记录</title>
+    <id>/postMortem/sp_for_LLM/002_QA-inverse-prompt-engineering-report.html</id>
+    <link href="/postMortem/sp_for_LLM/002_QA-inverse-prompt-engineering-report.html"/>
+    <updated>2026-06-04T14:16:42.000Z</updated>
+    <summary type="html"><![CDATA[<blockquote>
+<p>本文档为与 Kimi 的多轮对话记录，用于辅助设计 <strong>反向提示词工程（Reverse Prompt Engineering）</strong> 的 Prompt 编译管道。对话末尾附有可直接复用的三阶段 Session Prompt 模板。</p>
+<p><strong>适用项目</strong>: 未指定<br>
+<strong>核心文献</strong>: Prompt Inversion using chat-based multimodal LLMs (2023); CapRecover: Cross-Modality Feature Inversion Attack on VLMs (2025); Safety at Scale: A Comprehensive Survey of Large Model Safety (2025)<br>
+<strong>LLM 模型</strong>: Kimi</p>
+</blockquote>]]></summary>
+    <content type="html"><![CDATA[本文档为与 Kimi 的多轮对话记录，用于辅助设计 反向提示词工程（Reverse Prompt Engineering） 的 Prompt 编译管道。对话末尾附有可直接复用的三阶段 Session Prompt 模板。 适用项目: 未指定 核心文献: Prompt Inversion using chat-based multimodal LLMs ...]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <category term="LLM Prompt &amp; Skill"/>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-06-04T00:00:00.000Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">可供大语言模型使用的skill/prompt</title>
+    <id>/postMortem/sp_for_LLM/</id>
+    <link href="/postMortem/sp_for_LLM/"/>
+    <updated>2026-06-04T14:16:42.000Z</updated>
+    <summary type="html"><![CDATA[<h2>简述</h2>
+<p>一些与LLM进行的多轮对话, 或者是可供大语言模型使用的skill/prompt,不定期更新。</p>
+<ul>
+<li>文章存在（很大）一部分 使用 LLM 归纳后 <strong>不断反刍</strong> 才 <code>生成的 prompt</code> 的可能性，望知悉。</li>
+<li>文章存在一（小）部分 <code>复用</code> / <code>借鉴</code> / <code>CTRL+CV</code> 其他 LLM prompt/skill 的可能性，望知悉。</li>
+<li>文章存在没有（完全）整理就已经放置至台面的可能性，望知悉。</li>
+</ul>]]></summary>
+    <content type="html"><![CDATA[简述 一些与LLM进行的多轮对话, 或者是可供大语言模型使用的skill/prompt,不定期更新。 文章存在（很大）一部分 使用 LLM 归纳后 不断反刍 才 生成的 prompt 的可能性，望知悉。 文章存在一（小）部分 复用 / 借鉴 / CTRL+CV 其他 LLM prompt/skill 的可能性，望知悉。 文章存在没有（完全）整理就已经放...]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-07-01T00:44:34.890Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">中级热质传递文献报告批判框架</title>
+    <id>/wiki/concepts/Heat-Transfer-Literature-Report.html</id>
+    <link href="/wiki/concepts/Heat-Transfer-Literature-Report.html"/>
+    <updated>2026-06-04T03:27:07.000Z</updated>
+    <summary type="html"><![CDATA[
+<h2>概述</h2>
+<p>基于课程 <em>Intermediate Heat and Mass Transfer</em>（参考书：Kaviany《Heat Transfer Physics》、Reif《Fundamentals of Statistical and Thermal Physics》、Gang Chen《Nanoscale Energy Transport》）构建的文献报告写作框架，通过宏观 CFD 散热器优化与微观声子 BTE 的对比，揭示连续介质假设的适用边界。</p>
+<h2>核心论点</h2>
+<blockquote>
+<p>宏观鳍片优化算法（LMM、MMC）所寻求的最优构型，本质上是玻尔兹曼输运方程（BTE）在<strong>扩散极限</strong>（R 散射主导、局部热平衡）下的成功应用；当特征尺寸进入微米级（BTE 进入<strong>流体动力学窗口</strong>，<span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi mathvariant="normal">Λ</mi><mi>N</mi></msub><mo>≪</mo><mi>L</mi><mo>≪</mo><mi>L</mi><mi>a</mi><mi>m</mi><mi>b</mi><mi>d</mi><msub><mi>a</mi><mi>R</mi></msub></mrow><annotation encoding="application/x-tex">\Lambda_N \ll L \ll Lambda_R</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord">Λ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.109em;">N</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≪</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7224em;vertical-align:-0.0391em;"></span><span class="mord mathnormal">L</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≪</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8444em;vertical-align:-0.15em;"></span><span class="mord mathnormal">L</span><span class="mord mathnormal">amb</span><span class="mord mathnormal">d</span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.0077em;">R</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>）时，几何不对称性可通过调控边界黏性诱导声子集体漂移速度的方向依赖，产生宏观理论无法预测的<strong>热整流效应</strong>。</p>
+</blockquote>]]></summary>
+    <content type="html"><![CDATA[基于 Intermediate Heat and Mass Transfer 课程的跨尺度热输运批判性分析框架]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-06-03T00:00:00.000Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">Kimi META Prompt — VuePress Theme Hope Markdown Converter</title>
+    <id>/wiki/concepts/VuePress-Theme-Hope-Markdown-Converter.html</id>
+    <link href="/wiki/concepts/VuePress-Theme-Hope-Markdown-Converter.html"/>
+    <updated>2026-06-04T03:27:07.000Z</updated>
+    <summary type="html"><![CDATA[
+<h2>概述</h2>
+<p>Kimi K2.6 生成的 META Prompt，用于将 LLM 多轮对话的 <code>.docx</code> 文件转换为 VuePress Theme Hope v2.0.0-rc.107 兼容的 Markdown 格式。</p>
+<h2>输入输出</h2>
+<ul>
+<li><strong>传入文件名</strong>: <code>A.docx</code>（LLM 对话导出的 Word 文档）</li>
+<li><strong>输出文件名</strong>: 用户指定（如 <code>001_QA-report.md</code>）；若未指定则以 <code>0xx_QA-report.md</code> 占位</li>
+</ul>]]></summary>
+    <content type="html"><![CDATA[将 Kimi LLM 多轮对话的 .docx 记录转换为 VuePress Theme Hope 兼容 Markdown 的 META Prompt 模板]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-06-03T00:00:00.000Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">000-可被 Kimi Agent 复用的 &amp;quot;VuePress Theme Hope Markdown Converter&amp;quot; META Prompt</title>
+    <id>/postMortem/sp_for_LLM/000_prompt-VuePress-Theme-Hope-Markdown-Converter.html</id>
+    <link href="/postMortem/sp_for_LLM/000_prompt-VuePress-Theme-Hope-Markdown-Converter.html"/>
+    <updated>2026-06-04T14:16:42.000Z</updated>
+    <summary type="html"><![CDATA[<blockquote>
+<p>本文档为使用 Kimi 生成的 META Prompt，用于辅助将 <em>与AI间的多轮对话</em> （此处使用 <code>.docx</code> 文件）转换为 <em>可以与本博客的其他内容兼容</em> 的 Report，且默认最后必然存在 <em>prompt</em> 输出。需要针对不同的上传文件进行调整，调整范围包括但不限于 <strong>传入文件名</strong>， <strong>输出文件名</strong>等。</p>
+<p><strong>LLM生成模型</strong>: Kimi K2.6</p>
+</blockquote>
+<hr>]]></summary>
+    <content type="html"><![CDATA[本文档为使用 Kimi 生成的 META Prompt，用于辅助将 与AI间的多轮对话 （此处使用 .docx 文件）转换为 可以与本博客的其他内容兼容 的 Report，且默认最后必然存在 prompt 输出。需要针对不同的上传文件进行调整，调整范围包括但不限于 传入文件名， 输出文件名等。 LLM生成模型: Kimi K2.6]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <category term="LLM Prompt &amp; Skill"/>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-06-03T00:00:00.000Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">001-宏微热传递文献报告 —— LLM 协助生成与多轮对话记录</title>
+    <id>/postMortem/sp_for_LLM/001_QA-intermediate-heat-transfer-literature-report.html</id>
+    <link href="/postMortem/sp_for_LLM/001_QA-intermediate-heat-transfer-literature-report.html"/>
+    <updated>2026-06-04T14:16:42.000Z</updated>
+    <summary type="html"><![CDATA[<blockquote>
+<p>本文档为与 Kimi 的多轮对话记录，用于辅助撰写 <em>Intermediate Heat and Mass Transfer</em> 课程的 Literature Report。对话末尾附有可直接复用的完整英文 Prompt。</p>
+<p><strong>适用课程</strong>: Intermediate Heat and Mass Transfer<br>
+<strong>核心教材</strong>: Kaviany《Heat Transfer Physics》/ Reif《Fundamentals of Statistical and Thermal Physics》/ Gang Chen《Nanoscale Energy Transport and Conversion》<br>
+<strong>核心文献</strong>: Huang &amp; Chen (2022); Zhang et al. (2023); Zou et al. (2024)<br>
+<strong>生成模型</strong>: Kimi K2.6</p>
+</blockquote>]]></summary>
+    <content type="html"><![CDATA[本文档为与 Kimi 的多轮对话记录，用于辅助撰写 Intermediate Heat and Mass Transfer 课程的 Literature Report。对话末尾附有可直接复用的完整英文 Prompt。 适用课程: Intermediate Heat and Mass Transfer 核心教材: Kaviany《Heat Transfe...]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <category term="LLM Prompt &amp; Skill"/>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-06-03T00:00:00.000Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">JeacsonBlog Wiki</title>
+    <id>/wiki/</id>
+    <link href="/wiki/"/>
+    <updated>2026-07-01T00:43:49.000Z</updated>
+    <summary type="html"><![CDATA[
+<blockquote>
+<p>基于 Karpathy LLM Wiki 模式构建的个人知识库。以博客原始笔记为 source of truth，由 LLM Agent 增量维护。
+Last updated: 2026-07-01</p>
+</blockquote>
+<h2>Sources（知识域摘要）</h2>
+<p>按博客分类聚合的源笔记摘要，由 LLM 阅读对应 <code>docs/learningNote/</code> 下的笔记后生成/更新。</p>
+<ul>
+<li>[[./sources/JavaScript.md]] — JavaScript 语言核心与 Web API 笔记</li>
+<li>[[./sources/ROS2.md]] — ROS2 机器人操作系统，通信机制与工具</li>
+<li>[[./sources/Computer_Network.md]] — 计算机网络协议与原理</li>
+<li>[[./sources/Vue.md]] — Vue2 与 Vue3 框架笔记</li>
+<li>[[./sources/TypeScript.md]] — TypeScript 类型系统</li>
+<li>[[./sources/Coding_Skill.md]] — 通用编码技术与 VSCode 技巧</li>
+<li>[[./sources/Computer_Composition.md]] — 计算机组成原理</li>
+<li>[[./sources/Control_Theory.md]] — 自动控制原理与 S-Z 变换</li>
+<li>[[./sources/PostMortem.md]] — 踩坑心得与部署记录</li>
+</ul>]]></summary>
+    <content type="html"><![CDATA[JeacsonBlog Wiki 基于 Karpathy LLM Wiki 模式构建的个人知识库。以博客原始笔记为 source of truth，由 LLM Agent 增量维护。 Last updated: 2026-07-01 Sources（知识域摘要） 按博客分类聚合的源笔记摘要，由 LLM 阅读对应 docs/learningNote/ 下...]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-07-01T00:44:34.912Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">Wiki Log</title>
+    <id>/wiki/log.html</id>
+    <link href="/wiki/log.html"/>
+    <updated>2026-07-01T00:43:49.000Z</updated>
+    <summary type="html"><![CDATA[<h2>[2026-04-17] init | 初始化 Wiki 层</h2>
+<h2>[2026-04-17] ingest | docs/learningNote/JSNote/ — JavaScript 核心笔记</h2>
+<h2>[2026-04-17] ingest | docs/learningNote/Ros2_Note/ — ROS2 通信机制与工具</h2>
+<h2>[2026-04-17] ingest | docs/learningNote/Computer_Network/ — 计算机网络</h2>
+<h2>[2026-04-17] ingest | docs/learningNote/vueNote/ — Vue 框架</h2>]]></summary>
+    <content type="html"><![CDATA[[2026-04-17] init | 初始化 Wiki 层 [2026-04-17] ingest | docs/learningNote/JSNote/ — JavaScript 核心笔记 [2026-04-17] ingest | docs/learningNote/Ros2_Note/ — ROS2 通信机制与工具 [2026-04-17] i...]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-07-01T00:44:34.920Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">Array.reduce() 方法</title>
+    <id>/wiki/concepts/Reduce%E6%96%B9%E6%B3%95.html</id>
+    <link href="/wiki/concepts/Reduce%E6%96%B9%E6%B3%95.html"/>
+    <updated>2026-04-17T09:02:02.000Z</updated>
+    <summary type="html"><![CDATA[
+<p><code>reduce()</code> 是 JavaScript 内置的数组方法，用于将数组中的所有元素按顺序&quot;压缩&quot;为一个值。</p>
+<h2>基本语法</h2>
+<div class="language-javascript line-numbers-mode" data-highlighter="shiki" data-ext="javascript" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-javascript"><span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">const</span><span style="--shiki-light:#986801;--shiki-dark:#E5C07B"> result</span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2"> =</span><span style="--shiki-light:#383A42;--shiki-dark:#E5C07B"> arr</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">reduce</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">((</span><span style="--shiki-light:#383A42;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">prev</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">, </span><span style="--shiki-light:#383A42;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">cur</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">, </span><span style="--shiki-light:#383A42;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">index</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">, </span><span style="--shiki-light:#383A42;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">arr</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">) </span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">=></span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    // 返回值会作为下一次调用的 prev</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">}, </span><span style="--shiki-light:#383A42;--shiki-dark:#E06C75">initialValue</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></summary>
+    <content type="html"><![CDATA[JavaScript 数组方法，将数组元素按顺序累加为单个值]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-07-01T00:44:34.921Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">Symbol 类型</title>
+    <id>/wiki/concepts/Symbol.html</id>
+    <link href="/wiki/concepts/Symbol.html"/>
+    <updated>2026-04-17T09:02:02.000Z</updated>
+    <summary type="html"><![CDATA[
+<p><code>Symbol</code> 是 ES6 引入的新原始数据类型，表示独一无二的值，是 JavaScript 的第七种数据类型。</p>
+<h2>基本特性</h2>
+<ol>
+<li><strong>独一无二</strong>：<code>Symbol('a') === Symbol('a')</code> 返回 <code>false</code></li>
+<li><strong>不能用 new 创建</strong>：不是包装对象，直接 <code>Symbol()</code> 调用</li>
+<li><strong>可带描述</strong>：可选参数 <code>description</code> 用于调试输出</li>
+<li><strong>不可枚举</strong>：不会出现在 <code>for...in</code> 循环中</li>
+</ol>]]></summary>
+    <content type="html"><![CDATA[ES6 引入的第七种原始数据类型，表示独一无二的值]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-07-01T00:44:34.922Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">TCP 与 UDP 对比</title>
+    <id>/wiki/concepts/TCP%E4%B8%8EUDP.html</id>
+    <link href="/wiki/concepts/TCP%E4%B8%8EUDP.html"/>
+    <updated>2026-04-17T11:35:40.000Z</updated>
+    <summary type="html"><![CDATA[
+<p>TCP 和 UDP 是传输层的两大核心协议。</p>
+<h2>对比</h2>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>TCP</th>
+<th>UDP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>连接性</td>
+<td>面向连接</td>
+<td>无连接</td>
+</tr>
+<tr>
+<td>可靠性</td>
+<td>可靠（重传、确认）</td>
+<td>不可靠</td>
+</tr>
+<tr>
+<td>有序性</td>
+<td>保证顺序</td>
+<td>不保证</td>
+</tr>
+<tr>
+<td>拥塞控制</td>
+<td>有</td>
+<td>无</td>
+</tr>
+<tr>
+<td>头部大小</td>
+<td>20~60 字节</td>
+<td>8 字节</td>
+</tr>
+<tr>
+<td>速度</td>
+<td>较慢</td>
+<td>快</td>
+</tr>
+<tr>
+<td>使用场景</td>
+<td>HTTP, SMTP, SSH</td>
+<td>DNS, DHCP, 视频流</td>
+</tr>
+</tbody>
+</table>]]></summary>
+    <content type="html"><![CDATA[传输层两大协议的区别：可靠连接 vs 实时性]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-07-01T00:44:34.922Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">从输入 URL 到页面显示的完整流程</title>
+    <id>/wiki/concepts/URL%E5%88%B0%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BA.html</id>
+    <link href="/wiki/concepts/URL%E5%88%B0%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BA.html"/>
+    <updated>2026-04-17T09:02:02.000Z</updated>
+    <summary type="html"><![CDATA[
+<p>这是计算机网络最经典的综合问题之一，考察对各层协议的理解。</p>
+<h2>完整流程</h2>
+<ol>
+<li>
+<p><strong>DNS 解析</strong></p>
+<ul>
+<li>浏览器缓存 → 系统缓存 → DNS 服务器查询</li>
+<li>域名 → IP 地址</li>
+</ul>
+</li>
+<li>
+<p><strong>TCP 三次握手</strong></p>
+<ul>
+<li>SYN → SYN-ACK → ACK</li>
+<li>建立可靠连接</li>
+</ul>
+</li>
+<li>
+<p><strong>HTTP 请求/响应</strong></p>
+<ul>
+<li>浏览器发送 GET 请求</li>
+<li>服务器返回 HTML</li>
+</ul>
+</li>
+<li>
+<p><strong>浏览器渲染</strong></p>
+<ul>
+<li>HTML 解析 → DOM 树构建</li>
+<li>CSS 解析 → CSSOM</li>
+<li>JS 执行 → DOM 更新</li>
+<li>渲染树 → 布局 → 绘制</li>
+</ul>
+</li>
+</ol>]]></summary>
+    <content type="html"><![CDATA[DNS → TCP → HTTP → 渲染的完整网络流程]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-07-01T00:44:34.923Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">函数柯里化</title>
+    <id>/wiki/concepts/%E5%87%BD%E6%95%B0%E6%9F%AF%E9%87%8C%E5%8C%96.html</id>
+    <link href="/wiki/concepts/%E5%87%BD%E6%95%B0%E6%9F%AF%E9%87%8C%E5%8C%96.html"/>
+    <updated>2026-04-17T09:02:02.000Z</updated>
+    <summary type="html"><![CDATA[
+<p>将接受多个参数的函数改造为接受单个参数、返回接受下一个参数的函数，直至返回最终结果。</p>
+<h2>示例</h2>
+<div class="language-javascript line-numbers-mode" data-highlighter="shiki" data-ext="javascript" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-javascript"><span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// 普通函数</span></span>
+<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">function</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> add</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#383A42;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">a</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">, </span><span style="--shiki-light:#383A42;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">b</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">, </span><span style="--shiki-light:#383A42;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">c</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">) { </span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">return</span><span style="--shiki-light:#383A42;--shiki-dark:#E06C75"> a</span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2"> +</span><span style="--shiki-light:#383A42;--shiki-dark:#E06C75"> b</span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2"> +</span><span style="--shiki-light:#383A42;--shiki-dark:#E06C75"> c</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> }</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// 柯里化后</span></span>
+<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">function</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> addCurry</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#383A42;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">a</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">) {</span></span>
+<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">    return</span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD"> function</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#383A42;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">b</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">) {</span></span>
+<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">        return</span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD"> function</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#383A42;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">c</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">) {</span></span>
+<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">            return</span><span style="--shiki-light:#383A42;--shiki-dark:#E06C75"> a</span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2"> +</span><span style="--shiki-light:#383A42;--shiki-dark:#E06C75"> b</span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2"> +</span><span style="--shiki-light:#383A42;--shiki-dark:#E06C75"> c</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">        }</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">    }</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">addCurry</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">1</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)(</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">2</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)(</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">3</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">) </span><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// 6</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></summary>
+    <content type="html"><![CDATA[将多参数函数改造为链式单参数调用的编程技巧]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-07-01T00:44:34.924Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">ROS2 分布式通信</title>
+    <id>/wiki/concepts/%E5%88%86%E5%B8%83%E5%BC%8F%E9%80%9A%E4%BF%A1.html</id>
+    <link href="/wiki/concepts/%E5%88%86%E5%B8%83%E5%BC%8F%E9%80%9A%E4%BF%A1.html"/>
+    <updated>2026-04-17T09:02:02.000Z</updated>
+    <summary type="html"><![CDATA[
+<p>ROS2 基于 DDS（Data Distribution Service）实现分布式通信，同一局域网内的不同主机可以通过配置 ROS_DOMAIN_ID 实现节点发现和数据交互。</p>
+<h2>域ID机制</h2>
+<ul>
+<li>默认域ID = 0</li>
+<li>不同域ID 的节点互相不可见</li>
+<li>通过设置环境变量 <code>ROS_DOMAIN_ID</code> 改变域</li>
+</ul>
+<h2>与话题通信的关系</h2>
+<p>分布式通信本质上是将话题通信扩展到网络层面，仍然遵循发布/订阅模式。</p>
+<h2>相关</h2>
+<ul>
+<li>[[../entities/ROS2.md]]</li>
+<li>[[../concepts/话题通信.md]]</li>
+</ul>]]></summary>
+    <content type="html"><![CDATA[通过 DDS 域ID机制实现跨设备 ROS2 节点通信]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-07-01T00:44:34.924Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">ROS2 坐标变换</title>
+    <id>/wiki/concepts/%E5%9D%90%E6%A0%87%E5%8F%98%E6%8D%A2.html</id>
+    <link href="/wiki/concepts/%E5%9D%90%E6%A0%87%E5%8F%98%E6%8D%A2.html"/>
+    <updated>2026-04-17T09:02:02.000Z</updated>
+    <summary type="html"><![CDATA[
+<p>坐标变换是机器人学中的核心概念，ROS2 通过 tf2 库实现。</p>
+<h2>核心消息类型</h2>
+<ul>
+<li><strong>TransformStamped</strong> — 描述两个坐标系之间的变换关系（平移+旋转）</li>
+<li><strong>PointStamped</strong> — 带时间戳的点坐标</li>
+</ul>
+<h2>通信双方</h2>
+<ul>
+<li><strong>广播方 (Broadcaster)</strong> — 发布坐标变换关系</li>
+<li><strong>监听方 (Listener)</strong> — 订阅并使用坐标变换</li>
+</ul>]]></summary>
+    <content type="html"><![CDATA[tf2 系统实现机器人坐标系变换，TransformStamped 与 PointStamped 消息]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-07-01T00:44:34.925Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">ROS2 话题通信</title>
+    <id>/wiki/concepts/%E8%AF%9D%E9%A2%98%E9%80%9A%E4%BF%A1.html</id>
+    <link href="/wiki/concepts/%E8%AF%9D%E9%A2%98%E9%80%9A%E4%BF%A1.html"/>
+    <updated>2026-04-17T09:02:02.000Z</updated>
+    <summary type="html"><![CDATA[
+<p>话题通信是 ROS2 中最常用的通信方式，采用发布/订阅（Publish-Subscribe）模式。</p>
+<h2>工作原理</h2>
+<div class="language- line-numbers-mode" data-highlighter="shiki" data-ext style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-"><span class="line"><span>发布方(Publisher) --> 话题(Topic) --> 订阅方(Subscriber)</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div>]]></summary>
+    <content type="html"><![CDATA[Topic-based publish/subscribe 通信模式，单向多对多数据流]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-07-01T00:44:34.925Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">计算机网络</title>
+    <id>/wiki/entities/Computer_Network.html</id>
+    <link href="/wiki/entities/Computer_Network.html"/>
+    <updated>2026-04-17T09:02:02.000Z</updated>
+    <summary type="html"><![CDATA[
+<p>计算机网络是计算机科学的基础领域之一，博客以 <em>Computer Networking: A Top-Down Approach</em> 教材为主参考。</p>
+<h2>五层模型</h2>
+<table>
+<thead>
+<tr>
+<th>层次</th>
+<th>主要协议</th>
+<th>主要设备</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>应用层</td>
+<td>HTTP, DNS, SMTP</td>
+<td>—</td>
+</tr>
+<tr>
+<td>传输层</td>
+<td>TCP, UDP</td>
+<td>—</td>
+</tr>
+<tr>
+<td>网络层</td>
+<td>IP, ICMP, OSPF</td>
+<td>路由器</td>
+</tr>
+<tr>
+<td>链路层</td>
+<td>Ethernet, PPP</td>
+<td>交换机</td>
+</tr>
+<tr>
+<td>物理层</td>
+<td>光/电信号</td>
+<td>集线器</td>
+</tr>
+</tbody>
+</table>]]></summary>
+    <content type="html"><![CDATA[计算机网络协议与原理，TCP/IP 五层模型，Kurose & Ross 教材]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-07-01T00:44:34.926Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">JavaScript</title>
+    <id>/wiki/entities/JavaScript.html</id>
+    <link href="/wiki/entities/JavaScript.html"/>
+    <updated>2026-04-17T09:02:02.000Z</updated>
+    <summary type="html"><![CDATA[
+<p>JavaScript 是一门多范式编程语言，是 Web 开发的三大核心技术之一（HTML + CSS + JavaScript）。</p>
+<h2>基本信息</h2>
+<ul>
+<li><strong>类型</strong>：高级、动态、解释型语言</li>
+<li><strong>数据类型</strong>：7 种原始类型（undefined, null, boolean, string, number, symbol, bigint）+ object</li>
+<li><strong>运行时</strong>：浏览器、V8 引擎、Node.js</li>
+</ul>
+<h2>核心知识点</h2>]]></summary>
+    <content type="html"><![CDATA[JavaScript 编程语言，Web 开发核心语言，ES6+ 现代特性]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-07-01T00:44:34.927Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">ROS2</title>
+    <id>/wiki/entities/ROS2.html</id>
+    <link href="/wiki/entities/ROS2.html"/>
+    <updated>2026-04-17T09:02:02.000Z</updated>
+    <summary type="html"><![CDATA[
+<p>ROS2 (Robot Operating System 2) 是一个用于机器人软件开发的开源中间件框架，基于 DDS（Data Distribution Service）实现分布式通信。</p>
+<h2>基本信息</h2>
+<ul>
+<li><strong>当前 LTS 版本</strong>：Jazzy Jalisco</li>
+<li><strong>依赖系统</strong>：Ubuntu 24.04 (ROS2 Jazzy)</li>
+<li><strong>硬件</strong>：Raspberry Pi 5B (4GB) 作为主要测试平台</li>
+</ul>
+<h2>四大通信机制</h2>]]></summary>
+    <content type="html"><![CDATA[Robot Operating System 2，机器人操作系统，支持分布式通信]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-07-01T00:44:34.928Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">TypeScript</title>
+    <id>/wiki/entities/TypeScript.html</id>
+    <link href="/wiki/entities/TypeScript.html"/>
+    <updated>2026-04-17T09:02:02.000Z</updated>
+    <summary type="html"><![CDATA[
+<p>TypeScript 是 JavaScript 的超集，添加了静态类型系统和面向对象特性，广泛用于大型前端项目。</p>
+<h2>与 JavaScript 的关系</h2>
+<ul>
+<li>TypeScript 代码需编译为 JavaScript 运行</li>
+<li>所有 JavaScript 代码都是合法的 TypeScript 代码（可选类型标注）</li>
+<li>Vue3 全面采用 TypeScript 重写</li>
+</ul>
+<h2>核心特性</h2>
+<ul>
+<li>静态类型（编译时检查）</li>
+<li>接口（Interface）与类型别名（Type Alias）</li>
+<li>泛型（Generics）</li>
+<li>装饰器（Decorators）</li>
+</ul>]]></summary>
+    <content type="html"><![CDATA[JavaScript 的超集，提供静态类型系统]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-07-01T00:44:34.929Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">Vue</title>
+    <id>/wiki/entities/Vue.html</id>
+    <link href="/wiki/entities/Vue.html"/>
+    <updated>2026-04-17T09:02:02.000Z</updated>
+    <summary type="html"><![CDATA[
+<p>Vue.js 是一款渐进式 JavaScript 框架，用于构建单页应用（SPA）和 Web 界面。博客同时记录了 Vue2 和 Vue3 的学习内容。</p>
+<h2>Vue2 vs Vue3</h2>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>Vue2</th>
+<th>Vue3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>响应式原理</td>
+<td>Object.defineProperty</td>
+<td>Proxy</td>
+</tr>
+<tr>
+<td>API 风格</td>
+<td>Options API</td>
+<td>Composition API</td>
+</tr>
+<tr>
+<td>打包大小</td>
+<td>基准</td>
+<td>减少 41%</td>
+</tr>
+<tr>
+<td>初始渲染速度</td>
+<td>基准</td>
+<td>快 55%</td>
+</tr>
+<tr>
+<td>多根节点</td>
+<td>不支持</td>
+<td>支持 (Fragment)</td>
+</tr>
+<tr>
+<td>状态管理</td>
+<td>Vuex</td>
+<td>Pinia（推荐）</td>
+</tr>
+</tbody>
+</table>]]></summary>
+    <content type="html"><![CDATA[渐进式 JavaScript 框架，用于构建 Web 用户界面，Vue2 与 Vue3 并存]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-07-01T00:44:34.930Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">Web 开发</title>
+    <id>/wiki/entities/Web.html</id>
+    <link href="/wiki/entities/Web.html"/>
+    <updated>2026-04-17T09:02:02.000Z</updated>
+    <summary type="html"><![CDATA[
+<p>Web 开发是互联网应用构建的实践领域，涵盖前端、后端、网络协议等多个方面。</p>
+<h2>技术栈</h2>
+<h3>前端</h3>
+<ul>
+<li>HTML / CSS / JavaScript</li>
+<li>框架：[[../entities/Vue.md]]、React、Angular</li>
+<li>构建工具：Vite、Webpack</li>
+</ul>
+<h3>通信协议</h3>
+<ul>
+<li><strong>HTTP/HTTPS</strong> — Web 基础协议</li>
+<li><strong>DNS</strong> — 域名解析</li>
+<li><strong>TCP/IP</strong> — 传输控制协议</li>
+<li>参考：[[../entities/Computer_Network.md]]</li>
+</ul>]]></summary>
+    <content type="html"><![CDATA[Web 前端与后端技术栈，包括 HTML/CSS/JavaScript、HTTP 协议、DNS 等]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-07-01T00:44:34.930Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">编码技术知识域摘要</title>
+    <id>/wiki/sources/Coding_Skill.html</id>
+    <link href="/wiki/sources/Coding_Skill.html"/>
+    <updated>2026-04-20T00:45:41.000Z</updated>
+    <summary type="html"><![CDATA[
+<p>本目录对应 <code>docs/learningNote/coding_skill/</code>，收集通用编码技能，非特定语言或框架。</p>
+<h2>主要内容</h2>
+<ul>
+<li><strong>VSCode 代码片段设置</strong> — 自定义 Snippet，减少重复代码</li>
+<li>设计模式基础</li>
+<li>API 文档的撰写与阅读</li>
+<li>通用编码思维</li>
+</ul>
+<h2>相关笔记</h2>
+<ul>
+<li><code>2024_09_23.md</code> — VSCode 自定义代码片段（以 ROS2 C++ 代码为例）</li>
+</ul>]]></summary>
+    <content type="html"><![CDATA[通用编程技能，包括设计模式、API文档撰写、VSCode 技巧、代码片段]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-07-01T00:44:34.931Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">计算机组成原理知识域摘要</title>
+    <id>/wiki/sources/Computer_Composition.html</id>
+    <link href="/wiki/sources/Computer_Composition.html"/>
+    <updated>2026-04-17T09:02:02.000Z</updated>
+    <summary type="html"><![CDATA[
+<p>本目录对应 <code>docs/learningNote/Principles_of_Computer_Composition/</code>。</p>
+<h2>主要内容</h2>
+<h3>机器数 (Machine Number)</h3>
+<ul>
+<li>二进制数在计算机中的表示</li>
+<li>无精度损失的表示形式</li>
+</ul>
+<h3>IEEE-754 浮点数标准</h3>
+<ul>
+<li>单精度（32位）：偏移量 bias = 127</li>
+<li>双精度（64位）：偏移量 bias = 1023</li>
+<li>特殊值：+0/-0，正负无穷，NaN</li>
+<li>在线转换器：https://www.h-schmidt.net/FloatConverter/IEEE754</li>
+</ul>]]></summary>
+    <content type="html"><![CDATA[计算机底层原理，包括机器数、IEEE-754 浮点数标准]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-07-01T00:44:34.931Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">计算机网络知识域摘要</title>
+    <id>/wiki/sources/Computer_Network.html</id>
+    <link href="/wiki/sources/Computer_Network.html"/>
+    <updated>2026-04-20T00:46:04.000Z</updated>
+    <summary type="html"><![CDATA[
+<p>本目录对应 <code>docs/learningNote/Computer_Network/</code>，以教材 <em>Computer Networking: A Top-Down Approach</em> (Kurose &amp; Ross, 7th Ed.) 为主参考。</p>
+<h2>核心主题</h2>
+<h3>协议与层次模型</h3>
+<ul>
+<li><strong>TCP/IP 五层模型</strong> — 应用层 → 传输层 → 网络层 → 链路层 → 物理层</li>
+<li><strong>TCP vs UDP</strong> — 可靠 vs 不可靠，面向连接 vs 无连接，拥塞控制 vs 无控制</li>
+<li><strong>HTTP/SMTP/DNS</strong> — 应用层主要协议</li>
+</ul>]]></summary>
+    <content type="html"><![CDATA[计算机网络原理与协议学习笔记，参考《Computer Networking: A Top-Down Approach》]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-07-01T00:44:34.932Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">自动控制原理知识域摘要</title>
+    <id>/wiki/sources/Control_Theory.html</id>
+    <link href="/wiki/sources/Control_Theory.html"/>
+    <updated>2026-04-17T09:02:02.000Z</updated>
+    <summary type="html"><![CDATA[
+<p>本目录对应 <code>docs/learningNote/Principles_of_Automatic_Control_Related/</code>。</p>
+<h2>主要内容</h2>
+<h3>S-Z 变换表</h3>
+<p>连续时间拉普拉斯变换（F(s)）与离散时间 Z 变换（F(z)）的对照表，包括：</p>
+<ul>
+<li>单位冲激 δ(t)</li>
+<li>单位阶跃 u(t)</li>
+<li>斜坡函数 t</li>
+<li -at>指数函数 e^</li>
+<li>几何序列 a^k</li>
+</ul>
+<h3>常用变换公式</h3>
+<table>
+<thead>
+<tr>
+<th>时域 f(t)</th>
+<th>拉普拉斯 F(s)</th>
+<th>Z域 F(z)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>δ(t)</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>u(t)</td>
+<td>1/s</td>
+<td>z/(z-1)</td>
+</tr>
+<tr>
+<td -at>e^</td>
+<td>1/(s+a)</td>
+<td>z/(z-e^{-aT})</td>
+</tr>
+</tbody>
+</table>]]></summary>
+    <content type="html"><![CDATA[经典控制理论笔记，包含 S-Z 变换表、连续与离散系统分析]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-07-01T00:44:34.933Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">JavaScript 知识域摘要</title>
+    <id>/wiki/sources/JavaScript.html</id>
+    <link href="/wiki/sources/JavaScript.html"/>
+    <updated>2026-04-17T09:02:02.000Z</updated>
+    <summary type="html"><![CDATA[
+<p>本目录对应 <code>docs/learningNote/JSNote/</code>，收录 JavaScript/ES6+ 语言核心知识点笔记。</p>
+<h2>涵盖主题</h2>
+<h3>数据类型与 API</h3>
+<ul>
+<li><strong>Symbol</strong> — ES6 引入的第七种原始数据类型，表示独一无二的值，不可使用 new 关键字创建</li>
+<li><strong>Array.reduce()</strong> — 数组内置方法，用于将数组元素按顺序累加为单个值，支持 InitialValue</li>
+</ul>
+<h3>函数与高级概念</h3>]]></summary>
+    <content type="html"><![CDATA[JavaScript 语言核心概念与 Web 开发相关笔记]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-07-01T00:44:34.933Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">踩坑心得知识域摘要</title>
+    <id>/wiki/sources/PostMortem.html</id>
+    <link href="/wiki/sources/PostMortem.html"/>
+    <updated>2026-07-01T00:43:49.000Z</updated>
+    <summary type="html"><![CDATA[
+<p>本目录对应 <code>docs/postMortem/</code>，记录实际开发和部署中遇到的问题及解决方案。</p>
+<h2>主要内容</h2>
+<h3>部署 (deploy)</h3>
+<ul>
+<li>VuePress 博客部署流程</li>
+<li>GitHub Pages / VPS 部署</li>
+<li>环境配置问题</li>
+<li><strong>LeanCloud → Neon PostgreSQL Waline 评论数据迁移</strong>（deploy/005 新增）— LeanCloud 2027 年停止服务后的 4 步迁移：导出 JSONL → Vercel 创建 Neon + 建表 → waline-data-import-tool 上传 → Redeploy；含 LeanCloud Date 字段格式转换 Python 脚本</li>
+</ul>]]></summary>
+    <content type="html"><![CDATA[部署与开发中的实际问题记录与解决方案]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-07-01T00:44:34.934Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">ROS2 知识域摘要</title>
+    <id>/wiki/sources/ROS2.html</id>
+    <link href="/wiki/sources/ROS2.html"/>
+    <updated>2026-04-20T00:45:38.000Z</updated>
+    <summary type="html"><![CDATA[
+<p>本目录对应 <code>docs/learningNote/Ros2_Note/</code>，以 ROS2 Jazzy + Ubuntu 24.04 为环境，记录机器人操作系统学习笔记。</p>
+<h2>硬件环境</h2>
+<ul>
+<li>Raspberry Pi 5B (4GB)</li>
+<li>ROS2 Jazzy Jalisco LTS</li>
+<li>Ubuntu 24.04.3 LTS</li>
+</ul>
+<h2>涵盖内容</h2>
+<h3>通信机制（核心）</h3>
+<ul>
+<li><strong>话题通信 (Topics)</strong> — 发布/订阅模式，单向数据流，支持多对多关系，用于持续更新的数据</li>
+<li><strong>服务通信 (Services)</strong> — 请求/应答模式，一对一同步通信</li>
+<li><strong>动作通信 (Actions)</strong> — 长期任务，支持中途取消和反馈</li>
+<li><strong>参数服务 (Parameters)</strong> — 节点配置参数的管理与读写</li>
+</ul>]]></summary>
+    <content type="html"><![CDATA[ROS2 机器人操作系统学习笔记，涵盖通信机制、坐标变换、工具使用]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-07-01T00:44:34.935Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">TypeScript 知识域摘要</title>
+    <id>/wiki/sources/TypeScript.html</id>
+    <link href="/wiki/sources/TypeScript.html"/>
+    <updated>2026-04-17T09:02:02.000Z</updated>
+    <summary type="html"><![CDATA[
+<p>本目录对应 <code>docs/learningNote/TypeScriptNote/</code>，以学习日期分章节（第一天～第五天），涵盖 TypeScript 入门与进阶内容。</p>
+<h2>主要内容</h2>
+<ul>
+<li>TypeScript 类型基础（静态类型、类型注解、类型推断）</li>
+<li>接口（Interface）与类型别名（Type Alias）</li>
+<li>泛型（Generics）</li>
+<li>高级类型（联合类型、交叉类型、映射类型）</li>
+<li>装饰器（Decorators）</li>
+<li>TypeScript 在 Vue3 中的应用</li>
+</ul>]]></summary>
+    <content type="html"><![CDATA[TypeScript 类型系统学习笔记，按学习日期分为五天]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-07-01T00:44:34.935Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">Vue 知识域摘要</title>
+    <id>/wiki/sources/Vue.html</id>
+    <link href="/wiki/sources/Vue.html"/>
+    <updated>2026-04-17T09:02:02.000Z</updated>
+    <summary type="html"><![CDATA[
+<p>本目录对应 <code>docs/learningNote/vueNote/</code>，包含 Vue2 和 Vue3 的学习笔记。</p>
+<h2>Vue3 新特性</h2>
+<ul>
+<li><strong>性能提升</strong> — 打包体积减少 41%，初次渲染快 55%</li>
+<li><strong>Composition API</strong> — 组合式 API，逻辑复用更强</li>
+<li><strong>数据响应式重写</strong> — Proxy 替代 Object.defineProperty，支持嵌套对象和数组</li>
+<li><strong>新组件</strong> — Fragment、Teleport、Suspense</li>
+<li><strong>更好的 TypeScript 支持</strong></li>
+<li><strong>Vite</strong> — 新一代构建工具</li>
+</ul>]]></summary>
+    <content type="html"><![CDATA[Vue2 与 Vue3 框架学习笔记，涵盖数据响应式、组件系统、路由、状态管理]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-07-01T00:44:34.936Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">ROS2-Z02-ROS2工具：坐标变换（EXEC2）乌龟护航案例实战</title>
+    <id>/learningNote/Ros2_Note/coor_trans/2026_02_13.html</id>
+    <link href="/learningNote/Ros2_Note/coor_trans/2026_02_13.html"/>
+    <updated>2026-02-13T03:00:43.000Z</updated>
+    <summary type="html"><![CDATA[<h2>简介</h2>
+<p>本章节主要介绍如何实现 “乌龟护航” 案例。里面的大部分代码会沿用<a href="/learningNote/Ros2_Note/coor_trans/2026_02_09.html" target="_blank">上一章节，即ROS2-Z01-ROS2工具：坐标变换（EXEC1）乌龟跟随案例实战</a>内的相关代码内容。因此建议先尝试实现上一章节的效果，再来进行本章节的实战。</p>
+<h2>案例需求&amp;分析</h2>
+<p><strong>需求：</strong> 基于上一章节要求编写程序实现，以 <code>turtlesim_node</code> 节点的原生乌龟（<code>turtle1</code>）为几何中心，生成多只新的乌龟（以三只为例，即<code>turtle2</code>、<code>turtle3</code>、<code>turtle4</code>）。要求在 <code>turtle1</code> 无论是静止或是被键盘控制运动时，<code>turtle2</code> 都会以 <code>turtle1</code> 的几何中心为目标并以某种队形对其进行护航。</p>]]></summary>
+    <content type="html"><![CDATA[简介 本章节主要介绍如何实现 “乌龟护航” 案例。里面的大部分代码会沿用内的相关代码内容。因此建议先尝试实现上一章节的效果，再来进行本章节的实战。 案例需求&amp;分析 需求： 基于上一章节要求编写程序实现，以 turtlesim_node 节点的原生乌龟（turtle1）为几何中心，生成多只新的乌龟（以三只为例，即turtle2、turtle3、t...]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <category term="Computer"/>
+    <category term="robot"/>
+    <category term="ROS"/>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-02-13T00:00:00.000Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+  <entry>
+    <title type="text">ROS2-Z01-ROS2工具：坐标变换（EXEC1）乌龟跟随案例实战</title>
+    <id>/learningNote/Ros2_Note/coor_trans/2026_02_09.html</id>
+    <link href="/learningNote/Ros2_Note/coor_trans/2026_02_09.html"/>
+    <updated>2026-02-11T08:08:26.000Z</updated>
+    <summary type="html"><![CDATA[<h2>简介</h2>
+<p>本章节主要介绍如何实现 “乌龟跟随” 案例。</p>
+<h2>案例需求&amp;分析</h2>
+<p><strong>需求：</strong> 编写程序实现，程序运行后会启动 <code>turtlesim_node</code> 节点，该节点会生成一个窗口，窗口中有一只原生乌龟（<code>turtle1</code>），紧接着再生成一只新的乌龟（<code>turtle2</code>）。要求在 <code>turtle1</code> 无论是静止或是被键盘控制运动时，<code>turtle2</code> 都会以 <code>turtle1</code> 为目标并向其几何中心运动。</p>]]></summary>
+    <content type="html"><![CDATA[简介 本章节主要介绍如何实现 “乌龟跟随” 案例。 案例需求&amp;分析 需求： 编写程序实现，程序运行后会启动 turtlesim_node 节点，该节点会生成一个窗口，窗口中有一只原生乌龟（turtle1），紧接着再生成一只新的乌龟（turtle2）。要求在 turtle1 无论是静止或是被键盘控制运动时，turtle2 都会以 turtle1 ...]]></content>
+    <author>
+      <name>xxx</name>
+    </author>
+    <category term="Computer"/>
+    <category term="robot"/>
+    <category term="ROS"/>
+    <contributor>
+      <name>xxx</name>
+    </contributor>
+    <published>2026-02-09T00:00:00.000Z</published>
+    <rights>Copyright by xxx</rights>
+  </entry>
+</feed>

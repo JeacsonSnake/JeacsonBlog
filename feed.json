@@ -1,0 +1,788 @@
+{
+  "version": "https://jsonfeed.org/version/1.1",
+  "title": "JeacsonBlog",
+  "home_page_url": "https://blog.jeacsonsnake.com/",
+  "feed_url": "https://blog.jeacsonsnake.com/feed.json",
+  "description": "JeacsonBlog-一个简单的博客",
+  "icon": "https://blog.jeacsonsnake.com/assets/img/logo.png",
+  "favicon": "https://blog.jeacsonsnake.com/assets/img/favicon.ico",
+  "items": [
+    {
+      "title": "Edge 浏览器「使用安全的 DNS」选项的副作用与排查",
+      "url": "/wiki/concepts/Edge-Secure-DNS-Gotcha.html",
+      "id": "/wiki/concepts/Edge-Secure-DNS-Gotcha.html",
+      "summary": "不要随意修改 Microsoft Edge 的「使用安全的 DNS」选项：会导致 curl 缓存错误 IP、TCP 三次握手成功但 ClientHello 后 RST 的诡异断网现象",
+      "content_html": "不要随意修改 Microsoft Edge 的「使用安全的 DNS」选项：会导致 curl 缓存错误 IP、TCP 三次握手成功但 ClientHello 后 RST 的诡异断网现象",
+      "date_published": "2026-07-01T00:44:34.983Z",
+      "date_modified": "2026-07-01T00:43:49.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "LeanCloud 迁移至 Neon PostgreSQL（Waline 评论数据）",
+      "url": "/wiki/concepts/LeanCloud-to-Neon-Migration.html",
+      "id": "/wiki/concepts/LeanCloud-to-Neon-Migration.html",
+      "summary": "LeanCloud 2027 年停止对外服务后，Waline 评论数据从 LeanCloud 导出 → 格式转换 → 导入 Neon PostgreSQL 的完整迁移流程（Vercel 集成）",
+      "content_html": "LeanCloud 2027 年停止对外服务后，Waline 评论数据从 LeanCloud 导出 → 格式转换 → 导入 Neon PostgreSQL 的完整迁移流程（Vercel 集成）",
+      "date_published": "2026-07-01T00:44:34.983Z",
+      "date_modified": "2026-07-01T00:43:49.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "005_博客评论区专用数据库从 leancloud 迁移至 Neon PostgreSQL 相关问题",
+      "url": "/postMortem/deploy/005_leancloud_migrate_neon_relate.html",
+      "id": "/postMortem/deploy/005_leancloud_migrate_neon_relate.html",
+      "summary": "LeanCloud 于 2026 年 1 月 12 日 发布公告，说明其将于 2027 年 1 月 12 日 正式停止对外服务。因此本博客在 2026 年 6 月 29 日 将 LeanCloud 中的相关评论数据导出和切换到了 Neon PostgreSQL 以进行后续使用。在参考 更新后 的官方文档后，做出以下完整迁移步骤（注：必须按照顺序进行操作...",
+      "content_html": "LeanCloud 于 2026 年 1 月 12 日 发布公告，说明其将于 2027 年 1 月 12 日 正式停止对外服务。因此本博客在 2026 年 6 月 29 日 将 LeanCloud 中的相关评论数据导出和切换到了 Neon PostgreSQL 以进行后续使用。在参考 更新后 的官方文档后，做出以下完整迁移步骤（注：必须按照顺序进行操作...",
+      "date_published": "2026-06-29T00:00:00.000Z",
+      "date_modified": "2026-06-30T02:11:44.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "deploy"
+      ]
+    },
+    {
+      "title": "不要随意修改 edge 浏览器里的 “使用安全的 DNS” 选项",
+      "url": "/postMortem/sp_for_LLM/2026_06_29.html",
+      "id": "/postMortem/sp_for_LLM/2026_06_29.html",
+      "summary": "永远不要随意修改 edge 浏览器里的 “使用安全的 DNS” 选项。（扶额） 从香港回内地之后，发现有自己的电脑有特定的网址打不开，但是其他设备是可以打开该特定的网址的。于是就在猜可能是电脑又出现了各种网络问题，之前刚来香港的时候也有出现类似的问题，但是当时搞了半天最后做出的修复步骤是重装系统（ 我想着要是这一次还是得重装系统就太麻烦了。然后和 GP...",
+      "content_html": "永远不要随意修改 edge 浏览器里的 “使用安全的 DNS” 选项。（扶额） 从香港回内地之后，发现有自己的电脑有特定的网址打不开，但是其他设备是可以打开该特定的网址的。于是就在猜可能是电脑又出现了各种网络问题，之前刚来香港的时候也有出现类似的问题，但是当时搞了半天最后做出的修复步骤是重装系统（ 我想着要是这一次还是得重装系统就太麻烦了。然后和 GP...",
+      "date_published": "2026-06-23T00:00:00.000Z",
+      "date_modified": "2026-06-30T02:11:44.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "AI Daily Briefing Cron Job Brotli 流截断故障排查与模型切换修复",
+      "url": "/wiki/concepts/AI-Daily-Briefing-Brotli-Fix-Investigation.html",
+      "id": "/wiki/concepts/AI-Daily-Briefing-Brotli-Fix-Investigation.html",
+      "summary": "AI Daily Briefing 定时任务从 2026-06-05 起持续失败的根因分析与模型切换修复完整记录",
+      "content_html": "AI Daily Briefing 定时任务从 2026-06-05 起持续失败的根因分析与模型切换修复完整记录",
+      "date_published": "2026-06-09T00:00:00.000Z",
+      "date_modified": "2026-06-10T00:04:32.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "Kimi META Prompt — VuePress Theme Hope Hermes JSON Converter",
+      "url": "/wiki/concepts/VuePress-Theme-Hope-Hermes-JSON-Converter.html",
+      "id": "/wiki/concepts/VuePress-Theme-Hope-Hermes-JSON-Converter.html",
+      "summary": "将 Hermes Agent 导出的会话 JSON（output.json）转换为 VuePress Theme Hope 兼容 Markdown 的 META Prompt 模板",
+      "content_html": "将 Hermes Agent 导出的会话 JSON（output.json）转换为 VuePress Theme Hope 兼容 Markdown 的 META Prompt 模板",
+      "date_published": "2026-06-09T00:00:00.000Z",
+      "date_modified": "2026-06-10T00:04:32.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "Kimi META Prompt — VuePress Theme Hope Hermes Multi-Session Merger",
+      "url": "/wiki/concepts/VuePress-Theme-Hope-Hermes-Multi-Session-Merger.html",
+      "id": "/wiki/concepts/VuePress-Theme-Hope-Hermes-Multi-Session-Merger.html",
+      "summary": "将多个 Hermes Agent 导出的会话 JSON（output_0.json, output_1.json, ...）融合为单一连贯报告的 META Prompt 模板",
+      "content_html": "将多个 Hermes Agent 导出的会话 JSON（output_0.json, output_1.json, ...）融合为单一连贯报告的 META Prompt 模板",
+      "date_published": "2026-06-09T00:00:00.000Z",
+      "date_modified": "2026-06-10T00:04:32.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "000Y-可被 Kimi Agent 复用的 \"VuePress Theme Hope Hermes Multi-Session Merger\" META Prompt",
+      "url": "/postMortem/sp_for_LLM/000Y_prompt-VuePress-Theme-Hope-Hermes-Multi-Session-Merger.html",
+      "id": "/postMortem/sp_for_LLM/000Y_prompt-VuePress-Theme-Hope-Hermes-Multi-Session-Merger.html",
+      "summary": "本文档为使用 Kimi 生成的 META Prompt，用于辅助将 多个 Hermes Agent 导出的对话 JSON（此处为使用 hermes sessions export --session-id xxx /home/ubuntu/output_{n}.json 指令导出的 output_0.json、output_1.json 等文件）总结融...",
+      "content_html": "本文档为使用 Kimi 生成的 META Prompt，用于辅助将 多个 Hermes Agent 导出的对话 JSON（此处为使用 hermes sessions export --session-id xxx /home/ubuntu/output_{n}.json 指令导出的 output_0.json、output_1.json 等文件）总结融...",
+      "date_published": "2026-06-09T00:00:00.000Z",
+      "date_modified": "2026-06-09T04:21:53.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "LLM Prompt & Skill"
+      ]
+    },
+    {
+      "title": "005-AI Daily Briefing Cron Job Brotli 流截断故障排查与模型切换修复 —— 多会话融合报告",
+      "url": "/postMortem/sp_for_LLM/005_HermesMerged-AI-Daily-Briefing-Brotli-Truncation-Fix_-report.html",
+      "id": "/postMortem/sp_for_LLM/005_HermesMerged-AI-Daily-Briefing-Brotli-Truncation-Fix_-report.html",
+      "summary": "本文档为对 2 个 Hermes Agent 会话的融合总结报告，涉及模型包括 MiniMax-M3、deepseek-v4-flash。各会话围绕 &quot;AI Daily Briefing Cron Job Brotli 流截断故障&quot; 同一主题展开：首个会话使用 MiniMax-M3 进行问题现象确认、根因调查与手动复现；后续会话在将...",
+      "content_html": "本文档为对 2 个 Hermes Agent 会话的融合总结报告，涉及模型包括 MiniMax-M3、deepseek-v4-flash。各会话围绕 &quot;AI Daily Briefing Cron Job Brotli 流截断故障&quot; 同一主题展开：首个会话使用 MiniMax-M3 进行问题现象确认、根因调查与手动复现；后续会话在将...",
+      "date_published": "2026-06-09T00:00:00.000Z",
+      "date_modified": "2026-06-09T04:21:53.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "Technical Investigation"
+      ]
+    },
+    {
+      "title": "Hermes Agent 部署与 RSS 每日简报 cronjob",
+      "url": "/wiki/concepts/Hermes-Agent-Cronjob-Setup.html",
+      "id": "/wiki/concepts/Hermes-Agent-Cronjob-Setup.html",
+      "summary": "在入门型 VPS 上部署 Hermes Agent 并接入 FOLO/Agent-Reach 做每日 7:00 简报推送的完整方法论",
+      "content_html": "在入门型 VPS 上部署 Hermes Agent 并接入 FOLO/Agent-Reach 做每日 7:00 简报推送的完整方法论",
+      "date_published": "2026-07-01T00:44:34.984Z",
+      "date_modified": "2026-06-10T00:04:32.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "Hermes Agent",
+      "url": "/wiki/entities/Hermes-Agent.html",
+      "id": "/wiki/entities/Hermes-Agent.html",
+      "summary": "Hermes Agent — Nous Research 开发的可自我调整 skills 的 AI Agent，本博客核心使用对象",
+      "content_html": "Hermes Agent — Nous Research 开发的可自我调整 skills 的 AI Agent，本博客核心使用对象",
+      "date_published": "2026-07-01T00:44:34.984Z",
+      "date_modified": "2026-06-10T00:04:32.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "000X-可被 Kimi Agent 复用的 \"VuePress Theme Hope Hermes JSON Converter\" META Prompt",
+      "url": "/postMortem/sp_for_LLM/000X_prompt-VuePress-Theme-Hope-Hermes-JSON-Converter.html",
+      "id": "/postMortem/sp_for_LLM/000X_prompt-VuePress-Theme-Hope-Hermes-JSON-Converter.html",
+      "summary": "本文档为使用 Kimi 生成的 META Prompt，用于辅助将 Hermes Agent 导出的对话 JSON（此处为使用 hermes sessions export --session-id xxx /home/ubuntu/output.json 指令导出的 output.json 文件）转换为 可以与本博客的其他内容兼容 的 Report。...",
+      "content_html": "本文档为使用 Kimi 生成的 META Prompt，用于辅助将 Hermes Agent 导出的对话 JSON（此处为使用 hermes sessions export --session-id xxx /home/ubuntu/output.json 指令导出的 output.json 文件）转换为 可以与本博客的其他内容兼容 的 Report。...",
+      "date_published": "2026-06-08T00:00:00.000Z",
+      "date_modified": "2026-06-08T15:42:43.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "LLM Prompt & Skill"
+      ]
+    },
+    {
+      "title": "004-LangChain Interpreter Skills 调研 —— Hermes Agent 多轮对话记录",
+      "url": "/postMortem/sp_for_LLM/004_Hermes-LangChain-Interpreter-Skill-Investigation-report.html",
+      "id": "/postMortem/sp_for_LLM/004_Hermes-LangChain-Interpreter-Skill-Investigation-report.html",
+      "summary": "本文档为与 MiniMax-M3（Hermes Agent）的多轮对话记录，用于辅助调研 LangChain 的 Interpreter Skills 特性及 Hermes 的 skills 体系对比分析。会话共 131 条消息，含 66 次工具调用。 会话来源: discord 会话ID: 20260608_143656_8845fe43 使用模型:...",
+      "content_html": "本文档为与 MiniMax-M3（Hermes Agent）的多轮对话记录，用于辅助调研 LangChain 的 Interpreter Skills 特性及 Hermes 的 skills 体系对比分析。会话共 131 条消息，含 66 次工具调用。 会话来源: discord 会话ID: 20260608_143656_8845fe43 使用模型:...",
+      "image": "https://n.sinaimg.cn/photo/5213b46e/20180926/timeline_card_small_super_default.png",
+      "date_published": "2026-06-08T00:00:00.000Z",
+      "date_modified": "2026-06-09T04:20:33.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "Code Analysis"
+      ]
+    },
+    {
+      "title": "003-一点思索 —— Hermes Agent 初步食用记录",
+      "url": "/postMortem/sp_for_LLM/003_think-Initial-notes-on-using-Hermes_Agent.html",
+      "id": "/postMortem/sp_for_LLM/003_think-Initial-notes-on-using-Hermes_Agent.html",
+      "summary": "本文档为编博客作者从 “2026年4月中旬开始至6月上旬” 这一段时间内使用 Hermes Agent 的初步记录。包括但不限于一些配置的踩坑记录、由 Hermes Agent / LLM 的不断推陈出新所获得的一些迷思等 适用项目: AI Agent (此处指 Hermes Agent，但一些方法论应该可以适用于其他的 AI Agent) 使用时间段...",
+      "content_html": "本文档为编博客作者从 “2026年4月中旬开始至6月上旬” 这一段时间内使用 Hermes Agent 的初步记录。包括但不限于一些配置的踩坑记录、由 Hermes Agent / LLM 的不断推陈出新所获得的一些迷思等 适用项目: AI Agent (此处指 Hermes Agent，但一些方法论应该可以适用于其他的 AI Agent) 使用时间段...",
+      "date_published": "2026-06-07T00:00:00.000Z",
+      "date_modified": "2026-06-07T10:43:45.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "AI Agent"
+      ]
+    },
+    {
+      "title": "Reverse Prompt Engineering & Prompt Compilation Pipeline",
+      "url": "/wiki/concepts/Reverse-Prompt-Engineering.html",
+      "id": "/wiki/concepts/Reverse-Prompt-Engineering.html",
+      "summary": "反向提示词工程方法论与三 Session Prompt 编译管道 —— 从参考图片反推到风格可复用的最终图像 Prompt",
+      "content_html": "反向提示词工程方法论与三 Session Prompt 编译管道 —— 从参考图片反推到风格可复用的最终图像 Prompt",
+      "date_published": "2026-07-01T00:44:34.984Z",
+      "date_modified": "2026-06-05T02:43:41.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "LLM Prompt & Skill",
+      "url": "/wiki/entities/LLM-Prompt-Skill.html",
+      "id": "/wiki/entities/LLM-Prompt-Skill.html",
+      "summary": "可供大语言模型使用的 prompt 模板与 skill 工作流",
+      "content_html": "可供大语言模型使用的 prompt 模板与 skill 工作流",
+      "date_published": "2026-07-01T00:44:34.984Z",
+      "date_modified": "2026-06-10T00:04:32.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "声子流体动力学",
+      "url": "/wiki/entities/Phonon-Hydrodynamics.html",
+      "id": "/wiki/entities/Phonon-Hydrodynamics.html",
+      "summary": "声子输运在流体动力学极限下的涌现行为：泊肃叶流、第二声、热整流",
+      "content_html": "声子输运在流体动力学极限下的涌现行为：泊肃叶流、第二声、热整流",
+      "date_published": "2026-07-01T00:44:34.984Z",
+      "date_modified": "2026-06-04T03:27:07.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "002-反向提示词工程与 Prompt 编译管道 —— LLM 协助生成与多轮对话记录",
+      "url": "/postMortem/sp_for_LLM/002_QA-inverse-prompt-engineering-report.html",
+      "id": "/postMortem/sp_for_LLM/002_QA-inverse-prompt-engineering-report.html",
+      "summary": "本文档为与 Kimi 的多轮对话记录，用于辅助设计 反向提示词工程（Reverse Prompt Engineering） 的 Prompt 编译管道。对话末尾附有可直接复用的三阶段 Session Prompt 模板。 适用项目: 未指定 核心文献: Prompt Inversion using chat-based multimodal LLMs ...",
+      "content_html": "本文档为与 Kimi 的多轮对话记录，用于辅助设计 反向提示词工程（Reverse Prompt Engineering） 的 Prompt 编译管道。对话末尾附有可直接复用的三阶段 Session Prompt 模板。 适用项目: 未指定 核心文献: Prompt Inversion using chat-based multimodal LLMs ...",
+      "date_published": "2026-06-04T00:00:00.000Z",
+      "date_modified": "2026-06-04T14:16:42.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "LLM Prompt & Skill"
+      ]
+    },
+    {
+      "title": "可供大语言模型使用的skill/prompt",
+      "url": "/postMortem/sp_for_LLM/",
+      "id": "/postMortem/sp_for_LLM/",
+      "summary": "简述 一些与LLM进行的多轮对话, 或者是可供大语言模型使用的skill/prompt,不定期更新。 文章存在（很大）一部分 使用 LLM 归纳后 不断反刍 才 生成的 prompt 的可能性，望知悉。 文章存在一（小）部分 复用 / 借鉴 / CTRL+CV 其他 LLM prompt/skill 的可能性，望知悉。 文章存在没有（完全）整理就已经放...",
+      "content_html": "简述 一些与LLM进行的多轮对话, 或者是可供大语言模型使用的skill/prompt,不定期更新。 文章存在（很大）一部分 使用 LLM 归纳后 不断反刍 才 生成的 prompt 的可能性，望知悉。 文章存在一（小）部分 复用 / 借鉴 / CTRL+CV 其他 LLM prompt/skill 的可能性，望知悉。 文章存在没有（完全）整理就已经放...",
+      "date_published": "2026-07-01T00:44:34.984Z",
+      "date_modified": "2026-06-04T14:16:42.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "中级热质传递文献报告批判框架",
+      "url": "/wiki/concepts/Heat-Transfer-Literature-Report.html",
+      "id": "/wiki/concepts/Heat-Transfer-Literature-Report.html",
+      "summary": "基于 Intermediate Heat and Mass Transfer 课程的跨尺度热输运批判性分析框架",
+      "content_html": "基于 Intermediate Heat and Mass Transfer 课程的跨尺度热输运批判性分析框架",
+      "date_published": "2026-06-03T00:00:00.000Z",
+      "date_modified": "2026-06-04T03:27:07.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "Kimi META Prompt — VuePress Theme Hope Markdown Converter",
+      "url": "/wiki/concepts/VuePress-Theme-Hope-Markdown-Converter.html",
+      "id": "/wiki/concepts/VuePress-Theme-Hope-Markdown-Converter.html",
+      "summary": "将 Kimi LLM 多轮对话的 .docx 记录转换为 VuePress Theme Hope 兼容 Markdown 的 META Prompt 模板",
+      "content_html": "将 Kimi LLM 多轮对话的 .docx 记录转换为 VuePress Theme Hope 兼容 Markdown 的 META Prompt 模板",
+      "date_published": "2026-06-03T00:00:00.000Z",
+      "date_modified": "2026-06-04T03:27:07.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "000-可被 Kimi Agent 复用的 \"VuePress Theme Hope Markdown Converter\" META Prompt",
+      "url": "/postMortem/sp_for_LLM/000_prompt-VuePress-Theme-Hope-Markdown-Converter.html",
+      "id": "/postMortem/sp_for_LLM/000_prompt-VuePress-Theme-Hope-Markdown-Converter.html",
+      "summary": "本文档为使用 Kimi 生成的 META Prompt，用于辅助将 与AI间的多轮对话 （此处使用 .docx 文件）转换为 可以与本博客的其他内容兼容 的 Report，且默认最后必然存在 prompt 输出。需要针对不同的上传文件进行调整，调整范围包括但不限于 传入文件名， 输出文件名等。 LLM生成模型: Kimi K2.6",
+      "content_html": "本文档为使用 Kimi 生成的 META Prompt，用于辅助将 与AI间的多轮对话 （此处使用 .docx 文件）转换为 可以与本博客的其他内容兼容 的 Report，且默认最后必然存在 prompt 输出。需要针对不同的上传文件进行调整，调整范围包括但不限于 传入文件名， 输出文件名等。 LLM生成模型: Kimi K2.6",
+      "date_published": "2026-06-03T00:00:00.000Z",
+      "date_modified": "2026-06-04T14:16:42.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "LLM Prompt & Skill"
+      ]
+    },
+    {
+      "title": "001-宏微热传递文献报告 —— LLM 协助生成与多轮对话记录",
+      "url": "/postMortem/sp_for_LLM/001_QA-intermediate-heat-transfer-literature-report.html",
+      "id": "/postMortem/sp_for_LLM/001_QA-intermediate-heat-transfer-literature-report.html",
+      "summary": "本文档为与 Kimi 的多轮对话记录，用于辅助撰写 Intermediate Heat and Mass Transfer 课程的 Literature Report。对话末尾附有可直接复用的完整英文 Prompt。 适用课程: Intermediate Heat and Mass Transfer 核心教材: Kaviany《Heat Transfe...",
+      "content_html": "本文档为与 Kimi 的多轮对话记录，用于辅助撰写 Intermediate Heat and Mass Transfer 课程的 Literature Report。对话末尾附有可直接复用的完整英文 Prompt。 适用课程: Intermediate Heat and Mass Transfer 核心教材: Kaviany《Heat Transfe...",
+      "date_published": "2026-06-03T00:00:00.000Z",
+      "date_modified": "2026-06-04T14:16:42.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "LLM Prompt & Skill"
+      ]
+    },
+    {
+      "title": "JeacsonBlog Wiki",
+      "url": "/wiki/",
+      "id": "/wiki/",
+      "summary": "JeacsonBlog Wiki 基于 Karpathy LLM Wiki 模式构建的个人知识库。以博客原始笔记为 source of truth，由 LLM Agent 增量维护。 Last updated: 2026-07-01 Sources（知识域摘要） 按博客分类聚合的源笔记摘要，由 LLM 阅读对应 docs/learningNote/ 下...",
+      "content_html": "JeacsonBlog Wiki 基于 Karpathy LLM Wiki 模式构建的个人知识库。以博客原始笔记为 source of truth，由 LLM Agent 增量维护。 Last updated: 2026-07-01 Sources（知识域摘要） 按博客分类聚合的源笔记摘要，由 LLM 阅读对应 docs/learningNote/ 下...",
+      "date_published": "2026-07-01T00:44:34.984Z",
+      "date_modified": "2026-07-01T00:43:49.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "Wiki Log",
+      "url": "/wiki/log.html",
+      "id": "/wiki/log.html",
+      "summary": "[2026-04-17] init | 初始化 Wiki 层 [2026-04-17] ingest | docs/learningNote/JSNote/ — JavaScript 核心笔记 [2026-04-17] ingest | docs/learningNote/Ros2_Note/ — ROS2 通信机制与工具 [2026-04-17] i...",
+      "content_html": "[2026-04-17] init | 初始化 Wiki 层 [2026-04-17] ingest | docs/learningNote/JSNote/ — JavaScript 核心笔记 [2026-04-17] ingest | docs/learningNote/Ros2_Note/ — ROS2 通信机制与工具 [2026-04-17] i...",
+      "date_published": "2026-07-01T00:44:34.984Z",
+      "date_modified": "2026-07-01T00:43:49.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "Array.reduce() 方法",
+      "url": "/wiki/concepts/Reduce%E6%96%B9%E6%B3%95.html",
+      "id": "/wiki/concepts/Reduce%E6%96%B9%E6%B3%95.html",
+      "summary": "JavaScript 数组方法，将数组元素按顺序累加为单个值",
+      "content_html": "JavaScript 数组方法，将数组元素按顺序累加为单个值",
+      "date_published": "2026-07-01T00:44:34.984Z",
+      "date_modified": "2026-04-17T09:02:02.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "Symbol 类型",
+      "url": "/wiki/concepts/Symbol.html",
+      "id": "/wiki/concepts/Symbol.html",
+      "summary": "ES6 引入的第七种原始数据类型，表示独一无二的值",
+      "content_html": "ES6 引入的第七种原始数据类型，表示独一无二的值",
+      "date_published": "2026-07-01T00:44:34.984Z",
+      "date_modified": "2026-04-17T09:02:02.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "TCP 与 UDP 对比",
+      "url": "/wiki/concepts/TCP%E4%B8%8EUDP.html",
+      "id": "/wiki/concepts/TCP%E4%B8%8EUDP.html",
+      "summary": "传输层两大协议的区别：可靠连接 vs 实时性",
+      "content_html": "传输层两大协议的区别：可靠连接 vs 实时性",
+      "date_published": "2026-07-01T00:44:34.984Z",
+      "date_modified": "2026-04-17T11:35:40.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "从输入 URL 到页面显示的完整流程",
+      "url": "/wiki/concepts/URL%E5%88%B0%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BA.html",
+      "id": "/wiki/concepts/URL%E5%88%B0%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BA.html",
+      "summary": "DNS → TCP → HTTP → 渲染的完整网络流程",
+      "content_html": "DNS → TCP → HTTP → 渲染的完整网络流程",
+      "date_published": "2026-07-01T00:44:34.984Z",
+      "date_modified": "2026-04-17T09:02:02.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "函数柯里化",
+      "url": "/wiki/concepts/%E5%87%BD%E6%95%B0%E6%9F%AF%E9%87%8C%E5%8C%96.html",
+      "id": "/wiki/concepts/%E5%87%BD%E6%95%B0%E6%9F%AF%E9%87%8C%E5%8C%96.html",
+      "summary": "将多参数函数改造为链式单参数调用的编程技巧",
+      "content_html": "将多参数函数改造为链式单参数调用的编程技巧",
+      "date_published": "2026-07-01T00:44:34.984Z",
+      "date_modified": "2026-04-17T09:02:02.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "ROS2 分布式通信",
+      "url": "/wiki/concepts/%E5%88%86%E5%B8%83%E5%BC%8F%E9%80%9A%E4%BF%A1.html",
+      "id": "/wiki/concepts/%E5%88%86%E5%B8%83%E5%BC%8F%E9%80%9A%E4%BF%A1.html",
+      "summary": "通过 DDS 域ID机制实现跨设备 ROS2 节点通信",
+      "content_html": "通过 DDS 域ID机制实现跨设备 ROS2 节点通信",
+      "date_published": "2026-07-01T00:44:34.984Z",
+      "date_modified": "2026-04-17T09:02:02.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "ROS2 坐标变换",
+      "url": "/wiki/concepts/%E5%9D%90%E6%A0%87%E5%8F%98%E6%8D%A2.html",
+      "id": "/wiki/concepts/%E5%9D%90%E6%A0%87%E5%8F%98%E6%8D%A2.html",
+      "summary": "tf2 系统实现机器人坐标系变换，TransformStamped 与 PointStamped 消息",
+      "content_html": "tf2 系统实现机器人坐标系变换，TransformStamped 与 PointStamped 消息",
+      "date_published": "2026-07-01T00:44:34.984Z",
+      "date_modified": "2026-04-17T09:02:02.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "ROS2 话题通信",
+      "url": "/wiki/concepts/%E8%AF%9D%E9%A2%98%E9%80%9A%E4%BF%A1.html",
+      "id": "/wiki/concepts/%E8%AF%9D%E9%A2%98%E9%80%9A%E4%BF%A1.html",
+      "summary": "Topic-based publish/subscribe 通信模式，单向多对多数据流",
+      "content_html": "Topic-based publish/subscribe 通信模式，单向多对多数据流",
+      "date_published": "2026-07-01T00:44:34.984Z",
+      "date_modified": "2026-04-17T09:02:02.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "计算机网络",
+      "url": "/wiki/entities/Computer_Network.html",
+      "id": "/wiki/entities/Computer_Network.html",
+      "summary": "计算机网络协议与原理，TCP/IP 五层模型，Kurose & Ross 教材",
+      "content_html": "计算机网络协议与原理，TCP/IP 五层模型，Kurose & Ross 教材",
+      "date_published": "2026-07-01T00:44:34.984Z",
+      "date_modified": "2026-04-17T09:02:02.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "JavaScript",
+      "url": "/wiki/entities/JavaScript.html",
+      "id": "/wiki/entities/JavaScript.html",
+      "summary": "JavaScript 编程语言，Web 开发核心语言，ES6+ 现代特性",
+      "content_html": "JavaScript 编程语言，Web 开发核心语言，ES6+ 现代特性",
+      "date_published": "2026-07-01T00:44:34.984Z",
+      "date_modified": "2026-04-17T09:02:02.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "ROS2",
+      "url": "/wiki/entities/ROS2.html",
+      "id": "/wiki/entities/ROS2.html",
+      "summary": "Robot Operating System 2，机器人操作系统，支持分布式通信",
+      "content_html": "Robot Operating System 2，机器人操作系统，支持分布式通信",
+      "date_published": "2026-07-01T00:44:34.984Z",
+      "date_modified": "2026-04-17T09:02:02.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "TypeScript",
+      "url": "/wiki/entities/TypeScript.html",
+      "id": "/wiki/entities/TypeScript.html",
+      "summary": "JavaScript 的超集，提供静态类型系统",
+      "content_html": "JavaScript 的超集，提供静态类型系统",
+      "date_published": "2026-07-01T00:44:34.984Z",
+      "date_modified": "2026-04-17T09:02:02.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "Vue",
+      "url": "/wiki/entities/Vue.html",
+      "id": "/wiki/entities/Vue.html",
+      "summary": "渐进式 JavaScript 框架，用于构建 Web 用户界面，Vue2 与 Vue3 并存",
+      "content_html": "渐进式 JavaScript 框架，用于构建 Web 用户界面，Vue2 与 Vue3 并存",
+      "date_published": "2026-07-01T00:44:34.984Z",
+      "date_modified": "2026-04-17T09:02:02.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "Web 开发",
+      "url": "/wiki/entities/Web.html",
+      "id": "/wiki/entities/Web.html",
+      "summary": "Web 前端与后端技术栈，包括 HTML/CSS/JavaScript、HTTP 协议、DNS 等",
+      "content_html": "Web 前端与后端技术栈，包括 HTML/CSS/JavaScript、HTTP 协议、DNS 等",
+      "date_published": "2026-07-01T00:44:34.984Z",
+      "date_modified": "2026-04-17T09:02:02.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "编码技术知识域摘要",
+      "url": "/wiki/sources/Coding_Skill.html",
+      "id": "/wiki/sources/Coding_Skill.html",
+      "summary": "通用编程技能，包括设计模式、API文档撰写、VSCode 技巧、代码片段",
+      "content_html": "通用编程技能，包括设计模式、API文档撰写、VSCode 技巧、代码片段",
+      "date_published": "2026-07-01T00:44:34.984Z",
+      "date_modified": "2026-04-20T00:45:41.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "计算机组成原理知识域摘要",
+      "url": "/wiki/sources/Computer_Composition.html",
+      "id": "/wiki/sources/Computer_Composition.html",
+      "summary": "计算机底层原理，包括机器数、IEEE-754 浮点数标准",
+      "content_html": "计算机底层原理，包括机器数、IEEE-754 浮点数标准",
+      "date_published": "2026-07-01T00:44:34.984Z",
+      "date_modified": "2026-04-17T09:02:02.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "计算机网络知识域摘要",
+      "url": "/wiki/sources/Computer_Network.html",
+      "id": "/wiki/sources/Computer_Network.html",
+      "summary": "计算机网络原理与协议学习笔记，参考《Computer Networking: A Top-Down Approach》",
+      "content_html": "计算机网络原理与协议学习笔记，参考《Computer Networking: A Top-Down Approach》",
+      "date_published": "2026-07-01T00:44:34.984Z",
+      "date_modified": "2026-04-20T00:46:04.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "自动控制原理知识域摘要",
+      "url": "/wiki/sources/Control_Theory.html",
+      "id": "/wiki/sources/Control_Theory.html",
+      "summary": "经典控制理论笔记，包含 S-Z 变换表、连续与离散系统分析",
+      "content_html": "经典控制理论笔记，包含 S-Z 变换表、连续与离散系统分析",
+      "date_published": "2026-07-01T00:44:34.984Z",
+      "date_modified": "2026-04-17T09:02:02.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "JavaScript 知识域摘要",
+      "url": "/wiki/sources/JavaScript.html",
+      "id": "/wiki/sources/JavaScript.html",
+      "summary": "JavaScript 语言核心概念与 Web 开发相关笔记",
+      "content_html": "JavaScript 语言核心概念与 Web 开发相关笔记",
+      "date_published": "2026-07-01T00:44:34.984Z",
+      "date_modified": "2026-04-17T09:02:02.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "踩坑心得知识域摘要",
+      "url": "/wiki/sources/PostMortem.html",
+      "id": "/wiki/sources/PostMortem.html",
+      "summary": "部署与开发中的实际问题记录与解决方案",
+      "content_html": "部署与开发中的实际问题记录与解决方案",
+      "date_published": "2026-07-01T00:44:34.984Z",
+      "date_modified": "2026-07-01T00:43:49.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "ROS2 知识域摘要",
+      "url": "/wiki/sources/ROS2.html",
+      "id": "/wiki/sources/ROS2.html",
+      "summary": "ROS2 机器人操作系统学习笔记，涵盖通信机制、坐标变换、工具使用",
+      "content_html": "ROS2 机器人操作系统学习笔记，涵盖通信机制、坐标变换、工具使用",
+      "date_published": "2026-07-01T00:44:34.984Z",
+      "date_modified": "2026-04-20T00:45:38.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "TypeScript 知识域摘要",
+      "url": "/wiki/sources/TypeScript.html",
+      "id": "/wiki/sources/TypeScript.html",
+      "summary": "TypeScript 类型系统学习笔记，按学习日期分为五天",
+      "content_html": "TypeScript 类型系统学习笔记，按学习日期分为五天",
+      "date_published": "2026-07-01T00:44:34.984Z",
+      "date_modified": "2026-04-17T09:02:02.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "Vue 知识域摘要",
+      "url": "/wiki/sources/Vue.html",
+      "id": "/wiki/sources/Vue.html",
+      "summary": "Vue2 与 Vue3 框架学习笔记，涵盖数据响应式、组件系统、路由、状态管理",
+      "content_html": "Vue2 与 Vue3 框架学习笔记，涵盖数据响应式、组件系统、路由、状态管理",
+      "date_published": "2026-07-01T00:44:34.984Z",
+      "date_modified": "2026-04-17T09:02:02.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "ROS2-Z02-ROS2工具：坐标变换（EXEC2）乌龟护航案例实战",
+      "url": "/learningNote/Ros2_Note/coor_trans/2026_02_13.html",
+      "id": "/learningNote/Ros2_Note/coor_trans/2026_02_13.html",
+      "summary": "简介 本章节主要介绍如何实现 “乌龟护航” 案例。里面的大部分代码会沿用内的相关代码内容。因此建议先尝试实现上一章节的效果，再来进行本章节的实战。 案例需求&amp;分析 需求： 基于上一章节要求编写程序实现，以 turtlesim_node 节点的原生乌龟（turtle1）为几何中心，生成多只新的乌龟（以三只为例，即turtle2、turtle3、t...",
+      "content_html": "简介 本章节主要介绍如何实现 “乌龟护航” 案例。里面的大部分代码会沿用内的相关代码内容。因此建议先尝试实现上一章节的效果，再来进行本章节的实战。 案例需求&amp;分析 需求： 基于上一章节要求编写程序实现，以 turtlesim_node 节点的原生乌龟（turtle1）为几何中心，生成多只新的乌龟（以三只为例，即turtle2、turtle3、t...",
+      "date_published": "2026-02-13T00:00:00.000Z",
+      "date_modified": "2026-02-13T03:00:43.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "Computer",
+        "robot",
+        "ROS"
+      ]
+    },
+    {
+      "title": "ROS2-Z01-ROS2工具：坐标变换（EXEC1）乌龟跟随案例实战",
+      "url": "/learningNote/Ros2_Note/coor_trans/2026_02_09.html",
+      "id": "/learningNote/Ros2_Note/coor_trans/2026_02_09.html",
+      "summary": "简介 本章节主要介绍如何实现 “乌龟跟随” 案例。 案例需求&amp;分析 需求： 编写程序实现，程序运行后会启动 turtlesim_node 节点，该节点会生成一个窗口，窗口中有一只原生乌龟（turtle1），紧接着再生成一只新的乌龟（turtle2）。要求在 turtle1 无论是静止或是被键盘控制运动时，turtle2 都会以 turtle1 ...",
+      "content_html": "简介 本章节主要介绍如何实现 “乌龟跟随” 案例。 案例需求&amp;分析 需求： 编写程序实现，程序运行后会启动 turtlesim_node 节点，该节点会生成一个窗口，窗口中有一只原生乌龟（turtle1），紧接着再生成一只新的乌龟（turtle2）。要求在 turtle1 无论是静止或是被键盘控制运动时，turtle2 都会以 turtle1 ...",
+      "date_published": "2026-02-09T00:00:00.000Z",
+      "date_modified": "2026-02-11T08:08:26.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "Computer",
+        "robot",
+        "ROS"
+      ]
+    }
+  ]
+}
