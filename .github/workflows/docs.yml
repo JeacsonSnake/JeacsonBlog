@@ -13,10 +13,21 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
+  # This workflow contains two jobs called "Build_and_Deploy" & "Create_Wiki_Ingest_Pr"
   Build_and_Deploy:
+    # mission: build the website and deploy to the gh-pages
+    name: Build the website and deploy
     # the type of runner that the job will run on
     runs-on: ubuntu-latest
+    # Set jobs-restricted permissions to the minimum required level
+    # Build_and_Deploy needs GITHUB_TOKEN to deploy the gh-pages
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+      
+    # add event restriction
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
 
     steps:
       - name: Checkout repo & fetch update
@@ -69,3 +80,123 @@ jobs:
         env:
           # @see https://docs.github.com/cn/actions/reference/authentication-in-a-workflow#about-the-github_token-secret
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  # Set jobs-restricted permissions to the minimum required level
+# Build_and_Deploy needs GITHUB_TOKEN to deploy the gh-pages
+# while create-wiki-ingest-pr needs pull-requests as write to open a PR
+  Create_Wiki_Ingest_Pr:
+    # mission: Open PR for wiki-ingest branch / 为 wiki-ingest-* 分支自动开 PR
+    name: Open PR for wiki-ingest branch
+    # the type of runner that the job will run on
+    runs-on: ubuntu-latest
+    # Set jobs-restricted permissions to the minimum required level
+    # Create_Wiki_Ingest_Pr needs pull-requests as write to open a PR
+    permissions:
+      contents: read
+      pull-requests: write
+    
+    if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/wiki-ingest-')
+    
+    steps:
+      - name: Checkout repo & fetch update
+        uses: actions/checkout@v4
+        with:
+          # "最近更新时间" 等 git 日志相关信息，需要拉取全部提交记录
+          fetch-depth: 0
+          # actions/checkout 签出软件仓库的步骤中，Github 工作流程会自动使用可用的 GITHUB_TOKEN 密钥与 Github 进行身份验证
+          # 然后，尽管我在该步骤中注入了个人访问令牌作为环境变量，但它还是将该步骤中的凭据持久化，并在发布软件包的步骤中重复使用这些凭据。
+          # 因此将该配置项设为false，可以使Github 工作流程在最后一步才使用个人访问令牌与 GitHub 进行身份验证
+          persist-credentials: false
+    
+      - name: Verify branch name
+        id: check
+        run: |
+          BRANCH="${GITHUB_REF#refs/heads/}"
+          echo "branch=${BRANCH}" >> "$GITHUB_OUTPUT"
+          if [[ ! "$BRANCH" =~ ^wiki-ingest-[0-9]{4}-[0-9]{2}-[0-9]{2}(-[a-z0-9._-]+)?$ ]]; then
+            echo "::error::Refusing: branch name '$BRANCH' does not match expected wiki-ingest-YYYY-MM-DD(-suffix)? pattern"
+            exit 1
+          fi
+      
+    # ┌──────────────────────────────────────────────────────────────────┐
+    # │ IMPORTANT INVARIANT — DO NOT VIOLATE                             │
+    # │                                                                  │
+    # │ This workflow assumes each push to wiki-ingest-* branches        │
+    # │ contains EXACTLY ONE commit.                                     │
+    # │                                                                  │
+    # │ Reason: PR title is taken from `git log -1 --pretty=%s HEAD`     │
+    # │ and PR body from `git log -1 --pretty=%b HEAD`.                  │
+    # │ If multiple commits are pushed, only the HEAD commit's message   │
+    # │ is used as PR content — earlier commits are silently lost.       │
+    # │                                                                  │
+    # │ When this invariant is at risk of being broken:                  │
+    # │   1. Stop the run                                                │
+    # │   2. Surface the situation to the user                           │
+    # │   3. Let the user decide: amend to single commit / squash /      │
+    # │      open manual PR / accept partial visibility                  │
+    # │                                                                  │
+    # │ See vuepress-wiki-integration skill located in your hermes       │
+    # │ agent for the source convention.                                 │
+    # └──────────────────────────────────────────────────────────────────┘
+      - name: Warn if push contains multiple commits
+        id: multi
+        run: |
+          # 这次 push 引入的新 commit 数（HEAD~1..HEAD；首次 push 拉根）
+          BEFORE="${{ github.event.before }}"
+          AFTER="${{ github.sha }}"
+          
+          # 首次 push（before 为全 0）时，没有可比较的旧提交
+          if [ "$BEFORE" = "0000000000000000000000000000000000000000" ]; then
+            NEW=$(git rev-list --count HEAD)
+          else
+            NEW=$(git rev-list --count "${BEFORE}..${AFTER}")
+          fi
+          
+          echo "new_commits=${NEW}" >> "$GITHUB_OUTPUT"
+          if [ "$NEW" -gt 1 ]; then
+            echo "::warning::This push introduced ${NEW} commits. PR will only use HEAD commit's message as title/body. Earlier commits will not appear in the PR description."
+          fi
+
+      
+      - name: Check if PR already exists
+        id: existing
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          BRANCH="${{ steps.check.outputs.branch }}"
+          EXISTING=$(gh pr list \
+            --repo "${{ github.repository }}" \
+            --head "$BRANCH" \
+            --state open \
+            --json number -q 'length')
+          echo "existing=${EXISTING}" >> "$GITHUB_OUTPUT"
+          if [ "$EXISTING" -gt 0 ]; then
+            echo "PR for $BRANCH already exists, skipping creation."
+          fi
+
+      - name: Open pull request
+        if: steps.existing.outputs.existing == '0'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          MULTI: ${{ steps.multi.outputs.new_commits }}
+        run: |
+          BRANCH="${{ steps.check.outputs.branch }}"
+          TITLE=$(git log -1 --pretty=%s HEAD)
+          BODY=$(git log -1 --pretty=%b HEAD)
+          if [ "$MULTI" -gt 1 ]; then
+            WARNING="> ⚠️ This PR was opened from a push of ${MULTI} commits. The PR description below reflects only the HEAD commit; earlier commits are not visible here. See the branch's commit history for the full diff."
+            if [ -n "$BODY" ]; then
+              BODY="${WARNING}\n\n${BODY}"
+            else
+              BODY="${WARNING}"
+            fi
+          fi
+          if [ -z "$BODY" ]; then
+            BODY="Automated wiki/digest PR opened by Hermes deploy key on $(date -u +%FT%TZ)."
+          fi
+          gh pr create \
+            --repo "${{ github.repository }}" \
+            --head "$BRANCH" \
+            --base master \
+            --title "$TITLE" \
+            --body "$BODY"
+
