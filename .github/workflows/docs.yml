@@ -22,6 +22,7 @@ jobs:
     # Set jobs-restricted permissions to the minimum required level
     # Build_and_Deploy needs GITHUB_TOKEN to deploy the gh-pages
     permissions:
+      contents: write
       pages: write
       id-token: write
       
@@ -70,7 +71,7 @@ jobs:
       # @see https://github.com/crazy-max/ghaction-github-pages
       - name: Deploy to GitHub Pages
         if: success()
-        uses: crazy-max/ghaction-github-pages@v3
+        uses: crazy-max/ghaction-github-pages@v5
         with:
           # 部署到 gh-pages 分支
           target_branch: gh-pages
@@ -90,7 +91,7 @@ jobs:
     # Set jobs-restricted permissions to the minimum required level
     # Create_Wiki_Ingest_Pr needs pull-requests as write to open a PR
     permissions:
-      contents: read
+      contents: write
       pull-requests: write
     
     if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/wiki-ingest-')
