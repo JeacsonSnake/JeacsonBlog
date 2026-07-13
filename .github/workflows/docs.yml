@@ -22,7 +22,6 @@ jobs:
     # Set jobs-restricted permissions to the minimum required level
     # Build_and_Deploy needs GITHUB_TOKEN to deploy the gh-pages
     permissions:
-      contents: read
       pages: write
       id-token: write
       
