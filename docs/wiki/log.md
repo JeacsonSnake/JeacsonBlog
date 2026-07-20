@@ -112,3 +112,24 @@ title: Wiki Log
 - Self-check（待 PR 创建后跑 `verify-pr-noops.sh`）：
   - 待验证：所有 wiki 文件 PR_SHA 与 UP_SHA 对比，确保无 no-op 误标 added
 
+
+## [2026-07-01] ingest | docs/postMortem/ — LeanCloud→Neon 迁移 + Edge DNS gotcha（2 篇新文章）
+- Source articles:
+  - `docs/postMortem/deploy/005_leancloud_migrate_neon_relate.md`（5888 bytes，2026-06-29 发布）— LeanCloud 2027 年停止服务后的 Waline 评论数据 4 步迁移：导出 JSONL → Vercel Neon 建表 → waline-data-import-tool 上传 → Redeploy；含 LeanCloud Date 字段格式转换 Python 脚本
+  - `docs/postMortem/sp_for_LLM/2026_06_29.md`（1463 bytes，2026-06-23 发布）— Edge「使用安全的 DNS」选 Cloudflare DoH 后污染 curl DNS 缓存；TCP 三次握手成功但 ClientHello 后 RST；nslookup 与 curl 返回不同 IP 的诡异断网
+- Pre-flight sync:
+  - ✅ Step 0: Fork master 状态 `ahead:19, behind:0, total_commits:19`（commit-graph diverged）→ PATCH force=true 同步至 upstream HEAD `a8d948071b0debc6460dd4b56d6b7be5c91dc5a2`
+  - ✅ Post-sync: fork master SHA = upstream HEAD（已对齐）
+- Wiki pages created/updated (5 files total):
+  - **CREATE** `concepts/LeanCloud-to-Neon-Migration.md` — Waline 数据迁移完整方法论（4 步顺序不可颠倒、LeanCloud Date 字段递归处理、waline.pgsql 建表、waline-data-import-tool 验证清单）；related → sources/PostMortem.md
+  - **CREATE** `concepts/Edge-Secure-DNS-Gotcha.md` — Edge DoH 副作用与排查（DoH → curl 缓存污染机制、nslookup vs curl IP 不一致、跨网络环境触发条件、修复步骤）；related → sources/PostMortem.md
+  - **MODIFY** `sources/PostMortem.md` — `lastUpdated` → 2026-07-01；tags 加 `DNS, Migrate, Network`；sources 加 2 篇新文章；部署节加迁移 mention；sp_for_LLM 节加 Edge DNS gotcha mention；关联加 2 个新概念链接
+  - **MODIFY** `index.md` — header `Last updated: 2026-07-01`；Concepts 加新「DevOps / 部署」小节列 2 个新概念
+  - **MODIFY** `log.md` — 本条目
+- 纪律遵循（per `vuepress-wiki-integration` skill "Ingest — mandatory workflow"）：
+  - ✅ Step 0 已完成（fork master force-sync from diverged to identical）
+  - ✅ entities vs concepts 分工：两篇均为方法/现象/方法论 → concepts（新建）；无新 entity（无新 thing/product/library）
+  - ✅ 概念页通过 `related:` back-link 到 sources/PostMortem.md（无对应 entity 实体页）
+  - ✅ YAML description 字段全部加引号（含中文冒号 / 中文括号 / 英文冒号）
+  - ✅ 5 个目标文件均通过 fork SHA-first PUT 写入（2 CREATE 不带 sha 字段；3 MODIFY 用 fork SHA）
+- Self-check（待 PR 创建后跑 `verify-pr-noops.sh`）：待验证所有 wiki 文件 PR_SHA 与 UP_SHA 对比
