@@ -133,3 +133,26 @@ title: Wiki Log
   - ✅ YAML description 字段全部加引号（含中文冒号 / 中文括号 / 英文冒号）
   - ✅ 5 个目标文件均通过 fork SHA-first PUT 写入（2 CREATE 不带 sha 字段；3 MODIFY 用 fork SHA）
 - Self-check（待 PR 创建后跑 `verify-pr-noops.sh`）：待验证所有 wiki 文件 PR_SHA 与 UP_SHA 对比
+
+
+## [2026-07-21] ingest | docs/postMortem/deploy/006_Ubuntu_gdm3_cannot_activate.md
+- Source article:
+  - `docs/postMortem/deploy/006_Ubuntu_gdm3_cannot_activate.md`（2026-07-20 发布）— Ubuntu 24.04 VMware 虚拟机某次重启后卡在 tty1，gdm3 无法启动的根因排查与修复：磁盘空间耗尽（≥95%）导致 APT 缓存写不进 → gdm3 服务启动失败 → systemd 自动降级为 multi-user.target；包含 8 步紧急清理 + 7 步 VMware 虚拟硬盘扩容完整流程
+- Architecture (post 2026-07-13):
+  - ✅ 直接 push 到上游 `JeacsonSnake/JeacsonBlog` 的 `wiki-ingest-2026-07-21` 分支（不再使用 ZectaHurbo fork）
+  - ✅ SSH Deploy Key 认证（PAT 架构已废弃）
+  - ✅ 上游 `.github/workflows/docs.yml` 已修复 fact_id=58：`on.push.branches` 现包含 `master` + `wiki-ingest-*`，本次 push 会自动触发 `Create_Wiki_Ingest_Pr` job 开 PR
+- Pre-flight sync:
+  - ✅ Mirror fetch：upstream master `eabe0345` → `df607590`（SHA 变了但 37 个 wiki 文件全部 unchanged）
+  - ✅ Pull master：`df607590 docs: 更新：Ubuntu 24.04 在某次重启后...` —— 新博客文章 `006_Ubuntu_gdm3_cannot_activate.md` 已是 master HEAD commit
+- Wiki pages created/updated (4 files total):
+  - **CREATE** `concepts/Ubuntu-gdm3-Disk-Full-Troubleshooting.md` — 完整故障排查方法论（核心结论"gdm3 启动失败先 df -h" + 3 层根因链路 APT/服务/系统 + 8 步紧急清理 + 7 步 VMware 扩容 + 6 步排查清单）；related → sources/PostMortem.md
+  - **MODIFY** `sources/PostMortem.md` — `lastUpdated` → 2026-07-21；tags 加 `Ubuntu, Disk, Troubleshooting`；sources 加 `deploy/006_Ubuntu_gdm3_cannot_activate.md`；部署节加 gdm3 故障排查 mention；关联加新概念链接
+  - **MODIFY** `index.md` — header `Last updated: 2026-07-21`；Concepts/DevOps 小节加 `Ubuntu-gdm3-Disk-Full-Troubleshooting` 链接
+  - **MODIFY** `log.md` — 本条目
+- 纪律遵循（per `vuepress-wiki-integration` skill "Ingest — mandatory workflow"）：
+  - ✅ entities vs concepts 分工：单篇方法/现象/方法论 → concepts（新建）；无新 entity（无新 thing/product/library，Ubuntu 是 OS 而非"新增实体"）
+  - ✅ 概念页通过 `related:` back-link 到 sources/PostMortem.md（无对应 entity 实体页）
+  - ✅ YAML description 字段全部加引号（含中文破折号" — "、英文连字符 "gdm3"、特殊符号"≥95%"）
+  - ✅ 4 个目标文件通过 git push 到 `wiki-ingest-2026-07-21` 分支，由 GitHub Actions `Create_Wiki_Ingest_Pr` 自动开 PR（无需手动）
+- Self-check: 待 PR 创建后跑 `scripts/verify-pr-noops.sh` 验证所有 wiki 文件 PR_SHA 与 UP_SHA 对比
