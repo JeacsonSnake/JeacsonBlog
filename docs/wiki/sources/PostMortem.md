@@ -2,8 +2,8 @@
 title: 踩坑心得知识域摘要
 description: "部署与开发中的实际问题记录与解决方案"
 type: source
-tags: [DevOps, Deploy, Markdown, AI Agent, DNS, Migrate, Network]
-lastUpdated: 2026-07-01
+tags: [DevOps, Deploy, Markdown, AI Agent, DNS, Migrate, Network, Ubuntu, Disk, Troubleshooting]
+lastUpdated: 2026-07-21
 sources:
   - docs/postMortem/sp_for_LLM/003_think-Initial-notes-on-using-Hermes_Agent.md
   - docs/postMortem/sp_for_LLM/000X_prompt-VuePress-Theme-Hope-Hermes-JSON-Converter.md
@@ -12,6 +12,7 @@ sources:
   - docs/postMortem/sp_for_LLM/005_HermesMerged-AI-Daily-Briefing-Brotli-Truncation-Fix_-report.md
   - docs/postMortem/sp_for_LLM/2026_06_29.md
   - docs/postMortem/deploy/005_leancloud_migrate_neon_relate.md
+  - docs/postMortem/deploy/006_Ubuntu_gdm3_cannot_activate.md
 ---
 
 # 踩坑心得知识域
@@ -25,6 +26,7 @@ sources:
 - GitHub Pages / VPS 部署
 - 环境配置问题
 - **LeanCloud → Neon PostgreSQL Waline 评论数据迁移**（deploy/005 新增）— LeanCloud 2027 年停止服务后的 4 步迁移：导出 JSONL → Vercel 创建 Neon + 建表 → waline-data-import-tool 上传 → Redeploy；含 LeanCloud Date 字段格式转换 Python 脚本
+- **Ubuntu 24.04 gdm3 启动失败根因排查**（deploy/006 新增）— VMware 虚拟机磁盘空间耗尽（≥95%）导致 APT 缓存写不进 → gdm3 无法启动 → systemd 自动降级为 multi-user.target；包含 8 步紧急清理 + 7 步 VMware 扩容完整流程
 
 ### Markdown 渲染 (markdown_render)
 - markdown-it 渲染器配置
@@ -56,3 +58,4 @@ sources:
 - [[../concepts/AI-Daily-Briefing-Brotli-Fix-Investigation.md]] — AI Daily Briefing Cron Job Brotli 故障排查与修复
 - [[../concepts/LeanCloud-to-Neon-Migration.md]] — Waline 评论数据从 LeanCloud 迁移至 Neon PostgreSQL 完整流程（4 步）
 - [[../concepts/Edge-Secure-DNS-Gotcha.md]] — Edge「使用安全的 DNS」选项的副作用与排查（DoH 污染 curl DNS 缓存）
+- [[../concepts/Ubuntu-gdm3-Disk-Full-Troubleshooting.md]] — Ubuntu 24.04 gdm3 启动失败根因排查（磁盘空间耗尽 → APT 缓存失败 → systemd 降级）
