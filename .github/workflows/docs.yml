@@ -149,10 +149,15 @@ jobs:
           # 首次 push（before 为全 0）时，没有可比较的旧提交
           if [ "$BEFORE" = "0000000000000000000000000000000000000000" ]; then
             NEW=$(git rev-list --count HEAD)
-          else
+          elif git cat-file -e "${BEFORE}^{commit}" 2>/dev/null; then
+            # BEFORE exists locally — normal push, range is valid
             NEW=$(git rev-list --count "${BEFORE}..${AFTER}")
+          else
+            # Force-push: BEFORE not in shallow clone. Degrade to HEAD count.
+            # (Trying to deepen the clone is unreliable; see fact 2026-07-14.)
+            NEW=$(git rev-list --count HEAD)
+            echo "::warning::Could not compute push range (BEFORE=${BEFORE:-<empty>}, likely from force-push). Falling back to HEAD count of ${NEW}."
           fi
-          
           echo "new_commits=${NEW}" >> "$GITHUB_OUTPUT"
           if [ "$NEW" -gt 1 ]; then
             echo "::warning::This push introduced ${NEW} commits. PR will only use HEAD commit's message as title/body. Earlier commits will not appear in the PR description."
