@@ -156,3 +156,32 @@ title: Wiki Log
   - ✅ YAML description 字段全部加引号（含中文破折号" — "、英文连字符 "gdm3"、特殊符号"≥95%"）
   - ✅ 4 个目标文件通过 git push 到 `wiki-ingest-2026-07-21` 分支，由 GitHub Actions `Create_Wiki_Ingest_Pr` 自动开 PR（无需手动）
 - Self-check: 待 PR 创建后跑 `scripts/verify-pr-noops.sh` 验证所有 wiki 文件 PR_SHA 与 UP_SHA 对比
+
+
+## [2026-07-27] ingest | wiki-lint B-1 — fix 3 broken wikilinks
+- Source: not a blog post — this is a **wiki self-heal** triggered by `wiki-lint.sh` lint run (commit `wiki-lint.sh` + 12-step analysis, 2026-07-27).
+- Trigger: `wiki-lint.sh` first run on 2026-07-27 surfaced 3 critical broken-wikilink issues:
+  - `concepts/话题通信.md:46` → `[[../concepts/服务通信.md]]` (page missing)
+  - `concepts/话题通信.md:47` → `[[../concepts/动作通信.md]]` (page missing)
+  - `sources/Coding_Skill.md:27` → `[[../concepts/代码片段.md]]` (page missing)
+- Architecture (post 2026-07-13):
+  - ✅ SSH Deploy Key authentication (ZectaHurbo fork + PAT 已废弃, per fact_id=57)
+  - ✅ Force-push to existing wiki-ingest-* branch bug **discovered and fixed** (fact_id=67): `Warn if push contains multiple commits` step in `.github/workflows/docs.yml` previously failed on `before: None` / invalid range. Fixed in `d0d38cc5` (master HEAD on 2026-07-27) with `git cat-file -e` detection + HEAD-count fallback + `::warning::` annotation
+  - ✅ 这次 push 用**新分支** `wiki-ingest-2026-07-27-fix-broken-links-v2`（首次 push, BEFORE=0000...0, 走版本 C 的 if 分支），避免 force-push 路径
+- Pre-flight sync:
+  - ✅ Mirror fetch：upstream master `40a4188e` (PR #16 merged) → `d0d38cc5` (workflow 修复)
+  - ✅ 新分支基于 `d0d38cc5` 创建，commit parent 链可被 Action 调度
+- Wiki pages created/updated (5 files total):
+  - **CREATE** `concepts/服务通信.md` — ROS2 Service 通信方法论 (52 行); related → 话题通信, 动作通信, entities/ROS2
+  - **CREATE** `concepts/动作通信.md` — ROS2 Action 通信方法论 (50 行); related → 话题通信, 服务通信, entities/ROS2
+  - **CREATE** `concepts/代码片段.md` — VSCode Snippet 配置 (73 行, 含 ROS2 C++ Publisher 示例); related → sources/Coding_Skill, entities/ROS2
+  - **MODIFY** `index.md` — header `Last updated` → 2026-07-27; `### ROS2` 段加 2 行; 新增 `### Coding Skill` 段加 1 行
+  - **MODIFY** `log.md` — 本条目
+- 纪律遵循 (per `vuepress-wiki-integration` skill "Ingest — mandatory workflow"):
+  - ✅ entities vs concepts 分工：3 个新页都是**方法/通信模式** (concept) 而非**实体/产品** (entity), 全部归 `concepts/`. ROS2/Snippet 这些是已有 entity 范畴, 没必要新建 entity 页
+  - ✅ Concept 页通过 `related:` frontmatter back-link 到 entity 页 (服务通信/动作通信 → entities/ROS2.md; 代码片段 → entities/ROS2.md)
+  - ✅ YAML `description:` 字段全部加引号 (含 Service/Action/Publisher 等英文术语)
+  - ✅ 5 个目标文件通过 git push 到 `wiki-ingest-2026-07-27-fix-broken-links-v2` 分支, **首次 push 路径** (BEFORE=0000...0, 走版本 C 的 if 分支)
+- 同期改动 (不属于 B-1 PR 但相关):
+  - master `d0d38cc5` "Improve handling of force-push in docs workflow" — `.github/workflows/docs.yml` line 142-159 升级, 修复 force-push 时 `before: None` 失败. 由用户在 GitHub UI 手 edit + commit. workflow 文件 204 → 209 行
+- Self-check: 待 Action 自动开 PR 后跑 `wiki-lint.sh` 验证 critical 从 3 → 0 (broken wikilinks 修好 + index.md 同步), 跑 `verify-pr-noops.sh` 验证 PR_SHA vs UP_SHA 一致

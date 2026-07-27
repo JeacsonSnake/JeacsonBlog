@@ -5,7 +5,7 @@ title: JeacsonBlog Wiki
 # JeacsonBlog Wiki
 
 > 基于 Karpathy LLM Wiki 模式构建的个人知识库。以博客原始笔记为 source of truth，由 LLM Agent 增量维护。
-> Last updated: 2026-07-21
+> Last updated: 2026-07-27
 
 ## Sources（知识域摘要）
 
@@ -46,8 +46,13 @@ title: JeacsonBlog Wiki
 
 ### ROS2
 - [[./concepts/话题通信.md]] — Topic 发布/订阅通信模式
+- [[./concepts/服务通信.md]] — Service 请求/应答通信模式
+- [[./concepts/动作通信.md]] — Action 长期任务通信（支持取消 + 反馈）
 - [[./concepts/坐标变换.md]] — tf2 坐标变换系统
 - [[./concepts/分布式通信.md]] — DDS 域ID跨设备通信
+
+### Coding Skill
+- [[./concepts/代码片段.md]] — VSCode 自定义 Snippet（以 ROS2 C++ Publisher 为例）
 
 ### 计算机网络
 - [[./concepts/URL到页面显示.md]] — DNS→TCP→HTTP→渲染全流程
