@@ -185,3 +185,25 @@ title: Wiki Log
 - 同期改动 (不属于 B-1 PR 但相关):
   - master `d0d38cc5` "Improve handling of force-push in docs workflow" — `.github/workflows/docs.yml` line 142-159 升级, 修复 force-push 时 `before: None` 失败. 由用户在 GitHub UI 手 edit + commit. workflow 文件 204 → 209 行
 - Self-check: 待 Action 自动开 PR 后跑 `wiki-lint.sh` 验证 critical 从 3 → 0 (broken wikilinks 修好 + index.md 同步), 跑 `verify-pr-noops.sh` 验证 PR_SHA vs UP_SHA 一致
+
+## [2026-08-10] ingest | docs/postMortem/deploy/007 — Mihomo 代理全挂排查与订阅自动化
+- Source article:
+  - `docs/postMortem/deploy/007_Troubleshooting_complete_failure_of_Tencent_Cloud_server_proxies.md`（232 行，10101 bytes，2026-08-10 发布）— Hermes Agent 部署在腾讯云时 mihomo 代理 12 节点全挂的根因排查与彻底修复方案：核心结论「代理全挂不等于目标站点被封，而是 GSLB IP 池漂移 + 静态订阅过期」；含 7 步诊断流程、4 步方案选型、URLTest 自动选择组配置、订阅自动化三层分离架构（.env + update-subscription.sh + file provider + cron）、3 个关键陷阱
+- Architecture (post 2026-07-13):
+  - ✅ SSH Deploy Key 认证（直接 push 到上游 `JeacsonSnake/JeacsonBlog` 的 `wiki-ingest-2026-08-10` 分支）
+  - ✅ 由上游 GitHub Actions `Create_Wiki_Ingest_Pr` job 自动开 PR（`on.push.branches: [master, 'wiki-ingest-*']` 已配置）
+- Pre-flight sync:
+  - ✅ Mirror fetch：upstream master `9e0159ad` → `8d2ee4d7`（"docs: 更新：007_..." 已合并）
+  - ✅ 本地 wiki 文件 SHAs 与 upstream 一致（PostMortem.md / Hermes-Agent.md / index.md / log.md / Ubuntu-gdm3 等全部 byte-identical）
+- Wiki pages created/updated (5 files total):
+  - **CREATE** `concepts/Mihomo-Proxy-GSLB-Drift-Subscription-Auto-Update.md` — 完整方法论（7 步诊断 + 4 步方案选型 + 三层分离架构 + URLTest 配置 + 5 条经验总结 + 4 个相邻故障 cross-link）
+  - **MODIFY** `entities/Hermes-Agent.md` — frontmatter 加 `Mihomo-Proxy-GSLB-Drift-Subscription-Auto-Update` related + 2026-08-10 updated；sources 加 deploy/007；主工作流加"Mihomo 代理全挂排查与订阅自动化"段；关键陷阱加 5 条（代理全挂=节点链路 / 静态订阅=慢性死亡 / 不支持 env 展开 / 自举失败 / 伪节点）
+  - **MODIFY** `sources/PostMortem.md` — `lastUpdated` → 2026-08-10；sources 加 deploy/007；部署节加 GSLB mention；关联加 Mihomo-Proxy 概念
+  - **MODIFY** `index.md` — header `Last updated: 2026-08-10`；Concepts/DevOps 小节加 `Mihomo-Proxy-GSLB-Drift-Subscription-Auto-Update` 链接
+  - **MODIFY** `log.md` — 本条目
+- 纪律遵循 (per `vuepress-wiki-integration` skill "Ingest — mandatory workflow"):
+  - ✅ entities vs concepts 分工：单篇方法/现象/方法论 → concepts（新建 Mihomo-Proxy-GSLB 概念页）；Hermes Agent 已有 entity 页只加工作流段摘要 + wikilink，不复制概念内容
+  - ✅ 概念页通过 `related:` back-link 到 entity 页 + 3 个相邻故障（Hermes-Agent-Cronjob-Setup / Edge-Secure-DNS-Gotcha / Ubuntu-gdm3-Disk-Full / AI-Daily-Briefing-Brotli-Fix）
+  - ✅ YAML `description:` 字段全部加引号（含中文冒号 / 反引号代码 / 括号说明）
+  - ✅ 5 个目标文件通过 git push 到 `wiki-ingest-2026-08-10` 分支，由 GitHub Actions `Create_Wiki_Ingest_Pr` 自动开 PR
+- Self-check: 待 Action 自动开 PR 后跑 `verify-pr-noops.sh` 验证所有 wiki 文件 PR_SHA vs UP_SHA 一致

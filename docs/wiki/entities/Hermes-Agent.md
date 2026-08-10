@@ -8,14 +8,16 @@ related:
   - docs/wiki/concepts/VuePress-Theme-Hope-Hermes-JSON-Converter.md
   - docs/wiki/concepts/VuePress-Theme-Hope-Hermes-Multi-Session-Merger.md
   - docs/wiki/concepts/AI-Daily-Briefing-Brotli-Fix-Investigation.md
+  - docs/wiki/concepts/Mihomo-Proxy-GSLB-Drift-Subscription-Auto-Update.md
   - docs/wiki/entities/LLM-Prompt-Skill.md
 created: 2026-06-08
-updated: 2026-06-09
+updated: 2026-08-10
 sources:
   - docs/postMortem/sp_for_LLM/003_think-Initial-notes-on-using-Hermes_Agent.md
   - docs/postMortem/sp_for_LLM/004_Hermes-LangChain-Interpreter-Skill-Investigation-report.md
   - docs/postMortem/sp_for_LLM/000Y_prompt-VuePress-Theme-Hope-Hermes-Multi-Session-Merger.md
   - docs/postMortem/sp_for_LLM/005_HermesMerged-AI-Daily-Briefing-Brotli-Truncation-Fix_-report.md
+  - docs/postMortem/deploy/007_Troubleshooting_complete_failure_of_Tencent_Cloud_server_proxies.md
 ---
 
 # Hermes Agent
@@ -72,6 +74,13 @@ Hermes Agent 是 Nous Research 开发的 AI Agent 框架，核心特性是**可�
 相关文档：
 - [[../concepts/AI-Daily-Briefing-Brotli-Fix-Investigation.md]] — 完整故障排查、根因分析（5 层技术栈）、修复方案、后续建议
 
+### Mihomo 代理全挂排查与订阅自动化（deploy/007 新增，2026-08-10）
+
+`AI Daily Briefing` 再次故障（2026-08-08 起 cron 静默无返回），但根因与 sp_for_LLM/005 完全不同 —— 不是 brotli 而是**网络层**。7 步排查（走代理测无关站点 → 节点层全挂 → 用户境外裸连节点可达 → GSLB 解析返回不同 IP → config.yaml 4 个月未更新）定位根因：**mihomo 静态订阅配置过期 + 机场 GSLB IP 池漂移，旧 IP 全部不可达**。**修复方案**：三层分离架构（`.env` 存 URL + `update-subscription.sh` 拉取 + `type: file` provider） + URLTest 自动选择组（`gstatic.com/generate_204` 健康检查，5min 间隔）+ 每周三 04:40 cron 自动更新。**自举失败**也是该事件的标志特征：mihomo 关闭后 `hermes update` 因耦合度太高无法裸连 GitHub，**必须用 `proxy-latency-check 5` 死马当活马医先抓一个可达节点再继续**。
+
+相关文档：
+- [[../concepts/Mihomo-Proxy-GSLB-Drift-Subscription-Auto-Update.md]] — 7 步诊断流程 + 4 步方案选型 + 三层分离架构 + URLTest 配置 + 5 条经验总结
+
 ## 核心配置
 
 - **主模型**: MiniMax-2.6 → MiniMax-2.7 → MiniMax-M3 → **2026-06-09 切换至 deepseek-v4-flash**（Brotli bug 触发后）
@@ -92,3 +101,8 @@ Hermes Agent 是 Nous Research 开发的 AI Agent 框架，核心特性是**可�
 - **commit-graph divergence（2026-06-05 测得）**: fork master 与 upstream master 即使文件 SHA 同步也可能 commit-graph 落后（如 fork 缺 14 个 upstream commit），导致基于 fork 创建的 PR 出现"假 added +N/-0"（PR 算法把 base 已有但 head 是新 commit 创建的文件标为 added）。修复：先 force-update fork master 到 upstream HEAD（`gh api .../git/refs/heads/master --method PATCH --field sha=$UP_SHA --field force=true`）；警告：force-update 会让基于 fork master 旧 ref 的 open PR 被 GitHub 自动关闭，**先同步再开 PR**。
 - **Brotli 流截断 bug（sp_for_LLM/005 新增）**: `brotlicffi==1.2.0.1` + `httpx==0.28.1` + 启用 brotli 压缩的 API Provider（如 MiniMax）在大型 SSE 流式响应（>500KB 压缩后）下必抛 `decoder process called with data when 'can_accept_more_data() is False`。Hermes 已知此 bug 并在 `skills_hub.py:1410-1415` 对 sitemap HTTP 请求规避（`Accept-Encoding: gzip`），但**未应用到 Provider API 调用**。短期解决：切换到不启用 brotli 的 Provider（DeepSeek 返回 identity 编码）；长期修复：在 Provider 配置层统一禁用 brotli。
 - **模型切换的副作用（sp_for_LLM/005 新增）**: 不同 LLM 对同一任务的表现差异巨大（延迟 5-10x、Cache 命中率、brotli 触发概率）。切换前必须验证 (a) 任务类型匹配 (b) 输出质量相当 (c) 错误模式不会引入新问题。本次切换顺手消除了 brotli bug 是巧合（DeepSeek 不用 brotli），不应推广为"换模型就能修 bug"的通用解法。
+- **Mihomo 代理全挂 = 节点链路问题，不是目标站点被封（deploy/007 新增，2026-08-10）**: 走代理连 github/google 也挂 = 节点层故障（GSLB 漂移 / 订阅过期 / IP 被运营商封），不是 x.com / twitter.com 的问题。**5 步诊断**：测无关站点 → 逐节点切换 → 境外裸连 → dig 域名看 IP 池 → 看 config.yaml 修改时间。**修复**：订阅自动化（`.env` + `type: file` provider）+ URLTest 自动选择组（`gstatic.com/generate_204` 健康检查，5min 间隔）+ 每周 cron 拉新订阅。**健康检查 URL 陷阱**：`cp.cloudflare.com` 假阳性多（腾讯云对 Cloudflare 段有限制但延迟测试通过），必须用 `gstatic.com/generate_204` 才反映真实可达性。
+- **mihomo 静态订阅 = 慢性死亡（deploy/007 新增）**: 机场 GSLB 会定期换 IP 池（典型周期 1-4 个月），config.yaml 不自动更新必然遇到"全部节点 dial context deadline exceeded"。**最危险的是失效静默**：节点 ping 通但实际转发挂（UDP 路由限制），需要真实业务请求验证。
+- **mihomo 不支持 config.yaml 环境变量展开（deploy/007 新增）**: 实测 `url: "${SUB_URL}"` 报 `unsupported protocol scheme`。**正确做法**：用 `proxy-providers: {type: file, path: ./providers/airport.yaml}`，URL 放 `.env`（chmod 600），脚本定期拉取后原子写入文件再 restart mihomo。
+- **自举失败陷阱（deploy/007 新增）**: 关闭 mihomo 后 `hermes update` 因 git 配置中 `insteadOf` 把 GitHub URL 重定向到 `http://127.0.0.1:7890`，而 mihomo 又停了，**直接死锁**。死马当活马医：`systemctl --user start mihomo` + `proxy-latency-check 5` 抓一个还能用的节点（未更新 IP 池也可能某个 IP 仍可达），连上 LLM 后让 LLM 继续修复。**预防**：定期演练（每月一次手动 disable mihomo 测裸连 GitHub 是否能更新），不要让"代理"和"更新"两个动作强耦合。
+- **订阅里的"剩余流量/套餐到期"是伪节点（deploy/007 新增）**: 机场订阅末尾常带 anytls 类型的占位节点（显示流量信息），节点选择组默认可能选中它们导致全挂。**识别方法**：节点名带"剩余流量""到期"等中文标签的，group 里手动 exclude 掉。
