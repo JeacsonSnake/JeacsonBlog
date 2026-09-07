@@ -137,6 +137,11 @@ export const zhSidebarConfig = sidebar({
             link: 'sp_for_LLM/',
             icon: "paper-pen"
         },
+        {
+            text: "豆知识",
+            link: 'tiny_tips/',
+            icon: "crow"
+        },
     ],
     "/postMortem/deploy/": "structure",
     "/postMortem/markdown_render/": "structure",
