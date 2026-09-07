@@ -146,6 +146,7 @@ export const zhSidebarConfig = sidebar({
     "/postMortem/deploy/": "structure",
     "/postMortem/markdown_render/": "structure",
     "/postMortem/sp_for_LLM/": "structure",
+    "/postMortem/tiny_tips/": "structure",
     "/complain_diary/": "structure",
     "/learningNote/vueNote/VUE2/": "structure",
     "/learningNote/coding_skill/": "structure",
