@@ -185,3 +185,16 @@ title: Wiki Log
 - 同期改动 (不属于 B-1 PR 但相关):
   - master `d0d38cc5` "Improve handling of force-push in docs workflow" — `.github/workflows/docs.yml` line 142-159 升级, 修复 force-push 时 `before: None` 失败. 由用户在 GitHub UI 手 edit + commit. workflow 文件 204 → 209 行
 - Self-check: 待 Action 自动开 PR 后跑 `wiki-lint.sh` 验证 critical 从 3 → 0 (broken wikilinks 修好 + index.md 同步), 跑 `verify-pr-noops.sh` 验证 PR_SHA vs UP_SHA 一致
+
+
+## [2026-09-08] ingest | Vue 项目 CSS fit-content 生产构建被错误优化
+- Source article: `docs/postMortem/tiny_tips/2026_09_07.md`（2026-09-07 发布）— 博饼网站欢迎页按钮在 Edge(Chromium) 下 `height: fit-content` 样式失效；根因 = Vite 生产构建 cssnano 把 `fit-content` 与 `-moz-fit-content` 视为重复声明、去重后只保留后写的 `-moz-fit-content`；修复 = 标准语法置于 vendor prefix 之后（副作用：放弃 2021 前 Firefox）；`cssMinify: 'lightningcss'` 尝试无效
+- Architecture: 2026-07-13 起 SSH Deploy Key + Actions 自动开 PR；本次为 **wiki-ingest.sh manifest 化（C-phase）首次实战**——脚本 5 处硬编码归零，改读 ~/.hermes/wiki/.ingest-manifest.json
+- Wiki pages created/updated (5 files):
+  - **CREATE** `concepts/Vue-CSS-Fit-Content-Vite-cssnano-Dedupe-Bug.md` — 独立方法论页（现象/根因/修复/无效方案/陷阱）；related → entities/Vue.md + sources/PostMortem.md
+  - **MODIFY** `entities/Vue.md` — `lastUpdated` → 2026-09-08；新增「构建与踩坑」小节 + wikilink（不抄正文）
+  - **MODIFY** `sources/PostMortem.md` — sources 加 `tiny_tips/2026_09_07.md`；tags 加 CSS, Vite；`lastUpdated` → 2026-09-08；新增 tiny_tips 小节 + 关联链接
+  - **MODIFY** `index.md` — header `Last updated` → 2026-09-08；DevOps/部署 小节加概念页链接
+  - **MODIFY** `log.md` — 本条目
+- 纪律遵循: entities vs concepts 分工（单篇方法/方法论 → concepts；无新 entity，Vue 已有 entity 页）；entity 页只加 1-3 行引用不抄正文；YAML description 加引号；index/log 同 commit
+- Self-check: 待 Action 自动开 PR 后跑 `verify-wiki-pr-tree.py audit <N>` 验证树结构与 PR body 一致
