@@ -5,7 +5,7 @@ title: JeacsonBlog Wiki
 # JeacsonBlog Wiki
 
 > 基于 Karpathy LLM Wiki 模式构建的个人知识库。以博客原始笔记为 source of truth，由 LLM Agent 增量维护。
-> Last updated: 2026-07-27
+> Last updated: 2026-09-08
 
 ## Sources（知识域摘要）
 
@@ -75,6 +75,7 @@ title: JeacsonBlog Wiki
 - [[./concepts/LeanCloud-to-Neon-Migration.md]] — Waline 评论数据从 LeanCloud 迁移至 Neon PostgreSQL 完整流程
 - [[./concepts/Edge-Secure-DNS-Gotcha.md]] — Edge「使用安全的 DNS」选项的副作用与排查（DoH 污染 curl DNS 缓存）
 - [[./concepts/Ubuntu-gdm3-Disk-Full-Troubleshooting.md]] — Ubuntu 24.04 gdm3 启动失败根因排查（磁盘空间耗尽 → APT 缓存失败 → systemd 降级）
+- [[./concepts/Vue-CSS-Fit-Content-Vite-cssnano-Dedupe-Bug.md]] — Vite 构建 cssnano 去重 fit-content 致 Edge 样式失效（标准语法放 vendor prefix 后）
 
 ## 最近更新
 详见 [[./log.md]]

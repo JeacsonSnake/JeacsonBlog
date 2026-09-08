@@ -2,8 +2,8 @@
 title: 踩坑心得知识域摘要
 description: "部署与开发中的实际问题记录与解决方案"
 type: source
-tags: [DevOps, Deploy, Markdown, AI Agent, DNS, Migrate, Network, Ubuntu, Disk, Troubleshooting]
-lastUpdated: 2026-07-21
+tags: [DevOps, Deploy, Markdown, AI Agent, DNS, Migrate, Network, Ubuntu, Disk, Troubleshooting, CSS, Vite]
+lastUpdated: 2026-09-08
 sources:
   - docs/postMortem/sp_for_LLM/003_think-Initial-notes-on-using-Hermes_Agent.md
   - docs/postMortem/sp_for_LLM/000X_prompt-VuePress-Theme-Hope-Hermes-JSON-Converter.md
@@ -13,6 +13,7 @@ sources:
   - docs/postMortem/sp_for_LLM/2026_06_29.md
   - docs/postMortem/deploy/005_leancloud_migrate_neon_relate.md
   - docs/postMortem/deploy/006_Ubuntu_gdm3_cannot_activate.md
+  - docs/postMortem/tiny_tips/2026_09_07.md
 ---
 
 # 踩坑心得知识域
@@ -46,6 +47,9 @@ sources:
 - **Edge 浏览器「使用安全的 DNS」选项的副作用**（sp_for_LLM/2026_06_29 新增）— DoH 选 Cloudflare 后污染 curl DNS 缓存；TCP 三次握手成功但 ClientHello 后 RST；nslookup 与 curl 返回不同 IP 的诡异断网；跨网络环境切换后特别容易触发
 - 核心参考书：Kaviany《Heat Transfer Physics》/ Reif《Fundamentals of Statistical and Thermal Physics》/ Gang Chen《Nanoscale Energy Transport》
 
+### 前端构建 / 小技巧 (tiny_tips)
+- **Vue 项目 CSS fit-content 生产构建被错误优化**（tiny_tips/2026_09_07 新增）— cssnano 把 `fit-content` 与 `-moz-fit-content` 视为重复声明去重、只保留后写的前缀 → Edge 失效；解法：标准语法置于 vendor prefix 之后
+
 ## 关联
 
 - [[../entities/Web.md]] — Web 开发
@@ -59,3 +63,4 @@ sources:
 - [[../concepts/LeanCloud-to-Neon-Migration.md]] — Waline 评论数据从 LeanCloud 迁移至 Neon PostgreSQL 完整流程（4 步）
 - [[../concepts/Edge-Secure-DNS-Gotcha.md]] — Edge「使用安全的 DNS」选项的副作用与排查（DoH 污染 curl DNS 缓存）
 - [[../concepts/Ubuntu-gdm3-Disk-Full-Troubleshooting.md]] — Ubuntu 24.04 gdm3 启动失败根因排查（磁盘空间耗尽 → APT 缓存失败 → systemd 降级）
+- [[../concepts/Vue-CSS-Fit-Content-Vite-cssnano-Dedupe-Bug.md]] — Vite 构建 cssnano 错误去重 fit-content 的排查（标准语法置于 vendor prefix 后）
