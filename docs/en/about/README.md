@@ -16,9 +16,10 @@ timeline: false
 💬 Through self-study and university courses, I have learnt how to use computer languages such as JAVA/Python/JavaScript/HTML/CSS/C++/Objective-C to program on devices including, but not limited to, Raspberry Pi/ARDUINO/PCs. I really enjoy the process of constantly learning to create value, and I shall endeavour to continually improve my skills.
 
 🤔 I have a number of self-built websites (here's one of them, Although they were mainly written in Chinese):
-    - Blog: it's *here*. Blog update time is not regular, update content including but not limited to: front and back-end related \ computer network related \ embedded related \ robotics related \ their own little whining \ and even a variety of their own interest but not very useful side knowledge.
-    - Bobbing website: This project is a consolidated version of the old project `‘bobing-jettonman’`, adding relevant code on top of the original project to realise a pure front-end bobing version. You can access it by clicking [this link](https://bobing.jeacsonsnake.com/).
-    - There should be other site outputs, but nothing inspired enough to put them aside at the moment.
+
+    - 📚 Blog: it's *here*. Blog update time is not regular, update content including but not limited to: front and back-end related \ computer network related \ embedded related \ robotics related \ their own little whining \ and even a variety of their own interest but not very useful side knowledge.
+    - 🎲 Bobbing website: This project is a consolidated version of the old project `‘bobing-jettonman’`, adding relevant code on top of the original project to realise a pure front-end bobing version. You can access it by clicking [this link](https://bobing.jeacsonsnake.com/).
+    - 🎬 There should be other site outputs, but nothing inspired enough to put them aside at the moment.
 
 🎹 My Final Year Project was to implement a piano keyboard playing robot based on Raspberry Pi 5 by using the lightweight neural network MobilenetV3.
 
