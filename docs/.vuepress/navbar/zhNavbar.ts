@@ -52,6 +52,6 @@ export const zhNavbarConfig = navbar([{
 },
 {
     text: 'Github',
-    link: 'https://Github.com'
+    link: 'https://github.com/JeacsonSnake/JeacsonBlog'
 },
 ])
