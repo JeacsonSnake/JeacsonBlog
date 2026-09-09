@@ -9,13 +9,15 @@ related:
   - docs/wiki/concepts/VuePress-Theme-Hope-Hermes-Multi-Session-Merger.md
   - docs/wiki/concepts/AI-Daily-Briefing-Brotli-Fix-Investigation.md
   - docs/wiki/entities/LLM-Prompt-Skill.md
+  - docs/wiki/concepts/Mihomo-Proxy-GSLB-Drift-Subscription-Auto-Update.md
 created: 2026-06-08
-updated: 2026-06-09
+updated: 2026-09-09
 sources:
   - docs/postMortem/sp_for_LLM/003_think-Initial-notes-on-using-Hermes_Agent.md
   - docs/postMortem/sp_for_LLM/004_Hermes-LangChain-Interpreter-Skill-Investigation-report.md
   - docs/postMortem/sp_for_LLM/000Y_prompt-VuePress-Theme-Hope-Hermes-Multi-Session-Merger.md
   - docs/postMortem/sp_for_LLM/005_HermesMerged-AI-Daily-Briefing-Brotli-Truncation-Fix_-report.md
+  - docs/postMortem/deploy/007_Troubleshooting_complete_failure_of_Tencent_Cloud_server_proxies.md
 ---
 
 # Hermes Agent
@@ -72,6 +74,13 @@ Hermes Agent 是 Nous Research 开发的 AI Agent 框架，核心特性是**可�
 相关文档：
 - [[../concepts/AI-Daily-Briefing-Brotli-Fix-Investigation.md]] — 完整故障排查、根因分析（5 层技术栈）、修复方案、后续建议
 
+### mihomo 代理链路故障排查与订阅自动化（deploy/007 新增）
+
+腾讯云服务器上的 mihomo 代理 12 节点全挂，导致依赖代理的 AI 简报等 cron 静默失败。根因不是目标站点被封，而是机场 **GSLB IP 池漂移 + 静态订阅 4 个月未更新**（节点活着、广州→节点链路失效）。修复 = `.env` 存订阅 URL + `type: file` provider + 每周自动更新订阅 cron + **URLTest 自动选择组**（gstatic 健康检查 300s 自动切换）。
+
+相关文档：
+- [[../concepts/Mihomo-Proxy-GSLB-Drift-Subscription-Auto-Update.md]] — 7 步诊断流程、4 步方案选型、订阅自动化三层架构与 5 个陷阱
+
 ## 核心配置
 
 - **主模型**: MiniMax-2.6 → MiniMax-2.7 → MiniMax-M3 → **2026-06-09 切换至 deepseek-v4-flash**（Brotli bug 触发后）
@@ -92,3 +101,4 @@ Hermes Agent 是 Nous Research 开发的 AI Agent 框架，核心特性是**可�
 - **commit-graph divergence（2026-06-05 测得）**: fork master 与 upstream master 即使文件 SHA 同步也可能 commit-graph 落后（如 fork 缺 14 个 upstream commit），导致基于 fork 创建的 PR 出现"假 added +N/-0"（PR 算法把 base 已有但 head 是新 commit 创建的文件标为 added）。修复：先 force-update fork master 到 upstream HEAD（`gh api .../git/refs/heads/master --method PATCH --field sha=$UP_SHA --field force=true`）；警告：force-update 会让基于 fork master 旧 ref 的 open PR 被 GitHub 自动关闭，**先同步再开 PR**。
 - **Brotli 流截断 bug（sp_for_LLM/005 新增）**: `brotlicffi==1.2.0.1` + `httpx==0.28.1` + 启用 brotli 压缩的 API Provider（如 MiniMax）在大型 SSE 流式响应（>500KB 压缩后）下必抛 `decoder process called with data when 'can_accept_more_data() is False`。Hermes 已知此 bug 并在 `skills_hub.py:1410-1415` 对 sitemap HTTP 请求规避（`Accept-Encoding: gzip`），但**未应用到 Provider API 调用**。短期解决：切换到不启用 brotli 的 Provider（DeepSeek 返回 identity 编码）；长期修复：在 Provider 配置层统一禁用 brotli。
 - **模型切换的副作用（sp_for_LLM/005 新增）**: 不同 LLM 对同一任务的表现差异巨大（延迟 5-10x、Cache 命中率、brotli 触发概率）。切换前必须验证 (a) 任务类型匹配 (b) 输出质量相当 (c) 错误模式不会引入新问题。本次切换顺手消除了 brotli bug 是巧合（DeepSeek 不用 brotli），不应推广为"换模型就能修 bug"的通用解法。
+- **mihomo 静态订阅 = 慢性死亡（deploy/007 新增）**: 机场 GSLB 定期换 IP 池，静态订阅配置必然过期（本次 4 个月）→ 依赖代理的 cron 全静默失败。代理全挂先测 github/google 区分"节点故障 vs 站点屏蔽"；用户境外可达即节点活着，问题在本地链路 → 修订阅自动化（.env + file provider + URLTest），不要临时改 IP。详见 [[../concepts/Mihomo-Proxy-GSLB-Drift-Subscription-Auto-Update.md]]。

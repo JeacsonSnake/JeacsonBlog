@@ -198,3 +198,21 @@ title: Wiki Log
   - **MODIFY** `log.md` — 本条目
 - 纪律遵循: entities vs concepts 分工（单篇方法/方法论 → concepts；无新 entity，Vue 已有 entity 页）；entity 页只加 1-3 行引用不抄正文；YAML description 加引号；index/log 同 commit
 - Self-check: 待 Action 自动开 PR 后跑 `verify-wiki-pr-tree.py audit <N>` 验证树结构与 PR body 一致
+
+
+## [2026-09-09] ingest | 补录 2 篇漏抓 postMortem：deploy/007 代理全挂（redo）+ tiny_tips/2026_09_08 WiFi 5GHz DFS
+- Source articles:
+  - `docs/postMortem/deploy/007_Troubleshooting_complete_failure_of_Tencent_Cloud_server_proxies.md`（2026-08-10 发布）— 腾讯云广州 mihomo 代理 12 节点全挂排查：走代理连 github/google 也超时 = 节点层故障；境外裸连节点可达 → 根因 = GSLB IP 池漂移 + 静态订阅 4 个月未更新；修复 = .env + file provider + 每周更新 cron + URLTest 自动选择组（gstatic 健康检查 300s）
+  - `docs/postMortem/tiny_tips/2026_09_08.md`（2026-09-08 发布）— 5GHz 信道 100 属 DFS 频段，雷达避让机制不定时挂起客户端传输 → 社交平台图片加载慢（小请求敏感，视频有缓冲可掩盖）；Velop 不支持手动指定信道 → 关 DFS + Channel Finder 落回信道 161
+- 补录背景（为什么这两篇之前没进 wiki）:
+  - 007：2026-08-10 当天 ingest 撞 sparse-commit 事故（PR #19/#20 关闭、从未合并）；事后 blogwatcher read-all 已消费 unread 标记 → cron 永不自动重试（runbook「read-all 消费 unread 信号」pitfall）
+  - 2026_09_08：发布于 09-08 12:45（晚于当日 06:35 cron）；09-09 cron 的 scan 已发现（db id 8400）但路径过滤误判为"无 postMortem 文章" → 手动补录
+- Wiki pages created/updated (6 files, manifest 流程 wiki-ingest.sh):
+  - **CREATE** `concepts/Mihomo-Proxy-GSLB-Drift-Subscription-Auto-Update.md` — 复用 2026-08-10 事故当天已写好的草稿（248 行，与原文逐节对应），删除尾部「关键陷阱（写入 entities/Hermes-Agent.md）」注记节（该内容已并入本次 entity 更新）；created/updated 保持 2026-08-10
+  - **CREATE** `concepts/WiFi-5GHz-DFS-Radar-Avoidance-Image-Loading-Slow.md` — 现象/分层排查表/根因=DFS 雷达避让/解法=关 DFS + Channel Finder/经验；related → entities/Computer_Network + sources/PostMortem
+  - **MODIFY** `entities/Hermes-Agent.md` — related + sources frontmatter 增 007 文；`updated` → 2026-09-09；主要工作流新增「mihomo 代理链路故障排查与订阅自动化」小节（3 行 + wikilink，不抄正文）；关键陷阱新增「mihomo 静态订阅 = 慢性死亡」1 条（指向概念页）
+  - **MODIFY** `sources/PostMortem.md` — sources frontmatter 增 2 篇；部署段增 007 条目、tiny_tips 段增 09_08 条目；关联增 2 概念页链接；tags 增 Proxy/GSLB/WiFi/DFS；lastUpdated → 2026-09-09
+  - **MODIFY** `index.md` — Last updated → 2026-09-09；DevOps/部署段增 2 条概念页链接
+  - **MODIFY** `log.md` — 本条目
+- 纪律遵循: entities/concepts 分工（单篇方法论 → concepts；无新 entity）；entity 页只加小节引用 + wikilink 不抄正文；YAML description 全部加引号；index/log/sources 与 create 同 commit
+- Self-check: 待 Action 自动开 PR 后跑 `verify-wiki-pr-tree.py audit <N>` 验证树结构与 PR body 一致

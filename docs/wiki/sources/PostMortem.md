@@ -2,8 +2,8 @@
 title: 踩坑心得知识域摘要
 description: "部署与开发中的实际问题记录与解决方案"
 type: source
-tags: [DevOps, Deploy, Markdown, AI Agent, DNS, Migrate, Network, Ubuntu, Disk, Troubleshooting, CSS, Vite]
-lastUpdated: 2026-09-08
+tags: [DevOps, Deploy, Markdown, AI Agent, DNS, Migrate, Network, Ubuntu, Disk, Troubleshooting, CSS, Vite, Proxy, GSLB, WiFi, DFS]
+lastUpdated: 2026-09-09
 sources:
   - docs/postMortem/sp_for_LLM/003_think-Initial-notes-on-using-Hermes_Agent.md
   - docs/postMortem/sp_for_LLM/000X_prompt-VuePress-Theme-Hope-Hermes-JSON-Converter.md
@@ -13,7 +13,9 @@ sources:
   - docs/postMortem/sp_for_LLM/2026_06_29.md
   - docs/postMortem/deploy/005_leancloud_migrate_neon_relate.md
   - docs/postMortem/deploy/006_Ubuntu_gdm3_cannot_activate.md
+  - docs/postMortem/deploy/007_Troubleshooting_complete_failure_of_Tencent_Cloud_server_proxies.md
   - docs/postMortem/tiny_tips/2026_09_07.md
+  - docs/postMortem/tiny_tips/2026_09_08.md
 ---
 
 # 踩坑心得知识域
@@ -28,6 +30,7 @@ sources:
 - 环境配置问题
 - **LeanCloud → Neon PostgreSQL Waline 评论数据迁移**（deploy/005 新增）— LeanCloud 2027 年停止服务后的 4 步迁移：导出 JSONL → Vercel 创建 Neon + 建表 → waline-data-import-tool 上传 → Redeploy；含 LeanCloud Date 字段格式转换 Python 脚本
 - **Ubuntu 24.04 gdm3 启动失败根因排查**（deploy/006 新增）— VMware 虚拟机磁盘空间耗尽（≥95%）导致 APT 缓存写不进 → gdm3 无法启动 → systemd 自动降级为 multi-user.target；包含 8 步紧急清理 + 7 步 VMware 扩容完整流程
+- **mihomo 代理全挂根因排查**（deploy/007 新增）— 腾讯云广州 12 节点全挂：不是 x.com 被封，是机场 **GSLB IP 池漂移 + 静态订阅 4 个月未更新**（节点活着、本地→节点链路失效）；走代理连 github/google 也挂 = 节点层故障；修复 = 订阅自动化（.env + file provider + 每周更新 cron）+ URLTest 自动选择组
 
 ### Markdown 渲染 (markdown_render)
 - markdown-it 渲染器配置
@@ -49,6 +52,7 @@ sources:
 
 ### 前端构建 / 小技巧 (tiny_tips)
 - **Vue 项目 CSS fit-content 生产构建被错误优化**（tiny_tips/2026_09_07 新增）— cssnano 把 `fit-content` 与 `-moz-fit-content` 视为重复声明去重、只保留后写的前缀 → Edge 失效；解法：标准语法置于 vendor prefix 之后
+- **WiFi 5GHz DFS 信道下社交平台图片加载缓慢**（tiny_tips/2026_09_08 新增）— 信道 100（5500 MHz）属 DFS 频段（52~140），触发雷达避让 → 客户端传输不定时挂起；图片小请求对抖动敏感（视频有缓冲可掩盖）；Velop 不支持手动指定信道 → 关闭 DFS + Channel Finder 落到非 DFS 信道（161）
 
 ## 关联
 
@@ -64,3 +68,5 @@ sources:
 - [[../concepts/Edge-Secure-DNS-Gotcha.md]] — Edge「使用安全的 DNS」选项的副作用与排查（DoH 污染 curl DNS 缓存）
 - [[../concepts/Ubuntu-gdm3-Disk-Full-Troubleshooting.md]] — Ubuntu 24.04 gdm3 启动失败根因排查（磁盘空间耗尽 → APT 缓存失败 → systemd 降级）
 - [[../concepts/Vue-CSS-Fit-Content-Vite-cssnano-Dedupe-Bug.md]] — Vite 构建 cssnano 错误去重 fit-content 的排查（标准语法置于 vendor prefix 后）
+- [[../concepts/Mihomo-Proxy-GSLB-Drift-Subscription-Auto-Update.md]] — mihomo 代理全挂排查（GSLB IP 池漂移 + 订阅自动化三层架构）
+- [[../concepts/WiFi-5GHz-DFS-Radar-Avoidance-Image-Loading-Slow.md]] — WiFi 5GHz DFS 信道雷达避让致图片加载缓慢（关闭 DFS 修复）
