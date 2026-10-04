@@ -18,6 +18,11 @@ export const enNavbarConfig = navbar([{
     icon: "paper-pen"
 },
 {
+    text: "AI Industry Analysis Report",
+    link: "/en/Scheduled_Automatic_AI_Industry_Analysis_Report/",
+    icon: "envelopes-bulk",
+},
+{
     text: 'About',
     link: '/en/about/',
     icon: "circle-info"

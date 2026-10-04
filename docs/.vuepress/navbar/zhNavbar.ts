@@ -28,6 +28,11 @@ export const zhNavbarConfig = navbar([{
     icon: "signature"
 },
 {
+    text: "AI行业分析报告",
+    link: "/Scheduled_Automatic_AI_Industry_Analysis_Report/",
+    icon: "envelopes-bulk",
+},
+{
     text: '关于',
     link: '/about/',
     icon: "circle-info"

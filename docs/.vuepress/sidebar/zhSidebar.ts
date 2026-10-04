@@ -36,6 +36,16 @@ export const zhSidebarConfig = sidebar({
             ],
         },
         {
+            text: "定时自动化AI行业分析报告",
+            link: "Scheduled_Automatic_AI_Industry_Analysis_Report/",
+            icon: "envelopes-bulk",
+            children: [
+                "daily/",
+                "monthly/",
+            ],
+            collapsible: true,
+        },
+        {
             text: "踩坑心得",
             prefix: "postMortem/",
             icon: "diagram-next",
@@ -143,6 +153,10 @@ export const zhSidebarConfig = sidebar({
             icon: "crow"
         },
     ],
+    "/Scheduled_Automatic_AI_Industry_Analysis_Report/": "structure",
+    "/Scheduled_Automatic_AI_Industry_Analysis_Report/daily/": "structure",
+    "/Scheduled_Automatic_AI_Industry_Analysis_Report/monthly/": "structure",
+
     "/postMortem/deploy/": "structure",
     "/postMortem/markdown_render/": "structure",
     "/postMortem/sp_for_LLM/": "structure",
