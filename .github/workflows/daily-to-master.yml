@@ -3,7 +3,7 @@ name: merge-daily-into-master
 on:
   workflow_dispatch:              # hop-1 显式 dispatch；workflow_dispatch 不受 GITHUB_TOKEN 抑制
   schedule:
-    - cron: '17 * * * *'          # 兜底：dispatch 丢失时每小时自愈（非整点）
+    - cron: '17 12 * * *'          # 兜底：dispatch 丢失时每天固定时间自愈（12:17 UTC）
 
 concurrency:
   group: daily-to-master
