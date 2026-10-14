@@ -95,6 +95,7 @@ jobs:
     # Create_LLM_Relate_Pr needs pull-requests as write to open a PR
     permissions:
       contents: write
+      actions: write           # 新增：用于 dispatch daily→master
       pull-requests: write
     
     if: github.event_name == 'push' && (startsWith(github.ref, 'refs/heads/wiki-ingest-') || startsWith(github.ref, 'refs/heads/briefing-archive-'))
@@ -190,6 +191,7 @@ jobs:
           BRANCH="${{ steps.check.outputs.branch }}"
           TITLE=$(git log -1 --pretty=%s HEAD)
           BODY=$(git log -1 --pretty=%b HEAD)
+          BASE="master"
           if [ "$MULTI" -gt 1 ]; then
             WARNING="> ⚠️ This PR was opened from a push of ${MULTI} commits. The PR description below reflects only the HEAD commit; earlier commits are not visible here. See the branch's commit history for the full diff."
             if [ -n "$BODY" ]; then
@@ -201,10 +203,41 @@ jobs:
           if [ -z "$BODY" ]; then
             BODY="Automated LLM Relate PR opened by Hermes deploy key on $(date -u +%FT%TZ)."
           fi
+          if [[ "$BRANCH" == briefing-archive-* ]]; then 
+            BASE="daily"
+          fi
           gh pr create \
             --repo "${{ github.repository }}" \
             --head "$BRANCH" \
-            --base master \
+            --base "$BASE" \
             --title "$TITLE" \
             --body "$BODY"
+            
+      - name: Auto-merge archive PR into daily
+        if: startsWith(steps.check.outputs.branch, 'briefing-archive-')
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          BRANCH="${{ steps.check.outputs.branch }}"
+          # 早拦一层：PR 文件必须都在归档白名单内
+          BAD=$(gh pr view "$BRANCH" --repo "${{ github.repository }}" --json files \
+                --jq '.files[].path' \
+                | grep -vE '^docs/(en/)?Scheduled_Automatic_AI_Industry_Analysis_Report/(daily|monthly)/.+\.md$' || true)
+          if [ -n "$BAD" ]; then
+            echo "::error::PR 含归档目录以外的文件，拒绝自动合并：$BAD"; exit 1
+          fi
+          for i in 1 2 3 4 5; do
+            if gh pr merge "$BRANCH" --squash --repo "${{ github.repository }}"; then
+              echo "merged $BRANCH into daily"; merged=1; break
+            fi
+            echo "merge attempt $i failed, retry in 5s"; sleep 5
+          done
+          [ "${merged:-0}" = "1" ] || { echo "::error::merge into daily failed"; exit 1; }
+
+      - name: Dispatch daily→master merge (definition pinned to master)
+        if: startsWith(steps.check.outputs.branch, 'briefing-archive-')
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh workflow run daily-to-master.yml --repo "${{ github.repository }}" --ref master
 
