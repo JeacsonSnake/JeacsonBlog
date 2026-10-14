@@ -1,0 +1,94 @@
+name: merge-daily-into-master
+
+on:
+  workflow_dispatch:              # hop-1 显式 dispatch；workflow_dispatch 不受 GITHUB_TOKEN 抑制
+  schedule:
+    - cron: '17 * * * *'          # 兜底：dispatch 丢失时每小时自愈（非整点）
+
+concurrency:
+  group: daily-to-master
+  cancel-in-progress: false
+
+jobs:
+  merge:
+    name: Guard and merge daily into master
+    runs-on: ubuntu-latest
+    # L1：环境密钥 + deployment branch 限 master；ref≠master 时本 job 直接被环境保护拒掉
+    environment: master-merge
+    permissions:
+      contents: read
+
+    steps:
+      - name: Mint app token
+        id: app-token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ secrets.DAILY_MERGE_APP_ID }}
+          private-key: ${{ secrets.DAILY_MERGE_APP_PRIVATE_KEY }}
+
+      - name: Checkout master
+        uses: actions/checkout@v4
+        with:
+          ref: master
+          fetch-depth: 0
+          token: ${{ steps.app-token.outputs.token }}
+
+      - name: Guard — only archive content may reach master
+        id: guard
+        run: |
+          set -euo pipefail
+          git fetch --no-tags origin daily master
+          AHEAD=$(git rev-list --count origin/master..origin/daily)
+          echo "daily 领先 master ${AHEAD} 个提交"
+          if [ "$AHEAD" = "0" ]; then
+            echo "skip=1" >> "$GITHUB_OUTPUT"; echo "daily 无新提交，无需合并"; exit 0
+          fi
+          git diff --name-status "origin/master...origin/daily" | tee /tmp/changes.txt
+          BAD=0
+          while IFS=$'\t' read -r ST P1 P2; do
+            [ -z "${ST:-}" ] && continue
+            case "$ST" in
+              A|M) ;;
+              *) echo "::error::非新增/修改类变更：$ST $P1"; BAD=1; continue ;;
+            esac
+            case "$P1" in
+              docs/Scheduled_Automatic_AI_Industry_Analysis_Report/daily/*.md) ;;
+              docs/Scheduled_Automatic_AI_Industry_Analysis_Report/monthly/*.md) ;;
+              docs/en/Scheduled_Automatic_AI_Industry_Analysis_Report/daily/*.md) ;;
+              docs/en/Scheduled_Automatic_AI_Industry_Analysis_Report/monthly/*.md) ;;
+              *) echo "::error::路径不在归档白名单内：$P1"; BAD=1 ;;
+            esac
+          done < /tmp/changes.txt
+          echo "skip=0" >> "$GITHUB_OUTPUT"
+          if [ "$BAD" = "1" ]; then
+            echo "guard=blocked" >> "$GITHUB_OUTPUT"
+            echo "::error::守卫拦截：daily 含归档目录以外的变更，已中止合并"
+          else
+            echo "guard=ok" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Merge daily into master
+        if: steps.guard.outputs.guard == 'ok' && steps.guard.outputs.skip == '0'
+        run: |
+          set -euo pipefail
+          git config user.name  "daily-archive-bot"
+          git config user.email "daily-archive-bot@users.noreply.github.com"
+          git checkout -B master origin/master
+          git merge --no-ff origin/daily -m "chore: merge daily archive into master"
+          git push origin master
+
+      - name: Alert and fail on guard block
+        if: steps.guard.outputs.guard == 'blocked'
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+        run: |
+          TITLE="⚠️ daily→master 守卫拦截"
+          BODY=$(printf 'daily 含归档目录以外的变更，已中止合并。\n\n```\n%s\n```\n' "$(cat /tmp/changes.txt)")
+          EXISTING=$(gh issue list --repo "$GITHUB_REPOSITORY" --state open \
+                       --search "in:title ${TITLE}" --json number -q '.[0].number' || true)
+          if [ -n "$EXISTING" ]; then
+            gh issue comment "$EXISTING" --repo "$GITHUB_REPOSITORY" --body "$BODY"
+          else
+            gh issue create --repo "$GITHUB_REPOSITORY" --title "$TITLE" --body "$BODY"
+          fi
+          exit 1
