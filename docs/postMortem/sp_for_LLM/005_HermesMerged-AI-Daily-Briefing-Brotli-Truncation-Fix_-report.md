@@ -14,6 +14,10 @@ tag:
 
 > 本文档为对 2 个 Hermes Agent 会话的融合总结报告，涉及模型包括 MiniMax-M3、deepseek-v4-flash。各会话围绕 "AI Daily Briefing Cron Job Brotli 流截断故障" 同一主题展开：首个会话使用 MiniMax-M3 进行问题现象确认、根因调查与手动复现；后续会话在将执行模型切换为 deepseek-v4-flash 后，完成修复验证、成功触发 Cron Job，并深入分析了 Brotli 解码错误的完整技术链路。
 >
+> ---
+> 大部分内容由 Hermes Agent 基于会话整理，我只做事实性的的核查与修改，因此更建议使用 AGENT 读取反刍后再阅读。不保证本文中一定不存在逻辑前后不一的现象，还请注意（鞠躬）
+>
+> ---
 > **融合会话概览**:  
 >
 > | 会话ID | 使用模型 | 消息数 | 工具调用 | 会话时间 |  
