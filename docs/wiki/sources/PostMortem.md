@@ -2,14 +2,15 @@
 title: 踩坑心得知识域摘要
 description: "部署与开发中的实际问题记录与解决方案"
 type: source
-tags: [DevOps, Deploy, Markdown, AI Agent, DNS, Migrate, Network, Ubuntu, Disk, Troubleshooting, CSS, Vite, Proxy, GSLB, WiFi, DFS]
-lastUpdated: 2026-09-09
+tags: [DevOps, Deploy, Markdown, AI Agent, DNS, Migrate, Network, Ubuntu, Disk, Troubleshooting, CSS, Vite, Proxy, GSLB, WiFi, DFS, GitHub Actions, Git, Branch Protection]
+lastUpdated: 2026-10-20
 sources:
   - docs/postMortem/sp_for_LLM/003_think-Initial-notes-on-using-Hermes_Agent.md
   - docs/postMortem/sp_for_LLM/000X_prompt-VuePress-Theme-Hope-Hermes-JSON-Converter.md
   - docs/postMortem/sp_for_LLM/000Y_prompt-VuePress-Theme-Hope-Hermes-Multi-Session-Merger.md
   - docs/postMortem/sp_for_LLM/004_Hermes-LangChain-Interpreter-Skill-Investigation-report.md
   - docs/postMortem/sp_for_LLM/005_HermesMerged-AI-Daily-Briefing-Brotli-Truncation-Fix_-report.md
+  - docs/postMortem/sp_for_LLM/006_Hermes-Briefing-Archive-Auto-Merge-Topology-report.md
   - docs/postMortem/sp_for_LLM/2026_06_29.md
   - docs/postMortem/deploy/005_leancloud_migrate_neon_relate.md
   - docs/postMortem/deploy/006_Ubuntu_gdm3_cannot_activate.md
@@ -47,6 +48,7 @@ sources:
 - Hermes Agent 部署与 RSS 每日简报 cronjob（sp_for_LLM/003）— VPS 安装、多模型选型、gateway 多路互备、衔尾蛇问题规避
 - LangChain Interpreter Skills vs Hermes Skills 调研（sp_for_LLM/004）— 多轮对话调研 Skills 体系对比、Memory 三层架构（built-in ↔ Holographic ↔ disk-level 验证）、冲突指令处理纪律
 - AI Daily Briefing Cron Job Brotli 流截断故障排查与模型切换修复（sp_for_LLM/005 新增）— `brotlicffi==1.2.0.1` + `httpx==0.28.1` + MiniMax API 启 brotli 的 5 层叠加 bug；执行模型从 MiniMax-M3 切换至 deepseek-v4-flash；深层源码级根因分析与网络相似案例
+- **AI 简报自动归档链路打通**（sp_for_LLM/006 新增）— hop-1（归档分支 → PR 白名单预检 → 自动 squash 进 `daily`）+ hop-2（`workflow_dispatch` 三点 diff 守卫 → `git merge --no-ff` → push master）两跳拓扑；核心不变量 = `merge-base`（squash 只同步内容、不建立祖先关系）；master 双层保护 GH013（ruleset）/ GH006（classic，个人仓库无 bypass 名单）→ 删 classic 只留 ruleset；`success` 必须拆到 step 级核对
 - **Edge 浏览器「使用安全的 DNS」选项的副作用**（sp_for_LLM/2026_06_29 新增）— DoH 选 Cloudflare 后污染 curl DNS 缓存；TCP 三次握手成功但 ClientHello 后 RST；nslookup 与 curl 返回不同 IP 的诡异断网；跨网络环境切换后特别容易触发
 - 核心参考书：Kaviany《Heat Transfer Physics》/ Reif《Fundamentals of Statistical and Thermal Physics》/ Gang Chen《Nanoscale Energy Transport》
 
@@ -70,3 +72,4 @@ sources:
 - [[../concepts/Vue-CSS-Fit-Content-Vite-cssnano-Dedupe-Bug.md]] — Vite 构建 cssnano 错误去重 fit-content 的排查（标准语法置于 vendor prefix 后）
 - [[../concepts/Mihomo-Proxy-GSLB-Drift-Subscription-Auto-Update.md]] — mihomo 代理全挂排查（GSLB IP 池漂移 + 订阅自动化三层架构）
 - [[../concepts/WiFi-5GHz-DFS-Radar-Avoidance-Image-Loading-Slow.md]] — WiFi 5GHz DFS 信道雷达避让致图片加载缓慢（关闭 DFS 修复）
+- [[../concepts/Briefing-Archive-Auto-Merge-Topology.md]] — AI 简报自动归档两跳链路（merge-base 不变量 + 双层分支保护 + step 级验证）

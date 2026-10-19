@@ -216,3 +216,15 @@ title: Wiki Log
   - **MODIFY** `log.md` — 本条目
 - 纪律遵循: entities/concepts 分工（单篇方法论 → concepts；无新 entity）；entity 页只加小节引用 + wikilink 不抄正文；YAML description 全部加引号；index/log/sources 与 create 同 commit
 - Self-check: 待 Action 自动开 PR 后跑 `verify-wiki-pr-tree.py audit <N>` 验证树结构与 PR body 一致
+
+## [2026-10-20] ingest | 006-AI 日报自动归档链路打通 —— merge-base 不变量、双重分支保护与 GitHub App bypass
+- Source article: `docs/postMortem/sp_for_LLM/006_Hermes-Briefing-Archive-Auto-Merge-Topology-report.md`（2026-10-19 发布）— 把「归档 job 推分支 → 人工 Squash & Merge」改造成 hop-1（归档分支 → PR 白名单预检 → 自动 squash 进 `daily`）+ hop-2（`workflow_dispatch` 三点 diff 守卫 → `git merge --no-ff` → push master）；三期踩中三类结构性问题：merge-base 不变量、master 双层分支保护、GitHub App ruleset bypass
+- 触发：2026-10-20 scan 发现 JeacsonBlog 新增 `/postMortem/sp_for_LLM/006_Hermes-Briefing-Archive-Auto-Merge-Topology-report.html`（db id 10324），步骤 6 机械 grep 命中共 1 篇
+- Wiki pages created/updated (5 files, manifest 流程 wiki-ingest.sh):
+  - **CREATE** `concepts/Briefing-Archive-Auto-Merge-Topology.md` — 拓扑设计（为什么 hop-2 必须 dispatch、--ref master、environment secret、App 不给 Workflows 权限）+ 核心不变量 merge-base/三点 diff + 三种「同步」方式对照 + GH013/GH006 双层保护与个人仓库 bypass 限制 + step 级验证纪律 + hop-2 失败速查表 + schedule best-effort 实测迟到 4~5h
+  - **MODIFY** `entities/Hermes-Agent.md` — related/sources 增 006 文；`updated` → 2026-10-20；主要工作流新增「AI 简报自动归档链路」小节（2 句 + wikilink，不抄正文）；关键陷阱新增「merge-base 不会被内容同步移动」1 条（指向概念页）
+  - **MODIFY** `sources/PostMortem.md` — sources 增 006；tags 增 GitHub Actions/Git/Branch Protection；`lastUpdated` → 2026-10-20；sp_for_LLM 段增 006 条目；关联增概念页链接
+  - **MODIFY** `index.md` — header `Last updated` → 2026-10-20；`### AI Agent` 段增概念页链接
+  - **MODIFY** `log.md` — 本条目
+- 纪律遵循: entities/concepts 分工（单篇方法论 → concepts；无新 entity，Hermes-Agent 已有 entity 页）；entity 页只加小节引用 + wikilink 不抄正文；YAML description 加引号；index/log/sources 与 create 同 commit
+- Self-check: wiki-ingest.sh 的 fail-fast 校验（manifest 合法 / source 存在 / master 全量树 / diff shape = +1 ~4 -0）通过后才 push
