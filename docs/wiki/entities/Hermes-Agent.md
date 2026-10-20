@@ -10,13 +10,15 @@ related:
   - docs/wiki/concepts/AI-Daily-Briefing-Brotli-Fix-Investigation.md
   - docs/wiki/entities/LLM-Prompt-Skill.md
   - docs/wiki/concepts/Mihomo-Proxy-GSLB-Drift-Subscription-Auto-Update.md
+  - docs/wiki/concepts/Briefing-Archive-Auto-Merge-Topology.md
 created: 2026-06-08
-updated: 2026-09-09
+updated: 2026-10-20
 sources:
   - docs/postMortem/sp_for_LLM/003_think-Initial-notes-on-using-Hermes_Agent.md
   - docs/postMortem/sp_for_LLM/004_Hermes-LangChain-Interpreter-Skill-Investigation-report.md
   - docs/postMortem/sp_for_LLM/000Y_prompt-VuePress-Theme-Hope-Hermes-Multi-Session-Merger.md
   - docs/postMortem/sp_for_LLM/005_HermesMerged-AI-Daily-Briefing-Brotli-Truncation-Fix_-report.md
+  - docs/postMortem/sp_for_LLM/006_Hermes-Briefing-Archive-Auto-Merge-Topology-report.md
   - docs/postMortem/deploy/007_Troubleshooting_complete_failure_of_Tencent_Cloud_server_proxies.md
 ---
 
@@ -81,6 +83,13 @@ Hermes Agent 是 Nous Research 开发的 AI Agent 框架，核心特性是**可�
 相关文档：
 - [[../concepts/Mihomo-Proxy-GSLB-Drift-Subscription-Auto-Update.md]] — 7 步诊断流程、4 步方案选型、订阅自动化三层架构与 5 个陷阱
 
+### AI 简报自动归档链路（sp_for_LLM/006 新增）
+
+把「归档 job 推分支 → 人工点 Squash & Merge」改造成 hop-1（归档分支 → PR → 自动 squash 进 `daily`）+ hop-2（`workflow_dispatch` 守卫合并 `daily` → `master`）两跳链路，合并身份是 GitHub App `jeacsonblog-daily-merge[bot]`。核心不变量是 `merge-base`，个人账户仓库的 bypass 只有 ruleset 一层可用。
+
+相关文档：
+- [[../concepts/Briefing-Archive-Auto-Merge-Topology.md]] — 拓扑设计、三点 diff 不变量、GH013/GH006 双层保护、step 级验证判据
+
 ## 核心配置
 
 - **主模型**: MiniMax-2.6 → MiniMax-2.7 → MiniMax-M3 → **2026-06-09 切换至 deepseek-v4-flash**（Brotli bug 触发后）
@@ -102,3 +111,4 @@ Hermes Agent 是 Nous Research 开发的 AI Agent 框架，核心特性是**可�
 - **Brotli 流截断 bug（sp_for_LLM/005 新增）**: `brotlicffi==1.2.0.1` + `httpx==0.28.1` + 启用 brotli 压缩的 API Provider（如 MiniMax）在大型 SSE 流式响应（>500KB 压缩后）下必抛 `decoder process called with data when 'can_accept_more_data() is False`。Hermes 已知此 bug 并在 `skills_hub.py:1410-1415` 对 sitemap HTTP 请求规避（`Accept-Encoding: gzip`），但**未应用到 Provider API 调用**。短期解决：切换到不启用 brotli 的 Provider（DeepSeek 返回 identity 编码）；长期修复：在 Provider 配置层统一禁用 brotli。
 - **模型切换的副作用（sp_for_LLM/005 新增）**: 不同 LLM 对同一任务的表现差异巨大（延迟 5-10x、Cache 命中率、brotli 触发概率）。切换前必须验证 (a) 任务类型匹配 (b) 输出质量相当 (c) 错误模式不会引入新问题。本次切换顺手消除了 brotli bug 是巧合（DeepSeek 不用 brotli），不应推广为"换模型就能修 bug"的通用解法。
 - **mihomo 静态订阅 = 慢性死亡（deploy/007 新增）**: 机场 GSLB 定期换 IP 池，静态订阅配置必然过期（本次 4 个月）→ 依赖代理的 cron 全静默失败。代理全挂先测 github/google 区分"节点故障 vs 站点屏蔽"；用户境外可达即节点活着，问题在本地链路 → 修订阅自动化（.env + file provider + URLTest），不要临时改 IP。详见 [[../concepts/Mihomo-Proxy-GSLB-Drift-Subscription-Auto-Update.md]]。
+- **merge-base 不会被「内容同步」移动（sp_for_LLM/006 新增）**: PR 文件清单与 `git diff A...B` 都吃 merge-base；用 squash 把 master 的文件搬进 `daily` 后 blob SHA 全等，祖先关系却没建立 → 归档 PR 仍列出 workflow 文件、预检整批拒绝。判据只能是 `git merge-base origin/master origin/daily`。详见 [[../concepts/Briefing-Archive-Auto-Merge-Topology.md]]。
