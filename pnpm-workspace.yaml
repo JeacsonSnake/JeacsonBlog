@@ -2,11 +2,6 @@ packages:
   - .
 
 allowBuilds:
-  core-js: set this to true or false
+  "@parcel/watcher": true
   esbuild: true
-  highlight.js: set this to true or false
-  vuepress: set this to true or false
-
-onlyBuiltDependencies:
-  - '@parcel/watcher'
-  - esbuild
+  vuepress: true
