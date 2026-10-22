@@ -44,12 +44,12 @@ jobs:
           persist-credentials: false
 
       - name: Setup pnpm
-        uses: pnpm/action-setup@v2
+        uses: pnpm/action-setup@v6
         with:
-          # 选择要使用的 pnpm 版本
-          version: 8
-          # 使用 pnpm 安装依赖
-          run_install: true
+          # 选择要使用的 pnpm 版本（action-setup v6.1.0 起才支持 pnpm 12）
+          version: 12
+          # 依赖安装放到 Setup Node.js 之后，确保使用 Node 26
+          run_install: false
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -58,6 +58,9 @@ jobs:
           node-version: 26
           # 缓存 pnpm 依赖
           cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
 
       # 运行构建脚本
       - name: Build VuePress site

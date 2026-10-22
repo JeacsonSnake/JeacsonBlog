@@ -19,16 +19,16 @@
   "devDependencies": {
     "@commitlint/cli": "^21.2.4",
     "@commitlint/config-conventional": "^21.2.4",
-    "@vuepress/bundler-vite": "2.0.0-rc.30",
-    "@vuepress/plugin-feed": "2.0.0-rc.130",
+    "@vuepress/bundler-vite": "2.0.0-rc.31",
+    "@vuepress/plugin-feed": "2.0.0-rc.137",
     "@waline/client": "3.16.1",
     "cz-git": "^1.14.0",
     "dotenv": "18.0.8",
-    "katex": "^0.16.47",
+    "katex": "^0.18.11",
     "markdown-it-multimd-table": "^4.2.3",
     "sass-embedded": "^1.105.2",
     "vue": "^3.5.44",
-    "vuepress": "2.0.0-rc.30",
-    "vuepress-theme-hope": "2.0.0-rc.107"
+    "vuepress": "2.0.0-rc.31",
+    "vuepress-theme-hope": "2.0.0-rc.110"
   }
 }
