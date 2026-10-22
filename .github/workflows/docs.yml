@@ -6,10 +6,10 @@ name: deploy-website
 on:
   # Triggers the workflow on push or pull request events but only for the main branches.
   push:
-    branches: 
-    - master
-    - 'wiki-ingest-*'
-    - 'briefing-archive-*'
+    branches:
+      - master
+      - "wiki-ingest-*"
+      - "briefing-archive-*"
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -28,7 +28,7 @@ jobs:
       contents: write
       pages: write
       id-token: write
-      
+
     # add event restriction
     if: github.event_name == 'push' && github.ref == 'refs/heads/master'
 
@@ -55,7 +55,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           # 选择要使用的 node 版本
-          node-version: 20
+          node-version: 26
           # 缓存 pnpm 依赖
           cache: pnpm
 
@@ -84,8 +84,8 @@ jobs:
           # @see https://docs.github.com/cn/actions/reference/authentication-in-a-workflow#about-the-github_token-secret
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   # Set jobs-restricted permissions to the minimum required level
-# Build_and_Deploy needs GITHUB_TOKEN to deploy the gh-pages
-# while create-wiki-ingest-pr needs pull-requests as write to open a PR
+  # Build_and_Deploy needs GITHUB_TOKEN to deploy the gh-pages
+  # while create-wiki-ingest-pr needs pull-requests as write to open a PR
   Create_LLM_Relate_Pr:
     # mission: Open PR for wiki-ingest branch or briefing-archive branch / 为 wiki-ingest-* 分支或 briefing-archive-* 分支自动开 PR
     name: Open PR for LLM Relate branch
@@ -95,11 +95,11 @@ jobs:
     # Create_LLM_Relate_Pr needs pull-requests as write to open a PR
     permissions:
       contents: write
-      actions: write           # 新增：用于 dispatch daily→master
+      actions: write # 新增：用于 dispatch daily→master
       pull-requests: write
-    
+
     if: github.event_name == 'push' && (startsWith(github.ref, 'refs/heads/wiki-ingest-') || startsWith(github.ref, 'refs/heads/briefing-archive-'))
-    
+
     steps:
       - name: Checkout repo & fetch update
         uses: actions/checkout@v4
@@ -110,7 +110,7 @@ jobs:
           # 然后，尽管我在该步骤中注入了个人访问令牌作为环境变量，但它还是将该步骤中的凭据持久化，并在发布软件包的步骤中重复使用这些凭据。
           # 因此将该配置项设为false，可以使Github 工作流程在最后一步才使用个人访问令牌与 GitHub 进行身份验证
           persist-credentials: false
-    
+
       - name: Verify branch name
         id: check
         run: |
@@ -120,34 +120,34 @@ jobs:
             echo "::error::Refusing: branch name '$BRANCH' does not match expected wiki-ingest-YYYY-MM-DD(-suffix)? pattern"
             exit 1
           fi
-      
-    # ┌──────────────────────────────────────────────────────────────────┐
-    # │ IMPORTANT INVARIANT — DO NOT VIOLATE                             │
-    # │                                                                  │
-    # │ This workflow assumes each push to wiki-ingest-* branches        │
-    # │ or briefing-archive-* branches contains EXACTLY ONE commit.      │
-    # │                                                                  │
-    # │ Reason: PR title is taken from `git log -1 --pretty=%s HEAD`     │
-    # │ and PR body from `git log -1 --pretty=%b HEAD`.                  │
-    # │ If multiple commits are pushed, only the HEAD commit's message   │
-    # │ is used as PR content — earlier commits are silently lost.       │
-    # │                                                                  │
-    # │ When this invariant is at risk of being broken:                  │
-    # │   1. Stop the run                                                │
-    # │   2. Surface the situation to the user                           │
-    # │   3. Let the user decide: amend to single commit / squash /      │
-    # │      open manual PR / accept partial visibility                  │
-    # │                                                                  │
-    # │ See vuepress-wiki-integration skill located in your hermes       │
-    # │ agent for the source convention.                                 │
-    # └──────────────────────────────────────────────────────────────────┘
+
+      # ┌──────────────────────────────────────────────────────────────────┐
+      # │ IMPORTANT INVARIANT — DO NOT VIOLATE                             │
+      # │                                                                  │
+      # │ This workflow assumes each push to wiki-ingest-* branches        │
+      # │ or briefing-archive-* branches contains EXACTLY ONE commit.      │
+      # │                                                                  │
+      # │ Reason: PR title is taken from `git log -1 --pretty=%s HEAD`     │
+      # │ and PR body from `git log -1 --pretty=%b HEAD`.                  │
+      # │ If multiple commits are pushed, only the HEAD commit's message   │
+      # │ is used as PR content — earlier commits are silently lost.       │
+      # │                                                                  │
+      # │ When this invariant is at risk of being broken:                  │
+      # │   1. Stop the run                                                │
+      # │   2. Surface the situation to the user                           │
+      # │   3. Let the user decide: amend to single commit / squash /      │
+      # │      open manual PR / accept partial visibility                  │
+      # │                                                                  │
+      # │ See vuepress-wiki-integration skill located in your hermes       │
+      # │ agent for the source convention.                                 │
+      # └──────────────────────────────────────────────────────────────────┘
       - name: Warn if push contains multiple commits
         id: multi
         run: |
           # 这次 push 引入的新 commit 数（HEAD~1..HEAD；首次 push 拉根）
           BEFORE="${{ github.event.before }}"
           AFTER="${{ github.sha }}"
-          
+
           # 首次 push（before 为全 0）时，没有可比较的旧提交
           if [ "$BEFORE" = "0000000000000000000000000000000000000000" ]; then
             NEW=$(git rev-list --count HEAD)
@@ -165,7 +165,6 @@ jobs:
             echo "::warning::This push introduced ${NEW} commits. PR will only use HEAD commit's message as title/body. Earlier commits will not appear in the PR description."
           fi
 
-      
       - name: Check if PR already exists
         id: existing
         env:
@@ -212,7 +211,7 @@ jobs:
             --base "$BASE" \
             --title "$TITLE" \
             --body "$BODY"
-            
+
       - name: Auto-merge archive PR into daily
         if: startsWith(steps.check.outputs.branch, 'briefing-archive-')
         env:
@@ -240,4 +239,3 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           gh workflow run daily-to-master.yml --repo "${{ github.repository }}" --ref master
-
