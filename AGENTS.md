@@ -198,11 +198,14 @@ sources: [<相对 docs/ 的路径>]     # 可选；concept 最常见，部分 so
 related:                            # 可选，wikilink
   - "[[../concepts/xxx]]"
   - "[[../entities/xxx]]"
-lastUpdated: <YYYY-MM-DD>           # 旧页面写法；新页面多用 created / updated
+created: <YYYY-MM-DD>               # 可选：首次创建日期
+updated: <YYYY-MM-DD>               # 最近一次更新日期，改动内容时同步 bump
 ---
 ```
 
-字段说明：`sources` 用相对 `docs/` 的路径（如 `../../learningNote/JSNote/Reduce方法.md`）；`related` 用 wikilink。时间字段目前存在两套写法——早期页面用 `lastUpdated`，2026 年新增页面多用 `created` / `updated`（个别页面带 `confidence`）。新页面沿用同目录现有写法，不要在同一页混用。
+字段说明：`sources` 用相对 `docs/` 的路径（如 `../../learningNote/JSNote/Reduce方法.md`）；`related` 用 wikilink。时间字段**统一用 `created` / `updated`（`YYYY-MM-DD`）**，个别页面还带 `confidence`。
+
+> ⚠️ 不要在 Wiki 页面 frontmatter 里写 `lastUpdated: <日期>`。vuepress-theme-hope 把页面级 `lastUpdated` 定义为**布尔开关**（`true` / `false`，控制是否显示自动更新时间；全局已在 `docs/.vuepress/theme.ts` 里设为 `true`），写日期会让 `vuepress build` 刷出 `lastUpdated in frontMatter should be boolean` 警告。2026-10-25 之前用 `lastUpdated` 记日期的旧页面已全部迁移为 `updated`。
 
 ### 核心操作
 

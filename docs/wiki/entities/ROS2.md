@@ -3,7 +3,7 @@ title: ROS2
 description: Robot Operating System 2，机器人操作系统，支持分布式通信
 type: entity
 tags: [ROS2, Robot, DDS, Ubuntu]
-lastUpdated: 2026-04-17
+updated: 2026-04-17
 ---
 
 # ROS2

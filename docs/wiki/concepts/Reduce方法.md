@@ -4,7 +4,7 @@ description: JavaScript 数组方法，将数组元素按顺序累加为单个�
 type: concept
 tags: [JavaScript, Array, API]
 sources: [../../learningNote/JSNote/Reduce方法.md]
-lastUpdated: 2026-04-17
+updated: 2026-04-17
 ---
 
 # Array.reduce()
