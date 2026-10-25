@@ -3,7 +3,7 @@ title: 计算机组成原理知识域摘要
 description: 计算机底层原理，包括机器数、IEEE-754 浮点数标准
 type: source
 tags: [Computer, Hardware, IEEE754, Float]
-lastUpdated: 2026-04-17
+updated: 2026-04-17
 ---
 
 # 计算机组成原理知识域

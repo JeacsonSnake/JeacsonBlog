@@ -3,7 +3,7 @@ title: TypeScript
 description: JavaScript 的超集，提供静态类型系统
 type: entity
 tags: [TypeScript, JavaScript, Web, Type]
-lastUpdated: 2026-04-17
+updated: 2026-04-17
 ---
 
 # TypeScript

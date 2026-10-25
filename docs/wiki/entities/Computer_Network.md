@@ -3,7 +3,7 @@ title: 计算机网络
 description: 计算机网络协议与原理，TCP/IP 五层模型，Kurose & Ross 教材
 type: entity
 tags: [Network, TCP, UDP, HTTP, DNS, Router]
-lastUpdated: 2026-04-17
+updated: 2026-04-17
 ---
 
 # 计算机网络

@@ -3,7 +3,7 @@ title: JavaScript
 description: JavaScript 编程语言，Web 开发核心语言，ES6+ 现代特性
 type: entity
 tags: [JavaScript, Web, Language]
-lastUpdated: 2026-04-17
+updated: 2026-04-17
 ---
 
 # JavaScript

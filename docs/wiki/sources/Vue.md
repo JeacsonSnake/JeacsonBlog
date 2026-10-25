@@ -3,7 +3,7 @@ title: Vue 知识域摘要
 description: Vue2 与 Vue3 框架学习笔记，涵盖数据响应式、组件系统、路由、状态管理
 type: source
 tags: [Vue, Web, Frontend, JavaScript]
-lastUpdated: 2026-04-17
+updated: 2026-04-17
 ---
 
 # Vue 知识域

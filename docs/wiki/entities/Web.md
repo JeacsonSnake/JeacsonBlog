@@ -3,7 +3,7 @@ title: Web 开发
 description: Web 前端与后端技术栈，包括 HTML/CSS/JavaScript、HTTP 协议、DNS 等
 type: entity
 tags: [Web, HTTP, Browser, Frontend]
-lastUpdated: 2026-04-17
+updated: 2026-04-17
 ---
 
 # Web 开发

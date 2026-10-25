@@ -4,7 +4,7 @@ description: DNS → TCP → HTTP → 渲染的完整网络流程
 type: concept
 tags: [Network, HTTP, DNS, TCP, Browser]
 sources: [../../learningNote/Computer_Network/输入URL回车后发生了什么.md]
-lastUpdated: 2026-04-17
+updated: 2026-04-17
 ---
 
 # 从输入 URL 到页面显示

@@ -3,7 +3,7 @@ title: TypeScript 知识域摘要
 description: TypeScript 类型系统学习笔记，按学习日期分为五天
 type: source
 tags: [TypeScript, Web, JavaScript]
-lastUpdated: 2026-04-17
+updated: 2026-04-17
 ---
 
 # TypeScript 知识域
