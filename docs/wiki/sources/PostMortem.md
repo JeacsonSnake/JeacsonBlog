@@ -2,8 +2,8 @@
 title: 踩坑心得知识域摘要
 description: "部署与开发中的实际问题记录与解决方案"
 type: source
-tags: [DevOps, Deploy, Markdown, AI Agent, DNS, Migrate, Network, Ubuntu, Disk, Troubleshooting, CSS, Vite, Proxy, GSLB, WiFi, DFS, GitHub Actions, Git, Branch Protection]
-updated: 2026-10-20
+tags: [DevOps, Deploy, Markdown, AI Agent, DNS, Migrate, Network, Ubuntu, Disk, Troubleshooting, CSS, Vite, Proxy, GSLB, WiFi, DFS, GitHub Actions, Git, Branch Protection, Windows, Display, DPI]
+updated: 2026-11-02
 sources:
   - docs/postMortem/sp_for_LLM/003_think-Initial-notes-on-using-Hermes_Agent.md
   - docs/postMortem/sp_for_LLM/000X_prompt-VuePress-Theme-Hope-Hermes-JSON-Converter.md
@@ -17,6 +17,7 @@ sources:
   - docs/postMortem/deploy/007_Troubleshooting_complete_failure_of_Tencent_Cloud_server_proxies.md
   - docs/postMortem/tiny_tips/2026_09_07.md
   - docs/postMortem/tiny_tips/2026_09_08.md
+  - docs/postMortem/tiny_tips/2026_11_01.md
 ---
 
 # 踩坑心得知识域
@@ -55,6 +56,7 @@ sources:
 ### 前端构建 / 小技巧 (tiny_tips)
 - **Vue 项目 CSS fit-content 生产构建被错误优化**（tiny_tips/2026_09_07 新增）— cssnano 把 `fit-content` 与 `-moz-fit-content` 视为重复声明去重、只保留后写的前缀 → Edge 失效；解法：标准语法置于 vendor prefix 之后
 - **WiFi 5GHz DFS 信道下社交平台图片加载缓慢**（tiny_tips/2026_09_08 新增）— 信道 100（5500 MHz）属 DFS 频段（52~140），触发雷达避让 → 客户端传输不定时挂起；图片小请求对抖动敏感（视频有缓冲可掩盖）；Velop 不支持手动指定信道 → 关闭 DFS + Channel Finder 落到非 DFS 信道（161）
+- **双屏 GIF 蓝黄斑纹**（tiny_tips/2026_11_01 新增）— 截图也带斑纹 → 排除面板/线缆；分层排除色域、HDR、NVIDIA 颜色覆盖、EDID 后定位到 per-monitor DPI 不一致（内屏 125% / 副屏 100%）→ DWM 跨屏合成按不同比例重采样，硬色度边缘产生过冲/振铃；统一两屏缩放即消失，还原即复现
 
 ## 关联
 
@@ -73,3 +75,4 @@ sources:
 - [[../concepts/Mihomo-Proxy-GSLB-Drift-Subscription-Auto-Update.md]] — mihomo 代理全挂排查（GSLB IP 池漂移 + 订阅自动化三层架构）
 - [[../concepts/WiFi-5GHz-DFS-Radar-Avoidance-Image-Loading-Slow.md]] — WiFi 5GHz DFS 信道雷达避让致图片加载缓慢（关闭 DFS 修复）
 - [[../concepts/Briefing-Archive-Auto-Merge-Topology.md]] — AI 简报自动归档两跳链路（merge-base 不变量 + 双层分支保护 + step 级验证）
+- [[../concepts/Per-Monitor-DPI-DWM-Resampling-Ringing.md]] — 双屏 DPI 缩放不一致致 DWM 重采样振铃（GIF 蓝黄斑纹）
