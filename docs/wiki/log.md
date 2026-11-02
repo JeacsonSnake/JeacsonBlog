@@ -228,3 +228,14 @@ title: Wiki Log
   - **MODIFY** `log.md` — 本条目
 - 纪律遵循: entities/concepts 分工（单篇方法论 → concepts；无新 entity，Hermes-Agent 已有 entity 页）；entity 页只加小节引用 + wikilink 不抄正文；YAML description 加引号；index/log/sources 与 create 同 commit
 - Self-check: wiki-ingest.sh 的 fail-fast 校验（manifest 合法 / source 存在 / master 全量树 / diff shape = +1 ~4 -0）通过后才 push
+
+## [2026-11-02] ingest | 双屏 GIF 蓝黄斑纹排障记录
+- Source article: `docs/postMortem/tiny_tips/2026_11_01.md`（2026-11-01 发布，category tiny_tips）— Windows 10 双屏（内屏 LG LP156WFG 1080p144 缩放 125% / 副屏 兰利浦 HC-L156A HDMI 1080p60 缩放 100%，RTX 2060）显示特定 GIF 出现蓝黄相间斑纹；截图亦带斑纹 → 异常在像素层；分层排除像素格式/带宽、HDR-WCG、NVIDIA 颜色覆盖、EDID 后定位到 per-monitor DPI 不一致（`Win8DpiScaling=0` + `DpiScalingVer=4096`）→ DWM 跨屏合成按不同比例重采样低色深位图，硬色度边缘产生过冲/振铃；统一两屏缩放即消失、还原即复现（A/B/A 三步闭环）
+- 触发：2026-11-02 scan 发现 JeacsonBlog 新增 `/postMortem/tiny_tips/2026_11_01.html`（db id 10924），步骤 6 机械 grep 命中 1 篇
+- Wiki pages created/updated (5 files, manifest 流程 wiki-ingest.sh):
+  - **CREATE** `concepts/Per-Monitor-DPI-DWM-Resampling-Ringing.md` — 现象与关键判据（截图自带斑纹 = 排除物理层）+ 6 层分层排除表（含 `Win8DpiScaling` / `DpiScalingVer` 核对陷阱）+ 机理 + A/B/A 验证实验 + 处置与同类症状优先级
+  - **MODIFY** `sources/PostMortem.md` — sources 增 2026_11_01；tags 增 Windows/Display/DPI；`updated` → 2026-11-02；tiny_tips 段增条目；关联增概念页链接
+  - **MODIFY** `index.md` — header `Last updated` → 2026-11-02；DevOps/部署 段增概念页链接
+  - **MODIFY** `log.md` — 本条目
+- 纪律遵循: entities vs concepts 分工（单篇方法论 → concepts；**无对应 entity**——现有 entities 里没有 Windows/显示硬件实体，按 precedent（Ubuntu-gdm3 概念页）不硬造 entity，`related:` 只指向 sources/PostMortem.md，正文横向链接 2 个同域概念页）；YAML description 加引号；index/log/sources 与 create 同 commit
+- Self-check: wiki-ingest.sh fail-fast 校验（manifest 合法 / source 存在 / master 全量树 / diff shape）通过后才 push
