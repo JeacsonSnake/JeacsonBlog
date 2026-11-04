@@ -239,3 +239,16 @@ title: Wiki Log
   - **MODIFY** `log.md` — 本条目
 - 纪律遵循: entities vs concepts 分工（单篇方法论 → concepts；**无对应 entity**——现有 entities 里没有 Windows/显示硬件实体，按 precedent（Ubuntu-gdm3 概念页）不硬造 entity，`related:` 只指向 sources/PostMortem.md，正文横向链接 2 个同域概念页）；YAML description 加引号；index/log/sources 与 create 同 commit
 - Self-check: wiki-ingest.sh fail-fast 校验（manifest 合法 / source 存在 / master 全量树 / diff shape）通过后才 push
+
+## [2026-11-05] ingest | Switch OLED 搜不到 5GHz WiFi 信道排障
+- Source article: `docs/postMortem/tiny_tips/2026_11_04.md`（2026-11-04 发布，category tiny_tips）— Switch 全系（含 OLED）5GHz 网卡受区域固件白名单限制，仅支持 UNII-1 的 36/40/44/48；路由器（Linksys MBE7000）自动选频落到信道 153（80MHz 占 149–161）→ SSID 扫描阶段即不可见，主机静默回退 2.4GHz。实测排除 WPA2/WPA3 混合与 ax-only 因素；修复 = 本地 Web UI 的 CA 隐藏入口（页脚小字）把 5GHz 固定为 36，且**先关 Auto Channel Finder**（默认每 5 天覆盖手动设置）；附 Beacon 被动扫描取证、同 OUI 多 SSID 合并计干扰源、`RSSI ≈ 百分比/2 − 100` 换算、4 条踩坑与有线/2.4G 兜底
+- 触发：2026-11-05 scan 发现 JeacsonBlog 新增 `/postMortem/tiny_tips/2026_11_04.html`（db id 11088），步骤 6 机械 grep 命中 1 篇
+- Wiki pages created/updated (6 files, manifest 流程 wiki-ingest.sh):
+  - **CREATE** `concepts/Switch-5GHz-Channel-Whitelist.md` — 现象指纹分诊表（搜不到 vs 搜到连不上 vs 搜到但卡）+ Switch 白名单表 + CA 隐藏入口与 Auto Channel Finder 前提 + 改前后实测对比 + Beacon/RSSI 取证原理 + 4 条踩坑 + 兜底方案
+  - **MODIFY** `entities/Computer_Network.md` — tags 增 WiFi/Channel；`updated` → 2026-11-05；新增「无线链路排障（WiFi / 802.11）」小节（两条 1–2 行鉴别要点 + wikilink，不抄正文）
+  - **MODIFY** `concepts/WiFi-5GHz-DFS-Radar-Avoidance-Image-Loading-Slow.md` — related + 关联 增本文概念页（同域前作「搜得到但间歇卡」，与本文「完全搜不到」互为鉴别对照）
+  - **MODIFY** `sources/PostMortem.md` — sources 增 2026_11_04；tags 增 Channel；`updated` → 2026-11-05；tiny_tips 段增条目；关联增概念页链接
+  - **MODIFY** `index.md` — header `Last updated` → 2026-11-05；DevOps/部署 段增概念页链接
+  - **MODIFY** `log.md` — 本条目
+- 纪律遵循: entities vs concepts 分工（单篇排障方法论 → concepts；Computer_Network 已有 entity 页，只挂聚合引用不抄正文）；YAML description 加引号；index/log/sources 与 create 同 commit
+- Self-check: wiki-ingest.sh fail-fast 校验（manifest 合法 / source 存在 / master 全量树 / diff shape = +1 ~5 -0）
