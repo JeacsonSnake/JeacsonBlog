@@ -23,7 +23,7 @@ timeline: false
 
 🎹 My Final Year Project was to implement a piano keyboard playing robot based on Raspberry Pi 5 by using the lightweight neural network MobilenetV3.
 
-🐣 I am currently using knowledge relating to Large Language Models (LLMs), including but not limited to `Kimi Code` and `Hermes Agent`, to organise and expand upon my coding work on this blog. You can refer to [**my related blog posts**](../../postMortem/sp_for_LLM/README.md) to find out what I have been doing with LLMs (still mainly written in Chinese).
+🐣 I am currently using knowledge relating to Large Language Models (LLMs), including but not limited to `Kimi Code` and `Hermes Agent`, to organise and expand upon my coding work on this blog. You can refer to [**my related blog posts**](../postMortem/sp_for_LLM/README.md) to find out what I have been doing with LLMs (still mainly written in Chinese).
 
 📫 You can make a contact with me at <Jeacson_Snake@outlook.com> for anything I could help related to this website.
 
