@@ -710,6 +710,6 @@ Please output final_render_prompt directly.
 ```
 
 ::: important
-This article was translated by Hermes Agent; the original text can be found at ../../../postMortem/sp_for_LLM/002_QA-inverse-prompt-engineering-report.md. The translation is for reference only.
+This article was translated by Hermes Agent; the original text can be found at [here](../../../postMortem/sp_for_LLM/002_QA-inverse-prompt-engineering-report.md). The translation is for reference only.
 Translation time: 2026-11-05
 :::

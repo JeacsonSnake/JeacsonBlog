@@ -19,6 +19,6 @@ These are my notes on the ROS2 tool **coordinate transform (tf)**. They cover:
 For the software, hardware and technical background, see [A brief introduction to the ROS2 learning-notes collection](../README.md)
 
 ::: important
-This article was translated by Hermes Agent; the original text can be found at ../../../learningNote/Ros2_Note/coor_trans/README.md. The translation is for reference only.
+This article was translated by Hermes Agent; the original text can be found at [here](../../../learningNote/Ros2_Note/coor_trans/README.md). The translation is for reference only.
 Translation time: 2026-11-05
 :::

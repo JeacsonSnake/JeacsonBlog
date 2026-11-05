@@ -470,6 +470,6 @@ Although the two sessions used different models, they worked together well:
 - **Session 2 (deepseek-v4-flash)**: stronger code analysis during the fix verification and deep technical analysis, drilling down into the brotlicffi/httpx source to the exact function and state-machine logic, and finding the known urllib3 case of the same class through web search.
 
 ::: important
-This article was translated by Hermes Agent; the original text can be found at ../../../postMortem/sp_for_LLM/005_HermesMerged-AI-Daily-Briefing-Brotli-Truncation-Fix_-report.md. The translation is for reference only.
+This article was translated by Hermes Agent; the original text can be found at [here](../../../postMortem/sp_for_LLM/005_HermesMerged-AI-Daily-Briefing-Brotli-Truncation-Fix_-report.md). The translation is for reference only.
 Translation time: 2026-11-05
 :::

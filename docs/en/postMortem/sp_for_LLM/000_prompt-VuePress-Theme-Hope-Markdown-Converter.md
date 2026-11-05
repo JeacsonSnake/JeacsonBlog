@@ -184,6 +184,6 @@ ___
 ````
 
 ::: important
-This article was translated by Hermes Agent; the original text can be found at ../../../postMortem/sp_for_LLM/000_prompt-VuePress-Theme-Hope-Markdown-Converter.md. The translation is for reference only.
+This article was translated by Hermes Agent; the original text can be found at [here](../../../postMortem/sp_for_LLM/000_prompt-VuePress-Theme-Hope-Markdown-Converter.md). The translation is for reference only.
 Translation time: 2026-11-05
 :::

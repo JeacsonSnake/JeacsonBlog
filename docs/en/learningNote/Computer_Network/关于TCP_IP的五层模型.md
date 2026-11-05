@@ -61,6 +61,6 @@ The application software we can touch directly sits in the **application layer**
 For HTTP, see [Detailed explanation of the HTTP protocol_·Fixes on the Fly·'s blog - CSDN blog](https://wuyuhang.blog.csdn.net/article/details/126155792?spm=1001.2014.3001.5502). No need to say more about the rest.
 
 ::: important
-This article was translated by Hermes Agent; the original text can be found at ../../../learningNote/Computer_Network/关于TCP_IP的五层模型.md. The translation is for reference only.
+This article was translated by Hermes Agent; the original text can be found at [here](../../../learningNote/Computer_Network/关于TCP_IP的五层模型.md). The translation is for reference only.
 Translation time: 2026-11-05
 :::

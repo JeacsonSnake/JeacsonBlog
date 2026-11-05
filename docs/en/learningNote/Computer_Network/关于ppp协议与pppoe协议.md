@@ -19,6 +19,6 @@ category:
 The PPPoE protocol (Point-to-Point Protocol over Ethernet) is a network tunnelling protocol that encapsulates the [Point-to-Point Protocol](https://baike.baidu.com/item/%E7%82%B9%E5%AF%B9%E7%82%B9%E5%8D%8F%E8%AE%AE/2991091?fromModule=lemma_inlink) (PPP) inside Ethernet frames. It not only gives users who connect over bridged Ethernet a means of <u>broadband access</u>, it also provides fairly convenient access control and billing. Every access user establishes a unique PPP session.
 
 ::: important
-This article was translated by Hermes Agent; the original text can be found at ../../../learningNote/Computer_Network/关于ppp协议与pppoe协议.md. The translation is for reference only.
+This article was translated by Hermes Agent; the original text can be found at [here](../../../learningNote/Computer_Network/关于ppp协议与pppoe协议.md). The translation is for reference only.
 Translation time: 2026-11-05
 :::

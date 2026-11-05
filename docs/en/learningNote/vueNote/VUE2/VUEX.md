@@ -542,6 +542,6 @@ const store = new Vuex.Store({
 :::
 
 ::: important
-This article was translated by Hermes Agent; the original text can be found at ../../../../learningNote/vueNote/VUE2/VUEX.md. The translation is for reference only.
+This article was translated by Hermes Agent; the original text can be found at [here](../../../../learningNote/vueNote/VUE2/VUEX.md). The translation is for reference only.
 Translation time: 2026-11-05
 :::

@@ -42,7 +42,7 @@ tag:
   </script>
 ```
 
-2. With a methods function:
+1. With a methods function:
 
 ```html
  ...
@@ -76,7 +76,7 @@ tag:
   </script>
 ```
 
-3. With a computed property:
+1. With a computed property:
 
 ```html
   ...
@@ -170,6 +170,6 @@ Vue can't change an array reactively through its **array index**. In other words
 - reverse()
 
 ::: important
-This article was translated by Hermes Agent; the original text can be found at ../../../../learningNote/vueNote/VUE2/VUE基础.md. The translation is for reference only.
+This article was translated by Hermes Agent; the original text can be found at [here](../../../../learningNote/vueNote/VUE2/VUE基础.md). The translation is for reference only.
 Translation time: 2026-11-05
 :::

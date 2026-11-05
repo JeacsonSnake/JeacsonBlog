@@ -384,6 +384,6 @@ In a picture, that looks like:
 It feels like we did a lot of work, but in fact, up to this point we can still only use manual updates to observe the values we want to observe, and there is no way to make the *update function* **Set** of a *specific property* on a *reactive object* re-run by itself. Never mind — we'll cover it in the next part.
 
 ::: important
-This article was translated by Hermes Agent; the original text can be found at ../../../learningNote/vueNote/VUE3/VUE3的数据响应式_上.md. The translation is for reference only.
+This article was translated by Hermes Agent; the original text can be found at [here](../../../learningNote/vueNote/VUE3/VUE3的数据响应式_上.md). The translation is for reference only.
 Translation time: 2026-11-05
 :::

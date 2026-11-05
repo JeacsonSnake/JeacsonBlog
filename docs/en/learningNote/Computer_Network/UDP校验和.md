@@ -141,6 +141,6 @@ function checksum(data) {
 ```
 
 ::: important
-This article was translated by Hermes Agent; the original text can be found at ../../../learningNote/Computer_Network/UDP校验和.md. The translation is for reference only.
+This article was translated by Hermes Agent; the original text can be found at [here](../../../learningNote/Computer_Network/UDP校验和.md). The translation is for reference only.
 Translation time: 2026-11-05
 :::

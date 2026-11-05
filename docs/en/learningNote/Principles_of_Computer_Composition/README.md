@@ -320,6 +320,6 @@ And since the bits after the **mantissa** `0010 1100 1100 1100 110` are `01` wit
 Therefore $(9.4)_{10} = (1001.\overline{0110})_2 = 0 \quad 10000010 \quad 0010 1100 1100 1100 110$
 
 ::: important
-This article was translated by Hermes Agent; the original text can be found at ../../../learningNote/Principles_of_Computer_Composition/README.md. The translation is for reference only.
+This article was translated by Hermes Agent; the original text can be found at [here](../../../learningNote/Principles_of_Computer_Composition/README.md). The translation is for reference only.
 Translation time: 2026-11-05
 :::

@@ -19,6 +19,6 @@ These are my notes on the supplementary material for ROS2 communication mechanis
 For details on the hardware, software and technical background, see [A Brief Introduction to the ROS2 Notes Collection](../README.md)
 
 ::: important
-This article was translated by Hermes Agent; the original text can be found at ../../../../learningNote/Ros2_Note/co_me_2/README.md. The translation is for reference only.
+This article was translated by Hermes Agent; the original text can be found at [here](../../../../learningNote/Ros2_Note/co_me_2/README.md). The translation is for reference only.
 Translation time: 2026-11-05
 :::

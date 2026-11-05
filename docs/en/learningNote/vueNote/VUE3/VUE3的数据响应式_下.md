@@ -645,6 +645,6 @@ You may have learned Vue's Composition API, in which case you might be thinking:
 So in the next chapter we'll keep revising our code. We'll even make it run successfully when it directly calls Vue's own functions of the same name.
 
 ::: important
-This article was translated by Hermes Agent; the original text can be found at ../../../learningNote/vueNote/VUE3/VUE3的数据响应式_下.md. The translation is for reference only.
+This article was translated by Hermes Agent; the original text can be found at [here](../../../learningNote/vueNote/VUE3/VUE3的数据响应式_下.md). The translation is for reference only.
 Translation time: 2026-11-05
 :::

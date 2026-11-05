@@ -45,7 +45,7 @@ Not having to learn it cuts both ways: on one hand you no longer have to spend l
 
 That said, from what I've seen other people run this architecture on `Obsidian`, rather than directly inside a `Vuepress` blog like mine. Which makes sense, to be fair: managing files the database-ish `Obsidian` way is probably a bit easier to query, and you don't have to sort out the links between files by hand like I do now. From my earlier rough understanding, `Obsidian` has its own dedicated file-linking setup — you can pull up something like a mind map, or a web-shaped mind map, and find the connection between one file and the others at any time. But since I've already got this blog, there's no need for `Obsidian`. (Mainly because actually wiring the blog up to `Obsidian` is a real pain, so I'll just keep maintaining the blog for now. When there really is a need for `Obsidian`, I'll look at how to migrate the articles over.)
 
-### In the very beginning...
+### In the very beginning
 
 The `Hermes agent` I'm using now got reinstalled three times between when I first touched it on 13 April and 17 April. At the very start I used the `Hermes agent` build template that ships with Tencent Cloud, but as I used it I found that building with that template pins some of the config down, so the customisation side is a pain to modify. So afterwards I configured it twice more, or rather installed two different `Ubuntu` systems and put `Hermes agent` on top of `Ubuntu`.
 
@@ -172,6 +172,6 @@ After nearly two months of use, I wouldn't dare claim I've built some grand proj
 ![Public bandwidth monitoring](./assets/003-img/public_bandwidth_monitor.png)
 
 ::: important
-This article was translated by Hermes Agent; the original text can be found at ../../../postMortem/sp_for_LLM/003_think-Initial-notes-on-using-Hermes_Agent.md. The translation is for reference only.
+This article was translated by Hermes Agent; the original text can be found at [here](../../../postMortem/sp_for_LLM/003_think-Initial-notes-on-using-Hermes_Agent.md). The translation is for reference only.
 Translation time: 2026-11-05
 :::

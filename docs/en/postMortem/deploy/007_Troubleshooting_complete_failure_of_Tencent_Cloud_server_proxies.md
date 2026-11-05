@@ -232,6 +232,6 @@ Five x.com tests in a row, all 200 (0.5-1.8s), and the auto-select group holds o
 5. **Keep secrets (the subscription URL is the provider credential) in `.env`**: permissions 600, config.yaml only references a local file, the URL never appears in the config.
 
 ::: important
-This article was translated by Hermes Agent; the original text can be found at ../../../postMortem/deploy/007_Troubleshooting_complete_failure_of_Tencent_Cloud_server_proxies.md. The translation is for reference only.
+This article was translated by Hermes Agent; the original text can be found at [here](../../../postMortem/deploy/007_Troubleshooting_complete_failure_of_Tencent_Cloud_server_proxies.md). The translation is for reference only.
 Translation time: 2026-11-05
 :::

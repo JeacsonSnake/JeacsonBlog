@@ -33,6 +33,6 @@ Note that the publicPath option only works for projects bundled through Vue CLI.
 :::
 
 ::: important
-This article was translated by Hermes Agent; the original text can be found at ../../../postMortem/deploy/004_website_deployment_styles_relate.md. The translation is for reference only.
+This article was translated by Hermes Agent; the original text can be found at [here](../../../postMortem/deploy/004_website_deployment_styles_relate.md). The translation is for reference only.
 Translation time: 2026-11-05
 :::

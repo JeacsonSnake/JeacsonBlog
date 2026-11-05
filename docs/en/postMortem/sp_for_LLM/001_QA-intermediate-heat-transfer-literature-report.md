@@ -637,6 +637,6 @@ Narrative Strategy ("Macro → Micro"):
 > **How to use**: copy the whole prompt above into a new Kimi Session and upload the same paper PDFs, and you can keep advancing the Literature Report section by section under an entirely consistent theoretical framework and narrative strategy.
 
 ::: important
-This article was translated by Hermes Agent; the original text can be found at ../../../postMortem/sp_for_LLM/001_QA-intermediate-heat-transfer-literature-report.md. The translation is for reference only.
+This article was translated by Hermes Agent; the original text can be found at [here](../../../postMortem/sp_for_LLM/001_QA-intermediate-heat-transfer-literature-report.md). The translation is for reference only.
 Translation time: 2026-11-05
 :::

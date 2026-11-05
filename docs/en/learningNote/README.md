@@ -17,6 +17,6 @@ Everything in this directory is notes I produced while studying. They cover, but
 - [Computer Organization](./Principles_of_Computer_Composition/README.md)
 
 ::: important
-This article was translated by Hermes Agent; the original text can be found at ../../learningNote/README.md. The translation is for reference only.
+This article was translated by Hermes Agent; the original text can be found at [here](../../learningNote/README.md). The translation is for reference only.
 Translation time: 2026-11-05
 :::

@@ -16,6 +16,6 @@ Everything in this category is notes I produced while learning VUE. They cover, 
 - [VUE3](./VUE3/README.md)
 
 ::: important
-This article was translated by Hermes Agent; the original text can be found at ../../../learningNote/vueNote/README.md. The translation is for reference only.
+This article was translated by Hermes Agent; the original text can be found at [here](../../../learningNote/vueNote/README.md). The translation is for reference only.
 Translation time: 2026-11-05
 :::

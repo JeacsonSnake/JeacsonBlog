@@ -1647,6 +1647,6 @@ In that conversation just now, when you said "store it in memory" it had in fact
 Now fact_id=46 is in place. **Next time a similar conflict appears** (your instruction colliding with an existing fact_store rule), I will point out the conflict first, take no action, and wait for you to say clearly whether (a) override or (b) follow —— doing it right in one go.
 
 ::: important
-This article was translated by Hermes Agent; the original text can be found at ../../../postMortem/sp_for_LLM/004_Hermes-LangChain-Interpreter-Skill-Investigation-report.md. The translation is for reference only.
+This article was translated by Hermes Agent; the original text can be found at [here](../../../postMortem/sp_for_LLM/004_Hermes-LangChain-Interpreter-Skill-Investigation-report.md). The translation is for reference only.
 Translation time: 2026-11-05
 :::
