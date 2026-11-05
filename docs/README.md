@@ -10,6 +10,5 @@ layout: Blog
 bgImage: /assets/img/HomepageFrontImg.jpg
 heroFullScreen: true
 
-footer: MIT Licensed | Copyright © 2023-present She Zixiang
-copyright: false
+footer: "Code: MIT · Content: CC BY-SA 4.0 | Copyright © 2023-present She Zixiang"
 ---

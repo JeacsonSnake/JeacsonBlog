@@ -1,0 +1,36 @@
+JeacsonBlog — Third-party material notice
+=========================================
+
+The content of this site is licensed under CC BY-SA 4.0 (see LICENSE-content),
+except for the material listed below. That material remains the property of its
+respective owners and is reproduced for study/commentary only; it is NOT covered
+by the CC BY-SA 4.0 license of this repository.
+
+1. Reposted article
+   File:      docs/learningNote/Ros2_Note/2024_10_11_cpy_001.md
+   Original:  「一定能解决 ROS 系统 rosdep update 超时问题的简单方法」
+   Author:    不加辣先生 (CSDN)
+   Source:    https://blog.csdn.net/weixin_44023934/article/details/121242176
+   Terms:     CC BY 4.0 — verbatim redistribution stays under CC BY 4.0 with
+              attribution; it is not relicensed under CC BY-SA 4.0 here.
+
+2. Course material
+   File:      docs/learningNote/vueNote/VUE3/shangguigu_notes.md
+   Origin:    尚硅谷 (Vue3 分享资料), reproduced for personal study/sharing.
+   Terms:     All rights reserved by the original author. Not covered by the
+              CC BY-SA 4.0 license of this repository.
+
+3. Images and screenshots
+   Many images under docs/**/assets/ are screenshots or figures taken from
+   textbooks, course slides, official documentation or other blogs — e.g. the
+   notes on Computer Networking, Computer Composition and ROS2. Copyright
+   remains with the original authors/publishers. They are used here for study
+   and commentary and are not covered by this repository's licenses.
+
+4. Citations
+   Links to CSDN, Zhihu or other external articles inside the notes are
+   references, not copies of the linked works.
+
+If you hold rights to any material listed here and want it removed or amended,
+please contact Jeacson_Snake@outlook.com and it will be removed or replaced
+promptly.
