@@ -3,6 +3,8 @@ author: '尚硅谷'
 date: 2023-08-25
 title: Vue3 快速上手
 icon: 'vuejs'
+isOriginal: false
+license: 尚硅谷资料 · 不在本站 CC BY-SA 4.0 授权范围内
 category:
   - VUE
   - Web
@@ -10,8 +12,9 @@ tag:
   - VUE3
 ---
 
-::: tip
-该主页面下的所有皆为尚硅谷分享资料，在此仅做分享。如有不妥，请联系网站创作者进行删除！
+::: important 版权与来源
+本文为**尚硅谷**分享的 Vue3 教学资料，版权归尚硅谷所有，本站仅作学习分享，
+**不在本站 CC BY-SA 4.0 授权范围内**。如有不妥，请联系 <Jeacson_Snake@outlook.com> 删除。
 :::
 
 ## Vue3快速上手
