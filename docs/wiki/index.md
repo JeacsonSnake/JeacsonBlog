@@ -5,7 +5,7 @@ title: JeacsonBlog Wiki
 # JeacsonBlog Wiki
 
 > 基于 Karpathy LLM Wiki 模式构建的个人知识库。以博客原始笔记为 source of truth，由 LLM Agent 增量维护。
-> Last updated: 2026-11-02
+> Last updated: 2026-11-05
 
 ## Sources（知识域摘要）
 
@@ -79,6 +79,7 @@ title: JeacsonBlog Wiki
 - [[./concepts/Vue-CSS-Fit-Content-Vite-cssnano-Dedupe-Bug.md]] — Vite 构建 cssnano 去重 fit-content 致 Edge 样式失效（标准语法放 vendor prefix 后）
 - [[./concepts/Mihomo-Proxy-GSLB-Drift-Subscription-Auto-Update.md]] — mihomo 代理全挂排查（GSLB IP 池漂移 + 订阅自动化三层架构 + URLTest）
 - [[./concepts/WiFi-5GHz-DFS-Radar-Avoidance-Image-Loading-Slow.md]] — WiFi 5GHz DFS 信道雷达避让致社交平台图片加载慢（关闭 DFS + Channel Finder 修复）
+- [[./concepts/Switch-5GHz-Channel-Whitelist.md]] — Nintendo Switch 5GHz 搜不到：区域固件信道白名单（仅 36/40/44/48）与路由器手动选频
 - [[./concepts/Per-Monitor-DPI-DWM-Resampling-Ringing.md]] — 双屏 DPI 缩放不一致致 DWM 重采样振铃（GIF 蓝黄斑纹 / 分层排除法）
 
 ## 最近更新

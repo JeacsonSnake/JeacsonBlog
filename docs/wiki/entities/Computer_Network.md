@@ -2,8 +2,8 @@
 title: 计算机网络
 description: 计算机网络协议与原理，TCP/IP 五层模型，Kurose & Ross 教材
 type: entity
-tags: [Network, TCP, UDP, HTTP, DNS, Router]
-updated: 2026-04-17
+tags: [Network, TCP, UDP, HTTP, DNS, Router, WiFi, Channel]
+updated: 2026-11-05
 ---
 
 # 计算机网络
@@ -35,6 +35,15 @@ updated: 2026-04-17
 - [[../concepts/URL到页面显示.md]] — 综合流程
 - [[../concepts/TCP与UDP.md]] — 传输层对比
 - [[../concepts/可靠数据传输.md]] — rdt 协议演化
+- [[../concepts/WiFi-5GHz-DFS-Radar-Avoidance-Image-Loading-Slow.md]] — WiFi 5GHz DFS 雷达避让致图片加载慢
+- [[../concepts/Switch-5GHz-Channel-Whitelist.md]] — Switch 5GHz 信道白名单（搜不到 5G）
+
+## 无线链路排障（WiFi / 802.11）
+
+两条实战记录，都以「现象指纹」先分诊，再分层取证：
+
+- **5GHz 可见但传输间歇挂起** → DFS 频段（52–140）雷达避让机制；关 DFS + Channel Finder 落地非 DFS 信道解决。详见 [[../concepts/WiFi-5GHz-DFS-Radar-Avoidance-Image-Loading-Slow.md]]
+- **5GHz 完全不在扫描列表** → 客户端区域固件白名单（Switch 仅 36/40/44/48），属信道问题而非加密/协议；改路由器信道前必须先关自动选频。详见 [[../concepts/Switch-5GHz-Channel-Whitelist.md]]
 
 ## Source
 
