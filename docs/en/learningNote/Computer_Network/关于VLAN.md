@@ -163,6 +163,6 @@ Concept: every port on a switch has a VID as that port's default VID, and that i
 - For a trunk interface, one interface can allow multiple VLANs through, but there can only be one default VLAN. The interface's default VLAN and the VLANs allowed through have to be configured separately, but the two do not affect each other.
 
 ::: important
-This article was translated by Hermes Agent; the original text can be found at [here](../../../learningNote/Computer_Network/关于VLAN.md). The translation is for reference only.
+This article was translated by `Hermes Agent`; the original text can be found at [here](../../../learningNote/Computer_Network/关于VLAN.md). The translation is for reference only.
 Translation time: 2026-11-05
 :::

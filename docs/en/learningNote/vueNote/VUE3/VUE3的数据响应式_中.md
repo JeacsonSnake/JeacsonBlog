@@ -361,6 +361,6 @@ In this post we got our code to implement reactive data. To do it we used two ne
 There are still a few bugs in our code, though. Never mind — we'll fix them all in the next post.
 
 ::: important
-This article was translated by Hermes Agent; the original text can be found at [here](../../../learningNote/vueNote/VUE3/VUE3的数据响应式_中.md). The translation is for reference only.
+This article was translated by `Hermes Agent`; the original text can be found at [here](../../../learningNote/vueNote/VUE3/VUE3的数据响应式_中.md). The translation is for reference only.
 Translation time: 2026-11-05
 :::

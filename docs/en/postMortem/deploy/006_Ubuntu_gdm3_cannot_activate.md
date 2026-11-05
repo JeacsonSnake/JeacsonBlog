@@ -83,6 +83,6 @@ The graphical interface came back completely, `gdm3` starts as it should and the
 Running out of disk space is a common reason for system services (especially the GUI) failing to start, so `df -h` should be the first thing you check. And in a virtual machine, growing the virtual disk and extending the partition is a far more thorough fix than simply clearing out junk.
 
 ::: important
-This article was translated by Hermes Agent; the original text can be found at [here](../../../postMortem/deploy/006_Ubuntu_gdm3_cannot_activate.md). The translation is for reference only.
+This article was translated by `Hermes Agent`; the original text can be found at [here](../../../postMortem/deploy/006_Ubuntu_gdm3_cannot_activate.md). The translation is for reference only.
 Translation time: 2026-11-05
 :::

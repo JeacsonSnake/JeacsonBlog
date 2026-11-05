@@ -192,6 +192,6 @@ Here are some snippets you can use, covering `node` and `launch`:
 :::
 
 ::: important
-This article was translated by Hermes Agent; the original text can be found at [here](../../learningNote/Ros2_Note/README.md). The translation is for reference only.
+This article was translated by `Hermes Agent`; the original text can be found at [here](../../learningNote/Ros2_Note/README.md). The translation is for reference only.
 Translation time: 2026-11-05
 :::

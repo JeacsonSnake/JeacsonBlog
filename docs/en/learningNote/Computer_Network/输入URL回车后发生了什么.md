@@ -54,6 +54,6 @@ Of course this only describes the simple path from **typing a domain name → re
 [^first]: The question comes from problem 3 (page 201) under "Problems" in **"Computer Networking:A Top-Down Approach" (James F. Kurose and Keith W. Ross, Seventh Edition, 2017)**
 
 ::: important
-This article was translated by Hermes Agent; the original text can be found at [here](../../../learningNote/Computer_Network/输入URL回车后发生了什么.md). The translation is for reference only.
+This article was translated by `Hermes Agent`; the original text can be found at [here](../../../learningNote/Computer_Network/输入URL回车后发生了什么.md). The translation is for reference only.
 Translation time: 2026-11-05
 :::

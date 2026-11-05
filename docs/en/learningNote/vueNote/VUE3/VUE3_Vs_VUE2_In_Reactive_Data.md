@@ -146,6 +146,6 @@ But in VUE3, because all data is proxied through the Proxy function, when we add
 :::
 
 ::: important
-This article was translated by Hermes Agent; the original text can be found at [here](../../../../learningNote/vueNote/VUE3/VUE3_Vs_VUE2_In_Reactive_Data.md). The translation is for reference only.
+This article was translated by `Hermes Agent`; the original text can be found at [here](../../../../learningNote/vueNote/VUE3/VUE3_Vs_VUE2_In_Reactive_Data.md). The translation is for reference only.
 Translation time: 2026-11-05
 :::

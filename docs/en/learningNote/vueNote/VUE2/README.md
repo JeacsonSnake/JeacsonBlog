@@ -16,6 +16,6 @@ Everything on this page is notes I produced while learning VUE2. They cover, amo
 VUE2 official docs: [click here](https://v2.cn.vuejs.org/)
 
 ::: important
-This article was translated by Hermes Agent; the original text can be found at [here](../../../../learningNote/vueNote/VUE2/README.md). The translation is for reference only.
+This article was translated by `Hermes Agent`; the original text can be found at [here](../../../../learningNote/vueNote/VUE2/README.md). The translation is for reference only.
 Translation time: 2026-11-05
 :::

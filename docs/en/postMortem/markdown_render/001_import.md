@@ -43,6 +43,6 @@ Use the `markdown-it-multimd-table` plugin to enhance how `markdown` renders tab
 And then you can use it.
 
 ::: important
-This article was translated by Hermes Agent; the original text can be found at [here](../../../postMortem/markdown_render/001_import.md). The translation is for reference only.
+This article was translated by `Hermes Agent`; the original text can be found at [here](../../../postMortem/markdown_render/001_import.md). The translation is for reference only.
 Translation time: 2026-11-05
 :::

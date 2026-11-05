@@ -328,6 +328,6 @@ So keep diving into the source! We'll meet again before long.
 > "Keep on, keeping on!" 👍
 
 ::: important
-This article was translated by Hermes Agent; the original text can be found at [here](../../../learningNote/vueNote/VUE3/VUE3的数据响应式_补.md). The translation is for reference only.
+This article was translated by `Hermes Agent`; the original text can be found at [here](../../../learningNote/vueNote/VUE3/VUE3的数据响应式_补.md). The translation is for reference only.
 Translation time: 2026-11-05
 :::

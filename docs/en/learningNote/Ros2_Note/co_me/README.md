@@ -19,6 +19,6 @@ These are the notes on the core content of ROS2 communication mechanisms, which 
 For the specifics — hardware, software, technical background and so on — please refer to [A Brief Introduction to the ROS2 Learning Notes Collection](../README.md)
 
 ::: important
-This article was translated by Hermes Agent; the original text can be found at [here](../../../../learningNote/Ros2_Note/co_me/README.md). The translation is for reference only.
+This article was translated by `Hermes Agent`; the original text can be found at [here](../../../../learningNote/Ros2_Note/co_me/README.md). The translation is for reference only.
 Translation time: 2026-11-05
 :::

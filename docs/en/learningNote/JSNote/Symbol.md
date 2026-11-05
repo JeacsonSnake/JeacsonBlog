@@ -130,6 +130,6 @@ console.log(keys);
 ```
 
 ::: important
-This article was translated by Hermes Agent; the original text can be found at [here](../../learningNote/JSNote/Symbol.md). The translation is for reference only.
+This article was translated by `Hermes Agent`; the original text can be found at [here](../../learningNote/JSNote/Symbol.md). The translation is for reference only.
 Translation time: 2026-11-05
 :::

@@ -19,6 +19,6 @@ Everything in this directory is the notes I produced while teaching myself compu
 ![cover](https://dl-preview.csdnimg.cn/11060955/0001-37c447a1b02161ea34858ae5bb905821_thumbnail.jpeg)
 
 ::: important
-This article was translated by Hermes Agent; the original text can be found at[here](../../../learningNote/Computer_Network/README.md). The translation is for reference only.
+This article was translated by `Hermes Agent`; the original text can be found at[here](../../../learningNote/Computer_Network/README.md). The translation is for reference only.
 Translation time: 2026-11-05
 :::

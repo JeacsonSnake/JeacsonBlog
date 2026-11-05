@@ -345,6 +345,6 @@ With the change in place the `cron job` was triggered again, ran successfully an
 ````
 
 ::: important
-This article was translated by Hermes Agent; the original text can be found at [here](../../../postMortem/sp_for_LLM/000Y_prompt-VuePress-Theme-Hope-Hermes-Multi-Session-Merger.md). The translation is for reference only.
+This article was translated by `Hermes Agent`; the original text can be found at [here](../../../postMortem/sp_for_LLM/000Y_prompt-VuePress-Theme-Hope-Hermes-Multi-Session-Merger.md). The translation is for reference only.
 Translation time: 2026-11-05
 :::

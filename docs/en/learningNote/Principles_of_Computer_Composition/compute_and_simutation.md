@@ -221,6 +221,6 @@ This method needs no derivative, so it is relatively convenient. It has these fe
 - like Newton-Raphson, the initial approximate solution may land near a local minimum, so the iteration converges on the minimum instead of the root.
 
 ::: important
-This article was translated by Hermes Agent; the original text can be found at [here](../../learningNote/Principles_of_Computer_Composition/compute_and_simutation.md). The translation is for reference only.
+This article was translated by `Hermes Agent`; the original text can be found at [here](../../learningNote/Principles_of_Computer_Composition/compute_and_simutation.md). The translation is for reference only.
 Translation time: 2026-11-05
 :::

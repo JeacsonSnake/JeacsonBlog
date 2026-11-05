@@ -94,6 +94,6 @@ Open "docs\ .vuepress\ theme.ts" or whatever the theme config source is in your 
 Done.
 
 ::: important
-This article was translated by Hermes Agent; the original text can be found at [here](../../../postMortem/deploy/003_leancloud_relate.md). The translation is for reference only.
+This article was translated by `Hermes Agent`; the original text can be found at [here](../../../postMortem/deploy/003_leancloud_relate.md). The translation is for reference only.
 Translation time: 2026-11-05
 :::

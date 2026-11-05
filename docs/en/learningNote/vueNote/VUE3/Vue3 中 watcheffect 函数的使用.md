@@ -53,6 +53,6 @@ As for the difference between the watch function and the watchEffect function, t
 > - `watchEffect`, on the other hand, tracks dependencies during its execution. It will automatically track all reactive properties accessed during its synchronous execution. This is more convenient and typically results in shorter code, but makes its reactive dependencies less explicit.
 
 ::: important
-This article was translated by Hermes Agent; the original text can be found at [here](../../../../learningNote/vueNote/VUE3/Vue3%20中%20watcheffect%20函数的使用.md). The translation is for reference only.
+This article was translated by `Hermes Agent`; the original text can be found at [here](../../../../learningNote/vueNote/VUE3/Vue3%20中%20watcheffect%20函数的使用.md). The translation is for reference only.
 Translation time: 2026-11-05
 :::

@@ -150,6 +150,6 @@ When that finishes, click `Redeploy` in `vercel` so the settings are picked up o
 ![be like](./assets/img/CommentMigrate_004.jpg)
 
 ::: important
-This article was translated by Hermes Agent; the original text can be found at [here](../../../postMortem/deploy/005_leancloud_migrate_neon_relate.md). The translation is for reference only.
+This article was translated by `Hermes Agent`; the original text can be found at [here](../../../postMortem/deploy/005_leancloud_migrate_neon_relate.md). The translation is for reference only.
 Translation time: 2026-11-05
 :::

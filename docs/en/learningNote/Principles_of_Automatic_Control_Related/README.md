@@ -83,6 +83,6 @@ $$\therefore y(k) = Z^{-1}[\frac{z^2}{(z+1)^2}]$$
 ### 4. Residue method
 
 ::: important
-This article was translated by Hermes Agent; the original text can be found at [here](../../learningNote/Principles_of_Automatic_Control_Related/README.md). The translation is for reference only.
+This article was translated by `Hermes Agent`; the original text can be found at [here](../../learningNote/Principles_of_Automatic_Control_Related/README.md). The translation is for reference only.
 Translation time: 2026-11-05
 :::

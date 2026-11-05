@@ -565,6 +565,6 @@ Both times it was `AHEAD=0` → skip → success. Conclusion: the fallback exist
 | App | `jeacsonblog-daily-merge` | push identity `jeacsonblog-daily-merge[bot]` |
 
 ::: important
-This article was translated by Hermes Agent; the original text can be found at [here](../../../postMortem/sp_for_LLM/006_Hermes-Briefing-Archive-Auto-Merge-Topology-report.md). The translation is for reference only.
+This article was translated by `Hermes Agent`; the original text can be found at [here](../../../postMortem/sp_for_LLM/006_Hermes-Briefing-Archive-Auto-Merge-Topology-report.md). The translation is for reference only.
 Translation time: 2026-11-05
 :::

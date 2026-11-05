@@ -218,6 +218,6 @@ Output
 ```
 
 ::: important
-This article was translated by Hermes Agent; the original text can be found at [here](../../learningNote/JSNote/Reduce方法.md). The translation is for reference only.
+This article was translated by `Hermes Agent`; the original text can be found at [here](../../learningNote/JSNote/Reduce方法.md). The translation is for reference only.
 Translation time: 2026-11-05
 :::

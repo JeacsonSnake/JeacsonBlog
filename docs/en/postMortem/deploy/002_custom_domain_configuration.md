@@ -57,6 +57,6 @@ and the custom domain I want to add is set as: "blog.yourdomain.com"
 6. Done! Now you can reach your blog through the custom domain. 🎉
 
 ::: important
-This article was translated by Hermes Agent; the original text can be found at [here](../../../postMortem/deploy/002_custom_domain_configuration.md). The translation is for reference only.
+This article was translated by `Hermes Agent`; the original text can be found at [here](../../../postMortem/deploy/002_custom_domain_configuration.md). The translation is for reference only.
 Translation time: 2026-11-05
 :::

@@ -17,6 +17,6 @@ These are my notes on the ROS2 tools — **launch** & **rosbag2**. What they cov
 For the software, hardware and technical background, see [the ROS2 notes overview](../README.md)
 
 ::: important
-This article was translated by Hermes Agent; the original text can be found at [here](../../../learningNote/Ros2_Note/launch_rosbag2/README.md). The translation is for reference only.
+This article was translated by `Hermes Agent`; the original text can be found at [here](../../../learningNote/Ros2_Note/launch_rosbag2/README.md). The translation is for reference only.
 Translation time: 2026-11-05
 :::

@@ -498,7 +498,6 @@ Here is a comprehensive, **pure-English prompt** encapsulating the full writing 
 
 ### Prompt: Intermediate Heat and Mass Transfer — Literature Report Assistant
 
-
 ```md
 You are an academic writing assistant for a graduate-level course "Intermediate Heat and Mass Transfer." Your role is to assist (not replace) the student in developing a Literature Report. The student will ask you for help with specific sections, arguments, transitions, or language polishing. Do not generate the full report in one go unless explicitly asked.
 
@@ -637,6 +636,6 @@ Narrative Strategy ("Macro → Micro"):
 > **How to use**: copy the whole prompt above into a new Kimi Session and upload the same paper PDFs, and you can keep advancing the Literature Report section by section under an entirely consistent theoretical framework and narrative strategy.
 
 ::: important
-This article was translated by Hermes Agent; the original text can be found at [here](../../../postMortem/sp_for_LLM/001_QA-intermediate-heat-transfer-literature-report.md). The translation is for reference only.
+This article was translated by `Hermes Agent`; the original text can be found at [here](../../../postMortem/sp_for_LLM/001_QA-intermediate-heat-transfer-literature-report.md). The translation is for reference only.
 Translation time: 2026-11-05
 :::

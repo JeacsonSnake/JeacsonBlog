@@ -43,6 +43,6 @@ function getObjAndPropCorrectly (object, prop) {
 With that, JavaScript parses prop as a variable rather than a string value, which solves the problem of reading a property off the passed-in object through a formal parameter.
 
 ::: important
-This article was translated by Hermes Agent; the original text can be found at [here](../../learningNote/JSNote/Formal&Real_Para_When_Func_Get_Obj.md). The translation is for reference only.
+This article was translated by `Hermes Agent`; the original text can be found at [here](../../learningNote/JSNote/Formal&Real_Para_When_Func_Get_Obj.md). The translation is for reference only.
 Translation time: 2026-11-05
 :::

@@ -172,6 +172,6 @@ After nearly two months of use, I wouldn't dare claim I've built some grand proj
 ![Public bandwidth monitoring](./assets/003-img/public_bandwidth_monitor.png)
 
 ::: important
-This article was translated by Hermes Agent; the original text can be found at [here](../../../postMortem/sp_for_LLM/003_think-Initial-notes-on-using-Hermes_Agent.md). The translation is for reference only.
+This article was translated by `Hermes Agent`; the original text can be found at [here](../../../postMortem/sp_for_LLM/003_think-Initial-notes-on-using-Hermes_Agent.md). The translation is for reference only.
 Translation time: 2026-11-05
 :::

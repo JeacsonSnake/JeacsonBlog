@@ -53,6 +53,6 @@ The fix:
 ![GitHubPagesSourcePath](./assets/img/GitHubPagesSourcePath.jpg)
 
 ::: important
-This article was translated by Hermes Agent; the original text can be found at [here](../../../postMortem/deploy/001_static_source_deploy.md). The translation is for reference only.
+This article was translated by `Hermes Agent`; the original text can be found at [here](../../../postMortem/deploy/001_static_source_deploy.md). The translation is for reference only.
 Translation time: 2026-11-05
 :::
