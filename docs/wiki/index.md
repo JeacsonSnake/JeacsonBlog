@@ -5,7 +5,7 @@ title: JeacsonBlog Wiki
 # JeacsonBlog Wiki
 
 > 基于 Karpathy LLM Wiki 模式构建的个人知识库。以博客原始笔记为 source of truth，由 LLM Agent 增量维护。
-> Last updated: 2026-11-05
+> Last updated: 2026-11-06
 
 ## Sources（知识域摘要）
 
@@ -41,6 +41,7 @@ title: JeacsonBlog Wiki
 
 ### JavaScript
 - [Array.reduce() 数组压缩方法](./concepts/Reduce方法.md)
+- [Object.defineProperty：属性描述符与 Vue2 响应式劫持](./concepts/defineProperty.md)
 - [ES6 Symbol 原始数据类型](./concepts/Symbol.md)
 - [函数柯里化与函数组合](./concepts/函数柯里化.md)
 
@@ -50,6 +51,10 @@ title: JeacsonBlog Wiki
 - [Action 长期任务通信（支持取消 + 反馈）](./concepts/动作通信.md)
 - [tf2 坐标变换系统](./concepts/坐标变换.md)
 - [DDS 域ID跨设备通信](./concepts/分布式通信.md)
+- [自定义消息接口（msg / srv / action 的编写与编译）](./concepts/自定义消息接口.md)
+
+### Vue
+- [Vue3 数据响应式引擎：effect / track / trigger 与 Proxy + Reflect](./concepts/数据响应式.md)
 
 ### Coding Skill
 - [VSCode 自定义 Snippet（以 ROS2 C++ Publisher 为例）](./concepts/代码片段.md)
@@ -57,6 +62,7 @@ title: JeacsonBlog Wiki
 ### 计算机网络
 - [DNS→TCP→HTTP→渲染全流程](./concepts/URL到页面显示.md)
 - [TCP vs UDP 传输层协议对比](./concepts/TCP与UDP.md)
+- [可靠数据传输：rdt 1.0 → 3.0 与 GBN / SR 流水线协议](./concepts/可靠数据传输.md)
 
 ### LLM Prompt & Skill
 - [Kimi META Prompt：VuePress 格式转换器（.docx 输入）](./concepts/VuePress-Theme-Hope-Markdown-Converter.md)

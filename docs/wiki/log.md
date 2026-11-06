@@ -260,3 +260,22 @@ title: Wiki Log
 - `log.md` 里作为历史记录、包在反引号内的 3 处 `[[...]]` 原文保留（属于当时的报错引用）
 - 工具侧同步：`wiki-lint.sh` 的 orphan（#1）与断链（#2）检查改为 `link_targets()` 同时解析 `[[...]]` 与 `[标签](...)`，跳过图片/外链/锚点；`AGENTS.md` 模板同步改为此写法，防止下次 ingest 写回旧格式
 - Self-check: 迁移前后 lint 对比 critical 0→0、orphan 6→6、partial frontmatter 24→24（未因换写法产生新的误报）；17 KB lint 脚本 `bash -n` 通过
+
+## [2026-11-06] ingest | 补齐 4 个被文本化的概念页（阶段 A）
+- 触发：2026-11-06 链接语法迁移时，4 处 `[[concepts/...]]` 指向的页面从未创建，被降级为纯文本；用户要求按原文重建，并确认这些主题的笔记在 repo 里都在（无草创期丢数据）
+- Wiki pages created (4)：
+  - **CREATE** `concepts/可靠数据传输.md` — rdt1.0→3.0 五版本「每加一种故障补一种机制」表 + 停等的滑动窗口解释 + GBN（累计确认/丢弃乱序/回退重传）vs SR（单独确认/缓存乱序/只重传出错包）对比 + 与 TCP 的对照；源 `Computer_Network/可靠数据的传输原理.md`
+  - **CREATE** `concepts/defineProperty.md` — 属性描述符四项及默认全 false 的坑 + get/set 劫持最小样例 + Vue2 三个限制（嵌套属性/新增/删除，数组靠重写 7 方法）+ Proxy 为何取代；源 `JSNote/defineproperty方法.md`
+  - **CREATE** `concepts/数据响应式.md` — effect/track/trigger 三板斧 + `WeakMap→Map→Set` 三级依赖表 + Proxy/Reflect handler + activeEffect 修「不读也重跑」与「effect 串味」+ ref 用对象访问器实现 + computed = ref + effect + Vue2/Vue3 对照表；源 VUE3 响应式上/中/下/补 4 篇
+  - **CREATE** `concepts/自定义消息接口.md` — msg/srv/action 三种接口文件 + 四步流程 + `package.xml` 差异（action 用 `buildtool_depend` + `action_msgs`）+ `rosidl_generate_interfaces` 单次调用列全部 + `ros2 interface show` 验证 + IDE extraPaths；源 `Ros2_Note/co_me/2024_09_25.md`、`2024_10_03_002.md`、`2024_10_15_002.md`
+- Wiki pages modified (8)：
+  - **MODIFY** `entities/Computer_Network.md` — 「rdt 协议演化」纯文本 → 概念页链接
+  - **MODIFY** `entities/JavaScript.md` — 概念表 `defineProperty` 行末列 `—` → 概念页链接
+  - **MODIFY** `entities/ROS2.md` — 「接口定制」纯文本 → 概念页链接
+  - **MODIFY** `entities/Vue.md` — 「数据响应式」纯文本 → 概念页链接
+  - **MODIFY** `index.md` — 新增 Vue 段落；JavaScript / ROS2 / 计算机网络 三段各增 1 条；`Last updated` → 2026-11-06
+  - **MODIFY** `concepts/话题通信.md` — 「相关」增自定义消息接口链接（消息接口一节直接对应）
+  - **MODIFY** `concepts/TCP与UDP.md` — 「相关」增可靠数据传输链接（对比表的"可靠性"一行由此展开）
+  - **MODIFY** `log.md` — 本条目
+- 纪律遵循：先有笔记再建页（4 页全部对应 repo 中已存在的笔记，无凭空生成）；内链一律 `[标签](相对路径.md)`；页面 `related` 用相对 `.md` 路径（与 PR #78 后的 AGENTS.md 模板一致）；源笔记链接指向 blog 的 `learningNote/...` 原文
+- Self-check: `wiki-lint.sh --json` 检查 critical 0；orphan 数 +0（4 新页均被 entity/index 引用）

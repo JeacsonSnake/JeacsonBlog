@@ -34,7 +34,7 @@ updated: 2026-11-05
 
 - [综合流程](../concepts/URL到页面显示.md)
 - [传输层对比](../concepts/TCP与UDP.md)
-- rdt 协议演化
+- [可靠数据传输原理：rdt 1.0 → 3.0、停等与流水线、GBN / SR](../concepts/可靠数据传输.md)
 - [WiFi 5GHz DFS 雷达避让致图片加载慢](../concepts/WiFi-5GHz-DFS-Radar-Avoidance-Image-Loading-Slow.md)
 - [Switch 5GHz 信道白名单（搜不到 5G）](../concepts/Switch-5GHz-Channel-Whitelist.md)
 
