@@ -102,5 +102,6 @@ $$
 
 ## 来源
 
+- 知识源：[自动控制原理与 S-Z 变换（源笔记摘要）](../sources/Control_Theory.md)
 - 原文：[自动控制原理相关（S-Z 变换表）](../../learningNote/Principles_of_Automatic_Control_Related/README.md)
 - 相关概念：[机器数与 IEEE-754](./机器数与IEEE-754.md)（数值误差与离散化同源）
