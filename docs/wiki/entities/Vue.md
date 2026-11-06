@@ -33,6 +33,13 @@ Vue.js 是一款渐进式 JavaScript 框架，用于构建单页应用（SPA）�
 - **[Vue3 全面支持 TypeScript](../entities/TypeScript.md)**
 - **[Vue 是 Web 开发的框架](../entities/Web.md)**
 
+## 概念页
+
+- [Vue3 数据响应式引擎（effect / track / trigger + Proxy + Reflect）](../concepts/数据响应式.md)
+- [Vuex：state / getters / mutations / actions 与模块化](../concepts/Vuex.md)
+- [Vue Router：基本路由、传参、守卫与两种工作模式](../concepts/Vue-Router.md)
+- [Vue3 与 Vue2 的渲染函数：h() 扁平化](../concepts/Vue3渲染函数.md)
+
 ## 构建与踩坑
 
 - **Vite 生产构建错误去重 `fit-content`**（2026-09）— 博饼网站欢迎页按钮 Edge 下失效：cssnano 把 `fit-content` 与 `-moz-fit-content` 视为重复声明、只保留后写前缀版。详见 [CSS fit-content 生产构建被错误优化（Vite cssnano 去重）](../concepts/Vue-CSS-Fit-Content-Vite-cssnano-Dedupe-Bug.md)

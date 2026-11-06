@@ -44,6 +44,8 @@ title: JeacsonBlog Wiki
 - [Object.defineProperty：属性描述符与 Vue2 响应式劫持](./concepts/defineProperty.md)
 - [ES6 Symbol 原始数据类型](./concepts/Symbol.md)
 - [函数柯里化与函数组合](./concepts/函数柯里化.md)
+- [函数形参与实参：点号访问与中括号访问的区别](./concepts/函数形参与实参.md)
+- [JavaScript 语法速记：var/let、严格模式、eval、Object vs Map](./concepts/JavaScript语法速记.md)
 
 ### ROS2
 - [Topic 发布/订阅通信模式](./concepts/话题通信.md)
@@ -52,9 +54,24 @@ title: JeacsonBlog Wiki
 - [tf2 坐标变换系统](./concepts/坐标变换.md)
 - [DDS 域ID跨设备通信](./concepts/分布式通信.md)
 - [自定义消息接口（msg / srv / action 的编写与编译）](./concepts/自定义消息接口.md)
+- [ROS2 参数服务：随节点走的键值配置](./concepts/ROS2参数服务.md)
 
 ### Vue
 - [Vue3 数据响应式引擎：effect / track / trigger 与 Proxy + Reflect](./concepts/数据响应式.md)
+- [Vuex：state / getters / mutations / actions 与模块化](./concepts/Vuex.md)
+- [Vue Router：基本路由、传参、守卫与 hash/history 两种模式](./concepts/Vue-Router.md)
+- [Vue3 与 Vue2 的渲染函数：h() 怎么变扁平的](./concepts/Vue3渲染函数.md)
+
+### TypeScript
+- [TypeScript 类型系统：从类型声明到 tsconfig 编译选项](./concepts/TypeScript类型系统.md)
+- [TypeScript 工程化：webpack + ts-loader 与 Babel](./concepts/TypeScript工程化.md)
+- [TypeScript 面向对象：类、封装、继承、接口与泛型](./concepts/TypeScript面向对象.md)
+
+### 计算机组成原理
+- [机器数与 IEEE-754：浮点数是怎么存进 32 位的](./concepts/机器数与IEEE-754.md)
+
+### 自动控制原理
+- [S-Z 变换表：连续系统与离散系统的对照工具](./concepts/S-Z变换表.md)
 
 ### Coding Skill
 - [VSCode 自定义 Snippet（以 ROS2 C++ Publisher 为例）](./concepts/代码片段.md)
@@ -63,6 +80,13 @@ title: JeacsonBlog Wiki
 - [DNS→TCP→HTTP→渲染全流程](./concepts/URL到页面显示.md)
 - [TCP vs UDP 传输层协议对比](./concepts/TCP与UDP.md)
 - [可靠数据传输：rdt 1.0 → 3.0 与 GBN / SR 流水线协议](./concepts/可靠数据传输.md)
+- [UDP 校验和：反码求和、回卷进位与「全 1 即通过」](./concepts/UDP校验和.md)
+- [TCP/IP 五层模型：每层解决什么问题](./concepts/TCP-IP五层模型.md)
+- [VLAN：用 802.1Q 标签切开广播域](./concepts/VLAN.md)
+- [SMTP：为什么发信是「推」而收信必须是「拉」](./concepts/SMTP.md)
+- [PPP 与 PPPoE：点对点协议与宽带拨号](./concepts/PPP与PPPoE.md)
+- [链路发现协议（LLDP）：只通告、不配置](./concepts/链路发现协议.md)
+- [黑洞路由：出口指向 NULL0 的静态路由](./concepts/黑洞路由.md)
 
 ### LLM Prompt & Skill
 - [Kimi META Prompt：VuePress 格式转换器（.docx 输入）](./concepts/VuePress-Theme-Hope-Markdown-Converter.md)

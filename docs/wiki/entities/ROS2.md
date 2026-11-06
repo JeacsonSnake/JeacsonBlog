@@ -39,6 +39,7 @@ ROS2 (Robot Operating System 2) 是一个用于机器人软件开发的开源中
 - **[基于 DDS 域ID实现跨设备通信](../concepts/分布式通信.md)**
 - **[机器人运动学基础](../concepts/坐标变换.md)**
 - **[自定义消息接口（msg / srv / action）](../concepts/自定义消息接口.md)**
+- **[参数服务（Parameters）—— 运行时动态配置](../concepts/ROS2参数服务.md)**
 
 ## Source
 
