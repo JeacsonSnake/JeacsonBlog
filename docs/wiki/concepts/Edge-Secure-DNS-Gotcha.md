@@ -8,7 +8,7 @@ tags: [DevOps, DNS, Edge, Browser, Troubleshooting, Network]
 sources:
   - docs/postMortem/sp_for_LLM/2026_06_29.md
 related:
-  - docs/wiki/sources/PostMortem.md
+  - ../sources/PostMortem.md
 ---
 
 # Edge 浏览器「使用安全的 DNS」选项的副作用与排查

@@ -8,8 +8,8 @@ tags: [CSS, Vite, Vue, Frontend, Build, Troubleshooting]
 sources:
   - docs/postMortem/tiny_tips/2026_09_07.md
 related:
-  - docs/wiki/entities/Vue.md
-  - docs/wiki/sources/PostMortem.md
+  - ../entities/Vue.md
+  - ../sources/PostMortem.md
 ---
 
 # CSS fit-content 生产构建被错误优化（Vite cssnano 去重）

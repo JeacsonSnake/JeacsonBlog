@@ -8,7 +8,7 @@ tags: [DevOps, Deploy, Migrate, Waline, LeanCloud, Neon, PostgreSQL, Vercel]
 sources:
   - docs/postMortem/deploy/005_leancloud_migrate_neon_relate.md
 related:
-  - docs/wiki/sources/PostMortem.md
+  - ../sources/PostMortem.md
 ---
 
 # LeanCloud 迁移至 Neon PostgreSQL（Waline 评论数据）

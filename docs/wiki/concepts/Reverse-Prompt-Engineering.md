@@ -6,8 +6,8 @@ created: 2026-06-05
 updated: 2026-06-05
 tags: [LLM, Prompt Engineering, Kimi, Multimodal, Image Generation, Architecture Diagram]
 related:
-  - docs/wiki/entities/LLM-Prompt-Skill.md
-  - docs/wiki/concepts/VuePress-Theme-Hope-Markdown-Converter.md
+  - ../entities/LLM-Prompt-Skill.md
+  - ./VuePress-Theme-Hope-Markdown-Converter.md
 sources:
   - docs/postMortem/sp_for_LLM/002_QA-inverse-prompt-engineering-report.md
 ---

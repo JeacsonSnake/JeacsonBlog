@@ -6,9 +6,9 @@ tags: [AI Agent, Hermes Agent, Brotli, Cron Job, MiniMax-M3, DeepSeek, Troublesh
 date: 2026-06-09
 related:
   - docs/postMortem/sp_for_LLM/005_HermesMerged-AI-Daily-Briefing-Brotli-Truncation-Fix_-report.md
-  - docs/wiki/concepts/Hermes-Agent-Cronjob-Setup.md
-  - docs/wiki/concepts/VuePress-Theme-Hope-Hermes-Multi-Session-Merger.md
-  - docs/wiki/entities/Hermes-Agent.md
+  - ./Hermes-Agent-Cronjob-Setup.md
+  - ./VuePress-Theme-Hope-Hermes-Multi-Session-Merger.md
+  - ../entities/Hermes-Agent.md
 ---
 
 # AI Daily Briefing Cron Job Brotli 流截断故障排查与模型切换修复
@@ -17,7 +17,7 @@ related:
 
 AI Daily Briefing 定时任务（Job ID `7cb8f95c3d6b`，每日 08:15 CST 执行）从 **2026-06-05** 起持续失败，错误信息为 `RuntimeError: Response remained truncated after 3 continuation attempts`。本文档整理 2026-06-09 的多会话融合排查与修复过程：先用 MiniMax-M3 定位根因，再切换至 deepseek-v4-flash 验证修复，最后深入源码层做技术分析。
 
-本文档基于 [sp_for_LLM/005 多会话融合报告](../../../postMortem/sp_for_LLM/005_HermesMerged-AI-Daily-Briefing-Brotli-Truncation-Fix_-report.html)（使用 [Kimi META Prompt — VuePress Theme Hope Hermes Multi-Session Merger](./VuePress-Theme-Hope-Hermes-Multi-Session-Merger.md) 模板生成）。
+本文档基于 [sp_for_LLM/005 多会话融合报告](../../postMortem/sp_for_LLM/005_HermesMerged-AI-Daily-Briefing-Brotli-Truncation-Fix_-report.html)（使用 [Kimi META Prompt — VuePress Theme Hope Hermes Multi-Session Merger](./VuePress-Theme-Hope-Hermes-Multi-Session-Merger.md) 模板生成）。
 
 ## 故障现象
 
@@ -179,4 +179,4 @@ sitemap_headers = {"Accept-Encoding": "gzip"}
 - [Hermes Agent 部署与 RSS 每日简报 cronjob 配置方法论](./Hermes-Agent-Cronjob-Setup.md)
 - [多会话融合 META Prompt（生成此文档的模板）](./VuePress-Theme-Hope-Hermes-Multi-Session-Merger.md)
 - [Hermes Agent 实体聚合页](../entities/Hermes-Agent.md)
-- [sp_for_LLM/005 原始多会话融合报告](../../../postMortem/sp_for_LLM/005_HermesMerged-AI-Daily-Briefing-Brotli-Truncation-Fix_-report.html) — 完整对话记录
+- [sp_for_LLM/005 原始多会话融合报告](../../postMortem/sp_for_LLM/005_HermesMerged-AI-Daily-Briefing-Brotli-Truncation-Fix_-report.html) — 完整对话记录

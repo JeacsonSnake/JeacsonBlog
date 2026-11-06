@@ -4,8 +4,8 @@ description: "在入门型 VPS 上部署 Hermes Agent 并接入 FOLO/Agent-Reach
 type: concept
 tags: [AI Agent, Hermes, Cronjob, RSS, VPS, Agent-Reach]
 related:
-  - docs/wiki/entities/Hermes-Agent.md
-  - docs/wiki/concepts/AI-Daily-Briefing-Brotli-Fix-Investigation.md
+  - ../entities/Hermes-Agent.md
+  - ./AI-Daily-Briefing-Brotli-Fix-Investigation.md
 created: 2026-06-08
 updated: 2026-06-09
 sources:

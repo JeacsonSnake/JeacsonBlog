@@ -8,7 +8,7 @@ tags: [Troubleshooting, Windows, Display, DPI, NVIDIA]
 sources:
   - docs/postMortem/tiny_tips/2026_11_01.md
 related:
-  - docs/wiki/sources/PostMortem.md
+  - ../sources/PostMortem.md
 ---
 
 # 双屏 DPI 缩放不一致引发 DWM 重采样振铃 — GIF 蓝黄斑纹排查

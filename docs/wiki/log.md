@@ -279,3 +279,10 @@ title: Wiki Log
   - **MODIFY** `log.md` — 本条目
 - 纪律遵循：先有笔记再建页（4 页全部对应 repo 中已存在的笔记，无凭空生成）；内链一律 `[标签](相对路径.md)`；页面 `related` 用相对 `.md` 路径（与 PR #78 后的 AGENTS.md 模板一致）；源笔记链接指向 blog 的 `learningNote/...` 原文
 - Self-check: `wiki-lint.sh --json` 检查 critical 0；orphan 数 +0（4 新页均被 entity/index 引用）
+
+## [2026-11-06] maintenance | `related:` 路径统一为页内相对路径（阶段 B）
+- 问题：21 个页面的 `related:` 里混用三种写法 —— 仓库根路径 `docs/wiki/concepts/X.md`、漏写 `wiki/` 的 `docs/entities/X.md`、以及指向不存在的 `VuePress-Theme-Hermes-JSON-Converter.md`（真名含 `Hope`）。frontmatter 不会被 lint 检查，所以长期静默存在
+- 变更：57 条 `docs/wiki/...` + 2 条漏 `wiki/` 的 `docs/entities/...` 全部改写为相对当前页面的 `.md` 路径（同目录 `./X.md`、跨目录 `../concepts/X.md`），与 AGENTS.md「`related` 用相对当前页面的 `.md` 路径」一致；`entities/LLM-Prompt-Skill.md` 的那条同时修正文件名 → `VuePress-Theme-Hope-Hermes-JSON-Converter.md`
+- 变更：`concepts/AI-Daily-Briefing-Brotli-Fix-Investigation.md` 正文 2 处 `../../../postMortem/...`（多退一级，只靠站点根目录兜底才成立）改为 `../../postMortem/...`，目标文件经 repo 树核对存在
+- 未动：`related:` 里指向博客原文的 `docs/postMortem/...`（属"关联原始报告"，不是 wiki 页，保持仓库根写法）；`sources:` 字段（AGENTS.md 规定用相对 `docs/` 的路径）
+- Self-check: 改写脚本逐个校验目标文件存在（不存在的只报告不写，实际 0 条 unresolved）；lint critical 0→0、orphan 6→6、partial frontmatter 24→24；全库 `docs/wiki/` 前缀在 frontmatter 中已清零

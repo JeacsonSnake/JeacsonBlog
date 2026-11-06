@@ -6,10 +6,10 @@ tags: [LLM Prompt, VuePress, Markdown, Hermes Agent, JSON, Multi-Session]
 date: 2026-06-09
 related:
   - docs/postMortem/sp_for_LLM/000Y_prompt-VuePress-Theme-Hope-Hermes-Multi-Session-Merger.md
-  - docs/wiki/concepts/VuePress-Theme-Hope-Hermes-JSON-Converter.md
-  - docs/wiki/concepts/VuePress-Theme-Hope-Markdown-Converter.md
-  - docs/wiki/entities/Hermes-Agent.md
-  - docs/wiki/entities/LLM-Prompt-Skill.md
+  - ./VuePress-Theme-Hope-Hermes-JSON-Converter.md
+  - ./VuePress-Theme-Hope-Markdown-Converter.md
+  - ../entities/Hermes-Agent.md
+  - ../entities/LLM-Prompt-Skill.md
 ---
 
 # VuePress Theme Hope Hermes Multi-Session Merger
