@@ -1,8 +1,8 @@
 ---
-title: "Mihomo 代理全挂排查：GSLB IP 池漂移与订阅自动更新"
-description: "Hermes Agent 部署在腾讯云时 mihomo 代理 12 节点全挂的根因排查与彻底修复方案：核心结论「代理全挂不等于目标站点被封，而是 GSLB IP 池漂移 + 静态订阅过期」；含 7 步诊断流程、4 步方案选型、URLTest 自动选择组配置、订阅自动化三层分离架构（.env + update-subscription.sh + file provider + cron）、3 个关键陷阱（订阅伪节点、健康检查 URL 选错、节点分钟级波动）"
+title: "Mihomo 代理全挂修复：GSLB IP 池漂移与订阅自动更新"
+description: "代理 12 节点全挂后的修复方案：为何选订阅自动化而不是改 IP、mihomo 不支持 config.yaml 变量展开所以改用 type: file provider、三层分离架构（.env 存 URL + update-subscription.sh + providers 文件）、URLTest 自动选择组（gstatic 健康检查 + 300s 间隔）与每周三 04:40 的订阅更新 cron；含修复后验证方式与 5 条经验"
 created: 2026-08-10
-updated: 2026-08-10
+updated: 2026-11-06
 type: concept
 tags: [DevOps, Hermes Agent, mihomo, Network, Proxy, Tencent Cloud, Troubleshooting, GSLB, Cron]
 sources:
@@ -10,149 +10,39 @@ sources:
 related:
   - ../entities/Hermes-Agent.md
   - ../sources/PostMortem.md
+  - ./Mihomo-IP-Pool-Drift-Diagnosis.md
   - ./Hermes-Agent-Cronjob-Setup.md
   - ./Edge-Secure-DNS-Gotcha.md
   - ./Ubuntu-gdm3-Disk-Full-Troubleshooting.md
 ---
 
-# Mihomo 代理全挂排查 — GSLB IP 池漂移与订阅自动更新
+# Mihomo 代理全挂修复 — GSLB IP 池漂移与订阅自动更新
 
 ## 核心结论
 
-> **mihomo 代理全挂 ≠ 目标站点被封。** 先测 github/google 等无关站点，区分"节点故障"还是"站点屏蔽"；若用户本人在境外可达节点而广州服务器不可达 → 根因大概率是 **GSLB 域名解析 IP 池漂移 + 静态订阅过期**。修复方案是订阅自动化（`.env` 存 URL + 脚本定期拉取 + mihomo `type: file` provider），而不是临时改 IP。
+> **mihomo 代理全挂 ≠ 目标站点被封。** 若用户本人在境外可达节点而广州服务器不可达 → 根因大概率是 **GSLB 域名解析 IP 池漂移 + 静态订阅过期**。修复方案是订阅自动化（`.env` 存 URL + 脚本定期拉取 + mihomo `type: file` provider），而不是临时把节点 server 改成某个当前可达 IP。
 
-排查优先级（从最快到最慢）：
+本页讲**修复**。怎么一步步把故障归到 GSLB 漂移（含 12 节点逐个切换、`dig` 取证、自举死锁的处理）在诊断篇：
 
-1. **第 1 步**：用 `curl --proxy http://127.0.0.1:7890 https://github.com` 测无关站点。**走代理也挂 = 节点故障**，不是目标站点问题
-2. **第 2 步**：mihomo REST API（`127.0.0.1:9090`）逐节点切换测试，**全挂 = 节点层故障**
-3. **第 3 步**：用户本人在境外**裸连**节点服务器（不走代理）。能通 = 节点活着，问题在本地→节点的链路
-4. **第 4 步（关键）**：`dig` 节点域名，发现每次返回不同 IP = **GSLB 漂移**；再看 `config.yaml` 修改时间 = **订阅过期**
-5. **第 5 步**：修复选 B（订阅自动化），不要选 A（改 IP）—— A 治标，GSLB 下次漂移还会失效
+→ [Mihomo 12 节点全挂诊断实录](./Mihomo-IP-Pool-Drift-Diagnosis.md)
 
 ## 故障现象
 
-Hermes Agent 部署在腾讯云轻量应用服务器（广州），日常跑多个 cron 任务，其中"AI 每日简报"依赖本机 mihomo（`127.0.0.1:7890`）访问境外服务。
+Hermes Agent 部署在腾讯云轻量应用服务器（广州），日常跑多个 cron，其中"AI 每日简报"依赖本机 mihomo（`127.0.0.1:7890`）访问境外服务。
 
 某天简报里 Twitter 段变成：
 
 > ⚠️ **追踪账号全部无响应** — x.com 直连被屏蔽，所有代理节点 TLS 失败
 
-第一反应是"Twitter 又封了代理出口 IP"，但发现 `github.com`、`google.com` 走代理也全部超时 → 不是单站点问题。
+第一反应是"Twitter 又封了代理出口 IP"，但 `github.com`、`google.com` 走代理也全部超时 → 不是单站点问题。
 
-## 排查路径（7 步）
+## 根因（一段话）
 
-### Step 1：区分"TCP 屏蔽"还是"节点故障"
+`dig` 节点域名每次返回不同 IP（GSLB 多 IP 轮询，台湾 Hinet 段大部分从广州不可达），而 `config.yaml` 的修改时间是 4 个月前、订阅流量数字也旧了 —— 机场早换了 IP 池，本地还拿着旧配置。
 
-直连测试（预期内的超时）：
+**所以问题不是"某个 IP 不可用"，而是"订阅不更新"这件事本身。** 治 IP 是治症状，治订阅才是治因。
 
-```
-https://x.com          => 000 (10s timeout)  # 腾讯云出疆屏蔽，已知
-https://twitter.com    => 000 (10s timeout)
-https://api.twitter.com => 000 (10s timeout)
-```
-
-走代理测试（发现问题）：
-
-```
-https://x.com       => 000 (5s timeout)
-https://github.com  => 000 (5s timeout)   # 关键：github 也挂 = 不是 x.com 的问题
-https://discord.com => 000 (5s timeout)
-https://google.com  => 000 (5s timeout)
-```
-
-**走代理连 github/google 都超时** → 故障在代理链路本身，不是目标站点。查看 mihomo 日志：
-
-```
-[TCP] dial 节点选择 (match DomainSuffix/github.com) ... error: context deadline exceeded
-[TCP] dial 节点选择 (match DomainSuffix/x.com) ... error: context deadline exceeded
-```
-
-所有节点 dial 全部 `context deadline exceeded` → **节点层故障**。
-
-### Step 2：测试全部 12 个节点
-
-mihomo REST API（`127.0.0.1:9090`）逐节点切换：
-
-```bash
-# 遍历所有节点，切换后 curl 测试
-for NODE in "直连 台湾 01 | 0.5x" "直连 台湾 02 | 0.5x" ...; do
-  curl -X PUT "http://127.0.0.1:9090/proxies/节点选择" -d "{\"name\":\"$NODE\"}"
-  curl --proxy http://127.0.0.1:7890 https://x.com
-done
-```
-
-结果：**12 个节点全部超时**。同时延迟测试接口确认：
-
-```
-直连 台湾 04 | 0.5x   不可达 (HTTP 504)
-直连 日本 01 | 0.5x   不可达 (HTTP 504)
-直连 美国 03 | 0.5x   不可达 (HTTP 504)
-```
-
-### Step 3：用户境外可达 = 节点活着
-
-在深圳/香港的电脑（HKT，未开代理）**能直连代理节点服务器** →
-
-- 节点服务器**活着**（不是机场跑路）
-- 问题在"广州服务器 → 节点服务器"这一段
-
-疑点：**UDP 53 出站是通的**（能正常解析 DNS），说明腾讯云没有封 UDP 出站。
-
-### Step 4（关键转折）：找到根因 — GSLB IP 池漂移 + 订阅过期
-
-`dig` 节点域名，发现**每次解析返回不同的 IP**：
-
-```
-v951-zj.71edge.work => 61.228.250.100 (可达) / 61.228.249.36 (超时) / 36.231.117.240 (超时) ...
-```
-
-这是典型的 **GSLB（全局负载均衡）多 IP 轮询**。机场把节点域名解析到一堆 IP 上，但**其中大部分 IP 从腾讯云广州不可达**（台湾 Hinet 段 `36.230.x` / `61.228.x` / `218.172.x` 被屏蔽或路由不通）。
-
-再看 `config.yaml` 的修改时间：**2026-04-16** —— 4 个月前的静态配置。订阅里的"剩余流量：24.53 GB"，而机场新订阅返回"24.96 GB" → **配置里的订阅早过期了**，机场的 GSLB 早就换了 IP 池，旧 IP 全部失效。
-
-> **根因：不是 x.com 被封，是 mihomo 的静态订阅配置 4 个月没更新，GSLB IP 池漂移后旧 IP 全部不可达。**
-
-### 插曲：自举失败（mihomo 与 hermes update 互相依赖）
-
-在了解问题后，因介质原因未能直接更新。8 月 10 日发现**所有**定时任务都没返回消息。进入腾讯轻量云控制台 `https://console.cloud.tencent.com/lighthouse/instance/detail` 的远程终端 `https://orcaterm.cloud.tencent.com/terminal`，发现"虽能通过 gateway 正确接收信息，但连接 LLM 分析时网络超时失败"。
-
-#### 失败的做法
-
-先关闭 mihomo：
-
-```
-systemctl --user stop mihomo.service
-systemctl --user disable mihomo.service
-```
-
-然后发现之前配置耦合度过高，IP 冲突导致无法裸连 GitHub 更新：
-
-```
-ubuntu@VM-0-2-ubuntu:~$ hermes update
-⚕ Updating Hermes Agent...
-
-◆ Pre-update snapshot: 20260810-031752-pre-update
-
-⚠ Updating from fork:
-  https://«redacted:ghp_…»@github.com/NousResearch/hermes-agent.git
-
-→ Fetching updates...
-✗ Network error — cannot reach the remote repository.
-  fatal: unable to access 'https://github.com/NousResearch/hermes-agent.git/': Failed to connect to 127.0.0.1 port 7890 after 0 ms: Couldn't connect to server
-```
-
-> 这里的 `7890` 端口就是之前 mihomo 使用的端口。
-
-#### 死马当活马医
-
-```bash
-systemctl --user start mihomo.service
-systemctl --user enable mihomo.service
-```
-
-并重启。用之前写的 `proxy-latency-check 5` 进行节点选择，在**还未更新 IP 池**的前提下抓到一个还能用的节点。然后总算连上 LLM，让它继续修改。
-
-### Step 5：方案选型
+## 方案选型
 
 | 方案 | 做法 | 缺点 |
 |---|---|---|
@@ -161,10 +51,10 @@ systemctl --user enable mihomo.service
 
 选 B。关键设计约束：
 
-1. **mihomo 不支持 config.yaml 里 `${VAR}` 环境变量展开**（实测报 `unsupported protocol scheme`）→ 不能用 `url: "${SUB_URL}"`
-2. 但支持 **`type: file` 的 provider**：config 只引用本地文件，URL 完全不需要出现在 config.yaml
+1. **mihomo 不支持 config.yaml 里 `${VAR}` 环境变量展开**（实测报 `unsupported protocol scheme`）→ 不能写 `url: "${SUB_URL}"`
+2. 但支持 **`type: file` 的 provider**：config 只引用本地文件，URL 完全不出现在 config.yaml
 
-最终架构（三层分离）：
+## 三层分离架构
 
 ```
 ~/.hermes/.env                              # VPN_SUBSCRIBE_URL="https://..."（敏感信息，chmod 600）
@@ -173,21 +63,11 @@ systemctl --user enable mihomo.service
 ~/.config/mihomo/config.yaml                # proxy-providers: {type: file, path: ./providers/airport.yaml}
 ```
 
-### 踩过的坑（4 个）
+三层的分工：**凭证**只在 `.env`，**动作**只在脚本，**数据**只在 providers 文件，config.yaml 里一个密钥都没有 —— 这样 config 可以随便备份、贴给别人看。
 
-1. **`--noproxy '*' --proxy ...` 组合会禁用代理**：`--noproxy '*'` 覆盖 `--proxy`，导致测试时 curl 直连（当然超时），一度误判"代理还没修好"。**测试代理必须用纯 `--proxy http://127.0.0.1:7890`**。
+## URLTest 自动选择组（核心修复的一半）
 
-2. **订阅里的"剩余流量/套餐到期"是伪节点**：它们是 anytls 类型的占位节点（显示流量信息），不是真实可用节点。**节点选择组默认可能选中它们导致全挂**。本次故障猜测这也是主要原因之一。
-
-3. **延迟测试通过 ≠ 实际转发可用**：`cp.cloudflare.com` 健康检查通过的节点（如台湾 09，98ms），实际访问 x.com 却超时。原因是腾讯云对台湾 Hinet 段的部分 IP 存在 UDP/路由限制，而健康检查走的是 Cloudflare。
-
-4. **节点分钟级波动**：手动实测"通过"的节点，几分钟后就挂。**固定选一个节点必然翻车**。
-
-5. **file provider 的 path 必须在 mihomo home 目录内**（新版本安全限制：`path is not subpath of home directory or SAFE_PATHS`）。
-
-### Step 6：URLTest 自动选择组（核心修复）
-
-既然节点分钟级波动，固定节点不可靠，最终用 **URLTest 自动选择组**：
+节点是分钟级波动的，固定节点必然翻车，所以用 url-test 让 mihomo 自己挑：
 
 ```yaml
 proxy-groups:
@@ -200,15 +80,11 @@ proxy-groups:
       - airport
 ```
 
-**关键改动**：健康检查 URL 从 `http://cp.cloudflare.com/` 改成 `https://www.gstatic.com/generate_204`，interval 从 7200s 缩短到 300s。这样：
+**两处关键改动**：健康检查 URL 从 `http://cp.cloudflare.com/` 改成 `https://www.gstatic.com/generate_204`（Cloudflare 那条有假阳性：检查通过但实际访问 x.com 超时），interval 从 7200s 缩到 300s。效果：每 5 分钟全量测速并切到当前可达节点，节点挂掉自动换，不用人工干预。
 
-- 每 5 分钟自动测试所有节点
-- 自动切换到当前可达的节点
-- 节点挂掉后自动切换，无需人工干预
+## 订阅自动更新（另一半）
 
-### Step 7：自动化 — 每周三 04:40 自动更新订阅
-
-建了一个 cron（`no_agent` 模式，零 token 消耗）：
+cron（`no_agent` 模式，零 token 消耗）：
 
 ```
 每周三 04:40
@@ -219,9 +95,17 @@ proxy-groups:
   → 飞书通知："✅ 订阅已更新并生效 | 自动选择当前节点: X"
 ```
 
-## 验证结果
+为什么是每周三：机场 IP 池漂移以周为单位，日更没必要，月更太迟；04:40 避开白天所有 cron 时段。
 
-修复后实测：
+## 修复时的三个陷阱
+
+1. **订阅里的"剩余流量/套餐到期"是伪节点**：anytls 占位节点，只显示流量信息；节点选择组默认可能选中它们，导致"配置更新了却还是全挂"。
+2. **健康检查通过 ≠ 转发可用**：见上文 Cloudflare 假阳性，改 gstatic 后才有判别力。
+3. **file provider 的 path 必须在 mihomo home 目录内**（新版安全限制：`path is not subpath of home directory or SAFE_PATHS`）。
+
+其余两个纯诊断侧的坑（`--noproxy '*'` 覆盖 `--proxy`、节点分钟级波动）记在诊断篇。
+
+## 验证结果
 
 ```
 x.com      => 200 (0.7s)   ✅
@@ -229,19 +113,20 @@ twitter.com => 200 (4.5s)  ✅
 twitter-cli => 拿到真实推文（@NousResearch 当天发布的 DeepSeek V4 Flash 折扣消息）✅
 ```
 
-连测 5 次 x.com 全部 200（0.5-1.8s），自动选择组稳定锁定可达节点。
+连测 5 次 x.com 全部 200（0.5–1.8s），自动选择组稳定锁定可达节点。
 
 ## 经验总结（5 条）
 
 1. **代理全挂 ≠ 目标站点被封**：先测 github/google 等无关站点，区分"节点故障"还是"站点屏蔽"。
 2. **用户在境外可达 = 节点活着**：问题大概率在本地到节点的链路（GSLB 漂移 / 订阅过期）。
-3. **静态订阅配置要设自动更新**：机场 GSLB 会定期换 IP 池，配置不更新就是慢性死亡。这次是 4 个月，下次可能是 1 个月。
+3. **静态订阅配置必须设自动更新**：机场 GSLB 定期换 IP 池，配置不更新就是慢性死亡。这次是 4 个月，下次可能是 1 个月。
 4. **健康检查 URL 选真实可达性指标**：`cp.cloudflare.com` 有假阳性，`gstatic.com/generate_204` 更可靠。
 5. **敏感信息（订阅 URL = 机场凭证）放 `.env`**：权限 600，config.yaml 只引用本地文件，URL 不出现在配置里。
 
 ## 与相邻故障的关系
 
-- [同样是 VPS 部署层的踩坑，但侧重启停服/网关注入；本概念侧重启代理链路](../concepts/Hermes-Agent-Cronjob-Setup.md)
-- [同样是"本地网络配置异常导致跨境服务全挂"，Edge 走 DoH 污染 curl DNS 缓存；mihomo 走 GSLB 漂移。**两者共同教训：跨境服务必须验证多个独立诊断维度（DNS / TCP / HTTP），不能只盯着一个症状**](../concepts/Edge-Secure-DNS-Gotcha.md)
-- [同样是"服务无法启动"型故障的根因排查范式（先区分"服务问题"还是"系统底层问题"），但本概念的反面是"网络服务挂着但实际没工作"，需要外部主动探测](../concepts/Ubuntu-gdm3-Disk-Full-Troubleshooting.md)
-- [AI Daily Briefing 因 brotli bug 失败的根因；本概念也是 AI Daily Briefing 失败的原因之一（代理链路层）。**两条故障路径都会让 cron 静默失败**](../concepts/AI-Daily-Briefing-Brotli-Fix-Investigation.md)
+- [同一故障的诊断过程：12 节点逐个切换、`dig` 取证、自举死锁](./Mihomo-IP-Pool-Drift-Diagnosis.md)
+- [同样是 VPS 部署层的踩坑，但侧重启停服/网关注入；本页侧重代理链路的修复](./Hermes-Agent-Cronjob-Setup.md)
+- [同样是"本地网络配置异常导致跨境服务全挂"，Edge 走 DoH 污染 curl DNS 缓存；mihomo 走 GSLB 漂移。**共同教训：跨境服务必须验证多个独立诊断维度（DNS / TCP / HTTP）**](./Edge-Secure-DNS-Gotcha.md)
+- [同样是"服务无法启动"型故障的排查范式；本页的反面是"网络服务挂着但实际没工作"，需要外部主动探测](./Ubuntu-gdm3-Disk-Full-Troubleshooting.md)
+- [AI Daily Briefing 因 brotli bug 失败；本页是同一 job 的另一条失败路径（代理链路层）。**两条路径都会让 cron 静默失败**](./AI-Daily-Briefing-Brotli-Fix-Investigation.md)

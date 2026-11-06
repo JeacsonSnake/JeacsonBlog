@@ -310,3 +310,13 @@ title: Wiki Log
 - 修复：`wiki-lint.sh` 把 `index.md` 的出链也计入 `inbound`（仍跳过行内代码 span 与自链接）；回归测试用临时 wiki 验证——只在 index 里出现的页不再报 orphan，无人链接的页与仅被代码 span 引用的页仍报
 - 顺带补两条正文入链：`concepts/机器数与IEEE-754.md` → `../sources/Computer_Composition.md`、`concepts/S-Z变换表.md` → `../sources/Control_Theory.md`（「知识源」行，让两页与各自 source 摘要双向可达）
 - Lint 结果：critical 0、orphan 2 → 0、partial frontmatter 24、oversized 1
+
+## [2026-11-06] maintenance | 拆分 oversized 页：mihomo 修复 / 诊断 两页
+- 触发：`wiki-lint.sh` 报 `oversized_page`（>200 行）1 处 —— `Mihomo-Proxy-GSLB-Drift-Subscription-Auto-Update.md` 247 行
+- 拆分原则：**按「取证过程」与「修复决策」切**，不按长度平均切。过程是一次性史料（7 步取证、12 节点逐个切换、`dig` 取证、自举死锁插曲），结论是可复用知识（选型、三层架构、URLTest、cron、验证、经验）
+- 结果：
+  - `concepts/Mihomo-Proxy-GSLB-Drift-Subscription-Auto-Update.md` 247 → 143 行：核心结论 + 故障现象 + 根因一段 + 方案选型（A/B 对比、`${VAR}` 不支持所以要 file provider）+ 三层分离架构 + URLTest 组 + 每周三 04:40 订阅 cron + 修复侧三个陷阱 + 验证 + 5 条经验 + 相邻故障
+  - 新页 `concepts/Mihomo-IP-Pool-Drift-Diagnosis.md` 148 行：适用场景 + 五步速查表 + Step 1~4 完整取证 + 自举失败插曲（含 `hermes update` 死锁日志）+ 5 个坑 + 交接段
+- 内容保全：原文关键串（`UDP 53`、`24.53 GB`、`v951-zj.71edge.work`、`context deadline exceeded`、`--noproxy`、`伪节点`、`cp.cloudflare.com`、`SAFE_PATHS`、`orcaterm`、`20260810-031752-pre-update`、`base64 校验`、`每周三 04:40`）逐条 grep 确认仍在两页之一，无删减
+- 双页互链：两页 `related:` 互指 + 正文显式交接段；`index.md` 的旧条目改标签为「修复」并新增诊断页条目
+- 敏感信息：`hermes update` 日志里的 `ghp_…` token 在拆分时替换为 `«redacted»`
