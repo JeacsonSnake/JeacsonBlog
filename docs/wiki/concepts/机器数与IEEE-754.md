@@ -155,6 +155,7 @@ $$
 
 ## 来源
 
+- 知识源：[计算机组成原理（源笔记摘要）](../sources/Computer_Composition.md) —— 本页所有例子（20.5、-4.966×10²²、0xD1500000、20.4999991）均出自该目录笔记
 - 原文：[计算机组成原理（README）](../../learningNote/Principles_of_Computer_Composition/README.md)
 - 相关：[计算与仿真（误差来源、霍纳法则、泰勒展开）](../../learningNote/Principles_of_Computer_Composition/compute_and_simutation.md)
 - 在线转换器：<https://www.h-schmidt.net/FloatConverter/IEEE754.html>

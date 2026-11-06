@@ -303,3 +303,10 @@ title: Wiki Log
   - `sources/TypeScript.md`：笔记表原标 第二天「接口与泛型」、第三天「高级类型」、第四天「装饰器」、第五天「综合应用」→ 实为「编译选项」「webpack & Babel」「面向对象（上）」「面向对象（下：接口与泛型）」，按实际内容更正
 - 纪律遵循：先有笔记再建页（18 页全部对应 repo 原文，未凭空生成主题）；内链一律 `[标签](相对路径.md)`；`related` 用相对 `.md` 路径；源笔记链接指向 blog 的 `learningNote/...` 原文；图片未搬运（原文附图在 blog 侧 `assets/`，wiki 不复制二进制）
 - Self-check: `wiki-lint.sh --json` critical 0；新页全部获得入链（orphan 不增）
+
+## [2026-11-06] maintenance | orphan 归零：index 的链接计入入链
+- 现象：`sources/Computer_Composition.md` 与 `sources/Control_Theory.md` 长期被判 orphan，但它们其实就列在 `index.md` 的 Sources 段里
+- 根因：`wiki-lint.sh` 的入链统计只遍历 `pages`（concepts/entities/sources），`index.md` 不在其中，于是「只被首页链到」的页面一律算孤儿
+- 修复：`wiki-lint.sh` 把 `index.md` 的出链也计入 `inbound`（仍跳过行内代码 span 与自链接）；回归测试用临时 wiki 验证——只在 index 里出现的页不再报 orphan，无人链接的页与仅被代码 span 引用的页仍报
+- 顺带补两条正文入链：`concepts/机器数与IEEE-754.md` → `../sources/Computer_Composition.md`、`concepts/S-Z变换表.md` → `../sources/Control_Theory.md`（「知识源」行，让两页与各自 source 摘要双向可达）
+- Lint 结果：critical 0、orphan 2 → 0、partial frontmatter 24、oversized 1
