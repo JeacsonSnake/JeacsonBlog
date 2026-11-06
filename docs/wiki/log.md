@@ -320,3 +320,13 @@ title: Wiki Log
 - 内容保全：原文关键串（`UDP 53`、`24.53 GB`、`v951-zj.71edge.work`、`context deadline exceeded`、`--noproxy`、`伪节点`、`cp.cloudflare.com`、`SAFE_PATHS`、`orcaterm`、`20260810-031752-pre-update`、`base64 校验`、`每周三 04:40`）逐条 grep 确认仍在两页之一，无删减
 - 双页互链：两页 `related:` 互指 + 正文显式交接段；`index.md` 的旧条目改标签为「修复」并新增诊断页条目
 - 敏感信息：`hermes update` 日志里的 `ghp_…` token 在拆分时替换为 `«redacted»`
+
+## [2026-11-06] maintenance | 拆分 AI Daily Briefing 页：修复与根因分家
+- 触发：`AI-Daily-Briefing-Brotli-Fix-Investigation.md` 182 行，接近 lint 的 200 行阈值，且「一次性排查叙事」与「可复用技术结论」混在一页
+- 拆分原则同 mihomo 页：过程/史料归诊断页，可复用结论归主页面
+- 结果：
+  - 主页 182 → 78 行：核心结论（换 Provider 只止血、长期要禁 br）+ 故障现象 + 修复动作 + 6 项指标对比表 + 为什么换模型能止住 + 关键结论 + 后续建议
+  - 新页 `concepts/Brotli-Stream-Truncation-Root-Cause.md` 129 行：五层叠加图 + 08:15→08:23 故障时间线 + brotlicffi `_decompress()` 守卫源码 + httpx 为何不检查 + 为何 retry 必在同位置失败 + 四家 Provider 的 Content-Encoding 对比 + urllib3 #3734 同类回归 + `skills_hub.py` 规避为何没盖住 Provider 调用
+- frontmatter 顺手规范化：原页用 `date: 2026-06-09`（旧 schema，属 partial_frontmatter 24 之一），改为 `created: 2026-06-09` + `updated: 2026-11-06`，并补 `sources:`（原页只把 005 报告写在 `related:` 里）
+- index.md：该页在「LLM Prompt & Skill」与「AI Agent」两段重复出现两次（历史遗留），本次改为一段放修复页、另一段放根因页，顺带消掉重复项
+- 未拆的两页（读完全文后改变初判，见对话说明）：`LeanCloud-to-Neon-Migration` 181 行的体量来自必须内联的转换脚本；`Ubuntu-gdm3-Disk-Full-Troubleshooting` 140 行是 runbook，急救 8 步与扩容 7 步必须连读
