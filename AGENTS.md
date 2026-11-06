@@ -195,15 +195,23 @@ description: <简短描述，1-2句话>
 type: source | entity | concept
 tags: [<topic1>, <topic2>]
 sources: [<相对 docs/ 的路径>]     # 可选；concept 最常见，部分 source/entity 也有
-related:                            # 可选，wikilink
-  - "[[../concepts/xxx]]"
-  - "[[../entities/xxx]]"
+related:                            # 可选，相对路径（不是 wikilink）
+  - "../concepts/xxx.md"
+  - "../entities/xxx.md"
 created: <YYYY-MM-DD>               # 可选：首次创建日期
 updated: <YYYY-MM-DD>               # 最近一次更新日期，改动内容时同步 bump
 ---
 ```
 
-字段说明：`sources` 用相对 `docs/` 的路径（如 `../../learningNote/JSNote/Reduce方法.md`）；`related` 用 wikilink。时间字段**统一用 `created` / `updated`（`YYYY-MM-DD`）**，个别页面还带 `confidence`。
+字段说明：`sources` 用相对 `docs/` 的路径（如 `../../learningNote/JSNote/Reduce方法.md`）；`related` 用相对当前页面的 `.md` 路径（不要写 `[[...]]`，原因见下方「链接写法」）。时间字段**统一用 `created` / `updated`（`YYYY-MM-DD`）**，个别页面还带 `confidence`。
+
+### 链接写法：只用 Markdown 链接，不要 `[[...]]`
+
+正文与 `index.md` 里的内链一律写成 `[标签](相对路径.md)`，路径相对当前页面（同目录 `./`、跨目录 `../`）。
+
+`[[path]]` / `[[path]] — 标签` / `[[path|别名]]` 这三种 wikilink 在本站**都不渲染**：VuePress 没有 wikilink 插件，构建后原样输出成方括号文字（实测：`/wiki/concepts/<Page>.html` 里 `[[../concepts/X.md]]` 是纯文本，而 `[标签](X.md)` 会被改写成 `<a class="route-link" href="/wiki/concepts/X.html">`）。`docs/wiki/` 也不是 Obsidian vault（无 `.obsidian/`），拿不到 backlink/graph 的好处，所以 wikilink 在这里只有坏处没有好处。
+
+2026-11-06 已把全站 199 处 wikilink 统一迁移为 Markdown 链接（37 页 + `log.md` 记录），`log.md` 里作为历史报错引用的 3 处（包在反引号内）保留原样。`wiki-lint.sh` 的 orphan / 断链检查同时解析两种写法，转换后不会失明。
 
 > ⚠️ 不要在 Wiki 页面 frontmatter 里写 `lastUpdated: <日期>`。vuepress-theme-hope 把页面级 `lastUpdated` 定义为**布尔开关**（`true` / `false`，控制是否显示自动更新时间；全局已在 `docs/.vuepress/theme.ts` 里设为 `true`），写日期会让 `vuepress build` 刷出 `lastUpdated in frontMatter should be boolean` 警告。2026-10-25 之前用 `lastUpdated` 记日期的旧页面已全部迁移为 `updated`。
 
@@ -256,17 +264,17 @@ title: JeacsonBlog Wiki
 > Last updated: <YYYY-MM-DD>
 
 ## Sources（知识域摘要）
-- [[./sources/JavaScript.md]] — ...
+- [<来源摘要标题>](./sources/JavaScript.md) — ...
 
 ## Entities（实体/主题）
-- [[./entities/JavaScript.md]] — ...
+- [<实体标题>](./entities/JavaScript.md) — ...
 
 ## Concepts（具体概念）
 ### JavaScript
-- [[./concepts/Reduce方法.md]] — ...
+- [Reduce 方法](./concepts/Reduce方法.md) — ...
 
 ## 最近更新
-详见 [[./log.md]]
+详见 [Wiki Log](./log.md)
 ```
 
 ### log.md 格式
