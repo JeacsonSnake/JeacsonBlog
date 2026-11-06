@@ -6,6 +6,8 @@ tags: [Phonon Physics, Heat Transfer, BTE, N-scattering, Thermal Rectification]
 related:
   - ../concepts/Heat-Transfer-Literature-Report.md
   - ./LLM-Prompt-Skill.md
+created: 2026-06-04
+updated: 2026-06-04
 ---
 
 # 声子流体动力学

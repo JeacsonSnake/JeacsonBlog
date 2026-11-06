@@ -3,6 +3,7 @@ title: JavaScript 知识域摘要
 description: JavaScript 语言核心概念与 Web 开发相关笔记
 type: source
 tags: [JavaScript, Web]
+created: 2026-04-17
 updated: 2026-04-17
 ---
 

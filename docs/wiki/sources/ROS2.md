@@ -3,6 +3,7 @@ title: ROS2 知识域摘要
 description: "ROS2 机器人操作系统学习笔记，涵盖通信机制、坐标变换、工具使用"
 type: source
 tags: [ROS2, Robot, Ubuntu, DDS]
+created: 2026-04-17
 updated: 2026-04-20
 ---
 

@@ -3,10 +3,13 @@ title: 中级热质传递文献报告批判框架
 description: "基于 Intermediate Heat and Mass Transfer 课程的跨尺度热输运批判性分析框架"
 type: concept
 tags: [Heat Transfer, Literature Report, Statistical Mechanics, Phonon Hydrodynamics, BTE]
-date: 2026-06-03
 related:
-  - docs/postMortem/sp_for_LLM/001_QA-intermediate-heat-transfer-literature-report.md
   - ../entities/Phonon-Hydrodynamics.md
+created: 2026-06-03
+updated: 2026-06-04
+sources:
+  - docs/postMortem/sp_for_LLM/001_QA-intermediate-heat-transfer-literature-report.md
+
 ---
 
 # 中级热质传递文献报告批判框架
