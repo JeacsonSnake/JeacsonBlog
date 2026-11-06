@@ -3,6 +3,7 @@ title: 踩坑心得知识域摘要
 description: "部署与开发中的实际问题记录与解决方案"
 type: source
 tags: [DevOps, Deploy, Markdown, AI Agent, DNS, Migrate, Network, Ubuntu, Disk, Troubleshooting, CSS, Vite, Proxy, GSLB, WiFi, DFS, Channel, GitHub Actions, Git, Branch Protection, Windows, Display, DPI]
+created: 2026-04-17
 updated: 2026-11-05
 sources:
   - docs/postMortem/sp_for_LLM/003_think-Initial-notes-on-using-Hermes_Agent.md

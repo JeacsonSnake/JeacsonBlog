@@ -3,13 +3,16 @@ title: Kimi META Prompt — VuePress Theme Hope Hermes JSON Converter
 description: "将 Hermes Agent 导出的会话 JSON（output.json）转换为 VuePress Theme Hope 兼容 Markdown 的 META Prompt 模板"
 type: concept
 tags: [LLM Prompt, VuePress, Markdown, Hermes Agent, JSON]
-date: 2026-06-09
 related:
-  - docs/postMortem/sp_for_LLM/000X_prompt-VuePress-Theme-Hope-Hermes-JSON-Converter.md
   - ./VuePress-Theme-Hope-Markdown-Converter.md
   - ./VuePress-Theme-Hope-Hermes-Multi-Session-Merger.md
   - ../entities/Hermes-Agent.md
   - ../entities/LLM-Prompt-Skill.md
+created: 2026-06-09
+updated: 2026-06-10
+sources:
+  - docs/postMortem/sp_for_LLM/000X_prompt-VuePress-Theme-Hope-Hermes-JSON-Converter.md
+
 ---
 
 # VuePress Theme Hope Hermes JSON Converter

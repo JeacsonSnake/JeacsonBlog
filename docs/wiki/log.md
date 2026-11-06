@@ -330,3 +330,11 @@ title: Wiki Log
 - frontmatter 顺手规范化：原页用 `date: 2026-06-09`（旧 schema，属 partial_frontmatter 24 之一），改为 `created: 2026-06-09` + `updated: 2026-11-06`，并补 `sources:`（原页只把 005 报告写在 `related:` 里）
 - index.md：该页在「LLM Prompt & Skill」与「AI Agent」两段重复出现两次（历史遗留），本次改为一段放修复页、另一段放根因页，顺带消掉重复项
 - 未拆的两页（读完全文后改变初判，见对话说明）：`LeanCloud-to-Neon-Migration` 181 行的体量来自必须内联的转换脚本；`Ubuntu-gdm3-Disk-Full-Troubleshooting` 140 行是 runbook，急救 8 步与扩容 7 步必须连读
+
+## [2026-11-06] maintenance | 补 28 页 `created:`，并把 `sources` 改为 concept 专属要求
+- 触发：修完 stem 冲突后 lint 首次真正检查了五个 entity 页，`partial_frontmatter` 由 23 涨到 28
+- 补 `created:`（28 页）：取值来自两处可核对的事实 —— 页面自己的 `date:`（老 schema，共 4 页）或上游 git 首次提交日期（`gh api .../commits?path=docs/wiki/<page>`）；其余 24 页均为 2026-04-17（LLM Wiki 层初建那次提交）
+- 补 `updated:`（5 页）：取该文件在 git 里**最后一次内容性提交**的日期，跳过 2026-11-06 的链接迁移与 `related` 路径统一（那些是元数据重排，不是内容变化）。故 `Heat-Transfer-Literature-Report` 记为 2026-06-04、两页 VuePress META Prompt 记为 2026-06-10、`Phonon-Hydrodynamics` 记为 2026-06-04
+- 顺带把 4 个 concept 页 `related:` 里的 blog 原文路径移进 `sources:`（`related` 只放页内相对 `.md`，与阶段 B 的口径一致）：`Heat-Transfer-Literature-Report`、`VuePress-Theme-Hope-{Markdown-Converter,Hermes-JSON-Converter,Hermes-Multi-Session-Merger}`
+- **决策：不再要求 entity / source 页写 `sources`**。仓库 `AGENTS.md` 本就写明 `sources` 与 `created` 为「可选」，而 `wiki-lint.sh` 一直按必需项检查 —— 这是 lint 比 schema 更严的口径漂移，`partial_frontmatter` 长期虚高正是它造成的。具体到 `type: source` / `type: entity` 的聚合页，`sources` 应列出「该页提炼自哪些笔记」，而一个领域动辄几十上百篇（ROS2 131 篇），硬填只能是编造。故 `wiki-lint.sh` 改为按类型要求：`concept` 必须有 `sources`，其余类型不要求
+- Lint 结果：critical 0、**partial frontmatter 28 → 0**、orphan 0、oversized 0、pages 69；info 级剩 `stem_collision` 5（同名页提示）、`stale` 34（`updated:` 超 90 天，含本次补的 5 页）、`watchlist_page_size` 23、`cross_folder_wikilink` 38（指向博客原文，合法）

@@ -4,6 +4,7 @@ description: ES6 引入的第七种原始数据类型，表示独一无二的值
 type: concept
 tags: [JavaScript, ES6, Primitive-Type]
 sources: [../../learningNote/JSNote/Symbol.md]
+created: 2026-04-17
 updated: 2026-04-17
 ---
 

@@ -3,13 +3,16 @@ title: Kimi META Prompt — VuePress Theme Hope Hermes Multi-Session Merger
 description: "将多个 Hermes Agent 导出的会话 JSON（output_0.json, output_1.json, ...）融合为单一连贯报告的 META Prompt 模板"
 type: concept
 tags: [LLM Prompt, VuePress, Markdown, Hermes Agent, JSON, Multi-Session]
-date: 2026-06-09
 related:
-  - docs/postMortem/sp_for_LLM/000Y_prompt-VuePress-Theme-Hope-Hermes-Multi-Session-Merger.md
   - ./VuePress-Theme-Hope-Hermes-JSON-Converter.md
   - ./VuePress-Theme-Hope-Markdown-Converter.md
   - ../entities/Hermes-Agent.md
   - ../entities/LLM-Prompt-Skill.md
+created: 2026-06-09
+updated: 2026-06-10
+sources:
+  - docs/postMortem/sp_for_LLM/000Y_prompt-VuePress-Theme-Hope-Hermes-Multi-Session-Merger.md
+
 ---
 
 # VuePress Theme Hope Hermes Multi-Session Merger

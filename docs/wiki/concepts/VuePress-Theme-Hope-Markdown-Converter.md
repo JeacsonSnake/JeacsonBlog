@@ -3,10 +3,13 @@ title: Kimi META Prompt — VuePress Theme Hope Markdown Converter
 description: "将 Kimi LLM 多轮对话的 .docx 记录转换为 VuePress Theme Hope 兼容 Markdown 的 META Prompt 模板"
 type: concept
 tags: [LLM Prompt, VuePress, Markdown, Kimi]
-date: 2026-06-03
 related:
-  - docs/postMortem/sp_for_LLM/000_prompt-VuePress-Theme-Hope-Markdown-Converter.md
   - docs/postMortem/sp_for_LLM/001_QA-intermediate-heat-transfer-literature-report.md
+created: 2026-06-03
+updated: 2026-06-04
+sources:
+  - docs/postMortem/sp_for_LLM/000_prompt-VuePress-Theme-Hope-Markdown-Converter.md
+
 ---
 
 # VuePress Theme Hope Markdown Converter

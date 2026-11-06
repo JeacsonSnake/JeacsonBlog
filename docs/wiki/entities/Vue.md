@@ -3,6 +3,7 @@ title: Vue
 description: 渐进式 JavaScript 框架，用于构建 Web 用户界面，Vue2 与 Vue3 并存
 type: entity
 tags: [Vue, Web, Frontend, JavaScript]
+created: 2026-04-17
 updated: 2026-09-08
 ---
 
