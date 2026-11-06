@@ -252,3 +252,11 @@ title: Wiki Log
   - **MODIFY** `log.md` — 本条目
 - 纪律遵循: entities vs concepts 分工（单篇排障方法论 → concepts；Computer_Network 已有 entity 页，只挂聚合引用不抄正文）；YAML description 加引号；index/log/sources 与 create 同 commit
 - Self-check: wiki-ingest.sh fail-fast 校验（manifest 合法 / source 存在 / master 全量树 / diff shape = +1 ~5 -0）
+
+## [2026-11-06] maintenance | wiki 链接语法统一为 Markdown（站点可点）
+- 触发：用户审查发现 `[[./sources/JavaScript.md]] — 标签` 这类 wikilink 在部署站点上是纯文本（实测 `/wiki/concepts/Switch-5GHz-Channel-Whitelist.html` 里 3 处原样输出，无 `<a>`），而同行手写的 `[标签](X.md)` 被 VuePress 渲染为 `class="route-link" href="/wiki/concepts/X.html"`。该 wiki 不在 Obsidian vault 里（无 `.obsidian/`），`[[...]]` 拿不到 backlink/graph 收益，只剩不可渲染
+- 变更：37 个页面共 199 处 `[[路径]] — 标签` / `[[路径|别名]]` → `[标签](路径)`；标签取破折号后的说明文字（145 处）、别名（1 处）或目标页 title（53 处）
+- 4 处指向从未创建的页面，降级为纯文本而非留下 404 链接：`entities/JavaScript.md` → `concepts/defineProperty`、`entities/Vue.md` → `concepts/数据响应式`、`entities/ROS2.md` → `concepts/自定义消息接口`、`entities/Computer_Network.md` → `concepts/可靠数据传输`
+- `log.md` 里作为历史记录、包在反引号内的 3 处 `[[...]]` 原文保留（属于当时的报错引用）
+- 工具侧同步：`wiki-lint.sh` 的 orphan（#1）与断链（#2）检查改为 `link_targets()` 同时解析 `[[...]]` 与 `[标签](...)`，跳过图片/外链/锚点；`AGENTS.md` 模板同步改为此写法，防止下次 ingest 写回旧格式
+- Self-check: 迁移前后 lint 对比 critical 0→0、orphan 6→6、partial frontmatter 24→24（未因换写法产生新的误报）；17 KB lint 脚本 `bash -n` 通过

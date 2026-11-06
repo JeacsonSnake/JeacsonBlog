@@ -43,4 +43,4 @@ updated: 2026-04-20
 
 ## 关联实体
 
-- [[../entities/Computer_Network.md]] — 计算机网络
+- [计算机网络](../entities/Computer_Network.md)

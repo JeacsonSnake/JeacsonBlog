@@ -65,6 +65,6 @@ Linksys App → ☰ → Wi-Fi 设置 → 高级 Wi-Fi 设置 → 关闭 DFS
 
 ## 关联
 
-- [[../concepts/Switch-5GHz-Channel-Whitelist.md]] — 同域后文：Switch 搜不到 5G 是信道白名单问题（36/40/44/48），与本文的「搜得到但间歇卡」互为鉴别对照
-- [[../entities/Computer_Network.md]] — 计算机网络知识域（WiFi/802.11 属该域）
-- [[../sources/PostMortem.md]] — 踩坑心得知识域摘要（本文归类处）
+- [同域后文：Switch 搜不到 5G 是信道白名单问题（36/40/44/48），与本文的「搜得到但间歇卡」互为鉴别对照](../concepts/Switch-5GHz-Channel-Whitelist.md)
+- [计算机网络知识域（WiFi/802.11 属该域）](../entities/Computer_Network.md)
+- [踩坑心得知识域摘要（本文归类处）](../sources/PostMortem.md)

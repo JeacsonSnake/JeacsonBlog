@@ -20,17 +20,17 @@ JavaScript 是一门多范式编程语言，是 Web 开发的三大核心技术�
 
 | 概念 | 描述 | 相关 Concept |
 |------|------|-------------|
-| Symbol | ES6 第7种原始类型，独一无二的值 | [[../concepts/Symbol.md]] |
-| Array.reduce | 数组累加方法 | [[../concepts/Reduce方法.md]] |
-| 柯里化 | 多参函数转为链式单参 | [[../concepts/函数柯里化.md]] |
-| defineProperty | Vue2 响应式底层 API | [[../concepts/defineProperty.md]] |
+| Symbol | ES6 第7种原始类型，独一无二的值 | [Symbol 类型](../concepts/Symbol.md) |
+| Array.reduce | 数组累加方法 | [Array.reduce() 方法](../concepts/Reduce方法.md) |
+| 柯里化 | 多参函数转为链式单参 | [函数柯里化](../concepts/函数柯里化.md) |
+| defineProperty | Vue2 响应式底层 API | — |
 
 ## 与其他实体的关系
 
-- **[[../entities/Web.md]]** — JavaScript 是 Web 开发的核心语言
-- **[[../entities/Vue.md]]** — Vue 基于 JavaScript
-- **[[../entities/TypeScript.md]]** — TypeScript 是 JavaScript 的超集
+- **[JavaScript 是 Web 开发的核心语言](../entities/Web.md)**
+- **[Vue 基于 JavaScript](../entities/Vue.md)**
+- **[TypeScript 是 JavaScript 的超集](../entities/TypeScript.md)**
 
 ## Source
 
-[[../sources/JavaScript.md]]
+[JavaScript 知识域摘要](../sources/JavaScript.md)

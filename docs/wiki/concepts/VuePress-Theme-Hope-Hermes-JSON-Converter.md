@@ -16,9 +16,9 @@ related:
 
 ## 概述
 
-Kimi K2.6 生成的 META Prompt，用于将 Hermes Agent 通过 `hermes sessions export --session-id xxx /home/ubuntu/output.json` 导出的会话 JSON 文件，转换为 VuePress Theme Hope v2.0.0-rc.107 兼容的 Markdown 格式。与 [[./VuePress-Theme-Hope-Markdown-Converter.md]]（`.docx` 输入）形成姊妹方案，专门处理 Hermes 导出格式。
+Kimi K2.6 生成的 META Prompt，用于将 Hermes Agent 通过 `hermes sessions export --session-id xxx /home/ubuntu/output.json` 导出的会话 JSON 文件，转换为 VuePress Theme Hope v2.0.0-rc.107 兼容的 Markdown 格式。与 [Kimi META Prompt — VuePress Theme Hope Markdown Converter](./VuePress-Theme-Hope-Markdown-Converter.md)（`.docx` 输入）形成姊妹方案，专门处理 Hermes 导出格式。
 
-**2026-06-09 更新**：新增 [[./VuePress-Theme-Hope-Hermes-Multi-Session-Merger.md]] 作为多会话融合姊妹方案（sp_for_LLM/000Y）。当需要将多个 session export 融合为单一报告（按主题/阶段组织）时，使用 000Y 而非本 META Prompt。
+**2026-06-09 更新**：新增 [Kimi META Prompt — VuePress Theme Hope Hermes Multi-Session Merger](./VuePress-Theme-Hope-Hermes-Multi-Session-Merger.md) 作为多会话融合姊妹方案（sp_for_LLM/000Y）。当需要将多个 session export 融合为单一报告（按主题/阶段组织）时，使用 000Y 而非本 META Prompt。
 
 ## 输入输出
 

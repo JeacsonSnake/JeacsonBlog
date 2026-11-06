@@ -136,6 +136,6 @@ RSSI(dBm) ≈ 信号百分比 ÷ 2 − 100        # 67% → −66.5 dBm
 
 ## 关联
 
-- [[../concepts/WiFi-5GHz-DFS-Radar-Avoidance-Image-Loading-Slow.md]] — 同域前文：DFS 信道雷达避让导致传输间歇挂起（「搜得到但卡」而非「搜不到」）
-- [[../entities/Computer_Network.md]] — 计算机网络知识域（802.11 / 链路层）
-- [[../sources/PostMortem.md]] — 踩坑心得知识域摘要（本文归类处）
+- [同域前文：DFS 信道雷达避让导致传输间歇挂起（「搜得到但卡」而非「搜不到」）](../concepts/WiFi-5GHz-DFS-Radar-Avoidance-Image-Loading-Slow.md)
+- [计算机网络知识域（802.11 / 链路层）](../entities/Computer_Network.md)
+- [踩坑心得知识域摘要（本文归类处）](../sources/PostMortem.md)

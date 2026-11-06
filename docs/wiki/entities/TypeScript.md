@@ -25,9 +25,9 @@ TypeScript 是 JavaScript 的超集，添加了静态类型系统和面向对象
 
 ## 与其他实体的关系
 
-- **[[../entities/JavaScript.md]]** — TypeScript 的基础
-- **[[../entities/Web.md]]** — TypeScript 的主要应用场景
+- **[TypeScript 的基础](../entities/JavaScript.md)**
+- **[TypeScript 的主要应用场景](../entities/Web.md)**
 
 ## Source
 
-[[../sources/TypeScript.md]]
+[TypeScript 知识域摘要](../sources/TypeScript.md)

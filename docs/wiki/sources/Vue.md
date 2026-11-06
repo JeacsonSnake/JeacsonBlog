@@ -49,5 +49,5 @@ vueNote/
 
 ## 关联实体
 
-- [[../entities/Web.md]] — Web 开发
-- [[../entities/JavaScript.md]] — JavaScript 语言基础
+- [Web 开发](../entities/Web.md)
+- [JavaScript 语言基础](../entities/JavaScript.md)

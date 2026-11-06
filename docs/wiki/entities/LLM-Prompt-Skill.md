@@ -38,15 +38,15 @@ sources:
 将 LLM 对话导出的 `.docx` 文件，通过 Kimi K2.6 生成的 META Prompt，转换为 VuePress Theme Hope v2.0.0-rc.107 兼容的 Markdown。
 
 相关文档：
-- [[../concepts/VuePress-Theme-Hope-Markdown-Converter.md]] — META Prompt 模板说明（.docx 输入）
-- [[../sources/PostMortem.md]] — sp_for_LLM 目录知识域摘要
+- [META Prompt 模板说明（.docx 输入）](../concepts/VuePress-Theme-Hope-Markdown-Converter.md)
+- [sp_for_LLM 目录知识域摘要](../sources/PostMortem.md)
 
 ### Hermes JSON 转换工作流（.json → .md，单文件，sp_for_LLM/000X）
 
 将 Hermes Agent 通过 `hermes sessions export --session-id xxx /home/ubuntu/output.json` 导出的会话 JSON，转换为 VuePress 兼容 Markdown。与 .docx 转换器形成姊妹方案，专门处理 Hermes 导出格式（`tool_calls` 数组、`tool` 消息、`reasoning_content` 字段、用户名前缀剥离、`::: details` 折叠等）。
 
 相关文档：
-- [[../concepts/VuePress-Theme-Hope-Hermes-JSON-Converter.md]] — META Prompt 模板说明（Hermes JSON 输入）
+- [META Prompt 模板说明（Hermes JSON 输入）](../concepts/VuePress-Theme-Hope-Hermes-JSON-Converter.md)
 
 ### Hermes 多会话融合工作流（.json 多文件 → 单一报告，sp_for_LLM/000Y 新增）
 
@@ -55,15 +55,15 @@ sources:
 典型用例：先用模型 A（如 MiniMax-M3）定位问题，再用模型 B（如 deepseek-v4-flash）验证修复，将两份 session export 融合为一份故障排查报告。
 
 相关文档：
-- [[../concepts/VuePress-Theme-Hope-Hermes-Multi-Session-Merger.md]] — META Prompt 模板说明（多会话融合）
+- [META Prompt 模板说明（多会话融合）](../concepts/VuePress-Theme-Hope-Hermes-Multi-Session-Merger.md)
 
 ### 文献报告写作工作流
 
 基于课程 *Intermediate Heat and Mass Transfer* 的 Literature Report 写作框架，通过 7 轮递进式提问引导，建立"宏观 CFD 优化 → 微观声子 BTE → 跨尺度批判"的叙事结构。
 
 相关文档：
-- [[../concepts/Heat-Transfer-Literature-Report.md]] — 批判框架概念页
-- [[../entities/Phonon-Hydrodynamics.md]] — 声子流体动力学实体（关联）
+- [批判框架概念页](../concepts/Heat-Transfer-Literature-Report.md)
+- [声子流体动力学实体（关联）](../entities/Phonon-Hydrodynamics.md)
 
 ### 反向提示词工程与 Prompt 编译管道（sp_for_LLM/002）
 
@@ -72,30 +72,30 @@ sources:
 核心特征：风格/结构/内容三层解耦；META Prompt + justified_prompt + final_render_prompt 三阶段产物；MVC 视角（META = View，文献 = Model，justified_prompt = Controller）。
 
 相关文档：
-- [[../concepts/Reverse-Prompt-Engineering.md]] — 四阶段方法论 + 三 Session 管道详细说明
+- [四阶段方法论 + 三 Session 管道详细说明](../concepts/Reverse-Prompt-Engineering.md)
 
 ### Hermes Agent 部署与 RSS 每日简报 cronjob（sp_for_LLM/003）
 
 在腾讯云入门型 VPS（2 CPU / 2 GB RAM / Ubuntu 24.04 LTS）上部署 Hermes Agent，配置每日 7:00 cronjob，通过 FOLO + Agent-Reach 聚合 RSS / GitHub / 微博 / arXiv 信源并推送到多 gateway 互备通道。包含模型选型（MiniMax-M3 主，kimi-k2.6 / Deepseek-V4-flash fallback）、gateway 多路互备方案、衔尾蛇问题规避等。
 
 相关文档：
-- [[../concepts/Hermes-Agent-Cronjob-Setup.md]] — 完整部署流程与陷阱清单
-- [[../entities/Hermes-Agent.md]] — Hermes Agent 实体聚合页
+- [完整部署流程与陷阱清单](../concepts/Hermes-Agent-Cronjob-Setup.md)
+- [Hermes Agent 实体聚合页](../entities/Hermes-Agent.md)
 
 ### LangChain Interpreter Skills vs Hermes Skills 调研（sp_for_LLM/004）
 
 通过 Hermes Agent 多轮对话调研 LangChain 实验性功能 *Interpreter Skills* 与 Hermes 自有 Skills 体系的异同。对话共 131 条消息、66 次工具调用，涉及 Skills 加载/执行机制源码分析、Programmatic Tool 机能对比、Memory 管理（built-in vs Holographic）三层架构、disk-level 验证纪律与冲突指令处理规范。
 
 相关文档：
-- [[../entities/Hermes-Agent.md]] — Hermes Skills 体系分析与 Memory 三层架构（workflow section）
+- [Hermes Skills 体系分析与 Memory 三层架构（workflow section）](../entities/Hermes-Agent.md)
 
 ### AI Daily Briefing Cron Job 故障排查与模型切换（sp_for_LLM/005 新增）
 
 使用多会话融合 META Prompt（000Y）将 2 个会话（MiniMax-M3 调查 + deepseek-v4-flash 修复验证）融合为单一 Brotli 流截断故障报告。故障根因：`brotlicffi==1.2.0.1` + `httpx==0.28.1` + MiniMax API 启 brotli 压缩的 5 层叠加兼容性 bug。**修复方案**：切换执行模型至 deepseek-v4-flash（返回 identity 编码，绕过 brotli 路径），简报从空 placeholder 变为完整 ~64KB 输出，延迟从 15-47s/次降至 2.7-5s/次。
 
 相关文档：
-- [[../concepts/AI-Daily-Briefing-Brotli-Fix-Investigation.md]] — 完整故障排查、根因分析、修复方案
-- [[../concepts/VuePress-Theme-Hope-Hermes-Multi-Session-Merger.md]] — 用于生成此报告的 META Prompt
+- [完整故障排查、根因分析、修复方案](../concepts/AI-Daily-Briefing-Brotli-Fix-Investigation.md)
+- [用于生成此报告的 META Prompt](../concepts/VuePress-Theme-Hope-Hermes-Multi-Session-Merger.md)
 
 ## 核心工具
 

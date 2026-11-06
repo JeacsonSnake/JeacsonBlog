@@ -16,7 +16,7 @@ related:
 
 ## 概述
 
-Kimi K2.6 生成的 META Prompt，用于将**多个** Hermes Agent 通过 `hermes sessions export --session-id xxx /home/ubuntu/output_{n}.json` 导出的会话 JSON 文件（`output_0.json`、`output_1.json` 等）**总结融合**为**一篇连贯的、按主题/阶段组织**的 VuePress Theme Hope v2.0.0-rc.107 兼容 Markdown 报告。与 [[./VuePress-Theme-Hope-Hermes-JSON-Converter.md]]（单文件 converter）形成姊妹方案，专门处理"同一主题、多方向处理、可能跨模型"的会话合并场景。
+Kimi K2.6 生成的 META Prompt，用于将**多个** Hermes Agent 通过 `hermes sessions export --session-id xxx /home/ubuntu/output_{n}.json` 导出的会话 JSON 文件（`output_0.json`、`output_1.json` 等）**总结融合**为**一篇连贯的、按主题/阶段组织**的 VuePress Theme Hope v2.0.0-rc.107 兼容 Markdown 报告。与 [Kimi META Prompt — VuePress Theme Hope Hermes JSON Converter](./VuePress-Theme-Hope-Hermes-JSON-Converter.md)（单文件 converter）形成姊妹方案，专门处理"同一主题、多方向处理、可能跨模型"的会话合并场景。
 
 ## 核心差异（vs 单文件 converter）
 
@@ -37,7 +37,7 @@ Kimi K2.6 生成的 META Prompt，用于将**多个** Hermes Agent 通过 `herme
 
 ## 输入格式关键字段
 
-每个 `output_{x}.json` 文件结构与 [[./VuePress-Theme-Hope-Hermes-JSON-Converter.md]] 的单文件输入完全一致，核心字段：
+每个 `output_{x}.json` 文件结构与 [Kimi META Prompt — VuePress Theme Hope Hermes JSON Converter](./VuePress-Theme-Hope-Hermes-JSON-Converter.md) 的单文件输入完全一致，核心字段：
 
 ```json
 {
@@ -143,4 +143,4 @@ tag:
 
 ## 典型用例
 
-[[./AI-Daily-Briefing-Brotli-Fix-Investigation.md]]（sp_for_LLM/005）是本 META Prompt 的首个实战案例：将 2 个会话（MiniMax-M3 调查 + deepseek-v4-flash 修复验证）融合为单一 Brotli 流截断故障报告。
+[AI Daily Briefing Cron Job Brotli 流截断故障排查与模型切换修复](./AI-Daily-Briefing-Brotli-Fix-Investigation.md)（sp_for_LLM/005）是本 META Prompt 的首个实战案例：将 2 个会话（MiniMax-M3 调查 + deepseek-v4-flash 修复验证）融合为单一 Brotli 流截断故障报告。

@@ -30,4 +30,4 @@ updated: 2026-04-17
 
 ## 关联实体
 
-- [[../entities/Computer_Network.md]] — 与网络协议有交叉（数据序列化）
+- [与网络协议有交叉（数据序列化）](../entities/Computer_Network.md)
