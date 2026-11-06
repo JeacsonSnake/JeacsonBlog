@@ -95,11 +95,11 @@ title: JeacsonBlog Wiki
 - [热质传递文献报告批判框架](./concepts/Heat-Transfer-Literature-Report.md)
 - [反向提示词工程与三 Session Prompt 编译管道](./concepts/Reverse-Prompt-Engineering.md)
 - [Hermes Agent 部署与 RSS 每日简报 cronjob 配置](./concepts/Hermes-Agent-Cronjob-Setup.md)
-- [AI Daily Briefing Cron Job Brotli 流截断故障排查与模型切换修复](./concepts/AI-Daily-Briefing-Brotli-Fix-Investigation.md)
+- [AI Daily Briefing 流截断故障：从 MiniMax-M3 切到 deepseek-v4-flash](./concepts/AI-Daily-Briefing-Brotli-Fix-Investigation.md)
 
 ### AI Agent
 - [Hermes Agent 部署与 RSS 每日简报 cronjob 配置](./concepts/Hermes-Agent-Cronjob-Setup.md)
-- [AI Daily Briefing Cron Job Brotli 流截断故障排查与模型切换修复](./concepts/AI-Daily-Briefing-Brotli-Fix-Investigation.md)
+- [Brotli 流截断的五层根因（brotlicffi 守卫 / httpx / 服务端 br）](./concepts/Brotli-Stream-Truncation-Root-Cause.md)
 - [AI 简报自动归档两跳链路（merge-base 不变量 / GH013·GH006 双层保护 / step 级验证）](./concepts/Briefing-Archive-Auto-Merge-Topology.md)
 
 ### DevOps / 部署
