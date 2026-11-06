@@ -37,6 +37,13 @@ updated: 2026-11-05
 - [可靠数据传输原理：rdt 1.0 → 3.0、停等与流水线、GBN / SR](../concepts/可靠数据传输.md)
 - [WiFi 5GHz DFS 雷达避让致图片加载慢](../concepts/WiFi-5GHz-DFS-Radar-Avoidance-Image-Loading-Slow.md)
 - [Switch 5GHz 信道白名单（搜不到 5G）](../concepts/Switch-5GHz-Channel-Whitelist.md)
+- [UDP 校验和：反码求和与「全 1 即通过」](../concepts/UDP校验和.md)
+- [TCP/IP 五层模型：每层解决什么问题](../concepts/TCP-IP五层模型.md)
+- [VLAN：802.1Q 标签与三种端口](../concepts/VLAN.md)
+- [SMTP：推与拉的边界](../concepts/SMTP.md)
+- [PPP 与 PPPoE：点对点协议与宽带拨号](../concepts/PPP与PPPoE.md)
+- [链路发现协议（LLDP）](../concepts/链路发现协议.md)
+- [黑洞路由：出口指向 NULL0](../concepts/黑洞路由.md)
 
 ## 无线链路排障（WiFi / 802.11）
 

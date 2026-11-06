@@ -32,7 +32,7 @@ updated: 2026-04-17
 | `Reduce方法.md` | Array.reduce() |
 | `柯里化.md` | 函数柯里化 |
 | `defineproperty方法.md` | defineProperty |
-| `简单记忆.md` | 记忆化相关 |
+| `简单记忆.md` | 语法速记（var/let、严格模式、eval、Object vs Map） |
 | `Formal&Real_Para_When_Func_Get_Obj.md` | 函数形参与实参 |
 
 ## 关联实体
@@ -43,3 +43,12 @@ updated: 2026-04-17
 ## 补充说明
 
 笔记内容偏实践，以具体 API 和语言特性为主，缺少系统性语法讲解。
+
+## 概念页
+
+- [Symbol](../concepts/Symbol.md)
+- [Array.reduce()](../concepts/Reduce方法.md)
+- [函数柯里化](../concepts/函数柯里化.md)
+- [Object.defineProperty](../concepts/defineProperty.md)
+- [函数形参与实参](../concepts/函数形参与实参.md)
+- [JavaScript 语法速记](../concepts/JavaScript语法速记.md)

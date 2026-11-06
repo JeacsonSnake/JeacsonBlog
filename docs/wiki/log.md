@@ -286,3 +286,20 @@ title: Wiki Log
 - 变更：`concepts/AI-Daily-Briefing-Brotli-Fix-Investigation.md` 正文 2 处 `../../../postMortem/...`（多退一级，只靠站点根目录兜底才成立）改为 `../../postMortem/...`，目标文件经 repo 树核对存在
 - 未动：`related:` 里指向博客原文的 `docs/postMortem/...`（属"关联原始报告"，不是 wiki 页，保持仓库根写法）；`sources:` 字段（AGENTS.md 规定用相对 `docs/` 的路径）
 - Self-check: 改写脚本逐个校验目标文件存在（不存在的只报告不写，实际 0 条 unresolved）；lint critical 0→0、orphan 6→6、partial frontmatter 24→24；全库 `docs/wiki/` 前缀在 frontmatter 中已清零
+
+## [2026-11-06] ingest | 补齐 18 个缺页主题（阶段 C）
+- 触发：覆盖率审计列出 22 个「wiki 提到但从未建页」的主题；阶段 A 已补 4 页（可靠数据传输 / defineProperty / 数据响应式 / 自定义消息接口），本阶段补其余 18 页
+- Wiki pages created (18)，全部以 repo 中已存在的笔记为 source：
+  - **计算机网络 7**：`UDP校验和`（伪首部 + 反码求和 + 回卷进位 + 全 1 校验）、`TCP-IP五层模型`（逐层职责 + 同网段/跨网段两条转发路径 + 三层转发）、`VLAN`（802.1Q 标签结构 + Access/Trunk/Hybrid 收发规则 + VLANIF）、`SMTP`（六步传递 + 中继重试 + 为何收信必须换 POP3/IMAP）、`PPP与PPPoE`（点对点 → 以太网隧道 + MTU 1492）、`链路发现协议`（802.1ab，只通告不配置）、`黑洞路由`（NULL0 三类用途）
+  - **JavaScript 2**：`函数形参与实参`（object[prop] vs object.prop）、`JavaScript语法速记`（var/let、严格模式、IIFE、eval 三缺点、Object vs Map、七种原始类型、位运算替代 2 的幂乘除）
+  - **Vue 3**：`Vuex`（四属性 + 四个 map 辅助函数 + namespaced 模块化）、`Vue-Router`（12 节骨架：嵌套/两种传参/命名路由/props 三写法/replace/keep-alive/三层守卫/hash vs history）、`Vue3渲染函数`（h() 属性对象扁平化与 on 前缀）
+  - **ROS2 1**：`ROS2参数服务`（挂在节点内部的键值对、六个 CLI 命令、只读参数为什么 set 失败、--params-file 启动加载的差别）
+  - **TypeScript 3**：`TypeScript类型系统`（类型声明/13 种类型/断言/tsconfig 全量）、`TypeScript工程化`（webpack 七包 + config + ts-loader vs babel-loader）、`TypeScript面向对象`（三档访问控制/存取器/继承/抽象类/接口/泛型与约束）
+  - **计算机组成原理 1**：`机器数与IEEE-754`（三段结构、双向换算含大数估算法、特殊值与范围、机器精度 2^-23、真误差与舍入规则）
+  - **自动控制原理 1**：`S-Z变换表`（22 行四列对照表 + 四条记忆线索 + Z 变换四种求法 + 差分方程法完整例题）
+- Wiki pages modified (13)：`index.md`（新增 TypeScript / 计算机组成原理 / 自动控制原理 三个段落，原四段各补条目）、`entities/{JavaScript,ROS2,Vue,TypeScript,Computer_Network}.md`（新增概念页链接）、`sources/{Computer_Network,JavaScript,Vue,TypeScript,Computer_Composition,Control_Theory}.md`（新增「概念页」索引段）、`log.md`（本条目）
+- 顺带修正两处 source 页面的错标（也是「缺页主题」清单部分失真之源）：
+  - `sources/JavaScript.md`：`简单记忆.md` 原标「记忆化相关」→ 实际内容是 var/let、严格模式、eval 等零散语法速记（并不存在 memoization 笔记）
+  - `sources/TypeScript.md`：笔记表原标 第二天「接口与泛型」、第三天「高级类型」、第四天「装饰器」、第五天「综合应用」→ 实为「编译选项」「webpack & Babel」「面向对象（上）」「面向对象（下：接口与泛型）」，按实际内容更正
+- 纪律遵循：先有笔记再建页（18 页全部对应 repo 原文，未凭空生成主题）；内链一律 `[标签](相对路径.md)`；`related` 用相对 `.md` 路径；源笔记链接指向 blog 的 `learningNote/...` 原文；图片未搬运（原文附图在 blog 侧 `assets/`，wiki 不复制二进制）
+- Self-check: `wiki-lint.sh --json` critical 0；新页全部获得入链（orphan 不增）

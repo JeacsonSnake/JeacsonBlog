@@ -23,13 +23,19 @@ updated: 2026-04-17
 
 | 笔记文件 | 内容 |
 |---------|------|
-| `第一天.md` | 类型基础 |
-| `第二天.md` | 接口与泛型 |
-| `第三天.md` | 高级类型 |
-| `第四天.md` | 装饰器 |
-| `第五天.md` | 综合应用 |
+| `第一天.md` | 类型基础（类型声明、类型表、断言） |
+| `第二天.md` | 编译选项（tsconfig：include/exclude/compilerOptions） |
+| `第三天.md` | webpack + Babel 工程化 |
+| `第四天.md` | 面向对象（上）：类、封装、继承、抽象类 |
+| `第五天.md` | 面向对象（下）：接口、泛型 |
 
 ## 关联实体
 
 - [JavaScript 语言基础](../entities/JavaScript.md)
 - [Web 开发](../entities/Web.md)
+
+## 概念页
+
+- [TypeScript 类型系统](../concepts/TypeScript类型系统.md)
+- [TypeScript 工程化（webpack + Babel）](../concepts/TypeScript工程化.md)
+- [面向对象：类、接口与泛型](../concepts/TypeScript面向对象.md)

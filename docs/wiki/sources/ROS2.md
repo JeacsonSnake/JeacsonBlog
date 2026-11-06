@@ -54,6 +54,8 @@ Ros2_Note/
 - [话题通信详解](../concepts/话题通信.md)
 - [坐标变换原理与实现](../concepts/坐标变换.md)
 - [DDS 与 ROS_DOMAIN_ID](../concepts/分布式通信.md)
+- [参数服务（Parameters）](../concepts/ROS2参数服务.md)
+- [自定义消息接口（msg / srv / action）](../concepts/自定义消息接口.md)
 
 ## 参考资料
 

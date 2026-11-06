@@ -23,6 +23,12 @@ TypeScript 是 JavaScript 的超集，添加了静态类型系统和面向对象
 - 泛型（Generics）
 - 装饰器（Decorators）
 
+## 概念页
+
+- [TypeScript 类型系统：类型声明、基本类型表与 tsconfig](../concepts/TypeScript类型系统.md)
+- [webpack + ts-loader 与 Babel 工程化](../concepts/TypeScript工程化.md)
+- [面向对象：类、封装、继承、接口与泛型](../concepts/TypeScript面向对象.md)
+
 ## 与其他实体的关系
 
 - **[TypeScript 的基础](../entities/JavaScript.md)**
