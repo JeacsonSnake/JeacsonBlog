@@ -4,9 +4,9 @@ description: "hop-1/hop-2 两跳自动合并拓扑、merge-base 三点 diff 不�
 type: concept
 tags: [GitHub Actions, Git, CI/CD, DevOps, Branch Protection, Hermes Agent]
 related:
-  - docs/wiki/entities/Hermes-Agent.md
-  - docs/wiki/sources/PostMortem.md
-  - docs/wiki/concepts/AI-Daily-Briefing-Brotli-Fix-Investigation.md
+  - ../entities/Hermes-Agent.md
+  - ../sources/PostMortem.md
+  - ./AI-Daily-Briefing-Brotli-Fix-Investigation.md
 created: 2026-10-20
 updated: 2026-10-20
 confidence: high

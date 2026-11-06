@@ -8,11 +8,11 @@ tags: [DevOps, Hermes Agent, mihomo, Network, Proxy, Tencent Cloud, Troubleshoot
 sources:
   - docs/postMortem/deploy/007_Troubleshooting_complete_failure_of_Tencent_Cloud_server_proxies.md
 related:
-  - docs/wiki/entities/Hermes-Agent.md
-  - docs/wiki/sources/PostMortem.md
-  - docs/wiki/concepts/Hermes-Agent-Cronjob-Setup.md
-  - docs/wiki/concepts/Edge-Secure-DNS-Gotcha.md
-  - docs/wiki/concepts/Ubuntu-gdm3-Disk-Full-Troubleshooting.md
+  - ../entities/Hermes-Agent.md
+  - ../sources/PostMortem.md
+  - ./Hermes-Agent-Cronjob-Setup.md
+  - ./Edge-Secure-DNS-Gotcha.md
+  - ./Ubuntu-gdm3-Disk-Full-Troubleshooting.md
 ---
 
 # Mihomo 代理全挂排查 — GSLB IP 池漂移与订阅自动更新

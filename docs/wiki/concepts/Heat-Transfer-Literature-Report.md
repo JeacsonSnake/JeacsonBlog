@@ -6,7 +6,7 @@ tags: [Heat Transfer, Literature Report, Statistical Mechanics, Phonon Hydrodyna
 date: 2026-06-03
 related:
   - docs/postMortem/sp_for_LLM/001_QA-intermediate-heat-transfer-literature-report.md
-  - docs/entities/Phonon-Hydrodynamics.md
+  - ../entities/Phonon-Hydrodynamics.md
 ---
 
 # 中级热质传递文献报告批判框架

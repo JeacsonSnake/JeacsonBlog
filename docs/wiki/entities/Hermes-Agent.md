@@ -4,13 +4,13 @@ description: "Hermes Agent — Nous Research 开发的可自我调整 skills 的
 type: entity
 tags: [AI Agent, Hermes, NousResearch, LLM]
 related:
-  - docs/wiki/concepts/Hermes-Agent-Cronjob-Setup.md
-  - docs/wiki/concepts/VuePress-Theme-Hope-Hermes-JSON-Converter.md
-  - docs/wiki/concepts/VuePress-Theme-Hope-Hermes-Multi-Session-Merger.md
-  - docs/wiki/concepts/AI-Daily-Briefing-Brotli-Fix-Investigation.md
-  - docs/wiki/entities/LLM-Prompt-Skill.md
-  - docs/wiki/concepts/Mihomo-Proxy-GSLB-Drift-Subscription-Auto-Update.md
-  - docs/wiki/concepts/Briefing-Archive-Auto-Merge-Topology.md
+  - ../concepts/Hermes-Agent-Cronjob-Setup.md
+  - ../concepts/VuePress-Theme-Hope-Hermes-JSON-Converter.md
+  - ../concepts/VuePress-Theme-Hope-Hermes-Multi-Session-Merger.md
+  - ../concepts/AI-Daily-Briefing-Brotli-Fix-Investigation.md
+  - ./LLM-Prompt-Skill.md
+  - ../concepts/Mihomo-Proxy-GSLB-Drift-Subscription-Auto-Update.md
+  - ../concepts/Briefing-Archive-Auto-Merge-Topology.md
 created: 2026-06-08
 updated: 2026-10-20
 sources:

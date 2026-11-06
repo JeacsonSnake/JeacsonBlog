@@ -8,8 +8,8 @@ tags: [Network, WiFi, Channel, Troubleshooting]
 sources:
   - docs/postMortem/tiny_tips/2026_11_04.md
 related:
-  - docs/wiki/entities/Computer_Network.md
-  - docs/wiki/sources/PostMortem.md
+  - ../entities/Computer_Network.md
+  - ../sources/PostMortem.md
 ---
 
 # Nintendo Switch 5GHz 搜不到 — 信道白名单排查

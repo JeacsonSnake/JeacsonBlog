@@ -4,8 +4,8 @@ description: "声子输运在流体动力学极限下的涌现行为：泊肃叶
 type: entity
 tags: [Phonon Physics, Heat Transfer, BTE, N-scattering, Thermal Rectification]
 related:
-  - docs/wiki/concepts/Heat-Transfer-Literature-Report.md
-  - docs/entities/LLM-Prompt-Skill.md
+  - ../concepts/Heat-Transfer-Literature-Report.md
+  - ./LLM-Prompt-Skill.md
 ---
 
 # 声子流体动力学

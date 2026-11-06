@@ -8,7 +8,7 @@ tags: [DevOps, Ubuntu, VMware, gdm3, Troubleshooting, Disk, Deploy]
 sources:
   - docs/postMortem/deploy/006_Ubuntu_gdm3_cannot_activate.md
 related:
-  - docs/wiki/sources/PostMortem.md
+  - ../sources/PostMortem.md
 ---
 
 # Ubuntu 24.04 gdm3 启动失败 — 磁盘空间不足根因排查

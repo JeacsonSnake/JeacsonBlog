@@ -8,9 +8,9 @@ tags: [Network, WiFi, DFS, Troubleshooting]
 sources:
   - docs/postMortem/tiny_tips/2026_09_08.md
 related:
-  - docs/wiki/entities/Computer_Network.md
-  - docs/wiki/sources/PostMortem.md
-  - docs/wiki/concepts/Switch-5GHz-Channel-Whitelist.md
+  - ../entities/Computer_Network.md
+  - ../sources/PostMortem.md
+  - ./Switch-5GHz-Channel-Whitelist.md
 ---
 
 # WiFi 5GHz DFS 信道雷达避让 — 社交平台图片加载缓慢排查

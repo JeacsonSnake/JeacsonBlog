@@ -4,14 +4,14 @@ description: "可供大语言模型使用的 prompt 模板与 skill 工作流"
 type: entity
 tags: [LLM, Prompt Engineering, Kimi, VuePress, AI Agent]
 related:
-  - docs/wiki/concepts/VuePress-Theme-Hope-Markdown-Converter.md
-  - docs/wiki/concepts/VuePress-Theme-Hermes-JSON-Converter.md
-  - docs/wiki/concepts/VuePress-Theme-Hope-Hermes-Multi-Session-Merger.md
-  - docs/wiki/concepts/Heat-Transfer-Literature-Report.md
-  - docs/wiki/concepts/Reverse-Prompt-Engineering.md
-  - docs/wiki/concepts/Hermes-Agent-Cronjob-Setup.md
-  - docs/wiki/concepts/AI-Daily-Briefing-Brotli-Fix-Investigation.md
-  - docs/wiki/entities/Hermes-Agent.md
+  - ../concepts/VuePress-Theme-Hope-Markdown-Converter.md
+  - ../concepts/VuePress-Theme-Hope-Hermes-JSON-Converter.md
+  - ../concepts/VuePress-Theme-Hope-Hermes-Multi-Session-Merger.md
+  - ../concepts/Heat-Transfer-Literature-Report.md
+  - ../concepts/Reverse-Prompt-Engineering.md
+  - ../concepts/Hermes-Agent-Cronjob-Setup.md
+  - ../concepts/AI-Daily-Briefing-Brotli-Fix-Investigation.md
+  - ./Hermes-Agent.md
 created: 2026-06-04
 updated: 2026-06-09
 sources:
