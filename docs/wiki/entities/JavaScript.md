@@ -23,7 +23,7 @@ JavaScript 是一门多范式编程语言，是 Web 开发的三大核心技术�
 | Symbol | ES6 第7种原始类型，独一无二的值 | [Symbol 类型](../concepts/Symbol.md) |
 | Array.reduce | 数组累加方法 | [Array.reduce() 方法](../concepts/Reduce方法.md) |
 | 柯里化 | 多参函数转为链式单参 | [函数柯里化](../concepts/函数柯里化.md) |
-| defineProperty | Vue2 响应式底层 API | — |
+| defineProperty | Vue2 响应式底层 API | [Object.defineProperty 属性描述符与响应式劫持](../concepts/defineProperty.md) |
 
 ## 与其他实体的关系
 

@@ -23,7 +23,7 @@ Vue.js 是一款渐进式 JavaScript 框架，用于构建单页应用（SPA）�
 
 ## 核心概念
 
-- **数据响应式** — 数据驱动视图
+- **[数据响应式（Vue3 effect / track / trigger + Proxy 引擎）](../concepts/数据响应式.md)** — 数据变化驱动视图更新
 - **组件系统** — 模块化 UI
 - **路由** — [Web 开发](../entities/Web.md) 中的 SPA 路由
 
