@@ -23,20 +23,20 @@ Vue.js 是一款渐进式 JavaScript 框架，用于构建单页应用（SPA）�
 
 ## 核心概念
 
-- **数据响应式** — 数据驱动视图 [[../concepts/数据响应式.md]]
+- **数据响应式** — 数据驱动视图
 - **组件系统** — 模块化 UI
-- **路由** — [[../entities/Web.md]] 中的 SPA 路由
+- **路由** — [Web 开发](../entities/Web.md) 中的 SPA 路由
 
 ## 与其他实体的关系
 
-- **[[../entities/JavaScript.md]]** — Vue 基于 JavaScript
-- **[[../entities/TypeScript.md]]** — Vue3 全面支持 TypeScript
-- **[[../entities/Web.md]]** — Vue 是 Web 开发的框架
+- **[Vue 基于 JavaScript](../entities/JavaScript.md)**
+- **[Vue3 全面支持 TypeScript](../entities/TypeScript.md)**
+- **[Vue 是 Web 开发的框架](../entities/Web.md)**
 
 ## 构建与踩坑
 
-- **Vite 生产构建错误去重 `fit-content`**（2026-09）— 博饼网站欢迎页按钮 Edge 下失效：cssnano 把 `fit-content` 与 `-moz-fit-content` 视为重复声明、只保留后写前缀版。详见 [[../concepts/Vue-CSS-Fit-Content-Vite-cssnano-Dedupe-Bug.md]]
+- **Vite 生产构建错误去重 `fit-content`**（2026-09）— 博饼网站欢迎页按钮 Edge 下失效：cssnano 把 `fit-content` 与 `-moz-fit-content` 视为重复声明、只保留后写前缀版。详见 [CSS fit-content 生产构建被错误优化（Vite cssnano 去重）](../concepts/Vue-CSS-Fit-Content-Vite-cssnano-Dedupe-Bug.md)
 
 ## Source
 
-[[../sources/Vue.md]]
+[Vue 知识域摘要](../sources/Vue.md)

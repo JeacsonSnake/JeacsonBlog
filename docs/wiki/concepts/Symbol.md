@@ -27,4 +27,4 @@ updated: 2026-04-17
 
 ## 相关
 
-- [[../entities/JavaScript.md]]
+- [JavaScript 知识域摘要](../entities/JavaScript.md)

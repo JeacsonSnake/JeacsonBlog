@@ -50,10 +50,10 @@ Ros2_Note/
 
 ## 关联实体
 
-- [[../entities/ROS2.md]] — ROS2 机器人操作系统
-- [[../concepts/话题通信.md]] — 话题通信详解
-- [[../concepts/坐标变换.md]] — 坐标变换原理与实现
-- [[../concepts/分布式通信.md]] — DDS 与 ROS_DOMAIN_ID
+- [ROS2 机器人操作系统](../entities/ROS2.md)
+- [话题通信详解](../concepts/话题通信.md)
+- [坐标变换原理与实现](../concepts/坐标变换.md)
+- [DDS 与 ROS_DOMAIN_ID](../concepts/分布式通信.md)
 
 ## 参考资料
 

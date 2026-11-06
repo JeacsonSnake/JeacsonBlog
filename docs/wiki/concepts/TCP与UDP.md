@@ -30,4 +30,4 @@ TCP 和 UDP 是传输层的两大核心协议。
 
 ## 相关
 
-- [[../entities/Computer_Network.md]]
+- [计算机网络知识域摘要](../entities/Computer_Network.md)

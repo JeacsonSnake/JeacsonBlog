@@ -241,7 +241,7 @@ twitter-cli => 拿到真实推文（@NousResearch 当天发布的 DeepSeek V4 Fl
 
 ## 与相邻故障的关系
 
-- [[../concepts/Hermes-Agent-Cronjob-Setup.md]] — 同样是 VPS 部署层的踩坑，但侧重启停服/网关注入；本概念侧重启代理链路
-- [[../concepts/Edge-Secure-DNS-Gotcha.md]] — 同样是"本地网络配置异常导致跨境服务全挂"，Edge 走 DoH 污染 curl DNS 缓存；mihomo 走 GSLB 漂移。**两者共同教训：跨境服务必须验证多个独立诊断维度（DNS / TCP / HTTP），不能只盯着一个症状**
-- [[../concepts/Ubuntu-gdm3-Disk-Full-Troubleshooting.md]] — 同样是"服务无法启动"型故障的根因排查范式（先区分"服务问题"还是"系统底层问题"），但本概念的反面是"网络服务挂着但实际没工作"，需要外部主动探测
-- [[../concepts/AI-Daily-Briefing-Brotli-Fix-Investigation.md]] — AI Daily Briefing 因 brotli bug 失败的根因；本概念也是 AI Daily Briefing 失败的原因之一（代理链路层）。**两条故障路径都会让 cron 静默失败**
+- [同样是 VPS 部署层的踩坑，但侧重启停服/网关注入；本概念侧重启代理链路](../concepts/Hermes-Agent-Cronjob-Setup.md)
+- [同样是"本地网络配置异常导致跨境服务全挂"，Edge 走 DoH 污染 curl DNS 缓存；mihomo 走 GSLB 漂移。**两者共同教训：跨境服务必须验证多个独立诊断维度（DNS / TCP / HTTP），不能只盯着一个症状**](../concepts/Edge-Secure-DNS-Gotcha.md)
+- [同样是"服务无法启动"型故障的根因排查范式（先区分"服务问题"还是"系统底层问题"），但本概念的反面是"网络服务挂着但实际没工作"，需要外部主动探测](../concepts/Ubuntu-gdm3-Disk-Full-Troubleshooting.md)
+- [AI Daily Briefing 因 brotli bug 失败的根因；本概念也是 AI Daily Briefing 失败的原因之一（代理链路层）。**两条故障路径都会让 cron 静默失败**](../concepts/AI-Daily-Briefing-Brotli-Fix-Investigation.md)

@@ -31,5 +31,5 @@ updated: 2026-04-17
 
 ## 关联实体
 
-- [[../entities/JavaScript.md]] — JavaScript 语言基础
-- [[../entities/Web.md]] — Web 开发
+- [JavaScript 语言基础](../entities/JavaScript.md)
+- [Web 开发](../entities/Web.md)

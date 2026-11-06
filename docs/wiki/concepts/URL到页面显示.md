@@ -33,5 +33,5 @@ updated: 2026-04-17
 
 ## 相关
 
-- [[../entities/Computer_Network.md]]
-- [[../entities/Web.md]]
+- [计算机网络知识域摘要](../entities/Computer_Network.md)
+- [Web 开发](../entities/Web.md)

@@ -35,4 +35,4 @@ updated: 2026-04-17
 
 ## 关联实体
 
-- [[../entities/ROS2.md]] — ROS2 机器人控制
+- [ROS2 机器人控制](../entities/ROS2.md)

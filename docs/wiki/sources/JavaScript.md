@@ -37,8 +37,8 @@ updated: 2026-04-17
 
 ## 关联实体
 
-- [[../entities/JavaScript.md]] — JavaScript 语言实体页
-- [[../entities/Web.md]] — Web 开发实体页
+- [JavaScript 语言实体页](../entities/JavaScript.md)
+- [Web 开发实体页](../entities/Web.md)
 
 ## 补充说明
 

@@ -23,5 +23,5 @@ updated: 2026-04-20
 
 ## 关联实体
 
-- [[../entities/ROS2.md]] — ROS2 应用场景
-- [[../concepts/代码片段.md]] — 通用编码效率技巧
+- [ROS2 应用场景](../entities/ROS2.md)
+- [通用编码效率技巧](../concepts/代码片段.md)

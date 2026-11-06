@@ -42,5 +42,5 @@ const result = arr.reduce((prev, cur, index, arr) => {
 
 ## 相关
 
-- [[../entities/JavaScript.md]]
-- [[../sources/JavaScript.md]]
+- [JavaScript 知识域摘要-entities](../entities/JavaScript.md)
+- [JavaScript 知识域摘要-sources](../sources/JavaScript.md)

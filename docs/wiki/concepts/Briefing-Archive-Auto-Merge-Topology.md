@@ -152,6 +152,6 @@ bypass 名单里配的 App 名必须与它一致。
 
 ## 相关
 
-- [[../entities/Hermes-Agent.md]] — 本链路的宿主 Agent 与 cron 体系
-- [[../sources/PostMortem.md]] — 本文所属的踩坑心得知识域
-- [[../concepts/AI-Daily-Briefing-Brotli-Fix-Investigation.md]] — 上游「生成」环节的故障史（sp_for_LLM/005）
+- [本链路的宿主 Agent 与 cron 体系](../entities/Hermes-Agent.md)
+- [本文所属的踩坑心得知识域](../sources/PostMortem.md)
+- [上游「生成」环节的故障史（sp_for_LLM/005）](../concepts/AI-Daily-Briefing-Brotli-Fix-Investigation.md)

@@ -14,18 +14,18 @@ Web 开发是互联网应用构建的实践领域，涵盖前端、后端、网�
 
 ### 前端
 - HTML / CSS / JavaScript
-- 框架：[[../entities/Vue.md]]、React、Angular
+- 框架：[Vue 知识域摘要](../entities/Vue.md)、React、Angular
 - 构建工具：Vite、Webpack
 
 ### 通信协议
 - **HTTP/HTTPS** — Web 基础协议
 - **DNS** — 域名解析
 - **TCP/IP** — 传输控制协议
-- 参考：[[../entities/Computer_Network.md]]
+- 参考：[计算机网络知识域摘要](../entities/Computer_Network.md)
 
 ### JavaScript 生态
-- [[../entities/JavaScript.md]]
-- [[../entities/TypeScript.md]]
+- [JavaScript 知识域摘要](../entities/JavaScript.md)
+- [TypeScript 知识域摘要](../entities/TypeScript.md)
 
 ## 关键流程
 
@@ -35,8 +35,8 @@ Web 开发是互联网应用构建的实践领域，涵盖前端、后端、网�
 3. HTTP 请求/响应
 4. 浏览器渲染
 
-参考：[[../concepts/URL到页面显示.md]]
+参考：[从输入 URL 到页面显示的完整流程](../concepts/URL到页面显示.md)
 
 ## Source
 
-[[../sources/Computer_Network.md]]（网络部分）
+[计算机网络知识域摘要](../sources/Computer_Network.md)（网络部分）
