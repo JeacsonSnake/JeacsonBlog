@@ -1,0 +1,775 @@
+{
+  "version": "https://jsonfeed.org/version/1.1",
+  "title": "JeacsonBlog",
+  "home_page_url": "https://blog.jeacsonsnake.com/",
+  "feed_url": "https://blog.jeacsonsnake.com/feed.json",
+  "description": "JeacsonBlog-一个简单的博客",
+  "icon": "https://blog.jeacsonsnake.com/assets/img/logo.png",
+  "favicon": "https://blog.jeacsonsnake.com/assets/img/favicon.ico",
+  "items": [
+    {
+      "title": "Brotli 流截断的五层根因：brotlicffi 守卫 + httpx 不检查 + 服务端 br",
+      "url": "/wiki/concepts/Brotli-Stream-Truncation-Root-Cause.html",
+      "id": "/wiki/concepts/Brotli-Stream-Truncation-Root-Cause.html",
+      "summary": "`brotli: decoder process called with data when 'can_accept_more_data()' is False` 的完整技术分析：五层技术栈（Hermes 请求 br → openai SDK 继承 → httpx 不检查 can_accept_more_data → brotli C 状态机 NEEDS_MORE_OUTPUT → brotlicffi 的 `_unconsumed_data` 守卫抛错）、为什么 retry 永远在同一位置失败、四种 Provider 的 Content-Encoding 差异、urllib3 #3734 的同类回归、以及 Hermes 已在 skills_hub.py 做过的规避为什么没覆盖 Provider 调用",
+      "content_html": "`brotli: decoder process called with data when 'can_accept_more_data()' is False` 的完整技术分析：五层技术栈（Hermes 请求 br → openai SDK 继承 → httpx 不检查 can_accept_more_data → brotli C 状态机 NEEDS_MORE_OUTPUT → brotlicffi 的 `_unconsumed_data` 守卫抛错）、为什么 retry 永远在同一位置失败、四种 Provider 的 Content-Encoding 差异、urllib3 #3734 的同类回归、以及 Hermes 已在 skills_hub.py 做过的规避为什么没覆盖 Provider 调用",
+      "date_published": "2026-11-07T03:03:30.018Z",
+      "date_modified": "2026-11-06T12:12:54.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "Mihomo 12 节点全挂诊断实录：从 TCP 屏蔽到 GSLB IP 池漂移",
+      "url": "/wiki/concepts/Mihomo-IP-Pool-Drift-Diagnosis.html",
+      "id": "/wiki/concepts/Mihomo-IP-Pool-Drift-Diagnosis.html",
+      "summary": "代理全挂时如何用 5 层取证把\"节点故障\"与\"站点屏蔽\"分开：直连基线 → 走代理跨站点验证（github 也挂 = 链路问题）→ 12 节点逐个切换 → 用户境外裸连证明节点活着 → dig 节点域名观察 IP 轮询 + config.yaml 修改时间推定订阅过期；附自举失败（mihomo 与 hermes update 互相依赖）的处理与 5 个诊断陷阱（--noproxy 覆盖 --proxy、订阅伪节点、Cloudflare 健康检查假阳性、节点分钟级波动、file provider path 限制）",
+      "content_html": "代理全挂时如何用 5 层取证把\"节点故障\"与\"站点屏蔽\"分开：直连基线 → 走代理跨站点验证（github 也挂 = 链路问题）→ 12 节点逐个切换 → 用户境外裸连证明节点活着 → dig 节点域名观察 IP 轮询 + config.yaml 修改时间推定订阅过期；附自举失败（mihomo 与 hermes update 互相依赖）的处理与 5 个诊断陷阱（--noproxy 覆盖 --proxy、订阅伪节点、Cloudflare 健康检查假阳性、节点分钟级波动、file provider path 限制）",
+      "date_published": "2026-11-07T03:03:30.018Z",
+      "date_modified": "2026-11-06T11:56:43.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "JavaScript 语法速记：var/let、严格模式、IIFE、eval、Object vs Map",
+      "url": "/wiki/concepts/JavaScript%E8%AF%AD%E6%B3%95%E9%80%9F%E8%AE%B0.html",
+      "id": "/wiki/concepts/JavaScript%E8%AF%AD%E6%B3%95%E9%80%9F%E8%AE%B0.html",
+      "summary": "一组「记住就行」的 JS 易错点：var 函数作用域 vs let 块作用域的三条差异、严格模式的两种开启方式、立即执行函数、eval 的三个缺点、Object 与 Map 的键类型与有序性差异、七种原始类型、对象键自动字符串化、用位运算替代 2 的幂乘除",
+      "content_html": "一组「记住就行」的 JS 易错点：var 函数作用域 vs let 块作用域的三条差异、严格模式的两种开启方式、立即执行函数、eval 的三个缺点、Object 与 Map 的键类型与有序性差异、七种原始类型、对象键自动字符串化、用位运算替代 2 的幂乘除",
+      "date_published": "2026-11-07T03:03:30.018Z",
+      "date_modified": "2026-11-06T11:04:11.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "PPP 与 PPPoE：点对点链路协议，以及为什么要把它塞进以太网",
+      "url": "/wiki/concepts/PPP%E4%B8%8EPPPoE.html",
+      "id": "/wiki/concepts/PPP%E4%B8%8EPPPoE.html",
+      "summary": "PPP 作为二层协议为点对点链路提供多协议封装（拨号上网获取 IP），但它要求两端是点对点关系，不适用于广播型以太网；PPPoE 把 PPP 封装进以太网帧，从而在共享以太网上为每个用户建立独立的 PPP 会话，兼顾宽带接入、接入控制与计费",
+      "content_html": "PPP 作为二层协议为点对点链路提供多协议封装（拨号上网获取 IP），但它要求两端是点对点关系，不适用于广播型以太网；PPPoE 把 PPP 封装进以太网帧，从而在共享以太网上为每个用户建立独立的 PPP 会话，兼顾宽带接入、接入控制与计费",
+      "date_published": "2026-11-07T03:03:30.018Z",
+      "date_modified": "2026-11-06T11:04:11.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "ROS2 参数服务：随节点走的键值配置",
+      "url": "/wiki/concepts/ROS2%E5%8F%82%E6%95%B0%E6%9C%8D%E5%8A%A1.html",
+      "id": "/wiki/concepts/ROS2%E5%8F%82%E6%95%B0%E6%9C%8D%E5%8A%A1.html",
+      "summary": "ROS2 的 Parameters 不存在中心化仓库，而是挂在节点内部、通过内置参数服务（本质是服务通信）读写的键值对；ros2 param 的 list/get/set/dump/load 六个命令与 --params-file 启动时加载的区别，以及只读参数（qos_overrides）为什么 set 会失败",
+      "content_html": "ROS2 的 Parameters 不存在中心化仓库，而是挂在节点内部、通过内置参数服务（本质是服务通信）读写的键值对；ros2 param 的 list/get/set/dump/load 六个命令与 --params-file 启动时加载的区别，以及只读参数（qos_overrides）为什么 set 会失败",
+      "date_published": "2026-11-07T03:03:30.018Z",
+      "date_modified": "2026-11-06T11:04:11.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "S-Z 变换表：连续系统与离散系统的对照工具",
+      "url": "/wiki/concepts/S-Z%E5%8F%98%E6%8D%A2%E8%A1%A8.html",
+      "id": "/wiki/concepts/S-Z%E5%8F%98%E6%8D%A2%E8%A1%A8.html",
+      "summary": "自动控制原理里最常用的一张对照表：单位冲激/阶跃/斜坡/抛物线、指数、正弦余弦、欠阻尼、微积分与移位、时延、初值终值定理在 f(t)、F(s)、f(kT)、F(z) 四列的对应关系；附 Z 变换四种求法与一次差分方程法的完整推导",
+      "content_html": "自动控制原理里最常用的一张对照表：单位冲激/阶跃/斜坡/抛物线、指数、正弦余弦、欠阻尼、微积分与移位、时延、初值终值定理在 f(t)、F(s)、f(kT)、F(z) 四列的对应关系；附 Z 变换四种求法与一次差分方程法的完整推导",
+      "date_published": "2026-11-07T03:03:30.018Z",
+      "date_modified": "2026-11-06T11:39:05.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "SMTP：为什么发信是「推」而收信必须是「拉」",
+      "url": "/wiki/concepts/SMTP.html",
+      "id": "/wiki/concepts/SMTP.html",
+      "summary": "SMTP 传递一封邮件的六个步骤、为什么发件人用户代理不能直连收件人服务器（需要中继以便重试）、以及 SMTP 只能推不能拉——所以收信必须换用 POP3 / IMAP / HTTP 这类邮件访问协议",
+      "content_html": "SMTP 传递一封邮件的六个步骤、为什么发件人用户代理不能直连收件人服务器（需要中继以便重试）、以及 SMTP 只能推不能拉——所以收信必须换用 POP3 / IMAP / HTTP 这类邮件访问协议",
+      "date_published": "2026-11-07T03:03:30.018Z",
+      "date_modified": "2026-11-06T11:04:11.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "TCP/IP 五层模型：每层解决什么问题",
+      "url": "/wiki/concepts/TCP-IP%E4%BA%94%E5%B1%82%E6%A8%A1%E5%9E%8B.html",
+      "id": "/wiki/concepts/TCP-IP%E4%BA%94%E5%B1%82%E6%A8%A1%E5%9E%8B.html",
+      "summary": "从物理层到应用层逐层拆解 TCP/IP 五层模型：物理层传比特、链路层用 MAC/ARP 在同一链路内寻址、网络层用 IP 做跨网络寻址与分片（MTU 1500）、传输层用 TCP/UDP 区分进程、应用层提供 HTTP/DNS/SMTP；并说明同网段与跨网段两种转发路径，以及交换机（二层）与路由器（三层）的分工",
+      "content_html": "从物理层到应用层逐层拆解 TCP/IP 五层模型：物理层传比特、链路层用 MAC/ARP 在同一链路内寻址、网络层用 IP 做跨网络寻址与分片（MTU 1500）、传输层用 TCP/UDP 区分进程、应用层提供 HTTP/DNS/SMTP；并说明同网段与跨网段两种转发路径，以及交换机（二层）与路由器（三层）的分工",
+      "date_published": "2026-11-07T03:03:30.018Z",
+      "date_modified": "2026-11-06T11:04:11.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "TypeScript 工程化：webpack + ts-loader 与 Babel",
+      "url": "/wiki/concepts/TypeScript%E5%B7%A5%E7%A8%8B%E5%8C%96.html",
+      "id": "/wiki/concepts/TypeScript%E5%B7%A5%E7%A8%8B%E5%8C%96.html",
+      "summary": "用 webpack 承载 TS 项目的完整步骤：npm init 初始化、安装 webpack/webpack-cli/webpack-dev-server/typescript/ts-loader/html-webpack-plugin/clean-webpack-plugin 七个包、webpack.config.js 的 entry/output/resolve/module.rules/devServer 配置、tsconfig.json 与 package.json scripts，以及 Babel 存在的意义",
+      "content_html": "用 webpack 承载 TS 项目的完整步骤：npm init 初始化、安装 webpack/webpack-cli/webpack-dev-server/typescript/ts-loader/html-webpack-plugin/clean-webpack-plugin 七个包、webpack.config.js 的 entry/output/resolve/module.rules/devServer 配置、tsconfig.json 与 package.json scripts，以及 Babel 存在的意义",
+      "date_published": "2026-11-07T03:03:30.018Z",
+      "date_modified": "2026-11-06T11:04:11.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "TypeScript 类型系统：从类型声明到 tsconfig 编译选项",
+      "url": "/wiki/concepts/TypeScript%E7%B1%BB%E5%9E%8B%E7%B3%BB%E7%BB%9F.html",
+      "id": "/wiki/concepts/TypeScript%E7%B1%BB%E5%9E%8B%E7%B3%BB%E7%BB%9F.html",
+      "summary": "TS 是 JS 的超集，在编译前做类型检查。覆盖类型声明与自动推断、完整基本类型表（number/string/boolean/字面量/any/unknown/void/never/object/array/function/tuple/enum）、类型断言的两种写法，以及 tsconfig.json 的 include/exclude/extends/files 与 compilerOptions 的 target/lib/module",
+      "content_html": "TS 是 JS 的超集，在编译前做类型检查。覆盖类型声明与自动推断、完整基本类型表（number/string/boolean/字面量/any/unknown/void/never/object/array/function/tuple/enum）、类型断言的两种写法，以及 tsconfig.json 的 include/exclude/extends/files 与 compilerOptions 的 target/lib/module",
+      "date_published": "2026-11-07T03:03:30.018Z",
+      "date_modified": "2026-11-06T11:04:11.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "TypeScript 面向对象：类、封装三修饰符、继承、抽象类、接口与泛型",
+      "url": "/wiki/concepts/TypeScript%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1.html",
+      "id": "/wiki/concepts/TypeScript%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1.html",
+      "summary": "class 与对象的关系、constructor 与 this 的绑定、语法糖式参数属性写法；readonly 与 public/protected/private 三个访问修饰符的可见范围、getter/setter 存取器；extends 继承、super 调用、方法重写、abstract 抽象类；interface 的结构约束与声明合并；以及用泛型替代 any（含 extends 约束）",
+      "content_html": "class 与对象的关系、constructor 与 this 的绑定、语法糖式参数属性写法；readonly 与 public/protected/private 三个访问修饰符的可见范围、getter/setter 存取器；extends 继承、super 调用、方法重写、abstract 抽象类；interface 的结构约束与声明合并；以及用泛型替代 any（含 extends 约束）",
+      "date_published": "2026-11-07T03:03:30.018Z",
+      "date_modified": "2026-11-06T11:04:11.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "UDP 校验和：反码求和、回卷进位与「全 1 即通过」",
+      "url": "/wiki/concepts/UDP%E6%A0%A1%E9%AA%8C%E5%92%8C.html",
+      "id": "/wiki/concepts/UDP%E6%A0%A1%E9%AA%8C%E5%92%8C.html",
+      "summary": "UDP 校验和的构造与校验全过程：把伪首部（源/目的 IP、协议号 17、UDP 长度）与 UDP 报文按 16 位两两相加，高位溢出回卷加到最低位，最后取反码作为校验和；接收端对含校验和的整包重复同样累加，结果为 16 个 1 才认为没出错",
+      "content_html": "UDP 校验和的构造与校验全过程：把伪首部（源/目的 IP、协议号 17、UDP 长度）与 UDP 报文按 16 位两两相加，高位溢出回卷加到最低位，最后取反码作为校验和；接收端对含校验和的整包重复同样累加，结果为 16 个 1 才认为没出错",
+      "date_published": "2026-11-07T03:03:30.018Z",
+      "date_modified": "2026-11-06T11:04:11.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "VLAN：用 802.1Q 标签把一个交换机切成多个广播域",
+      "url": "/wiki/concepts/VLAN.html",
+      "id": "/wiki/concepts/VLAN.html",
+      "summary": "VLAN 的标签结构（TPID 0x8100 + TCI：User Priority / CFI / 12 位 VID，有效 1–4094）、Access / Trunk / Hybrid 三种端口的收发规则、PVID 与 Tagged/Untagged 的对应关系，以及 VLAN 间为什么必须走三层",
+      "content_html": "VLAN 的标签结构（TPID 0x8100 + TCI：User Priority / CFI / 12 位 VID，有效 1–4094）、Access / Trunk / Hybrid 三种端口的收发规则、PVID 与 Tagged/Untagged 的对应关系，以及 VLAN 间为什么必须走三层",
+      "date_published": "2026-11-07T03:03:30.018Z",
+      "date_modified": "2026-11-06T11:04:11.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "Vue Router：从基本路由到守卫与两种工作模式",
+      "url": "/wiki/concepts/Vue-Router.html",
+      "id": "/wiki/concepts/Vue-Router.html",
+      "summary": "Vue Router 的完整骨架：router-link/router-view 的基本路由、children 嵌套、query 与 param 两种传参、命名路由、props 三种写法、replace、编程式导航、keep-alive 缓存与 activated/deactivated、全局/独享/组件内三层守卫，以及 hash 与 history 两种模式",
+      "content_html": "Vue Router 的完整骨架：router-link/router-view 的基本路由、children 嵌套、query 与 param 两种传参、命名路由、props 三种写法、replace、编程式导航、keep-alive 缓存与 activated/deactivated、全局/独享/组件内三层守卫，以及 hash 与 history 两种模式",
+      "date_published": "2026-11-07T03:03:30.018Z",
+      "date_modified": "2026-11-06T11:04:11.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "Vue3 与 Vue2 的渲染函数：h() 是怎么变扁平的",
+      "url": "/wiki/concepts/Vue3%E6%B8%B2%E6%9F%93%E5%87%BD%E6%95%B0.html",
+      "id": "/wiki/concepts/Vue3%E6%B8%B2%E6%9F%93%E5%87%BD%E6%95%B0.html",
+      "summary": "从模板到真实 DOM 的四步（模板 → VNode → VirtualDOM → 真实 DOM），以及为什么可以直接写 render() 跳过模板编译；Vue2 的 h(type, {attrs, on}, children) 与 Vue3 的 h(type, {id, onClick}, children) 对比——属性对象被拍平、事件用 on 前缀、h 改为按需引入",
+      "content_html": "从模板到真实 DOM 的四步（模板 → VNode → VirtualDOM → 真实 DOM），以及为什么可以直接写 render() 跳过模板编译；Vue2 的 h(type, {attrs, on}, children) 与 Vue3 的 h(type, {id, onClick}, children) 对比——属性对象被拍平、事件用 on 前缀、h 改为按需引入",
+      "date_published": "2026-11-07T03:03:30.018Z",
+      "date_modified": "2026-11-06T11:04:11.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "Vuex：state / getters / mutations / actions 与模块化",
+      "url": "/wiki/concepts/Vuex.html",
+      "id": "/wiki/concepts/Vuex.html",
+      "summary": "Vuex 的单向数据流约定：state 存共享数据、getters 是带 state 参数的计算属性、mutations 是唯一能改 state 的同步入口、actions 用 commit 间接改状态从而承载异步；配 mapState/mapGetters/mapMutations/mapActions 四个辅助函数与 namespaced 模块化",
+      "content_html": "Vuex 的单向数据流约定：state 存共享数据、getters 是带 state 参数的计算属性、mutations 是唯一能改 state 的同步入口、actions 用 commit 间接改状态从而承载异步；配 mapState/mapGetters/mapMutations/mapActions 四个辅助函数与 namespaced 模块化",
+      "date_published": "2026-11-07T03:03:30.018Z",
+      "date_modified": "2026-11-06T11:04:11.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "函数形参与实参：为什么 object[prop] 能读到，object.prop 读不到",
+      "url": "/wiki/concepts/%E5%87%BD%E6%95%B0%E5%BD%A2%E5%8F%82%E4%B8%8E%E5%AE%9E%E5%8F%82.html",
+      "id": "/wiki/concepts/%E5%87%BD%E6%95%B0%E5%BD%A2%E5%8F%82%E4%B8%8E%E5%AE%9E%E5%8F%82.html",
+      "summary": "JS 里「形参名」和「实参值」是两件事：点号访问 object.prop 永远读的是名为 prop 的属性，想按传进来的属性名取值必须用中括号 object[prop]。附 arguments 与形参数量不匹配时的行为",
+      "content_html": "JS 里「形参名」和「实参值」是两件事：点号访问 object.prop 永远读的是名为 prop 的属性，想按传进来的属性名取值必须用中括号 object[prop]。附 arguments 与形参数量不匹配时的行为",
+      "date_published": "2026-11-07T03:03:30.018Z",
+      "date_modified": "2026-11-06T11:04:11.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "机器数与 IEEE-754：浮点数是怎么存进 32 位的",
+      "url": "/wiki/concepts/%E6%9C%BA%E5%99%A8%E6%95%B0%E4%B8%8EIEEE-754.html",
+      "id": "/wiki/concepts/%E6%9C%BA%E5%99%A8%E6%95%B0%E4%B8%8EIEEE-754.html",
+      "summary": "机器数的规范化形式 m×2^e、IEEE-754 单/双精度的符号位-偏移指数-尾数三段结构（bias 127/1023）、十进制与机器数双向换算的完整步骤（含大数用 10^3≈2^10 估算指数）、±0/±∞/NaN 的特殊编码、数值范围与上下溢、机器精度 2^-23、真误差与相对误差、以及舍入规则",
+      "content_html": "机器数的规范化形式 m×2^e、IEEE-754 单/双精度的符号位-偏移指数-尾数三段结构（bias 127/1023）、十进制与机器数双向换算的完整步骤（含大数用 10^3≈2^10 估算指数）、±0/±∞/NaN 的特殊编码、数值范围与上下溢、机器精度 2^-23、真误差与相对误差、以及舍入规则",
+      "date_published": "2026-11-07T03:03:30.018Z",
+      "date_modified": "2026-11-06T11:39:05.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "链路发现协议（LLDP）：只通告、不配置的二层拓扑信息交换",
+      "url": "/wiki/concepts/%E9%93%BE%E8%B7%AF%E5%8F%91%E7%8E%B0%E5%8D%8F%E8%AE%AE.html",
+      "id": "/wiki/concepts/%E9%93%BE%E8%B7%AF%E5%8F%91%E7%8E%B0%E5%8D%8F%E8%AE%AE.html",
+      "summary": "IEEE 802.1ab 定义的链路层发现协议：设备周期性向同一局域网广播自己的能力、管理地址、设备标识、接口标识等信息，供网管系统还原拓扑；关键在于它只能通告，不能通过它配置远端设备",
+      "content_html": "IEEE 802.1ab 定义的链路层发现协议：设备周期性向同一局域网广播自己的能力、管理地址、设备标识、接口标识等信息，供网管系统还原拓扑；关键在于它只能通告，不能通过它配置远端设备",
+      "date_published": "2026-11-07T03:03:30.018Z",
+      "date_modified": "2026-11-06T11:04:11.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "黑洞路由：出口指向 NULL0 的静态路由",
+      "url": "/wiki/concepts/%E9%BB%91%E6%B4%9E%E8%B7%AF%E7%94%B1.html",
+      "id": "/wiki/concepts/%E9%BB%91%E6%B4%9E%E8%B7%AF%E7%94%B1.html",
+      "summary": "出口接口为 NULL0 的静态路由即黑洞路由：命中该网段的所有报文被直接丢弃、不转发。用于吸收汇总路由的未分配地址以防环、丢弃明确不需要的流量，以及安全场景下的流量清洗",
+      "content_html": "出口接口为 NULL0 的静态路由即黑洞路由：命中该网段的所有报文被直接丢弃、不转发。用于吸收汇总路由的未分配地址以防环、丢弃明确不需要的流量，以及安全场景下的流量清洗",
+      "date_published": "2026-11-07T03:03:30.018Z",
+      "date_modified": "2026-11-06T11:04:11.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "Object.defineProperty：属性描述符与 Vue2 的响应式劫持",
+      "url": "/wiki/concepts/defineProperty.html",
+      "id": "/wiki/concepts/defineProperty.html",
+      "summary": "用 getter/setter 改写对象属性读写：属性描述符（enumerable / writable / configurable）的含义与默认值都是 false 这个坑，以及 Vue2 为什么用它做响应式、又为什么被 Proxy 取代（新增/删除属性、数组索引赋值都绕不过已定义好的 get/set 钩子）",
+      "content_html": "用 getter/setter 改写对象属性读写：属性描述符（enumerable / writable / configurable）的含义与默认值都是 false 这个坑，以及 Vue2 为什么用它做响应式、又为什么被 Proxy 取代（新增/删除属性、数组索引赋值都绕不过已定义好的 get/set 钩子）",
+      "date_published": "2026-11-07T03:03:30.018Z",
+      "date_modified": "2026-11-06T10:20:56.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "可靠数据传输：rdt 1.0 → 3.0 与 GBN / SR 两种流水线协议",
+      "url": "/wiki/concepts/%E5%8F%AF%E9%9D%A0%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93.html",
+      "id": "/wiki/concepts/%E5%8F%AF%E9%9D%A0%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93.html",
+      "summary": "在不可靠的下层信道上构建可靠传输：逐层增加比特差错、ACK 损坏、丢包三种故障来推导 rdt1.0/2.0/2.1/2.2/3.0 的有限状态机，再用滑动窗口解释停等协议为什么效率低，以及 GBN（累计确认、丢弃乱序、回退重传）与 SR（单独确认、缓存乱序、只重传出错包）的差别",
+      "content_html": "在不可靠的下层信道上构建可靠传输：逐层增加比特差错、ACK 损坏、丢包三种故障来推导 rdt1.0/2.0/2.1/2.2/3.0 的有限状态机，再用滑动窗口解释停等协议为什么效率低，以及 GBN（累计确认、丢弃乱序、回退重传）与 SR（单独确认、缓存乱序、只重传出错包）的差别",
+      "date_published": "2026-11-07T03:03:30.018Z",
+      "date_modified": "2026-11-06T10:20:56.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "Vue3 数据响应式引擎：effect / track / trigger 与 Proxy + Reflect",
+      "url": "/wiki/concepts/%E6%95%B0%E6%8D%AE%E5%93%8D%E5%BA%94%E5%BC%8F.html",
+      "id": "/wiki/concepts/%E6%95%B0%E6%8D%AE%E5%93%8D%E5%BA%94%E5%BC%8F.html",
+      "summary": "从零搭一遍 Vue3 的响应式内核：用 Set→Map→WeakMap 三级结构保存「哪个对象的哪个属性依赖哪些更新函数」，用 Proxy + Reflect 把读写变成自动触发，再用 activeEffect 修掉「不读也重跑」和「effect 串味」，最后以对象访问器实现 ref()、以 ref + effect 实现 computed()",
+      "content_html": "从零搭一遍 Vue3 的响应式内核：用 Set→Map→WeakMap 三级结构保存「哪个对象的哪个属性依赖哪些更新函数」，用 Proxy + Reflect 把读写变成自动触发，再用 activeEffect 修掉「不读也重跑」和「effect 串味」，最后以对象访问器实现 ref()、以 ref + effect 实现 computed()",
+      "date_published": "2026-11-07T03:03:30.018Z",
+      "date_modified": "2026-11-06T10:20:56.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "ROS2 自定义消息接口：msg / srv / action 的编写与编译",
+      "url": "/wiki/concepts/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B6%88%E6%81%AF%E6%8E%A5%E5%8F%A3.html",
+      "id": "/wiki/concepts/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B6%88%E6%81%AF%E6%8E%A5%E5%8F%A3.html",
+      "summary": "当 std_msgs / sensor_msgs 等原生与标准接口不够用时，在接口功能包里定义 .msg / .srv / .action：四步流程（写接口文件 → 改 package.xml 与 CMakeLists.txt → colcon build → ros2 interface show 验证），以及 srv 只需在 rosidl_generate_interfaces 多列一行、action 必须用 buildtool_depend 并额外依赖 action_msgs 这两个易错点",
+      "content_html": "当 std_msgs / sensor_msgs 等原生与标准接口不够用时，在接口功能包里定义 .msg / .srv / .action：四步流程（写接口文件 → 改 package.xml 与 CMakeLists.txt → colcon build → ros2 interface show 验证），以及 srv 只需在 rosidl_generate_interfaces 多列一行、action 必须用 buildtool_depend 并额外依赖 action_msgs 这两个易错点",
+      "date_published": "2026-11-07T03:03:30.018Z",
+      "date_modified": "2026-11-06T10:20:56.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "Nintendo Switch 5GHz 搜不到：信道白名单与路由器手动选频排查",
+      "url": "/wiki/concepts/Switch-5GHz-Channel-Whitelist.html",
+      "id": "/wiki/concepts/Switch-5GHz-Channel-Whitelist.html",
+      "summary": "Switch 全系（含 OLED）5GHz 网卡只支持 UNII-1 段的 36/40/44/48 四个信道，路由器自动选频落到 UNII-3（149–165）或 DFS（52–64、100–144）时，SSID 在扫描列表中完全不可见（不是搜到连不上）；解法：关 Auto Channel Finder 后在本地 Web UI（Linksys CA 隐藏入口）把 5GHz 固定到信道 36，并顺带理解 Beacon 被动扫描与 RSSI 换算的取证方法",
+      "content_html": "Switch 全系（含 OLED）5GHz 网卡只支持 UNII-1 段的 36/40/44/48 四个信道，路由器自动选频落到 UNII-3（149–165）或 DFS（52–64、100–144）时，SSID 在扫描列表中完全不可见（不是搜到连不上）；解法：关 Auto Channel Finder 后在本地 Web UI（Linksys CA 隐藏入口）把 5GHz 固定到信道 36，并顺带理解 Beacon 被动扫描与 RSSI 换算的取证方法",
+      "date_published": "2026-11-07T03:03:30.018Z",
+      "date_modified": "2026-11-06T10:40:58.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "Nintendo Switch OLED 搜不到 5GHz WiFi 信道排障复盘",
+      "url": "/postMortem/tiny_tips/2026_11_04.html",
+      "id": "/postMortem/tiny_tips/2026_11_04.html",
+      "summary": "一、背景 前文： 设备：Nintendo Switch OLED 现象：我的 Nintendo Switch OLED 主机 WiFi 扫描列表中可以正常看到并连接 2.4GHz 频段，但 5GHz 频段 完全不出现在扫描结果中。 特征：扫描阶段即不可见，主机静默使用 2.4GHz 完成联网。 二、环境信息 三、根因 3.1 直接原因：5GHz 信道落...",
+      "content_html": "一、背景 前文： 设备：Nintendo Switch OLED 现象：我的 Nintendo Switch OLED 主机 WiFi 扫描列表中可以正常看到并连接 2.4GHz 频段，但 5GHz 频段 完全不出现在扫描结果中。 特征：扫描阶段即不可见，主机静默使用 2.4GHz 完成联网。 二、环境信息 三、根因 3.1 直接原因：5GHz 信道落...",
+      "date_published": "2026-11-04T00:00:00.000Z",
+      "date_modified": "2026-11-04T16:43:52.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "tiny_tips"
+      ]
+    },
+    {
+      "title": "双屏 DPI 缩放不一致引发 DWM 重采样振铃（GIF 蓝黄斑纹）",
+      "url": "/wiki/concepts/Per-Monitor-DPI-DWM-Resampling-Ringing.html",
+      "id": "/wiki/concepts/Per-Monitor-DPI-DWM-Resampling-Ringing.html",
+      "summary": "Windows 10 双屏（内屏 125% / 副屏 100%）显示低色深 GIF 出现蓝黄相间斑纹：截图也带斑纹证明异常在像素层而非面板/线缆，分层排除色域、HDR、驱动颜色覆盖与 EDID 后定位到 per-monitor DPI 不一致 → DWM 跨屏合成时按不同比例重采样，采样核在硬色度边缘产生过冲/振铃；统一两屏缩放即消失，还原即复现",
+      "content_html": "Windows 10 双屏（内屏 125% / 副屏 100%）显示低色深 GIF 出现蓝黄相间斑纹：截图也带斑纹证明异常在像素层而非面板/线缆，分层排除色域、HDR、驱动颜色覆盖与 EDID 后定位到 per-monitor DPI 不一致 → DWM 跨屏合成时按不同比例重采样，采样核在硬色度边缘产生过冲/振铃；统一两屏缩放即消失，还原即复现",
+      "date_published": "2026-11-07T03:03:30.018Z",
+      "date_modified": "2026-11-06T10:40:58.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "AI 行业月报 | 2026 年 10 月",
+      "url": "/Scheduled_Automatic_AI_Industry_Analysis_Report/monthly/2026_10_month_report.html",
+      "id": "/Scheduled_Automatic_AI_Industry_Analysis_Report/monthly/2026_10_month_report.html",
+      "summary": "AI 行业月报 — 2026 年 10 月 一、本月核心主题 Top 7 Agent 外围设施工程化（25/31 天出现）— skills、harness、记忆、上下文压缩类仓库几乎天天占住 GitHub Trending 前列；10/20 的八条里六条是&quot;agent 周边设施&quot;（记忆、编排、压缩、agent 原生 CLI），10/...",
+      "content_html": "AI 行业月报 — 2026 年 10 月 一、本月核心主题 Top 7 Agent 外围设施工程化（25/31 天出现）— skills、harness、记忆、上下文压缩类仓库几乎天天占住 GitHub Trending 前列；10/20 的八条里六条是&quot;agent 周边设施&quot;（记忆、编排、压缩、agent 原生 CLI），10/...",
+      "date_published": "2026-11-01T00:00:00.000Z",
+      "date_modified": "2026-11-02T00:49:53.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "双屏 GIF 蓝黄斑纹排障记录",
+      "url": "/postMortem/tiny_tips/2026_11_01.html",
+      "id": "/postMortem/tiny_tips/2026_11_01.html",
+      "summary": "一、背景 1.1 现象 在副屏（HDMI 外接显示器）上播放或显示特定 GIF 动图时，画面出现蓝黄相间的斑纹伪影，视觉上表现为硬色度边缘的异常彩色过冲；将窗口移动到内屏后斑纹减弱直至消失。 1.2 环境 二、现象复现细节 GIF 窗口位于副屏时，画面出现明显的蓝黄斑纹伪影。 对副屏进行截图，截图本身仍显示蓝黄斑纹；将该截图移动到内屏查看，斑纹依然存在...",
+      "content_html": "一、背景 1.1 现象 在副屏（HDMI 外接显示器）上播放或显示特定 GIF 动图时，画面出现蓝黄相间的斑纹伪影，视觉上表现为硬色度边缘的异常彩色过冲；将窗口移动到内屏后斑纹减弱直至消失。 1.2 环境 二、现象复现细节 GIF 窗口位于副屏时，画面出现明显的蓝黄斑纹伪影。 对副屏进行截图，截图本身仍显示蓝黄斑纹；将该截图移动到内屏查看，斑纹依然存在...",
+      "date_published": "2026-11-01T00:00:00.000Z",
+      "date_modified": "2026-11-01T09:39:23.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "tiny_tips"
+      ]
+    },
+    {
+      "title": "AI 简报自动归档链路 —— merge-base 不变量与双层分支保护",
+      "url": "/wiki/concepts/Briefing-Archive-Auto-Merge-Topology.html",
+      "id": "/wiki/concepts/Briefing-Archive-Auto-Merge-Topology.html",
+      "summary": "hop-1/hop-2 两跳自动合并拓扑、merge-base 三点 diff 不变量、ruleset vs classic 双层保护与个人仓库 bypass 限制",
+      "content_html": "hop-1/hop-2 两跳自动合并拓扑、merge-base 三点 diff 不变量、ruleset vs classic 双层保护与个人仓库 bypass 限制",
+      "date_published": "2026-11-07T03:03:30.018Z",
+      "date_modified": "2026-11-06T10:40:58.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "006-AI 日报自动归档链路打通 —— merge-base 不变量、双重分支保护与 GitHub App bypass 的多坑排查",
+      "url": "/postMortem/sp_for_LLM/006_Hermes-Briefing-Archive-Auto-Merge-Topology-report.html",
+      "id": "/postMortem/sp_for_LLM/006_Hermes-Briefing-Archive-Auto-Merge-Topology-report.html",
+      "summary": "本文档是对 2026-10-14 至 2026-10-18 这段工作的完整复盘：把原来&quot;每天手动合并 AI 日报归档 PR&quot;的流程改造成全自动链路，并在落地过程中连续踩中三类结构性问题——三点 diff 的 merge-base 不变量、master 上的双重分支保护、GitHub App 的 ruleset bypass。 大部分...",
+      "content_html": "本文档是对 2026-10-14 至 2026-10-18 这段工作的完整复盘：把原来&quot;每天手动合并 AI 日报归档 PR&quot;的流程改造成全自动链路，并在落地过程中连续踩中三类结构性问题——三点 diff 的 merge-base 不变量、master 上的双重分支保护、GitHub App 的 ruleset bypass。 大部分...",
+      "date_published": "2026-10-19T00:00:00.000Z",
+      "date_modified": "2026-10-19T10:10:57.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "Technical Investigation"
+      ]
+    },
+    {
+      "title": "AI 行业月报 | 2026 年 9 月",
+      "url": "/Scheduled_Automatic_AI_Industry_Analysis_Report/monthly/2026_09_month_report.html",
+      "id": "/Scheduled_Automatic_AI_Industry_Analysis_Report/monthly/2026_09_month_report.html",
+      "summary": "AI 行业月报 — 2026 年 9 月 一、本月核心主题 Top 7 Agent Skills / Harness 生态霸榜开源（几乎每日出现）— GitHub Trending 的 AI 席位整月被 agent skills、harness、记忆、插件类仓库占据，传统 LLM 训练项目基本消失；Anthropic、OpenAI、Cloudflare...",
+      "content_html": "AI 行业月报 — 2026 年 9 月 一、本月核心主题 Top 7 Agent Skills / Harness 生态霸榜开源（几乎每日出现）— GitHub Trending 的 AI 席位整月被 agent skills、harness、记忆、插件类仓库占据，传统 LLM 训练项目基本消失；Anthropic、OpenAI、Cloudflare...",
+      "date_published": "2026-10-01T00:00:00.000Z",
+      "date_modified": "2026-10-04T05:48:45.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "Mihomo 代理全挂修复：GSLB IP 池漂移与订阅自动更新",
+      "url": "/wiki/concepts/Mihomo-Proxy-GSLB-Drift-Subscription-Auto-Update.html",
+      "id": "/wiki/concepts/Mihomo-Proxy-GSLB-Drift-Subscription-Auto-Update.html",
+      "summary": "代理 12 节点全挂后的修复方案：为何选订阅自动化而不是改 IP、mihomo 不支持 config.yaml 变量展开所以改用 type: file provider、三层分离架构（.env 存 URL + update-subscription.sh + providers 文件）、URLTest 自动选择组（gstatic 健康检查 + 300s 间隔）与每周三 04:40 的订阅更新 cron；含修复后验证方式与 5 条经验",
+      "content_html": "代理 12 节点全挂后的修复方案：为何选订阅自动化而不是改 IP、mihomo 不支持 config.yaml 变量展开所以改用 type: file provider、三层分离架构（.env 存 URL + update-subscription.sh + providers 文件）、URLTest 自动选择组（gstatic 健康检查 + 300s 间隔）与每周三 04:40 的订阅更新 cron；含修复后验证方式与 5 条经验",
+      "date_published": "2026-11-07T03:03:30.018Z",
+      "date_modified": "2026-11-06T11:56:43.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "WiFi 5GHz DFS 信道雷达避让：社交平台图片加载缓慢问题排查",
+      "url": "/wiki/concepts/WiFi-5GHz-DFS-Radar-Avoidance-Image-Loading-Slow.html",
+      "id": "/wiki/concepts/WiFi-5GHz-DFS-Radar-Avoidance-Image-Loading-Slow.html",
+      "summary": "5GHz 信道 100（5500 MHz）属 DFS 频段，路由器检测到雷达信号触发避让机制，期间客户端传输被静默挂起，导致图片等小请求不定时卡顿；诊断要点：手动切换 2.4G/5G 立即恢复 + Network Analyzer 分层排查排除 DNS/CDN/链路后看 Info 页信道；解法：不支持手动指定信道的路由器可关闭 DFS，再用 Channel Finder 落回非 DFS 信道",
+      "content_html": "5GHz 信道 100（5500 MHz）属 DFS 频段，路由器检测到雷达信号触发避让机制，期间客户端传输被静默挂起，导致图片等小请求不定时卡顿；诊断要点：手动切换 2.4G/5G 立即恢复 + Network Analyzer 分层排查排除 DNS/CDN/链路后看 Info 页信道；解法：不支持手动指定信道的路由器可关闭 DFS，再用 Channel Finder 落回非 DFS 信道",
+      "date_published": "2026-11-07T03:03:30.018Z",
+      "date_modified": "2026-11-06T10:40:58.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "CSS fit-content 生产构建被错误优化（Vite cssnano 去重）",
+      "url": "/wiki/concepts/Vue-CSS-Fit-Content-Vite-cssnano-Dedupe-Bug.html",
+      "id": "/wiki/concepts/Vue-CSS-Fit-Content-Vite-cssnano-Dedupe-Bug.html",
+      "summary": "Vite 生产构建的 cssnano 会把 fit-content 与 -moz-fit-content 视为重复声明，去重后只保留后写的 vendor 前缀，导致 Chromium/Edge 下样式失效；修复：标准语法置于 vendor prefix 之后",
+      "content_html": "Vite 生产构建的 cssnano 会把 fit-content 与 -moz-fit-content 视为重复声明，去重后只保留后写的 vendor 前缀，导致 Chromium/Edge 下样式失效；修复：标准语法置于 vendor prefix 之后",
+      "date_published": "2026-11-07T03:03:30.018Z",
+      "date_modified": "2026-11-06T10:40:58.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "在 WiFi 5GHz 频段下社交平台图片加载缓慢问题",
+      "url": "/postMortem/tiny_tips/2026_09_08.html",
+      "id": "/postMortem/tiny_tips/2026_09_08.html",
+      "summary": "背景 我在香港和人合租的家中 WiFi 同时提供 2.4GHz 与 5GHz 两个频段（路由器型号是 Linksys Velop Pro 7），在浏览社交平台时（例如X, 微博等），我的手机会 不定时 出现图片加载缓慢症状。即便是尝试在路由器内设置了让自己手机优先的规则下依然存在该问题，于是在调回原设置之后想着改一下。 问题现象 我的手机默认连接的是 ...",
+      "content_html": "背景 我在香港和人合租的家中 WiFi 同时提供 2.4GHz 与 5GHz 两个频段（路由器型号是 Linksys Velop Pro 7），在浏览社交平台时（例如X, 微博等），我的手机会 不定时 出现图片加载缓慢症状。即便是尝试在路由器内设置了让自己手机优先的规则下依然存在该问题，于是在调回原设置之后想着改一下。 问题现象 我的手机默认连接的是 ...",
+      "date_published": "2026-09-08T00:00:00.000Z",
+      "date_modified": "2026-09-08T04:45:52.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "tiny_tips"
+      ]
+    },
+    {
+      "title": "豆知识",
+      "url": "/postMortem/tiny_tips/",
+      "id": "/postMortem/tiny_tips/",
+      "summary": "简述 一些豆知识,不定期更新。",
+      "content_html": "简述 一些豆知识,不定期更新。",
+      "date_published": "2026-11-07T03:03:30.018Z",
+      "date_modified": "2026-09-07T03:44:13.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "Vue 项目 CSS `fit-content` 在生产构建时错误优化导致的异常问题",
+      "url": "/postMortem/tiny_tips/2026_09_07.html",
+      "id": "/postMortem/tiny_tips/2026_09_07.html",
+      "summary": "背景 我的博饼网站在最开始的欢迎界面有一个按钮的高度适配出现了问题，想着改一下。 问题现象 这个按钮的CSS样式出现了如下问题： 本地开发 (pnpm dev)：样式正常，height: fit-content 生效且未被划线。 生产环境 (GitHub Pages + Edge 浏览器)：.welcome_btn 的 height 使用 -moz-f...",
+      "content_html": "背景 我的博饼网站在最开始的欢迎界面有一个按钮的高度适配出现了问题，想着改一下。 问题现象 这个按钮的CSS样式出现了如下问题： 本地开发 (pnpm dev)：样式正常，height: fit-content 生效且未被划线。 生产环境 (GitHub Pages + Edge 浏览器)：.welcome_btn 的 height 使用 -moz-f...",
+      "date_published": "2026-09-07T00:00:00.000Z",
+      "date_modified": "2026-09-07T03:44:32.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "AI 行业月报 | 2026 年 8 月",
+      "url": "/Scheduled_Automatic_AI_Industry_Analysis_Report/monthly/2026_08_month_report.html",
+      "id": "/Scheduled_Automatic_AI_Industry_Analysis_Report/monthly/2026_08_month_report.html",
+      "summary": "AI 行业月报 — 2026 年 8 月 一、本月核心主题 Top 7 Agent Skills / Harness 生态全面爆发（28 天 14+ 天出现）— 从 Anthropic 8/14 上线官方 claude-plugins-official 与 anthropics/skills，到 obra/superpowers、mattpocock/...",
+      "content_html": "AI 行业月报 — 2026 年 8 月 一、本月核心主题 Top 7 Agent Skills / Harness 生态全面爆发（28 天 14+ 天出现）— 从 Anthropic 8/14 上线官方 claude-plugins-official 与 anthropics/skills，到 obra/superpowers、mattpocock/...",
+      "date_published": "2026-09-01T00:00:00.000Z",
+      "date_modified": "2026-10-04T05:48:45.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "007_HermesAgent服务器代理全挂排查：从「以为是 Twitter 直连问题」到「原来是 IP 池子断联」",
+      "url": "/postMortem/deploy/007_Troubleshooting_complete_failure_of_Tencent_Cloud_server_proxies.html",
+      "id": "/postMortem/deploy/007_Troubleshooting_complete_failure_of_Tencent_Cloud_server_proxies.html",
+      "summary": "背景 我的 Hermes Agent 被部署在腾讯云轻量应用服务器（广州）上，日常跑着多个定时任务，其中一个与 AI 简报相关的任务中「Twitter/X 追踪账号」数据源依赖本机的 mihomo 代理（端口 7890）访问境外服务。 某天早上，简报里 Twitter 段变成了： ⚠️ 追踪账号全部无响应 — x.com 直连被屏蔽，所有代理节点 TL...",
+      "content_html": "背景 我的 Hermes Agent 被部署在腾讯云轻量应用服务器（广州）上，日常跑着多个定时任务，其中一个与 AI 简报相关的任务中「Twitter/X 追踪账号」数据源依赖本机的 mihomo 代理（端口 7890）访问境外服务。 某天早上，简报里 Twitter 段变成了： ⚠️ 追踪账号全部无响应 — x.com 直连被屏蔽，所有代理节点 TL...",
+      "date_published": "2026-08-10T00:00:00.000Z",
+      "date_modified": "2026-08-10T09:04:30.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "deploy"
+      ]
+    },
+    {
+      "title": "AI 行业月报 | 2026 年 7 月",
+      "url": "/Scheduled_Automatic_AI_Industry_Analysis_Report/monthly/2026_07_month_report.html",
+      "id": "/Scheduled_Automatic_AI_Industry_Analysis_Report/monthly/2026_07_month_report.html",
+      "summary": "AI 行业月报 — 2026 年 7 月 一、本月核心主题 Top 7 Coding Agent 工具链生态大爆发（31/31 天）— Claude Code、Codex、Cursor、MCP 协议栈成为每日 GitHub Trending 主力，agent-skills、OfficeCLI、graphify 等&quot;Skill 化&quot;仓...",
+      "content_html": "AI 行业月报 — 2026 年 7 月 一、本月核心主题 Top 7 Coding Agent 工具链生态大爆发（31/31 天）— Claude Code、Codex、Cursor、MCP 协议栈成为每日 GitHub Trending 主力，agent-skills、OfficeCLI、graphify 等&quot;Skill 化&quot;仓...",
+      "date_published": "2026-08-01T00:00:00.000Z",
+      "date_modified": "2026-10-04T05:48:45.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "VSCode 代码片段",
+      "url": "/wiki/concepts/%E4%BB%A3%E7%A0%81%E7%89%87%E6%AE%B5.html",
+      "id": "/wiki/concepts/%E4%BB%A3%E7%A0%81%E7%89%87%E6%AE%B5.html",
+      "summary": "VSCode 自定义 Snippet 配置方法，以 ROS2 C++ 为示例",
+      "content_html": "VSCode 自定义 Snippet 配置方法，以 ROS2 C++ 为示例",
+      "date_published": "2026-11-07T03:03:30.018Z",
+      "date_modified": "2026-11-06T10:40:58.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "ROS2 动作通信",
+      "url": "/wiki/concepts/%E5%8A%A8%E4%BD%9C%E9%80%9A%E4%BF%A1.html",
+      "id": "/wiki/concepts/%E5%8A%A8%E4%BD%9C%E9%80%9A%E4%BF%A1.html",
+      "summary": "Action-based long-running task communication with cancel + feedback",
+      "content_html": "Action-based long-running task communication with cancel + feedback",
+      "date_published": "2026-11-07T03:03:30.018Z",
+      "date_modified": "2026-11-06T10:40:58.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "ROS2 服务通信",
+      "url": "/wiki/concepts/%E6%9C%8D%E5%8A%A1%E9%80%9A%E4%BF%A1.html",
+      "id": "/wiki/concepts/%E6%9C%8D%E5%8A%A1%E9%80%9A%E4%BF%A1.html",
+      "summary": "Service-based request/reply communication, one-to-one synchronous RPC",
+      "content_html": "Service-based request/reply communication, one-to-one synchronous RPC",
+      "date_published": "2026-11-07T03:03:30.018Z",
+      "date_modified": "2026-11-06T10:40:58.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "Ubuntu 24.04 gdm3 启动失败 - 磁盘空间不足根因排查",
+      "url": "/wiki/concepts/Ubuntu-gdm3-Disk-Full-Troubleshooting.html",
+      "id": "/wiki/concepts/Ubuntu-gdm3-Disk-Full-Troubleshooting.html",
+      "summary": "Ubuntu 24.04 重启后 gdm3 无法启动、停留在 tty1 的根因排查与彻底修复方案：磁盘空间耗尽导致 APT 缓存写入失败 + 系统降级为 multi-user.target；包含紧急清理 8 步 + VMware 虚拟硬盘扩容 7 步完整流程",
+      "content_html": "Ubuntu 24.04 重启后 gdm3 无法启动、停留在 tty1 的根因排查与彻底修复方案：磁盘空间耗尽导致 APT 缓存写入失败 + 系统降级为 multi-user.target；包含紧急清理 8 步 + VMware 虚拟硬盘扩容 7 步完整流程",
+      "date_published": "2026-11-07T03:03:30.018Z",
+      "date_modified": "2026-11-06T10:40:58.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "006_Ubuntu 24.04 在某次重启后，系统未能正常进入图形登录界面 相关问题",
+      "url": "/postMortem/deploy/006_Ubuntu_gdm3_cannot_activate.html",
+      "id": "/postMortem/deploy/006_Ubuntu_gdm3_cannot_activate.html",
+      "summary": "背景 用户使用 VMware Workstation Pro 虚拟机创建并运行 Ubuntu 24.04，如是正常的经过了7个月左右。但是在某次重启后，系统未能正常进入图形登录界面，提示 [FAILED] Failed to start gdm.service - GNOME Display Manager. 最开始的相关提示如下 在该页面下，用户尝试...",
+      "content_html": "背景 用户使用 VMware Workstation Pro 虚拟机创建并运行 Ubuntu 24.04，如是正常的经过了7个月左右。但是在某次重启后，系统未能正常进入图形登录界面，提示 [FAILED] Failed to start gdm.service - GNOME Display Manager. 最开始的相关提示如下 在该页面下，用户尝试...",
+      "date_published": "2026-07-20T00:00:00.000Z",
+      "date_modified": "2026-07-20T16:55:36.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "deploy"
+      ]
+    },
+    {
+      "title": "Edge 浏览器「使用安全的 DNS」选项的副作用与排查",
+      "url": "/wiki/concepts/Edge-Secure-DNS-Gotcha.html",
+      "id": "/wiki/concepts/Edge-Secure-DNS-Gotcha.html",
+      "summary": "不要随意修改 Microsoft Edge 的「使用安全的 DNS」选项：会导致 curl 缓存错误 IP、TCP 三次握手成功但 ClientHello 后 RST 的诡异断网现象",
+      "content_html": "不要随意修改 Microsoft Edge 的「使用安全的 DNS」选项：会导致 curl 缓存错误 IP、TCP 三次握手成功但 ClientHello 后 RST 的诡异断网现象",
+      "date_published": "2026-11-07T03:03:30.018Z",
+      "date_modified": "2026-11-06T10:40:58.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "LeanCloud 迁移至 Neon PostgreSQL（Waline 评论数据）",
+      "url": "/wiki/concepts/LeanCloud-to-Neon-Migration.html",
+      "id": "/wiki/concepts/LeanCloud-to-Neon-Migration.html",
+      "summary": "LeanCloud 2027 年停止对外服务后，Waline 评论数据从 LeanCloud 导出 → 格式转换 → 导入 Neon PostgreSQL 的完整迁移流程（Vercel 集成）",
+      "content_html": "LeanCloud 2027 年停止对外服务后，Waline 评论数据从 LeanCloud 导出 → 格式转换 → 导入 Neon PostgreSQL 的完整迁移流程（Vercel 集成）",
+      "date_published": "2026-11-07T03:03:30.018Z",
+      "date_modified": "2026-11-06T10:40:58.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "005_博客评论区专用数据库从 leancloud 迁移至 Neon PostgreSQL 相关问题",
+      "url": "/postMortem/deploy/005_leancloud_migrate_neon_relate.html",
+      "id": "/postMortem/deploy/005_leancloud_migrate_neon_relate.html",
+      "summary": "LeanCloud 于 2026 年 1 月 12 日 发布公告，说明其将于 2027 年 1 月 12 日 正式停止对外服务。因此本博客在 2026 年 6 月 29 日 将 LeanCloud 中的相关评论数据导出和切换到了 Neon PostgreSQL 以进行后续使用。在参考 更新后 的官方文档后，做出以下完整迁移步骤（注：必须按照顺序进行操作...",
+      "content_html": "LeanCloud 于 2026 年 1 月 12 日 发布公告，说明其将于 2027 年 1 月 12 日 正式停止对外服务。因此本博客在 2026 年 6 月 29 日 将 LeanCloud 中的相关评论数据导出和切换到了 Neon PostgreSQL 以进行后续使用。在参考 更新后 的官方文档后，做出以下完整迁移步骤（注：必须按照顺序进行操作...",
+      "date_published": "2026-06-29T00:00:00.000Z",
+      "date_modified": "2026-06-30T02:11:44.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "deploy"
+      ]
+    },
+    {
+      "title": "不要随意修改 edge 浏览器里的 “使用安全的 DNS” 选项",
+      "url": "/postMortem/tiny_tips/2026_06_29.html",
+      "id": "/postMortem/tiny_tips/2026_06_29.html",
+      "summary": "永远不要随意修改 edge 浏览器里的 “使用安全的 DNS” 选项。（扶额） 从香港回内地之后，发现有自己的电脑有特定的网址打不开，但是其他设备是可以打开该特定的网址的。于是就在猜可能是电脑又出现了各种网络问题，之前刚来香港的时候也有出现类似的问题，但是当时搞了半天最后做出的修复步骤是重装系统（ 我想着要是这一次还是得重装系统就太麻烦了。然后和 GP...",
+      "content_html": "永远不要随意修改 edge 浏览器里的 “使用安全的 DNS” 选项。（扶额） 从香港回内地之后，发现有自己的电脑有特定的网址打不开，但是其他设备是可以打开该特定的网址的。于是就在猜可能是电脑又出现了各种网络问题，之前刚来香港的时候也有出现类似的问题，但是当时搞了半天最后做出的修复步骤是重装系统（ 我想着要是这一次还是得重装系统就太麻烦了。然后和 GP...",
+      "date_published": "2026-06-23T00:00:00.000Z",
+      "date_modified": "2026-09-07T03:44:13.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    }
+  ]
+}

@@ -1,0 +1,892 @@
+{
+  "version": "https://jsonfeed.org/version/1.1",
+  "title": "JeacsonBlog",
+  "home_page_url": "https://blog.jeacsonsnake.com/en/",
+  "feed_url": "https://blog.jeacsonsnake.com/en/feed.json",
+  "description": "JeacsonBlog-一个简单的博客",
+  "icon": "https://blog.jeacsonsnake.com/assets/img/logo.png",
+  "favicon": "https://blog.jeacsonsnake.com/assets/img/favicon.ico",
+  "items": [
+    {
+      "title": "Deployment",
+      "url": "/en/postMortem/deploy/",
+      "id": "/en/postMortem/deploy/",
+      "summary": "Overview Some write-ups summarising the pits I fell into while deploying things (this blog, or other static sites, virtual machines, and so on). Important This article was trans...",
+      "content_html": "Overview Some write-ups summarising the pits I fell into while deploying things (this blog, or other static sites, virtual machines, and so on). Important This article was trans...",
+      "date_published": "2026-11-07T03:03:30.134Z",
+      "date_modified": "2026-11-05T14:13:46.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "001_Adding a markdown-it plugin to vuepress",
+      "url": "/en/postMortem/markdown_render/001_import.html",
+      "id": "/en/postMortem/markdown_render/001_import.html",
+      "summary": "Background While writing the I wanted to merge some cells, but plain Markdown has no way to handle complicated tables. How to go about it First I went looking for a vuepress plu...",
+      "content_html": "Background While writing the I wanted to merge some cells, but plain Markdown has no way to handle complicated tables. How to go about it First I went looking for a vuepress plu...",
+      "date_published": "2026-11-07T03:03:30.134Z",
+      "date_modified": "2026-11-05T14:13:46.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "markdown"
+      ]
+    },
+    {
+      "title": "The markdown-it renderer",
+      "url": "/en/postMortem/markdown_render/",
+      "id": "/en/postMortem/markdown_render/",
+      "summary": "Overview Some write-ups summarising the pits I fell into with markdown-it. Important This article was translated by Hermes Agent; the original text can be found at . The transla...",
+      "content_html": "Overview Some write-ups summarising the pits I fell into with markdown-it. Important This article was translated by Hermes Agent; the original text can be found at . The transla...",
+      "date_published": "2026-11-07T03:03:30.134Z",
+      "date_modified": "2026-11-05T14:13:46.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "Tiny tips",
+      "url": "/en/postMortem/tiny_tips/",
+      "id": "/en/postMortem/tiny_tips/",
+      "summary": "Overview Some tiny tips, updated irregularly. Important This article was translated by Hermes Agent; the original text can be found at . The translation is for reference only. T...",
+      "content_html": "Overview Some tiny tips, updated irregularly. Important This article was translated by Hermes Agent; the original text can be found at . The translation is for reference only. T...",
+      "date_published": "2026-11-07T03:03:30.134Z",
+      "date_modified": "2026-11-05T14:13:46.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "skills/prompts available to large language models",
+      "url": "/en/postMortem/sp_for_LLM/",
+      "id": "/en/postMortem/sp_for_LLM/",
+      "summary": "Summary Some multi-turn conversations with LLMs, or skills/prompts that a large language model can use; updated from time to time. Be aware that a (large) part of the articles m...",
+      "content_html": "Summary Some multi-turn conversations with LLMs, or skills/prompts that a large language model can use; updated from time to time. Be aware that a (large) part of the articles m...",
+      "date_published": "2026-11-07T03:03:30.134Z",
+      "date_modified": "2026-11-05T14:13:46.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "TCP and UDP and the relationship between them",
+      "url": "/en/learningNote/Computer_Network/TCP%E4%B8%8EUDP%E4%B8%8E%E4%BB%96%E4%BB%AC%E7%9A%84%E5%85%B3%E7%B3%BB.html",
+      "id": "/en/learningNote/Computer_Network/TCP%E4%B8%8EUDP%E4%B8%8E%E4%BB%96%E4%BB%AC%E7%9A%84%E5%85%B3%E7%B3%BB.html",
+      "summary": "UDP UDP is a bare-bones, lightweight transport protocol that offers only the most basic communication services. UDP is defined in [RFC 768], and it does about as little as a tra...",
+      "content_html": "UDP UDP is a bare-bones, lightweight transport protocol that offers only the most basic communication services. UDP is defined in [RFC 768], and it does about as little as a tra...",
+      "date_published": "2026-11-07T03:03:30.134Z",
+      "date_modified": "2026-11-05T14:13:46.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "Computer",
+        "Network",
+        "basic"
+      ]
+    },
+    {
+      "title": "How to compute the UDP checksum",
+      "url": "/en/learningNote/Computer_Network/UDP%E6%A0%A1%E9%AA%8C%E5%92%8C.html",
+      "id": "/en/learningNote/Computer_Network/UDP%E6%A0%A1%E9%AA%8C%E5%92%8C.html",
+      "summary": "How is the checksum constructed? Constructing the checksum is fairly simple, but computing it is a bit of a pain: you add the 16-bit binary source data to be sent in pairs, keep...",
+      "content_html": "How is the checksum constructed? Constructing the checksum is fairly simple, but computing it is a bit of a pain: you add the 16-bit binary source data to be sent in pairs, keep...",
+      "date_published": "2026-11-07T03:03:30.134Z",
+      "date_modified": "2026-11-05T14:13:46.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "Computer",
+        "Network",
+        "basic"
+      ]
+    },
+    {
+      "title": "What is SMTP?",
+      "url": "/en/learningNote/Computer_Network/%E4%BB%80%E4%B9%88%E6%98%AFSMTP.html",
+      "id": "/en/learningNote/Computer_Network/%E4%BB%80%E4%B9%88%E6%98%AFSMTP.html",
+      "summary": "Introduction SMTP (Simple Mail Transfer Protocol) is a protocol that provides reliable and efficient transfer of electronic mail. It is used mainly for moving mail between syste...",
+      "content_html": "Introduction SMTP (Simple Mail Transfer Protocol) is a protocol that provides reliable and efficient transfer of electronic mail. It is used mainly for moving mail between syste...",
+      "date_published": "2026-11-07T03:03:30.134Z",
+      "date_modified": "2026-11-05T14:13:46.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "Computer",
+        "Network",
+        "basic"
+      ]
+    },
+    {
+      "title": "The five-layer TCP/IP model",
+      "url": "/en/learningNote/Computer_Network/%E5%85%B3%E4%BA%8ETCP_IP%E7%9A%84%E4%BA%94%E5%B1%82%E6%A8%A1%E5%9E%8B.html",
+      "id": "/en/learningNote/Computer_Network/%E5%85%B3%E4%BA%8ETCP_IP%E7%9A%84%E4%BA%94%E5%B1%82%E6%A8%A1%E5%9E%8B.html",
+      "summary": "The five-layer TCP/IP model (3.2) Here are a few related sites on the subject: Detailed explanation of the TCP/IP network model_tcpip model_·Fixes on the Fly·'s blog - CSDN blog...",
+      "content_html": "The five-layer TCP/IP model (3.2) Here are a few related sites on the subject: Detailed explanation of the TCP/IP network model_tcpip model_·Fixes on the Fly·'s blog - CSDN blog...",
+      "date_published": "2026-11-07T03:03:30.134Z",
+      "date_modified": "2026-11-05T14:13:46.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "Computer",
+        "Network",
+        "basic"
+      ]
+    },
+    {
+      "title": "VLAN",
+      "url": "/en/learningNote/Computer_Network/%E5%85%B3%E4%BA%8EVLAN.html",
+      "id": "/en/learningNote/Computer_Network/%E5%85%B3%E4%BA%8EVLAN.html",
+      "summary": "5. About VLAN (3.1-3.3) 1. Concepts (3.1) VLAN (Virtual Local Area Network) — a virtual LAN — is a communication technology that logically divides one physical LAN into several ...",
+      "content_html": "5. About VLAN (3.1-3.3) 1. Concepts (3.1) VLAN (Virtual Local Area Network) — a virtual LAN — is a communication technology that logically divides one physical LAN into several ...",
+      "date_published": "2026-11-07T03:03:30.134Z",
+      "date_modified": "2026-11-05T14:13:46.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "Computer",
+        "Network",
+        "basic"
+      ]
+    },
+    {
+      "title": "The PPP and PPPoE protocols",
+      "url": "/en/learningNote/Computer_Network/%E5%85%B3%E4%BA%8Eppp%E5%8D%8F%E8%AE%AE%E4%B8%8Epppoe%E5%8D%8F%E8%AE%AE.html",
+      "id": "/en/learningNote/Computer_Network/%E5%85%B3%E4%BA%8Eppp%E5%8D%8F%E8%AE%AE%E4%B8%8Epppoe%E5%8D%8F%E8%AE%AE.html",
+      "summary": "The PPP and PPPoE protocols 1. PPP (point to point) protocol Definition: Point-to-Point Protocol (PPP) provides a standard method for transporting multi-protocol datagrams over ...",
+      "content_html": "The PPP and PPPoE protocols 1. PPP (point to point) protocol Definition: Point-to-Point Protocol (PPP) provides a standard method for transporting multi-protocol datagrams over ...",
+      "date_published": "2026-11-07T03:03:30.134Z",
+      "date_modified": "2026-11-05T14:13:46.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "Computer",
+        "Network",
+        "basic"
+      ]
+    },
+    {
+      "title": "Principles of reliable data transfer (RDT/GBN/SR)",
+      "url": "/en/learningNote/Computer_Network/%E5%8F%AF%E9%9D%A0%E6%95%B0%E6%8D%AE%E7%9A%84%E4%BC%A0%E8%BE%93%E5%8E%9F%E7%90%86.html",
+      "id": "/en/learningNote/Computer_Network/%E5%8F%AF%E9%9D%A0%E6%95%B0%E6%8D%AE%E7%9A%84%E4%BC%A0%E8%BE%93%E5%8E%9F%E7%90%86.html",
+      "summary": "In this post we'll go through the principles of implementing reliable data transfer in the transport layer, covering the various rdt protocols, discussing the difference between...",
+      "content_html": "In this post we'll go through the principles of implementing reliable data transfer in the transport layer, covering the various rdt protocols, discussing the difference between...",
+      "date_published": "2026-11-07T03:03:30.134Z",
+      "date_modified": "2026-11-05T14:13:46.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "Computer",
+        "Network",
+        "basic"
+      ]
+    },
+    {
+      "title": "What happens after you type a URL and hit Enter",
+      "url": "/en/learningNote/Computer_Network/%E8%BE%93%E5%85%A5URL%E5%9B%9E%E8%BD%A6%E5%90%8E%E5%8F%91%E7%94%9F%E4%BA%86%E4%BB%80%E4%B9%88.html",
+      "id": "/en/learningNote/Computer_Network/%E8%BE%93%E5%85%A5URL%E5%9B%9E%E8%BD%A6%E5%90%8E%E5%8F%91%E7%94%9F%E4%BA%86%E4%BB%80%E4%B9%88.html",
+      "summary": "Let's first look at the question[1]: A question asking whats_going_on_from_enterURL_to_bowser_display Translated, it says: Suppose you open your browser and type http://yourbusi...",
+      "content_html": "Let's first look at the question[1]: A question asking whats_going_on_from_enterURL_to_bowser_display Translated, it says: Suppose you open your browser and type http://yourbusi...",
+      "date_published": "2026-11-07T03:03:30.134Z",
+      "date_modified": "2026-11-05T14:13:46.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "Computer",
+        "Network",
+        "basic"
+      ]
+    },
+    {
+      "title": "Link Layer Discovery Protocol (LLDP)",
+      "url": "/en/learningNote/Computer_Network/%E9%93%BE%E8%B7%AF%E5%8F%91%E7%8E%B0%E5%8D%8F%E8%AE%AE.html",
+      "id": "/en/learningNote/Computer_Network/%E9%93%BE%E8%B7%AF%E5%8F%91%E7%8E%B0%E5%8D%8F%E8%AE%AE.html",
+      "summary": "Link Layer Discovery Protocol (LLDP) (3.16) Definition: LLDP (Link Layer Discovery Protocol) is a protocol that lets devices from different vendors discover one another on the s...",
+      "content_html": "Link Layer Discovery Protocol (LLDP) (3.16) Definition: LLDP (Link Layer Discovery Protocol) is a protocol that lets devices from different vendors discover one another on the s...",
+      "date_published": "2026-11-07T03:03:30.134Z",
+      "date_modified": "2026-11-05T14:13:46.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "Computer",
+        "Network",
+        "basic"
+      ]
+    },
+    {
+      "title": "Blackhole routes",
+      "url": "/en/learningNote/Computer_Network/%E9%BB%91%E6%B4%9E%E8%B7%AF%E7%94%B1.html",
+      "id": "/en/learningNote/Computer_Network/%E9%BB%91%E6%B4%9E%E8%B7%AF%E7%94%B1.html",
+      "summary": "A blackhole route is also a static route, but what makes it different from other routes is that a blackhole route's outgoing interface is NULL0. If a static route's outgoing int...",
+      "content_html": "A blackhole route is also a static route, but what makes it different from other routes is that a blackhole route's outgoing interface is NULL0. If a static route's outgoing int...",
+      "date_published": "2026-11-07T03:03:30.134Z",
+      "date_modified": "2026-11-05T14:13:46.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "Computer",
+        "Network",
+        "basic"
+      ]
+    },
+    {
+      "title": "The trouble with formal and actual parameters when a JS function reads a property off the object passed in",
+      "url": "/en/learningNote/JSNote/Formal_Real_Para_When_Func_Get_Obj.html",
+      "id": "/en/learningNote/JSNote/Formal_Real_Para_When_Func_Get_Obj.html",
+      "summary": "The trouble with formal and actual parameters when a JS function reads a property off the object passed in In a JavaScript function, when we pass an object in, we can read the p...",
+      "content_html": "The trouble with formal and actual parameters when a JS function reads a property off the object passed in In a JavaScript function, when we pass an object in, we can read the p...",
+      "date_published": "2026-11-07T03:03:30.134Z",
+      "date_modified": "2026-11-05T14:13:46.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "JavaScript",
+        "Web"
+      ]
+    },
+    {
+      "title": "The Reduce Method",
+      "url": "/en/learningNote/JSNote/Reduce%E6%96%B9%E6%B3%95.html",
+      "id": "/en/learningNote/JSNote/Reduce%E6%96%B9%E6%B3%95.html",
+      "summary": "Brief reduce() is a built-in array method in Javascript. It is generally used to compress an array. Definition 1.reduce() takes two arguments: one is a callback function, the ot...",
+      "content_html": "Brief reduce() is a built-in array method in Javascript. It is generally used to compress an array. Definition 1.reduce() takes two arguments: one is a callback function, the ot...",
+      "date_published": "2026-11-07T03:03:30.134Z",
+      "date_modified": "2026-11-05T14:13:46.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "JavaScript",
+        "Web"
+      ]
+    },
+    {
+      "title": "What Is Symbol",
+      "url": "/en/learningNote/JSNote/Symbol.html",
+      "id": "/en/learningNote/JSNote/Symbol.html",
+      "summary": "Definition — a primitive data type that never repeats Symbol is a new primitive data type introduced by ES6, standing for a unique value. It is the seventh data type in the Java...",
+      "content_html": "Definition — a primitive data type that never repeats Symbol is a new primitive data type introduced by ES6, standing for a unique value. It is the seventh data type in the Java...",
+      "date_published": "2026-11-07T03:03:30.134Z",
+      "date_modified": "2026-11-05T14:13:46.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "JavaScript",
+        "Web"
+      ]
+    },
+    {
+      "title": "The Object.defineproperty Method",
+      "url": "/en/learningNote/JSNote/defineproperty%E6%96%B9%E6%B3%95.html",
+      "id": "/en/learningNote/JSNote/defineproperty%E6%96%B9%E6%B3%95.html",
+      "summary": "Brief Object.defineProperty is a fairly advanced function under the Object class in JavaScript; it can use its built-in getter and setter to modify the data passed in. It was ge...",
+      "content_html": "Brief Object.defineProperty is a fairly advanced function under the Object class in JavaScript; it can use its built-in getter and setter to modify the data passed in. It was ge...",
+      "date_published": "2026-11-07T03:03:30.134Z",
+      "date_modified": "2026-11-05T14:13:46.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "JavaScript",
+        "Web"
+      ]
+    },
+    {
+      "title": "Function Currying",
+      "url": "/en/learningNote/JSNote/%E6%9F%AF%E9%87%8C%E5%8C%96.html",
+      "id": "/en/learningNote/JSNote/%E6%9F%AF%E9%87%8C%E5%8C%96.html",
+      "summary": "What is currying In one sentence: the process of turning a function that takes several arguments into a function that takes one argument and returns a function that accepts the ...",
+      "content_html": "What is currying In one sentence: the process of turning a function that takes several arguments into a function that takes one argument and returns a function that accepts the ...",
+      "date_published": "2026-11-07T03:03:30.134Z",
+      "date_modified": "2026-11-05T14:13:46.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "JavaScript",
+        "Web"
+      ]
+    },
+    {
+      "title": "Quick Memory Joggers",
+      "url": "/en/learningNote/JSNote/%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BF%86.html",
+      "id": "/en/learningNote/JSNote/%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BF%86.html",
+      "summary": "Brief Here are a few simple JS memory points — just remember them and you're fine. Quick notes The difference between var and let The scope differs. var is function-scoped, let ...",
+      "content_html": "Brief Here are a few simple JS memory points — just remember them and you're fine. Quick notes The difference between var and let The scope differs. var is function-scoped, let ...",
+      "date_published": "2026-11-07T03:03:30.134Z",
+      "date_modified": "2026-11-05T14:13:46.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "JavaScript",
+        "Web"
+      ]
+    },
+    {
+      "title": "Principles of Automatic Control",
+      "url": "/en/learningNote/Principles_of_Automatic_Control_Related/",
+      "id": "/en/learningNote/Principles_of_Automatic_Control_Related/",
+      "summary": "This is where I keep the notes related to the principles of automatic control. S-Z transform table (Table of s- and z-transforms) Where: For t&lt;0, the function f(t)=0 For k&lt...",
+      "content_html": "This is where I keep the notes related to the principles of automatic control. S-Z transform table (Table of s- and z-transforms) Where: For t&lt;0, the function f(t)=0 For k&lt...",
+      "date_published": "2026-11-07T03:03:30.134Z",
+      "date_modified": "2026-11-05T14:13:46.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "自动控制原理相关"
+      ]
+    },
+    {
+      "title": "Principles of Computer Organization",
+      "url": "/en/learningNote/Principles_of_Computer_Composition/",
+      "id": "/en/learningNote/Principles_of_Computer_Composition/",
+      "summary": "Overview These pages are all notes on computer organization. If you spot a mistake, please do point it out! Machine number 1. Introduction When a decimal number is converted int...",
+      "content_html": "Overview These pages are all notes on computer organization. If you spot a mistake, please do point it out! Machine number 1. Introduction When a decimal number is converted int...",
+      "date_published": "2026-11-07T03:03:30.134Z",
+      "date_modified": "2026-11-05T14:13:46.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "Computer",
+        "basic"
+      ]
+    },
+    {
+      "title": "Calculation and simulation",
+      "url": "/en/learningNote/Principles_of_Computer_Composition/compute_and_simutation.html",
+      "id": "/en/learningNote/Principles_of_Computer_Composition/compute_and_simutation.html",
+      "summary": "Overview These pages are all notes on calculation and simulation. If you spot a mistake, please do point it out! Machine number See That section covers the calculations around I...",
+      "content_html": "Overview These pages are all notes on calculation and simulation. If you spot a mistake, please do point it out! Machine number See That section covers the calculations around I...",
+      "date_published": "2026-11-07T03:03:30.134Z",
+      "date_modified": "2026-11-05T14:13:46.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "Computer",
+        "basic"
+      ]
+    },
+    {
+      "title": "TypeScript",
+      "url": "/en/learningNote/TypeScriptNote/",
+      "id": "/en/learningNote/TypeScriptNote/",
+      "summary": "Overview These are my notes on learning TypeScript. It was originally two big chapters; I split it into five by the study sessions I had at the time and put them in the articles...",
+      "content_html": "Overview These are my notes on learning TypeScript. It was originally two big chapters; I split it into five by the study sessions I had at the time and put them in the articles...",
+      "date_published": "2026-11-07T03:03:30.134Z",
+      "date_modified": "2026-11-05T14:13:46.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "TypeScript",
+        "Web"
+      ]
+    },
+    {
+      "title": "Setting up custom code snippets in VSCode",
+      "url": "/en/learningNote/coding_skill/2024_09_23.html",
+      "id": "/en/learningNote/coding_skill/2024_09_23.html",
+      "summary": "Overview When you write code day to day, creating a bunch of files side by side means the same code gets written over and over. When you create a .vue file, for instance, you ha...",
+      "content_html": "Overview When you write code day to day, creating a bunch of files side by side means the same code gets written over and over. When you create a .vue file, for instance, you ha...",
+      "date_published": "2026-11-07T03:03:30.134Z",
+      "date_modified": "2026-11-05T14:13:46.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "Computer",
+        "Skill"
+      ]
+    },
+    {
+      "title": "VUE basics",
+      "url": "/en/learningNote/vueNote/VUE2/VUE%E5%9F%BA%E7%A1%80.html",
+      "id": "/en/learningNote/vueNote/VUE2/VUE%E5%9F%BA%E7%A1%80.html",
+      "summary": "Three ways to piece page data together With interpolation syntax: With a methods function: With a computed property: Note: once you're sure the computed property is read-only, y...",
+      "content_html": "Three ways to piece page data together With interpolation syntax: With a methods function: With a computed property: Note: once you're sure the computed property is read-only, y...",
+      "date_published": "2026-11-07T03:03:30.134Z",
+      "date_modified": "2026-11-05T14:13:46.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "VUE",
+        "Web"
+      ]
+    },
+    {
+      "title": "How Vue3 and Vue2 differ in data reactivity",
+      "url": "/en/learningNote/vueNote/VUE3/VUE3_Vs_VUE2_In_Reactive_Data.html",
+      "id": "/en/learningNote/vueNote/VUE3/VUE3_Vs_VUE2_In_Reactive_Data.html",
+      "summary": "1. How Vue3 and Vue2 differ when it comes to object data reactivity In vue2, all data is hijacked underneath with Object.defineProperty() to achieve data reactivity. That means ...",
+      "content_html": "1. How Vue3 and Vue2 differ when it comes to object data reactivity In vue2, all data is hijacked underneath with Object.defineProperty() to achieve data reactivity. That means ...",
+      "date_published": "2026-11-07T03:03:30.134Z",
+      "date_modified": "2026-11-05T14:13:46.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "VUE",
+        "Web"
+      ]
+    },
+    {
+      "title": "How Vue3 and Vue2 differ on render functions",
+      "url": "/en/learningNote/vueNote/VUE3/VUE3_Vs_VUE2_In_Render_Function.html",
+      "id": "/en/learningNote/vueNote/VUE3/VUE3_Vs_VUE2_In_Render_Function.html",
+      "summary": "How Vue3 and Vue2 differ on render functions When writing vue code, we usually write the HTML inside the template tag first. When we compile the code, VUE first converts the cod...",
+      "content_html": "How Vue3 and Vue2 differ on render functions When writing vue code, we usually write the HTML inside the template tag first. When we compile the code, VUE first converts the cod...",
+      "date_published": "2026-11-07T03:03:30.134Z",
+      "date_modified": "2026-11-05T14:13:46.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "VUE",
+        "Web"
+      ]
+    },
+    {
+      "title": "How Vue3 and Vue2 differ on watch",
+      "url": "/en/learningNote/vueNote/VUE3/VUE3_Vs_VUE2_In_Watch.html",
+      "id": "/en/learningNote/vueNote/VUE3/VUE3_Vs_VUE2_In_Watch.html",
+      "summary": "How Vue3 and Vue2 differ on watch In VUE2, watch exists as an option. We can use the watch option to fire a function every time a reactive property changes. But in VUE3, watch e...",
+      "content_html": "How Vue3 and Vue2 differ on watch In VUE2, watch exists as an option. We can use the watch option to fire a function every time a reactive property changes. But in VUE3, watch e...",
+      "date_published": "2026-11-07T03:03:30.134Z",
+      "date_modified": "2026-11-05T14:13:46.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "VUE",
+        "Web"
+      ]
+    },
+    {
+      "title": "How is Vue 3's data reactivity implemented? (Part 1)",
+      "url": "/en/learningNote/vueNote/VUE3/VUE3%E7%9A%84%E6%95%B0%E6%8D%AE%E5%93%8D%E5%BA%94%E5%BC%8F_%E4%B8%8A.html",
+      "id": "/en/learningNote/vueNote/VUE3/VUE3%E7%9A%84%E6%95%B0%E6%8D%AE%E5%93%8D%E5%BA%94%E5%BC%8F_%E4%B8%8A.html",
+      "summary": "Overview Here I'll walk you through how Vue 3 implements data reactivity, starting from how the source is put together. This is part one. Reference: Vue Mastery — Vue 3 Reactivi...",
+      "content_html": "Overview Here I'll walk you through how Vue 3 implements data reactivity, starting from how the source is put together. This is part one. Reference: Vue Mastery — Vue 3 Reactivi...",
+      "date_published": "2026-11-07T03:03:30.134Z",
+      "date_modified": "2026-11-05T14:13:46.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "VUE",
+        "Web"
+      ]
+    },
+    {
+      "title": "How is Vue 3's data reactivity implemented? (Part 3)",
+      "url": "/en/learningNote/vueNote/VUE3/VUE3%E7%9A%84%E6%95%B0%E6%8D%AE%E5%93%8D%E5%BA%94%E5%BC%8F_%E4%B8%8B.html",
+      "id": "/en/learningNote/vueNote/VUE3/VUE3%E7%9A%84%E6%95%B0%E6%8D%AE%E5%93%8D%E5%BA%94%E5%BC%8F_%E4%B8%8B.html",
+      "summary": "Overview Here I'll walk you through how Vue 3 implements data reactivity, starting from how the source is put together. This is part three. Reference: Vue Mastery — Vue 3 Reacti...",
+      "content_html": "Overview Here I'll walk you through how Vue 3 implements data reactivity, starting from how the source is put together. This is part three. Reference: Vue Mastery — Vue 3 Reacti...",
+      "date_published": "2026-11-07T03:03:30.134Z",
+      "date_modified": "2026-11-05T14:13:46.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "VUE",
+        "Web"
+      ]
+    },
+    {
+      "title": "How is Vue 3's data reactivity implemented? (Part 2)",
+      "url": "/en/learningNote/vueNote/VUE3/VUE3%E7%9A%84%E6%95%B0%E6%8D%AE%E5%93%8D%E5%BA%94%E5%BC%8F_%E4%B8%AD.html",
+      "id": "/en/learningNote/vueNote/VUE3/VUE3%E7%9A%84%E6%95%B0%E6%8D%AE%E5%93%8D%E5%BA%94%E5%BC%8F_%E4%B8%AD.html",
+      "summary": "Overview This is where I walk you through how Vue 3 implements data reactivity, starting from how the source is put together. This is part two. Reference: Vue Mastery — Vue 3 Re...",
+      "content_html": "Overview This is where I walk you through how Vue 3 implements data reactivity, starting from how the source is put together. This is part two. Reference: Vue Mastery — Vue 3 Re...",
+      "date_published": "2026-11-07T03:03:30.134Z",
+      "date_modified": "2026-11-05T14:13:46.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "VUE",
+        "Web"
+      ]
+    },
+    {
+      "title": "How is Vue 3's data reactivity implemented? (Part 4)",
+      "url": "/en/learningNote/vueNote/VUE3/VUE3%E7%9A%84%E6%95%B0%E6%8D%AE%E5%93%8D%E5%BA%94%E5%BC%8F_%E8%A1%A5.html",
+      "id": "/en/learningNote/vueNote/VUE3/VUE3%E7%9A%84%E6%95%B0%E6%8D%AE%E5%93%8D%E5%BA%94%E5%BC%8F_%E8%A1%A5.html",
+      "summary": "Overview Here I'll walk you through how Vue 3 implements data reactivity, starting from how the source is put together. This is the post after the post after the last one. Refer...",
+      "content_html": "Overview Here I'll walk you through how Vue 3 implements data reactivity, starting from how the source is put together. This is the post after the post after the last one. Refer...",
+      "date_published": "2026-11-07T03:03:30.134Z",
+      "date_modified": "2026-11-05T14:13:46.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "VUE",
+        "Web"
+      ]
+    },
+    {
+      "title": "A quick look at using the watchEffect function in Vue3",
+      "url": "/en/learningNote/vueNote/VUE3/Vue3%20%E4%B8%AD%20watcheffect%20%E5%87%BD%E6%95%B0%E7%9A%84%E4%BD%BF%E7%94%A8.html",
+      "id": "/en/learningNote/vueNote/VUE3/Vue3%20%E4%B8%AD%20watcheffect%20%E5%87%BD%E6%95%B0%E7%9A%84%E4%BD%BF%E7%94%A8.html",
+      "summary": "A quick look at using the watchEffect function in Vue3 In vue3, the watchEffect function is one of the ways to track reactive dependencies. In essence, the watchEffect function ...",
+      "content_html": "A quick look at using the watchEffect function in Vue3 In vue3, the watchEffect function is one of the ways to track reactive dependencies. In essence, the watchEffect function ...",
+      "date_published": "2026-11-07T03:03:30.134Z",
+      "date_modified": "2026-11-05T14:13:46.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "VUE",
+        "Web"
+      ]
+    },
+    {
+      "title": "The ROS2 Learning Notes",
+      "url": "/en/learningNote/Ros2_Note/",
+      "id": "/en/learningNote/Ros2_Note/",
+      "summary": "Brief These are my notes on ROS2. The software and hardware used throughout them is: ROS2 Jazzy Jalisco LTS Ubuntu 24.04.3 LTS Raspberry Pi 5B (4GB) Most of these notes were wri...",
+      "content_html": "Brief These are my notes on ROS2. The software and hardware used throughout them is: ROS2 Jazzy Jalisco LTS Ubuntu 24.04.3 LTS Raspberry Pi 5B (4GB) Most of these notes were wri...",
+      "date_published": "2026-11-07T03:03:30.134Z",
+      "date_modified": "2026-11-05T14:13:46.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "Computer",
+        "robot",
+        "ROS"
+      ]
+    },
+    {
+      "title": "ROS2 Communication Mechanisms 01 — the Core Content",
+      "url": "/en/learningNote/Ros2_Note/co_me/",
+      "id": "/en/learningNote/Ros2_Note/co_me/",
+      "summary": "Brief These are the notes on the core content of ROS2 communication mechanisms, which covers the four communication methods commonly used inside ROS2: Topics (topic communicatio...",
+      "content_html": "Brief These are the notes on the core content of ROS2 communication mechanisms, which covers the four communication methods commonly used inside ROS2: Topics (topic communicatio...",
+      "date_published": "2026-11-07T03:03:30.134Z",
+      "date_modified": "2026-11-05T14:13:46.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "Computer",
+        "robot",
+        "ROS"
+      ]
+    },
+    {
+      "title": "ROS2 Communication Mechanisms 02 — Supplementary Material",
+      "url": "/en/learningNote/Ros2_Note/co_me_2/",
+      "id": "/en/learningNote/Ros2_Note/co_me_2/",
+      "summary": "Brief These are my notes on the supplementary material for ROS2 communication mechanisms. Compared with the , the knowledge density here is looser, and it covers: Setting up a d...",
+      "content_html": "Brief These are my notes on the supplementary material for ROS2 communication mechanisms. Compared with the , the knowledge density here is looser, and it covers: Setting up a d...",
+      "date_published": "2026-11-07T03:03:30.134Z",
+      "date_modified": "2026-11-05T14:13:46.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "Computer",
+        "robot",
+        "ROS"
+      ]
+    },
+    {
+      "title": "ROS2 Tools — Coordinate Transforms",
+      "url": "/en/learningNote/Ros2_Note/coor_trans/",
+      "id": "/en/learningNote/Ros2_Note/coor_trans/",
+      "summary": "Brief These are my notes on the ROS2 tool coordinate transform (tf). They cover: the concept of coordinate transforms and where you use them the definition format of the two imp...",
+      "content_html": "Brief These are my notes on the ROS2 tool coordinate transform (tf). They cover: the concept of coordinate transforms and where you use them the definition format of the two imp...",
+      "date_published": "2026-11-07T03:03:30.134Z",
+      "date_modified": "2026-11-05T14:13:46.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "Computer",
+        "robot",
+        "ROS"
+      ]
+    },
+    {
+      "title": "ROS2 Tools — launch & rosbag2",
+      "url": "/en/learningNote/Ros2_Note/launch_rosbag2/",
+      "id": "/en/learningNote/Ros2_Note/launch_rosbag2/",
+      "summary": "Overview These are my notes on the ROS2 tools — launch &amp; rosbag2. What they cover: launch files and how they are implemented an introduction to the rosbag2 tool and how to u...",
+      "content_html": "Overview These are my notes on the ROS2 tools — launch &amp; rosbag2. What they cover: launch files and how they are implemented an introduction to the rosbag2 tool and how to u...",
+      "date_published": "2026-11-07T03:03:30.134Z",
+      "date_modified": "2026-11-05T14:13:46.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "Computer",
+        "robot",
+        "ROS"
+      ]
+    },
+    {
+      "title": "Nintendo Switch OLED can't see the 5GHz WiFi channel — a troubleshooting write-up",
+      "url": "/en/postMortem/tiny_tips/2026_11_04.html",
+      "id": "/en/postMortem/tiny_tips/2026_11_04.html",
+      "summary": "1. Background Earlier post: Device: Nintendo Switch OLED Symptom: my Nintendo Switch OLED sees and joins the 2.4GHz band fine in its WiFi scan list, but the 5GHz band does not s...",
+      "content_html": "1. Background Earlier post: Device: Nintendo Switch OLED Symptom: my Nintendo Switch OLED sees and joins the 2.4GHz band fine in its WiFi scan list, but the 5GHz band does not s...",
+      "date_published": "2026-11-04T00:00:00.000Z",
+      "date_modified": "2026-11-05T14:13:46.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "tiny_tips"
+      ]
+    },
+    {
+      "title": "AI Industry Monthly Report | October 2026",
+      "url": "/en/Scheduled_Automatic_AI_Industry_Analysis_Report/monthly/2026_10_month_report.html",
+      "id": "/en/Scheduled_Automatic_AI_Industry_Analysis_Report/monthly/2026_10_month_report.html",
+      "summary": "AI Industry Monthly Report — October 2026 1. Top 7 Core Themes of the Month Agent peripherals become an engineering discipline (appeared on 25/31 days) — repos for skills, harne...",
+      "content_html": "AI Industry Monthly Report — October 2026 1. Top 7 Core Themes of the Month Agent peripherals become an engineering discipline (appeared on 25/31 days) — repos for skills, harne...",
+      "date_published": "2026-11-01T00:00:00.000Z",
+      "date_modified": "2026-11-02T00:49:53.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "Troubleshooting blue-and-yellow banding on GIFs across a dual-screen setup",
+      "url": "/en/postMortem/tiny_tips/2026_11_01.html",
+      "id": "/en/postMortem/tiny_tips/2026_11_01.html",
+      "summary": "1. Background 1.1 The symptom Playing or displaying particular animated GIFs on the secondary screen (the HDMI external monitor) produced blue-and-yellow streaky artefacts, visu...",
+      "content_html": "1. Background 1.1 The symptom Playing or displaying particular animated GIFs on the secondary screen (the HDMI external monitor) produced blue-and-yellow streaky artefacts, visu...",
+      "date_published": "2026-11-01T00:00:00.000Z",
+      "date_modified": "2026-11-05T14:13:46.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "tiny_tips"
+      ]
+    },
+    {
+      "title": "006-AI daily briefing auto-archive pipeline wired end to end —— the merge-base invariant, doubled branch protection, and the many potholes of GitHub App bypass",
+      "url": "/en/postMortem/sp_for_LLM/006_Hermes-Briefing-Archive-Auto-Merge-Topology-report.html",
+      "id": "/en/postMortem/sp_for_LLM/006_Hermes-Briefing-Archive-Auto-Merge-Topology-report.html",
+      "summary": "This document is a full retrospective of the work from 2026-10-14 to 2026-10-18: turning the old &quot;merge the AI daily briefing archive PR by hand every day&quot; routine int...",
+      "content_html": "This document is a full retrospective of the work from 2026-10-14 to 2026-10-18: turning the old &quot;merge the AI daily briefing archive PR by hand every day&quot; routine int...",
+      "date_published": "2026-10-19T00:00:00.000Z",
+      "date_modified": "2026-11-05T14:13:46.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "Technical Investigation"
+      ]
+    },
+    {
+      "title": "AI Industry Monthly Report | September 2026",
+      "url": "/en/Scheduled_Automatic_AI_Industry_Analysis_Report/monthly/2026_09_month_report.html",
+      "id": "/en/Scheduled_Automatic_AI_Industry_Analysis_Report/monthly/2026_09_month_report.html",
+      "summary": "AI Industry Monthly Report — September 2026 1. Top 7 Core Themes This Month Agent Skills / Harness ecosystem dominates open source (appears almost daily) — GitHub Trending's AI ...",
+      "content_html": "AI Industry Monthly Report — September 2026 1. Top 7 Core Themes This Month Agent Skills / Harness ecosystem dominates open source (appears almost daily) — GitHub Trending's AI ...",
+      "date_published": "2026-10-01T00:00:00.000Z",
+      "date_modified": "2026-10-04T05:48:45.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "Slow image loading on social platforms over WiFi 5GHz",
+      "url": "/en/postMortem/tiny_tips/2026_09_08.html",
+      "id": "/en/postMortem/tiny_tips/2026_09_08.html",
+      "summary": "Background The WiFi in the flat I share with others in Hong Kong broadcasts both 2.4GHz and 5GHz (the router is a Linksys Velop Pro 7). While browsing social platforms (X, Weibo...",
+      "content_html": "Background The WiFi in the flat I share with others in Hong Kong broadcasts both 2.4GHz and 5GHz (the router is a Linksys Velop Pro 7). While browsing social platforms (X, Weibo...",
+      "date_published": "2026-09-08T00:00:00.000Z",
+      "date_modified": "2026-11-05T14:13:46.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "tiny_tips"
+      ]
+    },
+    {
+      "title": "The weird bug caused by CSS `fit-content` being optimised wrongly in a Vue production build",
+      "url": "/en/postMortem/tiny_tips/2026_09_07.html",
+      "id": "/en/postMortem/tiny_tips/2026_09_07.html",
+      "summary": "Background My bobing site has a button on the opening welcome screen whose height adjustment was off, so I thought I would fix it. What it looked like The button's CSS had this ...",
+      "content_html": "Background My bobing site has a button on the opening welcome screen whose height adjustment was off, so I thought I would fix it. What it looked like The button's CSS had this ...",
+      "date_published": "2026-09-07T00:00:00.000Z",
+      "date_modified": "2026-11-05T14:13:46.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "AI Industry Monthly Report | August 2026",
+      "url": "/en/Scheduled_Automatic_AI_Industry_Analysis_Report/monthly/2026_08_month_report.html",
+      "id": "/en/Scheduled_Automatic_AI_Industry_Analysis_Report/monthly/2026_08_month_report.html",
+      "summary": "AI Industry Monthly Report — August 2026 1. Top 7 Core Themes of the Month Agent Skills / Harness ecosystem in full bloom (appeared on 14+ of 28 days) — From Anthropic launching...",
+      "content_html": "AI Industry Monthly Report — August 2026 1. Top 7 Core Themes of the Month Agent Skills / Harness ecosystem in full bloom (appeared on 14+ of 28 days) — From Anthropic launching...",
+      "date_published": "2026-09-01T00:00:00.000Z",
+      "date_modified": "2026-10-04T05:48:45.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "007_Every proxy on the HermesAgent server died — from \"thought it was a Twitter direct-connection problem\" to \"turns out the IP pool went dark\"",
+      "url": "/en/postMortem/deploy/007_Troubleshooting_complete_failure_of_Tencent_Cloud_server_proxies.html",
+      "id": "/en/postMortem/deploy/007_Troubleshooting_complete_failure_of_Tencent_Cloud_server_proxies.html",
+      "summary": "Background My Hermes Agent is deployed on a Tencent Cloud Lighthouse server (Guangzhou) and runs a bunch of scheduled tasks day in, day out. One of them is an AI briefing task, ...",
+      "content_html": "Background My Hermes Agent is deployed on a Tencent Cloud Lighthouse server (Guangzhou) and runs a bunch of scheduled tasks day in, day out. One of them is an AI briefing task, ...",
+      "date_published": "2026-08-10T00:00:00.000Z",
+      "date_modified": "2026-11-05T14:13:46.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": [
+        "deploy"
+      ]
+    },
+    {
+      "title": "AI Industry Monthly Report | July 2026",
+      "url": "/en/Scheduled_Automatic_AI_Industry_Analysis_Report/monthly/2026_07_month_report.html",
+      "id": "/en/Scheduled_Automatic_AI_Industry_Analysis_Report/monthly/2026_07_month_report.html",
+      "summary": "AI Industry Monthly Report — July 2026 1. Top 7 Core Themes of the Month Coding-agent toolchain ecosystem explodes (31/31 days) — Claude Code, Codex, Cursor, and the MCP protoco...",
+      "content_html": "AI Industry Monthly Report — July 2026 1. Top 7 Core Themes of the Month Coding-agent toolchain ecosystem explodes (31/31 days) — Claude Code, Codex, Cursor, and the MCP protoco...",
+      "date_published": "2026-08-01T00:00:00.000Z",
+      "date_modified": "2026-10-04T05:48:45.000Z",
+      "authors": [
+        {
+          "name": "xxx"
+        }
+      ],
+      "tags": []
+    }
+  ]
+}
