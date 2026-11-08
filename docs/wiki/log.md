@@ -338,3 +338,16 @@ title: Wiki Log
 - 顺带把 4 个 concept 页 `related:` 里的 blog 原文路径移进 `sources:`（`related` 只放页内相对 `.md`，与阶段 B 的口径一致）：`Heat-Transfer-Literature-Report`、`VuePress-Theme-Hope-{Markdown-Converter,Hermes-JSON-Converter,Hermes-Multi-Session-Merger}`
 - **决策：不再要求 entity / source 页写 `sources`**。仓库 `AGENTS.md` 本就写明 `sources` 与 `created` 为「可选」，而 `wiki-lint.sh` 一直按必需项检查 —— 这是 lint 比 schema 更严的口径漂移，`partial_frontmatter` 长期虚高正是它造成的。具体到 `type: source` / `type: entity` 的聚合页，`sources` 应列出「该页提炼自哪些笔记」，而一个领域动辄几十上百篇（ROS2 131 篇），硬填只能是编造。故 `wiki-lint.sh` 改为按类型要求：`concept` 必须有 `sources`，其余类型不要求
 - Lint 结果：critical 0、**partial frontmatter 28 → 0**、orphan 0、oversized 0、pages 69；info 级剩 `stem_collision` 5（同名页提示）、`stale` 34（`updated:` 超 90 天，含本次补的 5 页）、`watchlist_page_size` 23、`cross_folder_wikilink` 38（指向博客原文，合法）
+
+## [2026-11-09] ingest | 007-把博客翻译交给自动化链路 —— 盘点、检测层与一直在说「没事」的检查
+- Source article: `docs/postMortem/sp_for_LLM/007_Hermes-Bilingual-Translation-and-Wiki-Pipeline-Decoupling-report.md`（8 阶段复盘，约 30 小时 / 两个连续会话）
+- Wiki pages created:
+  - **CREATE** `concepts/Blog-Bilingual-Translation-Pipeline.md` — 167 页英译盘点表、三轮样稿与口径冻结清单、锚点对齐官方 slugify（1,255 标题 0 差异）、结构校验全绿后仍崩的三类（YAML 冒号 / `Array<type>` / 数学宏丢失）、EN Translation Sync 的 exit 0/3/4、两个「永久哑掉」的静默 bug
+  - **CREATE** `concepts/Blog-Change-Detection-Layer.md` — 一个 detector + wiki/en 两个 consumer、tree 与 RSS 的分工、`rules.json`、monitor 输出契约与三道守卫、四条不变量、三种静默失败的判据与 16/16 验证
+  - **CREATE** `concepts/Wiki-Lint-False-Negative-Traps.md` — 202 处不可点链接的迁移与「先改正则再改内容后改模板」的顺序不变量、三个「没报」bug（index 不入链 / 标签含方括号 / stem 当键）、拆页按语义缝不按行数、规范冲突先问哪一边更晚
+- Wiki pages modified:
+  - **MODIFY** `entities/Hermes-Agent.md` — `related:` 加 3 条、`sources:` 补 007 原文；新增「博客全站英译与变更检测层解耦」小节（1 段摘要 + 3 条链接，不复制概念正文）
+  - **MODIFY** `sources/PostMortem.md` — tags 补 Translation / Lint / State Machine / RSS，`sources:` 补 007，sp_for_LLM 节加一条摘要，关联段加 3 条链接，`updated` → 2026-11-09
+  - **MODIFY** `index.md` — AI Agent 段加 3 条新页链接，`Last updated` → 2026-11-09
+- 页面拆分说明：该报告覆盖三条主线（英译链路 / 检测层解耦 / wiki lint 治理），按「切开后两页各自能独立回答一个问题」的语义缝拆成 3 页，每条 ≤200 行；未把原文的逐阶段叙事照搬
+- 纪律遵循：内链一律 `[标签](相对路径.md)`；不碰中文原文与 `docs/en/`；概念页 `sources:` 指向 sp_for_LLM/007 原文

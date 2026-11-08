@@ -11,14 +11,18 @@ related:
   - ./LLM-Prompt-Skill.md
   - ../concepts/Mihomo-Proxy-GSLB-Drift-Subscription-Auto-Update.md
   - ../concepts/Briefing-Archive-Auto-Merge-Topology.md
+  - ../concepts/Blog-Bilingual-Translation-Pipeline.md
+  - ../concepts/Blog-Change-Detection-Layer.md
+  - ../concepts/Wiki-Lint-False-Negative-Traps.md
 created: 2026-06-08
-updated: 2026-10-20
+updated: 2026-11-09
 sources:
   - docs/postMortem/sp_for_LLM/003_think-Initial-notes-on-using-Hermes_Agent.md
   - docs/postMortem/sp_for_LLM/004_Hermes-LangChain-Interpreter-Skill-Investigation-report.md
   - docs/postMortem/sp_for_LLM/000Y_prompt-VuePress-Theme-Hope-Hermes-Multi-Session-Merger.md
   - docs/postMortem/sp_for_LLM/005_HermesMerged-AI-Daily-Briefing-Brotli-Truncation-Fix_-report.md
   - docs/postMortem/sp_for_LLM/006_Hermes-Briefing-Archive-Auto-Merge-Topology-report.md
+  - docs/postMortem/sp_for_LLM/007_Hermes-Bilingual-Translation-and-Wiki-Pipeline-Decoupling-report.md
   - docs/postMortem/deploy/007_Troubleshooting_complete_failure_of_Tencent_Cloud_server_proxies.md
 ---
 
@@ -89,6 +93,15 @@ Hermes Agent 是 Nous Research 开发的 AI Agent 框架，核心特性是**可�
 
 相关文档：
 - [拓扑设计、三点 diff 不变量、GH013/GH006 双层保护、step 级验证判据](../concepts/Briefing-Archive-Auto-Merge-Topology.md)
+
+### 博客全站英译与变更检测层解耦（sp_for_LLM/007 新增）
+
+把「全站中文博客翻成英文」固化成每日 cron（115 篇 / 156,563 字），并把「读博客」从简报 job 拆成独立检测层：一个 detector 供 wiki-ingest 与 en-translate 两个 consumer 各自消费，各有自己的 cursor。配套修掉 wiki lint 的三个「没报」与 202 处不可点链接。
+
+相关文档：
+- [英译工作量盘点、三轮样稿口径、锚点 slugify 与结构/渲染双闸门](../concepts/Blog-Bilingual-Translation-Pipeline.md)
+- [一个 detector + 两个 consumer、monitor 输出契约与静默失败判据](../concepts/Blog-Change-Detection-Layer.md)
+- [lint 三个谎报、链接语法迁移与拆页判据](../concepts/Wiki-Lint-False-Negative-Traps.md)
 
 ## 核心配置
 
