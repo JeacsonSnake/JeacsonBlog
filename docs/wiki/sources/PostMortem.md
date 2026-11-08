@@ -2,9 +2,9 @@
 title: 踩坑心得知识域摘要
 description: "部署与开发中的实际问题记录与解决方案"
 type: source
-tags: [DevOps, Deploy, Markdown, AI Agent, DNS, Migrate, Network, Ubuntu, Disk, Troubleshooting, CSS, Vite, Proxy, GSLB, WiFi, DFS, Channel, GitHub Actions, Git, Branch Protection, Windows, Display, DPI]
+tags: [DevOps, Deploy, Markdown, AI Agent, DNS, Migrate, Network, Ubuntu, Disk, Troubleshooting, CSS, Vite, Proxy, GSLB, WiFi, DFS, Channel, GitHub Actions, Git, Branch Protection, Windows, Display, DPI, Translation, Lint, State Machine, RSS]
 created: 2026-04-17
-updated: 2026-11-05
+updated: 2026-11-09
 sources:
   - docs/postMortem/sp_for_LLM/003_think-Initial-notes-on-using-Hermes_Agent.md
   - docs/postMortem/sp_for_LLM/000X_prompt-VuePress-Theme-Hope-Hermes-JSON-Converter.md
@@ -12,6 +12,7 @@ sources:
   - docs/postMortem/sp_for_LLM/004_Hermes-LangChain-Interpreter-Skill-Investigation-report.md
   - docs/postMortem/sp_for_LLM/005_HermesMerged-AI-Daily-Briefing-Brotli-Truncation-Fix_-report.md
   - docs/postMortem/sp_for_LLM/006_Hermes-Briefing-Archive-Auto-Merge-Topology-report.md
+  - docs/postMortem/sp_for_LLM/007_Hermes-Bilingual-Translation-and-Wiki-Pipeline-Decoupling-report.md
   - docs/postMortem/sp_for_LLM/2026_06_29.md
   - docs/postMortem/deploy/005_leancloud_migrate_neon_relate.md
   - docs/postMortem/deploy/006_Ubuntu_gdm3_cannot_activate.md
@@ -52,6 +53,7 @@ sources:
 - LangChain Interpreter Skills vs Hermes Skills 调研（sp_for_LLM/004）— 多轮对话调研 Skills 体系对比、Memory 三层架构（built-in ↔ Holographic ↔ disk-level 验证）、冲突指令处理纪律
 - AI Daily Briefing Cron Job Brotli 流截断故障排查与模型切换修复（sp_for_LLM/005 新增）— `brotlicffi==1.2.0.1` + `httpx==0.28.1` + MiniMax API 启 brotli 的 5 层叠加 bug；执行模型从 MiniMax-M3 切换至 deepseek-v4-flash；深层源码级根因分析与网络相似案例
 - **AI 简报自动归档链路打通**（sp_for_LLM/006 新增）— hop-1（归档分支 → PR 白名单预检 → 自动 squash 进 `daily`）+ hop-2（`workflow_dispatch` 三点 diff 守卫 → `git merge --no-ff` → push master）两跳拓扑；核心不变量 = `merge-base`（squash 只同步内容、不建立祖先关系）；master 双层保护 GH013（ruleset）/ GH006（classic，个人仓库无 bypass 名单）→ 删 classic 只留 ruleset；`success` 必须拆到 step 级核对
+- **博客全站英译与 wiki 检测层解耦**（sp_for_LLM/007 新增）— 167 页盘点 → 三轮样稿冻结口径 → 115 篇批量翻译（156,563 字 / 868 代码块 / 168 图）；难点是可判定性：锚点对齐 `@mdit-vue/shared` 的 slugify、术语表 `.csv`、容器句式整句匹配；结构校验全绿后仍崩 YAML 冒号 / `Array<type>` / 数学宏丢失三类，故闸门分结构层与渲染层；同时把「读博客」从简报 job 拆成一个 detector + wiki/en 两个 consumer，并修掉 `wiki-lint.sh` 的三个「没报」（index 不入链、方括号标签、stem 当键）与 202 处不可点链接
 - **Edge 浏览器「使用安全的 DNS」选项的副作用**（sp_for_LLM/2026_06_29 新增）— DoH 选 Cloudflare 后污染 curl DNS 缓存；TCP 三次握手成功但 ClientHello 后 RST；nslookup 与 curl 返回不同 IP 的诡异断网；跨网络环境切换后特别容易触发
 - 核心参考书：Kaviany《Heat Transfer Physics》/ Reif《Fundamentals of Statistical and Thermal Physics》/ Gang Chen《Nanoscale Energy Transport》
 
@@ -80,3 +82,6 @@ sources:
 - [AI 简报自动归档两跳链路（merge-base 不变量 + 双层分支保护 + step 级验证）](../concepts/Briefing-Archive-Auto-Merge-Topology.md)
 - [双屏 DPI 缩放不一致致 DWM 重采样振铃（GIF 蓝黄斑纹）](../concepts/Per-Monitor-DPI-DWM-Resampling-Ringing.md)
 - [Switch 5GHz 搜不到：区域固件信道白名单（仅 36/40/44/48）与路由器手动选频](../concepts/Switch-5GHz-Channel-Whitelist.md)
+- [博客全站英译与 EN 自动翻译链路（可判定性、双闸门与状态推进）](../concepts/Blog-Bilingual-Translation-Pipeline.md)
+- [博客变更检测层（一个 detector、两个 consumer 与各自的 cursor）](../concepts/Blog-Change-Detection-Layer.md)
+- [Wiki Lint 的三个「没报」（stem 覆盖、index 不入链、方括号标签）](../concepts/Wiki-Lint-False-Negative-Traps.md)

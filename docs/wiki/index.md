@@ -5,7 +5,7 @@ title: JeacsonBlog Wiki
 # JeacsonBlog Wiki
 
 > 基于 Karpathy LLM Wiki 模式构建的个人知识库。以博客原始笔记为 source of truth，由 LLM Agent 增量维护。
-> Last updated: 2026-11-06
+> Last updated: 2026-11-09
 
 ## Sources（知识域摘要）
 
@@ -101,6 +101,9 @@ title: JeacsonBlog Wiki
 - [Hermes Agent 部署与 RSS 每日简报 cronjob 配置](./concepts/Hermes-Agent-Cronjob-Setup.md)
 - [Brotli 流截断的五层根因（brotlicffi 守卫 / httpx / 服务端 br）](./concepts/Brotli-Stream-Truncation-Root-Cause.md)
 - [AI 简报自动归档两跳链路（merge-base 不变量 / GH013·GH006 双层保护 / step 级验证）](./concepts/Briefing-Archive-Auto-Merge-Topology.md)
+- [博客全站英译与 EN 自动翻译链路（可判定性 / 结构·渲染双闸门 / state.json 状态推进）](./concepts/Blog-Bilingual-Translation-Pipeline.md)
+- [博客变更检测层（一个 detector + 两个 consumer / cursor 与 monitor 输出契约）](./concepts/Blog-Change-Detection-Layer.md)
+- [Wiki Lint 的三个「没报」（stem 覆盖 / index 不入链 / 方括号标签）](./concepts/Wiki-Lint-False-Negative-Traps.md)
 
 ### DevOps / 部署
 - [Waline 评论数据从 LeanCloud 迁移至 Neon PostgreSQL 完整流程](./concepts/LeanCloud-to-Neon-Migration.md)
