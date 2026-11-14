@@ -149,6 +149,42 @@ export default hopeTheme({
             count: 50,
 
         },
+        // Slimsearch 搜索插件配置
+        // slimsearch: true,
+        slimsearch: {
+            customFields: [
+                {
+                    // name: 'category',
+                    getter: (page) => {
+                        const category = page.frontmatter.category;
+                        if (typeof category === 'string') return category;
+                        if (Array.isArray(category)) {
+                            return category.filter((item): item is string => typeof item === 'string');
+                        }
+                        return undefined;
+                    },
+                    formatter: {
+                        '/': '分类：$content',
+                        '/en/': 'category: $content',
+                    },
+                },
+                {
+                    // name: 'tag',
+                    getter: (page) => {
+                        const tag = page.frontmatter.tag;
+                        if (typeof tag === 'string') return tag;
+                        if (Array.isArray(tag)) {
+                            return tag.filter((item): item is string => typeof item === 'string');
+                        }
+                        return undefined;
+                    },
+                    formatter: {
+                        '/': '标签：$content',
+                        '/en/': 'tag: $content',
+                    },
+                },
+            ],
+        },
     },
     markdown: {
         // 开启可指定图像大小
