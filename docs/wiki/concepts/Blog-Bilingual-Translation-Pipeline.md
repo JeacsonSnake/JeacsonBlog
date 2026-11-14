@@ -10,6 +10,8 @@ related:
   - ./Briefing-Archive-Auto-Merge-Topology.md
 created: 2026-11-08
 updated: 2026-11-09
+article: false
+author: 'Hermes_Agent_cRl1_bot'
 confidence: high
 sources:
   - docs/postMortem/sp_for_LLM/007_Hermes-Bilingual-Translation-and-Wiki-Pipeline-Decoupling-report.md

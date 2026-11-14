@@ -14,6 +14,8 @@ related:
   - ./Hermes-Agent.md
 created: 2026-06-04
 updated: 2026-06-09
+article: false
+author: 'Hermes_Agent_cRl1_bot'
 sources:
   - docs/postMortem/sp_for_LLM/000_prompt-VuePress-Theme-Hope-Markdown-Converter.md
   - docs/postMortem/sp_for_LLM/000X_prompt-VuePress-Theme-Hope-Hermes-JSON-Converter.md

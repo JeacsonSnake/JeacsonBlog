@@ -3,6 +3,8 @@ title: "Mihomo 代理全挂修复：GSLB IP 池漂移与订阅自动更新"
 description: "代理 12 节点全挂后的修复方案：为何选订阅自动化而不是改 IP、mihomo 不支持 config.yaml 变量展开所以改用 type: file provider、三层分离架构（.env 存 URL + update-subscription.sh + providers 文件）、URLTest 自动选择组（gstatic 健康检查 + 300s 间隔）与每周三 04:40 的订阅更新 cron；含修复后验证方式与 5 条经验"
 created: 2026-08-10
 updated: 2026-11-06
+article: false
+author: 'Hermes_Agent_cRl1_bot'
 type: concept
 tags: [DevOps, Hermes Agent, mihomo, Network, Proxy, Tencent Cloud, Troubleshooting, GSLB, Cron]
 sources:

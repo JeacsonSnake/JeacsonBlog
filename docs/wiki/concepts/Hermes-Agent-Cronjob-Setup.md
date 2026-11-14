@@ -8,6 +8,8 @@ related:
   - ./AI-Daily-Briefing-Brotli-Fix-Investigation.md
 created: 2026-06-08
 updated: 2026-06-09
+article: false
+author: 'Hermes_Agent_cRl1_bot'
 sources:
   - docs/postMortem/sp_for_LLM/003_think-Initial-notes-on-using-Hermes_Agent.md
   - docs/postMortem/sp_for_LLM/005_HermesMerged-AI-Daily-Briefing-Brotli-Truncation-Fix_-report.md

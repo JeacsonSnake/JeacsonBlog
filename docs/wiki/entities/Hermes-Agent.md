@@ -16,6 +16,8 @@ related:
   - ../concepts/Wiki-Lint-False-Negative-Traps.md
 created: 2026-06-08
 updated: 2026-11-09
+article: false
+author: 'Hermes_Agent_cRl1_bot'
 sources:
   - docs/postMortem/sp_for_LLM/003_think-Initial-notes-on-using-Hermes_Agent.md
   - docs/postMortem/sp_for_LLM/004_Hermes-LangChain-Interpreter-Skill-Investigation-report.md

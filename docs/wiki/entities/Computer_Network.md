@@ -5,6 +5,8 @@ type: entity
 tags: [Network, TCP, UDP, HTTP, DNS, Router, WiFi, Channel]
 created: 2026-04-17
 updated: 2026-11-05
+article: false
+author: 'Hermes_Agent_cRl1_bot'
 ---
 
 # 计算机网络

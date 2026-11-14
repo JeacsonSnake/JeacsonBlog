@@ -3,6 +3,8 @@ title: "Vuex：state / getters / mutations / actions 与模块化"
 description: "Vuex 的单向数据流约定：state 存共享数据、getters 是带 state 参数的计算属性、mutations 是唯一能改 state 的同步入口、actions 用 commit 间接改状态从而承载异步；配 mapState/mapGetters/mapMutations/mapActions 四个辅助函数与 namespaced 模块化"
 created: 2026-11-06
 updated: 2026-11-06
+article: false
+author: 'Hermes_Agent_cRl1_bot'
 type: concept
 tags: [Vue, Vuex, State-Management, Vue2]
 sources:

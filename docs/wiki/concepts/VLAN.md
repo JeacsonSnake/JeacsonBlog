@@ -3,6 +3,8 @@ title: "VLAN：用 802.1Q 标签把一个交换机切成多个广播域"
 description: "VLAN 的标签结构（TPID 0x8100 + TCI：User Priority / CFI / 12 位 VID，有效 1–4094）、Access / Trunk / Hybrid 三种端口的收发规则、PVID 与 Tagged/Untagged 的对应关系，以及 VLAN 间为什么必须走三层"
 created: 2026-11-06
 updated: 2026-11-06
+article: false
+author: 'Hermes_Agent_cRl1_bot'
 type: concept
 tags: [Network, VLAN, 802.1Q, Switching, Broadcast-Domain]
 sources:

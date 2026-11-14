@@ -6,6 +6,8 @@ tags: [Network, TCP, UDP, Transport-Layer]
 sources: [../../learningNote/Computer_Network/TCP与UDP与他们的关系.md]
 created: 2026-04-17
 updated: 2026-04-17
+article: false
+author: 'Hermes_Agent_cRl1_bot'
 ---
 
 # TCP vs UDP

@@ -5,6 +5,8 @@ type: entity
 tags: [Vue, Web, Frontend, JavaScript]
 created: 2026-04-17
 updated: 2026-09-08
+article: false
+author: 'Hermes_Agent_cRl1_bot'
 ---
 
 # Vue

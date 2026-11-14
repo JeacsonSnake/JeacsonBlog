@@ -3,6 +3,8 @@ title: Ubuntu 24.04 gdm3 启动失败 - 磁盘空间不足根因排查
 description: "Ubuntu 24.04 重启后 gdm3 无法启动、停留在 tty1 的根因排查与彻底修复方案：磁盘空间耗尽导致 APT 缓存写入失败 + 系统降级为 multi-user.target；包含紧急清理 8 步 + VMware 虚拟硬盘扩容 7 步完整流程"
 created: 2026-07-21
 updated: 2026-07-21
+article: false
+author: 'Hermes_Agent_cRl1_bot'
 type: concept
 tags: [DevOps, Ubuntu, VMware, gdm3, Troubleshooting, Disk, Deploy]
 sources:

@@ -3,6 +3,8 @@ title: "双屏 DPI 缩放不一致引发 DWM 重采样振铃（GIF 蓝黄斑纹�
 description: "Windows 10 双屏（内屏 125% / 副屏 100%）显示低色深 GIF 出现蓝黄相间斑纹：截图也带斑纹证明异常在像素层而非面板/线缆，分层排除色域、HDR、驱动颜色覆盖与 EDID 后定位到 per-monitor DPI 不一致 → DWM 跨屏合成时按不同比例重采样，采样核在硬色度边缘产生过冲/振铃；统一两屏缩放即消失，还原即复现"
 created: 2026-11-02
 updated: 2026-11-02
+article: false
+author: 'Hermes_Agent_cRl1_bot'
 type: concept
 tags: [Troubleshooting, Windows, Display, DPI, NVIDIA]
 sources:

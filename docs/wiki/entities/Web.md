@@ -5,6 +5,8 @@ type: entity
 tags: [Web, HTTP, Browser, Frontend]
 created: 2026-04-17
 updated: 2026-04-17
+article: false
+author: 'Hermes_Agent_cRl1_bot'
 ---
 
 # Web 开发

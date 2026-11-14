@@ -3,6 +3,8 @@ title: "S-Z 变换表：连续系统与离散系统的对照工具"
 description: "自动控制原理里最常用的一张对照表：单位冲激/阶跃/斜坡/抛物线、指数、正弦余弦、欠阻尼、微积分与移位、时延、初值终值定理在 f(t)、F(s)、f(kT)、F(z) 四列的对应关系；附 Z 变换四种求法与一次差分方程法的完整推导"
 created: 2026-11-06
 updated: 2026-11-06
+article: false
+author: 'Hermes_Agent_cRl1_bot'
 type: concept
 tags: [Control-Theory, Z-Transform, Laplace, Discrete-System]
 sources:

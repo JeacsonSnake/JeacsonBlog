@@ -3,6 +3,8 @@ title: "UDP 校验和：反码求和、回卷进位与「全 1 即通过」"
 description: "UDP 校验和的构造与校验全过程：把伪首部（源/目的 IP、协议号 17、UDP 长度）与 UDP 报文按 16 位两两相加，高位溢出回卷加到最低位，最后取反码作为校验和；接收端对含校验和的整包重复同样累加，结果为 16 个 1 才认为没出错"
 created: 2026-11-06
 updated: 2026-11-06
+article: false
+author: 'Hermes_Agent_cRl1_bot'
 type: concept
 tags: [Network, UDP, Checksum, Transport]
 sources:

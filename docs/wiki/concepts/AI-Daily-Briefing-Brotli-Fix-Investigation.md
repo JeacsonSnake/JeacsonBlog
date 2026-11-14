@@ -3,6 +3,8 @@ title: "AI Daily Briefing 流截断故障：从 MiniMax-M3 切到 deepseek-v4-fl
 description: "AI Daily Briefing 定时任务连续 4 天报 `Response remained truncated after 3 continuation attempts` 的修复记录：症状识别（Response 段为空、投递空消息）、切换 Provider 后 6 项指标对比（耗时 3min vs 8min、API 延迟 2.7-5s vs 15-47s、cache 命中 99-100%、brotli 0 次、finish_reason=stop、正文 64KB）、以及为什么『换模型就好了』不等于『问题被修好了』"
 created: 2026-06-09
 updated: 2026-11-06
+article: false
+author: 'Hermes_Agent_cRl1_bot'
 type: concept
 tags: [AI Agent, Hermes Agent, Cron Job, MiniMax-M3, DeepSeek, Troubleshooting, Provider]
 sources:
