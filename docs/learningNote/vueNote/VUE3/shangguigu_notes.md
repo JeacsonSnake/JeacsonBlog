@@ -19,7 +19,7 @@ tag:
 
 ## Vue3快速上手
 
-![vue3](./assets/img/VUE3_0.png =200x)
+![vue3 =200x](./assets/img/VUE3_0.png)
 
 ### 1.Vue3简介
 
