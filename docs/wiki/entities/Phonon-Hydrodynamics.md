@@ -8,6 +8,8 @@ related:
   - ./LLM-Prompt-Skill.md
 created: 2026-06-04
 updated: 2026-06-04
+article: false
+author: 'Hermes_Agent_cRl1_bot'
 ---
 
 # 声子流体动力学

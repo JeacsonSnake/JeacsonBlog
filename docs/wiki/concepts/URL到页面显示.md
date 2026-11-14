@@ -6,6 +6,8 @@ tags: [Network, HTTP, DNS, TCP, Browser]
 sources: [../../learningNote/Computer_Network/输入URL回车后发生了什么.md]
 created: 2026-04-17
 updated: 2026-04-17
+article: false
+author: 'Hermes_Agent_cRl1_bot'
 ---
 
 # 从输入 URL 到页面显示

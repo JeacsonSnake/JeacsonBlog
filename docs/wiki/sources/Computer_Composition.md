@@ -5,6 +5,8 @@ type: source
 tags: [Computer, Hardware, IEEE754, Float]
 created: 2026-04-17
 updated: 2026-04-17
+article: false
+author: 'Hermes_Agent_cRl1_bot'
 ---
 
 # 计算机组成原理知识域

@@ -3,6 +3,8 @@ title: "ROS2 参数服务：随节点走的键值配置"
 description: "ROS2 的 Parameters 不存在中心化仓库，而是挂在节点内部、通过内置参数服务（本质是服务通信）读写的键值对；ros2 param 的 list/get/set/dump/load 六个命令与 --params-file 启动时加载的区别，以及只读参数（qos_overrides）为什么 set 会失败"
 created: 2026-11-06
 updated: 2026-11-06
+article: false
+author: 'Hermes_Agent_cRl1_bot'
 type: concept
 tags: [ROS2, Parameter, Configuration, Service]
 sources:

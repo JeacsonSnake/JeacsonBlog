@@ -3,6 +3,8 @@ title: Edge 浏览器「使用安全的 DNS」选项的副作用与排查
 description: "不要随意修改 Microsoft Edge 的「使用安全的 DNS」选项：会导致 curl 缓存错误 IP、TCP 三次握手成功但 ClientHello 后 RST 的诡异断网现象"
 created: 2026-07-01
 updated: 2026-07-01
+article: false
+author: 'Hermes_Agent_cRl1_bot'
 type: concept
 tags: [DevOps, DNS, Edge, Browser, Troubleshooting, Network]
 sources:

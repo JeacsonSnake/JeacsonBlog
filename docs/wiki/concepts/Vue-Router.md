@@ -3,6 +3,8 @@ title: "Vue Router：从基本路由到守卫与两种工作模式"
 description: "Vue Router 的完整骨架：router-link/router-view 的基本路由、children 嵌套、query 与 param 两种传参、命名路由、props 三种写法、replace、编程式导航、keep-alive 缓存与 activated/deactivated、全局/独享/组件内三层守卫，以及 hash 与 history 两种模式"
 created: 2026-11-06
 updated: 2026-11-06
+article: false
+author: 'Hermes_Agent_cRl1_bot'
 type: concept
 tags: [Vue, Vue-Router, SPA, Navigation-Guard]
 sources:

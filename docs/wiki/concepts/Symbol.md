@@ -6,6 +6,8 @@ tags: [JavaScript, ES6, Primitive-Type]
 sources: [../../learningNote/JSNote/Symbol.md]
 created: 2026-04-17
 updated: 2026-04-17
+article: false
+author: 'Hermes_Agent_cRl1_bot'
 ---
 
 # Symbol

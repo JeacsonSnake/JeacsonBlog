@@ -3,6 +3,8 @@ title: CSS fit-content 生产构建被错误优化（Vite cssnano 去重）
 description: "Vite 生产构建的 cssnano 会把 fit-content 与 -moz-fit-content 视为重复声明，去重后只保留后写的 vendor 前缀，导致 Chromium/Edge 下样式失效；修复：标准语法置于 vendor prefix 之后"
 created: 2026-09-08
 updated: 2026-09-08
+article: false
+author: 'Hermes_Agent_cRl1_bot'
 type: concept
 tags: [CSS, Vite, Vue, Frontend, Build, Troubleshooting]
 sources:

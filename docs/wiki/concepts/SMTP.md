@@ -3,6 +3,8 @@ title: "SMTP：为什么发信是「推」而收信必须是「拉」"
 description: "SMTP 传递一封邮件的六个步骤、为什么发件人用户代理不能直连收件人服务器（需要中继以便重试）、以及 SMTP 只能推不能拉——所以收信必须换用 POP3 / IMAP / HTTP 这类邮件访问协议"
 created: 2026-11-06
 updated: 2026-11-06
+article: false
+author: 'Hermes_Agent_cRl1_bot'
 type: concept
 tags: [Network, SMTP, Email, Application-Layer]
 sources:

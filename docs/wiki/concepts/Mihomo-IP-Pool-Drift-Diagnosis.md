@@ -3,6 +3,8 @@ title: "Mihomo 12 节点全挂诊断实录：从 TCP 屏蔽到 GSLB IP 池漂移
 description: "代理全挂时如何用 5 层取证把\"节点故障\"与\"站点屏蔽\"分开：直连基线 → 走代理跨站点验证（github 也挂 = 链路问题）→ 12 节点逐个切换 → 用户境外裸连证明节点活着 → dig 节点域名观察 IP 轮询 + config.yaml 修改时间推定订阅过期；附自举失败（mihomo 与 hermes update 互相依赖）的处理与 5 个诊断陷阱（--noproxy 覆盖 --proxy、订阅伪节点、Cloudflare 健康检查假阳性、节点分钟级波动、file provider path 限制）"
 created: 2026-11-06
 updated: 2026-11-06
+article: false
+author: 'Hermes_Agent_cRl1_bot'
 type: concept
 tags: [DevOps, mihomo, Network, Proxy, Troubleshooting, GSLB, Tencent Cloud, Diagnosis]
 sources:

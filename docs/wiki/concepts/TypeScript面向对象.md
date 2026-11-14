@@ -3,6 +3,8 @@ title: "TypeScript 面向对象：类、封装三修饰符、继承、抽象类�
 description: "class 与对象的关系、constructor 与 this 的绑定、语法糖式参数属性写法；readonly 与 public/protected/private 三个访问修饰符的可见范围、getter/setter 存取器；extends 继承、super 调用、方法重写、abstract 抽象类；interface 的结构约束与声明合并；以及用泛型替代 any（含 extends 约束）"
 created: 2026-11-06
 updated: 2026-11-06
+article: false
+author: 'Hermes_Agent_cRl1_bot'
 type: concept
 tags: [TypeScript, OOP, Class, Interface, Generic]
 sources:

@@ -3,6 +3,8 @@ title: LeanCloud 迁移至 Neon PostgreSQL（Waline 评论数据）
 description: "LeanCloud 2027 年停止对外服务后，Waline 评论数据从 LeanCloud 导出 → 格式转换 → 导入 Neon PostgreSQL 的完整迁移流程（Vercel 集成）"
 created: 2026-07-01
 updated: 2026-07-01
+article: false
+author: 'Hermes_Agent_cRl1_bot'
 type: concept
 tags: [DevOps, Deploy, Migrate, Waline, LeanCloud, Neon, PostgreSQL, Vercel]
 sources:

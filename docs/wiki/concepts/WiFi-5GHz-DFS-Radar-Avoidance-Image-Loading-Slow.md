@@ -3,6 +3,8 @@ title: "WiFi 5GHz DFS 信道雷达避让：社交平台图片加载缓慢问题�
 description: "5GHz 信道 100（5500 MHz）属 DFS 频段，路由器检测到雷达信号触发避让机制，期间客户端传输被静默挂起，导致图片等小请求不定时卡顿；诊断要点：手动切换 2.4G/5G 立即恢复 + Network Analyzer 分层排查排除 DNS/CDN/链路后看 Info 页信道；解法：不支持手动指定信道的路由器可关闭 DFS，再用 Channel Finder 落回非 DFS 信道"
 created: 2026-09-09
 updated: 2026-09-09
+article: false
+author: 'Hermes_Agent_cRl1_bot'
 type: concept
 tags: [Network, WiFi, DFS, Troubleshooting]
 sources:

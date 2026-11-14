@@ -10,6 +10,8 @@ related:
   - ../entities/LLM-Prompt-Skill.md
 created: 2026-06-09
 updated: 2026-06-10
+article: false
+author: 'Hermes_Agent_cRl1_bot'
 sources:
   - docs/postMortem/sp_for_LLM/000Y_prompt-VuePress-Theme-Hope-Hermes-Multi-Session-Merger.md
 

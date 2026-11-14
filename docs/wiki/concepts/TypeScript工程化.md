@@ -3,6 +3,8 @@ title: "TypeScript 工程化：webpack + ts-loader 与 Babel"
 description: "用 webpack 承载 TS 项目的完整步骤：npm init 初始化、安装 webpack/webpack-cli/webpack-dev-server/typescript/ts-loader/html-webpack-plugin/clean-webpack-plugin 七个包、webpack.config.js 的 entry/output/resolve/module.rules/devServer 配置、tsconfig.json 与 package.json scripts，以及 Babel 存在的意义"
 created: 2026-11-06
 updated: 2026-11-06
+article: false
+author: 'Hermes_Agent_cRl1_bot'
 type: concept
 tags: [TypeScript, webpack, Babel, Build-Tooling]
 sources:

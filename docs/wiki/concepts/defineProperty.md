@@ -3,6 +3,8 @@ title: "Object.defineProperty：属性描述符与 Vue2 的响应式劫持"
 description: "用 getter/setter 改写对象属性读写：属性描述符（enumerable / writable / configurable）的含义与默认值都是 false 这个坑，以及 Vue2 为什么用它做响应式、又为什么被 Proxy 取代（新增/删除属性、数组索引赋值都绕不过已定义好的 get/set 钩子）"
 created: 2026-11-06
 updated: 2026-11-06
+article: false
+author: 'Hermes_Agent_cRl1_bot'
 type: concept
 tags: [JavaScript, Object, Descriptor, Vue2, Reactivity]
 sources:

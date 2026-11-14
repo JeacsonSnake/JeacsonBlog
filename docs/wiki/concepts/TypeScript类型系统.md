@@ -3,6 +3,8 @@ title: "TypeScript 类型系统：从类型声明到 tsconfig 编译选项"
 description: "TS 是 JS 的超集，在编译前做类型检查。覆盖类型声明与自动推断、完整基本类型表（number/string/boolean/字面量/any/unknown/void/never/object/array/function/tuple/enum）、类型断言的两种写法，以及 tsconfig.json 的 include/exclude/extends/files 与 compilerOptions 的 target/lib/module"
 created: 2026-11-06
 updated: 2026-11-06
+article: false
+author: 'Hermes_Agent_cRl1_bot'
 type: concept
 tags: [TypeScript, Type-System, tsconfig, Tooling]
 sources:

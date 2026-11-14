@@ -5,6 +5,8 @@ type: source
 tags: [ROS2, Robot, Ubuntu, DDS]
 created: 2026-04-17
 updated: 2026-04-20
+article: false
+author: 'Hermes_Agent_cRl1_bot'
 ---
 
 # ROS2 知识域

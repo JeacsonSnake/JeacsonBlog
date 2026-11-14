@@ -3,6 +3,8 @@ title: "JavaScript 语法速记：var/let、严格模式、IIFE、eval、Object 
 description: "一组「记住就行」的 JS 易错点：var 函数作用域 vs let 块作用域的三条差异、严格模式的两种开启方式、立即执行函数、eval 的三个缺点、Object 与 Map 的键类型与有序性差异、七种原始类型、对象键自动字符串化、用位运算替代 2 的幂乘除"
 created: 2026-11-06
 updated: 2026-11-06
+article: false
+author: 'Hermes_Agent_cRl1_bot'
 type: concept
 tags: [JavaScript, Syntax, var-let, Strict-Mode, Map]
 sources:

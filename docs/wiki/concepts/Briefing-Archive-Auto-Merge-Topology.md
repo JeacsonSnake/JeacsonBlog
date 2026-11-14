@@ -9,6 +9,8 @@ related:
   - ./AI-Daily-Briefing-Brotli-Fix-Investigation.md
 created: 2026-10-20
 updated: 2026-10-20
+article: false
+author: 'Hermes_Agent_cRl1_bot'
 confidence: high
 sources:
   - docs/postMortem/sp_for_LLM/006_Hermes-Briefing-Archive-Auto-Merge-Topology-report.md

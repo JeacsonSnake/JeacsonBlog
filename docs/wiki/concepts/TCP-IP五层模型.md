@@ -3,6 +3,8 @@ title: "TCP/IP 五层模型：每层解决什么问题"
 description: "从物理层到应用层逐层拆解 TCP/IP 五层模型：物理层传比特、链路层用 MAC/ARP 在同一链路内寻址、网络层用 IP 做跨网络寻址与分片（MTU 1500）、传输层用 TCP/UDP 区分进程、应用层提供 HTTP/DNS/SMTP；并说明同网段与跨网段两种转发路径，以及交换机（二层）与路由器（三层）的分工"
 created: 2026-11-06
 updated: 2026-11-06
+article: false
+author: 'Hermes_Agent_cRl1_bot'
 type: concept
 tags: [Network, TCP-IP, Layering, ARP, Routing]
 sources:

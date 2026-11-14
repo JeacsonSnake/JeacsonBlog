@@ -3,6 +3,8 @@ title: "Brotli 流截断的五层根因：brotlicffi 守卫 + httpx 不检查 + 
 description: "`brotli: decoder process called with data when 'can_accept_more_data()' is False` 的完整技术分析：五层技术栈（Hermes 请求 br → openai SDK 继承 → httpx 不检查 can_accept_more_data → brotli C 状态机 NEEDS_MORE_OUTPUT → brotlicffi 的 `_unconsumed_data` 守卫抛错）、为什么 retry 永远在同一位置失败、四种 Provider 的 Content-Encoding 差异、urllib3 #3734 的同类回归、以及 Hermes 已在 skills_hub.py 做过的规避为什么没覆盖 Provider 调用"
 created: 2026-11-06
 updated: 2026-11-06
+article: false
+author: 'Hermes_Agent_cRl1_bot'
 type: concept
 tags: [Brotli, httpx, brotlicffi, Streaming, LLM Provider, Root Cause, Hermes Agent]
 sources:

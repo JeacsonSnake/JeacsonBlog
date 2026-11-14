@@ -7,6 +7,8 @@ related:
   - ../entities/Phonon-Hydrodynamics.md
 created: 2026-06-03
 updated: 2026-06-04
+article: false
+author: 'Hermes_Agent_cRl1_bot'
 sources:
   - docs/postMortem/sp_for_LLM/001_QA-intermediate-heat-transfer-literature-report.md
 

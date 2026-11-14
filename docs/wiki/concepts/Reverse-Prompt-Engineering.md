@@ -4,6 +4,8 @@ description: "反向提示词工程方法论与三 Session Prompt 编译管道 �
 type: concept
 created: 2026-06-05
 updated: 2026-06-05
+article: false
+author: 'Hermes_Agent_cRl1_bot'
 tags: [LLM, Prompt Engineering, Kimi, Multimodal, Image Generation, Architecture Diagram]
 related:
   - ../entities/LLM-Prompt-Skill.md

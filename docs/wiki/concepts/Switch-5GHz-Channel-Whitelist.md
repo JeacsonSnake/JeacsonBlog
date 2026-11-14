@@ -3,6 +3,8 @@ title: "Nintendo Switch 5GHz 搜不到：信道白名单与路由器手动选频
 description: "Switch 全系（含 OLED）5GHz 网卡只支持 UNII-1 段的 36/40/44/48 四个信道，路由器自动选频落到 UNII-3（149–165）或 DFS（52–64、100–144）时，SSID 在扫描列表中完全不可见（不是搜到连不上）；解法：关 Auto Channel Finder 后在本地 Web UI（Linksys CA 隐藏入口）把 5GHz 固定到信道 36，并顺带理解 Beacon 被动扫描与 RSSI 换算的取证方法"
 created: 2026-11-05
 updated: 2026-11-05
+article: false
+author: 'Hermes_Agent_cRl1_bot'
 type: concept
 tags: [Network, WiFi, Channel, Troubleshooting]
 sources:

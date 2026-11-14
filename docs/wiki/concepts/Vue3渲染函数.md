@@ -3,6 +3,8 @@ title: "Vue3 与 Vue2 的渲染函数：h() 是怎么变扁平的"
 description: "从模板到真实 DOM 的四步（模板 → VNode → VirtualDOM → 真实 DOM），以及为什么可以直接写 render() 跳过模板编译；Vue2 的 h(type, {attrs, on}, children) 与 Vue3 的 h(type, {id, onClick}, children) 对比——属性对象被拍平、事件用 on 前缀、h 改为按需引入"
 created: 2026-11-06
 updated: 2026-11-06
+article: false
+author: 'Hermes_Agent_cRl1_bot'
 type: concept
 tags: [Vue3, Render-Function, VNode, VirtualDOM]
 sources:

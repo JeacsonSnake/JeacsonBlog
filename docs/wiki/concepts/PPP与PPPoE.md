@@ -3,6 +3,8 @@ title: "PPP 与 PPPoE：点对点链路协议，以及为什么要把它塞进�
 description: "PPP 作为二层协议为点对点链路提供多协议封装（拨号上网获取 IP），但它要求两端是点对点关系，不适用于广播型以太网；PPPoE 把 PPP 封装进以太网帧，从而在共享以太网上为每个用户建立独立的 PPP 会话，兼顾宽带接入、接入控制与计费"
 created: 2026-11-06
 updated: 2026-11-06
+article: false
+author: 'Hermes_Agent_cRl1_bot'
 type: concept
 tags: [Network, PPP, PPPoE, Data-Link, Broadband]
 sources:

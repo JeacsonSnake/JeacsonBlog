@@ -3,6 +3,8 @@ title: "机器数与 IEEE-754：浮点数是怎么存进 32 位的"
 description: "机器数的规范化形式 m×2^e、IEEE-754 单/双精度的符号位-偏移指数-尾数三段结构（bias 127/1023）、十进制与机器数双向换算的完整步骤（含大数用 10^3≈2^10 估算指数）、±0/±∞/NaN 的特殊编码、数值范围与上下溢、机器精度 2^-23、真误差与相对误差、以及舍入规则"
 created: 2026-11-06
 updated: 2026-11-06
+article: false
+author: 'Hermes_Agent_cRl1_bot'
 type: concept
 tags: [Computer-Organization, IEEE-754, Floating-Point, Numerical-Methods]
 sources:
