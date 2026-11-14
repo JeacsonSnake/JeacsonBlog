@@ -1,0 +1,575 @@
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="https://blog.jeacsonsnake.com/en/rss.xsl"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <atom:link href="https://blog.jeacsonsnake.com/en/rss.xml" rel="self" type="application/rss+xml"/>
+    <title>JeacsonBlog</title>
+    <link>https://blog.jeacsonsnake.com/en/</link>
+    <description>JeacsonBlog-一个简单的博客</description>
+    <language>en-US</language>
+    <pubDate>Sat, 14 Nov 2026 11:25:41 GMT</pubDate>
+    <lastBuildDate>Sat, 14 Nov 2026 11:25:41 GMT</lastBuildDate>
+    <generator>@vuepress/plugin-feed</generator>
+    <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+    <image>
+      <title>JeacsonBlog</title>
+      <url>https://blog.jeacsonsnake.com/assets/img/logo.png</url>
+      <link>https://blog.jeacsonsnake.com/en/</link>
+    </image>
+    <category>Technical Investigation</category>
+    <category>markdown</category>
+    <category>Computer</category>
+    <category>Network</category>
+    <category>basic</category>
+    <category>JavaScript</category>
+    <category>Web</category>
+    <category>自动控制原理相关</category>
+    <category>TypeScript</category>
+    <category>Skill</category>
+    <category>VUE</category>
+    <category>robot</category>
+    <category>ROS</category>
+    <category>tiny_tips</category>
+    <category>deploy</category>
+    <item>
+      <title>007-Handing the blog translation over to an automated pipeline —— the inventory, the detection layer, and a checker that kept saying &amp;quot;nothing&amp;apos;s wrong&amp;quot;</title>
+      <link>/en/postMortem/sp_for_LLM/007_Hermes-Bilingual-Translation-and-Wiki-Pipeline-Decoupling-report.html</link>
+      <guid isPermaLink="false">/en/postMortem/sp_for_LLM/007_Hermes-Bilingual-Translation-and-Wiki-Pipeline-Decoupling-report.html</guid>
+      <source url="https://blog.jeacsonsnake.com/en/rss.xml">007-Handing the blog translation over to an automated pipeline —— the inventory, the detection layer, and a checker that kept saying &amp;quot;nothing&amp;apos;s wrong&amp;quot;</source>
+      <description>This document is a full retrospective of the work from 2026-11-05 15:03 to 2026-11-06 21:21 (about 30 hours, two back-to-back sessions): turning &amp;quot;translate the whole Chines...</description>
+      <category>Technical Investigation</category>
+      <pubDate>Sun, 08 Nov 2026 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[This document is a full retrospective of the work from 2026-11-05 15:03 to 2026-11-06 21:21 (about 30 hours, two back-to-back sessions): turning &quot;translate the whole Chines...]]></content:encoded>
+    </item>
+    <item>
+      <title>Deployment</title>
+      <link>/en/postMortem/deploy/</link>
+      <guid isPermaLink="false">/en/postMortem/deploy/</guid>
+      <source url="https://blog.jeacsonsnake.com/en/rss.xml">Deployment</source>
+      <description>Overview Some write-ups summarising the pits I fell into while deploying things (this blog, or other static sites, virtual machines, and so on). Important This article was trans...</description>
+      <pubDate>Sat, 14 Nov 2026 11:25:42 GMT</pubDate>
+      <content:encoded><![CDATA[Overview Some write-ups summarising the pits I fell into while deploying things (this blog, or other static sites, virtual machines, and so on). Important This article was trans...]]></content:encoded>
+    </item>
+    <item>
+      <title>001_Adding a markdown-it plugin to vuepress</title>
+      <link>/en/postMortem/markdown_render/001_import.html</link>
+      <guid isPermaLink="false">/en/postMortem/markdown_render/001_import.html</guid>
+      <source url="https://blog.jeacsonsnake.com/en/rss.xml">001_Adding a markdown-it plugin to vuepress</source>
+      <description>Background While writing the I wanted to merge some cells, but plain Markdown has no way to handle complicated tables. How to go about it First I went looking for a vuepress plu...</description>
+      <category>markdown</category>
+      <pubDate>Sat, 14 Nov 2026 11:25:42 GMT</pubDate>
+      <content:encoded><![CDATA[Background While writing the I wanted to merge some cells, but plain Markdown has no way to handle complicated tables. How to go about it First I went looking for a vuepress plu...]]></content:encoded>
+    </item>
+    <item>
+      <title>The markdown-it renderer</title>
+      <link>/en/postMortem/markdown_render/</link>
+      <guid isPermaLink="false">/en/postMortem/markdown_render/</guid>
+      <source url="https://blog.jeacsonsnake.com/en/rss.xml">The markdown-it renderer</source>
+      <description>Overview Some write-ups summarising the pits I fell into with markdown-it. Important This article was translated by Hermes Agent; the original text can be found at . The transla...</description>
+      <pubDate>Sat, 14 Nov 2026 11:25:42 GMT</pubDate>
+      <content:encoded><![CDATA[Overview Some write-ups summarising the pits I fell into with markdown-it. Important This article was translated by Hermes Agent; the original text can be found at . The transla...]]></content:encoded>
+    </item>
+    <item>
+      <title>skills/prompts available to large language models</title>
+      <link>/en/postMortem/sp_for_LLM/</link>
+      <guid isPermaLink="false">/en/postMortem/sp_for_LLM/</guid>
+      <source url="https://blog.jeacsonsnake.com/en/rss.xml">skills/prompts available to large language models</source>
+      <description>Summary Some multi-turn conversations with LLMs, or skills/prompts that a large language model can use; updated from time to time. Be aware that a (large) part of the articles m...</description>
+      <pubDate>Sat, 14 Nov 2026 11:25:42 GMT</pubDate>
+      <content:encoded><![CDATA[Summary Some multi-turn conversations with LLMs, or skills/prompts that a large language model can use; updated from time to time. Be aware that a (large) part of the articles m...]]></content:encoded>
+    </item>
+    <item>
+      <title>Tiny tips</title>
+      <link>/en/postMortem/tiny_tips/</link>
+      <guid isPermaLink="false">/en/postMortem/tiny_tips/</guid>
+      <source url="https://blog.jeacsonsnake.com/en/rss.xml">Tiny tips</source>
+      <description>Overview Some tiny tips, updated irregularly. Important This article was translated by Hermes Agent; the original text can be found at . The translation is for reference only. T...</description>
+      <pubDate>Sat, 14 Nov 2026 11:25:42 GMT</pubDate>
+      <content:encoded><![CDATA[Overview Some tiny tips, updated irregularly. Important This article was translated by Hermes Agent; the original text can be found at . The translation is for reference only. T...]]></content:encoded>
+    </item>
+    <item>
+      <title>TCP and UDP and the relationship between them</title>
+      <link>/en/learningNote/Computer_Network/TCP%E4%B8%8EUDP%E4%B8%8E%E4%BB%96%E4%BB%AC%E7%9A%84%E5%85%B3%E7%B3%BB.html</link>
+      <guid isPermaLink="false">/en/learningNote/Computer_Network/TCP%E4%B8%8EUDP%E4%B8%8E%E4%BB%96%E4%BB%AC%E7%9A%84%E5%85%B3%E7%B3%BB.html</guid>
+      <source url="https://blog.jeacsonsnake.com/en/rss.xml">TCP and UDP and the relationship between them</source>
+      <description>UDP UDP is a bare-bones, lightweight transport protocol that offers only the most basic communication services. UDP is defined in [RFC 768], and it does about as little as a tra...</description>
+      <category>Computer</category>
+      <category>Network</category>
+      <category>basic</category>
+      <pubDate>Sat, 14 Nov 2026 11:25:42 GMT</pubDate>
+      <content:encoded><![CDATA[UDP UDP is a bare-bones, lightweight transport protocol that offers only the most basic communication services. UDP is defined in [RFC 768], and it does about as little as a tra...]]></content:encoded>
+    </item>
+    <item>
+      <title>How to compute the UDP checksum</title>
+      <link>/en/learningNote/Computer_Network/UDP%E6%A0%A1%E9%AA%8C%E5%92%8C.html</link>
+      <guid isPermaLink="false">/en/learningNote/Computer_Network/UDP%E6%A0%A1%E9%AA%8C%E5%92%8C.html</guid>
+      <source url="https://blog.jeacsonsnake.com/en/rss.xml">How to compute the UDP checksum</source>
+      <description>How is the checksum constructed? Constructing the checksum is fairly simple, but computing it is a bit of a pain: you add the 16-bit binary source data to be sent in pairs, keep...</description>
+      <category>Computer</category>
+      <category>Network</category>
+      <category>basic</category>
+      <pubDate>Sat, 14 Nov 2026 11:25:42 GMT</pubDate>
+      <content:encoded><![CDATA[How is the checksum constructed? Constructing the checksum is fairly simple, but computing it is a bit of a pain: you add the 16-bit binary source data to be sent in pairs, keep...]]></content:encoded>
+    </item>
+    <item>
+      <title>What is SMTP?</title>
+      <link>/en/learningNote/Computer_Network/%E4%BB%80%E4%B9%88%E6%98%AFSMTP.html</link>
+      <guid isPermaLink="false">/en/learningNote/Computer_Network/%E4%BB%80%E4%B9%88%E6%98%AFSMTP.html</guid>
+      <source url="https://blog.jeacsonsnake.com/en/rss.xml">What is SMTP?</source>
+      <description>Introduction SMTP (Simple Mail Transfer Protocol) is a protocol that provides reliable and efficient transfer of electronic mail. It is used mainly for moving mail between syste...</description>
+      <category>Computer</category>
+      <category>Network</category>
+      <category>basic</category>
+      <pubDate>Sat, 14 Nov 2026 11:25:42 GMT</pubDate>
+      <content:encoded><![CDATA[Introduction SMTP (Simple Mail Transfer Protocol) is a protocol that provides reliable and efficient transfer of electronic mail. It is used mainly for moving mail between syste...]]></content:encoded>
+    </item>
+    <item>
+      <title>The five-layer TCP/IP model</title>
+      <link>/en/learningNote/Computer_Network/%E5%85%B3%E4%BA%8ETCP_IP%E7%9A%84%E4%BA%94%E5%B1%82%E6%A8%A1%E5%9E%8B.html</link>
+      <guid isPermaLink="false">/en/learningNote/Computer_Network/%E5%85%B3%E4%BA%8ETCP_IP%E7%9A%84%E4%BA%94%E5%B1%82%E6%A8%A1%E5%9E%8B.html</guid>
+      <source url="https://blog.jeacsonsnake.com/en/rss.xml">The five-layer TCP/IP model</source>
+      <description>The five-layer TCP/IP model (3.2) Here are a few related sites on the subject: Detailed explanation of the TCP/IP network model_tcpip model_·Fixes on the Fly·&amp;apos;s blog - CSDN blog...</description>
+      <category>Computer</category>
+      <category>Network</category>
+      <category>basic</category>
+      <pubDate>Sat, 14 Nov 2026 11:25:42 GMT</pubDate>
+      <content:encoded><![CDATA[The five-layer TCP/IP model (3.2) Here are a few related sites on the subject: Detailed explanation of the TCP/IP network model_tcpip model_·Fixes on the Fly·'s blog - CSDN blog...]]></content:encoded>
+    </item>
+    <item>
+      <title>VLAN</title>
+      <link>/en/learningNote/Computer_Network/%E5%85%B3%E4%BA%8EVLAN.html</link>
+      <guid isPermaLink="false">/en/learningNote/Computer_Network/%E5%85%B3%E4%BA%8EVLAN.html</guid>
+      <source url="https://blog.jeacsonsnake.com/en/rss.xml">VLAN</source>
+      <description>5. About VLAN (3.1-3.3) 1. Concepts (3.1) VLAN (Virtual Local Area Network) — a virtual LAN — is a communication technology that logically divides one physical LAN into several ...</description>
+      <category>Computer</category>
+      <category>Network</category>
+      <category>basic</category>
+      <pubDate>Sat, 14 Nov 2026 11:25:42 GMT</pubDate>
+      <content:encoded><![CDATA[5. About VLAN (3.1-3.3) 1. Concepts (3.1) VLAN (Virtual Local Area Network) — a virtual LAN — is a communication technology that logically divides one physical LAN into several ...]]></content:encoded>
+    </item>
+    <item>
+      <title>The PPP and PPPoE protocols</title>
+      <link>/en/learningNote/Computer_Network/%E5%85%B3%E4%BA%8Eppp%E5%8D%8F%E8%AE%AE%E4%B8%8Epppoe%E5%8D%8F%E8%AE%AE.html</link>
+      <guid isPermaLink="false">/en/learningNote/Computer_Network/%E5%85%B3%E4%BA%8Eppp%E5%8D%8F%E8%AE%AE%E4%B8%8Epppoe%E5%8D%8F%E8%AE%AE.html</guid>
+      <source url="https://blog.jeacsonsnake.com/en/rss.xml">The PPP and PPPoE protocols</source>
+      <description>The PPP and PPPoE protocols 1. PPP (point to point) protocol Definition: Point-to-Point Protocol (PPP) provides a standard method for transporting multi-protocol datagrams over ...</description>
+      <category>Computer</category>
+      <category>Network</category>
+      <category>basic</category>
+      <pubDate>Sat, 14 Nov 2026 11:25:42 GMT</pubDate>
+      <content:encoded><![CDATA[The PPP and PPPoE protocols 1. PPP (point to point) protocol Definition: Point-to-Point Protocol (PPP) provides a standard method for transporting multi-protocol datagrams over ...]]></content:encoded>
+    </item>
+    <item>
+      <title>Principles of reliable data transfer (RDT/GBN/SR)</title>
+      <link>/en/learningNote/Computer_Network/%E5%8F%AF%E9%9D%A0%E6%95%B0%E6%8D%AE%E7%9A%84%E4%BC%A0%E8%BE%93%E5%8E%9F%E7%90%86.html</link>
+      <guid isPermaLink="false">/en/learningNote/Computer_Network/%E5%8F%AF%E9%9D%A0%E6%95%B0%E6%8D%AE%E7%9A%84%E4%BC%A0%E8%BE%93%E5%8E%9F%E7%90%86.html</guid>
+      <source url="https://blog.jeacsonsnake.com/en/rss.xml">Principles of reliable data transfer (RDT/GBN/SR)</source>
+      <description>In this post we&amp;apos;ll go through the principles of implementing reliable data transfer in the transport layer, covering the various rdt protocols, discussing the difference between...</description>
+      <category>Computer</category>
+      <category>Network</category>
+      <category>basic</category>
+      <pubDate>Sat, 14 Nov 2026 11:25:42 GMT</pubDate>
+      <content:encoded><![CDATA[In this post we'll go through the principles of implementing reliable data transfer in the transport layer, covering the various rdt protocols, discussing the difference between...]]></content:encoded>
+    </item>
+    <item>
+      <title>What happens after you type a URL and hit Enter</title>
+      <link>/en/learningNote/Computer_Network/%E8%BE%93%E5%85%A5URL%E5%9B%9E%E8%BD%A6%E5%90%8E%E5%8F%91%E7%94%9F%E4%BA%86%E4%BB%80%E4%B9%88.html</link>
+      <guid isPermaLink="false">/en/learningNote/Computer_Network/%E8%BE%93%E5%85%A5URL%E5%9B%9E%E8%BD%A6%E5%90%8E%E5%8F%91%E7%94%9F%E4%BA%86%E4%BB%80%E4%B9%88.html</guid>
+      <source url="https://blog.jeacsonsnake.com/en/rss.xml">What happens after you type a URL and hit Enter</source>
+      <description>Let&amp;apos;s first look at the question[1]: A question asking whats_going_on_from_enterURL_to_bowser_display Translated, it says: Suppose you open your browser and type http://yourbusi...</description>
+      <category>Computer</category>
+      <category>Network</category>
+      <category>basic</category>
+      <pubDate>Sat, 14 Nov 2026 11:25:42 GMT</pubDate>
+      <content:encoded><![CDATA[Let's first look at the question[1]: A question asking whats_going_on_from_enterURL_to_bowser_display Translated, it says: Suppose you open your browser and type http://yourbusi...]]></content:encoded>
+    </item>
+    <item>
+      <title>Link Layer Discovery Protocol (LLDP)</title>
+      <link>/en/learningNote/Computer_Network/%E9%93%BE%E8%B7%AF%E5%8F%91%E7%8E%B0%E5%8D%8F%E8%AE%AE.html</link>
+      <guid isPermaLink="false">/en/learningNote/Computer_Network/%E9%93%BE%E8%B7%AF%E5%8F%91%E7%8E%B0%E5%8D%8F%E8%AE%AE.html</guid>
+      <source url="https://blog.jeacsonsnake.com/en/rss.xml">Link Layer Discovery Protocol (LLDP)</source>
+      <description>Link Layer Discovery Protocol (LLDP) (3.16) Definition: LLDP (Link Layer Discovery Protocol) is a protocol that lets devices from different vendors discover one another on the s...</description>
+      <category>Computer</category>
+      <category>Network</category>
+      <category>basic</category>
+      <pubDate>Sat, 14 Nov 2026 11:25:42 GMT</pubDate>
+      <content:encoded><![CDATA[Link Layer Discovery Protocol (LLDP) (3.16) Definition: LLDP (Link Layer Discovery Protocol) is a protocol that lets devices from different vendors discover one another on the s...]]></content:encoded>
+    </item>
+    <item>
+      <title>Blackhole routes</title>
+      <link>/en/learningNote/Computer_Network/%E9%BB%91%E6%B4%9E%E8%B7%AF%E7%94%B1.html</link>
+      <guid isPermaLink="false">/en/learningNote/Computer_Network/%E9%BB%91%E6%B4%9E%E8%B7%AF%E7%94%B1.html</guid>
+      <source url="https://blog.jeacsonsnake.com/en/rss.xml">Blackhole routes</source>
+      <description>A blackhole route is also a static route, but what makes it different from other routes is that a blackhole route&amp;apos;s outgoing interface is NULL0. If a static route&amp;apos;s outgoing int...</description>
+      <category>Computer</category>
+      <category>Network</category>
+      <category>basic</category>
+      <pubDate>Sat, 14 Nov 2026 11:25:42 GMT</pubDate>
+      <content:encoded><![CDATA[A blackhole route is also a static route, but what makes it different from other routes is that a blackhole route's outgoing interface is NULL0. If a static route's outgoing int...]]></content:encoded>
+    </item>
+    <item>
+      <title>The trouble with formal and actual parameters when a JS function reads a property off the object passed in</title>
+      <link>/en/learningNote/JSNote/Formal_Real_Para_When_Func_Get_Obj.html</link>
+      <guid isPermaLink="false">/en/learningNote/JSNote/Formal_Real_Para_When_Func_Get_Obj.html</guid>
+      <source url="https://blog.jeacsonsnake.com/en/rss.xml">The trouble with formal and actual parameters when a JS function reads a property off the object passed in</source>
+      <description>The trouble with formal and actual parameters when a JS function reads a property off the object passed in In a JavaScript function, when we pass an object in, we can read the p...</description>
+      <category>JavaScript</category>
+      <category>Web</category>
+      <pubDate>Sat, 14 Nov 2026 11:25:42 GMT</pubDate>
+      <content:encoded><![CDATA[The trouble with formal and actual parameters when a JS function reads a property off the object passed in In a JavaScript function, when we pass an object in, we can read the p...]]></content:encoded>
+    </item>
+    <item>
+      <title>The Reduce Method</title>
+      <link>/en/learningNote/JSNote/Reduce%E6%96%B9%E6%B3%95.html</link>
+      <guid isPermaLink="false">/en/learningNote/JSNote/Reduce%E6%96%B9%E6%B3%95.html</guid>
+      <source url="https://blog.jeacsonsnake.com/en/rss.xml">The Reduce Method</source>
+      <description>Brief reduce() is a built-in array method in Javascript. It is generally used to compress an array. Definition 1.reduce() takes two arguments: one is a callback function, the ot...</description>
+      <category>JavaScript</category>
+      <category>Web</category>
+      <pubDate>Sat, 14 Nov 2026 11:25:42 GMT</pubDate>
+      <content:encoded><![CDATA[Brief reduce() is a built-in array method in Javascript. It is generally used to compress an array. Definition 1.reduce() takes two arguments: one is a callback function, the ot...]]></content:encoded>
+    </item>
+    <item>
+      <title>What Is Symbol</title>
+      <link>/en/learningNote/JSNote/Symbol.html</link>
+      <guid isPermaLink="false">/en/learningNote/JSNote/Symbol.html</guid>
+      <source url="https://blog.jeacsonsnake.com/en/rss.xml">What Is Symbol</source>
+      <description>Definition — a primitive data type that never repeats Symbol is a new primitive data type introduced by ES6, standing for a unique value. It is the seventh data type in the Java...</description>
+      <category>JavaScript</category>
+      <category>Web</category>
+      <pubDate>Sat, 14 Nov 2026 11:25:42 GMT</pubDate>
+      <content:encoded><![CDATA[Definition — a primitive data type that never repeats Symbol is a new primitive data type introduced by ES6, standing for a unique value. It is the seventh data type in the Java...]]></content:encoded>
+    </item>
+    <item>
+      <title>The Object.defineproperty Method</title>
+      <link>/en/learningNote/JSNote/defineproperty%E6%96%B9%E6%B3%95.html</link>
+      <guid isPermaLink="false">/en/learningNote/JSNote/defineproperty%E6%96%B9%E6%B3%95.html</guid>
+      <source url="https://blog.jeacsonsnake.com/en/rss.xml">The Object.defineproperty Method</source>
+      <description>Brief Object.defineProperty is a fairly advanced function under the Object class in JavaScript; it can use its built-in getter and setter to modify the data passed in. It was ge...</description>
+      <category>JavaScript</category>
+      <category>Web</category>
+      <pubDate>Sat, 14 Nov 2026 11:25:42 GMT</pubDate>
+      <content:encoded><![CDATA[Brief Object.defineProperty is a fairly advanced function under the Object class in JavaScript; it can use its built-in getter and setter to modify the data passed in. It was ge...]]></content:encoded>
+    </item>
+    <item>
+      <title>Function Currying</title>
+      <link>/en/learningNote/JSNote/%E6%9F%AF%E9%87%8C%E5%8C%96.html</link>
+      <guid isPermaLink="false">/en/learningNote/JSNote/%E6%9F%AF%E9%87%8C%E5%8C%96.html</guid>
+      <source url="https://blog.jeacsonsnake.com/en/rss.xml">Function Currying</source>
+      <description>What is currying In one sentence: the process of turning a function that takes several arguments into a function that takes one argument and returns a function that accepts the ...</description>
+      <category>JavaScript</category>
+      <category>Web</category>
+      <pubDate>Sat, 14 Nov 2026 11:25:42 GMT</pubDate>
+      <content:encoded><![CDATA[What is currying In one sentence: the process of turning a function that takes several arguments into a function that takes one argument and returns a function that accepts the ...]]></content:encoded>
+    </item>
+    <item>
+      <title>Quick Memory Joggers</title>
+      <link>/en/learningNote/JSNote/%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BF%86.html</link>
+      <guid isPermaLink="false">/en/learningNote/JSNote/%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BF%86.html</guid>
+      <source url="https://blog.jeacsonsnake.com/en/rss.xml">Quick Memory Joggers</source>
+      <description>Brief Here are a few simple JS memory points — just remember them and you&amp;apos;re fine. Quick notes The difference between var and let The scope differs. var is function-scoped, let ...</description>
+      <category>JavaScript</category>
+      <category>Web</category>
+      <pubDate>Sat, 14 Nov 2026 11:25:42 GMT</pubDate>
+      <content:encoded><![CDATA[Brief Here are a few simple JS memory points — just remember them and you're fine. Quick notes The difference between var and let The scope differs. var is function-scoped, let ...]]></content:encoded>
+    </item>
+    <item>
+      <title>Principles of Automatic Control</title>
+      <link>/en/learningNote/Principles_of_Automatic_Control_Related/</link>
+      <guid isPermaLink="false">/en/learningNote/Principles_of_Automatic_Control_Related/</guid>
+      <source url="https://blog.jeacsonsnake.com/en/rss.xml">Principles of Automatic Control</source>
+      <description>This is where I keep the notes related to the principles of automatic control. S-Z transform table (Table of s- and z-transforms) Where: For t&amp;lt;0, the function f(t)=0 For k&amp;lt...</description>
+      <category>自动控制原理相关</category>
+      <pubDate>Sat, 14 Nov 2026 11:25:42 GMT</pubDate>
+      <content:encoded><![CDATA[This is where I keep the notes related to the principles of automatic control. S-Z transform table (Table of s- and z-transforms) Where: For t&lt;0, the function f(t)=0 For k&lt...]]></content:encoded>
+    </item>
+    <item>
+      <title>Principles of Computer Organization</title>
+      <link>/en/learningNote/Principles_of_Computer_Composition/</link>
+      <guid isPermaLink="false">/en/learningNote/Principles_of_Computer_Composition/</guid>
+      <source url="https://blog.jeacsonsnake.com/en/rss.xml">Principles of Computer Organization</source>
+      <description>Overview These pages are all notes on computer organization. If you spot a mistake, please do point it out! Machine number 1. Introduction When a decimal number is converted int...</description>
+      <category>Computer</category>
+      <category>basic</category>
+      <pubDate>Sat, 14 Nov 2026 11:25:42 GMT</pubDate>
+      <content:encoded><![CDATA[Overview These pages are all notes on computer organization. If you spot a mistake, please do point it out! Machine number 1. Introduction When a decimal number is converted int...]]></content:encoded>
+    </item>
+    <item>
+      <title>Calculation and simulation</title>
+      <link>/en/learningNote/Principles_of_Computer_Composition/compute_and_simutation.html</link>
+      <guid isPermaLink="false">/en/learningNote/Principles_of_Computer_Composition/compute_and_simutation.html</guid>
+      <source url="https://blog.jeacsonsnake.com/en/rss.xml">Calculation and simulation</source>
+      <description>Overview These pages are all notes on calculation and simulation. If you spot a mistake, please do point it out! Machine number See That section covers the calculations around I...</description>
+      <category>Computer</category>
+      <category>basic</category>
+      <pubDate>Sat, 14 Nov 2026 11:25:42 GMT</pubDate>
+      <content:encoded><![CDATA[Overview These pages are all notes on calculation and simulation. If you spot a mistake, please do point it out! Machine number See That section covers the calculations around I...]]></content:encoded>
+    </item>
+    <item>
+      <title>TypeScript</title>
+      <link>/en/learningNote/TypeScriptNote/</link>
+      <guid isPermaLink="false">/en/learningNote/TypeScriptNote/</guid>
+      <source url="https://blog.jeacsonsnake.com/en/rss.xml">TypeScript</source>
+      <description>Overview These are my notes on learning TypeScript. It was originally two big chapters; I split it into five by the study sessions I had at the time and put them in the articles...</description>
+      <category>TypeScript</category>
+      <category>Web</category>
+      <pubDate>Sat, 14 Nov 2026 11:25:42 GMT</pubDate>
+      <content:encoded><![CDATA[Overview These are my notes on learning TypeScript. It was originally two big chapters; I split it into five by the study sessions I had at the time and put them in the articles...]]></content:encoded>
+    </item>
+    <item>
+      <title>Setting up custom code snippets in VSCode</title>
+      <link>/en/learningNote/coding_skill/2024_09_23.html</link>
+      <guid isPermaLink="false">/en/learningNote/coding_skill/2024_09_23.html</guid>
+      <source url="https://blog.jeacsonsnake.com/en/rss.xml">Setting up custom code snippets in VSCode</source>
+      <description>Overview When you write code day to day, creating a bunch of files side by side means the same code gets written over and over. When you create a .vue file, for instance, you ha...</description>
+      <category>Computer</category>
+      <category>Skill</category>
+      <pubDate>Sat, 14 Nov 2026 11:25:42 GMT</pubDate>
+      <content:encoded><![CDATA[Overview When you write code day to day, creating a bunch of files side by side means the same code gets written over and over. When you create a .vue file, for instance, you ha...]]></content:encoded>
+    </item>
+    <item>
+      <title>VUE basics</title>
+      <link>/en/learningNote/vueNote/VUE2/VUE%E5%9F%BA%E7%A1%80.html</link>
+      <guid isPermaLink="false">/en/learningNote/vueNote/VUE2/VUE%E5%9F%BA%E7%A1%80.html</guid>
+      <source url="https://blog.jeacsonsnake.com/en/rss.xml">VUE basics</source>
+      <description>Three ways to piece page data together With interpolation syntax: With a methods function: With a computed property: Note: once you&amp;apos;re sure the computed property is read-only, y...</description>
+      <category>VUE</category>
+      <category>Web</category>
+      <pubDate>Sat, 14 Nov 2026 11:25:42 GMT</pubDate>
+      <content:encoded><![CDATA[Three ways to piece page data together With interpolation syntax: With a methods function: With a computed property: Note: once you're sure the computed property is read-only, y...]]></content:encoded>
+    </item>
+    <item>
+      <title>How Vue3 and Vue2 differ in data reactivity</title>
+      <link>/en/learningNote/vueNote/VUE3/VUE3_Vs_VUE2_In_Reactive_Data.html</link>
+      <guid isPermaLink="false">/en/learningNote/vueNote/VUE3/VUE3_Vs_VUE2_In_Reactive_Data.html</guid>
+      <source url="https://blog.jeacsonsnake.com/en/rss.xml">How Vue3 and Vue2 differ in data reactivity</source>
+      <description>1. How Vue3 and Vue2 differ when it comes to object data reactivity In vue2, all data is hijacked underneath with Object.defineProperty() to achieve data reactivity. That means ...</description>
+      <category>VUE</category>
+      <category>Web</category>
+      <pubDate>Sat, 14 Nov 2026 11:25:42 GMT</pubDate>
+      <content:encoded><![CDATA[1. How Vue3 and Vue2 differ when it comes to object data reactivity In vue2, all data is hijacked underneath with Object.defineProperty() to achieve data reactivity. That means ...]]></content:encoded>
+    </item>
+    <item>
+      <title>How Vue3 and Vue2 differ on render functions</title>
+      <link>/en/learningNote/vueNote/VUE3/VUE3_Vs_VUE2_In_Render_Function.html</link>
+      <guid isPermaLink="false">/en/learningNote/vueNote/VUE3/VUE3_Vs_VUE2_In_Render_Function.html</guid>
+      <source url="https://blog.jeacsonsnake.com/en/rss.xml">How Vue3 and Vue2 differ on render functions</source>
+      <description>How Vue3 and Vue2 differ on render functions When writing vue code, we usually write the HTML inside the template tag first. When we compile the code, VUE first converts the cod...</description>
+      <category>VUE</category>
+      <category>Web</category>
+      <pubDate>Sat, 14 Nov 2026 11:25:42 GMT</pubDate>
+      <content:encoded><![CDATA[How Vue3 and Vue2 differ on render functions When writing vue code, we usually write the HTML inside the template tag first. When we compile the code, VUE first converts the cod...]]></content:encoded>
+    </item>
+    <item>
+      <title>How Vue3 and Vue2 differ on watch</title>
+      <link>/en/learningNote/vueNote/VUE3/VUE3_Vs_VUE2_In_Watch.html</link>
+      <guid isPermaLink="false">/en/learningNote/vueNote/VUE3/VUE3_Vs_VUE2_In_Watch.html</guid>
+      <source url="https://blog.jeacsonsnake.com/en/rss.xml">How Vue3 and Vue2 differ on watch</source>
+      <description>How Vue3 and Vue2 differ on watch In VUE2, watch exists as an option. We can use the watch option to fire a function every time a reactive property changes. But in VUE3, watch e...</description>
+      <category>VUE</category>
+      <category>Web</category>
+      <pubDate>Sat, 14 Nov 2026 11:25:42 GMT</pubDate>
+      <content:encoded><![CDATA[How Vue3 and Vue2 differ on watch In VUE2, watch exists as an option. We can use the watch option to fire a function every time a reactive property changes. But in VUE3, watch e...]]></content:encoded>
+    </item>
+    <item>
+      <title>How is Vue 3&amp;apos;s data reactivity implemented? (Part 1)</title>
+      <link>/en/learningNote/vueNote/VUE3/VUE3%E7%9A%84%E6%95%B0%E6%8D%AE%E5%93%8D%E5%BA%94%E5%BC%8F_%E4%B8%8A.html</link>
+      <guid isPermaLink="false">/en/learningNote/vueNote/VUE3/VUE3%E7%9A%84%E6%95%B0%E6%8D%AE%E5%93%8D%E5%BA%94%E5%BC%8F_%E4%B8%8A.html</guid>
+      <source url="https://blog.jeacsonsnake.com/en/rss.xml">How is Vue 3&amp;apos;s data reactivity implemented? (Part 1)</source>
+      <description>Overview Here I&amp;apos;ll walk you through how Vue 3 implements data reactivity, starting from how the source is put together. This is part one. Reference: Vue Mastery — Vue 3 Reactivi...</description>
+      <category>VUE</category>
+      <category>Web</category>
+      <pubDate>Sat, 14 Nov 2026 11:25:42 GMT</pubDate>
+      <content:encoded><![CDATA[Overview Here I'll walk you through how Vue 3 implements data reactivity, starting from how the source is put together. This is part one. Reference: Vue Mastery — Vue 3 Reactivi...]]></content:encoded>
+    </item>
+    <item>
+      <title>How is Vue 3&amp;apos;s data reactivity implemented? (Part 3)</title>
+      <link>/en/learningNote/vueNote/VUE3/VUE3%E7%9A%84%E6%95%B0%E6%8D%AE%E5%93%8D%E5%BA%94%E5%BC%8F_%E4%B8%8B.html</link>
+      <guid isPermaLink="false">/en/learningNote/vueNote/VUE3/VUE3%E7%9A%84%E6%95%B0%E6%8D%AE%E5%93%8D%E5%BA%94%E5%BC%8F_%E4%B8%8B.html</guid>
+      <source url="https://blog.jeacsonsnake.com/en/rss.xml">How is Vue 3&amp;apos;s data reactivity implemented? (Part 3)</source>
+      <description>Overview Here I&amp;apos;ll walk you through how Vue 3 implements data reactivity, starting from how the source is put together. This is part three. Reference: Vue Mastery — Vue 3 Reacti...</description>
+      <category>VUE</category>
+      <category>Web</category>
+      <pubDate>Sat, 14 Nov 2026 11:25:42 GMT</pubDate>
+      <content:encoded><![CDATA[Overview Here I'll walk you through how Vue 3 implements data reactivity, starting from how the source is put together. This is part three. Reference: Vue Mastery — Vue 3 Reacti...]]></content:encoded>
+    </item>
+    <item>
+      <title>How is Vue 3&amp;apos;s data reactivity implemented? (Part 2)</title>
+      <link>/en/learningNote/vueNote/VUE3/VUE3%E7%9A%84%E6%95%B0%E6%8D%AE%E5%93%8D%E5%BA%94%E5%BC%8F_%E4%B8%AD.html</link>
+      <guid isPermaLink="false">/en/learningNote/vueNote/VUE3/VUE3%E7%9A%84%E6%95%B0%E6%8D%AE%E5%93%8D%E5%BA%94%E5%BC%8F_%E4%B8%AD.html</guid>
+      <source url="https://blog.jeacsonsnake.com/en/rss.xml">How is Vue 3&amp;apos;s data reactivity implemented? (Part 2)</source>
+      <description>Overview This is where I walk you through how Vue 3 implements data reactivity, starting from how the source is put together. This is part two. Reference: Vue Mastery — Vue 3 Re...</description>
+      <category>VUE</category>
+      <category>Web</category>
+      <pubDate>Sat, 14 Nov 2026 11:25:42 GMT</pubDate>
+      <content:encoded><![CDATA[Overview This is where I walk you through how Vue 3 implements data reactivity, starting from how the source is put together. This is part two. Reference: Vue Mastery — Vue 3 Re...]]></content:encoded>
+    </item>
+    <item>
+      <title>How is Vue 3&amp;apos;s data reactivity implemented? (Part 4)</title>
+      <link>/en/learningNote/vueNote/VUE3/VUE3%E7%9A%84%E6%95%B0%E6%8D%AE%E5%93%8D%E5%BA%94%E5%BC%8F_%E8%A1%A5.html</link>
+      <guid isPermaLink="false">/en/learningNote/vueNote/VUE3/VUE3%E7%9A%84%E6%95%B0%E6%8D%AE%E5%93%8D%E5%BA%94%E5%BC%8F_%E8%A1%A5.html</guid>
+      <source url="https://blog.jeacsonsnake.com/en/rss.xml">How is Vue 3&amp;apos;s data reactivity implemented? (Part 4)</source>
+      <description>Overview Here I&amp;apos;ll walk you through how Vue 3 implements data reactivity, starting from how the source is put together. This is the post after the post after the last one. Refer...</description>
+      <category>VUE</category>
+      <category>Web</category>
+      <pubDate>Sat, 14 Nov 2026 11:25:42 GMT</pubDate>
+      <content:encoded><![CDATA[Overview Here I'll walk you through how Vue 3 implements data reactivity, starting from how the source is put together. This is the post after the post after the last one. Refer...]]></content:encoded>
+    </item>
+    <item>
+      <title>A quick look at using the watchEffect function in Vue3</title>
+      <link>/en/learningNote/vueNote/VUE3/Vue3%20%E4%B8%AD%20watcheffect%20%E5%87%BD%E6%95%B0%E7%9A%84%E4%BD%BF%E7%94%A8.html</link>
+      <guid isPermaLink="false">/en/learningNote/vueNote/VUE3/Vue3%20%E4%B8%AD%20watcheffect%20%E5%87%BD%E6%95%B0%E7%9A%84%E4%BD%BF%E7%94%A8.html</guid>
+      <source url="https://blog.jeacsonsnake.com/en/rss.xml">A quick look at using the watchEffect function in Vue3</source>
+      <description>A quick look at using the watchEffect function in Vue3 In vue3, the watchEffect function is one of the ways to track reactive dependencies. In essence, the watchEffect function ...</description>
+      <category>VUE</category>
+      <category>Web</category>
+      <pubDate>Sat, 14 Nov 2026 11:25:42 GMT</pubDate>
+      <content:encoded><![CDATA[A quick look at using the watchEffect function in Vue3 In vue3, the watchEffect function is one of the ways to track reactive dependencies. In essence, the watchEffect function ...]]></content:encoded>
+    </item>
+    <item>
+      <title>The ROS2 Learning Notes</title>
+      <link>/en/learningNote/Ros2_Note/</link>
+      <guid isPermaLink="false">/en/learningNote/Ros2_Note/</guid>
+      <source url="https://blog.jeacsonsnake.com/en/rss.xml">The ROS2 Learning Notes</source>
+      <description>Brief These are my notes on ROS2. The software and hardware used throughout them is: ROS2 Jazzy Jalisco LTS Ubuntu 24.04.3 LTS Raspberry Pi 5B (4GB) Most of these notes were wri...</description>
+      <category>Computer</category>
+      <category>robot</category>
+      <category>ROS</category>
+      <pubDate>Sat, 14 Nov 2026 11:25:42 GMT</pubDate>
+      <content:encoded><![CDATA[Brief These are my notes on ROS2. The software and hardware used throughout them is: ROS2 Jazzy Jalisco LTS Ubuntu 24.04.3 LTS Raspberry Pi 5B (4GB) Most of these notes were wri...]]></content:encoded>
+    </item>
+    <item>
+      <title>ROS2 Communication Mechanisms 01 — the Core Content</title>
+      <link>/en/learningNote/Ros2_Note/co_me/</link>
+      <guid isPermaLink="false">/en/learningNote/Ros2_Note/co_me/</guid>
+      <source url="https://blog.jeacsonsnake.com/en/rss.xml">ROS2 Communication Mechanisms 01 — the Core Content</source>
+      <description>Brief These are the notes on the core content of ROS2 communication mechanisms, which covers the four communication methods commonly used inside ROS2: Topics (topic communicatio...</description>
+      <category>Computer</category>
+      <category>robot</category>
+      <category>ROS</category>
+      <pubDate>Sat, 14 Nov 2026 11:25:42 GMT</pubDate>
+      <content:encoded><![CDATA[Brief These are the notes on the core content of ROS2 communication mechanisms, which covers the four communication methods commonly used inside ROS2: Topics (topic communicatio...]]></content:encoded>
+    </item>
+    <item>
+      <title>ROS2 Communication Mechanisms 02 — Supplementary Material</title>
+      <link>/en/learningNote/Ros2_Note/co_me_2/</link>
+      <guid isPermaLink="false">/en/learningNote/Ros2_Note/co_me_2/</guid>
+      <source url="https://blog.jeacsonsnake.com/en/rss.xml">ROS2 Communication Mechanisms 02 — Supplementary Material</source>
+      <description>Brief These are my notes on the supplementary material for ROS2 communication mechanisms. Compared with the , the knowledge density here is looser, and it covers: Setting up a d...</description>
+      <category>Computer</category>
+      <category>robot</category>
+      <category>ROS</category>
+      <pubDate>Sat, 14 Nov 2026 11:25:42 GMT</pubDate>
+      <content:encoded><![CDATA[Brief These are my notes on the supplementary material for ROS2 communication mechanisms. Compared with the , the knowledge density here is looser, and it covers: Setting up a d...]]></content:encoded>
+    </item>
+    <item>
+      <title>ROS2 Tools — Coordinate Transforms</title>
+      <link>/en/learningNote/Ros2_Note/coor_trans/</link>
+      <guid isPermaLink="false">/en/learningNote/Ros2_Note/coor_trans/</guid>
+      <source url="https://blog.jeacsonsnake.com/en/rss.xml">ROS2 Tools — Coordinate Transforms</source>
+      <description>Brief These are my notes on the ROS2 tool coordinate transform (tf). They cover: the concept of coordinate transforms and where you use them the definition format of the two imp...</description>
+      <category>Computer</category>
+      <category>robot</category>
+      <category>ROS</category>
+      <pubDate>Sat, 14 Nov 2026 11:25:42 GMT</pubDate>
+      <content:encoded><![CDATA[Brief These are my notes on the ROS2 tool coordinate transform (tf). They cover: the concept of coordinate transforms and where you use them the definition format of the two imp...]]></content:encoded>
+    </item>
+    <item>
+      <title>ROS2 Tools — launch &amp; rosbag2</title>
+      <link>/en/learningNote/Ros2_Note/launch_rosbag2/</link>
+      <guid isPermaLink="false">/en/learningNote/Ros2_Note/launch_rosbag2/</guid>
+      <source url="https://blog.jeacsonsnake.com/en/rss.xml">ROS2 Tools — launch &amp; rosbag2</source>
+      <description>Overview These are my notes on the ROS2 tools — launch &amp;amp; rosbag2. What they cover: launch files and how they are implemented an introduction to the rosbag2 tool and how to u...</description>
+      <category>Computer</category>
+      <category>robot</category>
+      <category>ROS</category>
+      <pubDate>Sat, 14 Nov 2026 11:25:42 GMT</pubDate>
+      <content:encoded><![CDATA[Overview These are my notes on the ROS2 tools — launch &amp; rosbag2. What they cover: launch files and how they are implemented an introduction to the rosbag2 tool and how to u...]]></content:encoded>
+    </item>
+    <item>
+      <title>Nintendo Switch OLED can&amp;apos;t see the 5GHz WiFi channel — a troubleshooting write-up</title>
+      <link>/en/postMortem/tiny_tips/2026_11_04.html</link>
+      <guid isPermaLink="false">/en/postMortem/tiny_tips/2026_11_04.html</guid>
+      <source url="https://blog.jeacsonsnake.com/en/rss.xml">Nintendo Switch OLED can&amp;apos;t see the 5GHz WiFi channel — a troubleshooting write-up</source>
+      <description>1. Background Earlier post: Device: Nintendo Switch OLED Symptom: my Nintendo Switch OLED sees and joins the 2.4GHz band fine in its WiFi scan list, but the 5GHz band does not s...</description>
+      <category>tiny_tips</category>
+      <pubDate>Wed, 04 Nov 2026 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[1. Background Earlier post: Device: Nintendo Switch OLED Symptom: my Nintendo Switch OLED sees and joins the 2.4GHz band fine in its WiFi scan list, but the 5GHz band does not s...]]></content:encoded>
+    </item>
+    <item>
+      <title>AI Industry Monthly Report | October 2026</title>
+      <link>/en/Scheduled_Automatic_AI_Industry_Analysis_Report/monthly/2026_10_month_report.html</link>
+      <guid isPermaLink="false">/en/Scheduled_Automatic_AI_Industry_Analysis_Report/monthly/2026_10_month_report.html</guid>
+      <source url="https://blog.jeacsonsnake.com/en/rss.xml">AI Industry Monthly Report | October 2026</source>
+      <description>AI Industry Monthly Report — October 2026 1. Top 7 Core Themes of the Month Agent peripherals become an engineering discipline (appeared on 25/31 days) — repos for skills, harne...</description>
+      <pubDate>Sun, 01 Nov 2026 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[AI Industry Monthly Report — October 2026 1. Top 7 Core Themes of the Month Agent peripherals become an engineering discipline (appeared on 25/31 days) — repos for skills, harne...]]></content:encoded>
+    </item>
+    <item>
+      <title>Troubleshooting blue-and-yellow banding on GIFs across a dual-screen setup</title>
+      <link>/en/postMortem/tiny_tips/2026_11_01.html</link>
+      <guid isPermaLink="false">/en/postMortem/tiny_tips/2026_11_01.html</guid>
+      <source url="https://blog.jeacsonsnake.com/en/rss.xml">Troubleshooting blue-and-yellow banding on GIFs across a dual-screen setup</source>
+      <description>1. Background 1.1 The symptom Playing or displaying particular animated GIFs on the secondary screen (the HDMI external monitor) produced blue-and-yellow streaky artefacts, visu...</description>
+      <category>tiny_tips</category>
+      <pubDate>Sun, 01 Nov 2026 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[1. Background 1.1 The symptom Playing or displaying particular animated GIFs on the secondary screen (the HDMI external monitor) produced blue-and-yellow streaky artefacts, visu...]]></content:encoded>
+    </item>
+    <item>
+      <title>006-AI daily briefing auto-archive pipeline wired end to end —— the merge-base invariant, doubled branch protection, and the many potholes of GitHub App bypass</title>
+      <link>/en/postMortem/sp_for_LLM/006_Hermes-Briefing-Archive-Auto-Merge-Topology-report.html</link>
+      <guid isPermaLink="false">/en/postMortem/sp_for_LLM/006_Hermes-Briefing-Archive-Auto-Merge-Topology-report.html</guid>
+      <source url="https://blog.jeacsonsnake.com/en/rss.xml">006-AI daily briefing auto-archive pipeline wired end to end —— the merge-base invariant, doubled branch protection, and the many potholes of GitHub App bypass</source>
+      <description>This document is a full retrospective of the work from 2026-10-14 to 2026-10-18: turning the old &amp;quot;merge the AI daily briefing archive PR by hand every day&amp;quot; routine int...</description>
+      <category>Technical Investigation</category>
+      <pubDate>Mon, 19 Oct 2026 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[This document is a full retrospective of the work from 2026-10-14 to 2026-10-18: turning the old &quot;merge the AI daily briefing archive PR by hand every day&quot; routine int...]]></content:encoded>
+    </item>
+    <item>
+      <title>AI Industry Monthly Report | September 2026</title>
+      <link>/en/Scheduled_Automatic_AI_Industry_Analysis_Report/monthly/2026_09_month_report.html</link>
+      <guid isPermaLink="false">/en/Scheduled_Automatic_AI_Industry_Analysis_Report/monthly/2026_09_month_report.html</guid>
+      <source url="https://blog.jeacsonsnake.com/en/rss.xml">AI Industry Monthly Report | September 2026</source>
+      <description>AI Industry Monthly Report — September 2026 1. Top 7 Core Themes This Month Agent Skills / Harness ecosystem dominates open source (appears almost daily) — GitHub Trending&amp;apos;s AI ...</description>
+      <pubDate>Thu, 01 Oct 2026 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[AI Industry Monthly Report — September 2026 1. Top 7 Core Themes This Month Agent Skills / Harness ecosystem dominates open source (appears almost daily) — GitHub Trending's AI ...]]></content:encoded>
+    </item>
+    <item>
+      <title>Slow image loading on social platforms over WiFi 5GHz</title>
+      <link>/en/postMortem/tiny_tips/2026_09_08.html</link>
+      <guid isPermaLink="false">/en/postMortem/tiny_tips/2026_09_08.html</guid>
+      <source url="https://blog.jeacsonsnake.com/en/rss.xml">Slow image loading on social platforms over WiFi 5GHz</source>
+      <description>Background The WiFi in the flat I share with others in Hong Kong broadcasts both 2.4GHz and 5GHz (the router is a Linksys Velop Pro 7). While browsing social platforms (X, Weibo...</description>
+      <category>tiny_tips</category>
+      <pubDate>Tue, 08 Sep 2026 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[Background The WiFi in the flat I share with others in Hong Kong broadcasts both 2.4GHz and 5GHz (the router is a Linksys Velop Pro 7). While browsing social platforms (X, Weibo...]]></content:encoded>
+    </item>
+    <item>
+      <title>The weird bug caused by CSS `fit-content` being optimised wrongly in a Vue production build</title>
+      <link>/en/postMortem/tiny_tips/2026_09_07.html</link>
+      <guid isPermaLink="false">/en/postMortem/tiny_tips/2026_09_07.html</guid>
+      <source url="https://blog.jeacsonsnake.com/en/rss.xml">The weird bug caused by CSS `fit-content` being optimised wrongly in a Vue production build</source>
+      <description>Background My bobing site has a button on the opening welcome screen whose height adjustment was off, so I thought I would fix it. What it looked like The button&amp;apos;s CSS had this ...</description>
+      <pubDate>Mon, 07 Sep 2026 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[Background My bobing site has a button on the opening welcome screen whose height adjustment was off, so I thought I would fix it. What it looked like The button's CSS had this ...]]></content:encoded>
+    </item>
+    <item>
+      <title>AI Industry Monthly Report | August 2026</title>
+      <link>/en/Scheduled_Automatic_AI_Industry_Analysis_Report/monthly/2026_08_month_report.html</link>
+      <guid isPermaLink="false">/en/Scheduled_Automatic_AI_Industry_Analysis_Report/monthly/2026_08_month_report.html</guid>
+      <source url="https://blog.jeacsonsnake.com/en/rss.xml">AI Industry Monthly Report | August 2026</source>
+      <description>AI Industry Monthly Report — August 2026 1. Top 7 Core Themes of the Month Agent Skills / Harness ecosystem in full bloom (appeared on 14+ of 28 days) — From Anthropic launching...</description>
+      <pubDate>Tue, 01 Sep 2026 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[AI Industry Monthly Report — August 2026 1. Top 7 Core Themes of the Month Agent Skills / Harness ecosystem in full bloom (appeared on 14+ of 28 days) — From Anthropic launching...]]></content:encoded>
+    </item>
+    <item>
+      <title>007_Every proxy on the HermesAgent server died — from &amp;quot;thought it was a Twitter direct-connection problem&amp;quot; to &amp;quot;turns out the IP pool went dark&amp;quot;</title>
+      <link>/en/postMortem/deploy/007_Troubleshooting_complete_failure_of_Tencent_Cloud_server_proxies.html</link>
+      <guid isPermaLink="false">/en/postMortem/deploy/007_Troubleshooting_complete_failure_of_Tencent_Cloud_server_proxies.html</guid>
+      <source url="https://blog.jeacsonsnake.com/en/rss.xml">007_Every proxy on the HermesAgent server died — from &amp;quot;thought it was a Twitter direct-connection problem&amp;quot; to &amp;quot;turns out the IP pool went dark&amp;quot;</source>
+      <description>Background My Hermes Agent is deployed on a Tencent Cloud Lighthouse server (Guangzhou) and runs a bunch of scheduled tasks day in, day out. One of them is an AI briefing task, ...</description>
+      <category>deploy</category>
+      <pubDate>Mon, 10 Aug 2026 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[Background My Hermes Agent is deployed on a Tencent Cloud Lighthouse server (Guangzhou) and runs a bunch of scheduled tasks day in, day out. One of them is an AI briefing task, ...]]></content:encoded>
+    </item>
+  </channel>
+</rss>
