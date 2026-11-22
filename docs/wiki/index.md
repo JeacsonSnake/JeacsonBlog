@@ -5,7 +5,7 @@ title: JeacsonBlog Wiki
 # JeacsonBlog Wiki
 
 > 基于 Karpathy LLM Wiki 模式构建的个人知识库。以博客原始笔记为 source of truth，由 LLM Agent 增量维护。
-> Last updated: 2026-11-09
+> Last updated: 2026-11-23
 
 ## Sources（知识域摘要）
 
@@ -104,6 +104,7 @@ title: JeacsonBlog Wiki
 - [博客全站英译与 EN 自动翻译链路（可判定性 / 结构·渲染双闸门 / state.json 状态推进）](./concepts/Blog-Bilingual-Translation-Pipeline.md)
 - [博客变更检测层（一个 detector + 两个 consumer / cursor 与 monitor 输出契约）](./concepts/Blog-Change-Detection-Layer.md)
 - [Wiki Lint 的三个「没报」（stem 覆盖 / index 不入链 / 方括号标签）](./concepts/Wiki-Lint-False-Negative-Traps.md)
+- [Hermes 配置静默缩水（fail-open 读取 × 差异写入 / 439→32 键 / 官方 fail-closed 修法）](./concepts/Hermes-Config-Silent-Shrink-Fail-Open-Diff-Write.md)
 
 ### DevOps / 部署
 - [Waline 评论数据从 LeanCloud 迁移至 Neon PostgreSQL 完整流程](./concepts/LeanCloud-to-Neon-Migration.md)

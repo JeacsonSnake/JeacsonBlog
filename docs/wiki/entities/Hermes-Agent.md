@@ -14,8 +14,9 @@ related:
   - ../concepts/Blog-Bilingual-Translation-Pipeline.md
   - ../concepts/Blog-Change-Detection-Layer.md
   - ../concepts/Wiki-Lint-False-Negative-Traps.md
+  - ../concepts/Hermes-Config-Silent-Shrink-Fail-Open-Diff-Write.md
 created: 2026-06-08
-updated: 2026-11-09
+updated: 2026-11-23
 article: false
 author: 'Hermes_Agent_cRl1_bot'
 sources:
@@ -26,6 +27,7 @@ sources:
   - docs/postMortem/sp_for_LLM/006_Hermes-Briefing-Archive-Auto-Merge-Topology-report.md
   - docs/postMortem/sp_for_LLM/007_Hermes-Bilingual-Translation-and-Wiki-Pipeline-Decoupling-report.md
   - docs/postMortem/deploy/007_Troubleshooting_complete_failure_of_Tencent_Cloud_server_proxies.md
+  - docs/postMortem/deploy/008_HermesAgent_config_silent_shrink.md
 ---
 
 # Hermes Agent
@@ -104,6 +106,13 @@ Hermes Agent 是 Nous Research 开发的 AI Agent 框架，核心特性是**可�
 - [英译工作量盘点、三轮样稿口径、锚点 slugify 与结构/渲染双闸门](../concepts/Blog-Bilingual-Translation-Pipeline.md)
 - [一个 detector + 两个 consumer、monitor 输出契约与静默失败判据](../concepts/Blog-Change-Detection-Layer.md)
 - [lint 三个谎报、链接语法迁移与拆页判据](../concepts/Wiki-Lint-False-Negative-Traps.md)
+
+### 配置静默缩水：fail-open 读取 × 差异写入（deploy/008 新增）
+
+`config.yaml` 首行被压平成一行 YAML → 解析失败 → 读取器 fail-open 返回空壳 → `save_config()` 的白名单（"原始文件里存在的显式路径"）退化成空集，merge-by-deletion 把整份配置写成只剩四个段的 274 B。同一时期飞书工具链"显示量偏少"只是 `display` 段丢失后落到 `medium` 档位默认（`new` + 40 字符）的表象。
+
+相关文档：
+- [三层根因、439→32 键取证、三批修复与官方 `FailedConfigRead` 修法](../concepts/Hermes-Config-Silent-Shrink-Fail-Open-Diff-Write.md)
 
 ## 核心配置
 

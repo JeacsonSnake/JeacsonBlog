@@ -351,3 +351,14 @@ title: Wiki Log
   - **MODIFY** `index.md` — AI Agent 段加 3 条新页链接，`Last updated` → 2026-11-09
 - 页面拆分说明：该报告覆盖三条主线（英译链路 / 检测层解耦 / wiki lint 治理），按「切开后两页各自能独立回答一个问题」的语义缝拆成 3 页，每条 ≤200 行；未把原文的逐阶段叙事照搬
 - 纪律遵循：内链一律 `[标签](相对路径.md)`；不碰中文原文与 `docs/en/`；概念页 `sources:` 指向 sp_for_LLM/007 原文
+
+## [2026-11-23] ingest | 008-什么叫配置丢失了？Hermes Agent 配置静默缩水排查
+- Source article: `docs/postMortem/deploy/008_HermesAgent_config_silent_shrink.md`（2026-11-22 发布，category deploy）
+- Wiki pages created:
+  - **CREATE** `concepts/Hermes-Config-Silent-Shrink-Fail-Open-Diff-Write.md` — 三层根因（首行 YAML 压平 `line 1, column 15` / 读取器 fail-open / `save_config(strip_defaults=True)` 以"原始文件里的显式路径"为白名单、merge-by-deletion）；`show_reasoning`（最终回复前推理）与 `tool_progress`（条数）/ `tool_preview_length`（每条长度）的职责区分，`medium` 档位默认 `new` + 40 字符；备份比对 439 → 32 叶子键（34 非默认 / 336 同默认 / 52 无默认）、`.corrupt.` 时间戳与 `ls -la` 锁定的 7-30 00:36、三批 `hermes config set` 修复（1,116 → 1,668 B）与运行时验证、`restart_drain_timeout` 需二次重启的坑、七周后官方 `FailedConfigRead` 哨兵 + `require_readable_config_before_write()` 的 fail-closed 修法
+- Wiki pages modified:
+  - **MODIFY** `entities/Hermes-Agent.md` — `related:` 加 1 条、`sources:` 补 deploy/008；新增「配置静默缩水：fail-open 读取 × 差异写入」小节（2 行摘要 + 1 条链接，不复制概念正文），`updated` → 2026-11-23
+  - **MODIFY** `sources/PostMortem.md` — tags 补 Configuration / YAML，`sources:` 补 deploy/008，deploy 节加一条摘要，关联段加 1 条链接，`updated` → 2026-11-23
+  - **MODIFY** `index.md` — AI Agent 段加 1 条新页链接，`Last updated` → 2026-11-23
+- 未拆页说明：原文含 7 步排查叙事与可复用结论，收敛为单页（约 160 行），未照搬逐步对话与插图（图片在 blog 侧 `assets/`，wiki 不复制二进制）
+- 纪律遵循：内链一律 `[标签](相对路径.md)`；不碰中文原文与 `docs/en/`；概念页 `sources:` 指向 deploy/008 原文
