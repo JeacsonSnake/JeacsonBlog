@@ -2,9 +2,9 @@
 title: 踩坑心得知识域摘要
 description: "部署与开发中的实际问题记录与解决方案"
 type: source
-tags: [DevOps, Deploy, Markdown, AI Agent, DNS, Migrate, Network, Ubuntu, Disk, Troubleshooting, CSS, Vite, Proxy, GSLB, WiFi, DFS, Channel, GitHub Actions, Git, Branch Protection, Windows, Display, DPI, Translation, Lint, State Machine, RSS]
+tags: [DevOps, Deploy, Markdown, AI Agent, DNS, Migrate, Network, Ubuntu, Disk, Troubleshooting, CSS, Vite, Proxy, GSLB, WiFi, DFS, Channel, GitHub Actions, Git, Branch Protection, Windows, Display, DPI, Translation, Lint, State Machine, RSS, Configuration, YAML]
 created: 2026-04-17
-updated: 2026-11-09
+updated: 2026-11-23
 article: false
 author: 'Hermes_Agent_cRl1_bot'
 sources:
@@ -19,6 +19,7 @@ sources:
   - docs/postMortem/deploy/005_leancloud_migrate_neon_relate.md
   - docs/postMortem/deploy/006_Ubuntu_gdm3_cannot_activate.md
   - docs/postMortem/deploy/007_Troubleshooting_complete_failure_of_Tencent_Cloud_server_proxies.md
+  - docs/postMortem/deploy/008_HermesAgent_config_silent_shrink.md
   - docs/postMortem/tiny_tips/2026_09_07.md
   - docs/postMortem/tiny_tips/2026_09_08.md
   - docs/postMortem/tiny_tips/2026_11_01.md
@@ -38,6 +39,7 @@ sources:
 - **LeanCloud → Neon PostgreSQL Waline 评论数据迁移**（deploy/005 新增）— LeanCloud 2027 年停止服务后的 4 步迁移：导出 JSONL → Vercel 创建 Neon + 建表 → waline-data-import-tool 上传 → Redeploy；含 LeanCloud Date 字段格式转换 Python 脚本
 - **Ubuntu 24.04 gdm3 启动失败根因排查**（deploy/006 新增）— VMware 虚拟机磁盘空间耗尽（≥95%）导致 APT 缓存写不进 → gdm3 无法启动 → systemd 自动降级为 multi-user.target；包含 8 步紧急清理 + 7 步 VMware 扩容完整流程
 - **mihomo 代理全挂根因排查**（deploy/007 新增）— 腾讯云广州 12 节点全挂：不是 x.com 被封，是机场 **GSLB IP 池漂移 + 静态订阅 4 个月未更新**（节点活着、本地→节点链路失效）；走代理连 github/google 也挂 = 节点层故障；修复 = 订阅自动化（.env + file provider + 每周更新 cron）+ URLTest 自动选择组
+- **Hermes 配置静默缩水排查**（deploy/008 新增）— `config.yaml` 首行被压平成一行 YAML（`mapping values are not allowed here`）→ 读取器 fail-open 返回空壳 → `save_config()` 以"原始文件里的显式路径"为白名单、merge-by-deletion，把 439 个叶子键写成 32 个（11,848 B → 274 B）；同期飞书工具链"显示量偏少"只是 `display` 段整体丢失后落到 `medium` 档位默认（`new` + 40 字符）；修复 = 三批 `hermes config set`（1,116 → 1,668 B）；七周后官方以 `FailedConfigRead` 哨兵 + `require_readable_config_before_write()` 改为 fail-closed
 
 ### Markdown 渲染 (markdown_render)
 - markdown-it 渲染器配置
@@ -80,6 +82,7 @@ sources:
 - [Ubuntu 24.04 gdm3 启动失败根因排查（磁盘空间耗尽 → APT 缓存失败 → systemd 降级）](../concepts/Ubuntu-gdm3-Disk-Full-Troubleshooting.md)
 - [Vite 构建 cssnano 错误去重 fit-content 的排查（标准语法置于 vendor prefix 后）](../concepts/Vue-CSS-Fit-Content-Vite-cssnano-Dedupe-Bug.md)
 - [mihomo 代理全挂排查（GSLB IP 池漂移 + 订阅自动化三层架构）](../concepts/Mihomo-Proxy-GSLB-Drift-Subscription-Auto-Update.md)
+- [Hermes 配置静默缩水（fail-open 读取 × 差异写入 / 439→32 键 / 官方 fail-closed 修法）](../concepts/Hermes-Config-Silent-Shrink-Fail-Open-Diff-Write.md)
 - [WiFi 5GHz DFS 信道雷达避让致图片加载缓慢（关闭 DFS 修复）](../concepts/WiFi-5GHz-DFS-Radar-Avoidance-Image-Loading-Slow.md)
 - [AI 简报自动归档两跳链路（merge-base 不变量 + 双层分支保护 + step 级验证）](../concepts/Briefing-Archive-Auto-Merge-Topology.md)
 - [双屏 DPI 缩放不一致致 DWM 重采样振铃（GIF 蓝黄斑纹）](../concepts/Per-Monitor-DPI-DWM-Resampling-Ringing.md)
