@@ -50,7 +50,8 @@ JeacsonBlog/
 │   │   ├── styles/               # 自定义样式
 │   │   │   ├── config.scss       # 主题色 $theme-color: #778aa9
 │   │   │   └── palette.scss      # 主题调色板覆盖（当前为空，使用默认值）
-│   │   └── public/assets/img/    # 静态图片资源（logo、favicon、avatar、首页背景）
+│   │   ├── public/assets/img/    # 站点图标（logo、favicon、avatar、首页背景）
+│   │   └── public/blog_assets/   # 文章图片（按 docs/ 相对路径归档，引用 /blog_assets/…）
 │   ├── README.md                 # 中文主页（home: true, layout: Blog）
 │   ├── about/                    # 关于页面
 │   ├── complain_diary/           # 随笔/牢骚
@@ -165,7 +166,7 @@ tag:
 
 - 目录下的 `README.md` 通常作为该分类的入口页，只写 `article: false`、`title`、`icon`，不写 `category` / `tag`
 - `tag` 常见值有 `VUE3`、`VUE2`、`advanced`、`JavaScript`、`COMPARE` 等，用于博客标签页聚合
-- 笔记中的图片使用相对路径引用，如 `./assets/xxx.jpg`
+- 笔记中的图片统一放在 `docs/.vuepress/public/blog_assets/`，引用写站点绝对路径 `/blog_assets/…`（规则见下方「Markdown 内容」）
 
 ### 特殊页面
 
@@ -365,7 +366,12 @@ title: Wiki Log
 
 - 使用标准 Markdown + VuePress 扩展语法
 - 代码块标注语言以正确高亮（`javascript`、`python`、`bash`、`yaml` 等）
-- 图片放在同级 `assets/` 目录，使用相对路径
+- 图片统一存放在 `docs/.vuepress/public/blog_assets/<docs 相对路径>`，例如
+  `docs/postMortem/deploy/005_*.md` 的图放在
+  `docs/.vuepress/public/blog_assets/postMortem/deploy/assets/img/`；页面引用写站点绝对路径
+  `/blog_assets/postMortem/deploy/assets/img/xxx.jpg`，不再使用 `./assets/…` 相对路径
+- 英文页（`docs/en/`）不复制图片：中英两棵树的引用指向同一个 `/blog_assets/…` 文件
+- 站点图标（logo / favicon / avatar / 首页背景）仍在 `public/assets/img/`，不要混入 `blog_assets/`
 - 使用 VuePress 提示容器：`::: tip`、`::: note`、`::: warning` 等
 - 数学公式使用 KaTeX：`$...$` 或 `$$...$$`
 
@@ -382,7 +388,7 @@ title: Wiki Log
 1. **Waline 评论服务**：serverURL 指向独立部署的后端 `blogcomment.jeacsonsnake.com`，前端配置中仅暴露服务端点，不包含数据库密钥
 2. **环境变量**：`.env` 已被 `.gitignore` 忽略、仅存在于本地，提供 `LOCK_ON_PASSWORD`——`theme.ts` 通过 `import "dotenv/config"` 读取，用于 `/complain_diary/lock_on/` 加密页；CI 构建时改用 `secrets.LOCK_ON_PASSWORD` 注入。不要提交 `.env`，也不要在页面中回显密码。
 3. **GitHub Actions 凭据**：部署使用 `GITHUB_TOKEN`；`daily-to-master.yml` 使用 GitHub App（`DAILY_MERGE_APP_ID` / `DAILY_MERGE_APP_PRIVATE_KEY`）并受 `master-merge` environment 保护，仓库不需要长期 Personal Access Token。
-4. **静态资源**：`docs/.vuepress/public/` 下的所有文件会在构建时原样复制到输出目录，避免放置敏感信息
+4. **静态资源**：`docs/.vuepress/public/` 下的所有文件会在构建时原样复制到输出目录，避免放置敏感信息（`public/blog_assets/` 中的全部文章图片同样公开可访问，URL 稳定、不带内容哈希）
 
 ---
 
@@ -392,7 +398,7 @@ title: Wiki Log
 |------|---------|------|
 | 构建时内存溢出 | Vite 处理大量 Markdown 页面 | CI 已配置 `NODE_OPTIONS=--max-old-space-size=4096`；本地可手动设置同样的环境变量 |
 | 侧边栏/导航栏不更新 | 配置在 `sidebar/`、`navbar/` 下的 ts（经 `index.ts` 汇总） | 修改对应文件后重新构建 |
-| 图片 404 | 路径错误或图片未放入 `public/` 或同级 `assets/` | 检查相对路径或移至 `public/assets/img/` |
+| 图片 404 | 路径错误，或文件不在 `docs/.vuepress/public/` 下 | 文章图片确认位于 `public/blog_assets/` 且引用以 `/blog_assets/` 开头；站点图标在 `public/assets/img/` |
 | 评论加载失败 | Waline 服务端不可用或域名配置变更 | 检查 `theme.ts` 中的 `serverURL` |
 | Feed 生成报错 | 某页面 content 为空或 frontmatter 异常 | 查看构建日志中 `No content:` 提示，补充页面内容或排除页面 |
 | 构建报 `Preprocessor dependency "sass-embedded" not found` | 依赖未安装，或运行环境禁止 Vite 派生子进程（受限沙箱常见） | 确认 Node >= 22.18 且已 `pnpm install`；在受限沙箱中需放开进程创建与文件访问 |

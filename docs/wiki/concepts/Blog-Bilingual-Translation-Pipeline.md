@@ -9,7 +9,7 @@ related:
   - ./Blog-Change-Detection-Layer.md
   - ./Briefing-Archive-Auto-Merge-Topology.md
 created: 2026-11-08
-updated: 2026-11-09
+updated: 2026-11-25
 article: false
 author: 'Hermes_Agent_cRl1_bot'
 confidence: high
@@ -51,7 +51,7 @@ docs/ 共 260 个 md
 | 项目 | 规模 | 为什么麻烦 |
 |---|---|---|
 | 代码块 | 911 块 | 必须逐字节保留，只翻注释与给人看的字符串 |
-| 图片 | 168 处 / 144 资产 / 72.5 MB | 复制、回指、搬 `public/` 三种方案各有代价 |
+| 图片 | 168 处 / 144 资产 / 72.5 MB | 复制、回指、搬 `public/` 三种方案各有代价（2026-11-25 已定：搬 `public/blog_assets/`，见§五） |
 | 站内链接 | 275 条相对链接、152 处 `.html` | en 页照抄会把读者带回中文页 |
 | 导航缺口 | 2 个 TS 文件 | `enSidebar.ts` / `enNavbar.ts` 里没有 postMortem，属代码改动 |
 
@@ -72,7 +72,7 @@ docs/ 共 260 个 md
 | 文件树 | `docs/en/` 下同路径同名（中文文件名保留），相对链接因此自动生效 |
 | frontmatter | 只译 `title`；中文 tag 保留原文不译；其余键原样（`icon/date/category/article/feed` 即使含中文也不动） |
 | 代码块 | 翻注释 / docstring / 打印给人看的字符串 / fence 信息串；标识符、命令、路径、配置键、逻辑不动 |
-| 图片 | 复制到 `docs/en/` 对应目录 |
+| 图片 | 复制到 `docs/en/` 对应目录 —— **2026-11-25 起废止**：全部图片改放 `docs/.vuepress/public/blog_assets/`，中英共用 `/blog_assets/…` 引用，翻译时不再复制 |
 | 术语表 | `.csv`，列 `term_zh,term_en,scope,status,note,source_page,updated`，`status` 分 `locked`/`draft`，**只在本机维护，不进仓库** |
 | 语体 | 不作「去口语化」，保留原口癖与梗 |
 
@@ -118,6 +118,17 @@ exit 0 = 成功 / 3 = 结构校验失败（0 提交、state 不推进）/ 4 = pu
 ```
 
 `translation_check.py` 与 `en-sync.py` 的规则目前是两份实现（容器句式、锚点、图片路径各写一遍），是这套链路最容易漂移的地方。
+
+### 图片：2026-11-25 起不再复制
+
+原先每篇 en 页旁各存一份图片：168 处引用 / 144 个文件 / 72.5 MB，中文树 174 个文件在 `docs/en/` 下逐字节重复。现统一搬到
+`docs/.vuepress/public/blog_assets/<docs 相对路径>`（保留 `assets/` 段），中英两棵树共用站点绝对路径 `/blog_assets/…`：
+
+- 改写 356 处引用（350 图片 + 6 纯链接），涉及 101 页；`git mv` 187 个文件，删除 en 侧 174 个逐字节副本
+- 仓库文件数 926 → 752（−174），工作区减 66.9 MB。Git 本来按 blob 去重、构建按内容哈希去重，所以**克隆体积和部署体积都不变**；换来的是工作区体积与「翻译时复制图片」这一步的消失
+- `page_assets()` / `missing_assets()` 跳过 `/` 开头的引用，复制步骤自然空转；`translation_check.py` 的存在性检查同样跳过 `/blog_assets/…`
+- 代价：GitHub / Typora / VSCode 的相对路径预览失效；`public/` 文件不参与内容哈希，同名替换有最长 10 分钟的缓存窗口
+- 落地后必须 `en-sync.py status` → `en-sync.py bootstrap` 重置 `state.json`，否则 50 个被改写的中文页会被判 `modified`，触发一轮空翻译
 
 ## 六、两个「永久哑掉」的静默 bug
 

@@ -362,3 +362,13 @@ title: Wiki Log
   - **MODIFY** `index.md` — AI Agent 段加 1 条新页链接，`Last updated` → 2026-11-23
 - 未拆页说明：原文含 7 步排查叙事与可复用结论，收敛为单页（约 160 行），未照搬逐步对话与插图（图片在 blog 侧 `assets/`，wiki 不复制二进制）
 - 纪律遵循：内链一律 `[标签](相对路径.md)`；不碰中文原文与 `docs/en/`；概念页 `sources:` 指向 deploy/008 原文
+
+## [2026-11-25] refactor | 文章图片统一迁移到 public/blog_assets
+- 范围：13 个 zh `assets/` 根整体 `git mv` 到 `docs/.vuepress/public/blog_assets/`（保留 `assets/` 段），en 侧 174 个逐字节副本删除；改写 356 处引用（350 图片 + 6 纯链接），涉及 101 页（中 51 / 英 50）
+- 校验：187 文件 / 81,057,357 B 全部落位；仓库 926 → 752 文件；`public/` 外的 `assets/` 根为 0；en 残留 asset 为 0；迁移后重跑规划器 0 移动 / 0 引用（幂等）；`monitor-data.csv` SHA 不变
+- 上线：PR #111（分支 `wiki-ingest-2026-11-25-assets`）squash 合并为 `652aefd`；`Build_and_Deploy` 成功；线上 `/blog_assets/…` 返回 200，页面 HTML 引用已切换
+- 基线：合并后 `en-sync.py status` 出现预期内的 50 页误报 → `bootstrap` 重置 117 页 → `status` 空、monitor `idle`
+- Wiki pages modified：
+  - **MODIFY** `concepts/Blog-Bilingual-Translation-Pipeline.md` — 图片口径改为 `public/blog_assets/` + `/blog_assets/…`，§五 新增「图片：2026-11-25 起不再复制」，`updated` → 2026-11-25
+- 同步更新：仓库根 `AGENTS.md` 的目录树、写作约定、故障排查三处从「同级 `assets/` + 相对路径」改为 `public/blog_assets/` + 站点绝对路径
+- 说明：历史报告（`sp_for_LLM/007`）与本日志旧条目中的「复制图片」记录保持原样，不改写历史
