@@ -14,7 +14,7 @@ tag:
 
 出现问题: 在使用 Github Action 后 workflow 出现以下报错:
 
-![GitHubActionFatalNO1](./assets/img/GitHubActionFatalNO1.jpg)
+![GitHubActionFatalNO1](/blog_assets/postMortem/deploy/assets/img/GitHubActionFatalNO1.jpg)
 
 原因: workflow 在部署代码到 gh-pages 分支时需要对默认的 secrets.GITHUB_TOKEN 进行读写操作，但是仓库默认没有给予相关权限。
 
@@ -50,4 +50,4 @@ tag:
 
 - 然后将路径进行修改，如下图红圈:
 
-![GitHubPagesSourcePath](./assets/img/GitHubPagesSourcePath.jpg)
+![GitHubPagesSourcePath](/blog_assets/postMortem/deploy/assets/img/GitHubPagesSourcePath.jpg)

@@ -24,11 +24,11 @@ category:
 
 可以通过 “编辑includePath...” 选项:
 
-![在快速修复中打开“编辑includePath...” 选项](./assets/2026-01-24_001.jpg)
+![在快速修复中打开“编辑includePath...” 选项](/blog_assets/learningNote/Ros2_Note/assets/2026-01-24_001.jpg)
 
 找到“包含路径”选项：
 
-![在“C/C++配置”中寻找到“包含路径” 选项](./assets/2026-01-24_002.jpg)
+![在“C/C++配置”中寻找到“包含路径” 选项](/blog_assets/learningNote/Ros2_Note/assets/2026-01-24_002.jpg)
 
 另起一行添加：
 

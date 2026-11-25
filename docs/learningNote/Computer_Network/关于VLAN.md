@@ -14,7 +14,7 @@ VLAN（Virtual Local Area Network）即虚拟局域网，是将一个物理的LA
 
 换句话说，即使是不同交换机下所属的设备，只要存在于同一个VLAN中，也可以实现在进行设备间通信的同时不产生除有效流量外的垃圾流量的效果。可以优化网络性能，区分相关业务，以及拥有安全性。
 
-![2023-03-01-14-40-46-image](./assets/img/2023-03-01-14-40-46-image.png)
+![2023-03-01-14-40-46-image](/blog_assets/learningNote/Computer_Network/assets/img/2023-03-01-14-40-46-image.png)
 
 ### 2、VLAN标签（重要）（3.1）
 
@@ -26,7 +26,7 @@ IEEE 802.1Q协议中对VLAN标签做出了如下规定：
 
 具体操作流程如下图：
 
-![2023-03-01-11-13-22-image](./assets/img/2023-03-01-11-13-22-image.png)
+![2023-03-01-11-13-22-image](/blog_assets/learningNote/Computer_Network/assets/img/2023-03-01-11-13-22-image.png)
 
 在图中存在着上下两种以太网数据帧格式，分别为：
 
@@ -104,7 +104,7 @@ VLAN一共有三种接入端口类型，分别为：Access 端口，Trunk 端口
 
      先剥离帧的Tag，然后再发送。Access端口发往对端设备的以太网帧永远是不带标签的帧。
 
-     ![ACCESS](./assets/img/ACCESS.png)
+     ![ACCESS](/blog_assets/learningNote/Computer_Network/assets/img/ACCESS.png)
 
 ##### ②、Trunk 端口
 
@@ -126,7 +126,7 @@ VLAN一共有三种接入端口类型，分别为：Access 端口，Trunk 端口
 
      当VLAN ID与端口的PVID不同，且是该端口允许通过的VLAN ID时，保持原有Tag，发送该报文。
 
-     ![TRUNK](./assets/img/TRUNK.png)
+     ![TRUNK](/blog_assets/learningNote/Computer_Network/assets/img/TRUNK.png)
 
 ##### ③、Hybrid 端口
 
@@ -150,13 +150,13 @@ VLAN一共有三种接入端口类型，分别为：Access 端口，Trunk 端口
 
      - 配置 port hybrid untagged vlan vlan-id 命令后，接口在发送vlan-id的数据帧时，会将帧中的VLAN Tag剥离掉再发送出去。该命令一般配置在连接主机的端口上。
 
-     ![HYBRID](./assets/img/HYBRID.png)
+     ![HYBRID](/blog_assets/learningNote/Computer_Network/assets/img/HYBRID.png)
 
 ##### TIPS: 缺省VLAN(PVID) (3.3) ^[ [李德水. “基于IEEE 802．1Q帧标记的VLAN实现原理.” (2006)](http://www.doc88.com/p-793921426875.html) ]
 
 概念：交换机的每一个端口都有一个VID作为该端口的默认VID,这就是PVID(Port VID, 也称为缺省VLAN), 当交换机所接受的数据帧（报文）是 untagged 帧，则交换机会将这个报文添加上PVID进行标记。换言之，它一般会被分配到未标记帧和优先级帧中。
 
-![2023-03-03-14-50-23-image](./assets/img/2023-03-03-14-50-23-image.png)
+![2023-03-03-14-50-23-image](/blog_assets/learningNote/Computer_Network/assets/img/2023-03-03-14-50-23-image.png)
 
 - 对于Access接口，缺省VLAN就是它允许通过的VLAN，修改缺省VLAN即可更改接口允许通过的VLAN。
 

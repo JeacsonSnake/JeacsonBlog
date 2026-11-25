@@ -13,23 +13,23 @@ tag:
 
 用户使用 VMware Workstation Pro 虚拟机创建并运行 Ubuntu 24.04，如是正常的经过了7个月左右。但是在某次重启后，系统未能正常进入图形登录界面，提示 `[FAILED] Failed to start gdm.service - GNOME Display Manager.`
 
-![最开始的相关提示如下](./assets/img/006_001.jpg)
+![最开始的相关提示如下](/blog_assets/postMortem/deploy/assets/img/006_001.jpg)
 
 在该页面下，用户尝试使用`Ctrl + Alt + F2`直接进入字符终端（`tty1`），显示 `Ubuntu 24.04.4 LTS ... tty1` 并提示登录。用户能够正常登录，但 `gdm3（GNOME 显示管理器）`未启动，图形界面无法使用。
 
-![相关画面如下](./assets/img/006_004.jpg)
+![相关画面如下](/blog_assets/postMortem/deploy/assets/img/006_004.jpg)
 
 ## 出现的状况
 
 - 系统启动后停留在 `tty1` 命令行，无图形界面。
 - 执行 `systemctl status gdm3` 显示服务状态为 `inactive（未运行）`，但无明显错误日志。
-![相关画面如下](./assets/img/006_003.jpg)
+![相关画面如下](/blog_assets/postMortem/deploy/assets/img/006_003.jpg)
 
 - 执行 `sudo systemctl enable gdm3` 时收到警告：“The unit files have no installation config”，提示无法通过 `systemctl enable` 设置开机自启。
 - 尝试使用 `sudo apt install --reinstall gdm3` 重装时，出现 `E: /var/cache/apt/archives/` 错误（输出截断），表明 APT 缓存或磁盘空间存在问题。
 - 使用 `systemctl get-default` 指令，发现系统默认启动目标为 `multi-user.target`，而非 `graphical.target`，导致开机不自动启动图形界面。
 
-![相关画面如下](./assets/img/006_006.jpg)
+![相关画面如下](/blog_assets/postMortem/deploy/assets/img/006_006.jpg)
 
 （甚至出现了大部分的字母变成了方块的编码问题）
 
@@ -39,7 +39,7 @@ tag:
 
 具体而言，虚拟机在初始设置时所被分配的磁盘容量为 `32GB`，通过 **Stacer** 工具确认到：根分区 `/` 使用率达到 95% 以上。
 
-![通过 Stacer 工具确认的相关配置如下](./assets/img/006_002.jpg)
+![通过 Stacer 工具确认的相关配置如下](/blog_assets/postMortem/deploy/assets/img/006_002.jpg)
 
 其磁盘空间耗尽导致了如下几个状况出现：
 
@@ -72,7 +72,7 @@ tag:
 6. 扩展文件系统（*ext4*）：`sudo resize2fs /dev/sda2`。
 7. 验证结果：`df -h /` 显示根分区总容量约 `63GB`，可用空间约 `31GB`，扩容成功。
 
-![验证结果](./assets/img/006_005.jpg)
+![验证结果](/blog_assets/postMortem/deploy/assets/img/006_005.jpg)
 
 ## 最终结果
 

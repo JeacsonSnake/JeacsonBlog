@@ -325,7 +325,7 @@ remote: - Changes must be made through a pull request.
 
 > Optionally, to allow specific actors to push code to the branch without creating pull requests when they're required, select **Allow specified actors to bypass required pull requests**. Then, search for and select the actors who should be allowed to skip creating a pull request.
 
-![相关网页截图如图](./assets/006-img/1.jpg)
+![相关网页截图如图](/blog_assets/postMortem/sp_for_LLM/assets/006-img/1.jpg)
 
 [引用地址在这里](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/managing-a-branch-protection-rule)
 

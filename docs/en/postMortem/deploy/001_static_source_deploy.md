@@ -14,7 +14,7 @@ Prerequisite: after creating the .github/workflow/docs.yml file I went and revis
 
 The problem: after using GitHub Action, the workflow threw this error:
 
-![GitHubActionFatalNO1](./assets/img/GitHubActionFatalNO1.jpg)
+![GitHubActionFatalNO1](/blog_assets/postMortem/deploy/assets/img/GitHubActionFatalNO1.jpg)
 
 The cause: when the workflow deploys the code to the gh-pages branch it needs read and write access to the default secrets.GITHUB_TOKEN, but the repository does not grant that permission by default.
 
@@ -50,7 +50,7 @@ The fix:
 
 - Then change the path, as circled in red below:
 
-![GitHubPagesSourcePath](./assets/img/GitHubPagesSourcePath.jpg)
+![GitHubPagesSourcePath](/blog_assets/postMortem/deploy/assets/img/GitHubPagesSourcePath.jpg)
 
 ::: important
 This article was translated by `Hermes Agent`; the original text can be found at [here](../../../postMortem/deploy/001_static_source_deploy.md). The translation is for reference only.

@@ -24,7 +24,7 @@ category:
 
 整个过程如下图所示：
 
-![Whats_going_on_when_Alice_sends_a_message_to_Bob_through_SMTP](./assets/img/Whats_going_on_when_Alice_sends_a_message_to_Bob_through_SMTP.jpg)
+![Whats_going_on_when_Alice_sends_a_message_to_Bob_through_SMTP](/blog_assets/learningNote/Computer_Network/assets/img/Whats_going_on_when_Alice_sends_a_message_to_Bob_through_SMTP.jpg)
 
 总言之，在以上的操作中，SMTP 协议将邮件从 Alice 的邮件服务器发送到 Bob 的邮件服务器后，邮件就会被放入 Bob 的邮箱。
 
@@ -44,7 +44,7 @@ category:
 
 不过，发件人的用户代理通常不会直接与收件人的邮件服务器进行对话。相反，如 **下图** 所示，Alice 的用户代理使用 SMTP 将电子邮件推送到她的邮件服务器，然后 Alice 的邮件服务器作为 SMTP 客户端，使用 SMTP 以尝试将电子邮件转发到 Bob 的邮件服务器。
 
-![Whats_going_on_when_Alice_sends_a_message_to_Bob_through_other_entities](./assets/img/Whats_going_on_when_Alice_sends_a_message_to_Bob_through_other_entities.jpg)
+![Whats_going_on_when_Alice_sends_a_message_to_Bob_through_other_entities](/blog_assets/learningNote/Computer_Network/assets/img/Whats_going_on_when_Alice_sends_a_message_to_Bob_through_other_entities.jpg)
 
 为什么要分两步走？因为如果不通过 Alice 的邮件服务器进行中继，Alice 的用户代理是无法直接将邮件送达收件人 Bob 的邮件服务器的。通过首先让 Alice 将邮件存入自己的邮件服务器再进行邮件的发送，Alice 的邮件服务器就可以作为客户端反复尝试将邮件发送到 Bob 的邮件服务器，比如以每 30 分钟一次的时间间隔发送，直到 Bob 的邮件服务器可以正常运行并接收该邮件为止。
 
@@ -58,7 +58,7 @@ category:
 
 整条路经就会变成下图这样：
 
-![Full_images_of_Whats_going_on_when_Alice_sends_a_message_to_Bob_through_other_entities](./assets/img/Whats_going_on_when_Alice_sends_a_message_to_Bob_through_other_entities_full.jpg)
+![Full_images_of_Whats_going_on_when_Alice_sends_a_message_to_Bob_through_other_entities](/blog_assets/learningNote/Computer_Network/assets/img/Whats_going_on_when_Alice_sends_a_message_to_Bob_through_other_entities_full.jpg)
 
 在上图中， SMTP 用于将邮件从发件人的用户代理传送到发件人的邮件服务器，以及将邮件从发件人的邮件服务器传送到收件人的邮件服务器。而其他特殊的邮件访问协议（如 POP3）用于将邮件从收件人的邮件服务器拉取到收件人的用户代理中。
 

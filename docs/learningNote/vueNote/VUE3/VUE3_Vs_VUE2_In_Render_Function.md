@@ -12,7 +12,7 @@ tag:
 
 但是如果我们可以跳过代码转换节点的过程，直接编写生成vnode的代码，会使得浏览器编译代码的效率更高。此时我们可以在script标签内使用渲染函数render(), 并在其中调用VUE中的函数h()。h函数中调用了createElement函数（Vue3中使用的是createVnode函数） 进行结点的创建，但是只是在这之上进行了传入参数的条件判断，所以我们也可以称其为createElement函数/createVnode函数。
 
-Vue2 源码中对h函数的定义：![Definition of the h function in the Vue2 source code](./assets/img/2023-01-25-18-43-15-image.png)
+Vue2 源码中对h函数的定义：![Definition of the h function in the Vue2 source code](/blog_assets/learningNote/vueNote/VUE3/assets/img/2023-01-25-18-43-15-image.png)
 
 Vue3 源码中对h函数的定义：
 

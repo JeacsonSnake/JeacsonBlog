@@ -18,7 +18,7 @@ Official docs reference: [click](https://v3.vuex.vuejs.org/zh/guide/)
 
 ## The VUEX cycle diagram
 
-![vuex-cycle](./assets/img/vuexCycle.jpg)
+![vuex-cycle](/blog_assets/learningNote/vueNote/VUE2/assets/img/vuexCycle.jpg)
 
 ## 1. Introducing VUEX
 

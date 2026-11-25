@@ -12,7 +12,7 @@ When writing vue code, we usually write the HTML inside the template tag first. 
 
 But if we can skip the step of converting the code into nodes and write the code that generates vnodes directly, the browser will compile the code more efficiently. In that case we can use the render function render() inside the script tag, and call VUE's h() function in it. The h function calls createElement (Vue3 uses createVnode) to create the node, but it only adds some argument checks on top of that, so we can also call it the createElement function/createVnode function.
 
-The definition of the h function in the Vue2 source:![Definition of the h function in the Vue2 source code](./assets/img/2023-01-25-18-43-15-image.png)
+The definition of the h function in the Vue2 source:![Definition of the h function in the Vue2 source code](/blog_assets/learningNote/vueNote/VUE3/assets/img/2023-01-25-18-43-15-image.png)
 
 The definition of the h function in the Vue3 source:
 

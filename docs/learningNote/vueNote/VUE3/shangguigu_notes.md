@@ -19,7 +19,7 @@ tag:
 
 ## Vue3快速上手
 
-![vue3 =200x](./assets/img/VUE3_0.png)
+![vue3 =200x](/blog_assets/learningNote/vueNote/VUE3/assets/img/VUE3_0.png)
 
 ### 1.Vue3简介
 
@@ -105,9 +105,9 @@ vite官网：<https://vitejs.cn>
   - 真正的按需编译，不再等待整个应用编译完成。
 - 传统构建 与 vite构建对比图
 
-![传统构建](./assets/img/Bundle_based_dev_server.jpg)
+![传统构建](/blog_assets/learningNote/vueNote/VUE3/assets/img/Bundle_based_dev_server.jpg)
 
-![vite构建](./assets/img/Native_ESM_based_dev_server.jpg)
+![vite构建](/blog_assets/learningNote/vueNote/VUE3/assets/img/Native_ESM_based_dev_server.jpg)
 
 创建示例：
 
@@ -343,11 +343,11 @@ npm run dev
 
 <strong>vue2.x的生命周期</strong>
 
-![lifecycle_2](../VUE2/assets/img/lifecycle.png)
+![lifecycle_2](/blog_assets/learningNote/vueNote/VUE2/assets/img/lifecycle.png)
 
 <strong>vue3.x的生命周期</strong>
 
-![lifecycle_3](./assets/img/lifecycle.png)
+![lifecycle_3](/blog_assets/learningNote/vueNote/VUE3/assets/img/lifecycle.png)
 
 对比:
 
@@ -459,7 +459,7 @@ npm run dev
 
 ### 5.provide 与 inject
 
-![provide 与 inject](./assets/img/provide-inject.png)
+![provide 与 inject](/blog_assets/learningNote/vueNote/VUE3/assets/img/provide-inject.png)
 
 - 作用：实现<strong style="color:#DD5145">祖与后代组件间</strong>通信
 
@@ -502,9 +502,9 @@ npm run dev
 
 使用传统OptionsAPI中，新增或者修改一个需求，就需要分别在data，methods，computed里修改 。
 
-<!-- ![OptionsAPI1](./assets/img/ClassialOptionsAPI.image)
+<!-- ![OptionsAPI1](/blog_assets/learningNote/vueNote/VUE3/assets/img/ClassialOptionsAPI.image)
 
-![OptionsAPI2](./assets/img/ClassialOptionsAPISetData.image) -->
+![OptionsAPI2](/blog_assets/learningNote/vueNote/VUE3/assets/img/ClassialOptionsAPISetData.image) -->
 
 <!-- <img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f84e4e2c02424d9a99862ade0a2e4114~tplv-k3u1fbpfcp-watermark.image" style="width:600px;float:left" />
 

@@ -14,7 +14,7 @@ VLAN (Virtual Local Area Network) — a virtual LAN — is a communication techn
 
 Put another way: even devices sitting under different switches can, as long as they live in the same VLAN, talk to each other without generating any junk traffic beyond the useful traffic. This improves network performance, separates the relevant services, and buys you security.
 
-![2023-03-01-14-40-46-image](./assets/img/2023-03-01-14-40-46-image.png)
+![2023-03-01-14-40-46-image](/blog_assets/learningNote/Computer_Network/assets/img/2023-03-01-14-40-46-image.png)
 
 ### 2. VLAN tags (important) (3.1)
 
@@ -26,7 +26,7 @@ The IEEE 802.1Q standard lays out the VLAN tag as follows:
 
 The concrete flow is shown in the figure below:
 
-![2023-03-01-11-13-22-image](./assets/img/2023-03-01-11-13-22-image.png)
+![2023-03-01-11-13-22-image](/blog_assets/learningNote/Computer_Network/assets/img/2023-03-01-11-13-22-image.png)
 
 There are two Ethernet frame formats in the figure, top and bottom:
 
@@ -104,7 +104,7 @@ VLAN has three access port types in total: access ports, trunk ports and hybrid 
 
      First strip the frame's tag, then send. Ethernet frames an access port sends to a peer device are always untagged.
 
-     ![ACCESS](./assets/img/ACCESS.png)
+     ![ACCESS](/blog_assets/learningNote/Computer_Network/assets/img/ACCESS.png)
 
 ##### ②. Trunk port
 
@@ -126,7 +126,7 @@ VLAN has three access port types in total: access ports, trunk ports and hybrid 
 
      When the VLAN ID differs from the port's PVID but is one of the VLAN IDs allowed through the port, the original tag is kept and the message is sent.
 
-     ![TRUNK](./assets/img/TRUNK.png)
+     ![TRUNK](/blog_assets/learningNote/Computer_Network/assets/img/TRUNK.png)
 
 ##### ③. Hybrid port
 
@@ -150,13 +150,13 @@ VLAN has three access port types in total: access ports, trunk ports and hybrid 
 
      - After configuring the `port hybrid untagged vlan vlan-id` command, when the interface sends frames of that vlan-id it strips the VLAN Tag from the frame before sending it out. This command is generally configured on ports connected to hosts.
 
-     ![HYBRID](./assets/img/HYBRID.png)
+     ![HYBRID](/blog_assets/learningNote/Computer_Network/assets/img/HYBRID.png)
 
 ##### TIPS: the default VLAN (PVID) (3.3) ^[ [Li Deshui. "Implementation principles of VLAN based on IEEE 802.1Q frame tagging." (2006)](http://www.doc88.com/p-793921426875.html) ]
 
 Concept: every port on a switch has a VID as that port's default VID, and that is the PVID (Port VID, also called the default VLAN). When a frame (message) the switch receives is untagged, the switch adds the PVID to mark it. In other words, it is generally assigned to untagged frames and priority frames.
 
-![2023-03-03-14-50-23-image](./assets/img/2023-03-03-14-50-23-image.png)
+![2023-03-03-14-50-23-image](/blog_assets/learningNote/Computer_Network/assets/img/2023-03-03-14-50-23-image.png)
 
 - For an access interface, the default VLAN is simply the VLAN it is allowed to pass, so changing the default VLAN changes the VLAN the interface is allowed to pass.
 

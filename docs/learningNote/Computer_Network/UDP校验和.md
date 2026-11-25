@@ -30,7 +30,7 @@ checksum 的构造方法比较简单，但是计算比较麻烦：将需要发�
 
 计算方式类似于下图。在下图中 UDP 的长度是 15，其中由于 Data 的长度为 **15-8=7**, 因此需要*后置补零*：
 
-![UDP操作表](./assets/img/UDP_Checksum_Operation_table.jpg)
+![UDP操作表](/blog_assets/learningNote/Computer_Network/assets/img/UDP_Checksum_Operation_table.jpg)
 
 代码如下： (使用javascript编译)
 

@@ -203,7 +203,7 @@ In a function, a straight line joining two points on the function is called a **
 
 Suppose two estimates of the root are defined for the function $f(x)$, where *the current estimate* is $x_i$ and *the previous estimate* is $x_{i-1}$; then the point where the secant through $f(x_i)$ and $f(x_{i-1})$ meets the x-axis gives *the next estimate of the root*, $x_{i+1}$
 
-![Image of Secant method](./assets/img/secant_method.jpg)
+![Image of Secant method](/blog_assets/learningNote/Principles_of_Computer_Composition/assets/img/secant_method.jpg)
 
 $$ tan(\theta) = \frac {f(x_i)} {x_i-x_{i+1}} = \frac {f(x_i)-f(x_{i-1})} {x_i-x_{i-1}} $$
 

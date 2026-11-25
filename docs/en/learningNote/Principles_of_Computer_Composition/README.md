@@ -29,7 +29,7 @@ The online converter (English only): [click](https://www.h-schmidt.net/FloatConv
 
 The 32-bit floating-point format of IEEE 754 looks like this:
 
-![The 32-bit floating-point format of IEEE 754](./assets/img/IEEE754_standard_32-bit_floating-point_format.jpg)
+![The 32-bit floating-point format of IEEE 754](/blog_assets/learningNote/Principles_of_Computer_Composition/assets/img/IEEE754_standard_32-bit_floating-point_format.jpg)
 
 Where:
 
@@ -75,7 +75,7 @@ Which gives us:
 
 Assembling the three parts gives `0 1000 0011 0100 1000 0000 0000 000`, that is `0x41A 4000`:
 
-![Result after convert 20.5 to the Machine Number](./assets/img/Result_after_convert_20.5_to_the_Machine_Number.jpg)
+![Result after convert 20.5 to the Machine Number](/blog_assets/learningNote/Principles_of_Computer_Composition/assets/img/Result_after_convert_20.5_to_the_Machine_Number.jpg)
 
 ::: tip
 While working through this you may hit a decimal number that cannot be turned into a machine number exactly,
@@ -135,7 +135,7 @@ Which gives us:
 
 Assembling the three parts gives `1 1100 1010 0101 0000 1000 1000 0100 010`, that is `0xE5284422`:
 
-![Result after convert Great Number to the Machine Number](./assets/img/Result_after_convert_GreatNumber_to_the_Machine_Number.jpg)
+![Result after convert Great Number to the Machine Number](/blog_assets/learningNote/Principles_of_Computer_Composition/assets/img/Result_after_convert_GreatNumber_to_the_Machine_Number.jpg)
 
 ---
 
@@ -148,13 +148,13 @@ First we need the value of that machine number in binary: **0xD1500000 = (110100
 
 Then split it into the **sign bit s**, the **biased exponent e'** and the **mantissa m** described above:
 
-![Machine number](./assets/img/0xD1500000_IN_Machine_Num.jpg)
+![Machine number](/blog_assets/learningNote/Principles_of_Computer_Composition/assets/img/0xD1500000_IN_Machine_Num.jpg)
 
 Which gives us: **e' = 2^7^ + 2^5^ + 2^1^ = 162** → **e = e' - b = 35**
 
 There is a formula that sums up the whole computation after that. Writing the decimal value as `value`:
 
-![Formula for converting a machine number to decimal](./assets/img/Machine_Num_to_Decimal_Formula.jpg)
+![Formula for converting a machine number to decimal](/blog_assets/learningNote/Principles_of_Computer_Composition/assets/img/Machine_Num_to_Decimal_Formula.jpg)
 
 That is, **value = (-1)^1^ * (1.1010 0000 0000 0000 0000 000)~2~ * 2^35^** → **value = -1 * (1.625)~10~ * 2^35^**
 

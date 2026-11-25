@@ -287,7 +287,7 @@ After that, bundle the reactivity-related source in Vue:
 
 In the dist directory alongside the reactivity folder, a whole bunch of files will show up. We need to take 'packages/reactivity/dist/reactivity.cjs.js' out and move it into our own code directory.
 
-![packages/reactivity/dist/reactivity.cjs.js](./assets/img/vue3_Reactive_build_locate.jpg)
+![packages/reactivity/dist/reactivity.cjs.js](/blog_assets/learningNote/vueNote/VUE3/assets/img/vue3_Reactive_build_locate.jpg)
 
 And finally all you have to do is import it.
 
