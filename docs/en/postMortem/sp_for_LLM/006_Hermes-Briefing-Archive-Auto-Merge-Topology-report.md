@@ -325,7 +325,7 @@ And when I went to the docs to look up `Allow specified actors to bypass require
 
 > Optionally, to allow specific actors to push code to the branch without creating pull requests when they're required, select **Allow specified actors to bypass required pull requests**. Then, search for and select the actors who should be allowed to skip creating a pull request.
 
-![Screenshot of the relevant docs page](./assets/006-img/1.jpg)
+![Screenshot of the relevant docs page](/blog_assets/postMortem/sp_for_LLM/assets/006-img/1.jpg)
 
 [The quote is here](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/managing-a-branch-protection-rule)
 

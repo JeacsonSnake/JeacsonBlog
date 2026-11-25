@@ -15,7 +15,7 @@ LeanCloud 于 `2026 年 1 月 12 日` 发布公告，说明其将于 `2027 年 1
 
 登录 `LeanCloud` 控制台，进入到之前定义的用于存储评论的应用中，点击左侧 `数据存储 → 导入导出`，选择 `数据导出` 选项卡，点击 `导出`:
 
-![be like](./assets/img/CommentMigrate_001.jpg)
+![be like](/blog_assets/postMortem/deploy/assets/img/CommentMigrate_001.jpg)
 
 因为本身这边的评论量很少，因此导出的时间并没有那么长。其导出的是一个 `.tar.gz` 文件，在之后需要进行进一步格式转换。
 
@@ -34,7 +34,7 @@ LeanCloud 于 `2026 年 1 月 12 日` 发布公告，说明其将于 `2027 年 1
 
 在 `vercel` 中，进入用于之前设置的应用中，点击左侧 `Storage`，选择右侧的 `Create Database`。在下方的 provider 中选择 `Neon`:
 
-![be like](./assets/img/CommentMigrate_002.png "(从上述的官方文档网站中摘录过来的图片)")
+![be like](/blog_assets/postMortem/deploy/assets/img/CommentMigrate_002.png "(从上述的官方文档网站中摘录过来的图片)")
 
 使用 `Github` 账号关联创建 `Neon` 账号之后，可以以默认状态进行创建 （当然我这边修改了命名，还把地区选择为了 `新加坡`，寻思服务器地理位置稍微近一点。不过不修改理论上也没事）。
 
@@ -60,7 +60,7 @@ sslmode=require
 
 其中 `host` 和 `password` 需要在 `vercel` 进入用于之前设置的应用后，点击左侧 `Storage` 并选定之前创建的 `Neon`，在 `Quickstart` 里的 `.env.local` 中寻找对应键值对进行替换：
 
-![host 对应 PGHOST；password 对应 PGPASSWORD](./assets/img/CommentMigrate_003.jpg "host 对应 PGHOST；password 对应 PGPASSWORD")
+![host 对应 PGHOST；password 对应 PGPASSWORD](/blog_assets/postMortem/deploy/assets/img/CommentMigrate_003.jpg "host 对应 PGHOST；password 对应 PGPASSWORD")
 
 修改完之后保存。
 
@@ -149,4 +149,4 @@ if __name__ == '__main__':
 
 在上述工作完成之后，需要在 `vercel` 中点击 `Redeploy`，以使相关设置再重新加载后适用。
 
-![be like](./assets/img/CommentMigrate_004.jpg)
+![be like](/blog_assets/postMortem/deploy/assets/img/CommentMigrate_004.jpg)

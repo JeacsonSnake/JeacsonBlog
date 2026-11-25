@@ -30,7 +30,7 @@ The data we actually need is shown in the table below:
 
 The calculation works roughly as in the figure below. In it the UDP length is 15, and since the Data length is **15-8=7**, we need to *pad with zeros at the end*:
 
-![UDP operation table](./assets/img/UDP_Checksum_Operation_table.jpg)
+![UDP operation table](/blog_assets/learningNote/Computer_Network/assets/img/UDP_Checksum_Operation_table.jpg)
 
 The code is as follows: (compiled with javascript)
 

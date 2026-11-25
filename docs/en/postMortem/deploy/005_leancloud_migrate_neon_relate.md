@@ -15,7 +15,7 @@ LeanCloud announced on `12 January 2026` that it will shut down its public servi
 
 Sign in to the `LeanCloud` console, open the application you set up earlier to store comments, click `Data storage → Import/Export` in the left sidebar, switch to the `Export` tab and hit `Export`:
 
-![be like](./assets/img/CommentMigrate_001.jpg)
+![be like](/blog_assets/postMortem/deploy/assets/img/CommentMigrate_001.jpg)
 
 Comment volume here is tiny, so the export did not take long. What you get back is a `.tar.gz` file that still needs a format conversion later.
 
@@ -32,7 +32,7 @@ If the dataset is large, you can limit the export to just these three:
 
 In `vercel`, open the application you configured earlier, click `Storage` on the left and then `Create Database` on the right. Pick `Neon` from the provider list below:
 
-![be like](./assets/img/CommentMigrate_002.png "(Image taken from the official documentation site mentioned above)")
+![be like](/blog_assets/postMortem/deploy/assets/img/CommentMigrate_002.png "(Image taken from the official documentation site mentioned above)")
 
 Link your `Github` account to create the `Neon` account, then create the database with the defaults (I did rename mine and picked the `Singapore` region, figuring a physically closer server could not hurt — leaving it alone works just as well).
 
@@ -58,7 +58,7 @@ sslmode=require
 
 For `host` and `password`: go back to `vercel`, open the application, click `Storage`, select the `Neon` database you just created, and look them up in the `.env.local` block under `Quickstart` — the corresponding key/value pairs are:
 
-![host maps to PGHOST; password maps to PGPASSWORD](./assets/img/CommentMigrate_003.jpg "host maps to PGHOST; password maps to PGPASSWORD")
+![host maps to PGHOST; password maps to PGPASSWORD](/blog_assets/postMortem/deploy/assets/img/CommentMigrate_003.jpg "host maps to PGHOST; password maps to PGPASSWORD")
 
 Save the file when you are done.
 
@@ -147,7 +147,7 @@ The records are then uploaded to `Neon` incrementally.
 
 When that finishes, click `Redeploy` in `vercel` so the settings are picked up on a fresh boot.
 
-![be like](./assets/img/CommentMigrate_004.jpg)
+![be like](/blog_assets/postMortem/deploy/assets/img/CommentMigrate_004.jpg)
 
 ::: important
 This article was translated by `Hermes Agent`; the original text can be found at [here](../../../postMortem/deploy/005_leancloud_migrate_neon_relate.md). The translation is for reference only.

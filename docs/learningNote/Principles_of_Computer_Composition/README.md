@@ -29,7 +29,7 @@ IEEE 754规定了四种表示浮点数值的方式：单精确度（32位）、�
 
 IEEE754标准的32位浮点数格式为：
 
-![IEEE754标准的32位浮点数格式](./assets/img/IEEE754_standard_32-bit_floating-point_format.jpg)
+![IEEE754标准的32位浮点数格式](/blog_assets/learningNote/Principles_of_Computer_Composition/assets/img/IEEE754_standard_32-bit_floating-point_format.jpg)
 
 其中：
 
@@ -75,7 +75,7 @@ IEEE754标准的32位浮点数格式为：
 
 将三个部分进行组装后，最终得到的结果就是：`0 1000 0011 0100 1000 0000 0000 000`, 也就是 `0x41A 4000`:
 
-![Result after convert 20.5 to the Machine Number](./assets/img/Result_after_convert_20.5_to_the_Machine_Number.jpg)
+![Result after convert 20.5 to the Machine Number](/blog_assets/learningNote/Principles_of_Computer_Composition/assets/img/Result_after_convert_20.5_to_the_Machine_Number.jpg)
 
 ::: tip
 在计算的过程中你可能会遇到没法完美地将一个十进制数转为一个机器数的情况，
@@ -135,7 +135,7 @@ IEEE754标准的32位浮点数格式为：
 
 将三个部分进行组装后，最终得到的结果就是：`1 1100 1010 0101 0000 1000 1000 0100 010`, 也就是 `0xE5284422`:
 
-![Result after convert Great Number to the Machine Number](./assets/img/Result_after_convert_GreatNumber_to_the_Machine_Number.jpg)
+![Result after convert Great Number to the Machine Number](/blog_assets/learningNote/Principles_of_Computer_Composition/assets/img/Result_after_convert_GreatNumber_to_the_Machine_Number.jpg)
 
 ---
 
@@ -148,13 +148,13 @@ IEEE754标准的32位浮点数格式为：
 
 然后将其拆分为上文讲过的**符号位s** 、 **指数偏移位e'** 与 **小数位m**：
 
-![机器数](./assets/img/0xD1500000_IN_Machine_Num.jpg)
+![机器数](/blog_assets/learningNote/Principles_of_Computer_Composition/assets/img/0xD1500000_IN_Machine_Num.jpg)
 
 因此我们可以得出：**e' = 2^7^ + 2^5^ + 2^1^ = 162** → **e = e' - b = 35**
 
 我们有一个公式可以将Z之后的计算过程进行一个概括。如果将十进制的值记为`value`，则：
 
-![机器数转十进制的公式](./assets/img/Machine_Num_to_Decimal_Formula.jpg)
+![机器数转十进制的公式](/blog_assets/learningNote/Principles_of_Computer_Composition/assets/img/Machine_Num_to_Decimal_Formula.jpg)
 
 也就是**value = (-1)^1^ * (1.1010 0000 0000 0000 0000 000)~2~ * 2^35^** → **value = -1 * (1.625)~10~ * 2^35^**
 

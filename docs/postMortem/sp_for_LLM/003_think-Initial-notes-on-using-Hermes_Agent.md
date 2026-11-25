@@ -35,7 +35,7 @@ tag:
 
 有点像我之前在网上听到人讲的，概括出来就是：“如果你在两年前尝试用 `AI` 做事儿，那你所做的方向和现在的方向必然是完全不同的。并且随着时间的推移，你要学的东西会越来越少。换句话说，如果你之前不学，那你现在学的就越轻松；但是如果你现在不学，那可能以后就真不用学了。”
 
-![IfYouKnowYouKnow](./assets/003-img/001-IfYouKnowYouKnow.jpg)
+![IfYouKnowYouKnow](/blog_assets/postMortem/sp_for_LLM/assets/003-img/001-IfYouKnowYouKnow.jpg)
 
 ::: center
 (某不知名B站动漫区UP主)
@@ -62,7 +62,7 @@ tag:
 我一直认为做一件事需要有足够多的数据才能够有准确的判断，于是我最开始预想的是只把 `Hermes agent` 当成一个玩具来用。我想到之前的人写博客的时候是会提供 `RSS` 这种 `feed 源` 给用户/关注者 作订阅用，因此我在那个时候尝试添加了 `RSS` 在我的博客里，并且尝试使用 `FOLO` 做订阅。做完了之后我突然间想到,能不能让 `Hermes agent` 通过使用 `FOLO` 去帮我找 `RSS` 可靠信源，然后每天以日报的方式把 `AI` 或者 `LLM` 相关的信息整合发送给我呢？于是我就让他做了这么一个 `cronjob`，这样让 `Hermes agent` 在每天早上七点钟的时候做一遍这个任务，然后把这些相关的信息汇总发给我。但是因为当时买的服务器是被架设在广州，因此抓取这些 `RSS` 变得实际上非常困难。等到过了几天我接触到了一个 `GitHub` 上的开源项目叫 `Agent-Reach` ([项目地址在这里](https://github.com/Panniantong/Agent-Reach`>))，才发现说实际上在我尝试用 `feed 源` 去做信息获取的时候，已经有人把使用 `AI agent` 做信息获取的这么一套方法做出来了。（不过说实话能直接用上别人造的轮子也蛮幸福的，为作轮子这个事情还是太痛苦了。）所以我后面就把监控 `RSS` 的那一套信息和 `Agent-Reach` 这个方法结合了一下，让它们俩作为共享信源去进行信息的获取。于是无论从 `推特` 上，或者从 `GitHub` 上，或者是从 `arXiv` 上面寻找信息的过程就变得比较简单了。
 
 ::: center
-![一点示例](./assets/003-img/002-example.jpg)
+![一点示例](/blog_assets/postMortem/sp_for_LLM/assets/003-img/002-example.jpg)
 
 截取的前几天的每日简报信息
 :::
@@ -76,7 +76,7 @@ tag:
 比如说我发现： `Hermes agent` 会把自己更新到博客上面的 `wiki` 当作博客上面更新的新东西去进行反刍，再把反刍得到的新消息重新放到 `wiki` 上面（这下衔尾蛇了……）。不过幸好当时定的时候是提前给它创建了一个新的 `GitHub` 账号，让它通过这个账号 `fork` 我的博客源码，然后在修改之后提交 `Pull Request` 到我这边，我再进行审核，不然源码可能一下子就被改乱掉了。
 
 ::: center
-![是BUG](./assets/003-img/003-OhABug.jpg)
+![是BUG](/blog_assets/postMortem/sp_for_LLM/assets/003-img/003-OhABug.jpg)
 
 甚至出现过 “因为 `RSS 源的博客` 更新了，所以更新了我的博客” 的情况（失声）
 :::
@@ -90,7 +90,7 @@ tag:
 自从发现 `微信` 的这个 `ilink API` 对于 `cronjob` 这种“会在指定时间不由分说一次推送多条消息给用户”的交互方式感到抵触并且会在没发送的时候直接把后台拦截下来（`Hermes agent` 那边显示的是发送频率过高，但是你如果说是让 `Hermes agent`手动触发一次这个 `cronjob`，就完全没有这个提示的出现）之后，我就在尝试寻找其他的 `gateway` 方式。
 
 :::center
-![也是BUG](./assets/003-img/004-NoOutput.jpg)
+![也是BUG](/blog_assets/postMortem/sp_for_LLM/assets/003-img/004-NoOutput.jpg)
 
 *be like (甚至出现了时空错乱)
 :::
@@ -100,7 +100,7 @@ tag:
 首先，我在与 `AI agent` 进行交互的时候，实际上更希望 “能够确认它的工作状态” 以及 “它在面对某些工作的时候所调用的各种方法是什么”，而使用 `微信` 这些事情都是完全未知的。在 `Hermes agent` 里面有一个选项叫做 `verbose`，意思是当你启用它之后它可以把 `Hermes agent` 在执行某一件事情所做的所有的操作，包括“调用了什么样的skill”、“在 `TUI` 上面执行了什么指令”等等都能够写给你，这样你就能够更加有把握它到底在后台做了什么。但是在 `微信` 上能够看到的信息会比在 `Discord` 上面看到的信息少的多得多。因此我之前还以为 `verbose` 这个模式能够得到的信息就只有这么多。
 
 :::center
-![事无巨细的输出](./assets/003-img/005-1-RichWorkFlow.jpg)
+![事无巨细的输出](/blog_assets/postMortem/sp_for_LLM/assets/003-img/005-1-RichWorkFlow.jpg)
 
 在 Discord 上面能看到的（没打过这么富裕的仗只能说）
 :::
@@ -108,7 +108,7 @@ tag:
 并且当微信那一边的 `gateway` 获取到你的消息之后，只会通过将上方的名字信息修改为 *`正在输入中……`* 来显示它的工作状态，但是你无法判断它是否工作完成，于是在最开始使用的时候，经常会出现 “你以为它做完了，于是你发了一个信息过去。但是它那边实际上没做完，任务就会被打断，然后所有的做的事情80%都功亏一篑。”这样的情况。但是 `Discord` 那边的 `gateway` 可以通过修改信息底下的表情回复，使用户判断它所下发的任务到底有没有被做完。
 
 :::center
-![√](./assets/003-img/005-GoodTick.jpg)
+![√](/blog_assets/postMortem/sp_for_LLM/assets/003-img/005-GoodTick.jpg)
 
 *打勾是对的
 :::
@@ -116,7 +116,7 @@ tag:
 其次，使用 `微信` 的 `gateway` 是没有办法像是在网站上使用其他的模型一样，把文字跟图片同时发给 `Hermes agent` 的。因为 `微信` 这一边针对文本与图片的发送方式（至少在我用的时候）是并发执行(指的并非是打包成一个包发送，而是*同时发两个包*)。这导致 `Hermes agent` 并不知道我发送的图片然后之后的图片还打乱了发送的消息。
 
 :::center
-![也是BUG](./assets/003-img/003-1-OhAnotherBug.jpg)
+![也是BUG](/blog_assets/postMortem/sp_for_LLM/assets/003-img/003-1-OhAnotherBug.jpg)
 
 *be like
 :::
@@ -138,7 +138,7 @@ tag:
 所以是的……
 
 :::center
-![也是BUG](./assets/003-img/006-Shrug.jpg)
+![也是BUG](/blog_assets/postMortem/sp_for_LLM/assets/003-img/006-Shrug.jpg)
 
 *Wat Can I Say
 :::
@@ -153,20 +153,20 @@ tag:
 
 ### CPU 利用率监控
 
-![CPU 利用率监控](./assets/003-img/cpu_monitor.png)
+![CPU 利用率监控](/blog_assets/postMortem/sp_for_LLM/assets/003-img/cpu_monitor.png)
 
 ### 内存使用量监控
 
-![内存使用量监控](./assets/003-img/memory_usage_monitor.png)
+![内存使用量监控](/blog_assets/postMortem/sp_for_LLM/assets/003-img/memory_usage_monitor.png)
 
 ### 内存利用率监控
 
-![内存利用率监控](./assets/003-img/memory_percent_monitor.png)
+![内存利用率监控](/blog_assets/postMortem/sp_for_LLM/assets/003-img/memory_percent_monitor.png)
 
 ### 内网带宽监控
 
-![内网带宽监控](./assets/003-img/internal_bandwidth_monitor.png)
+![内网带宽监控](/blog_assets/postMortem/sp_for_LLM/assets/003-img/internal_bandwidth_monitor.png)
 
 ### 公网带宽监控
 
-![公网带宽监控](./assets/003-img/public_bandwidth_monitor.png)
+![公网带宽监控](/blog_assets/postMortem/sp_for_LLM/assets/003-img/public_bandwidth_monitor.png)

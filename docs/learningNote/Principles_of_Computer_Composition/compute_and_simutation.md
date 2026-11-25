@@ -203,7 +203,7 @@ $$x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}$$
 
 假设在函数$f(x)$ 中定义了两个根的估计值，其中 *现在根的估计值* 为 $x_i$, *前一个根的估计值* 为 $x_{i-1}$, 则连接 $f(x_i)$ 与 $f(x_{i-1})$ 的割线与x轴的交点可以得到该函数 *后一个根的估计值* $x_{i+1}$
 
-![Image of Secant method](./assets/img/secant_method.jpg)
+![Image of Secant method](/blog_assets/learningNote/Principles_of_Computer_Composition/assets/img/secant_method.jpg)
 
 $$ tan(\theta) = \frac {f(x_i)} {x_i-x_{i+1}} = \frac {f(x_i)-f(x_{i-1})} {x_i-x_{i-1}} $$
 

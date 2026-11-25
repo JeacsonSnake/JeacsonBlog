@@ -8,7 +8,7 @@ category:
 
 Let's first look at the question[^first]:
 
-![A question asking whats_going_on_from_enterURL_to_bowser_display](./assets/img/whats_going_on_from_enterURL_to_bowser_display.jpg)
+![A question asking whats_going_on_from_enterURL_to_bowser_display](/blog_assets/learningNote/Computer_Network/assets/img/whats_going_on_from_enterURL_to_bowser_display.jpg)
 
 Translated, it says:
 

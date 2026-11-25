@@ -35,7 +35,7 @@ After I discovered `Hermes agent` on 12 April, I started trying to find a server
 
 It's a bit like something I heard someone say online a while back, summarised: "if you tried to do things with `AI` two years ago, then the direction you took is bound to be completely different from the direction now. And as time goes on, there'll be less and less you have to learn. Put another way, if you didn't learn it before, what you learn now is easier; but if you don't learn it now, then maybe later you really won't need to learn it at all."
 
-![IfYouKnowYouKnow](./assets/003-img/001-IfYouKnowYouKnow.jpg)
+![IfYouKnowYouKnow](/blog_assets/postMortem/sp_for_LLM/assets/003-img/001-IfYouKnowYouKnow.jpg)
 
 ::: center
 (some unknown anime-section UP host on Bilibili)
@@ -62,7 +62,7 @@ When I first configured `Hermes agent`'s `gateway`, I used `WeChat`. The `WeChat
 I've always thought you need enough data before you can make an accurate judgement, so at the start I only ever intended to use `Hermes agent` as a toy. I remembered that people writing blogs back in the day would provide `RSS`-style `feed sources` for users/followers to subscribe to, so around then I tried adding `RSS` to my blog and tried using `FOLO` to subscribe. Once that was done it suddenly occurred to me: could I have `Hermes agent` use `FOLO` to hunt down reliable `RSS` sources for me, and then every day send me a daily-report style round-up of `AI` or `LLM` news? So I had it make a `cronjob` like that, having `Hermes agent` run the task every morning at seven and send me the round-up. But because the server I'd bought was sitting in Guangzhou, scraping those `RSS` feeds turned out to be really difficult. Then a few days later I came across an open-source project on `GitHub` called `Agent-Reach` ([project link here](https://github.com/Panniantong/Agent-Reach`>)), and realised that while I'd been trying to get information via `feed sources`, someone had already worked out a whole method for using an `AI agent` to gather information. (Though honestly, getting to use someone else's wheel is pretty great — building the wheel is just too painful.) So afterwards I combined the `RSS` monitoring setup with the `Agent-Reach` approach and let the two act as shared sources for information gathering. Which made finding information from `Twitter`, or from `GitHub`, or from `arXiv` much simpler.
 
 ::: center
-![A little example](./assets/003-img/002-example.jpg)
+![A little example](/blog_assets/postMortem/sp_for_LLM/assets/003-img/002-example.jpg)
 
 A screenshot of the daily briefing from a few days ago
 :::
@@ -76,7 +76,7 @@ After I got this `LLM wiki` going, I actually left it alone for over a month. Be
 For instance, I found that: `Hermes agent` will take the `wiki` it updates onto the blog, treat it as something new on the blog, ruminate on it, and then put the newly-ruminated news back onto the `wiki` (an ouroboros at this point...). Luckily, when I set it up I'd created a new `GitHub` account for it in advance and had it `fork` my blog source from that account, then submit a `Pull Request` to me after making changes for me to review — otherwise the source could have been messed up in one go.
 
 ::: center
-![It's a BUG](./assets/003-img/003-OhABug.jpg)
+![It's a BUG](/blog_assets/postMortem/sp_for_LLM/assets/003-img/003-OhABug.jpg)
 
 There was even a case of "because the `RSS source blog` updated, it updated my blog" (voice lost)
 :::
@@ -90,7 +90,7 @@ Another thing I found: when `Hermes agent` is editing, because the `prompt` itse
 Ever since I found that `WeChat`'s `ilink API` resists the `cronjob` style of interaction — "pushing several messages at the user at a set time without any discussion" — and will just intercept things in the backend when it hasn't sent them (`Hermes agent` shows it as sending too frequently, but if you have `Hermes agent` manually trigger the `cronjob` once, that message doesn't appear at all), I've been trying to find other `gateway` options.
 
 :::center
-![Also a BUG](./assets/003-img/004-NoOutput.jpg)
+![Also a BUG](/blog_assets/postMortem/sp_for_LLM/assets/003-img/004-NoOutput.jpg)
 
 *be like (there was even a space-time mix-up)
 :::
@@ -100,7 +100,7 @@ So I tried using `Discord` as another `gateway`, and it wasn't until I used `Dis
 First, when I'm interacting with an `AI agent`, what I actually want more is "being able to confirm its working state" and "what methods it's calling when faced with certain jobs", and with `WeChat` all of that is completely unknown. In `Hermes agent` there's an option called `verbose`, meaning that once you turn it on it can write out for you everything `Hermes agent` does while carrying out a task, including "what skill it called", "what commands it ran on the `TUI`" and so on, so you have a better idea of what it's actually doing in the background. But the information you can see on `WeChat` is far, far less than what you see on `Discord`. So I used to think `verbose` mode only gave you that much information.
 
 :::center
-![Meticulous output](./assets/003-img/005-1-RichWorkFlow.jpg)
+![Meticulous output](/blog_assets/postMortem/sp_for_LLM/assets/003-img/005-1-RichWorkFlow.jpg)
 
 What you can see on Discord (never fought such a well-supplied battle, honestly)
 :::
@@ -108,7 +108,7 @@ What you can see on Discord (never fought such a well-supplied battle, honestly)
 And once the `gateway` on the WeChat side gets your message, it only shows its working state by changing the name info at the top to *`typing...`*, but you can't tell whether it's finished. So when I first started using it, the situation often came up where "you think it's done, so you send another message. But it actually hasn't finished on its end, the task gets interrupted, and then 80% of everything it did goes down the drain." Whereas the `Discord` `gateway` can change the emoji reaction under the message, letting the user judge whether the task it was given has actually been finished.
 
 :::center
-![√](./assets/003-img/005-GoodTick.jpg)
+![√](/blog_assets/postMortem/sp_for_LLM/assets/003-img/005-GoodTick.jpg)
 
 *a tick is correct
 :::
@@ -116,7 +116,7 @@ And once the `gateway` on the WeChat side gets your message, it only shows its w
 Second, using `WeChat`'s `gateway` there's no way to send text and an image to `Hermes agent` at the same time, the way you can with other models on a website. Because `WeChat`'s way of sending text and images (at least when I was using it) is concurrent execution (meaning it's not packed into one package, it's *sending two packages at once*). Which left `Hermes agent` not knowing I'd sent an image, and the messages sent afterwards got jumbled up.
 
 :::center
-![Also a BUG](./assets/003-img/003-1-OhAnotherBug.jpg)
+![Also a BUG](/blog_assets/postMortem/sp_for_LLM/assets/003-img/003-1-OhAnotherBug.jpg)
 
 *be like
 :::
@@ -138,7 +138,7 @@ Halfway through using it, `gpt-img-2` came out, so I started trying to work out 
 So yeah...
 
 :::center
-![Also a BUG](./assets/003-img/006-Shrug.jpg)
+![Also a BUG](/blog_assets/postMortem/sp_for_LLM/assets/003-img/006-Shrug.jpg)
 
 *Wat Can I Say
 :::
@@ -153,23 +153,23 @@ After nearly two months of use, I wouldn't dare claim I've built some grand proj
 
 ### CPU utilisation monitoring
 
-![CPU utilisation monitoring](./assets/003-img/cpu_monitor.png)
+![CPU utilisation monitoring](/blog_assets/postMortem/sp_for_LLM/assets/003-img/cpu_monitor.png)
 
 ### Memory usage monitoring
 
-![Memory usage monitoring](./assets/003-img/memory_usage_monitor.png)
+![Memory usage monitoring](/blog_assets/postMortem/sp_for_LLM/assets/003-img/memory_usage_monitor.png)
 
 ### Memory utilisation monitoring
 
-![Memory utilisation monitoring](./assets/003-img/memory_percent_monitor.png)
+![Memory utilisation monitoring](/blog_assets/postMortem/sp_for_LLM/assets/003-img/memory_percent_monitor.png)
 
 ### Internal bandwidth monitoring
 
-![Internal bandwidth monitoring](./assets/003-img/internal_bandwidth_monitor.png)
+![Internal bandwidth monitoring](/blog_assets/postMortem/sp_for_LLM/assets/003-img/internal_bandwidth_monitor.png)
 
 ### Public bandwidth monitoring
 
-![Public bandwidth monitoring](./assets/003-img/public_bandwidth_monitor.png)
+![Public bandwidth monitoring](/blog_assets/postMortem/sp_for_LLM/assets/003-img/public_bandwidth_monitor.png)
 
 ::: important
 This article was translated by `Hermes Agent`; the original text can be found at [here](../../../postMortem/sp_for_LLM/003_think-Initial-notes-on-using-Hermes_Agent.md). The translation is for reference only.

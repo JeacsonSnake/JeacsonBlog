@@ -60,7 +60,7 @@ So as long as the whole `display` section is **missing**, Feishu gets `new` + `4
 
 I went to look at what was in my current `~/.hermes/config.yaml`, and found it wasn't "display is set wrong" but that **there was no display section at all**. Not just `display`: the whole file only had `model`, `fallback_providers`, `skills.external_dirs`, `onboarding` and the version number; the rest of the config had simply disappeared.
 
-![my part of config when I reached out - Vanishing person Meme](./assets/008-img/0.jpg)
+![my part of config when I reached out - Vanishing person Meme](/blog_assets/postMortem/deploy/assets/008-img/0.jpg)
 
 A Hermes config that had been running for the better part of a year reduced to this little — that's just not right; something I changed earlier must have wiped it. (shrugs helplessly)
 
@@ -80,7 +80,7 @@ Luckily I had the habit of having `Hermes Agent` make backups. I had `Hermes Age
 
 That's not right — why did the file sizes shrink?
 
-![Realized something while checking the file size - Something ain't Right. Meme](./assets/008-img/1.jpg)
+![Realized something while checking the file size - Something ain't Right. Meme](/blog_assets/postMortem/deploy/assets/008-img/1.jpg)
 
 Then `Hermes Agent` recursively expanded the leaf keys, compared the paths one by one, and checked the missing entries against `DEFAULT_CONFIG`; the config had lost a huge amount (baseline **439** leaf keys, currently 32, **422 missing**). `Hermes Agent` sorted the missing items into three classes:
 
@@ -124,11 +124,11 @@ Fix the YAML and restart.
 
 That line already spells out the consequence plainly: "**every user override** is being ignored". But I didn't stop at the time. What was I even doing?
 
-![Me realized it might be MYSELF that I hadn’t spotted the notice - This Is Fine. Meme](./assets/008-img/2.jpg)
+![Me realized it might be MYSELF that I hadn’t spotted the notice - This Is Fine. Meme](/blog_assets/postMortem/deploy/assets/008-img/2.jpg)
 
 Leaving the very first one aside, the only difference between the other two corrupt backups is on line 554, where the fallback model changed from `deepseek-v4-pro` to `deepseek-v4-flash`. Which means that after the file broke, it was still being edited by hand.
 
-![Let’s see who edited it: It's ME -Scooby doo mask reveal Meme](./assets/008-img/3.jpg)
+![Let’s see who edited it: It's ME -Scooby doo mask reveal Meme](/blog_assets/postMortem/deploy/assets/008-img/3.jpg)
 
 ### Step 5: pin down the 274 B moment
 
@@ -204,7 +204,7 @@ The upstream fix was to add a `FailedConfigRead` sentinel: when a read fails, it
 
 My incident happened on 30 July; the fix landed between 17 and 23 September. Seven weeks apart. That also explains why the version at the time quietly wrote the file down to 274 bytes: that's just how it was designed back then.
 
-![Hermes agent at that time - I'm gonna pretend I didn't see that. Meme](./assets/008-img/4.jpg)
+![Hermes agent at that time - I'm gonna pretend I didn't see that. Meme](/blog_assets/postMortem/deploy/assets/008-img/4.jpg)
 
 ## Root cause
 

@@ -287,7 +287,7 @@ function computed(getter) {
 
 在reactivity文件夹同级下的dist目录中会出现许多文件。我们需要将'packages/reactivity/dist/reactivity.cjs.js'提出，并将其移动到我们自己的代码目录中。
 
-![packages/reactivity/dist/reactivity.cjs.js](./assets/img/vue3_Reactive_build_locate.jpg)
+![packages/reactivity/dist/reactivity.cjs.js](/blog_assets/learningNote/vueNote/VUE3/assets/img/vue3_Reactive_build_locate.jpg)
 
 最后只要进行引用就可以了。
 

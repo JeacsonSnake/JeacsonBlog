@@ -25,7 +25,7 @@ UDP 协议中没有相关的拥塞控制机制，因此 UDP 的发送端理论�
 
 **UDP 网段结构**（如下图）：
 
-![UDP segment structure](./assets/img/UDP_segment_structure.jpg)
+![UDP segment structure](/blog_assets/learningNote/Computer_Network/assets/img/UDP_segment_structure.jpg)
 
 **UDP校验和(checksum)**：
 “UDP 校验和 checksum” 一般用于错误检测，以确定 UDP 网段内的传输比特是否在传输或存储在路由器内部时被更改。根据 UDP 网段结构图可知，校验和一般被放在 UDP 网段的头部，与所有数据一同传输。当需要校验时，将所有接收到的 16-bit 二进制数据和 checksum 相加，如果数据包中没有出现错误，那么总和就应该是16个1，即 111111111111111111；一旦出现了0，那么就表明数据包中出现了错误。

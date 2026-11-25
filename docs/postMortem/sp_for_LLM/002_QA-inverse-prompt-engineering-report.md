@@ -115,7 +115,7 @@ tag:
 
 例如使用这一图片反推 prompt，假设希望使用该 prompt + 一篇文献以生成该文献针对特定研究方向的研究步骤，那么在使用该 prompt 生成相同风格的图片时，应该如何运用"反向提示词工程"？
 
-![002-img](./assets/002-img.png)
+![002-img](/blog_assets/postMortem/sp_for_LLM/assets/002-img.png)
 
 ---
 

@@ -8,7 +8,7 @@ category:
 
 让我们先来看看题目[^first]：
 
-![A question asking whats_going_on_from_enterURL_to_bowser_display](./assets/img/whats_going_on_from_enterURL_to_bowser_display.jpg)
+![A question asking whats_going_on_from_enterURL_to_bowser_display](/blog_assets/learningNote/Computer_Network/assets/img/whats_going_on_from_enterURL_to_bowser_display.jpg)
 
 翻译一下就是：
 

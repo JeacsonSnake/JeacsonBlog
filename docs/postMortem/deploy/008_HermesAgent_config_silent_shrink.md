@@ -60,7 +60,7 @@ tag:
 
 我去查了下我现在的 `~/.hermes/config.yaml` 里出现的状况，发现不是 "display 设错了"，而是**根本没有 display 这一段**。不只是 `display` ，整个文件只有 `model`、`fallback_providers`、`skills.external_dirs`、`onboarding` 和版本号，其他配置直接消失了。
 
-![my part of config when I reached out - Vanishing person Meme](./assets/008-img/0.jpg)
+![my part of config when I reached out - Vanishing person Meme](/blog_assets/postMortem/deploy/assets/008-img/0.jpg)
 
 一份跑了大半年的 Hermes 配置只剩这么一点，这太不对劲了，肯定是之前不小心改了啥导致配置丢失了。（无奈地耸肩）
 
@@ -80,7 +80,7 @@ tag:
 
 不对劲，文件大小怎么缩水了。
 
-![Realized something while checking the file size - Something ain't Right. Meme](./assets/008-img/1.jpg)
+![Realized something while checking the file size - Something ain't Right. Meme](/blog_assets/postMortem/deploy/assets/008-img/1.jpg)
 
 然后 `Hermes Agent` 通过递归展开叶子键把路径逐个比对了下，再拿缺失项跟 `DEFAULT_CONFIG` 对了一遍，发现配置丢了一大堆（基线 **439 个** 叶子键，当前 32 个，**缺 422 个**）。`Hermes Agent` 给这些缺失的项分成了三类：
 
@@ -124,11 +124,11 @@ Fix the YAML and restart.
 
 那句话已经把后果写得很直白：“**所有用户覆盖项**正在被忽略”。但是我当时没停下来。我做了啥来着？
 
-![Me realized it might be MYSELF that I hadn’t spotted the notice - This Is Fine. Meme](./assets/008-img/2.jpg)
+![Me realized it might be MYSELF that I hadn’t spotted the notice - This Is Fine. Meme](/blog_assets/postMortem/deploy/assets/008-img/2.jpg)
 
 抛开最初的那一份不谈，另外两份 corrupt 备份唯一的差异在第 554 行，fallback 的模型从 `deepseek-v4-pro` 改成了 `deepseek-v4-flash`。说明文件坏掉之后，它还在被继续手改。
 
-![Let’s see who edited it: It's ME -Scooby doo mask reveal Meme](./assets/008-img/3.jpg)
+![Let’s see who edited it: It's ME -Scooby doo mask reveal Meme](/blog_assets/postMortem/deploy/assets/008-img/3.jpg)
 
 ### 第五步：锁定 274 B 那一刻
 
@@ -204,7 +204,7 @@ Hermes 的 `config.yaml` 是"只写差异"的，具体而言，跟 schema 默认
 
 我出事的时间是 7 月 30 日，修复落在 9 月 17 到 23 日。隔了七周。这也解释了为什么当时的版本会安静地把文件写成 274 字节：那会儿它就是这么设计的。
 
-![Hermes agent at that time - I'm gonna pretend I didn't see that. Meme](./assets/008-img/4.jpg)
+![Hermes agent at that time - I'm gonna pretend I didn't see that. Meme](/blog_assets/postMortem/deploy/assets/008-img/4.jpg)
 
 ## 根因
 

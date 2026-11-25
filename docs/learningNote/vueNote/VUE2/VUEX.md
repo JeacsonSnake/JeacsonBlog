@@ -18,7 +18,7 @@ tag:
 
 ## VUEX循环图
 
-![vuex-cycle](./assets/img/vuexCycle.jpg)
+![vuex-cycle](/blog_assets/learningNote/vueNote/VUE2/assets/img/vuexCycle.jpg)
 
 ## 一、VUEX介绍
 

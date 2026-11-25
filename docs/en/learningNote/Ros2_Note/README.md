@@ -24,11 +24,11 @@ Most of these notes were written with reference to the following sites and video
 
 You can go through the “Edit includePath...” option:
 
-![Opening the “Edit includePath...” option in Quick Fix](./assets/2026-01-24_001.jpg)
+![Opening the “Edit includePath...” option in Quick Fix](/blog_assets/learningNote/Ros2_Note/assets/2026-01-24_001.jpg)
 
 Find the “Include path” option:
 
-![Finding the “Include path” option in the “C/C++ Configurations”](./assets/2026-01-24_002.jpg)
+![Finding the “Include path” option in the “C/C++ Configurations”](/blog_assets/learningNote/Ros2_Note/assets/2026-01-24_002.jpg)
 
 Add this on a new line:
 

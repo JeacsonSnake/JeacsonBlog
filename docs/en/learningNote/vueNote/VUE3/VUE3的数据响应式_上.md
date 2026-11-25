@@ -379,7 +379,7 @@ In this chapter we did three things in total, to get our own reactive engine rou
 
 In a picture, that looks like:
 
-![vue3_BASIC_Reactive_Map_Design](./assets/img/vue3_BASIC_Reactive_Map_Design.jpg)
+![vue3_BASIC_Reactive_Map_Design](/blog_assets/learningNote/vueNote/VUE3/assets/img/vue3_BASIC_Reactive_Map_Design.jpg)
 
 It feels like we did a lot of work, but in fact, up to this point we can still only use manual updates to observe the values we want to observe, and there is no way to make the *update function* **Set** of a *specific property* on a *reactive object* re-run by itself. Never mind — we'll cover it in the next part.
 

@@ -25,7 +25,7 @@ Use cases: DNS queries, streaming media, online games and other real-time applic
 
 **UDP segment structure** (see the figure below):
 
-![UDP segment structure](./assets/img/UDP_segment_structure.jpg)
+![UDP segment structure](/blog_assets/learningNote/Computer_Network/assets/img/UDP_segment_structure.jpg)
 
 **UDP checksum**:
 The "UDP checksum" is generally used for error detection, to determine whether the bits travelling inside a UDP segment were altered in transit or while being stored inside a router. From the UDP segment structure diagram you can see that the checksum is normally placed in the header of the UDP segment and travels along with all the data. When a check is needed, you add up all the received 16-bit binary data and the checksum; if no error occurred in the packet, the total should be sixteen 1s, i.e. 111111111111111111; as soon as a 0 turns up, that indicates an error in the packet.

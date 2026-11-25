@@ -379,6 +379,6 @@ effect()
 
 用图片可以表现为：
 
-![vue3_BASIC_Reactive_Map_Design](./assets/img/vue3_BASIC_Reactive_Map_Design.jpg)
+![vue3_BASIC_Reactive_Map_Design](/blog_assets/learningNote/vueNote/VUE3/assets/img/vue3_BASIC_Reactive_Map_Design.jpg)
 
 感觉做了很多工作，但是实际上直到目前为止，我们还是只能使用手动的更新来监测我们希望监测的值，而没有办法使*响应式对象*中*特定属性*的*更新用函数* **Set** 自动地重新运行。没有关系，我们会在下一部分进行讲解。

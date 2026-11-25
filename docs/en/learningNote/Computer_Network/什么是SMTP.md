@@ -24,7 +24,7 @@ To show how SMTP basically works, imagine a common scenario. Alice wants to send
 
 The whole sequence looks like this:
 
-![Whats_going_on_when_Alice_sends_a_message_to_Bob_through_SMTP](./assets/img/Whats_going_on_when_Alice_sends_a_message_to_Bob_through_SMTP.jpg)
+![Whats_going_on_when_Alice_sends_a_message_to_Bob_through_SMTP](/blog_assets/learningNote/Computer_Network/assets/img/Whats_going_on_when_Alice_sends_a_message_to_Bob_through_SMTP.jpg)
 
 In short: SMTP carries the message from Alice's mail server to Bob's mail server, at which point it lands in Bob's mailbox.
 
@@ -44,7 +44,7 @@ From the discussion above we know that somewhere along that path the message has
 
 In practice, though, the sender's user agent usually does not talk to the recipient's mail server directly. Instead, as in the **diagram below**, Alice's user agent uses SMTP to push the message to her own mail server, which then acts as an SMTP client and uses SMTP to try to relay the message on to Bob's mail server.
 
-![Whats_going_on_when_Alice_sends_a_message_to_Bob_through_other_entities](./assets/img/Whats_going_on_when_Alice_sends_a_message_to_Bob_through_other_entities.jpg)
+![Whats_going_on_when_Alice_sends_a_message_to_Bob_through_other_entities](/blog_assets/learningNote/Computer_Network/assets/img/Whats_going_on_when_Alice_sends_a_message_to_Bob_through_other_entities.jpg)
 
 Why take two steps? Because without relaying through Alice's mail server, Alice's user agent has no way to deliver the message directly to Bob's mail server. By first depositing the message on her own mail server and letting that server send it, Alice's mail server can act as a client and retry the delivery to Bob's mail server again and again — every 30 minutes, say — until Bob's mail server is up and able to accept it.
 
@@ -58,7 +58,7 @@ A user agent cannot fetch mail with SMTP, because fetching is a *pull* operation
 
 The complete path then looks like this:
 
-![Full_images_of_Whats_going_on_when_Alice_sends_a_message_to_Bob_through_other_entities](./assets/img/Whats_going_on_when_Alice_sends_a_message_to_Bob_through_other_entities_full.jpg)
+![Full_images_of_Whats_going_on_when_Alice_sends_a_message_to_Bob_through_other_entities](/blog_assets/learningNote/Computer_Network/assets/img/Whats_going_on_when_Alice_sends_a_message_to_Bob_through_other_entities_full.jpg)
 
 In the diagram, SMTP carries the message from the sender's user agent to the sender's mail server, and from there to the recipient's mail server. The other, dedicated mail access protocols (POP3 and friends) pull the message from the recipient's mail server into the recipient's user agent.
 

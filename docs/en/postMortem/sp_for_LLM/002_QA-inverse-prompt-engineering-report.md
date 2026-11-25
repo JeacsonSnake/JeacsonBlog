@@ -115,7 +115,7 @@ As for **"table"** specifically, the search results didn't turn up any blog or G
 
 For example, suppose I use this image to reverse out a prompt, and I want to use that prompt plus a paper to generate the research steps of that paper for a specific research direction — then when I use that prompt to generate an image in the same style, how should I apply "reverse prompt engineering"?
 
-![002-img](./assets/002-img.png)
+![002-img](/blog_assets/postMortem/sp_for_LLM/assets/002-img.png)
 
 ---
 
