@@ -2,9 +2,9 @@
 title: 踩坑心得知识域摘要
 description: "部署与开发中的实际问题记录与解决方案"
 type: source
-tags: [DevOps, Deploy, Markdown, AI Agent, DNS, Migrate, Network, Ubuntu, Disk, Troubleshooting, CSS, Vite, Proxy, GSLB, WiFi, DFS, Channel, GitHub Actions, Git, Branch Protection, Windows, Display, DPI, Translation, Lint, State Machine, RSS, Configuration, YAML]
+tags: [DevOps, Deploy, Markdown, AI Agent, DNS, Migrate, Network, Ubuntu, Disk, Troubleshooting, CSS, Vite, VuePress, VSCode, Proxy, GSLB, WiFi, DFS, Channel, GitHub Actions, Git, Branch Protection, Windows, Display, DPI, Translation, Lint, State Machine, RSS, Configuration, YAML]
 created: 2026-04-17
-updated: 2026-11-23
+updated: 2026-11-26
 article: false
 author: 'Hermes_Agent_cRl1_bot'
 sources:
@@ -24,6 +24,7 @@ sources:
   - docs/postMortem/tiny_tips/2026_09_08.md
   - docs/postMortem/tiny_tips/2026_11_01.md
   - docs/postMortem/tiny_tips/2026_11_04.md
+  - docs/postMortem/tiny_tips/2026_11_25.md
 ---
 
 # 踩坑心得知识域
@@ -66,6 +67,7 @@ sources:
 - **WiFi 5GHz DFS 信道下社交平台图片加载缓慢**（tiny_tips/2026_09_08 新增）— 信道 100（5500 MHz）属 DFS 频段（52~140），触发雷达避让 → 客户端传输不定时挂起；图片小请求对抖动敏感（视频有缓冲可掩盖）；Velop 不支持手动指定信道 → 关闭 DFS + Channel Finder 落到非 DFS 信道（161）
 - **双屏 GIF 蓝黄斑纹**（tiny_tips/2026_11_01 新增）— 截图也带斑纹 → 排除面板/线缆；分层排除色域、HDR、NVIDIA 颜色覆盖、EDID 后定位到 per-monitor DPI 不一致（内屏 125% / 副屏 100%）→ DWM 跨屏合成按不同比例重采样，硬色度边缘产生过冲/振铃；统一两屏缩放即消失，还原即复现
 - **Switch 搜不到 5GHz WiFi**（tiny_tips/2026_11_04 新增）— Switch 全系 5GHz 仅支持 36/40/44/48（UNII-1），路由器自动选频落到 153（UNII-3）→ SSID 扫描阶段即不可见并静默回退 2.4G；先排除加密/协议，再走本地 Web UI 的 CA 隐藏入口把信道固定为 36，且**必须先关 Auto Channel Finder**（约每 5 天自动覆盖手动设置）；附 Beacon 被动扫描取证与 RSSI 换算
+- **VuePress public 资源与 VSCode Hover 路径差异**（tiny_tips/2026_11_25 新增）— 图片统一迁到 `docs/.vuepress/public/blog_assets/` 后，站点按「public → 站点根」解析 `/blog_assets/…` 正常，但 VSCode 把 `/` 解析为 workspace 根 → Markdown Hover 预览失效；解法 = 仓库根 `mklink /D blog_assets docs\.vuepress\public\blog_assets` + `.gitignore` 排除；附「`markdown.preview.rootPath` 并不存在」的假方案教训
 
 ## 关联
 
@@ -87,6 +89,7 @@ sources:
 - [AI 简报自动归档两跳链路（merge-base 不变量 + 双层分支保护 + step 级验证）](../concepts/Briefing-Archive-Auto-Merge-Topology.md)
 - [双屏 DPI 缩放不一致致 DWM 重采样振铃（GIF 蓝黄斑纹）](../concepts/Per-Monitor-DPI-DWM-Resampling-Ringing.md)
 - [Switch 5GHz 搜不到：区域固件信道白名单（仅 36/40/44/48）与路由器手动选频](../concepts/Switch-5GHz-Channel-Whitelist.md)
+- [VuePress 静态资源与 VSCode Markdown Hover 的路径解析差异（public 映射 vs workspace 根）](../concepts/VuePress-Public-Assets-VSCode-Markdown-Hover.md)
 - [博客全站英译与 EN 自动翻译链路（可判定性、双闸门与状态推进）](../concepts/Blog-Bilingual-Translation-Pipeline.md)
 - [博客变更检测层（一个 detector、两个 consumer 与各自的 cursor）](../concepts/Blog-Change-Detection-Layer.md)
 - [Wiki Lint 的三个「没报」（stem 覆盖、index 不入链、方括号标签）](../concepts/Wiki-Lint-False-Negative-Traps.md)
