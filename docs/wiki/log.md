@@ -372,3 +372,15 @@ title: Wiki Log
   - **MODIFY** `concepts/Blog-Bilingual-Translation-Pipeline.md` — 图片口径改为 `public/blog_assets/` + `/blog_assets/…`，§五 新增「图片：2026-11-25 起不再复制」，`updated` → 2026-11-25
 - 同步更新：仓库根 `AGENTS.md` 的目录树、写作约定、故障排查三处从「同级 `assets/` + 相对路径」改为 `public/blog_assets/` + 站点绝对路径
 - 说明：历史报告（`sp_for_LLM/007`）与本日志旧条目中的「复制图片」记录保持原样，不改写历史
+
+## [2026-11-26] ingest | 009-博客结构拆分设想 + VuePress public 资源与 VSCode Hover 路径
+- Source articles: `docs/complain_diary/2026_11_25.md`（随笔 · 博客结构调整想法）、`docs/postMortem/tiny_tips/2026_11_25.md`（图片迁移后的 VSCode Hover 排障）
+- Wiki pages created:
+  - **CREATE** `concepts/Blog-and-Archive-Site-Split-Plan.md` — 把博客与 AI 日报归档拆成两个 VuePress 站点、不同子域名互跳的结构设想；图片统一诉求已在 2026-11-25 的 `public/blog_assets` 迁移中落地，站点拆分尚未实施；列出子域名、仓库拆分、跨站链接 / RSS、旧 URL 重定向等待定问题
+  - **CREATE** `concepts/VuePress-Public-Assets-VSCode-Markdown-Hover.md` — VuePress 把 `.vuepress/public` 映射到站点根（`/blog_assets/…`）vs VSCode 把 `/` 解析为 workspace 根；「线上正常、Hover 无图」的判据；Windows `mklink /D` + `.gitignore` 修复；`markdown.preview.rootPath` 并不存在
+  - **CREATE** `sources/Complain_Diary.md` — complain_diary 知识域摘要（wiki 此前没有该分类的 source 页），汇总 3 篇随笔并链接上述概念页
+- Wiki pages modified:
+  - **MODIFY** `sources/PostMortem.md` — tags 补 VuePress / VSCode，`sources:` 补 tiny_tips/2026_11_25，tiny_tips 节加一条摘要，关联段加 1 条链接，`updated` → 2026-11-26
+  - **MODIFY** `entities/Vue.md` — 「构建与踩坑」加 1 条 VuePress public / VSCode Hover 摘要 + 链接，`updated` → 2026-11-26
+  - **MODIFY** `index.md` — Sources 段加随笔分类，Coding Skill 段加 Hover 概念页，DevOps 段加拆分设想页，`Last updated` → 2026-11-26
+- 纪律遵循：内链一律 `[标签](相对路径.md)`；不碰中文原文与 `docs/en/`；两篇 new 合并为一个 manifest / 一次 push / 一个 PR，每篇各有独立 concept 页

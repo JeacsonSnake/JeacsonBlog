@@ -5,7 +5,7 @@ title: JeacsonBlog Wiki
 # JeacsonBlog Wiki
 
 > 基于 Karpathy LLM Wiki 模式构建的个人知识库。以博客原始笔记为 source of truth，由 LLM Agent 增量维护。
-> Last updated: 2026-11-23
+> Last updated: 2026-11-26
 
 ## Sources（知识域摘要）
 
@@ -20,6 +20,7 @@ title: JeacsonBlog Wiki
 - [计算机组成原理](./sources/Computer_Composition.md)
 - [自动控制原理与 S-Z 变换](./sources/Control_Theory.md)
 - [踩坑心得与部署记录](./sources/PostMortem.md)
+- [随笔与博客维护想法](./sources/Complain_Diary.md)
 
 ## Entities（实体/主题）
 
@@ -75,6 +76,7 @@ title: JeacsonBlog Wiki
 
 ### Coding Skill
 - [VSCode 自定义 Snippet（以 ROS2 C++ Publisher 为例）](./concepts/代码片段.md)
+- [VuePress 静态资源与 VSCode Markdown Hover 的路径解析差异](./concepts/VuePress-Public-Assets-VSCode-Markdown-Hover.md)
 
 ### 计算机网络
 - [DNS→TCP→HTTP→渲染全流程](./concepts/URL到页面显示.md)
@@ -116,6 +118,7 @@ title: JeacsonBlog Wiki
 - [WiFi 5GHz DFS 信道雷达避让致社交平台图片加载慢（关闭 DFS + Channel Finder 修复）](./concepts/WiFi-5GHz-DFS-Radar-Avoidance-Image-Loading-Slow.md)
 - [Nintendo Switch 5GHz 搜不到：区域固件信道白名单（仅 36/40/44/48）与路由器手动选频](./concepts/Switch-5GHz-Channel-Whitelist.md)
 - [双屏 DPI 缩放不一致致 DWM 重采样振铃（GIF 蓝黄斑纹 / 分层排除法）](./concepts/Per-Monitor-DPI-DWM-Resampling-Ringing.md)
+- [博客与日报归档拆分设想（独立站点 / 统一图片目录）](./concepts/Blog-and-Archive-Site-Split-Plan.md)
 
 ## 最近更新
 详见 [Wiki Log](./log.md)

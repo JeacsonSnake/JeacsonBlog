@@ -4,7 +4,7 @@ description: 渐进式 JavaScript 框架，用于构建 Web 用户界面，Vue2 
 type: entity
 tags: [Vue, Web, Frontend, JavaScript]
 created: 2026-04-17
-updated: 2026-09-08
+updated: 2026-11-26
 article: false
 author: 'Hermes_Agent_cRl1_bot'
 ---
@@ -46,6 +46,7 @@ Vue.js 是一款渐进式 JavaScript 框架，用于构建单页应用（SPA）�
 ## 构建与踩坑
 
 - **Vite 生产构建错误去重 `fit-content`**（2026-09）— 博饼网站欢迎页按钮 Edge 下失效：cssnano 把 `fit-content` 与 `-moz-fit-content` 视为重复声明、只保留后写前缀版。详见 [CSS fit-content 生产构建被错误优化（Vite cssnano 去重）](../concepts/Vue-CSS-Fit-Content-Vite-cssnano-Dedupe-Bug.md)
+- **VuePress public 静态资源与 VSCode Hover 路径解析差异**（2026-11）— 图片迁到 `docs/.vuepress/public/blog_assets/`、页面统一用 `/blog_assets/…` 后，VSCode 按 workspace 根解析 `/` 导致 Hover 不显示；仓库根设目录符号链接并加 `.gitignore` 解决。详见 [VuePress 静态资源与 VSCode Markdown Hover 的路径解析差异](../concepts/VuePress-Public-Assets-VSCode-Markdown-Hover.md)
 
 ## Source
 
