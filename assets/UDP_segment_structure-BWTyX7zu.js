@@ -1,0 +1,1 @@
+var e=`/blog_assets/learningNote/Computer_Network/assets/img/UDP_segment_structure.jpg`;export{e as t};

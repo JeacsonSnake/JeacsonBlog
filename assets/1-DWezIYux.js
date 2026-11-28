@@ -1,0 +1,1 @@
+var e=`/blog_assets/postMortem/tiny_tips/assets/2026_11_04/1.jpg`;export{e as t};

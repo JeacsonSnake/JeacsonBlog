@@ -1,0 +1,1 @@
+var e=`/blog_assets/learningNote/Principles_of_Computer_Composition/assets/img/secant_method.jpg`;export{e as t};
